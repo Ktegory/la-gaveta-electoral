@@ -3,7 +3,7 @@
 import { readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
 
-const SITIO = 'https://gaveta-programas.netlify.app'; // el mismo que `site` en astro.config.mjs
+const SITIO = 'https://lagavetaelectoral.netlify.app'; // el mismo que `site` en astro.config.mjs
 const DIST = 'dist';
 const urls = [];
 const recorrer = (dir) => {

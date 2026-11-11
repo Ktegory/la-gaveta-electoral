@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gaveta-programas.netlify.app/sitemap.xml
+Sitemap: https://lagavetaelectoral.netlify.app/sitemap.xml
