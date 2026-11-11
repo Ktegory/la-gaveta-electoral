@@ -25,9 +25,10 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     X-Frame-Options = "DENY"
 
-# Imágenes propias (logos de partidos, la mano del hero): una semana de caché.
-# No llevan huella en el nombre, así que no se marcan como inmutables.
+# Imágenes propias (logos de partidos, la mano del hero): una hora de caché.
+# Ojo: Netlify aplica esta cabecera también a los 404, así que una caché larga
+# haría que un fallo puntual (p. ej. durante una publicación) se quedara días en el navegador.
 [[headers]]
   for = "/img/*"
   [headers.values]
-    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
+    Cache-Control = "public, max-age=3600"

@@ -26,7 +26,7 @@ const resumen = `${general.replace(/<[^>]+>/g, '')}. ${d.partidos.map((p) => `${
             <span>
               {p && (
                 <span class={`mq-logo l-${p.id} ${p.data.logo ? '' : 'fb'}`} style={varsPartido(p)}>
-                  {p.data.logo && <img src={p.data.logo.archivo} alt="" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('fb');this.remove()" />}
+                  {p.data.logo && <img src={p.data.logo.archivo} alt="" fetchpriority="low" decoding="async" onerror="this.parentNode.classList.add('fb');this.remove()" />}
                   <em>{p.data.siglas}</em>
                 </span>
               )}
