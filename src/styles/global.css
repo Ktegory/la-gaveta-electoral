@@ -273,8 +273,7 @@ a:hover .arrow, button:hover .arrow { transform: translateX(4px) }
 @keyframes entra { from { opacity: 0; transform: translateY(18px) } }
 .col:hover { transform: translateY(-4px) }
 .col .top { padding: clamp(16px, 1.6cqi, 28px); flex: 1; display: flex; flex-direction: column; gap: 10px }
-/* El nombre del partido va siempre en blanco, como en la ficha (decisión de diseño). */
-.col .nm { font-family: var(--cond); font-weight: 900; font-size: clamp(2.125rem, 3.6cqi, 4rem); line-height: .88; text-transform: uppercase; overflow-wrap: anywhere; color: #fff }
+.col .nm { font-family: var(--cond); font-weight: 900; font-size: clamp(2.125rem, 3.6cqi, 4rem); line-height: .88; text-transform: uppercase; overflow-wrap: anywhere }
 .col .cd { font-size: .9375rem; font-weight: 550; opacity: .92 }
 /* Partido con programa publicado: etiqueta blanca en la parte de color. */
 /* Pegada a la caja blanca de abajo: mismo margen con los bordes (4px) y mismo ancho. */
@@ -360,8 +359,7 @@ p .fuera { margin: 0; vertical-align: 1px }
 /* Enlaces en contexto de partido: texto negro (contraste) y subrayado de su color, más grueso al pasar el ratón. */
 :is(.fic-r, .ar .what, .vp, .foco-b) a { text-decoration-color: var(--pc) }
 :is(.fic-r, .ar .what, .vp, .foco-b) a:hover { text-decoration-thickness: 3px }
-/* En la ficha, el texto sobre el color del partido va siempre en blanco (decisión de diseño). */
-.fic-l { background: var(--pc); color: #fff; position: relative }
+.fic-l { background: var(--pc); color: var(--pt); position: relative }
 .fic-l .in { position: sticky; top: var(--hdr-h); padding: var(--sec-s) clamp(24px, 3cqi, 64px); display: flex; flex-direction: column; gap: clamp(28px, 2.6cqi, 44px) }
 /* Nombre y datos del partido, juntos como un bloque. */
 .fid { display: grid; gap: 6px }
@@ -399,7 +397,7 @@ p .fuera { margin: 0; vertical-align: 1px }
 .ftabs { display: flex; gap: 8px; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; position: sticky; top: var(--hdr-h); z-index: 3; background: #fff; margin: 0 calc(-1 * var(--pr)) clamp(28px, 3cqi, 48px) calc(-1 * var(--pl)); padding: 14px var(--pr) 14px var(--pl); border-bottom: 1px solid var(--hair) }
 .ftabs > * { flex: none; display: flex; gap: 8px; align-items: center; height: var(--h-ctl); padding: 0 16px; border-radius: 999px; background: var(--bg2); color: var(--ink); font-weight: 600; font-size: .9375rem; white-space: nowrap; text-decoration: none; transition: background-color .15s }
 .ftabs a:hover { background: var(--bg3) }
-.ftabs a[aria-current] { background: var(--pc); color: #fff }
+.ftabs a[aria-current] { background: var(--pc); color: var(--pt) }
 .ftabs .c { font-size: .8125rem; font-weight: 500; color: var(--mute) }
 .ftabs a[aria-current] .c { color: inherit; opacity: .85 }
 .ftabs .dis { background: transparent; outline: 1.5px dashed var(--nc); outline-offset: -1.5px; color: var(--mute); font-weight: 500; pointer-events: none }
@@ -810,7 +808,7 @@ p .fuera { margin: 0; vertical-align: 1px }
 /* ============================================================
    UN PARTIDO, UN TEMA (/partidos/<partido>/<tema>/)
    ============================================================ */
-.foco-h { background: var(--pc); color: #fff; padding-block: var(--sec-s) clamp(28px, 3cqi, 48px); display: grid; gap: clamp(14px, 1.4cqi, 22px) }
+.foco-h { background: var(--pc); color: var(--pt); padding-block: var(--sec-s) clamp(28px, 3cqi, 48px); display: grid; gap: clamp(14px, 1.4cqi, 22px) }
 .foco-h .crumbs a { color: inherit }
 .foco-t { display: grid; gap: .1em; margin: 0; text-transform: uppercase; overflow-wrap: anywhere }
 .foco-n { font-size: clamp(3.5rem, 7cqi, 8.75rem); line-height: .82 }
@@ -891,6 +889,3 @@ p .fuera { margin: 0; vertical-align: 1px }
 }
 .tema-ver { margin-left: auto; font-family: var(--sans); font-stretch: 100%; font-size: .9062rem; font-weight: 500; color: inherit; text-underline-offset: 4px }
 .tema-ver:hover { text-decoration-thickness: 2px }
-
-/* Nombres y siglas de partido sobre su color: siempre en blanco (decisión de diseño, igual que en tarjetas y ficha). */
-.map .ph .nm, .map .ph .mo, .ar .who b, .vt-votos li > b, .oth a, .ptg button, .mq-logo.fb em { color: #fff }

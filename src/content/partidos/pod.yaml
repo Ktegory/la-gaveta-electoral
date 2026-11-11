@@ -1,7 +1,7 @@
 nombre: "Podemos"
 siglas: "POD"
 color: "#9169F4"
-colorTexto: "tinta"
+colorTexto: "blanco"
 colorOrigen:
   fuente: "podemos.info: color del logo y de la barra superior de la web, consultado el 11 nov 2026"
   verificado: true

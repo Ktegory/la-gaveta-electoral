@@ -2,7 +2,7 @@ nombre: "EH Bildu"
 nombreCompleto: "Euskal Herria Bildu"
 siglas: "BILDU"
 color: "#00C19F"
-colorTexto: "tinta"
+colorTexto: "blanco"
 colorOrigen:
   fuente: "ehbildu.eus (color principal de la hoja de estilos de su web)"
   verificado: true

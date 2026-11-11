@@ -2,7 +2,7 @@ nombre: "Junts"
 nombreCompleto: "Junts per Catalunya"
 siglas: "JUNTS"
 color: "#00C3B2"
-colorTexto: "tinta"
+colorTexto: "blanco"
 colorOrigen:
   fuente: "junts.cat (color principal de su web); el logo oficial usa un turquesa casi igual (#20C0B2)"
   verificado: true

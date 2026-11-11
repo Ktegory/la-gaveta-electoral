@@ -1,7 +1,7 @@
 nombre: "Frente Amplio"
 siglas: "FA"
 color: "#F03C00"
-colorTexto: "tinta"
+colorTexto: "blanco"
 colorOrigen:
   fuente: "frenteamplio.info"
   verificado: true

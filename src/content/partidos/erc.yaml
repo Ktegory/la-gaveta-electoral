@@ -2,7 +2,7 @@ nombre: "ERC"
 nombreCompleto: "Esquerra Republicana de Catalunya"
 siglas: "ERC"
 color: "#F95838"
-colorTexto: "tinta"
+colorTexto: "blanco"
 colorOrigen:
   fuente: "Naranja de la portada de su programa para el 29N (esquerrarepublicana.cat), igual al del logo; consultado el 11 nov 2026"
   verificado: true
