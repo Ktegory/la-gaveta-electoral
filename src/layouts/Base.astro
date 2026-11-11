@@ -25,7 +25,7 @@ const datosEstructurados = {
 const NAV = [
   { id: 'partidos', href: '/partidos/', txt: 'Partidos' },
   { id: 'comparar', href: '/comparar/', txt: 'Comparar' },
-  { id: 'escala', href: '/escala/', txt: 'Escala' },
+  { id: 'metodo', href: '/como-funciona/', txt: 'Cómo funciona' },
 ] as const;
 const cur = (id: string) => (seccion === id ? 'page' : undefined);
 ---
@@ -35,6 +35,7 @@ const cur = (id: string) => (seccion === id ? 'page' : undefined);
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <Fuentes />
+  {Astro.url.pathname === '/' && <link rel="preload" as="image" href="/img/hero-mano.webp" type="image/webp" fetchpriority="high" />}
   <title>{t}</title>
   <meta name="description" content={descripcion} />
   <link rel="canonical" href={canonica} />

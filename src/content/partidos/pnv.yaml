@@ -8,6 +8,7 @@ colorOrigen:
   verificado: true
 logo:
   url: "https://upload.wikimedia.org/wikipedia/commons/3/31/Logo_PNV_2025.svg"
+  archivo: "/img/partidos/pnv.svg"
   origen: "Wikimedia Commons (infobox de es.wikipedia), consultado el 11 nov 2026"
 candidatura: "Idoia Sagastizabal (Bizkaia), Maribel Vaquero (Gipuzkoa) y Gorka Urtaran (Araba)"
 lema: "Euskadi zaindu. Defendemos Euskadi"

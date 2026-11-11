@@ -22,9 +22,10 @@ const partidos = defineCollection({
     nombreCompleto: z.string().optional(),
     siglas: z.string().max(5),
     color: z.string().regex(/^#[0-9A-F]{6}$/i),
-    colorTexto: z.enum(['blanco', 'tinta']),
+    colorTexto: z.enum(['blanco', 'tinta']), // el que dé más contraste sobre `color` (mínimo 4,5:1)
     colorOrigen: z.object({ fuente: z.string(), verificado: z.boolean() }),
-    logo: z.object({ url: z.url(), origen: z.string() }).optional(),
+    // url: dónde se obtuvo; archivo: copia local optimizada que usa la web (sin peticiones a terceros)
+    logo: z.object({ url: z.url(), archivo: z.string().regex(/^\/img\/partidos\/[a-z0-9-]+\.(svg|webp)$/), origen: z.string() }).optional(),
     candidatura: z.string(),
     lema: z.string().optional(),
     web: z.url(),

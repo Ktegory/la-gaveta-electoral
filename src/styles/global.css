@@ -86,9 +86,8 @@ a:hover .arrow, button:hover .arrow { transform: translateX(4px) }
 :root { --hdr-h: 81px; scroll-padding-top: calc(var(--hdr-h) + 16px) }
 .hdr { display: flex; align-items: center; gap: 32px; padding-block: 18px; border-bottom: 1px solid var(--hair); position: sticky; top: 0; z-index: 10; background: var(--bg) }
 /* Logo: «Electoral» debajo de «La Gaveta», repartida a lo ancho de la primera línea. */
-.logo { display: inline-grid; gap: 3px; text-decoration: none; flex: none }
-.logo .w1 { font-family: var(--cond); font-weight: 900; font-size: 1.875rem; letter-spacing: -.01em; line-height: .85; text-transform: uppercase; white-space: nowrap }
-.logo .w2 { display: flex; justify-content: space-between; font-family: var(--sans); font-weight: 700; font-size: .9375rem; font-stretch: 125%; line-height: 1; text-transform: uppercase }
+.logo { display: block; color: inherit; text-decoration: none; flex: none }
+.logo svg { display: block; height: 42px; width: auto; aspect-ratio: 806 / 186 }
 .nav { display: flex; gap: 28px; margin-left: auto }
 .nav a { font-weight: 600; font-size: .9688rem; text-decoration: none; padding: 6px 0; border-bottom: 2px solid transparent }
 .nav a:hover { border-bottom-color: var(--ink) }
@@ -869,9 +868,10 @@ p .fuera { margin: 0; vertical-align: 1px }
   .foco-sel .sel { padding: 0; cursor: auto }
   .foco-sel .sel-v, .foco-sel .sel::after { display: none }
   .foco-sel select, .foco-sel ::picker(select) { appearance: base-select }
-  .foco-sel select { position: static; opacity: 1; width: auto; height: auto; max-width: 100%; min-width: 0; font: inherit; text-transform: inherit; letter-spacing: inherit; color: inherit; background: transparent; border: 0; border-radius: max(8px, .16em); padding: .3em .36em .26em .44em; display: inline-flex; align-items: center; gap: .14em }
+  .foco-sel select { position: static; opacity: 1; width: auto; height: auto; max-width: 100%; min-width: 0; font: inherit; text-transform: inherit; letter-spacing: inherit; color: inherit; background: transparent; border: 0; border-radius: max(8px, .16em); padding: 0 .36em 0 0; display: inline-flex; align-items: center; gap: .14em }
   .foco-sel select:focus-visible { outline: 0 }
-  .foco-sel select > button { all: unset; display: inline-flex; align-items: center; min-width: 0; overflow: hidden }
+  /* El relleno va en el botón para que la zona de toque sea todo el desplegable (mín. 24 px) */
+  .foco-sel select > button { all: unset; display: inline-flex; align-items: center; min-width: 0; overflow: hidden; padding: .3em 0 .26em .44em; min-height: 24px; pointer-events: none }
   .foco-sel selectedcontent { display: inline-flex; align-items: center; gap: .18em; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis }
   .foco-sel selectedcontent .i { width: .72em; height: .72em; flex: none; stroke-width: 2 }
   .foco-sel selectedcontent .dot { display: none }

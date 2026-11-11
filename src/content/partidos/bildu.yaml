@@ -8,6 +8,7 @@ colorOrigen:
   verificado: true
 logo:
   url: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Logo_de_EH_Bildu_%282023%29.svg"
+  archivo: "/img/partidos/bildu.svg"
   origen: "Wikimedia Commons (infobox de es.wikipedia), consultado el 11 nov 2026"
 candidatura: "Oskar Matute"
 lema: "Posible Egin. Garantía y derechos"

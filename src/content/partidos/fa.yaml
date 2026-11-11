@@ -1,12 +1,13 @@
 nombre: "Frente Amplio"
 siglas: "FA"
 color: "#F03C00"
-colorTexto: "blanco"
+colorTexto: "tinta"
 colorOrigen:
   fuente: "frenteamplio.info"
   verificado: true
 logo:
   url: "https://upload.wikimedia.org/wikipedia/commons/2/29/Frente_AMPLIO.svg"
+  archivo: "/img/partidos/fa.svg"
   origen: "Wikimedia Commons (infobox de es.wikipedia), consultado el 9 nov 2026"
 candidatura: "Ada Colau"
 web: "https://frenteamplio.info/"

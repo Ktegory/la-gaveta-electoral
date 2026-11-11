@@ -8,6 +8,7 @@ colorOrigen:
   verificado: true
 logo:
   url: "https://upload.wikimedia.org/wikipedia/commons/9/9a/ERC_logo_2025.svg"
+  archivo: "/img/partidos/erc.svg"
   origen: "Wikimedia Commons (infobox de es.wikipedia), consultado el 11 nov 2026"
 candidatura: "Gabriel Rufián"
 lema: "Defensa't"

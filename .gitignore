@@ -12,6 +12,8 @@ informe-qa-event-hub.md
 
 # Imagen original de la mano (la web usa public/img/hero-mano.webp)
 election-hand-voter.png
+# Original del logo (la web usa src/assets/logo.svg)
+logo-la-gaveta-electoral.svg
 
 # Ajustes locales de Claude Code
 .claude/settings.local.json

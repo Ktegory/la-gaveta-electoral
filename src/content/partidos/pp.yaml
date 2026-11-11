@@ -8,6 +8,7 @@ colorOrigen:
   verificado: true
 logo:
   url: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Logo_del_PP_%282022%29.svg"
+  archivo: "/img/partidos/pp.svg"
   origen: "Wikimedia Commons (infobox de es.wikipedia), consultado el 9 nov 2026"
 candidatura: "Alberto Núñez Feijóo"
 lema: "El cambio necesario"

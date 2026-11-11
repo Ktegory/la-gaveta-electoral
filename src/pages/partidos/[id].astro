@@ -34,7 +34,7 @@ const nDelPrograma = programa ? todas.filter((x) => x.data.fuentes.some((r) => r
   <div class="fic">
     <div class="fic-l on-color"><div class="in">
       <div class="crumbs"><a href="/partidos/">Partidos</a> › {p.data.nombre}</div>
-      {p.data.logo && <div class="flogo"><img src={p.data.logo.url} alt={`Logotipo de ${p.data.nombre}`} /></div>}
+      {p.data.logo && <div class="flogo"><img src={p.data.logo.archivo} alt={`Logotipo de ${p.data.nombre}`} /></div>}
       <div class="fid">
         <h1 class="cond">{p.data.nombre}</h1>
         <div class="meta">

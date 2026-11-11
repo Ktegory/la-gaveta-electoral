@@ -2,7 +2,7 @@
 //   public/og.png (1200×630, la que se ve al compartir un enlace)
 //   public/apple-touch-icon.png (180×180)
 // Uso: node scripts/imagenes-sociales.mjs   (rehacer cuando cambie el logo)
-import { writeFileSync, mkdtempSync, rmSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdtempSync, rmSync, existsSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import { join, resolve } from 'node:path';
 import { tmpdir } from 'node:os';
@@ -15,19 +15,19 @@ const fuentes = `
 @font-face { font-family: Sans; src: url(${nm('@fontsource-variable/mona-sans/files/mona-sans-latin-wdth-normal.woff2')}); font-weight: 200 900; font-stretch: 75% 125% }
 * { margin: 0; box-sizing: border-box } html, body { overflow: hidden }`;
 
-// Mientras no llegue el SVG definitivo, el logo es el mismo texto que en la cabecera.
-const logo = (tam) => `<div style="display:inline-grid;align-self:flex-start;gap:${tam * .1}px">
-  <div style="font:900 ${tam}px/.85 Cond;letter-spacing:-.01em;text-transform:uppercase">La Gaveta</div>
-  <div style="display:flex;justify-content:space-between;font:700 ${tam * .5}px/1 Sans;font-stretch:125%;text-transform:uppercase">${[...'Electoral'].map((l) => `<span>${l}</span>`).join('')}</div></div>`;
+// Logo definitivo (src/assets/logo.svg, en currentColor) y su «G» para el icono.
+const SVG_LOGO = readFileSync('src/assets/logo.svg', 'utf8');
+const logo = (alto) => `<div style="height:${alto}px;align-self:flex-start">${SVG_LOGO.replace('<svg ', `<svg height="${alto}" `)}</div>`;
+const G = 'M533.43,1127.121L533.43,1105.662L500.305,1105.662L500.305,1084.204L554.888,1084.204L554.888,1149.412L445.93,1149.412L445.93,1040.454L554.888,1040.454L554.888,1061.912L468.221,1061.912L468.221,1127.121L533.43,1127.121Z';
 
 const og = `<!doctype html><meta charset="utf-8"><style>${fuentes}
 body { width: 1200px; height: 630px; background: #FAF6E6; color: #0E0E0E; padding: 72px 80px; display: flex; flex-direction: column; justify-content: space-between }
 p { font: 600 44px/1.2 Sans; max-width: 900px } small { display: block; margin-top: 18px; font: 500 26px/1.3 Sans; color: #3A3A38 }
 .raya { position: absolute; left: 0; right: 0; bottom: 0; height: 14px; background: #0E0E0E }</style>
-<body>${logo(150)}<div><p>Los programas del 29N, ordenados por temas y con la fuente al lado de cada propuesta.<small>Una iniciativa civil · Sin vinculación con ningún partido</small></p></div><div class="raya"></div></body>`;
+<body>${logo(130)}<div><p>Los programas del 29N, ordenados por temas y con la fuente al lado de cada propuesta.<small>Una iniciativa civil · Sin vinculación con ningún partido</small></p></div><div class="raya"></div></body>`;
 
 const icono = `<!doctype html><meta charset="utf-8"><style>${fuentes} body { width: 180px; height: 180px; background: #0E0E0E }</style>
-<body><svg viewBox="0 0 32 32" width="180" height="180"><path d="M8 11h16M8 16h16M8 21h10" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4 2.5" fill="none"/></svg></body>`;
+<body><svg viewBox="0 0 180 180" width="180" height="180"><path transform="translate(45 45) scale(${90 / 108.958}) translate(-445.93 -1040.454)" fill="#fff" d="${G}"/></svg></body>`;
 
 const tmp = mkdtempSync(join(tmpdir(), 'gaveta-og-'));
 const foto = (html, ancho, alto, salida) => {

@@ -8,6 +8,7 @@ colorOrigen:
   verificado: true
 logo:
   url: "https://upload.wikimedia.org/wikipedia/commons/3/32/Logo_partit_Junts_per_Catalunya.png"
+  archivo: "/img/partidos/junts.webp"
   origen: "Wikimedia Commons (infobox de es.wikipedia), consultado el 11 nov 2026"
 candidatura: "Míriam Nogueras"
 lema: "Catalunya al centre"
