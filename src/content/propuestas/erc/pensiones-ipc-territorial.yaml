@@ -1,0 +1,16 @@
+partido: "erc"
+tema: "pensiones"
+subtema: "revalorizacion"
+titulo: "Revalorizar las pensiones según el IPC de cada territorio"
+resumen: "Además, garantizar que las pensiones públicas se actualicen con la inflación."
+fuentes:
+  - fuente: "erc/programa-29n-2026"
+    pagina: "26"
+    cita: Revalorar les pensions d’acord amb l’IPC de cada territori.
+fechaAnuncio: "2026-11-05"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Medida 107. El resumen corresponde a la medida 106 de la misma página: «Cal garantir l’actualització de pensions públiques d’acord amb la inflació.»"
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

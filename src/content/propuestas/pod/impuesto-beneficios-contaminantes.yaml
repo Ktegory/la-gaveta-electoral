@@ -1,0 +1,14 @@
+partido: "pod"
+tema: "fiscalidad"
+subtema: "sociedades"
+titulo: "Gravar hasta un 15 % los beneficios que las grandes empresas obtienen de actividades contaminantes"
+resumen: "Impuesto progresivo según las ganancias que obtengan de esas actividades. Lo anunció Irene Montero tras reunirse en Madrid con organizaciones ecologistas; según ella, 20 empresas concentran el 70 % de la contaminación por carbono en España."
+fuentes:
+  - fuente: "pod/prensa-montero-contaminantes-2026-11-10"
+    cita: "impondrá un \"impuestazo\" de hasta el 15% sobre los beneficios de las actividades contaminantes de las grandes empresas, con carácter progresivo en función de las ganancias que obtengan de esas actividades"
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

@@ -1,0 +1,29 @@
+nombre: "PP"
+nombreCompleto: "Partido Popular"
+siglas: "PP"
+color: "#21599E"
+colorTexto: "blanco"
+colorOrigen:
+  fuente: "pp.es"
+  verificado: true
+logo:
+  url: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Logo_del_PP_%282022%29.svg"
+  origen: "Wikimedia Commons (infobox de es.wikipedia), consultado el 9 nov 2026"
+candidatura: "Alberto Núñez Feijóo"
+lema: "El cambio necesario"
+web: "https://www.pp.es/"
+estadoPrograma: "publicado"
+fechaProgramaPrevista: "2026-11-10"
+fechaProgramaPublicado: "2026-11-10"
+resumenEstado: "Programa publicado el 10 nov"
+explicacionEstado: "Publicó su programa para el 29N, <b>«Reconstrucción Nacional»</b>, el 10 de noviembre: 82 páginas y 249 medidas numeradas. Cinco de ellas están en blanco, a la espera de anunciarse en campaña."
+candidaturas:
+  - territorio: "Navarra"
+    marca: "UPN en coalición con el PP (según la prensa)"
+  - territorio: "Aragón"
+    marca: "Con el apoyo del PAR, que no se presenta (según la prensa)"
+referenciaAnterior:
+  titulo: "Lo que proponía en 2023"
+  detalle: "Programa de 365 medidas, 112 págs. No es el programa del 29N."
+  fuente: "pp/programa-2023"
+ultimaRevision: "2026-11-11T12:50:00+01:00"

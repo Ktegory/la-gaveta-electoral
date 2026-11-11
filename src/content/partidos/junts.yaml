@@ -1,0 +1,25 @@
+nombre: "Junts"
+nombreCompleto: "Junts per Catalunya"
+siglas: "JUNTS"
+color: "#00C3B2"
+colorTexto: "tinta"
+colorOrigen:
+  fuente: "junts.cat (color principal de su web); el logo oficial usa un turquesa casi igual (#20C0B2)"
+  verificado: true
+logo:
+  url: "https://upload.wikimedia.org/wikipedia/commons/3/32/Logo_partit_Junts_per_Catalunya.png"
+  origen: "Wikimedia Commons (infobox de es.wikipedia), consultado el 11 nov 2026"
+candidatura: "Míriam Nogueras"
+lema: "Catalunya al centre"
+web: "https://junts.cat/"
+estadoPrograma: "pendiente"
+resumenEstado: "Lo presentará por partes en campaña, según la prensa"
+explicacionEstado: "Todavía no ha publicado su programa para el 29N. Según El Món (9 de noviembre), lo irá presentando por partes durante las dos semanas de campaña. Esta ficha se apoya en su boletín oficial «Més Junts» y en notas de su web. <b>Algunas propuestas solo constan en declaraciones recogidas por la prensa</b>, y lo indicamos en cada una."
+candidaturas:
+  - territorio: "Cataluña"
+    marca: "Junts per Catalunya, con listas propias al Congreso y al Senado en Barcelona, Girona, Lleida y Tarragona"
+referenciaAnterior:
+  titulo: "Lo que proponía en 2023"
+  detalle: "Programa de las generales de 2023, cuando concurrió en coalición con Demòcrates de Catalunya y Moviment d'Esquerres. Enlace pendiente de localizar. No es el programa del 29N."
+  fuente: "junts/programa-2023"
+ultimaRevision: "2026-11-11T10:00:00+01:00"

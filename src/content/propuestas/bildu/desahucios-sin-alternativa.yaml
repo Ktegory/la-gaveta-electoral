@@ -1,0 +1,17 @@
+partido: "bildu"
+tema: "vivienda"
+subtema: "okupacion"
+titulo: "Poner fin a los desahucios sin alternativa habitacional"
+resumen: "Pide una protección permanente frente a los desahucios."
+fuentes:
+  - fuente: "bildu/nota-desahucios-2026-09-28"
+    cita: EH Bildu considera prioritario que ninguna persona o familia vulnerable pueda ser expulsada de su vivienda sin una solución habitacional garantizada.
+  - fuente: "bildu/nota-decretos-vivienda-2026-09-30"
+    cita: Por ello, EH Bildu mantiene la exigencia de aprobar medidas estructurales como los contratos indefinidos, la protección permanente frente a los desahucios, la prohibición de la compra especulativa y una regulación estructural de los precios.
+fechaAnuncio: "2026-09-28"
+destacada: true
+orden: 6
+comprobacion:
+  estado: encontrada
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

@@ -1,0 +1,47 @@
+---
+// Selector de orden de los partidos: A–Z (por defecto) o por escaños actuales.
+// Ordena todas las listas marcadas con [data-ordenable] según el data-p de cada elemento,
+// avisa a cada lista con el evento «ordenado» y guarda el orden en el enlace (?orden=escanos).
+import { datos, fecha, diputadosActuales } from '../lib/datos';
+interface Props { nota?: boolean }
+const { nota = true } = Astro.props;
+const d = await datos();
+const v = d.votaciones[0];
+const orden = Object.fromEntries(d.partidos.map((p, i) => [p.id, { az: i, dip: diputadosActuales(d, p.id)?.n ?? -1 }]));
+---
+<div class="vista" role="group" aria-label="Ordenar los partidos" data-orden-ctl data-orden-datos={JSON.stringify(orden)}>
+  <button type="button" data-orden="az" aria-pressed="true">A–Z</button>
+  <button type="button" data-orden="diputados" aria-pressed="false">Por escaños</button>
+</div>
+{nota && v && <p class="orden-nota" data-orden-nota hidden>Diputados de cada partido en el Congreso saliente, según la última votación del Pleno ({fecha(v.data.fecha)} {v.data.fecha.getFullYear()}). <a href="/como-funciona/#escanos">Cómo los contamos</a></p>}
+<script>
+  const ctl = document.querySelector<HTMLElement>('[data-orden-ctl]');
+  if (ctl) {
+    const datos: Record<string, { az: number; dip: number }> = JSON.parse(ctl.dataset.ordenDatos!);
+    const botones = [...ctl.querySelectorAll<HTMLButtonElement>('button')];
+    // Con el mismo número de diputados, orden alfabético. Lo que no es de un partido (una etiqueta) va delante.
+    const ordenar = (modo: string, guardar = true) => {
+      const clave = (el: HTMLElement) => {
+        const x = datos[el.dataset.p ?? ''];
+        return x ? [modo === 'diputados' ? -x.dip : 0, x.az] : [-Infinity, -Infinity];
+      };
+      document.querySelectorAll<HTMLElement>('[data-ordenable]').forEach((lista) => {
+        const hijos = [...lista.children] as HTMLElement[];
+        hijos.sort((a, b) => { const [a1, a2] = clave(a), [b1, b2] = clave(b); return a1 - b1 || a2 - b2; });
+        hijos.forEach((c, i) => { c.style.setProperty('--i', String(i)); lista.append(c); });
+        lista.dataset.orden = modo;
+        lista.dispatchEvent(new Event('ordenado'));
+      });
+      botones.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.orden === modo)));
+      document.querySelectorAll<HTMLElement>('[data-orden-nota]').forEach((n) => (n.hidden = modo !== 'diputados'));
+      document.querySelectorAll<HTMLElement>('[data-orden-txt]').forEach((n) => (n.textContent = modo === 'diputados' ? n.dataset.ordenEscanos! : n.dataset.ordenAz!));
+      if (guardar) {
+        const url = new URL(location.href);
+        if (modo === 'diputados') url.searchParams.set('orden', 'escanos'); else url.searchParams.delete('orden');
+        history.replaceState(null, '', url);
+      }
+    };
+    botones.forEach((b) => b.addEventListener('click', () => ordenar(b.dataset.orden!)));
+    if (new URLSearchParams(location.search).get('orden') === 'escanos') ordenar('diputados', false);
+  }
+</script>

@@ -1,0 +1,9 @@
+---
+// Logo de La Gaveta. Toma el color del texto que lo rodea (currentColor),
+// así que vale igual en la cabecera (tinta) y en el pie (blanco).
+// Cuando llegue el SVG definitivo: guardarlo en src/assets/logo.svg con fill="currentColor"
+// y sustituir el contenido del enlace por <Svg /> (import Svg from '../assets/logo.svg').
+interface Props { class?: string }
+const { class: clase } = Astro.props;
+---
+<a class:list={['logo', clase]} href="/" aria-label="La Gaveta electoral, inicio"><span class="w1" aria-hidden="true">La Gaveta</span><span class="w2" aria-hidden="true">{[...'Electoral'].map((l) => <span>{l}</span>)}</span></a>

@@ -1,0 +1,60 @@
+---
+// Votaciones del Congreso sobre un subtema, con el voto de cada partido.
+// Solo hechos: qué se votaba, qué tipo de votación era y qué votó cada uno. Sin veredictos.
+import { datos, fecha, varsPartido, TIPO_VOTACION, EXPLICA_VOTACION, VOTO, type Votacion } from '../lib/datos';
+interface Props { votaciones: Votacion[] }
+const { votaciones } = Astro.props;
+const d = await datos();
+// Separador que no empieza renglón: espacio duro antes del punto.
+const SEP = '\u00a0· ';
+const dia = (f: Date) => `${fecha(f)} ${f.getFullYear()}`;
+// Votos que no coinciden con el del partido (o todos, si votó dividido).
+type R = { voto: string; si: number; no: number; abstencion: number };
+const excepciones = (r: R) =>
+  ([['si', 'sí'], ['no', 'no'], ['abstencion', 'abst.']] as const)
+    .filter(([k]) => k !== r.voto && r[k] > 0)
+    .map(([k, t]) => `${r[k]} ${t}`)
+    .join(' · ');
+---
+{votaciones.length > 0 && (
+  <section class="cong" aria-label="Lo que votaron en el Congreso">
+    <div class="cong-h">
+      <h3 class="cond-s">Lo que votaron en el Congreso</h3>
+      <p>Votaciones de la legislatura 2023-2026 sobre este asunto. Junto a cada partido, lo que votó la mayoría de sus diputados. <a href="/como-funciona/#congreso">Cómo contamos los votos</a></p>
+    </div>
+    {votaciones.map((v) => {
+      const x = v.data;
+      return (
+        <article class="vt" id={`v-${v.id}`}>
+          <div class="vt-txt">
+            <p class="vt-meta">
+              {dia(x.fecha)}{SEP}<span title={EXPLICA_VOTACION[x.tipo]}>{TIPO_VOTACION[x.tipo]}</span>{SEP}<b class={`vt-res ${x.resultado}`}>{x.resultado === 'aprobada' ? 'Aprobada' : 'Rechazada'}, {x.totales.si}–{x.totales.no}{x.totales.abstencion ? `–${x.totales.abstencion}` : ''}</b>
+            </p>
+            <h4>{x.titulo}</h4>
+            <p class="vt-res-txt">{x.resumen}</p>
+            {EXPLICA_VOTACION[x.tipo] && <p class="vt-tipo">{TIPO_VOTACION[x.tipo]}: {EXPLICA_VOTACION[x.tipo]}</p>}
+            {x.incluiaAdemas && <p class="vt-mezcla"><b>Incluía además:</b> {x.incluiaAdemas}</p>}
+            <p class="vt-links">
+              <a href={x.textoVotado.url} target="_blank" rel="noopener">Texto votado: {x.textoVotado.nombre}{x.textoVotado.pagina && `, p. ${x.textoVotado.pagina}`} ↗</a>
+              <a href={x.urlVotacion} target="_blank" rel="noopener">Voto de cada diputado ↗</a>
+            </p>
+          </div>
+          <ul class="vt-votos" data-ordenable>
+            {d.partidos.map((p) => {
+              const r = x.partidos[p.id];
+              const rep = d.representacion.get(p.id)!;
+              const detalle = `${rep.data.nombreGrupo}: ${r.si} sí, ${r.no} no, ${r.abstencion} abstenciones, ${r.noVota} no votan`;
+              return (
+                <li data-p={p.id} style={varsPartido(p)} title={detalle}>
+                  <span class={`vc ${r.voto}`}>{VOTO[r.voto].corto}</span>
+                  <b>{p.data.nombre}</b>
+                  {excepciones(r) && <small>{excepciones(r)}</small>}
+                </li>
+              );
+            })}
+          </ul>
+        </article>
+      );
+    })}
+  </section>
+)}

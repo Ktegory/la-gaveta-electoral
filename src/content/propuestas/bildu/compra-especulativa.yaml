@@ -1,0 +1,17 @@
+partido: "bildu"
+tema: "vivienda"
+subtema: "grandes-tenedores"
+titulo: "Prohibir la compra especulativa de vivienda"
+fuentes:
+  - fuente: "bildu/nota-decretos-vivienda-2026-09-30"
+    cita: Por ello, EH Bildu mantiene la exigencia de aprobar medidas estructurales como los contratos indefinidos, la protección permanente frente a los desahucios, la prohibición de la compra especulativa y una regulación estructural de los precios.
+  - fuente: "bildu/nota-alquiler-precios-2026-11-09"
+    cita: Durante su intervención, Oskar Matute ha anunciado que EH Bildu impulsará en el Congreso será recuperar la prórroga automática de los contratos de alquiler y poner fin a la compra especulativa de vivienda.
+fechaAnuncio: "2026-09-30"
+destacada: true
+orden: 2
+comprobacion:
+  estado: encontrada
+  nota: La frase de la nota del 9 nov tiene una errata en el original («impulsará en el Congreso será»); se copia tal cual.
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

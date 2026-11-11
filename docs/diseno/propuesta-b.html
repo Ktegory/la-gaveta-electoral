@@ -1,0 +1,1008 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Propuesta B · La gaveta de los programas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mona+Sans:wdth,wght@75..125,200..900&family=DM+Mono:wght@400;500&family=Sofia+Sans+Extra+Condensed:wght@800;900&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   PROPUESTA B · «EL MAPA»
+   Periodismo de datos: panorama primero, detalle después.
+   ========================================================= */
+:root{
+  --bg:#FFFFFF; --bg2:#F4F4F1; --bg3:#EAEAE5;
+  --ink:#0E0E0E; --ink2:#3A3A38; --mute:#6A6A66; --hair:#D9D9D3; --hair2:#ECECE7;
+
+  --fa:#F03C00;   --fa-on:#0E0E0E;
+  --pod:#653B7B;  --pod-on:#FFFFFF;
+  --pp:#21599E;   --pp-on:#FFFFFF;
+  --psoe:#E30613; --psoe-on:#FFFFFF;
+  --vox:#63BE21;  --vox-on:#0E0E0E;
+
+  /* Convención de datos: línea continua = confirmado, discontinua = provisional, punteada gris = no consta */
+  --nc:#B4B4AD;
+
+  --sans:"Mona Sans",ui-sans-serif,system-ui,sans-serif;
+  --mono:"DM Mono",ui-monospace,Menlo,monospace;
+  --tb:52px;
+  /* Ritmo vertical: el mismo espacio arriba y abajo de cada sección */
+  --sec:clamp(64px,7cqi,140px); --sec-s:clamp(40px,4.5cqi,88px);
+  /* Tipografía de titulares */
+  --df:'Sofia Sans Extra Condensed'; --dstr:100%; --dwt:900; --dls:0;
+  /* Acento de marca (opcional) */
+  --acc:transparent;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:#D4D4CE;font-family:var(--sans);color:var(--ink)}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+svg.i{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* ---------- Barra del mockup ---------- */
+.mk{position:sticky;top:0;z-index:100;background:#111;color:#eee;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;padding:10px 16px;font:13px/1.3 system-ui,sans-serif}
+.mk .v{color:#9a9a9a}
+.mk a{color:#9fd3ff}
+.mk-tabs{display:flex;gap:4px;flex-wrap:wrap}
+.mk-tabs button{background:#2c2c2c;border:0;border-radius:5px;padding:6px 11px;color:#ddd;font-size:12.5px}
+.mk-tabs button[aria-selected="true"]{background:#fff;color:#111;font-weight:600}
+.mk-opt{margin-left:auto}
+.mk-opt button{background:none;border:1px solid #666;color:#ddd;border-radius:5px;padding:5px 10px;font-size:12.5px}
+.mk-opt button[aria-pressed="true"]{background:#eee;color:#111}
+.stage{padding:0}
+.frame{container:site / inline-size;width:100%;margin:0 auto;background:var(--bg);overflow:clip;font-size:17px;line-height:1.55}
+body.mobile .stage{padding:22px 14px 70px}
+body.mobile .frame{width:390px;box-shadow:0 10px 40px rgba(0,0,0,.25)}
+.screen{display:none}.screen.on{display:block}
+
+/* ---------- Base ---------- */
+.pad{padding-inline:max(clamp(24px,5.5cqi,112px), calc((100cqi - 1680px) / 2))}
+@container site (max-width:820px){ .pad{padding-inline:24px} }
+@container site (max-width:600px){ .pad{padding-inline:16px} .screen,.hdr,.prov{font-size:16px} }
+@container site (min-width:1440px){ .screen{font-size:18px} }
+
+.cond{font-family:var(--df);font-stretch:var(--dstr);font-weight:var(--dwt);letter-spacing:var(--dls);line-height:.9}
+.cond-s{font-stretch:82%;font-weight:800;letter-spacing:-.005em;line-height:1.08}
+.mono{font-family:var(--mono)}
+.lbl{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+.mute{color:var(--mute)}
+:where(a,button,[tabindex]):focus-visible{outline:3px solid var(--ink);outline-offset:3px;box-shadow:0 0 0 6px #fff, 0 0 0 9px var(--ink)}
+
+/* Botones: rectangulares, planos */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;font-weight:700;font-size:16px;text-decoration:none;border:1.5px solid var(--ink);background:var(--bg);border-radius:2px;white-space:nowrap;transition:background .15s,color .15s}
+.btn:hover{background:var(--ink);color:#fff}
+.btn.ink{background:var(--ink);color:#fff}
+.btn.ink:hover{background:var(--ink2)}
+.btn.sm{padding:9px 14px;font-size:14px}
+.arrow{display:inline-block;transition:transform .2s}
+a:hover .arrow,button:hover .arrow{transform:translateX(4px)}
+
+
+
+/* Estado (convención de gráficos) */
+.st{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;line-height:1.2}
+.st i{width:22px;height:12px;border:1.5px solid var(--ink);flex:none;background:#fff}
+.st.pub i{background:var(--ink)}
+.st.ava i{background:linear-gradient(90deg,var(--ink) 50%,#fff 50%);border-style:dashed}
+.st.pen i{background:#fff;border-style:dashed}
+.on-color .st i{border-color:currentColor}
+
+/* Tipo de fuente: texto mono con marca geométrica */
+.src{display:inline-flex;align-items:baseline;gap:8px;font-family:var(--mono);font-size:12px;line-height:1.4;color:var(--ink2)}
+.src b{font-weight:500;text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
+.src::before{content:"";width:9px;height:9px;flex:none;align-self:center;background:var(--ink)}
+.src.av::before{background:linear-gradient(90deg,var(--ink) 50%,#fff 50%);border:1.5px solid var(--ink)}
+.src.doc::before{background:var(--ink)}
+.src.an::before{background:#fff;border:1.5px solid var(--ink)}
+.src.pr::before{background:#fff;border:1.5px dashed var(--ink);border-radius:50%}
+.src.p23::before{background:#fff;border:1.5px dotted var(--ink)}
+.src.p29::before{background:var(--ink);box-shadow:0 0 0 2px #fff,0 0 0 3.5px var(--ink)}
+
+.badge{display:inline-grid;place-items:center;flex:none;width:40px;height:40px;background:var(--pc);color:var(--on);font-family:var(--df);font-stretch:var(--dstr);font-weight:var(--dwt);font-size:14px;letter-spacing:.01em}
+.badge.sm{width:26px;height:26px;font-size:10.5px}
+
+/* ---------- Cabecera ---------- */
+.hdr{display:flex;align-items:center;gap:32px;padding-block:18px;border-bottom:1px solid var(--hair)}
+.logo{display:flex;align-items:baseline;gap:10px;text-decoration:none}
+.logo .w1{font-family:var(--df);font-stretch:var(--dstr);font-weight:var(--dwt);font-size:30px;letter-spacing:-.01em;line-height:1;text-transform:uppercase}
+.logo .w2{font-family:var(--mono);font-size:11.5px;color:var(--mute)}
+.nav{display:flex;gap:28px;margin-left:auto}
+.nav a{font-weight:600;font-size:15.5px;text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}
+.nav a:hover{border-bottom-color:var(--hair)}
+.nav a.cur{border-bottom-color:var(--ink)}
+.hdr .search{display:flex;align-items:center;gap:10px;border:1px solid var(--hair);padding:9px 14px;min-width:220px;color:var(--mute);font-size:14.5px;border-radius:2px}
+.hdr .burger{display:none}
+/* Marquesina de lo provisional */
+.prov{display:flex;gap:14px;align-items:center;padding-block:0;background:var(--ink);color:#fff;font-size:14.5px;height:48px}
+.prov .k{background:var(--ink);color:#fff;border:1.5px dashed #fff;font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.06em;padding:3px 9px;flex:none}
+.mq{flex:1;min-width:0;overflow:hidden;position:relative;height:100%;display:flex;align-items:center;-webkit-mask-image:linear-gradient(90deg,transparent,#000 40px,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(90deg,transparent,#000 40px,#000 calc(100% - 40px),transparent)}
+.mq-track{display:flex;width:max-content;animation:mq 60s linear infinite}
+.mq-set{display:flex;align-items:center;flex:none}
+.mq-set > span{white-space:nowrap;padding-right:28px;display:inline-flex;align-items:center;gap:10px}
+.mq-set > span::after{content:"";width:12px;height:8px;border:1.5px dashed rgba(255,255,255,.7);flex:none;margin-left:18px}
+.mq-set b{font-weight:700}
+.mq-logo{display:inline-flex;align-items:center;justify-content:center;height:28px;min-width:28px;padding:3px 10px;background:#fff;border-radius:999px;flex:none}
+/* Mismo hueco para todos los logos (neutralidad) */
+.mq-logo{width:92px;padding:3px 12px}
+.mq-logo img{width:100%;height:20px;object-fit:contain;display:block}
+.mq-logo.l-psoe img{height:24px}
+.mq-logo em{display:none;font-style:normal;font-family:var(--df);font-weight:900;font-size:14px;letter-spacing:.02em}
+.mq-logo:not(:has(img)) {background:var(--pc);color:var(--on)}
+.mq-logo:not(:has(img)) em{display:block}
+@keyframes mq{to{transform:translateX(-50%)}}
+.prov:hover .mq-track,.prov.paused .mq-track{animation-play-state:paused}
+.mq-pause{flex:none;width:30px;height:30px;border:1px solid rgba(255,255,255,.5);background:none;color:#fff;font-size:10px;letter-spacing:-1px;display:grid;place-items:center;padding:0}
+.mq-pause[aria-pressed="true"]{background:#fff;color:var(--ink)}
+.mq-more{flex:none;font-weight:600;color:#fff;font-size:14px;white-space:nowrap}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:0}
+@media (prefers-reduced-motion:reduce){ .mq-track{animation:none} }
+.tabbar{display:none}
+@container site (max-width:1000px){
+  .nav,.hdr .search{display:none}
+  .hdr .burger{display:grid;place-items:center;margin-left:auto;width:44px;height:44px;border:1.5px solid var(--ink);background:#fff;font-size:20px}
+  .prov{font-size:13.5px;gap:10px} .mq-more{display:none}
+  .tabbar{display:grid;grid-template-columns:repeat(4,1fr);position:sticky;bottom:0;z-index:5;background:#fff;border-top:1px solid var(--ink)}
+  .tabbar a{display:flex;flex-direction:column;align-items:center;gap:3px;padding:9px 0 11px;font-size:11.5px;font-weight:600;text-decoration:none;border-top:3px solid transparent;margin-top:-1px}
+  .tabbar svg{width:22px;height:22px}
+  .tabbar .cur{border-top-color:var(--ink)}
+}
+
+/* =========================================================
+   INICIO
+   ========================================================= */
+.intro{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(32px,6cqi,140px);align-items:end;padding-block:var(--sec)}
+.intro h1{font-size:clamp(56px,10cqi,200px);margin:0;text-transform:uppercase}
+.intro .r{display:flex;flex-direction:column;gap:clamp(18px,2cqi,32px);padding-bottom:.6em}
+.intro .lead{font-size:clamp(19px,1.6cqi,26px);line-height:1.4;margin:0;max-width:34ch}
+.count{border-top:1px solid var(--ink);padding-top:14px;display:grid;gap:8px}
+.count .row{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.count .big{font-family:var(--df);font-stretch:var(--dstr);font-weight:var(--dwt);font-size:clamp(40px,3.6cqi,64px);line-height:.9}
+.progress{height:10px;background:var(--bg3);position:relative}
+.progress > i{position:absolute;inset:0 auto 0 0;width:63%;background:var(--ink)}
+.progress-l{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11.5px;color:var(--mute)}
+
+/* Mapa de propuestas */
+.map-wrap{padding-block:var(--sec)}
+.map-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:16px;padding-top:clamp(18px,2cqi,30px);border-top:1px solid var(--ink)}
+.map-head h2{font-size:clamp(28px,3cqi,48px);margin:0}
+.legend{display:flex;gap:18px;flex-wrap:wrap;align-items:center;font-family:var(--mono);font-size:12px;color:var(--ink2)}
+.legend span{display:inline-flex;gap:7px;align-items:center}
+.legend i{width:18px;height:14px;border:1px solid var(--ink)}
+.map{display:grid;grid-template-columns:clamp(190px,17cqi,300px) repeat(5,minmax(0,1fr));gap:4px}
+.map .ph{--pc:#999;--on:#000;background:var(--pc);color:var(--on);padding:12px 14px;display:flex;flex-direction:column;justify-content:space-between;min-height:84px;text-decoration:none}
+.map .ph b{font-family:var(--df);font-stretch:var(--dstr);font-weight:var(--dwt);font-size:clamp(18px,1.7cqi,30px);line-height:.95;text-transform:uppercase}
+.map .ph .st{font-size:10.5px}
+.map .ph .mo{display:none}
+.map .ph .st i{border-color:currentColor}
+.map .corner{display:flex;align-items:flex-end;font-family:var(--mono);font-size:11.5px;color:var(--mute);padding:0 0 10px}
+.map .tl{display:flex;align-items:center;gap:12px;padding:0 12px 0 0;font-weight:650;font-size:clamp(15px,1.1cqi,18px);line-height:1.15;text-decoration:none;border-top:1px solid var(--hair2)}
+.map .tl svg{width:22px;height:22px}
+.map .cell{--pc:#999;position:relative;min-height:clamp(52px,4.2cqi,72px);display:flex;align-items:center;justify-content:space-between;padding:0 14px;text-decoration:none;background:color-mix(in srgb,var(--pc) 22%,#fff);outline:1.5px dashed rgba(14,14,14,.6);outline-offset:-6px;transition:outline-color .1s}
+.map .cell .n{font-family:var(--df);font-stretch:var(--dstr);font-weight:var(--dwt);font-size:clamp(22px,2cqi,34px);line-height:1}
+.map .cell .w{font-family:var(--mono);font-size:11px;color:var(--ink2);background:color-mix(in srgb,var(--pc) 22%,#fff);padding:0 4px}
+.map .cell.z{background:#fff;outline:1.5px dotted var(--nc);outline-offset:-1.5px}
+.map .cell.z .n{font-weight:500;color:var(--mute);font-size:20px}
+.map .cell:hover{outline:2.5px solid var(--ink);outline-offset:-2.5px;z-index:1}
+.map .cell .go{opacity:0;font-family:var(--mono);font-size:11.5px}
+.map .cell:hover .go{opacity:1}
+.map-foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--mute)}
+@container site (max-width:900px){
+  .intro{grid-template-columns:1fr}
+  .map{grid-template-columns:120px repeat(5,minmax(0,1fr));gap:3px}
+  .map .ph{min-height:64px;padding:8px}
+  .map .ph b{font-size:15px}
+  .map .ph .nm{display:none}
+  .map .ph .mo{display:block}
+  .map .ph .st{display:none}
+  .map .tl{font-size:13px;gap:7px}
+  .map .tl svg{display:none}
+  .map .cell{justify-content:center;padding:0;min-height:46px}
+  .map .cell .w,.map .cell .go{display:none}
+  .map .cell .n{font-size:20px}
+}
+
+/* Columnas de partido */
+.cols{display:grid;grid-template-columns:repeat(5,1fr);gap:4px}
+.col{--pc:#999;--on:#000;background:var(--pc);color:var(--on);text-decoration:none;display:flex;flex-direction:column;min-height:clamp(380px,30cqi,520px)}
+.col .top{padding:clamp(16px,1.6cqi,28px);flex:1;display:flex;flex-direction:column;gap:10px}
+.col .nm{font-family:var(--df);font-stretch:var(--dstr);font-weight:var(--dwt);font-size:clamp(34px,3.6cqi,64px);line-height:.88;text-transform:uppercase;overflow-wrap:anywhere}
+.col .cd{font-size:15px;font-weight:550;opacity:.92}
+.col .bot{background:#fff;color:var(--ink);margin:0 4px 4px;padding:clamp(14px,1.3cqi,22px);display:flex;flex-direction:column;gap:12px}
+.col .bot .exp{font-size:15px;line-height:1.35;font-weight:600}
+.col .bar{display:flex;height:8px;background:var(--bg3)}
+.col .bar .of{background:var(--ink)}
+.col .bar .pr{background:repeating-linear-gradient(90deg,var(--ink) 0 6px,transparent 6px 10px) center/100% 3px no-repeat}
+.col .bar .p23{background:var(--bg3)}
+.col .bot .lg{font-family:var(--mono);font-size:11.5px;color:var(--mute);line-height:1.4}
+.col .bot .go{display:flex;justify-content:space-between;font-weight:700;font-size:15px;border-top:1px solid var(--hair);padding-top:10px}
+@container site (max-width:1100px){ .cols{grid-template-columns:repeat(3,1fr)} }
+@container site (max-width:700px){ .cols{grid-template-columns:1fr} .col{min-height:0} .col .top{flex-direction:row;justify-content:space-between;align-items:flex-end;flex-wrap:wrap} }
+
+/* Secciones */
+.sec{padding-block:var(--sec)}
+.sec-h{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5cqi,120px);align-items:end;margin-bottom:clamp(28px,3cqi,56px)}
+.sec-h h2{font-size:clamp(44px,6.5cqi,120px);margin:0;text-transform:uppercase}
+.sec-h p{margin:0;font-size:clamp(17px,1.3cqi,21px);max-width:46ch}
+.num{font-family:var(--mono);font-size:12px;color:var(--mute);display:block;margin-bottom:10px}
+@container site (max-width:800px){ .sec-h{grid-template-columns:1fr} }
+
+/* Preguntas */
+.qs{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(24px,4cqi,96px);border-top:1px solid var(--ink)}
+.q{display:grid;grid-template-columns:44px 1fr auto;gap:16px;align-items:center;padding:clamp(16px,1.6cqi,26px) 0;border-bottom:1px solid var(--hair);text-decoration:none}
+.q svg{width:30px;height:30px}
+.q .t{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);display:block;margin-bottom:4px}
+.q .qq{font-stretch:82%;font-weight:750;font-size:clamp(19px,1.55cqi,26px);line-height:1.12}
+.q .dots{display:flex;gap:3px}
+.q .dots i{--pc:#999;width:12px;height:22px;background:color-mix(in srgb,var(--pc) 35%,#fff);outline:1.5px dashed rgba(14,14,14,.6);outline-offset:-1.5px}
+.q .dots i.z{background:#fff;outline:1.5px dotted var(--nc)}
+.q:hover .qq{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+@container site (max-width:800px){ .qs{grid-template-columns:1fr} .q{grid-template-columns:32px 1fr} .q .dots{grid-column:2} }
+
+/* Pie */
+.bottom{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6cqi,140px);padding-block:var(--sec);background:var(--bg2)}
+.bottom h3{font-family:var(--df);font-stretch:var(--dstr);font-weight:var(--dwt);font-size:clamp(32px,3cqi,52px);text-transform:uppercase;margin:0 0 16px;line-height:.92}
+.bottom p{margin:0 0 12px;max-width:52ch}
+.chg{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.chg li{display:grid;grid-template-columns:72px 1fr;gap:14px;padding:13px 0;border-bottom:1px solid var(--hair);font-size:15.5px;line-height:1.4}
+.chg time{font-family:var(--mono);font-size:12px;padding-top:3px}
+.foot{padding-block:22px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:14px;border-top:1px solid var(--ink)}
+.foot nav{display:flex;gap:20px;flex-wrap:wrap;font-weight:600}
+@container site (max-width:800px){ .bottom{grid-template-columns:1fr} .chg li{grid-template-columns:1fr;gap:2px} }
+
+/* =========================================================
+   FICHA (dos columnas: color fijo + contenido)
+   ========================================================= */
+.fic{display:grid;grid-template-columns:minmax(360px,38%) 1fr;min-height:100vh}
+.fic-l{background:var(--pc);color:var(--on);position:relative}
+.fic-l .in{position:sticky;top:var(--tb);padding:var(--sec-s) clamp(24px,3cqi,64px);display:flex;flex-direction:column;gap:clamp(18px,1.8cqi,28px)}
+.crumbs{font-family:var(--mono);font-size:12px;opacity:.9}
+.crumbs a{text-decoration:none}
+.flogo{width:clamp(72px,6cqi,104px);height:clamp(72px,6cqi,104px);background:#fff;color:var(--ink);display:grid;place-items:center;text-align:center}
+.flogo b{display:block;font-family:var(--df);font-stretch:var(--dstr);font-weight:var(--dwt);font-size:22px}
+.flogo span{font-family:var(--mono);font-size:8.5px;color:var(--mute);letter-spacing:.06em}
+.fic-l h1{font-size:clamp(64px,8cqi,168px);margin:0;text-transform:uppercase;overflow-wrap:anywhere}
+.fic-l .meta{display:grid;gap:2px;font-size:17px}
+.fic-l .meta b{font-weight:700}
+.fstat{background:#fff;color:var(--ink);padding:clamp(18px,1.8cqi,28px);display:flex;flex-direction:column;gap:12px}
+.fstat.pen{outline:2px dashed var(--ink);outline-offset:-8px}
+.fstat .txt{background:#fff;margin:0;font-size:16px;line-height:1.5}
+.fstat .row{display:flex;gap:8px;flex-wrap:wrap;background:#fff;padding-top:4px}
+.fstat .up{font-family:var(--mono);font-size:11.5px;color:var(--mute);background:#fff;align-self:flex-start;padding:0 4px}
+.fstat .stw{background:#fff;align-self:flex-start;padding:2px 4px}
+.oth{display:flex;gap:4px;align-items:center;flex-wrap:wrap}
+.oth .l{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;margin-right:6px}
+.oth button{--pc:#999;--on:#000;width:48px;height:36px;border:0;background:var(--pc);color:var(--on);font-family:var(--df);font-stretch:var(--dstr);font-weight:var(--dwt);font-size:13px;outline:2px solid rgba(255,255,255,.55);outline-offset:-2px}
+.oth button[aria-current="true"]{outline:3px solid #fff;outline-offset:2px}
+.fic-r{padding:var(--sec-s) max(clamp(24px,4cqi,96px), calc((100cqi - 1680px)/2)) var(--sec-s) clamp(24px,4cqi,96px)}
+.ftabs{display:flex;gap:28px;border-bottom:1px solid var(--ink);overflow-x:auto;scrollbar-width:none;margin-bottom:clamp(28px,3cqi,48px)}
+.ftabs button{background:none;border:0;padding:12px 0 10px;font-weight:650;font-size:15.5px;white-space:nowrap;border-bottom:4px solid transparent;margin-bottom:-1px;display:flex;gap:8px;align-items:center}
+.ftabs button[aria-selected="true"]{border-bottom-color:var(--pc)}
+.ftabs .c{font-family:var(--mono);font-size:11.5px;color:var(--mute)}
+.ftabs .dis{color:var(--mute);font-weight:500}
+.h2r{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.h2r h2{font-size:clamp(36px,3.6cqi,64px);margin:0;text-transform:uppercase}
+.plist{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.pi{display:grid;grid-template-columns:clamp(56px,5cqi,96px) 1fr auto;gap:clamp(14px,2cqi,36px);padding:clamp(18px,1.8cqi,28px) 0;border-bottom:1px solid var(--hair);align-items:start}
+.pi .n{font-family:var(--df);font-stretch:var(--dstr);font-weight:var(--dwt);font-size:clamp(40px,3.6cqi,64px);line-height:.85;color:var(--ink)}
+.pi .tp{display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
+.pi .tp svg{width:16px;height:16px}
+.pi h3{font-stretch:82%;font-weight:750;font-size:clamp(22px,1.9cqi,32px);line-height:1.1;margin:0 0 10px}
+.pi .acts{display:flex;flex-direction:column;gap:6px;align-items:flex-end;font-size:13.5px;font-weight:600;white-space:nowrap}
+.pi .acts a{text-decoration:none}.pi .acts a:hover{text-decoration:underline}
+.pi .acts .m{color:var(--mute);font-weight:500}
+.ref{display:flex;justify-content:space-between;align-items:center;gap:16px;width:100%;margin-top:24px;padding:18px 20px;background:var(--bg2);border:1.5px dashed var(--ink);text-align:left}
+.ref > div{background:var(--bg2);padding:2px 6px}
+.ref b{display:block;font-size:16.5px}
+.ref span{font-size:14px;color:var(--mute)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3cqi,64px);margin-top:clamp(40px,4cqi,80px)}
+.fgrid h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;margin:0 0 6px}
+.fgrid ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.fgrid li{padding:11px 0;border-bottom:1px solid var(--hair);font-size:15px;display:grid;gap:3px}
+@container site (max-width:900px){
+  .fic{grid-template-columns:1fr;min-height:0}
+  .fic-r{padding-block:var(--sec-s)}
+  .fic-l .in{position:static}
+  .fic-r{padding-inline:24px}
+  .pi{grid-template-columns:44px 1fr}
+  .pi .acts{grid-column:2;flex-direction:row;gap:16px;align-items:center}
+  .fgrid{grid-template-columns:1fr}
+}
+@container site (max-width:600px){ .fic-r{padding-inline:16px} }
+
+/* =========================================================
+   COMPARADOR (una pregunta, cinco respuestas)
+   ========================================================= */
+.chd{padding-block:var(--sec-s) 0}
+.chd h1{font-size:clamp(64px,10cqi,200px);margin:6px 0 clamp(18px,2cqi,36px);text-transform:uppercase}
+.ttabs{display:flex;gap:26px;overflow-x:auto;border-bottom:1px solid var(--ink);scrollbar-width:thin}
+.ttabs button{display:flex;gap:8px;align-items:center;background:none;border:0;padding:12px 0 10px;font-weight:650;font-size:15px;white-space:nowrap;border-bottom:4px solid transparent;margin-bottom:-1px;color:var(--ink2)}
+.ttabs button svg{width:18px;height:18px}
+.ttabs button[aria-selected="true"]{border-bottom-color:var(--ink);color:var(--ink)}
+.cbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-block:18px}
+.ptg{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
+.ptg .l{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;margin-right:8px}
+.ptg button{--pc:#999;--on:#000;border:0;background:var(--pc);color:var(--on);padding:8px 12px;font-weight:700;font-size:13.5px;display:flex;gap:8px;align-items:center}
+.ptg button::after{content:"✓";font-size:12px}
+.ptg button[aria-pressed="false"]{background:#fff;color:var(--mute);outline:1px solid var(--hair);outline-offset:-1px}
+.ptg button[aria-pressed="false"]::after{content:"+"}
+.vseg{display:inline-flex;border:1px solid var(--ink)}
+.vseg button{border:0;background:#fff;padding:8px 14px;font-weight:650;font-size:13.5px}
+.vseg button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.subq{display:grid;grid-template-columns:clamp(220px,22cqi,380px) 1fr;gap:clamp(20px,3cqi,64px);padding-block:clamp(28px,3cqi,56px);border-top:1px solid var(--ink)}
+.subq .hd{position:sticky;top:calc(var(--tb) + 16px);align-self:start}
+.subq .hd svg{width:30px;height:30px;margin-bottom:10px}
+.subq .hd h2{font-size:clamp(34px,3.2cqi,58px);margin:0 0 8px;text-transform:uppercase}
+.subq .hd p{margin:0;color:var(--mute);font-size:15px}
+.ans{display:grid;gap:4px}
+.ar{--pc:#999;--on:#000;display:grid;grid-template-columns:clamp(150px,13cqi,220px) 1fr;min-height:76px}
+.ar .who{background:var(--pc);color:var(--on);padding:12px 14px;display:flex;flex-direction:column;justify-content:space-between;gap:8px}
+.ar .who b{font-family:var(--df);font-stretch:var(--dstr);font-weight:var(--dwt);font-size:clamp(18px,1.5cqi,24px);text-transform:uppercase;line-height:.95}
+.ar .who .st{font-size:10px}
+.ar .who .st i{width:18px;height:10px;border-color:currentColor}
+.ar .what{background:var(--bg2);padding:14px clamp(16px,1.6cqi,26px);display:flex;flex-direction:column;justify-content:center;gap:8px}
+.ar .what p{margin:0;font-size:clamp(17px,1.25cqi,20px);line-height:1.35;font-weight:500}
+.ar.z .what{background:#fff;outline:1.5px dotted var(--nc);outline-offset:-1.5px}
+.ar.z .what p{color:var(--mute);font-weight:400;font-style:italic;font-size:15.5px}
+.cnote{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;padding:18px 0 var(--sec-s);border-top:1px solid var(--ink);font-size:15px}
+.cnote b{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.06em;border:1.5px solid var(--ink);padding:2px 7px}
+@container site (max-width:900px){
+  .subq{grid-template-columns:1fr}
+  .subq .hd{position:static;display:flex;gap:12px;align-items:center}
+  .subq .hd svg{margin:0}
+  .subq .hd p{display:none}
+  .ar{grid-template-columns:1fr}
+  .ar .who{flex-direction:row;align-items:center;padding:8px 12px}
+}
+
+/* =========================================================
+   ESCALA
+   ========================================================= */
+.esc{padding-bottom:var(--sec-s)}
+.esc-g{border-top:1px solid var(--ink);padding-top:28px;position:relative}
+.illus{display:inline-flex;gap:8px;align-items:center;background:var(--bg2);border:1.5px dashed var(--ink);padding:6px 10px;font-family:var(--mono);font-size:12px;margin-bottom:24px}
+.illus span{background:var(--bg2);padding:0 4px}
+.eh{display:grid;grid-template-columns:clamp(180px,16cqi,280px) 1fr;gap:24px;font-family:var(--df);font-stretch:var(--dstr);font-weight:var(--dwt);font-size:clamp(22px,2cqi,34px);text-transform:uppercase}
+.eh div{display:flex;justify-content:space-between}
+.er{display:grid;grid-template-columns:clamp(180px,16cqi,280px) 1fr;gap:24px;align-items:center;padding:clamp(22px,2.4cqi,40px) 0;border-bottom:1px solid var(--hair)}
+.er b{display:block;font-size:17px}
+.er span{font-family:var(--mono);font-size:11.5px;color:var(--mute)}
+.ax{position:relative;height:70px}
+.ax .ln{position:absolute;left:0;right:0;top:34px;height:1.5px;background:var(--ink)}
+.ax .tk{position:absolute;top:28px;width:1.5px;height:14px;background:var(--ink)}
+.ax .tk span{position:absolute;top:18px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:11px;color:var(--mute)}
+.ax .rng{position:absolute;top:30px;height:10px;background:var(--bg3)}
+.ax .pt{position:absolute;top:6px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:4px;background:none;border:0;padding:0}
+.ax .pt b{font-family:var(--df);font-stretch:var(--dstr);font-weight:var(--dwt);font-size:16px;line-height:1}
+.ax .pt i{width:3px;height:30px;background:var(--ink)}
+.ax .pt.pred i{background:repeating-linear-gradient(var(--ink) 0 4px,transparent 4px 7px)}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3cqi,56px);margin-top:clamp(32px,3cqi,56px)}
+.why h3{font-stretch:82%;font-weight:800;font-size:22px;margin:0 0 8px;padding-top:12px;border-top:1px solid var(--ink)}
+.why p{margin:0;font-size:15px;line-height:1.5}
+@container site (max-width:800px){ .eh,.er{grid-template-columns:1fr;gap:6px} .why{grid-template-columns:1fr} }
+
+/* =========================================================
+   SISTEMA
+   ========================================================= */
+.sys .blk{padding-block:var(--sec-s);border-top:1px solid var(--ink)}
+.sys .blk:first-child{border-top:0}
+.sys h2{font-size:clamp(40px,4.5cqi,80px);margin:0 0 12px;text-transform:uppercase}
+.sys .intro2{font-size:clamp(18px,1.4cqi,22px);max-width:62ch;margin:0 0 28px}
+.cpt{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.cpt > div{padding:clamp(20px,2cqi,36px);min-height:220px;display:flex;flex-direction:column;justify-content:space-between;gap:16px}
+.cpt h3{font-family:var(--df);font-stretch:var(--dstr);font-weight:var(--dwt);font-size:clamp(30px,2.6cqi,46px);text-transform:uppercase;margin:0;line-height:.9}
+.cpt p{margin:0;font-size:15.5px;line-height:1.5}
+.sw{display:grid;grid-template-columns:repeat(5,1fr);gap:4px}
+.sw > div{display:flex;flex-direction:column}
+.sw .c{height:120px;padding:12px;display:flex;align-items:flex-end;font-family:var(--df);font-stretch:var(--dstr);font-weight:var(--dwt);font-size:22px;text-transform:uppercase}
+.sw .t{height:36px;display:flex;align-items:center;padding:0 12px;font-family:var(--mono);font-size:11px}
+.sw .inf{padding:10px 0;font-family:var(--mono);font-size:11.5px;line-height:1.55;border-bottom:1px solid var(--hair)}
+.neutral{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-bottom:20px}
+.neutral div{height:90px;padding:10px 12px;display:flex;align-items:flex-end;font-family:var(--mono);font-size:11.5px;border:1px solid var(--hair)}
+.ty .row{display:grid;grid-template-columns:220px 1fr;gap:20px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--hair)}
+.ty .meta{font-family:var(--mono);font-size:11.5px;color:var(--mute)}
+.conv{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3cqi,56px)}
+.conv > div{border-top:1px solid var(--ink);padding-top:16px;display:flex;flex-direction:column;gap:12px}
+.conv h4{margin:0;font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.conv p{margin:0;font-size:14.5px;color:var(--ink2);line-height:1.5}
+.sample{display:flex;gap:4px}
+.sample i{display:block;flex:1;height:44px;border:1px solid var(--ink)}
+@container site (max-width:900px){ .cpt,.conv{grid-template-columns:1fr} .sw{grid-template-columns:repeat(2,1fr)} .neutral{grid-template-columns:repeat(2,1fr)} .ty .row{grid-template-columns:1fr;gap:6px} }
+
+
+/* Banda tras el hero */
+.band{padding-block:var(--sec);background:var(--bg2)}
+
+/* Formas redondeadas: botones pill y cards con esquinas de 16–22 px */
+.frame.round .btn{border-radius:999px;padding-inline:26px}
+.frame.round .btn.sm{padding-inline:18px}
+.frame.round :is(.hdr .search,.hdr .burger,.ptg button,.vseg,.oth button,.prov .k,.mq-pause,.illus,.mk-x){border-radius:999px}
+.frame.round .vseg{overflow:hidden}
+.frame.round .col{border-radius:22px;overflow:hidden}
+.frame.round .col .bot{border-radius:16px}
+.frame.round :is(.col .bar,.progress,.progress > i){border-radius:999px;overflow:hidden}
+.frame.round .map .ph{border-radius:14px 14px 6px 6px}
+.frame.round .map .cell{border-radius:8px}
+.frame.round :is(.fstat,.flogo,.ref,.cpt > div,.ac){border-radius:18px}
+.frame.round .ac{overflow:hidden}
+.frame.round .ar{border-radius:16px;overflow:hidden}
+.frame.round :is(.st i,.legend i,.q .dots i){border-radius:3px}
+.frame.round .sample i{border-radius:8px}
+
+/* =========================================================
+   ACENTO DE MARCA (solo si se activa)
+   Nunca dentro de zonas de partido: ni fichas, ni mapa, ni comparador.
+   ========================================================= */
+.hl{padding:0 .06em;margin:0 -.06em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.frame.acc .hl{background:linear-gradient(transparent 16%,var(--acc) 16%,var(--acc) 90%,transparent 90%)}
+.frame.acc .logo .w1{background:var(--acc);padding:3px 7px 1px;margin-left:-7px}
+.frame.acc .prov .k{background:var(--acc)}
+.frame.acc .btn.ink{background:var(--acc);color:var(--ink);border-color:var(--ink)}
+.frame.acc .btn.ink:hover{background:var(--ink);color:#fff}
+.frame.acc .progress > i{background:var(--acc);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.frame.acc .num::before{content:"";display:inline-block;width:10px;height:10px;background:var(--acc);outline:1px solid var(--ink);margin-right:8px;vertical-align:-1px}
+.frame.acc .bottom{background:var(--acc)}
+.frame.acc .bottom .chg{border-top-color:var(--ink)}
+.frame.acc .bottom .chg li{border-bottom-color:rgba(14,14,14,.25)}
+.frame.acc .q:hover .qq{text-decoration-color:var(--ink);background:linear-gradient(transparent 55%,var(--acc) 55%)}
+.frame.acc .tabbar .cur{border-top-color:var(--ink);background:linear-gradient(var(--acc),var(--acc)) top/100% 5px no-repeat}
+
+/* Selectores del mockup */
+.mk select{background:#2c2c2c;color:#eee;border:1px solid #555;border-radius:5px;padding:5px 8px;font-size:12.5px;margin-left:4px}
+.mk label{color:#bbb;font-size:12.5px}
+.mk-sel{display:flex;gap:12px;flex-wrap:wrap}
+
+/* =========================================================
+   VARIANTES
+   ========================================================= */
+.var-sec{padding-bottom:var(--sec-s)}
+.var-sec > h2{font-size:clamp(40px,4.5cqi,80px);margin:0 0 10px;text-transform:uppercase}
+.var-sec > p{font-size:clamp(17px,1.3cqi,21px);max-width:66ch;margin:0 0 28px}
+.accs{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:clamp(16px,1.6cqi,28px)}
+.ac{border:1px solid var(--hair);display:flex;flex-direction:column}
+.ac[aria-current="true"]{outline:3px solid var(--ink);outline-offset:-1px}
+.ac .pv{padding:20px 20px 0;display:flex;flex-direction:column;gap:12px;flex:1}
+.ac .pv .h{font-size:44px;text-transform:uppercase;margin:0}
+.ac .pv .r{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.ac .pv .k{border:1.5px solid var(--ink);font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;padding:2px 6px;background:#fff}
+.ac .pv .b{border:1.5px solid var(--ink);padding:8px 12px;font-weight:700;font-size:13px;background:var(--ink);color:#fff}
+.ac .pv .au{margin:4px -20px 0;padding:14px 20px;background:var(--bg2);font-size:13.5px;line-height:1.35}
+.ac.on .pv .k,.ac.on .pv .b{background:var(--acc);color:var(--ink)}
+.ac.on .pv .au{background:var(--acc)}
+.ac.on .pv .hl{background:linear-gradient(transparent 16%,var(--acc) 16%,var(--acc) 90%,transparent 90%)}
+.ac .inf{padding:16px 20px 18px;border-top:1px solid var(--hair);display:flex;flex-direction:column;gap:8px;font-size:14.5px;line-height:1.45}
+.ac .inf .t{display:flex;flex-direction:column;align-items:flex-start;gap:3px}
+.ac .inf b{font-size:17px}
+.ac .inf .hx{font-family:var(--mono);font-size:12px;color:var(--mute)}
+.risk{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase}
+.risk i{width:10px;height:10px;border-radius:50%;border:1.5px solid var(--ink)}
+.risk.lo i{background:var(--ink)}
+.risk.md i{background:linear-gradient(90deg,var(--ink) 50%,#fff 50%)}
+.risk.hi i{background:#fff}
+.ac .inf .near{font-family:var(--mono);font-size:11.5px;line-height:1.55;color:var(--ink2);border-left:3px solid var(--ink);padding-left:10px}
+.ac .inf .near b{font-size:11.5px;font-weight:500}
+.ac.g-lima .inf .t b::after{content:"GAMA LIMA";font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.06em;margin-left:8px;padding:2px 5px;border:1px solid var(--ink);vertical-align:3px}
+.ac .inf .btn{align-self:flex-start;margin-top:4px}
+@container site (max-width:900px){ 
+@media (prefers-reduced-motion:reduce){ *{transition:none !important} }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-vivienda" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9.5 21v-6h5v6"/></symbol>
+  <symbol id="i-fiscalidad" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></symbol>
+  <symbol id="i-pensiones" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+  <symbol id="i-empleo" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8.5 7V5.5a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2V7M3 13h18"/></symbol>
+  <symbol id="i-inmigracion" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></symbol>
+  <symbol id="i-sanidad" viewBox="0 0 24 24"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"/></symbol>
+  <symbol id="i-educacion" viewBox="0 0 24 24"><path d="M2 8.5 12 4l10 4.5-10 4.5z"/><path d="M6 10.5V16c0 1.4 2.7 3 6 3s6-1.6 6-3v-5.5M22 8.5V14"/></symbol>
+  <symbol id="i-energia" viewBox="0 0 24 24"><path d="M13 2 4.5 14H11l-1 8 8.5-12H12z"/></symbol>
+  <symbol id="i-instituciones" viewBox="0 0 24 24"><path d="M3 21h18M5 10v8M9.5 10v8M14.5 10v8M19 10v8M2.5 9 12 3.5 21.5 9z"/></symbol>
+  <symbol id="i-exterior" viewBox="0 0 24 24"><path d="M12 3 20 6v6c0 4.6-3.4 8.3-8 9-4.6-.7-8-4.4-8-9V6z"/></symbol>
+  <symbol id="i-igualdad" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 10h8M8 14h8"/></symbol>
+  <symbol id="i-territorial" viewBox="0 0 24 24"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9v12h14V9"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></symbol>
+  <symbol id="i-cols" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16"/><path d="M9 4v16M15 4v16"/></symbol>
+</svg>
+
+<div class="mk" role="toolbar">
+  <span><b>La gaveta de los programas</b> <span class="v">· Propuesta B «El mapa» · v0.3</span> <a href="index.html" style="margin-left:8px">← Ver propuesta A</a></span>
+  <div class="mk-tabs" role="tablist">
+    <button role="tab" data-go="inicio" aria-selected="true">Inicio</button>
+    <button role="tab" data-go="ficha">Ficha de partido</button>
+    <button role="tab" data-go="comparar">Comparador</button>
+    <button role="tab" data-go="escala">Escala</button>
+    <button role="tab" data-go="sistema">Sistema visual</button>
+    <button role="tab" data-go="variantes">Acento ✦</button>
+  </div>
+  <div class="mk-sel"><label>Acento <select id="sel-acc"></select></label></div>
+  <div class="mk-opt"><button id="tg-mobile" aria-pressed="false">Móvil · 390 px</button></div>
+</div>
+
+<div class="stage">
+<div class="frame round" id="frame">
+
+  <header class="hdr pad">
+    <a class="logo" href="#" data-nav="inicio"><span class="w1">La gaveta</span><span class="w2">de los programas · 29N</span></a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#" data-nav="inicio">Mapa</a>
+      <a href="#" data-nav="ficha">Partidos</a>
+      <a href="#" data-nav="comparar">Comparar</a>
+      <a href="#" data-nav="escala">Escala</a>
+      <a href="#" data-nav="sistema">Cómo trabajamos</a>
+    </nav>
+    <a class="search" href="#"><svg class="i" style="width:18px;height:18px"><use href="#i-search"/></svg>Busca una propuesta…</a>
+    <button class="burger" aria-label="Abrir menú">☰</button>
+  </header>
+  <div class="prov pad" role="region" aria-label="Aviso: información provisional">
+    <span class="k">PROVISIONAL</span>
+    <div class="mq">
+      <p class="sr">4 de 5 partidos aún no han publicado su programa para el 29N. Lo marcado con línea discontinua es provisional.</p>
+      <div class="mq-track" aria-hidden="true"><div class="mq-set" id="mq-set"></div></div>
+    </div>
+    <button class="mq-pause" id="mq-pause" aria-pressed="false" aria-label="Pausar la marquesina">❚❚</button>
+    <a class="mq-more" href="#">Qué significa ›</a>
+  </div>
+
+  <!-- ================= INICIO ================= -->
+  <section class="screen on" data-screen="inicio">
+    <div class="intro pad">
+      <h1 class="cond">Todo lo que proponen, <span class="hl">a la vista.</span></h1>
+      <div class="r">
+        <p class="lead">Los programas de los partidos para el 29N, ordenados por temas, comparables y con la fuente original al lado de cada propuesta.</p>
+        <div class="count">
+          <div class="row"><span class="big">20 días</span><span class="lbl">para votar · 29 nov</span></div>
+          <div class="progress" aria-label="Han pasado 34 de 54 días desde la convocatoria"><i></i></div>
+          <div class="progress-l"><span>Convocatoria · 6 oct</span><span>Hoy · 9 nov</span><span>29 nov</span></div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn ink" href="#" data-nav="comparar">Comparar partidos <span class="arrow">→</span></a><a class="btn" href="#preguntas">Ver por preguntas</a></div>
+      </div>
+    </div>
+
+    <div class="band pad" id="band">
+      <div class="sec-h"><div><h2 class="cond">¿Quién ha publicado?</h2></div><p>Ninguno completo todavía. Cada columna te dice qué hay, qué falta y en cuántas fuentes se basa lo que mostramos.</p></div>
+      <div class="cols" id="cols"></div>
+    </div>
+
+    <div class="map-wrap pad">
+      <div class="map-head">
+        <div><h2 class="cond">Cuántas propuestas conocemos de cada partido, por tema</h2></div>
+        <div class="legend">
+          <span><i style="background:#fff;border:1.5px solid var(--ink)"></i>Programa publicado</span>
+          <span><i style="background:#fff;border:1.5px dashed var(--ink)"></i>Provisional</span>
+          <span><i style="background:#fff;border:1.5px dotted var(--nc)"></i>No consta</span>
+        </div>
+      </div>
+      <div class="map" id="map" role="table" aria-label="Mapa de propuestas por tema y partido"></div>
+      <div class="map-foot"><span>Pulsa una casilla para ver y comparar esas propuestas · Partidos en orden alfabético</span><span>Recuentos ilustrativos · Actualizado 9 nov, 10:00</span></div>
+    </div>
+
+    <div class="pad" id="preguntas" style="padding-bottom:var(--sec)">
+      <div class="sec-h"><div><h2 class="cond">Empieza por <span class="hl">lo que te importa</span></h2></div><p>Cada tema, convertido en la pregunta que te harías. Las barritas muestran de qué partidos tenemos propuestas.</p></div>
+      <div class="qs" id="qs"></div>
+    </div>
+
+    <div class="bottom pad">
+      <div>
+        <h3>Una iniciativa personal de Khiustin Tornés</h3>
+        <p>Para destejer la maraña de propuestas de cada partido y ponerlas una al lado de otra, con la fuente original a un clic.</p>
+        <p><b>Financiada por su autor</b>, sin publicidad ni dinero de terceros. <b>Sin afiliación</b> a ningún partido, ni ahora ni antes.</p>
+        <a class="btn sm" href="#" data-nav="sistema">Cómo trabajamos <span class="arrow">→</span></a>
+      </div>
+      <div>
+        <h3>Últimos cambios</h3>
+        <ul class="chg">
+          <li><time>9 NOV</time><span><b>VOX</b> · Añadido «Recuperar España» (19 oct) como avance oficial.</span></li>
+          <li><time>9 NOV</time><span><b>Frente Amplio</b> · 6 notas oficiales: fiscalidad, vivienda, pensiones y tren.</span></li>
+          <li><time>9 NOV</time><span><b>PP</b> · Presentación del programa anunciada para el 10 nov <span class="src pr"><b>Prensa</b></span></span></li>
+        </ul>
+      </div>
+    </div>
+    <footer class="foot pad">
+      <span><b>La gaveta de los programas</b> · Iniciativa personal de Khiustin Tornés · Sin vinculación con ningún partido.</span>
+      <nav><a href="#">Fuentes</a><a href="#">¿Has visto un error?</a><a href="#">Datos abiertos</a><a href="#">RSS</a></nav>
+    </footer>
+    <nav class="tabbar"><a class="cur" href="#"><svg class="i"><use href="#i-grid"/></svg>Mapa</a><a href="#"><svg class="i"><use href="#i-home"/></svg>Partidos</a><a href="#"><svg class="i"><use href="#i-cols"/></svg>Comparar</a><a href="#"><svg class="i"><use href="#i-search"/></svg>Buscar</a></nav>
+  </section>
+
+  <!-- ================= FICHA ================= -->
+  <section class="screen" data-screen="ficha" id="ficha">
+    <div class="fic">
+      <div class="fic-l on-color"><div class="in">
+        <div class="crumbs"><a href="#" data-nav="inicio">Mapa</a> › Partidos › <span id="f-crumb"></span></div>
+        <div class="flogo"><div><b id="f-logo"></b><span>LOGO OFICIAL</span></div></div>
+        <h1 class="cond" id="f-name"></h1>
+        <div class="meta" id="f-meta"></div>
+        <div class="fstat" id="f-status"></div>
+        <div class="oth" id="f-oth"></div>
+      </div></div>
+      <div class="fic-r">
+        <div class="ftabs" role="tablist" id="f-tabs"></div>
+        <div class="h2r"><h2 class="cond">Lo más destacado</h2><a class="mono" style="font-size:12.5px" href="#">¿Cómo lo elegimos?</a></div>
+        <ol class="plist" id="f-props"></ol>
+        <button class="ref" id="f-ref"></button>
+        <div class="fgrid">
+          <div><h4>Fuentes de esta ficha</h4><ul id="f-src"></ul></div>
+          <div><h4>Candidaturas por territorio</h4><ul id="f-terr"></ul></div>
+        </div>
+      </div>
+    </div>
+    <nav class="tabbar"><a href="#"><svg class="i"><use href="#i-grid"/></svg>Mapa</a><a class="cur" href="#"><svg class="i"><use href="#i-home"/></svg>Partidos</a><a href="#"><svg class="i"><use href="#i-cols"/></svg>Comparar</a><a href="#"><svg class="i"><use href="#i-search"/></svg>Buscar</a></nav>
+  </section>
+
+  <!-- ================= COMPARADOR ================= -->
+  <section class="screen" data-screen="comparar">
+    <div class="chd pad">
+      <span class="lbl mute">Comparador · ¿Qué harán con la vivienda?</span>
+      <h1 class="cond">Vivienda</h1>
+      <div class="ttabs" role="tablist" id="c-tabs"></div>
+      <div class="cbar">
+        <div class="ptg" id="c-ptg"><span class="l">Partidos</span></div>
+        <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+          <div class="vseg" role="group" aria-label="Vista"><button aria-pressed="true">Respuestas</button><button aria-pressed="false">Tabla</button></div>
+          <button class="btn sm">Copiar enlace</button>
+        </div>
+      </div>
+    </div>
+    <div class="pad" id="cmp"></div>
+    <div class="pad"><div class="cnote"><b>OJO</b><span>«No consta» significa que no hemos encontrado propuestas en las fuentes consultadas, no que el partido no tenga postura. Partidos en orden alfabético · Actualizado 9 nov, 10:00.</span></div></div>
+    <nav class="tabbar"><a href="#"><svg class="i"><use href="#i-grid"/></svg>Mapa</a><a href="#"><svg class="i"><use href="#i-home"/></svg>Partidos</a><a class="cur" href="#"><svg class="i"><use href="#i-cols"/></svg>Comparar</a><a href="#"><svg class="i"><use href="#i-search"/></svg>Buscar</a></nav>
+  </section>
+
+  <!-- ================= ESCALA ================= -->
+  <section class="screen" data-screen="escala">
+    <div class="chd pad">
+      <span class="lbl mute">Escala izquierda–derecha</span>
+      <h1 class="cond">¿Dónde está cada uno?</h1>
+      <p style="font-size:clamp(18px,1.4cqi,22px);max-width:58ch;margin:0 0 32px">No los colocamos nosotros: mostramos mediciones externas publicadas, una debajo de otra, para que veas si coinciden.</p>
+    </div>
+    <div class="esc pad">
+      <div class="esc-g">
+        <div class="illus"><span>DATOS ILUSTRATIVOS · PARTIDOS A–E · SIN VERIFICAR</span></div>
+        <div class="eh"><span></span><div><span>← Izquierda</span><span>Derecha →</span></div></div>
+        <div class="er"><div><b>Percepción ciudadana</b><span>CIS · preelectoral · escala 1–10</span></div>
+          <div class="ax"><div class="ln"></div>
+            <div class="tk" style="left:0"><span>1</span></div><div class="tk" style="left:50%"><span>5,5</span></div><div class="tk" style="left:100%"><span>10</span></div>
+            <div class="rng" style="left:11%;width:8%"></div><button class="pt" style="left:15%"><b>A</b><i></i></button>
+            <div class="rng" style="left:20%;width:8%"></div><button class="pt" style="left:24%"><b>B</b><i></i></button>
+            <div class="rng" style="left:31%;width:8%"></div><button class="pt" style="left:35%"><b>C</b><i></i></button>
+            <div class="rng" style="left:64%;width:8%"></div><button class="pt" style="left:68%"><b>D</b><i></i></button>
+            <div class="rng" style="left:84%;width:8%"></div><button class="pt" style="left:88%"><b>E</b><i></i></button>
+          </div></div>
+        <div class="er"><div><b>Expertos en ciencia política</b><span>CHES · 2024 · escala 0–10</span></div>
+          <div class="ax"><div class="ln"></div>
+            <div class="tk" style="left:0"><span>0</span></div><div class="tk" style="left:50%"><span>5</span></div><div class="tk" style="left:100%"><span>10</span></div>
+            <button class="pt" style="left:10%"><b>A</b><i></i></button>
+            <button class="pt" style="left:19%"><b>B</b><i></i></button>
+            <button class="pt pred" style="left:37%"><b>C*</b><i></i></button>
+            <button class="pt" style="left:71%"><b>D</b><i></i></button>
+            <button class="pt" style="left:92%"><b>E</b><i></i></button>
+          </div></div>
+        <p class="mono mute" style="font-size:12px;margin:12px 0 0">* Línea discontinua: sin dato propio en esta fuente; se muestra el de su predecesor (p. ej. Frente Amplio → Sumar), con nota.</p>
+      </div>
+      <div class="why">
+        <div><h3>Ciudadanía · CIS</h3><p>Dónde sitúan los encuestados a cada partido. Mide percepción, no programa. Barra gris: margen de error.</p></div>
+        <div><h3>Expertos · CHES</h3><p>Valoración de politólogos sobre la posición general de cada partido, con método comparable en toda Europa.</p></div>
+        <div><h3>Sin promedios</h3><p>Miden cosas distintas. Las ponemos juntas para que se vea si coinciden, sin mezclarlas en una cifra nuestra.</p></div>
+      </div>
+    </div>
+    <nav class="tabbar"><a href="#"><svg class="i"><use href="#i-grid"/></svg>Mapa</a><a href="#"><svg class="i"><use href="#i-home"/></svg>Partidos</a><a href="#"><svg class="i"><use href="#i-cols"/></svg>Comparar</a><a href="#"><svg class="i"><use href="#i-search"/></svg>Buscar</a></nav>
+  </section>
+
+  <!-- ================= SISTEMA ================= -->
+  <section class="screen sys" data-screen="sistema">
+    <div class="pad">
+      <div class="blk">
+        <h2 class="cond">El mapa</h2>
+        <p class="intro2">Un enfoque de <b>periodismo de datos</b>: primero el panorama completo (qué sabemos de cada partido y de cada tema) y después el detalle. Los datos son la imagen. No hay metáforas ni adornos: retícula, líneas finas y grandes campos de color plano.</p>
+        <div class="cpt">
+          <div style="background:var(--ink);color:#fff"><h3>Panorama primero</h3><p>La portada es un mapa de 12 temas × 5 partidos. De un vistazo se ve dónde hay información y dónde no.</p></div>
+          <div style="background:var(--bg2);outline:2px dashed var(--ink);outline-offset:-10px"><h3>Discontinuo = provisional</h3><p>La convención de los planos y los gráficos: línea continua para lo confirmado, discontinua para lo provisional, punteada y gris para lo que no consta. Se entiende sin leer.</p></div>
+          <div style="border:1px solid var(--ink)"><h3>Sin acento de marca</h3><p>La marca es tipográfica: titulares condensados en negro sobre blanco. El único color es el de los partidos, así nada compite con ellos.</p></div>
+        </div>
+      </div>
+
+      <div class="blk">
+        <h2 class="cond">Color</h2>
+        <p class="intro2">Blanco y grises neutros para todo. El color pertenece a los partidos: en bloque en su ficha y en el comparador, y como tinte del 22 % en el mapa, siempre con texto negro encima.</p>
+        <div class="neutral"><div style="background:#fff">Blanco · #FFFFFF</div><div style="background:var(--bg2)">Gris 1 · #F4F4F1</div><div style="background:var(--bg3)">Gris 2 · #EAEAE5</div><div style="background:var(--ink);color:#fff">Tinta · #0E0E0E</div></div>
+        <div class="sw" id="swatches"></div>
+      </div>
+
+      <div class="blk ty">
+        <h2 class="cond">Tipografía</h2>
+        <p class="intro2">Titulares en <b>Sofia Sans Extra Condensed</b>: humanista, compacta y cálida, alta como un titular de periódico. Texto en <b>Mona Sans</b> y datos en <b>DM Mono</b>. Todas en Google Fonts, con licencia libre.</p>
+        <div class="row"><div class="meta">Titular · Sofia Sans Extra Condensed<br>peso 900 · mayúsculas</div><div class="cond" style="font-size:clamp(48px,6cqi,96px);text-transform:uppercase">Todo, a la vista</div></div>
+        <div class="row"><div class="meta">Pregunta · Mona Sans<br>ancho 82 · peso 750</div><div class="cond-s" style="font-size:28px">¿Qué harán con el alquiler, la compra y la vivienda pública?</div></div>
+        <div class="row"><div class="meta">Texto · Mona Sans<br>ancho 100 · peso 400 · 17/26</div><div style="max-width:62ch">Esta ficha resume las fuentes oficiales publicadas por el partido. Cuando se publique el programa, sustituiremos esta información y lo anotaremos en el historial.</div></div>
+        <div class="row"><div class="meta">Datos · DM Mono<br>400–500</div><div class="lbl">Documento oficial · 19 oct 2026 · p. 34</div></div>
+      </div>
+
+      <div class="blk">
+        <h2 class="cond">Convenciones</h2>
+        <p class="intro2">Cada estado tiene forma propia, así que se distinguen también en blanco y negro.</p>
+        <div class="conv">
+          <div><h4>Estado del programa</h4><div style="display:flex;flex-direction:column;gap:10px"><span class="st pub"><i></i>Publicado</span><span class="st ava"><i></i>Avance oficial</span><span class="st pen"><i></i>Pendiente</span></div><p>Relleno sólido, medio relleno con borde discontinuo, borde discontinuo vacío: lo mismo que en el mapa.</p></div>
+          <div><h4>Tipo de fuente</h4><div style="display:flex;flex-direction:column;gap:8px"><span class="src p29"><b>Programa 29N</b>p. 34</span><span class="src av"><b>Avance oficial</b></span><span class="src doc"><b>Doc. oficial</b></span><span class="src an"><b>Anuncio oficial</b></span><span class="src pr"><b>Prensa</b>medio · fecha</span><span class="src p23"><b>Programa 2023</b></span></div><p>Una marca geométrica distinta por tipo: cuadrado lleno, hueco, círculo discontinuo para la prensa…</p></div>
+          <div><h4>Mapa: casillas</h4><div class="sample"><i style="background:color-mix(in srgb,var(--pp) 22%,#fff)"></i><i style="background:color-mix(in srgb,var(--pp) 22%,#fff);outline:1.5px dashed rgba(14,14,14,.6);outline-offset:-6px"></i><i style="background:#fff;border:1.5px dotted var(--nc)"></i></div><p>Tinte del partido: datos de su programa. Tinte con marco discontinuo: datos provisionales. Punteado gris: no consta.</p></div>
+        </div>
+      </div>
+
+      <div class="blk">
+        <h2 class="cond">Neutralidad visual</h2>
+        <div class="conv">
+          <div><h4>Mismo espacio</h4><p>Las columnas, filas y casillas de cada partido miden siempre lo mismo. Orden alfabético en todas partes.</p></div>
+          <div><h4>Sin intensidad por cantidad</h4><p>En el mapa, más propuestas no significa más color: el tinte es fijo y el número va escrito. Así no se premia al partido que más publica.</p></div>
+          <div><h4>Color sin texto</h4><p>El color de partido nunca se usa para texto. Sobre él, blanco o negro según el contraste (AA).</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= VARIANTES ================= -->
+  <section class="screen" data-screen="variantes">
+    <div class="chd pad">
+      <span class="lbl mute">Propuesta B · Variantes</span>
+      <h1 class="cond">Color de acento</h1>
+      <p style="font-size:clamp(18px,1.4cqi,22px);max-width:62ch;margin:0 0 clamp(32px,4cqi,64px)">Elige una opción para aplicarla a todo el mockup; también puedes cambiarla desde la barra superior. El color de los partidos y las líneas discontinuas de lo provisional no cambian. Por ahora el sitio va sin acento.</p>
+    </div>
+    <div class="var-sec pad">
+      <h2 class="cond">Color de acento</h2>
+      <p>Solo para la marca: el logotipo, el botón principal, los subrayados de titular, la etiqueta «Provisional» y el bloque de autoría. Nunca en fichas, mapa ni comparador, que son de los partidos. El texto sobre el acento siempre es negro.</p>
+      <div class="accs" id="accs"></div>
+      <p class="mono mute" style="font-size:12px;margin:18px 0 0;max-width:90ch">Asociación con partidos según Wikipedia (módulos de color de partido) y las webs oficiales, revisado el 9 nov 2026. También descartados: lavanda (Podemos), marrón y terracota (SALF, nueva imagen de ERC). Contraste calculado con la tinta #0E0E0E. ΔE: distancia perceptiva CIEDE2000 con el color de partido más parecido (menos de 5: casi idéntico; 5–10: parecido; 10–20: distinguible a simple vista; más de 20: muy distinto). Mide parecido, no asociación: un tono puede estar lejos en ΔE y aun así evocar a un partido por su familia de color.</p>
+    </div>
+  </section>
+
+</div>
+</div>
+
+<script>
+const TOPICS = {
+  vivienda:['Vivienda','¿Qué harán con el alquiler, la compra y la vivienda pública?'],
+  fiscalidad:['Fiscalidad y economía','¿Quién pagará más impuestos y quién menos?'],
+  pensiones:['Pensiones','¿Cuánto subirán las pensiones y a qué edad nos jubilaremos?'],
+  empleo:['Empleo y salarios','¿Qué cambia en salarios, jornada y contratos?'],
+  inmigracion:['Inmigración','¿Qué proponen sobre regularización, fronteras y nacionalidad?'],
+  sanidad:['Sanidad','¿Cómo piensan reducir las listas de espera?'],
+  educacion:['Educación','¿Qué cambia en las aulas, la FP y la universidad?'],
+  energia:['Energía y medio ambiente','¿Nucleares, renovables, precio de la luz?'],
+  instituciones:['Instituciones','¿Qué cambiarían en la justicia y las instituciones?'],
+  exterior:['Exterior y defensa','¿OTAN, gasto en defensa, Unión Europea?'],
+  igualdad:['Igualdad','¿Qué proponen sobre igualdad y violencia machista?'],
+  territorial:['Modelo territorial','¿Financiación autonómica, lenguas, competencias?']
+};
+/* Recuentos ilustrativos por tema: FA, Podemos, PP, PSOE, VOX */
+const COUNTS = {vivienda:[5,4,5,4,4],fiscalidad:[4,2,4,0,3],pensiones:[2,1,1,1,2],empleo:[0,2,1,2,0],inmigracion:[0,1,2,0,3],sanidad:[0,1,1,0,2],educacion:[0,1,1,0,1],energia:[1,1,2,0,2],instituciones:[1,0,3,1,1],exterior:[0,2,0,0,1],igualdad:[0,1,1,1,1],territorial:[0,0,1,0,1]};
+const TYPES = {p29:'Programa 29N', av:'Avance oficial', doc:'Doc. oficial', an:'Anuncio oficial', pr:'Prensa', p23:'Programa 2023'};
+const ST = {pub:'Publicado', ava:'Avance oficial', pen:'Pendiente'};
+
+const P = [
+ { id:'fa', name:'Frente Amplio', mono:'FA', cand:'Ada Colau', lema:null, st:'pen', exp:'Presenta sus propuestas por bloques', src:{of:7,pr:0,p23:1},
+   text:'Todavía no ha publicado su programa para el 29N. Presenta sus propuestas por bloques en notas oficiales. Esta ficha resume <b>7 fuentes oficiales</b> del 17 de octubre al 6 de noviembre.',
+   terr:['<b>Cataluña:</b> Comuns-Front Ampli','<b>Aragón:</b> CHA-Frente Amplio Aragón','<b>Baleares:</b> Ara Més-Front Ampli','<b>Senado:</b> «Senado de Progreso», con el PSOE'],
+   props:[['fiscalidad','Impuesto anual al patrimonio neto: 2 % desde 1 M€ y 3 % desde 50 M€','an','Nota oficial · 5 nov 2026'],['vivienda','Impuesto del 10 % anual sobre la acumulación de viviendas','an','Nota oficial · 28 oct 2026'],['vivienda','Ley para expropiar viviendas a grandes propietarios corporativos','an','Nota oficial · 6 nov 2026'],['pensiones','Ninguna pensión por debajo del salario mínimo (1.221 €)','an','Nota oficial · 24 oct 2026'],['pensiones','Jubilación efectiva a los 65 años','an','Nota oficial · 24 oct 2026'],['fiscalidad','Tipo efectivo mínimo del 15 % para gran empresa y banca','an','Nota oficial · 24 oct 2026']],
+   list:[['an','Impuestos a grandes fortunas y empresas','5 nov 2026'],['an','Ley de expropiación de vivienda','6 nov 2026'],['an','Impuesto a la acumulación de vivienda','28 oct 2026'],['an','Pensiones','24 oct 2026'],['an','Pacto de Estado por el tren','2 nov 2026'],['p23','Programa Sumar 2023','jul 2023']],
+   ref:'Lo que proponía Sumar en 2023', refsub:'Coalición predecesora · 182 págs. No es el programa del 29N.' },
+ { id:'pod', name:'Podemos', mono:'POD', cand:'Irene Montero', lema:'«Paz, casa y trabajo»', st:'pen', exp:'Sin fecha anunciada', src:{of:3,pr:0,p23:0},
+   text:'Todavía no ha publicado su programa para el 29N ni ha anunciado fecha. Esta ficha resume <b>3 fuentes oficiales</b>: web de campaña, Documento Político de 2025 y consulta de alianzas.',
+   terr:['<b>Cataluña:</b> dentro de la lista de ERC','<b>Canarias:</b> Unidad del Pueblo Canario','<b>C. Valenciana:</b> Compromís-Front Valencià','<b>Resto:</b> listas propias'],
+   props:[['empleo','Salario mínimo de 1.800 € al mes por ley','an','Web de campaña · oct 2026'],['empleo','Jornada laboral de 30 horas semanales','an','Web de campaña · oct 2026'],['vivienda','Prohibir la compra de vivienda que no sea para vivir en ella','an','Web de campaña · oct 2026'],['vivienda','Bajar los alquileres un 40 % por ley','doc','Documento Político · abr 2025'],['exterior','Salir de la OTAN y no aumentar el gasto en armas','an','Web de campaña · oct 2026'],['fiscalidad','Impuesto del 50 % a los beneficios extraordinarios del IBEX','doc','Documento Político · abr 2025']],
+   list:[['an','Web de campaña «Paz, casa y trabajo»','oct 2026'],['doc','Documento Político, V Asamblea','abr 2025'],['doc','Consulta de alianzas','16 oct 2026']],
+   ref:'Lo que proponía en las europeas de 2024', refsub:'Referencia. No es el programa del 29N.' },
+ { id:'pp', name:'PP', fullname:'Partido Popular', mono:'PP', cand:'Alberto Núñez Feijóo', lema:'«El cambio necesario»', st:'pen', exp:'Presenta su programa el <b>mar 10 nov</b>', src:{of:5,pr:0,p23:1},
+   text:'Todavía no ha publicado su programa para el 29N (presentación anunciada para el <b>martes 10 de noviembre</b>). Esta ficha resume <b>5 fuentes oficiales</b> de julio de 2025 a octubre de 2026.',
+   terr:['<b>Navarra:</b> UPN en coalición con el PP','<b>Aragón:</b> con el apoyo del PAR'],
+   props:[['vivienda','Construir un millón de viviendas en la legislatura','doc','«Mi Contrato con España» · 19 oct 2026'],['vivienda','Desalojar viviendas okupadas en un plazo de 48 horas','an','pp.es · 21 oct 2026'],['pensiones','Revalorizar las pensiones con el IPC, dentro del Pacto de Toledo','doc','«Mi Contrato con España» · 19 oct 2026'],['fiscalidad','IVA del 0 % en alimentos básicos y del 10 % en la energía','an','Decálogo económico · 27 sep 2026'],['inmigracion','Prohibir por ley las regularizaciones colectivas','doc','«Mi Contrato con España» · 19 oct 2026'],['energia','Alargar la vida de las centrales nucleares','an','Decálogo económico · 27 sep 2026']],
+   list:[['doc','Mi Contrato con España','19 oct 2026'],['an','Plan de vivienda (Sevilla)','21 oct 2026'],['an','Decálogo de reformas económicas','27 sep 2026'],['doc','Ponencia política, XXI Congreso','jul 2025'],['doc','Plan de autónomos','nov 2025'],['p23','Programa electoral 23J','jul 2023']],
+   ref:'Lo que proponía en 2023', refsub:'Programa de 365 medidas · 112 págs. No es el programa del 29N.' },
+ { id:'psoe', name:'PSOE', fullname:'Partido Socialista Obrero Español', mono:'PSOE', cand:'Pedro Sánchez', lema:null, st:'pen', exp:'Previsto ≈ 13–15 nov <span class="src pr"><b>Prensa</b></span>', src:{of:1,pr:3,p23:1},
+   text:'Todavía no ha publicado su programa para el 29N; según la prensa, lo presentará hacia el 13–15 de noviembre. <b>Varias propuestas solo constan en declaraciones recogidas por la prensa</b>, y lo indicamos en cada una.',
+   terr:['<b>Cataluña:</b> PSC','<b>Senado:</b> «Senado de Progreso», con IU, Sumar, Más Madrid y otros'],
+   props:[['pensiones','Revalorizar las pensiones con el IPC cuatro años más','pr','Europa Press · 14 oct 2026'],['instituciones','Reforma constitucional para blindar las pensiones y el aborto','pr','Que.es · 8 nov 2026'],['empleo','Subir el salario mínimo cada año','pr','Que.es · 8 nov 2026'],['vivienda','Suspender los desahucios de personas vulnerables hasta 2030','pr','elDiario.es · 29 sep 2026'],['vivienda','Parque público de vivienda de al menos el 6 %','doc','Ponencia 41º Congreso · 2024'],['empleo','Jornada laboral de 36 horas en 2030','doc','Ponencia 41º Congreso · 2024']],
+   list:[['doc','Ponencia Marco, 41º Congreso Federal','nov 2024'],['pr','Europa Press: mitin de Zaragoza','14 oct 2026'],['pr','Que.es: mitin de Bilbao','8 nov 2026'],['pr','elDiario.es: decretos de vivienda','29 sep 2026'],['p23','Programa electoral Generales 2023','jul 2023']],
+   ref:'Lo que proponía en 2023', refsub:'Programa de 272 págs. No es el programa del 29N.' },
+ { id:'vox', name:'VOX', mono:'VOX', cand:'Santiago Abascal', lema:'«Es sentido común»', st:'ava', exp:'Avance: «Recuperar España» · 19 oct', src:{of:4,pr:0,p23:1},
+   text:'Ha publicado un <b>avance oficial</b>, «Recuperar España» (19 oct, 6 págs.), pero no su programa completo. Esta ficha lo combina con su programa económico (2025) y su programa de desregulación (junio de 2026).',
+   terr:['Listas propias en toda España'],
+   props:[['fiscalidad','IRPF del 15 % hasta 70.000 € y del 25 % por encima, con mínimo exento de 22.000 €','doc','Programa económico · 2025'],['inmigracion','«Remigración»: repatriar a los inmigrantes en situación irregular','av','«Recuperar España» · 19 oct 2026'],['vivienda','«Prioridad nacional» en el acceso a la vivienda pública','av','«Recuperar España» · 19 oct 2026'],['pensiones','Crear un fondo de capitalización y avanzar a un sistema mixto','doc','Programa económico · 2025'],['energia','Plan Nuclear Nacional y «energía a precio de coste»','av','«Recuperar España» · 19 oct 2026'],['sanidad','Tarjeta sanitaria única y plan nacional de listas de espera','av','«Recuperar España» · 19 oct 2026']],
+   list:[['av','Recuperar España','19 oct 2026'],['doc','Programa de Desregulación','jun 2026'],['doc','Programa Económico y de Vivienda','2025'],['an','Nota: ejes del 29N','11 oct 2026'],['p23','Programa 23J (copia en The Objective)','jul 2023']],
+   ref:'Lo que proponía en 2023', refsub:'Programa de 178 págs. No es el programa del 29N.' }
+];
+
+const CMP = [
+ ['vivienda','Acceso y compra','¿Cómo facilitarán comprar una casa?', {fa:null, pod:['Solo se podrá comprar vivienda para vivir en ella','an','Web de campaña'], pp:['Avales de hasta el 100 % y rebaja del 60 % de IVA e ITP a menores de 40; Hucha Hogar Joven','an','pp.es · 21 oct'], psoe:['Préstamo al 0 % para la primera vivienda','pr','elDiario.es · 29 sep'], vox:['«Impuestos cero» a la primera vivienda; liberar suelo','av','«Recuperar España» · 19 oct']}],
+ ['vivienda','Alquiler','¿Qué pasará con lo que pagas de alquiler?', {fa:null, pod:['Bajar los alquileres un 40 % por ley','doc','Documento Político · 2025'], pp:['Deducciones a quien prorrogue contratos hasta 3 años con subidas por debajo del IPC','an','pp.es · 21 oct'], psoe:['Alquileres indefinidos y prórroga de contratos; regular el alquiler de temporada y por habitaciones','pr','elDiario.es · 29 sep'], vox:['Derogar la Ley 12/2023 de vivienda','doc','Programa de Desregulación · jun 2026']}],
+ ['vivienda','Vivienda pública','¿Habrá más vivienda pública, y para quién?', {fa:['Invertir hasta el 1 % del PIB; pisos de la SAREB al parque público','an','Notas oficiales · 28 oct y 6 nov'], pod:['Compra pública masiva de vivienda','doc','Documento Político · 2025'], pp:['Un millón de viviendas en la legislatura','doc','«Mi Contrato con España» · 19 oct'], psoe:['Parque público de al menos el 6 %','doc','Ponencia 41º Congreso · 2024'], vox:['Acceso preferente de españoles («prioridad nacional»)','av','«Recuperar España» · 19 oct']}],
+ ['vivienda','Grandes tenedores','¿Qué harán con los fondos y los grandes propietarios?', {fa:['Expropiación a tenedores corporativos en tres fases (+1.000, +700, +50 viviendas); impuesto del 10 % anual','an','Nota oficial · 6 nov'], pod:['Pasar las viviendas de los fondos a alquiler social','an','Web de campaña'], pp:null, psoe:['Prohibir que los fondos compren vivienda hasta 2028','pr','elDiario.es · 29 sep'], vox:null}],
+ ['vivienda','Okupación y desahucios','¿Qué cambia con la okupación y los desahucios?', {fa:null, pod:['Disolver Desokupa','doc','Documento Político · 2025'], pp:['Desalojo de okupas en 48 horas','an','pp.es · 21 oct'], psoe:['Suspender los desahucios de personas vulnerables hasta 2030','pr','elDiario.es · 29 sep'], vox:['«Fin de la okupación»','av','«Recuperar España» · 19 oct']}]
+];
+
+const $ = s => document.querySelector(s);
+const icon = id => `<svg class="i"><use href="#i-${id}"/></svg>`;
+const st = k => `<span class="st ${k}"><i></i>${ST[k]}</span>`;
+const src = (k, txt) => `<span class="src ${k}"><b>${TYPES[k]}</b>${txt ? `<span>${txt}</span>` : ''}</span>`;
+const pv = p => `--pc:var(--${p.id});--on:var(--${p.id}-on)`;
+
+/* Mapa */
+$('#map').innerHTML =
+  `<div class="corner">Tema ↓ · Partido →</div>` +
+  P.map(p => `<a class="ph" href="#" data-party="${p.id}" style="${pv(p)}"><b class="nm">${p.name}</b><b class="mo">${p.mono}</b>${st(p.st)}</a>`).join('') +
+  Object.entries(TOPICS).map(([k,[n]]) =>
+    `<a class="tl" href="#" data-nav="comparar">${icon(k)}${n}</a>` +
+    P.map((p,i) => { const c = COUNTS[k][i];
+      return c ? `<a class="cell" href="#" data-nav="comparar" style="${pv(p)}" title="${p.name} · ${n}: ${c} propuestas"><span class="n">${c}</span><span class="go">Ver →</span></a>`
+               : `<a class="cell z" href="#" data-nav="comparar" title="${p.name} · ${n}: no consta"><span class="n">—</span></a>`; }).join('')
+  ).join('');
+
+/* Columnas de estado */
+$('#cols').innerHTML = P.map(p => {
+  const t = p.src.of + p.src.pr + p.src.p23;
+  const parts = [p.src.of && `${p.src.of} oficial${p.src.of>1?'es':''}`, p.src.pr && `${p.src.pr} de prensa`, p.src.p23 && `${p.src.p23} de 2023`].filter(Boolean).join(' · ');
+  return `<a class="col on-color" href="#" data-party="${p.id}" style="${pv(p)}">
+    <div class="top"><span class="nm">${p.name}</span><span class="cd">${p.cand}</span></div>
+    <div class="bot">${st(p.st)}<div class="exp">${p.exp}</div>
+      <div class="bar">${p.src.of?`<span class="of" style="flex:${p.src.of}"></span>`:''}${p.src.pr?`<span class="pr" style="flex:${p.src.pr}"></span>`:''}${p.src.p23?`<span class="p23" style="flex:${p.src.p23}"></span>`:''}</div>
+      <div class="lg"><b style="color:var(--ink)">${t} fuentes</b> · ${parts}</div>
+      <div class="go">Abrir ficha <span class="arrow">→</span></div></div></a>`;
+}).join('');
+
+/* Preguntas */
+$('#qs').innerHTML = Object.entries(TOPICS).map(([k,[n,q]]) =>
+  `<a class="q" href="#" data-nav="comparar">${icon(k)}<span><span class="t">${n}</span><span class="qq">${q}</span></span>
+   <span class="dots" aria-label="Partidos con propuestas">${P.map((p,i)=>`<i class="${COUNTS[k][i]?'':'z'}" style="${pv(p)}" title="${p.name}"></i>`).join('')}</span></a>`).join('');
+
+/* Ficha */
+function renderFicha(id){
+  const p = P.find(x => x.id === id);
+  $('#ficha').setAttribute('style', pv(p));
+  $('#f-crumb').textContent = p.name;
+  $('#f-logo').textContent = p.mono;
+  $('#f-name').textContent = p.name;
+  $('#f-meta').innerHTML = `<span>Candidatura: <b>${p.cand}</b></span>${p.lema?`<span>Lema: ${p.lema}</span>`:''}${p.fullname?`<span style="opacity:.85">${p.fullname}</span>`:''}`;
+  const t = p.src.of + p.src.pr + p.src.p23;
+  $('#f-status').className = 'fstat ' + p.st;
+  $('#f-status').innerHTML = `<span class="stw">${st(p.st)}</span><p class="txt">${p.text}</p><span class="up">Actualizado 9 nov, 10:00</span>
+    <div class="row"><a class="btn sm ink" href="#">Ver las ${t} fuentes</a><a class="btn sm" href="#">Avísame</a></div>`;
+  $('#f-oth').innerHTML = '<span class="l">Otras fichas</span>' + P.map(q => `<button style="${pv(q)}" data-party="${q.id}" aria-current="${q.id===id}" aria-label="${q.name}">${q.mono}</button>`).join('');
+  $('#f-tabs').innerHTML = `<button aria-selected="true">Resumen</button><button>Por temas</button><button class="dis">Programa completo <span class="c">${p.st==='ava'?'avance':'aún no'}</span></button><button>Fuentes <span class="c">${t}</span></button><button>Historial</button>`;
+  $('#f-props').innerHTML = p.props.map(([tp,title,k,s],i) => `<li class="pi"><span class="n">${String(i+1).padStart(2,'0')}</span>
+     <div><div class="tp">${icon(tp)}${TOPICS[tp][0]}</div><h3>${title}</h3>${src(k,s)}</div>
+     <div class="acts"><a href="#">Ver fuente ↗</a><a class="m" href="#">Compartir</a><a class="m" href="#">⚑ Error</a></div></li>`).join('');
+  $('#f-ref').innerHTML = `<div><b>${p.ref}</b><span>${p.refsub}</span></div><span style="font-size:20px">↓</span>`;
+  $('#f-src').innerHTML = p.list.map(([k,ti,d]) => `<li>${src(k)}<span>${ti}</span><span class="mono mute" style="font-size:11.5px">${d}</span></li>`).join('');
+  $('#f-terr').innerHTML = p.terr.map(x => `<li><span>${x}</span></li>`).join('');
+  document.querySelectorAll('#f-oth [data-party]').forEach(b => b.addEventListener('click', () => renderFicha(b.dataset.party)));
+}
+renderFicha('pod');
+
+/* Comparador */
+$('#c-tabs').innerHTML = Object.entries(TOPICS).map(([k,[n]]) => `<button aria-selected="${k==='vivienda'}">${icon(k)}${n}</button>`).join('');
+$('#c-ptg').innerHTML = '<span class="l">Partidos</span>' + P.map(p => `<button style="${pv(p)}" aria-pressed="true">${p.name}</button>`).join('');
+$('#cmp').innerHTML = CMP.map(([tp,sub,q,cells]) => `<div class="subq">
+  <div class="hd">${icon(tp)}<div><h2 class="cond">${sub}</h2><p>${q}</p></div></div>
+  <div class="ans">${P.map(p => { const c = cells[p.id];
+    return `<div class="ar ${c?'':'z'}" style="${pv(p)}"><div class="who on-color"><b>${p.name}</b>${st(p.st)}</div>
+      <div class="what">${c ? `<p>${c[0]}</p>${src(c[1],c[2])}` : `<p>No consta en las fuentes consultadas</p>`}</div></div>`; }).join('')}</div></div>`).join('');
+document.querySelectorAll('#c-ptg button').forEach(b => b.addEventListener('click', () => b.setAttribute('aria-pressed', b.getAttribute('aria-pressed')==='true'?'false':'true')));
+
+/* Muestras de color */
+const CR = {fa:['#F03C00','tinta','4,8:1','frenteamplio.info ✓'],pod:['#653B7B','blanco','8,5:1','pazcasaytrabajo.es ✓'],pp:['#21599E','blanco','7,0:1','pp.es ✓'],psoe:['#E30613','blanco','4,9:1','aproximado ⚠'],vox:['#63BE21','tinta','8,0:1','aproximado ⚠']};
+$('#swatches').innerHTML = P.map(p => { const c = CR[p.id]; return `<div><div class="c" style="background:var(--${p.id});color:var(--${p.id}-on)">${p.name}</div>
+  <div class="t" style="background:color-mix(in srgb,var(--${p.id}) 22%,#fff)">Tinte 22 % · mapa</div>
+  <div class="inf">${c[0]} · texto ${c[1]}<br>${c[2]} AA ✓<br>Fuente: ${c[3]}</div></div>`; }).join('');
+
+
+/* ---------- Variantes: color de acento ---------- */
+const ACC = [
+  {id:'none', n:'Sin acento', hex:null, risk:null, note:'La B tal como está: blanco, grises, tinta y los colores de los partidos.'},
+  {id:'amarillo', n:'Amarillo rotulador', hex:'#FFE14D', risk:'lo', note:'Ningún partido nacional usa amarillo, pero es casi idéntico al de Coalición Canaria y la CUP, y en Cataluña evoca el lazo amarillo.'},
+  {id:'ambar', n:'Ámbar', hex:'#F2B53A', risk:'lo', note:'Sin dueño desde que ERC cambió de imagen (sept. 2025). Hay que mantenerlo lejos del naranja de Ciudadanos, Compromís y Frente Amplio.'},
+  {id:'lima1', n:'Lima eléctrico', hex:'#C9FF33', risk:'md', g:'lima', note:'Lima flúor, mucho más saturado que el lima pálido de Frente Amplio. Es la más «rotulador» de la gama.'},
+  {id:'lima2', n:'Lima ácido', hex:'#ADFF33', risk:'md', g:'lima', note:'Un paso hacia el verde. Se separa un poco más del lima de Frente Amplio y conserva la energía del flúor.'},
+  {id:'lima3', n:'Lima menta', hex:'#A0FF99', risk:'md', g:'lima', note:'Más azulado y más pálido. Se aleja del verde intenso de VOX y del lima de Frente Amplio; se acerca algo a PACMA.'},
+  {id:'lima4', n:'Menta', hex:'#99FFBB', risk:'md', g:'lima', note:'Verde frío y claro. Hay que vigilar el parecido con Más Madrid (verde menta), que ahora forma parte de Frente Amplio.'},
+  {id:'lima5', n:'Agua', hex:'#99FFE4', risk:'md', g:'lima', note:'El extremo azulado: el más lejano de todos los partidos, pero en la familia del turquesa de Junts y EH Bildu.'},
+  {id:'cian', n:'Cian claro', hex:'#6ED6F0', risk:'md', note:'Si tira a turquesa recuerda a Junts y EH Bildu; si tira a celeste, al BNG y al azul del PP.'},
+  {id:'rosa', n:'Rosa · descartado', hex:'#FF9AD5', risk:'hi', note:'Se sigue leyendo como Sumar (fucsia #E51C55). La prensa presentó la paleta de Frente Amplio como una ruptura con «el rosa de Sumar».'}
+];
+/* Colores de partidos (Wikipedia y webs oficiales, 9 nov 2026) para medir distancias */
+const PREF = {'Frente Amplio (naranja)':'#F03C00','Frente Amplio (lima)':'#CAE776','Podemos':'#653B7B','Podemos (Wikipedia)':'#9370DB','PP':'#21599E','PSOE':'#E30613','VOX':'#63BE21','Sumar':'#E51C55','IU':'#DF0022','Más Madrid':'#4ACD8D','PACMA':'#22D65D','EH Bildu':'#00C19F','Junts':'#00C3B2','CUP':'#F2CC00','Coalición Canaria':'#FFD700','BNG':'#ADCFEF','Teruel Existe':'#037252','Nueva Canarias':'#85BD42','PRC':'#C2CE0C','Més per Mallorca':'#D8DE40','Ciudadanos':'#FF4E00','Compromís':'#E65F00','ERC':'#F95735','SALF':'#804000'};
+function toLab(h){ let [r,g,b]=[1,3,5].map(i=>parseInt(h.slice(i,i+2),16)/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4);
+  const X=(r*.4124+g*.3576+b*.1805)/.95047, Y=r*.2126+g*.7152+b*.0722, Z=(r*.0193+g*.1192+b*.9505)/1.08883, t=v=>v>.008856?Math.cbrt(v):7.787*v+16/116;
+  return [116*t(Y)-16, 500*(t(X)-t(Y)), 200*(t(Y)-t(Z))]; }
+function de00(x,y){ const [L1,a1,b1]=toLab(x),[L2,a2,b2]=toLab(y), rad=Math.PI/180;
+  const Cb=(Math.hypot(a1,b1)+Math.hypot(a2,b2))/2, G=.5*(1-Math.sqrt(Cb**7/(Cb**7+25**7)));
+  const a1p=a1*(1+G),a2p=a2*(1+G),C1=Math.hypot(a1p,b1),C2=Math.hypot(a2p,b2);
+  const hh=(a,b)=>(a||b)?((Math.atan2(b,a)/rad)+360)%360:0, h1=hh(a1p,b1), h2=hh(a2p,b2);
+  let dh=h2-h1; if(C1*C2===0) dh=0; else if(dh>180) dh-=360; else if(dh<-180) dh+=360;
+  const dL=L2-L1, dC=C2-C1, dH=2*Math.sqrt(C1*C2)*Math.sin(dh/2*rad), Lb=(L1+L2)/2, Cp=(C1+C2)/2;
+  let hb = C1*C2===0 ? h1+h2 : Math.abs(h1-h2)<=180 ? (h1+h2)/2 : (h1+h2<360 ? (h1+h2+360)/2 : (h1+h2-360)/2);
+  const T=1-.17*Math.cos((hb-30)*rad)+.24*Math.cos(2*hb*rad)+.32*Math.cos((3*hb+6)*rad)-.2*Math.cos((4*hb-63)*rad);
+  const dth=30*Math.exp(-(((hb-275)/25)**2)), RC=2*Math.sqrt(Cp**7/(Cp**7+25**7));
+  const SL=1+.015*(Lb-50)**2/Math.sqrt(20+(Lb-50)**2), SC=1+.045*Cp, SH=1+.015*Cp*T, RT=-Math.sin(2*dth*rad)*RC;
+  return Math.sqrt((dL/SL)**2+(dC/SC)**2+(dH/SH)**2+RT*(dC/SC)*(dH/SH)); }
+const nearest = hex => Object.entries(PREF).map(([k,v])=>[k,de00(hex,v)]).sort((a,b)=>a[1]-b[1]);
+const deLabel = d => d<5?'casi idéntico':d<10?'parecido':d<20?'distinguible':'muy distinto';
+const RISK = {lo:'Asociación baja', md:'Asociación media', hi:'Asociación alta'};
+const frame = $('#frame');
+let curAcc = 'none';
+function lum(hex){ const c=[1,3,5].map(i=>parseInt(hex.slice(i,i+2),16)/255).map(v=>v<=.03928?v/12.92:((v+.055)/1.055)**2.4); return .2126*c[0]+.7152*c[1]+.0722*c[2]; }
+const ratio = (a,b) => { const [x,y]=[lum(a),lum(b)].sort((m,n)=>n-m); return (x+.05)/(y+.05); };
+function applyAcc(id){
+  const a = ACC.find(x => x.id === id) || ACC[0]; curAcc = a.id;
+  frame.classList.toggle('acc', !!a.hex);
+  frame.style.setProperty('--acc', a.hex || 'transparent');
+  $('#sel-acc').value = a.id;
+  document.querySelectorAll('#accs .ac').forEach(c => c.setAttribute('aria-current', c.dataset.acc === a.id));
+  try { localStorage.setItem('gaveta-b2-acc', a.id); } catch(e){}
+}
+function renderVariants(){
+  $('#sel-acc').innerHTML = ACC.map(a => `<option value="${a.id}">${a.n}</option>`).join('');
+  $('#accs').innerHTML = ACC.map(a => `<div class="ac ${a.hex?'on':''} ${a.g?'g-'+a.g:''}" data-acc="${a.id}" style="${a.hex?`--acc:${a.hex}`:''}">
+    <div class="pv"><div class="cond h">Todo, <span class="hl">a la vista</span></div>
+      <div class="r"><span class="k">PROVISIONAL</span><span class="b">Comparar partidos →</span></div>
+      <div class="au"><b>Una iniciativa personal</b> de Khiustin Tornés, sin afiliación.</div></div>
+    <div class="inf"><div class="t"><b>${a.n}</b><span class="hx">${a.hex ? `${a.hex} · ${ratio(a.hex,'#0E0E0E').toFixed(1).replace('.',',')}:1 con tinta` : '—'}</span></div>
+      ${a.risk ? `<span class="risk ${a.risk}"><i></i>${RISK[a.risk]}</span>` : ''}
+      ${a.hex ? (() => { const n = nearest(a.hex); return `<span class="near"><b>Más cercano:</b> ${n[0][0]} · ΔE ${Math.round(n[0][1])} (${deLabel(n[0][1])})<br>Luego: ${n[1][0]} ${Math.round(n[1][1])} · ${n[2][0]} ${Math.round(n[2][1])}</span>`; })() : ''}
+      <span>${a.note}</span>
+      <button class="btn sm" data-apply-acc="${a.id}">Aplicar a todo</button></div></div>`).join('');
+  document.querySelectorAll('[data-apply-acc]').forEach(b => b.addEventListener('click', () => applyAcc(b.dataset.applyAcc)));
+  $('#sel-acc').addEventListener('change', e => applyAcc(e.target.value));
+  let a0 = 'none';
+  try { a0 = localStorage.getItem('gaveta-b2-acc') || a0; } catch(e){}
+  applyAcc(a0);
+}
+renderVariants();
+
+
+/* Marquesina */
+/* Logos oficiales (enlazados desde su fuente; si fallan, monograma con el color del partido) */
+const LOGO = { /* Wikimedia Commons, logos de la infobox de es.wikipedia (9 nov 2026). En producción, alojarlos en el propio sitio. */
+  fa:'https://upload.wikimedia.org/wikipedia/commons/2/29/Frente_AMPLIO.svg',
+  pod:'https://upload.wikimedia.org/wikipedia/commons/2/2f/Podemos_logo_completo_%282022%29.svg',
+  pp:'https://upload.wikimedia.org/wikipedia/commons/3/3c/Logo_del_PP_%282022%29.svg',
+  psoe:'https://upload.wikimedia.org/wikipedia/commons/9/9e/Logo_PSOE_41_Congreso.svg',
+  vox:'https://upload.wikimedia.org/wikipedia/commons/a/aa/VOX_logo.svg'};
+const logo = id => { const p = P.find(x => x.id === id);
+  return `<span class="mq-logo l-${id}" style="${pv(p)}">${LOGO[id] ? `<img src="${LOGO[id]}" alt="${p.name}" onerror="this.parentNode.classList.add('fb');this.remove()">` : ''}<em>${p.mono}</em></span>`; };
+/* Mensajes por partido, en orden alfabético, y avisos generales */
+const MQ = [
+  [null, '<b>4 de 5 partidos</b> aún no han publicado su programa para el 29N'],
+  ['fa', 'Sin fecha anunciada · presenta sus propuestas por bloques'],
+  ['pod', 'Sin fecha anunciada'],
+  ['pp', 'Presenta su programa el <b>martes 10 nov</b>'],
+  ['psoe', 'Presentación prevista hacia el 13–15 nov, según la prensa'],
+  ['vox', 'Avance oficial publicado: «Recuperar España»'],
+  [null, 'Lo marcado con línea discontinua es <b>provisional</b>']
+];
+$('#mq-set').innerHTML = MQ.map(([id,t]) => `<span>${id ? logo(id) : ''}${t}</span>`).join('');
+$('.mq-track').appendChild($('#mq-set').cloneNode(true)).removeAttribute('id');
+$('#mq-pause').addEventListener('click', e => { const on = e.currentTarget.getAttribute('aria-pressed') !== 'true';
+  e.currentTarget.setAttribute('aria-pressed', on); e.currentTarget.setAttribute('aria-label', on ? 'Reanudar la marquesina' : 'Pausar la marquesina');
+  e.currentTarget.textContent = on ? '▶' : '❚❚'; document.querySelector('.prov').classList.toggle('paused', on); });
+
+/* Navegación del mockup */
+const tabs = document.querySelectorAll('.mk-tabs button');
+function go(id, party){
+  document.querySelectorAll('.screen').forEach(s => s.classList.toggle('on', s.dataset.screen === id));
+  tabs.forEach(t => t.setAttribute('aria-selected', t.dataset.go === id));
+  document.querySelectorAll('.nav a').forEach(a => a.classList.toggle('cur', a.dataset.nav === id));
+  if (party) renderFicha(party);
+  history.replaceState(null,'','#'+id); window.scrollTo({top:0});
+}
+tabs.forEach(t => t.addEventListener('click', () => go(t.dataset.go)));
+document.querySelectorAll('[data-nav]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); go(a.dataset.nav); }));
+document.querySelectorAll('#map [data-party], #cols [data-party]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); go('ficha', a.dataset.party); }));
+const h = location.hash.slice(1); if (h && document.querySelector(`[data-screen="${h}"]`)) go(h); else document.querySelector('.nav a').classList.add('cur');
+const tm = $('#tg-mobile'); tm.addEventListener('click', () => { const on = document.body.classList.toggle('mobile'); tm.setAttribute('aria-pressed', on); });
+const setTb = () => document.documentElement.style.setProperty('--tb', document.querySelector('.mk').offsetHeight + 'px'); setTb(); addEventListener('resize', setTb);
+</script>
+</body>
+</html>

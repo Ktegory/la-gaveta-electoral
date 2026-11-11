@@ -1,0 +1,18 @@
+partido: "junts"
+tema: "territorial"
+subtema: "lenguas-cooficiales"
+titulo: "Lograr la oficialidad del catalán en la Unión Europea"
+resumen: "La incluye entre sus condiciones para negociar tras el 29N."
+fuentes:
+  - fuente: "junts/prensa-ser-condiciones"
+    cita: Entre les demandes que Nogueras ha posat sobre la taula hi ha la delegació de competències en immigració; que s'aprovi l'oficialitat del català a la Unió Europea, i que Catalunya gestioni els seus impostos, ha dit en una entrevista a Ser Catalunya recollida per Europa Press.
+  - fuente: "junts/prensa-balance-legislatura"
+    cita: Pel que fa a la llengua, el partit ha posat en valor l'ús del català al Congrés, la defensa de l'oficialitat a la Unió Europea i l'impuls de La 2Cat.
+fechaAnuncio: "2026-10-27"
+destacada: true
+orden: 4
+comprobacion:
+  estado: encontrada
+  nota: La condición para negociar sale solo de la entrevista en la SER. El balance de El Nacional la menciona como «defensa de l'oficialitat», no como condición.
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

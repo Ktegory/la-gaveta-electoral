@@ -1,0 +1,998 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diseño v0.1 · La gaveta de los programas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   TOKENS
+   ========================================================= */
+:root{
+  --paper:#FBFAF7; --white:#FFFFFF; --sand:#F1EEE6; --sand-2:#E8E4D9;
+  --ink:#121212; --ink-2:#2E2D2B; --mute:#66635C; --line:#E2DED5;
+  --marker:#FFE14D; --marker-2:#FFF3B0;
+
+  /* Colores de partido: fondo + color de texto encima (AA) */
+  --fa:#F03C00;   --fa-on:#121212;
+  --pod:#653B7B;  --pod-on:#FFFFFF;
+  --pp:#21599E;   --pp-on:#FFFFFF;
+  --psoe:#E30613; --psoe-on:#FFFFFF;
+  --vox:#63BE21;  --vox-on:#121212;
+
+  --sans:"Archivo",ui-sans-serif,system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --tb:56px;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:#CFCBC2;font-family:var(--sans);color:var(--ink)}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+svg.i{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* =========================================================
+   BARRA DEL MOCKUP (fuera del diseño)
+   ========================================================= */
+.mk{position:sticky;top:0;z-index:100;background:#1b1b1b;color:#eee;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;padding:10px 16px;font:13px/1.3 var(--sans)}
+.mk b{font-weight:700}.mk .v{color:#9a9a9a}
+.mk-tabs{display:flex;gap:4px;flex-wrap:wrap}
+.mk-tabs button{background:#333;border:0;border-radius:5px;padding:6px 11px;color:#ddd;font-size:12.5px}
+.mk-tabs button[aria-selected="true"]{background:var(--marker);color:#111;font-weight:600}
+.mk-opt{margin-left:auto;display:flex;gap:6px}
+.mk-opt button{background:none;border:1px solid #666;color:#ddd;border-radius:5px;padding:5px 10px;font-size:12.5px}
+.mk-opt button[aria-pressed="true"]{background:#eee;color:#111}
+.stage{padding:0}
+.frame{container:site / inline-size;width:100%;margin:0 auto;background:var(--paper);overflow:clip;font-size:17px;line-height:1.55}
+body.mobile .stage{padding:22px 14px 70px}
+body.mobile .frame{width:390px;box-shadow:0 10px 40px rgba(0,0,0,.25)}
+.screen{display:none}.screen.on{display:block}
+
+/* =========================================================
+   BASE DEL SITIO
+   ========================================================= */
+/* Márgenes que crecen con la pantalla; contenido de hasta 1680 px, fondos a todo el ancho */
+.pad{padding-inline:max(clamp(24px,5.5cqi,112px), calc((100cqi - 1680px) / 2))}
+@container site (max-width:820px){ .pad{padding-inline:24px} }
+@container site (max-width:600px){ .pad{padding-inline:16px} .screen,.hdr,.prov{font-size:16px} }
+@container site (min-width:1440px){ .screen{font-size:18px} }
+
+.disp{font-stretch:125%;font-weight:850;letter-spacing:-.028em;line-height:.93}
+.semi{font-stretch:112%;font-weight:750;letter-spacing:-.012em;line-height:1.15}
+.mono{font-family:var(--mono)}
+.kicker{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.09em;text-transform:uppercase}
+.mute{color:var(--mute)}
+
+/* Subrayado tipo rotulador */
+.hl{position:relative;z-index:0;white-space:nowrap}
+.hl::before{content:"";position:absolute;z-index:-1;left:-.06em;right:-.08em;top:.42em;bottom:.02em;background:var(--marker);transform:skew(-8deg) rotate(-1.2deg);border-radius:.08em .2em .12em .18em}
+
+/* Foco visible */
+:where(a,button,[tabindex]):focus-visible{outline:3px solid var(--ink);outline-offset:3px;box-shadow:0 0 0 6px var(--marker);border-radius:6px}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;gap:9px;border-radius:999px;padding:13px 22px;font-weight:700;font-size:16px;text-decoration:none;border:2.5px solid var(--ink);background:var(--white);transition:transform .15s, box-shadow .15s;white-space:nowrap}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--ink)}
+.btn.ink{background:var(--ink);color:#fff}
+.btn.ink:hover{box-shadow:3px 3px 0 var(--marker)}
+.btn.yel{background:var(--marker);color:var(--ink)}
+.btn.sm{padding:8px 15px;font-size:14px;border-width:2px}
+.btn.ghost{border-color:transparent;background:transparent;padding-inline:6px}
+.btn.ghost:hover{box-shadow:none;transform:none;text-decoration:underline;text-underline-offset:4px}
+
+/* Estado del programa */
+.st{font-family:var(--mono);font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;display:inline-flex;align-items:center;gap:7px;padding:5px 11px 5px 9px;border-radius:999px;border:2px solid var(--ink);background:#fff;color:var(--ink);white-space:nowrap;line-height:1.2}
+.st i{width:11px;height:11px;border-radius:50%;border:2px solid currentColor;flex:none}
+.st.pub{background:var(--ink);color:#fff}.st.pub i{background:#fff;border-color:#fff}
+.st.ava i{background:linear-gradient(90deg,currentColor 50%,transparent 50%)}
+.st.pen{border-style:dashed}.st.pen i{border-style:dotted}
+
+/* Tipo de fuente */
+.tag{font-family:var(--mono);font-size:11.5px;display:inline-flex;flex-wrap:wrap;gap:0 7px;align-items:center;padding:3px 9px;border-radius:6px;border:1.5px solid var(--ink);background:#fff;color:var(--ink);line-height:1.35}
+.tag b{font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.tag.p29{background:var(--ink);color:#fff}
+.tag.pr{border-style:dashed}
+.tag.p23{border-style:dotted;color:var(--mute)}
+.dark .tag{background:transparent;color:#fff;border-color:rgba(255,255,255,.75)}
+
+/* Monograma (provisional en lugar del logo) */
+.mono-badge{display:inline-grid;place-items:center;flex:none;width:44px;height:44px;border-radius:12px;background:var(--pc);color:var(--on);font-stretch:125%;font-weight:850;font-size:13px;letter-spacing:-.01em}
+.mono-badge.sm{width:28px;height:28px;border-radius:8px;font-size:9.5px}
+
+/* Etiqueta de sección */
+.sl{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.sl .n{font-family:var(--mono);font-size:12px;font-weight:600;background:var(--ink);color:#fff;border-radius:5px;padding:3px 7px}
+.sl .t{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.09em;text-transform:uppercase}
+.sl .ln{flex:1;height:3px;background:var(--ink)}
+.dark .sl .n{background:var(--marker);color:var(--ink)}.dark .sl .ln{background:#fff}
+
+/* =========================================================
+   CABECERA
+   ========================================================= */
+.hdr{display:flex;align-items:center;gap:28px;padding-block:16px;background:var(--paper)}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none}
+.logo svg{width:42px;height:34px;flex:none}
+.logo .w1{display:block;font-stretch:125%;font-weight:900;font-size:21px;letter-spacing:-.03em;line-height:1}
+.logo .w2{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;margin-top:3px}
+.nav{display:flex;gap:6px;margin-left:auto}
+.nav a{font-weight:650;font-size:15.5px;text-decoration:none;padding:8px 12px;border-radius:8px}
+.nav a:hover{background:var(--sand)}
+.nav a.cur{background:var(--marker)}
+.hdr .search{width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);display:grid;place-items:center;background:#fff}
+.hdr .burger{display:none}
+.prov{background:var(--ink);color:#fff;display:flex;gap:14px;align-items:center;padding-block:11px;font-size:15px}
+.prov .tg{background:var(--marker);color:var(--ink);font-family:var(--mono);font-size:11.5px;font-weight:600;letter-spacing:.08em;padding:4px 9px;border-radius:5px;flex:none}
+.prov a{text-decoration-color:var(--marker);text-decoration-thickness:2px;text-underline-offset:3px;font-weight:600}
+.tabbar{display:none}
+@container site (max-width:900px){
+  .nav,.hdr .search{display:none}
+  .hdr .burger{display:grid;place-items:center;margin-left:auto;width:44px;height:44px;border-radius:12px;border:2px solid var(--ink);background:#fff;font-size:20px}
+  .prov{font-size:13.5px;align-items:flex-start}
+  .tabbar{display:grid;grid-template-columns:repeat(4,1fr);position:sticky;bottom:0;z-index:5;background:var(--paper);border-top:2.5px solid var(--ink)}
+  .tabbar a{display:flex;flex-direction:column;align-items:center;gap:3px;padding:9px 0 11px;font-size:11.5px;font-weight:650;text-decoration:none}
+  .tabbar svg{width:22px;height:22px}
+  .tabbar .cur{background:var(--marker)}
+}
+
+/* =========================================================
+   INICIO
+   ========================================================= */
+.hero{display:grid;grid-template-columns:1.12fr 1fr;gap:clamp(48px,7cqi,160px);align-items:center;padding-block:clamp(56px,7cqi,150px) clamp(64px,8cqi,170px)}
+.hero h1{font-size:clamp(42px,7.2cqi,136px);margin:16px 0 clamp(22px,2cqi,36px)}
+.hero .lead{font-size:clamp(20px,1.55cqi,26px);line-height:1.45;max-width:36ch;margin:0 0 clamp(28px,2.4cqi,44px)}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+
+.cab{background:var(--ink);border-radius:clamp(24px,2cqi,34px);padding:clamp(14px,1.1cqi,20px);display:grid;gap:clamp(10px,.8cqi,14px);box-shadow:0 34px 60px -34px rgba(0,0,0,.55)}
+.drawer{--pc:#999;--on:#000;display:grid;grid-template-columns:1fr 76px 1fr;align-items:center;gap:16px;min-height:clamp(76px,6cqi,104px);padding:14px 18px 14px 22px;border-radius:12px;background:var(--pc);color:var(--on);text-decoration:none;position:relative;transition:transform .35s cubic-bezier(.2,.9,.25,1.2), box-shadow .3s;animation:slidein .7s cubic-bezier(.2,.9,.25,1) both}
+.drawer .hd{width:76px;height:12px;border-radius:99px;background:currentColor;opacity:.92}
+.drawer .st{justify-self:end}
+.drawer:hover,.drawer:focus-visible{transform:translateX(20px);box-shadow:-20px 0 0 -6px rgba(255,255,255,.12)}
+.drawer .nm{font-stretch:125%;font-weight:850;font-size:clamp(17px,1.9cqi,32px);letter-spacing:-.015em;text-transform:uppercase;line-height:1}
+.drawer .cd{display:block;font-size:13px;font-weight:500;opacity:.9;margin-top:4px;font-stretch:100%;text-transform:none;letter-spacing:0}
+.drawer:nth-child(2){animation-delay:.07s}.drawer:nth-child(3){animation-delay:.14s}.drawer:nth-child(4){animation-delay:.21s}.drawer:nth-child(5){animation-delay:.28s}
+@keyframes slidein{from{transform:translateX(-40px);opacity:0}to{transform:none;opacity:1}}
+.cab-cap{display:flex;justify-content:space-between;gap:10px;margin-top:12px;font-family:var(--mono);font-size:12px;color:var(--mute)}
+
+.clock{background:var(--white);border-block:3px solid var(--ink);display:grid;grid-template-columns:auto 1fr;gap:clamp(48px,6cqi,140px);align-items:center;padding-block:clamp(30px,3.5cqi,64px)}
+.clock .num{font-size:clamp(88px,9cqi,170px);line-height:.8}
+.clock .num small{display:block;font-size:17px;font-stretch:100%;font-weight:600;letter-spacing:0;margin-top:10px}
+.tl{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.tl .bar{position:absolute;left:calc(100%/12);right:calc(100%/12);top:44px;height:4px;background:var(--ink);border-radius:2px;background:linear-gradient(90deg,var(--ink) 0 0) , repeating-linear-gradient(90deg,var(--ink) 0 8px,transparent 8px 13px);background-size:0 100%,100% 100%}
+.tl .ev{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center}
+.tl .ev .d{font-family:var(--mono);font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;height:30px;display:flex;align-items:flex-end;white-space:nowrap}
+.tl .ev .dot{width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid var(--ink);margin-top:8px;flex:none}
+.tl .ev .l{font-size:13px;line-height:1.25;margin-top:8px;font-weight:650}
+.tl .ev.now .dot{background:var(--marker);width:22px;height:22px;margin-top:5px}
+.tl .ev.big .dot{background:var(--ink);width:24px;height:24px;margin-top:4px}
+.tl .ev.big .l{font-weight:850;font-stretch:118%;font-size:15px}
+.tl .ev.now .d{background:var(--marker);border-radius:4px;padding:0 5px;height:auto;margin-top:12px}
+
+.sec{padding-block:clamp(64px,8cqi,170px)}
+.sec h2{font-size:clamp(30px,4.4cqi,80px);margin:0 0 clamp(10px,1cqi,20px)}
+.sec .sub{font-size:clamp(18px,1.3cqi,22px);max-width:60ch;margin:0 0 clamp(30px,3cqi,56px)}
+.sl{margin-bottom:clamp(18px,2cqi,36px)}
+
+.cards5{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(16px,1.6cqi,32px)}
+.pcard{--pc:#999;--on:#000;background:#fff;border:2.5px solid var(--ink);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;transition:transform .2s, box-shadow .2s}
+.pcard:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--ink)}
+.pcard .band{height:12px;background:var(--pc)}
+.pcard .bd{padding:clamp(16px,1.4cqi,26px);display:flex;flex-direction:column;gap:clamp(12px,1cqi,18px);flex:1}
+.pcard .who{display:flex;gap:11px;align-items:center}
+.pcard .nm{font-stretch:118%;font-weight:800;font-size:19px;line-height:1.05;letter-spacing:-.015em}
+.pcard .cand{font-size:13.5px;color:var(--mute);line-height:1.2;margin-top:3px}
+.pcard .exp{font-size:14px;line-height:1.35;font-weight:550}
+.meter{display:flex;height:10px;border-radius:99px;overflow:hidden;border:1.5px solid var(--ink);background:#fff}
+.meter span{display:block}
+.meter .of{background:var(--ink)}
+.meter .pr{background:repeating-linear-gradient(135deg,var(--ink) 0 1.5px,#fff 1.5px 5px)}
+.meter .p23{background:var(--sand-2)}
+.meter + .lg{font-family:var(--mono);font-size:11.5px;color:var(--mute);margin-top:-4px;line-height:1.35}
+.pcard .go{margin-top:auto;font-weight:750;font-size:14.5px;display:flex;justify-content:space-between;align-items:center;border-top:1.5px solid var(--line);padding-top:12px}
+
+.topics{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(12px,1.3cqi,24px)}
+.topic{background:var(--sand);border-radius:clamp(18px,1.5cqi,26px);padding:clamp(16px,1.5cqi,28px);display:flex;flex-direction:column;gap:14px;text-decoration:none;min-height:clamp(150px,12cqi,230px);transition:background .15s, transform .15s}
+.topic:hover{background:var(--marker);transform:translateY(-3px)}
+.topic .ic{width:46px;height:46px;border-radius:12px;background:var(--ink);color:#fff;display:grid;place-items:center}
+.topic .ic svg{width:24px;height:24px}
+.topic .tn{font-weight:750;font-size:16.5px;line-height:1.15;margin-top:auto}
+.topic .tc{font-family:var(--mono);font-size:11.5px;color:var(--mute)}
+
+.dark{background:var(--ink);color:#fff}
+.teaser{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(48px,6cqi,140px);align-items:start}
+.teaser h2 .hl{color:var(--ink)}
+.trows{display:grid;gap:10px}
+.trow{--pc:#999;display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:start;background:#1f1f1f;border-radius:12px;padding:14px 16px;border-left:10px solid var(--pc)}
+.trow .who{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding-top:2px}
+.trow p{margin:0 0 7px;font-size:15.5px;line-height:1.4}
+.trow .nc{color:#9b9b9b;font-style:italic}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(48px,6cqi,140px)}
+.chg{list-style:none;margin:0;padding:0}
+.chg li{display:grid;grid-template-columns:70px 1fr;gap:14px;padding:14px 0;border-bottom:1.5px solid var(--line);font-size:15.5px;line-height:1.4}
+.chg time{font-family:var(--mono);font-size:12px;font-weight:600;padding-top:3px}
+.author{background:var(--marker);border-radius:20px;padding:26px}
+.author h3{font-size:26px;margin:0 0 10px}
+.author p{margin:0 0 10px;font-size:15.5px;line-height:1.5}
+
+.foot{background:var(--sand);border-top:3px solid var(--ink);padding-block:28px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:14px}
+.foot nav{display:flex;gap:18px;flex-wrap:wrap;font-weight:600}
+
+@container site (max-width:1100px){
+  .cards5{grid-template-columns:repeat(3,1fr)}
+  .topics{grid-template-columns:repeat(4,1fr)}
+}
+@container site (max-width:900px){
+  .hero{grid-template-columns:1fr;gap:34px;padding-block:36px 44px}
+  .teaser,.split{grid-template-columns:1fr;gap:28px}
+  .clock{grid-template-columns:1fr;gap:18px}
+}
+@container site (max-width:600px){
+  .hero .lead{font-size:18px}
+  .drawer{min-height:66px;padding:12px 14px 12px 16px}
+  .cab-cap{flex-direction:column;gap:2px}
+  .drawer{grid-template-columns:1fr auto}
+  .drawer .hd{display:none}
+  .drawer .st{font-size:10px;padding:4px 8px}
+  .cards5{grid-template-columns:1fr}
+  .topics{grid-template-columns:repeat(2,1fr)}
+  .topic{min-height:128px}
+  .clock .num{font-size:88px}
+  .tl{display:none}
+  .tl-list{display:grid !important}
+  .trow{grid-template-columns:1fr;gap:6px}
+  .sec{padding-block:44px}
+  .chg li{grid-template-columns:1fr;gap:2px}
+}
+.tl-list{display:none;gap:8px;list-style:none;margin:0;padding:0}
+.tl-list li{display:grid;grid-template-columns:76px 1fr;gap:10px;font-size:14.5px;padding:8px 0;border-bottom:1.5px solid var(--line)}
+.tl-list li b{font-family:var(--mono);font-size:12px}
+.tl-list li.now{background:var(--marker-2);border-radius:8px;padding-inline:8px;border-bottom:0}
+
+/* =========================================================
+   FICHA DE PARTIDO
+   ========================================================= */
+.fhero{background:var(--pc);color:var(--on);padding-block:clamp(26px,2.5cqi,48px) clamp(104px,9cqi,160px);position:relative}
+.crumbs{font-family:var(--mono);font-size:12px;letter-spacing:.04em;opacity:.9}
+.crumbs a{text-decoration:none}
+.fhead{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:end;margin-top:26px}
+.flogo{width:132px;height:132px;border-radius:26px;background:#fff;color:var(--ink);display:grid;place-items:center;text-align:center;box-shadow:0 8px 0 rgba(0,0,0,.18)}
+.flogo b{display:block;font-stretch:125%;font-weight:900;font-size:26px;letter-spacing:-.02em}
+.flogo span{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;color:var(--mute)}
+.fhead h1{font-size:clamp(46px,9cqi,180px);margin:0;text-transform:uppercase;overflow-wrap:anywhere}
+.fmeta{display:flex;gap:10px 26px;flex-wrap:wrap;margin-top:16px;font-size:17px}
+.fmeta b{font-weight:750}
+.fstatus{position:relative;margin-top:-72px;background:#fff;border:3px solid var(--ink);border-radius:22px;padding:24px 28px;display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center;box-shadow:8px 8px 0 var(--ink)}
+.fstatus.pen{border-style:dashed;box-shadow:8px 8px 0 rgba(18,18,18,.18)}
+.fstatus p{margin:10px 0 0;font-size:17px;line-height:1.5;max-width:68ch}
+.fstatus .acts{display:flex;flex-direction:column;gap:10px;align-items:stretch}
+.fstatus .up{font-family:var(--mono);font-size:12px;color:var(--mute)}
+.pswitch{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:26px}
+.pswitch .lb{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-right:4px}
+.pswitch button{--pc:#999;--on:#000;border:2.5px solid transparent;background:var(--pc);color:var(--on);border-radius:10px;padding:7px 12px;font-stretch:118%;font-weight:800;font-size:13px;letter-spacing:-.005em}
+.pswitch button[aria-current="true"]{border-color:var(--ink);box-shadow:3px 3px 0 var(--ink);transform:translate(-2px,-2px)}
+.ftabs{display:flex;gap:4px;border-bottom:2.5px solid var(--ink);margin-top:34px;overflow-x:auto;scrollbar-width:none}
+.ftabs button{background:none;border:0;padding:13px 16px 11px;font-weight:700;font-size:15.5px;white-space:nowrap;border-bottom:5px solid transparent;margin-bottom:-2.5px;display:flex;gap:8px;align-items:center}
+.ftabs button[aria-selected="true"]{border-bottom-color:var(--pc)}
+.ftabs button .cnt{font-family:var(--mono);font-size:11px;background:var(--sand);border-radius:5px;padding:1px 6px}
+.ftabs button.dis{color:var(--mute);font-weight:550}
+.flay{display:grid;grid-template-columns:1fr clamp(320px,24cqi,420px);gap:clamp(40px,5cqi,112px);padding-block:clamp(34px,3.5cqi,64px) clamp(60px,7cqi,140px)}
+@container site (min-width:1560px){ .props{grid-template-columns:repeat(3,1fr) !important} }
+.fsec-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.fsec-h h2{font-size:30px;margin:0}
+.props{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,1.6cqi,28px)}
+.prop{background:#fff;border:2px solid var(--line);border-radius:18px;padding:clamp(20px,1.7cqi,30px) clamp(20px,1.7cqi,30px) 16px;display:flex;flex-direction:column;gap:14px;position:relative;transition:border-color .15s}
+.prop:hover{border-color:var(--ink)}
+.prop .top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.prop .tp{display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.prop .tp svg{width:17px;height:17px}
+.prop .ix{font-family:var(--mono);font-size:12px;font-weight:600;display:flex;align-items:center;gap:6px}
+.prop .ix::before{content:"";width:14px;height:14px;border-radius:4px;background:var(--pc)}
+.prop h3{font-size:21px;margin:0}
+.prop .ft{margin-top:auto;padding-top:12px;border-top:1.5px solid var(--line);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:13.5px;font-weight:650}
+.prop .ft a{text-decoration:none}.prop .ft a:hover{text-decoration:underline}
+.prop .ft .r{display:flex;gap:14px;color:var(--mute)}
+.ref23{margin-top:22px;border:2px dotted var(--ink);border-radius:16px;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;gap:14px;background:transparent;width:100%;text-align:left}
+.ref23 b{font-size:16px}
+.ref23 span{display:block;font-size:14px;color:var(--mute)}
+.side{display:flex;flex-direction:column;gap:16px}
+.box{background:#fff;border:2px solid var(--ink);border-radius:18px;padding:18px}
+.box h3{font-size:13px;font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase;margin:0 0 10px}
+.box ul{list-style:none;margin:0;padding:0}
+.box li{padding:10px 0;border-top:1.5px solid var(--line);font-size:14.5px;line-height:1.35;display:flex;flex-direction:column;gap:5px;align-items:flex-start}
+.box li:first-child{border-top:0;padding-top:2px}
+.box .more{display:inline-block;margin-top:10px;font-weight:700;font-size:14px}
+@container site (max-width:1000px){ .flay{grid-template-columns:1fr} .side{display:grid;grid-template-columns:1fr 1fr} }
+@container site (max-width:700px){
+  .fhead{grid-template-columns:1fr;gap:18px}
+  .flogo{width:84px;height:84px;border-radius:18px}.flogo b{font-size:18px}
+  .fstatus{grid-template-columns:1fr;padding:20px;box-shadow:5px 5px 0 var(--ink)}
+  .fstatus.pen{box-shadow:5px 5px 0 rgba(18,18,18,.18)}
+  .props{grid-template-columns:1fr}
+  .side{grid-template-columns:1fr}
+  .fhero{padding-bottom:96px}
+}
+
+/* =========================================================
+   COMPARADOR
+   ========================================================= */
+.chead{padding-block:clamp(40px,5cqi,110px) clamp(24px,2.5cqi,48px)}
+.chead h1{font-size:clamp(40px,6.5cqi,128px);margin:10px 0 clamp(14px,1.6cqi,30px)}
+.pills{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
+.pill{display:inline-flex;align-items:center;gap:8px;border:2px solid var(--ink);border-radius:999px;padding:9px 15px;font-weight:700;font-size:14.5px;background:#fff;white-space:nowrap}
+.pill svg{width:18px;height:18px}
+.pill[aria-pressed="true"]{background:var(--ink);color:#fff}
+.ctrl{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-top:16px}
+.ptog{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.ptog .lb{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-right:4px}
+.ptog button{--pc:#999;display:inline-flex;align-items:center;gap:7px;border:2px solid var(--ink);background:#fff;border-radius:999px;padding:6px 12px 6px 7px;font-weight:700;font-size:13.5px}
+.ptog button::before{content:"";width:18px;height:18px;border-radius:50%;background:var(--pc);border:2px solid var(--ink)}
+.ptog button[aria-pressed="false"]{opacity:.45;border-style:dashed}
+.cmp{border:3px solid var(--ink);border-radius:22px;overflow:clip;background:#fff;margin-bottom:14px}
+.crow{display:grid;grid-template-columns:clamp(200px,14cqi,260px) repeat(5,minmax(0,1fr))}
+.crow > *{padding:clamp(16px,1.4cqi,26px);border-left:1.5px solid var(--line)}
+.crow > :first-child{border-left:0}
+.crow + .crow{border-top:2px solid var(--line)}
+.chdr{position:sticky;top:var(--tb);z-index:3;background:var(--paper);border-bottom:3px solid var(--ink) !important}
+.chdr > div{display:flex;flex-direction:column;gap:9px;padding-top:0;position:relative}
+.chdr > div[data-p]::before{content:"";display:block;height:10px;margin:0 calc(-1 * clamp(16px,1.4cqi,26px)) 6px;background:var(--pc)}
+.chdr .who{display:flex;gap:9px;align-items:center;font-weight:800;font-stretch:112%;font-size:15.5px;line-height:1.1}
+.chdr .st{font-size:10px;padding:3px 8px;align-self:flex-start}
+.chdr .cap{font-family:var(--mono);font-size:11.5px;color:var(--mute);align-self:end;padding-top:16px}
+.csub{display:flex;flex-direction:column;gap:8px;background:var(--sand)}
+.csub svg{width:22px;height:22px}
+.csub b{font-stretch:112%;font-weight:800;font-size:16.5px;line-height:1.15}
+.ccell p{margin:0 0 9px;font-size:15px;line-height:1.42}
+.ccell .nc{display:flex;gap:7px;color:var(--mute);font-style:italic;font-size:14px;line-height:1.35}
+.ccell .nc::before{content:"—";font-style:normal;font-weight:700}
+.ccell .pl{display:none}
+.crow:not(.chdr):hover .csub{background:var(--marker)}
+.cnote{display:flex;gap:12px;align-items:flex-start;background:var(--marker-2);border-radius:14px;padding:14px 16px;font-size:14.5px;line-height:1.45;margin-bottom:60px}
+.cnote b{font-family:var(--mono);font-size:12px;background:var(--ink);color:#fff;border-radius:5px;padding:2px 7px;flex:none;margin-top:1px}
+@container site (max-width:900px){
+  .cmp{border:0;border-radius:0;background:transparent;overflow:visible}
+  .chdr{display:none !important}
+  .crow{display:block;background:#fff;border:2.5px solid var(--ink) !important;border-radius:18px;overflow:hidden;margin-bottom:14px}
+  .crow > *{border-left:0;border-top:1.5px solid var(--line)}
+  .crow > :first-child{border-top:0}
+  .csub{flex-direction:row;align-items:center}
+  .ccell{border-left:8px solid var(--pc) !important}
+  .ccell .pl{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+}
+
+/* =========================================================
+   ESCALA
+   ========================================================= */
+.scard{background:#fff;border:3px solid var(--ink);border-radius:24px;padding:26px 30px 30px;position:relative}
+.illus{position:absolute;top:-15px;right:24px;background:var(--marker);border:2.5px solid var(--ink);border-radius:8px;padding:4px 10px;font-family:var(--mono);font-size:11.5px;font-weight:600;letter-spacing:.06em}
+.ends{display:flex;justify-content:space-between;margin-left:230px;font-stretch:125%;font-weight:850;font-size:20px;letter-spacing:-.01em;text-transform:uppercase}
+.arow{display:grid;grid-template-columns:210px 1fr;gap:20px;align-items:center;padding:22px 0;border-top:2px solid var(--line)}
+.arow:first-of-type{border-top:0}
+.arow .src b{display:block;font-weight:800;font-size:16.5px}
+.arow .src span{font-family:var(--mono);font-size:11.5px;color:var(--mute)}
+.axis{position:relative;height:64px}
+.axis .ln{position:absolute;left:0;right:0;top:30px;height:4px;background:var(--ink);border-radius:2px}
+.axis .tk{position:absolute;top:24px;width:2px;height:16px;background:var(--ink)}
+.axis .tk span{position:absolute;top:20px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:11px;color:var(--mute)}
+.axis .ci{position:absolute;top:28px;height:8px;border-radius:4px;background:var(--sand-2)}
+.axis .dt{position:absolute;top:10px;transform:translateX(-50%);width:44px;height:44px;border-radius:50%;background:#fff;border:3px solid var(--ink);display:grid;place-items:center;font-weight:850;font-stretch:125%;font-size:15px;transition:transform .15s}
+.axis .dt:hover{transform:translateX(-50%) scale(1.12);background:var(--marker)}
+.axis .dt.pred{border-style:dashed}
+.seg{display:inline-flex;border:2.5px solid var(--ink);border-radius:999px;overflow:hidden;background:#fff}
+.seg button{border:0;background:none;padding:9px 16px;font-weight:700;font-size:14px}
+.seg button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.mcards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:22px 0 60px}
+.mcard{background:var(--sand);border-radius:18px;padding:20px}
+.mcard h3{font-size:19px;margin:0 0 8px}
+.mcard p{margin:0;font-size:14.5px;line-height:1.5}
+@container site (max-width:800px){
+  .ends{margin-left:0;font-size:15px}
+  .arow{grid-template-columns:1fr;gap:6px}
+  .mcards{grid-template-columns:1fr}
+  .scard{padding:24px 18px}
+  .axis .dt{width:36px;height:36px;font-size:13px;top:14px}
+}
+
+/* =========================================================
+   SISTEMA
+   ========================================================= */
+.sys h2{font-size:34px;margin:0 0 6px}
+.sys .blk{padding-block:clamp(40px,5cqi,100px);border-top:3px solid var(--ink)}
+.sys .blk:first-child{border-top:0}
+.concept{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.concept .c{border-radius:22px;padding:26px}
+.concept .c h3{font-size:30px;margin:0 0 10px}
+.concept .c p{margin:0;font-size:16px;line-height:1.5}
+.sw{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.sw5{grid-template-columns:repeat(5,1fr)}
+.swatch{border:2px solid var(--ink);border-radius:16px;overflow:hidden;background:#fff}
+.swatch .chip{height:96px;display:flex;align-items:flex-end;padding:10px 12px;font-weight:800;font-stretch:118%;font-size:18px}
+.swatch .inf{padding:10px 12px;font-family:var(--mono);font-size:11.5px;line-height:1.55}
+.ok{font-weight:600}.warn{color:#9a3b00;font-weight:600}
+.typ{display:grid;gap:18px}
+.typ .row{display:grid;grid-template-columns:200px 1fr;gap:20px;align-items:baseline;padding-bottom:18px;border-bottom:1.5px solid var(--line)}
+.typ .row .meta{font-family:var(--mono);font-size:11.5px;color:var(--mute)}
+.comp{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.comp .cell{background:#fff;border:2px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:12px}
+.comp .cell h4{margin:0;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.icons{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.icons div{background:var(--sand);border-radius:14px;padding:14px;display:flex;flex-direction:column;align-items:center;gap:8px;font-size:12.5px;font-weight:600;text-align:center}
+.icons svg{width:28px;height:28px}
+.rules{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rules div{border:2.5px solid var(--ink);border-radius:18px;padding:20px;font-size:15px;line-height:1.5}
+.rules b{display:block;font-stretch:112%;font-weight:800;font-size:18px;margin-bottom:6px}
+@container site (max-width:900px){
+  .concept,.comp,.rules{grid-template-columns:1fr}
+  .sw,.sw5{grid-template-columns:repeat(2,1fr)}
+  .icons{grid-template-columns:repeat(3,1fr)}
+  .typ .row{grid-template-columns:1fr;gap:6px}
+}
+
+@media (prefers-reduced-motion:reduce){ *{animation:none !important;transition:none !important} }
+</style>
+</head>
+<body>
+
+<!-- Iconos -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-vivienda" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9.5 21v-6h5v6"/></symbol>
+  <symbol id="i-fiscalidad" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></symbol>
+  <symbol id="i-pensiones" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+  <symbol id="i-empleo" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8.5 7V5.5a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2V7M3 13h18"/></symbol>
+  <symbol id="i-inmigracion" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></symbol>
+  <symbol id="i-sanidad" viewBox="0 0 24 24"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"/></symbol>
+  <symbol id="i-educacion" viewBox="0 0 24 24"><path d="M2 8.5 12 4l10 4.5-10 4.5z"/><path d="M6 10.5V16c0 1.4 2.7 3 6 3s6-1.6 6-3v-5.5M22 8.5V14"/></symbol>
+  <symbol id="i-energia" viewBox="0 0 24 24"><path d="M13 2 4.5 14H11l-1 8 8.5-12H12z"/></symbol>
+  <symbol id="i-instituciones" viewBox="0 0 24 24"><path d="M3 21h18M5 10v8M9.5 10v8M14.5 10v8M19 10v8M2.5 9 12 3.5 21.5 9z"/></symbol>
+  <symbol id="i-exterior" viewBox="0 0 24 24"><path d="M12 3 20 6v6c0 4.6-3.4 8.3-8 9-4.6-.7-8-4.4-8-9V6z"/></symbol>
+  <symbol id="i-igualdad" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 10h8M8 14h8"/></symbol>
+  <symbol id="i-territorial" viewBox="0 0 24 24"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9v12h14V9"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-cols" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16M15 4v16"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 20a2 2 0 0 0 4 0"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+</svg>
+
+<div class="mk" role="toolbar">
+  <span><b>La gaveta de los programas</b> <span class="v">· Propuesta A «Archivo + rotulador» · v0.2</span> <a href="propuesta-b.html" style="color:var(--marker);margin-left:8px">Ver propuesta B →</a></span>
+  <div class="mk-tabs" role="tablist">
+    <button role="tab" data-go="inicio" aria-selected="true">Inicio</button>
+    <button role="tab" data-go="ficha">Ficha de partido</button>
+    <button role="tab" data-go="comparar">Comparador</button>
+    <button role="tab" data-go="escala">Escala</button>
+    <button role="tab" data-go="sistema">Sistema visual</button>
+  </div>
+  <div class="mk-opt"><button id="tg-mobile" aria-pressed="false">Móvil · 390 px</button></div>
+</div>
+
+<div class="stage">
+<div class="frame" id="frame">
+
+  <!-- ============ CABECERA COMÚN ============ -->
+  <header class="hdr pad">
+    <a class="logo" href="#" data-nav="inicio" aria-label="La gaveta de los programas, inicio">
+      <svg viewBox="0 0 42 34" aria-hidden="true"><rect x="2" y="2" width="38" height="30" rx="5" fill="#fff" stroke="#121212" stroke-width="3.5"/><rect x="13" y="13.5" width="16" height="6" rx="3" fill="#121212"/><path d="M9 9.5h24" stroke="#FFE14D" stroke-width="3" stroke-linecap="round"/></svg>
+      <span><span class="w1">La gaveta</span><span class="w2">de los programas</span></span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#" data-nav="ficha">Partidos</a>
+      <a href="#" data-nav="comparar">Temas</a>
+      <a href="#" data-nav="comparar">Comparar</a>
+      <a href="#" data-nav="escala">Escala</a>
+      <a href="#" data-nav="sistema">Cómo trabajamos</a>
+    </nav>
+    <a class="search" href="#" aria-label="Buscar"><svg class="i" style="width:20px;height:20px"><use href="#i-search"/></svg></a>
+    <button class="burger" aria-label="Abrir menú">☰</button>
+  </header>
+  <div class="prov pad" role="note">
+    <span class="tg">PROVISIONAL</span>
+    <span>4 de 5 partidos aún no han publicado su programa para el 29N. Lo que ves resume documentos y anuncios oficiales previos, siempre con su fuente. <a href="#" data-nav="inicio">Ver estado ›</a></span>
+  </div>
+
+  <!-- ============ INICIO ============ -->
+  <section class="screen on" data-screen="inicio">
+    <div class="hero pad">
+      <div>
+        <div class="kicker">Elecciones generales · 29 nov 2026</div>
+        <h1 class="disp">Sacamos los <span class="hl">programas</span> del cajón.</h1>
+        <p class="lead">Qué propone cada partido, explicado en claro y con la fuente original a un clic.</p>
+        <div class="ctas">
+          <a class="btn ink" href="#" data-nav="comparar">Comparar partidos →</a>
+          <a class="btn" href="#temas">Explorar por temas</a>
+        </div>
+      </div>
+      <div>
+        <div class="cab" id="cabinet" aria-label="Partidos"></div>
+        <div class="cab-cap"><span>Orden alfabético</span><span>Abre un cajón para ver la ficha →</span></div>
+      </div>
+    </div>
+
+    <div class="clock pad">
+      <div class="num disp">20<small>días para el 29N</small></div>
+      <div>
+        <div class="tl" aria-hidden="true">
+          <div class="bar"></div>
+          <div class="ev now"><span class="d">9 nov</span><span class="dot"></span><span class="l">Hoy</span></div>
+          <div class="ev"><span class="d">10 nov</span><span class="dot"></span><span class="l">El PP presenta su programa</span></div>
+          <div class="ev"><span class="d">13 nov</span><span class="dot"></span><span class="l">Empieza la campaña</span></div>
+          <div class="ev"><span class="d">≈ 13–15 nov</span><span class="dot"></span><span class="l">PSOE presenta su programa <span class="mute" style="font-weight:500">(según prensa)</span></span></div>
+          <div class="ev"><span class="d">28 nov</span><span class="dot"></span><span class="l">Jornada de reflexión</span></div>
+          <div class="ev big"><span class="d">29 nov</span><span class="dot"></span><span class="l">Elecciones</span></div>
+        </div>
+        <ol class="tl-list">
+          <li class="now"><b>9 nov</b><span>Hoy</span></li>
+          <li><b>10 nov</b><span>El PP presenta su programa</span></li>
+          <li><b>13 nov</b><span>Empieza la campaña</span></li>
+          <li><b>≈13–15</b><span>PSOE presenta su programa <span class="mute">(según prensa)</span></span></li>
+          <li><b>28 nov</b><span>Jornada de reflexión</span></li>
+          <li><b>29 nov</b><span><b style="font-family:var(--sans);font-size:14.5px">Elecciones</b></span></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="sec pad">
+      <div class="sl"><span class="n">01</span><span class="t">Estado de los programas</span><span class="ln"></span></div>
+      <h2 class="disp">¿Quién ha sacado ya su programa?</h2>
+      <p class="sub">Ninguno completo todavía. Mientras tanto, te enseñamos lo que sí hay y en qué fuentes se basa cada ficha. <span class="mono mute" style="font-size:13px">Actualizado hoy, 10:00</span></p>
+      <div class="cards5" id="cards5"></div>
+      <div class="row mono mute" style="display:flex;gap:18px;flex-wrap:wrap;font-size:12px;margin-top:14px">
+        <span><span class="meter" style="display:inline-flex;width:28px;vertical-align:middle"><span class="of" style="flex:1"></span></span> Fuentes oficiales</span>
+        <span><span class="meter" style="display:inline-flex;width:28px;vertical-align:middle"><span class="pr" style="flex:1"></span></span> Prensa</span>
+        <span><span class="meter" style="display:inline-flex;width:28px;vertical-align:middle"><span class="p23" style="flex:1"></span></span> Programa 2023 (solo referencia)</span>
+      </div>
+    </div>
+
+    <div class="sec pad" id="temas" style="padding-top:0">
+      <div class="sl"><span class="n">02</span><span class="t">Explora por tema</span><span class="ln"></span></div>
+      <h2 class="disp">¿Qué te importa?</h2>
+      <p class="sub">Todas las propuestas de todos los partidos sobre un mismo tema, en una página.</p>
+      <div class="topics" id="topics"></div>
+    </div>
+
+    <div class="sec pad dark">
+      <div class="sl"><span class="n">03</span><span class="t">Comparador</span><span class="ln"></span></div>
+      <div class="teaser">
+        <div>
+          <h2 class="disp" style="color:#fff">¿Qué propone cada uno sobre el <span class="hl">alquiler</span>?</h2>
+          <p class="sub" style="color:#ddd">Elige un tema y los partidos que quieras. Cada respuesta lleva su fuente.</p>
+          <a class="btn yel" href="#" data-nav="comparar">Abrir el comparador →</a>
+        </div>
+        <div class="trows" id="trows"></div>
+      </div>
+    </div>
+
+    <div class="sec pad">
+      <div class="split">
+        <div>
+          <div class="sl"><span class="n">04</span><span class="t">Últimos cambios</span><span class="ln"></span></div>
+          <ul class="chg">
+            <li><time>9 NOV</time><span><b>VOX</b> · Añadido «Recuperar España» (19 oct) como avance oficial del programa.</span></li>
+            <li><time>9 NOV</time><span><b>Frente Amplio</b> · Incorporadas 6 notas oficiales: fiscalidad, vivienda, pensiones y tren.</span></li>
+            <li><time>9 NOV</time><span><b>PP</b> · Presentación del programa anunciada para el 10 nov <span class="tag pr" style="margin-left:4px"><b>Prensa</b></span></span></li>
+          </ul>
+          <p style="margin:14px 0 0;font-weight:700;font-size:15px"><a href="#">Todo el historial</a> · <a href="#">RSS</a></p>
+        </div>
+        <div class="author">
+          <div class="kicker" style="margin-bottom:10px">Quién hay detrás</div>
+          <h3 class="disp">Una iniciativa personal.</h3>
+          <p>Soy <b>Khiustin Tornés</b>. Hice esta web para destejer la maraña de propuestas de cada partido y ponerlas una al lado de otra, siempre con la fuente original a un clic.</p>
+          <p><b>Financiada por mí.</b> Sin publicidad ni dinero de terceros. <b>Sin afiliación</b> a ningún partido, ni ahora ni antes.</p>
+          <a class="btn sm ink" href="#" data-nav="sistema">Cómo trabajamos →</a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="foot pad">
+      <div style="max-width:52ch"><b>La gaveta de los programas</b> es una iniciativa personal de Khiustin Tornés para facilitar el acceso a los programas electorales y su comparación. Financiada por su autor. Sin vinculación con ningún partido.</div>
+      <nav><a href="#">Cómo trabajamos</a><a href="#">Fuentes</a><a href="#">¿Has visto un error?</a><a href="#">Datos abiertos</a><a href="#">RSS</a></nav>
+    </footer>
+    <nav class="tabbar" aria-label="Accesos rápidos"><a class="cur" href="#"><svg class="i"><use href="#i-home"/></svg>Inicio</a><a href="#"><svg class="i"><use href="#i-grid"/></svg>Temas</a><a href="#"><svg class="i"><use href="#i-cols"/></svg>Comparar</a><a href="#"><svg class="i"><use href="#i-search"/></svg>Buscar</a></nav>
+  </section>
+
+  <!-- ============ FICHA ============ -->
+  <section class="screen" data-screen="ficha" id="ficha">
+    <div class="fhero pad">
+      <div class="crumbs"><a href="#" data-nav="inicio">Inicio</a> › Partidos › <span id="f-crumb"></span></div>
+      <div class="fhead">
+        <div class="flogo" aria-label="Logo oficial"><div><b id="f-logo"></b><span>LOGO OFICIAL</span></div></div>
+        <div>
+          <h1 class="disp" id="f-name"></h1>
+          <div class="fmeta" id="f-meta"></div>
+        </div>
+      </div>
+    </div>
+    <div class="pad">
+      <div class="fstatus" id="f-status"></div>
+      <div class="pswitch" id="f-switch"><span class="lb">Otras fichas</span></div>
+      <div class="ftabs" role="tablist" id="f-tabs"></div>
+      <div class="flay">
+        <div>
+          <div class="fsec-h"><h2 class="disp">Propuestas destacadas</h2><a class="mono" style="font-size:12.5px" href="#">¿Cómo las elegimos? ⓘ</a></div>
+          <div class="props" id="f-props"></div>
+          <button class="ref23" id="f-ref23"></button>
+        </div>
+        <aside class="side">
+          <div class="box"><h3>Fuentes de esta ficha</h3><ul id="f-src"></ul><a class="more" href="#">Registro completo →</a></div>
+          <div class="box"><h3>Candidaturas por territorio</h3><ul id="f-terr"></ul></div>
+          <div class="box"><h3>Historial</h3><ul><li><span class="mono" style="font-size:12px">9 NOV</span>Ficha creada a partir de las fuentes actuales.</li></ul></div>
+        </aside>
+      </div>
+    </div>
+    <nav class="tabbar" aria-label="Accesos rápidos"><a href="#"><svg class="i"><use href="#i-home"/></svg>Inicio</a><a href="#"><svg class="i"><use href="#i-grid"/></svg>Temas</a><a href="#"><svg class="i"><use href="#i-cols"/></svg>Comparar</a><a href="#"><svg class="i"><use href="#i-search"/></svg>Buscar</a></nav>
+  </section>
+
+  <!-- ============ COMPARADOR ============ -->
+  <section class="screen" data-screen="comparar">
+    <div class="chead pad">
+      <div class="kicker">Comparador</div>
+      <h1 class="disp">Vivienda, partido a partido.</h1>
+      <div class="pills" id="c-pills" role="group" aria-label="Tema"></div>
+      <div class="ctrl">
+        <div class="ptog" id="c-ptog"><span class="lb">Partidos</span></div>
+        <div style="display:flex;gap:8px"><button class="btn sm"><svg class="i"><use href="#i-link"/></svg>Copiar enlace</button><button class="btn sm">Compartir imagen</button></div>
+      </div>
+    </div>
+    <div class="pad">
+      <div class="cmp" role="table" id="cmp"></div>
+      <div class="cnote"><b>OJO</b><span>«No consta» significa que no hemos encontrado propuestas en las fuentes consultadas, no que el partido no tenga postura. Cada celda enlaza a su fuente. Partidos en orden alfabético · Actualizado 9 nov, 10:00.</span></div>
+    </div>
+    <nav class="tabbar" aria-label="Accesos rápidos"><a href="#"><svg class="i"><use href="#i-home"/></svg>Inicio</a><a href="#"><svg class="i"><use href="#i-grid"/></svg>Temas</a><a class="cur" href="#"><svg class="i"><use href="#i-cols"/></svg>Comparar</a><a href="#"><svg class="i"><use href="#i-search"/></svg>Buscar</a></nav>
+  </section>
+
+  <!-- ============ ESCALA ============ -->
+  <section class="screen" data-screen="escala">
+    <div class="chead pad">
+      <div class="kicker">Escala izquierda–derecha</div>
+      <h1 class="disp">¿Dónde se sitúa cada partido?</h1>
+      <p style="font-size:19px;max-width:58ch;margin:0 0 22px">No los colocamos nosotros. Mostramos <span class="hl" style="white-space:normal">mediciones externas publicadas</span>, cada una con su método, para que puedas compararlas.</p>
+      <div class="seg" role="group" aria-label="Fuente"><button aria-pressed="true">Todas</button><button aria-pressed="false">Ciudadanía · CIS</button><button aria-pressed="false">Expertos · CHES</button></div>
+    </div>
+    <div class="pad">
+      <div class="scard">
+        <span class="illus">DATOS ILUSTRATIVOS · PARTIDOS A–E · SIN VERIFICAR</span>
+        <div class="ends"><span>← Izquierda</span><span>Derecha →</span></div>
+        <div class="arow">
+          <div class="src"><b>Percepción ciudadana</b><span>CIS · estudio preelectoral · n = X.XXX</span></div>
+          <div class="axis">
+            <div class="ln"></div>
+            <div class="tk" style="left:0"><span>1</span></div><div class="tk" style="left:50%"><span>5,5</span></div><div class="tk" style="left:100%"><span>10</span></div>
+            <div class="ci" style="left:11%;width:8%"></div><button class="dt" style="left:15%">A</button>
+            <div class="ci" style="left:20%;width:8%"></div><button class="dt" style="left:24%">B</button>
+            <div class="ci" style="left:31%;width:8%"></div><button class="dt" style="left:35%">C</button>
+            <div class="ci" style="left:64%;width:8%"></div><button class="dt" style="left:68%">D</button>
+            <div class="ci" style="left:84%;width:8%"></div><button class="dt" style="left:88%">E</button>
+          </div>
+        </div>
+        <div class="arow">
+          <div class="src"><b>Expertos en ciencia política</b><span>Chapel Hill Expert Survey · 2024</span></div>
+          <div class="axis">
+            <div class="ln"></div>
+            <div class="tk" style="left:0"><span>0</span></div><div class="tk" style="left:50%"><span>5</span></div><div class="tk" style="left:100%"><span>10</span></div>
+            <button class="dt" style="left:10%">A</button>
+            <button class="dt" style="left:19%">B</button>
+            <button class="dt pred" style="left:37%" title="Sin dato propio: se muestra el de su predecesor">C*</button>
+            <button class="dt" style="left:71%">D</button>
+            <button class="dt" style="left:92%">E</button>
+          </div>
+        </div>
+        <p class="mono mute" style="font-size:12px;margin:8px 0 0">* Borde discontinuo: el partido no tiene dato propio en esta fuente y se muestra el de su predecesor (p. ej. Frente Amplio → Sumar), con nota.</p>
+      </div>
+      <div class="mcards">
+        <div class="mcard"><h3 class="semi">Ciudadanía (CIS)</h3><p>Dónde sitúan los encuestados a cada partido, en una escala de 1 a 10. Mide percepción, no programa. Al pulsar un punto: valor, pregunta literal y enlace al estudio.</p></div>
+        <div class="mcard"><h3 class="semi">Expertos (CHES)</h3><p>Valoración de politólogos sobre la posición general de cada partido, de 0 a 10. Método académico comparable en toda Europa.</p></div>
+        <div class="mcard"><h3 class="semi">Por qué no promediamos</h3><p>Miden cosas distintas. Las mostramos juntas para que se vea si coinciden, sin mezclarlas en una cifra nuestra.</p></div>
+      </div>
+    </div>
+    <nav class="tabbar" aria-label="Accesos rápidos"><a href="#"><svg class="i"><use href="#i-home"/></svg>Inicio</a><a href="#"><svg class="i"><use href="#i-grid"/></svg>Temas</a><a href="#"><svg class="i"><use href="#i-cols"/></svg>Comparar</a><a href="#"><svg class="i"><use href="#i-search"/></svg>Buscar</a></nav>
+  </section>
+
+  <!-- ============ SISTEMA ============ -->
+  <section class="screen sys" data-screen="sistema">
+    <div class="pad">
+      <div class="blk">
+        <div class="kicker" style="margin-bottom:10px">Sistema visual · v0.1</div>
+        <h2 class="disp" style="font-size:clamp(36px,5.5cqi,64px)">Archivo + rotulador.</h2>
+        <p style="font-size:18px;max-width:62ch;margin:0 0 24px">Dos ideas sostienen el diseño: <b>la gaveta</b> (cajones, fichas y archivo, que transmiten orden y rigor) y <b>el rotulador</b> (subrayar es leer con atención, que es lo que la web hace por la gente).</p>
+        <div class="concept">
+          <div class="c" style="background:var(--ink);color:#fff"><h3 class="disp">La gaveta</h3><p>Los partidos son cajones de un mismo mueble: misma forma, mismo tamaño y orden alfabético. Las fichas llevan el color del partido en la cabecera. Las etiquetas en monoespaciada recuerdan a un archivo documental.</p></div>
+          <div class="c" style="background:var(--marker)"><h3 class="disp">El rotulador</h3><p>El amarillo es el único color propio de la marca y nunca representa a un partido. Sirve para subrayar lo importante, marcar dónde estás y señalar lo provisional.</p></div>
+        </div>
+      </div>
+
+      <div class="blk">
+        <h2 class="disp">Color</h2>
+        <p class="mute" style="margin:0 0 18px">Fondos claros siempre. El negro estructura, el amarillo subraya y el color de cada partido va solo como relleno, nunca como color de texto.</p>
+        <div class="sw" style="margin-bottom:14px">
+          <div class="swatch"><div class="chip" style="background:var(--paper)">Papel</div><div class="inf">#FBFAF7<br>Fondo principal</div></div>
+          <div class="swatch"><div class="chip" style="background:var(--sand)">Arena</div><div class="inf">#F1EEE6<br>Bloques y secciones</div></div>
+          <div class="swatch"><div class="chip" style="background:var(--ink);color:#fff">Tinta</div><div class="inf">#121212<br>Texto · 18,4:1 sobre papel</div></div>
+          <div class="swatch"><div class="chip" style="background:var(--marker)">Rotulador</div><div class="inf">#FFE14D<br>Solo marca · tinta encima 14,4:1</div></div>
+        </div>
+        <div class="sw sw5">
+          <div class="swatch"><div class="chip" style="background:var(--fa);color:var(--fa-on)">Frente Amplio</div><div class="inf">#F03C00 · texto tinta<br><span class="ok">4,8:1 AA ✓</span><br>Fuente: CSS de frenteamplio.info ✓</div></div>
+          <div class="swatch"><div class="chip" style="background:var(--pod);color:var(--pod-on)">Podemos</div><div class="inf">#653B7B · texto blanco<br><span class="ok">8,5:1 AA ✓</span><br>Fuente: CSS de pazcasaytrabajo.es ✓</div></div>
+          <div class="swatch"><div class="chip" style="background:var(--pp);color:var(--pp-on)">PP</div><div class="inf">#21599E · texto blanco<br><span class="ok">7,0:1 AA ✓</span><br>Fuente: CSS de pp.es ✓</div></div>
+          <div class="swatch"><div class="chip" style="background:var(--psoe);color:var(--psoe-on)">PSOE</div><div class="inf">#E30613 · texto blanco<br><span class="ok">4,9:1 AA ✓</span><br><span class="warn">Aproximado: web bloqueada</span></div></div>
+          <div class="swatch"><div class="chip" style="background:var(--vox);color:var(--vox-on)">VOX</div><div class="inf">#63BE21 · texto tinta<br><span class="ok">8,0:1 AA ✓</span><br><span class="warn">Aproximado: web bloqueada</span></div></div>
+        </div>
+      </div>
+
+      <div class="blk">
+        <h2 class="disp">Tipografía</h2>
+        <p class="mute" style="margin:0 0 18px">Una sola familia sans serif variable, <b>Archivo</b> (Google Fonts), que pasa de titular de cartel a texto de lectura cambiando solo el ancho y el peso. Para los datos documentales (fuentes, fechas, estados) se usa <b>IBM Plex Mono</b>.</p>
+        <div class="typ">
+          <div class="row"><div class="meta">Display · Archivo<br>ancho 125 · peso 850</div><div class="disp" style="font-size:56px">Sacamos los programas</div></div>
+          <div class="row"><div class="meta">Subtítulo · Archivo<br>ancho 112 · peso 750</div><div class="semi" style="font-size:24px">Revalorizar las pensiones con el IPC</div></div>
+          <div class="row"><div class="meta">Texto · Archivo<br>ancho 100 · peso 400 · 17/26</div><div style="max-width:62ch">Esta ficha resume las fuentes oficiales publicadas por el partido. Cuando se publique el programa, sustituiremos esta información y lo anotaremos en el historial.</div></div>
+          <div class="row"><div class="meta">Datos · IBM Plex Mono<br>500–600 · mayúsculas</div><div class="kicker">Documento oficial · 19 oct 2026 · p. 34</div></div>
+        </div>
+      </div>
+
+      <div class="blk">
+        <h2 class="disp">Componentes de transparencia</h2>
+        <p class="mute" style="margin:0 0 18px">Siempre forma + texto, nunca solo color: el estado y el tipo de fuente se distinguen también en blanco y negro.</p>
+        <div class="comp">
+          <div class="cell"><h4>Estado del programa</h4>
+            <div style="display:flex;gap:8px;flex-wrap:wrap"><span class="st pub"><i></i>Publicado</span><span class="st ava"><i></i>Avance oficial</span><span class="st pen"><i></i>Pendiente</span></div>
+            <p class="mute" style="margin:0;font-size:14px">Relleno = publicado · medio = avance · discontinuo = pendiente.</p></div>
+          <div class="cell"><h4>Tipo de fuente</h4>
+            <div style="display:flex;gap:8px;flex-wrap:wrap"><span class="tag p29"><b>Programa 29N</b>p. 34</span><span class="tag"><b>Avance oficial</b></span><span class="tag"><b>Doc. oficial</b></span><span class="tag"><b>Anuncio oficial</b></span><span class="tag pr"><b>Prensa</b>medio · fecha</span><span class="tag p23"><b>Programa 2023</b></span></div>
+            <p class="mute" style="margin:0;font-size:14px">Borde continuo = oficial · discontinuo = prensa · punteado = programa anterior.</p></div>
+          <div class="cell"><h4>Composición de fuentes</h4>
+            <div class="meter"><span class="of" style="flex:1"></span><span class="pr" style="flex:3"></span><span class="p23" style="flex:1"></span></div>
+            <div class="mono mute" style="font-size:11.5px">1 oficial · 3 prensa · 1 de 2023</div>
+            <p class="mute" style="margin:0;font-size:14px">De un vistazo: cuánto de cada ficha se apoya en documentos oficiales.</p></div>
+          <div class="cell"><h4>Sin datos</h4>
+            <div class="ccell"><p class="nc" style="margin:0">No consta en las fuentes consultadas</p></div>
+            <p class="mute" style="margin:0;font-size:14px">Un guion y gris, nunca una ✕: no significa que el partido esté en contra.</p></div>
+          <div class="cell"><h4>Botones</h4>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center"><button class="btn ink">Comparar →</button><button class="btn">Explorar</button><button class="btn yel sm">Abrir</button></div>
+            <p class="mute" style="margin:0;font-size:14px">Áreas táctiles de 44 px o más. Al pasar el ratón, la sombra «sale» como un cajón.</p></div>
+          <div class="cell"><h4>Foco de teclado</h4>
+            <div><button class="btn" style="outline:3px solid var(--ink);outline-offset:3px;box-shadow:0 0 0 6px var(--marker)">Elemento con foco</button></div>
+            <p class="mute" style="margin:0;font-size:14px">Contorno negro + halo amarillo: visible sobre cualquier fondo, incluidos los de partido.</p></div>
+        </div>
+      </div>
+
+      <div class="blk">
+        <h2 class="disp">Iconos de los temas</h2>
+        <p class="mute" style="margin:0 0 18px">Trazo de 2 px y esquinas redondeadas, dibujados a medida. Siempre acompañados del nombre.</p>
+        <div class="icons" id="icons"></div>
+      </div>
+
+      <div class="blk" style="padding-bottom:60px">
+        <h2 class="disp">Reglas de neutralidad visual</h2>
+        <p class="mute" style="margin:0 0 18px">El diseño también tiene que ser imparcial.</p>
+        <div class="rules">
+          <div><b>Mismo peso</b>En las páginas compartidas (inicio, temas, comparador), todos los partidos usan el mismo componente, el mismo tamaño y el orden alfabético.</div>
+          <div><b>Color en su casa</b>El color de un partido solo protagoniza en su propia ficha. Fuera de ella aparece como acento: banda, punto o borde.</div>
+          <div><b>Amarillo de nadie</b>El amarillo es de la marca. Si se incorpora un partido amarillo (CC, por ejemplo), su color se usará solo en banda y monograma, nunca para subrayar.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</div>
+
+<script>
+/* ---------- Datos (de la investigación del 9 nov) ---------- */
+const TOPICS = {
+  vivienda:['Vivienda',31], fiscalidad:['Fiscalidad y economía',24], pensiones:['Pensiones',9], empleo:['Empleo y salarios',11],
+  inmigracion:['Inmigración',12], sanidad:['Sanidad',7], educacion:['Educación',5], energia:['Energía y medio ambiente',10],
+  instituciones:['Instituciones',8], exterior:['Exterior y defensa',5], igualdad:['Igualdad',6], territorial:['Modelo territorial',4]
+};
+const TYPES = {p29:'Programa 29N', av:'Avance oficial', doc:'Doc. oficial', an:'Anuncio oficial', pr:'Prensa', p23:'Programa 2023'};
+const ST = {pub:'Publicado', ava:'Avance oficial', pen:'Pendiente'};
+
+const P = [
+ { id:'fa', name:'Frente Amplio', mono:'FA', cand:'Ada Colau', lema:null, st:'pen',
+   exp:'Presenta propuestas por bloques', src:{of:7,pr:0,p23:1},
+   text:'El Frente Amplio todavía no ha publicado su programa para el 29N. Está presentando sus propuestas por bloques en notas oficiales. Esta ficha resume <b>7 fuentes oficiales</b> publicadas entre el 17 de octubre y el 6 de noviembre de 2026.',
+   terr:['<b>Cataluña:</b> Comuns-Front Ampli','<b>Aragón:</b> CHA-Frente Amplio Aragón','<b>Baleares:</b> Ara Més-Front Ampli','<b>Senado:</b> «Senado de Progreso», con el PSOE'],
+   props:[
+     ['fiscalidad','Impuesto anual al patrimonio neto: 2 % desde 1 M€ y 3 % desde 50 M€','an','Nota oficial · 5 nov 2026'],
+     ['vivienda','Impuesto del 10 % anual sobre la acumulación de viviendas','an','Nota oficial · 28 oct 2026'],
+     ['vivienda','Ley para expropiar viviendas a grandes propietarios corporativos','an','Nota oficial · 6 nov 2026'],
+     ['pensiones','Ninguna pensión por debajo del salario mínimo (1.221 €)','an','Nota oficial · 24 oct 2026'],
+     ['pensiones','Jubilación efectiva a los 65 años','an','Nota oficial · 24 oct 2026'],
+     ['fiscalidad','Tipo efectivo mínimo del 15 % para gran empresa y banca','an','Nota oficial · 24 oct 2026']],
+   list:[['an','Impuestos a grandes fortunas y empresas','5 nov 2026'],['an','Ley de expropiación de vivienda','6 nov 2026'],['an','Impuesto a la acumulación de vivienda','28 oct 2026'],['an','Pensiones','24 oct 2026'],['an','Pacto de Estado por el tren','2 nov 2026'],['p23','Programa Sumar 2023 «Un programa para ti»','jul 2023']],
+   ref:'Lo que proponía Sumar en 2023', refsub:'Coalición predecesora · 182 págs. No es el programa del 29N.' },
+ { id:'pod', name:'Podemos', mono:'POD', cand:'Irene Montero', lema:'«Paz, casa y trabajo»', st:'pen',
+   exp:'Sin fecha anunciada', src:{of:3,pr:0,p23:0},
+   text:'Podemos todavía no ha publicado su programa para el 29N y no ha anunciado fecha. Esta ficha resume <b>3 fuentes oficiales</b>: su web de campaña, su Documento Político de 2025 y la consulta de alianzas de octubre de 2026.',
+   terr:['<b>Cataluña:</b> dentro de la lista de ERC','<b>Canarias:</b> Unidad del Pueblo Canario','<b>C. Valenciana:</b> Compromís-Front Valencià','<b>Resto:</b> listas propias'],
+   props:[
+     ['empleo','Salario mínimo de 1.800 € al mes por ley','an','Web de campaña · oct 2026'],
+     ['empleo','Jornada laboral de 30 horas semanales','an','Web de campaña · oct 2026'],
+     ['vivienda','Prohibir la compra de vivienda que no sea para vivir en ella','an','Web de campaña · oct 2026'],
+     ['vivienda','Bajar los alquileres un 40 % por ley','doc','Documento Político · abr 2025'],
+     ['exterior','Salir de la OTAN y no aumentar el gasto en armas','an','Web de campaña · oct 2026'],
+     ['fiscalidad','Impuesto del 50 % a los beneficios extraordinarios del IBEX','doc','Documento Político · abr 2025']],
+   list:[['an','Web de campaña «Paz, casa y trabajo»','oct 2026'],['doc','Documento Político, V Asamblea Ciudadana','abr 2025'],['doc','Resultado de la consulta de alianzas','16 oct 2026']],
+   ref:'Lo que proponía Podemos en las europeas de 2024', refsub:'Referencia. No es el programa del 29N.' },
+ { id:'pp', name:'PP', fullname:'Partido Popular', mono:'PP', cand:'Alberto Núñez Feijóo', lema:'«El cambio necesario»', st:'pen',
+   exp:'Presentación: <b>mar 10 nov</b>', src:{of:5,pr:0,p23:1},
+   text:'El PP todavía no ha publicado su programa para el 29N (presentación anunciada para el <b>martes 10 de noviembre</b>). Esta ficha resume <b>5 fuentes oficiales</b> publicadas entre julio de 2025 y octubre de 2026.',
+   terr:['<b>Navarra:</b> UPN en coalición con el PP','<b>Aragón:</b> con el apoyo del PAR'],
+   props:[
+     ['vivienda','Construir un millón de viviendas en la legislatura','doc','«Mi Contrato con España» · 19 oct 2026'],
+     ['vivienda','Desalojar viviendas okupadas en un plazo de 48 horas','an','pp.es · 21 oct 2026'],
+     ['pensiones','Revalorizar las pensiones con el IPC, dentro del Pacto de Toledo','doc','«Mi Contrato con España» · 19 oct 2026'],
+     ['fiscalidad','IVA del 0 % en alimentos básicos y del 10 % en la energía','an','Decálogo económico · 27 sep 2026'],
+     ['inmigracion','Prohibir por ley las regularizaciones colectivas','doc','«Mi Contrato con España» · 19 oct 2026'],
+     ['energia','Alargar la vida de las centrales nucleares','an','Decálogo económico · 27 sep 2026']],
+   list:[['doc','Mi Contrato con España','19 oct 2026'],['an','Plan de vivienda (Sevilla)','21 oct 2026'],['an','Decálogo de reformas económicas','27 sep 2026'],['doc','Ponencia política, XXI Congreso','jul 2025'],['doc','Plan de autónomos','nov 2025'],['p23','Programa electoral 23J','jul 2023']],
+   ref:'Lo que proponía en 2023', refsub:'Programa de 365 medidas · 112 págs. No es el programa del 29N.' },
+ { id:'psoe', name:'PSOE', fullname:'Partido Socialista Obrero Español', mono:'PSOE', cand:'Pedro Sánchez', lema:null, st:'pen',
+   exp:'≈ 13–15 nov <span class="tag pr" style="font-size:10.5px"><b>Prensa</b></span>', src:{of:1,pr:3,p23:1},
+   text:'El PSOE todavía no ha publicado su programa para el 29N; según la prensa, lo presentará hacia el 13–15 de noviembre. Mientras tanto, <b>varias propuestas solo constan en declaraciones recogidas por la prensa</b>, y lo indicamos en cada una.',
+   terr:['<b>Cataluña:</b> PSC','<b>Senado:</b> «Senado de Progreso», con IU, Sumar, Más Madrid y otros'],
+   props:[
+     ['pensiones','Revalorizar las pensiones con el IPC cuatro años más','pr','Europa Press · 14 oct 2026'],
+     ['instituciones','Reforma constitucional para blindar las pensiones y el aborto','pr','Que.es · 8 nov 2026'],
+     ['empleo','Subir el salario mínimo cada año','pr','Que.es · 8 nov 2026'],
+     ['vivienda','Suspender los desahucios de personas vulnerables hasta 2030','pr','elDiario.es · 29 sep 2026'],
+     ['vivienda','Parque público de vivienda de al menos el 6 %','doc','Ponencia 41º Congreso · 2024'],
+     ['empleo','Jornada laboral de 36 horas en 2030','doc','Ponencia 41º Congreso · 2024']],
+   list:[['doc','Ponencia Marco, 41º Congreso Federal','nov 2024'],['pr','Europa Press: mitin de Zaragoza','14 oct 2026'],['pr','Que.es: mitin de Bilbao','8 nov 2026'],['pr','elDiario.es: decretos de vivienda','29 sep 2026'],['p23','Programa electoral Generales 2023','jul 2023']],
+   ref:'Lo que proponía en 2023', refsub:'Programa de 272 págs. No es el programa del 29N.' },
+ { id:'vox', name:'VOX', mono:'VOX', cand:'Santiago Abascal', lema:'«Es sentido común»', st:'ava',
+   exp:'«Recuperar España» · 19 oct', src:{of:4,pr:0,p23:1},
+   text:'VOX ha publicado un <b>avance oficial</b>, «Recuperar España» (19 oct, 6 págs.), pero no su programa completo. Esta ficha combina ese avance con su programa económico (2025) y su programa de desregulación (junio de 2026).',
+   terr:['Listas propias en toda España'],
+   props:[
+     ['fiscalidad','IRPF del 15 % hasta 70.000 € y del 25 % por encima, con mínimo exento de 22.000 €','doc','Programa económico · 2025'],
+     ['inmigracion','«Remigración»: repatriar a los inmigrantes en situación irregular','av','«Recuperar España» · 19 oct 2026'],
+     ['vivienda','«Prioridad nacional» en el acceso a la vivienda pública','av','«Recuperar España» · 19 oct 2026'],
+     ['pensiones','Crear un fondo de capitalización y avanzar a un sistema mixto','doc','Programa económico · 2025'],
+     ['energia','Plan Nuclear Nacional y «energía a precio de coste»','av','«Recuperar España» · 19 oct 2026'],
+     ['sanidad','Tarjeta sanitaria única y plan nacional de listas de espera','av','«Recuperar España» · 19 oct 2026']],
+   list:[['av','Recuperar España','19 oct 2026'],['doc','Programa de Desregulación','jun 2026'],['doc','Programa Económico y de Vivienda','2025'],['an','Nota: ejes del 29N','11 oct 2026'],['p23','Programa 23J (copia en The Objective)','jul 2023']],
+   ref:'Lo que proponía en 2023', refsub:'Programa de 178 págs. No es el programa del 29N.' }
+];
+
+const CMP = [
+ ['vivienda','Acceso y compra', {
+   fa:null, pod:['Solo se podrá comprar vivienda para vivir en ella','an','Web campaña'],
+   pp:['Avales de hasta el 100 % y rebaja del 60 % de IVA e ITP a menores de 40; Hucha Hogar Joven','an','21 oct'],
+   psoe:['Préstamo al 0 % para la primera vivienda','pr','elDiario.es · 29 sep'],
+   vox:['«Impuestos cero» a la primera vivienda; liberar suelo','av','19 oct']}],
+ ['vivienda','Alquiler', {
+   fa:null, pod:['Bajar los alquileres un 40 % por ley','doc','2025'],
+   pp:['Deducciones a quien prorrogue contratos hasta 3 años con subidas por debajo del IPC','an','21 oct'],
+   psoe:['Alquileres indefinidos y prórroga de contratos; regular el alquiler de temporada y por habitaciones','pr','elDiario.es · 29 sep'],
+   vox:['Derogar la Ley 12/2023 de vivienda','doc','jun 2026']}],
+ ['vivienda','Vivienda pública', {
+   fa:['Invertir hasta el 1 % del PIB; pisos de la SAREB al parque público','an','28 oct · 6 nov'],
+   pod:['Compra pública masiva de vivienda','doc','2025'],
+   pp:['Un millón de viviendas en la legislatura','doc','19 oct'],
+   psoe:['Parque público de al menos el 6 %','doc','2024'],
+   vox:['Acceso preferente de españoles («prioridad nacional»)','av','19 oct']}],
+ ['vivienda','Grandes tenedores y fondos', {
+   fa:['Expropiación a tenedores corporativos en tres fases (+1.000, +700, +50 viviendas); impuesto del 10 % anual','an','6 nov'],
+   pod:['Pasar las viviendas de los fondos a alquiler social','an','Web campaña'],
+   pp:null,
+   psoe:['Prohibir que los fondos compren vivienda hasta 2028','pr','elDiario.es · 29 sep'],
+   vox:null}],
+ ['vivienda','Okupación y desahucios', {
+   fa:null, pod:['Disolver Desokupa','doc','2025'],
+   pp:['Desalojo de okupas en 48 horas','an','21 oct'],
+   psoe:['Suspender los desahucios de personas vulnerables hasta 2030','pr','elDiario.es · 29 sep'],
+   vox:['«Fin de la okupación»','av','19 oct']}]
+];
+
+/* ---------- Utilidades ---------- */
+const $ = s => document.querySelector(s);
+const icon = (id, cls='i') => `<svg class="${cls}"><use href="#i-${id}"/></svg>`;
+const st = k => `<span class="st ${k}"><i></i>${ST[k]}</span>`;
+const tag = (k, txt) => `<span class="tag ${k}"><b>${TYPES[k]}</b>${txt ? `<span>${txt}</span>` : ''}</span>`;
+const pv = p => `--pc:var(--${p.id});--on:var(--${p.id}-on)`;
+
+/* ---------- Inicio ---------- */
+$('#cabinet').innerHTML = P.map(p => `
+  <a class="drawer" href="#" data-party="${p.id}" style="${pv(p)}">
+    <span class="nm">${p.name}<span class="cd">${p.cand}</span></span><span class="hd" aria-hidden="true"></span>${st(p.st)}
+  </a>`).join('');
+
+$('#cards5').innerHTML = P.map(p => {
+  const t = p.src.of + p.src.pr + p.src.p23;
+  const parts = [p.src.of && `${p.src.of} oficial${p.src.of>1?'es':''}`, p.src.pr && `${p.src.pr} de prensa`, p.src.p23 && `${p.src.p23} de 2023`].filter(Boolean).join(' · ');
+  return `<a class="pcard" href="#" data-party="${p.id}" style="${pv(p)}">
+    <div class="band"></div>
+    <div class="bd">
+      <div class="who"><span class="mono-badge">${p.mono}</span><div><div class="nm">${p.name}</div><div class="cand">${p.cand}</div></div></div>
+      <div>${st(p.st)}</div>
+      <div class="exp">${p.exp}</div>
+      <div class="meter" title="${t} fuentes">${p.src.of?`<span class="of" style="flex:${p.src.of}"></span>`:''}${p.src.pr?`<span class="pr" style="flex:${p.src.pr}"></span>`:''}${p.src.p23?`<span class="p23" style="flex:${p.src.p23}"></span>`:''}</div>
+      <div class="lg"><b style="color:var(--ink)">${t} fuentes</b> · ${parts}</div>
+      <div class="go">Abrir ficha <span>→</span></div>
+    </div></a>`;
+}).join('');
+
+$('#topics').innerHTML = Object.entries(TOPICS).map(([k,[n,c]]) =>
+  `<a class="topic" href="#" data-nav="comparar"><span class="ic">${icon(k)}</span><span class="tn">${n}</span><span class="tc">${c} propuestas</span></a>`).join('');
+
+$('#trows').innerHTML = P.map(p => {
+  const c = CMP[1][2][p.id];
+  return `<div class="trow" style="${pv(p)}"><span class="who">${p.name}</span><div>${c ? `<p>${c[0]}</p>${tag(c[1], c[2])}` : `<p class="nc">No consta en las fuentes consultadas</p>`}</div></div>`;
+}).join('');
+
+$('#icons').innerHTML = Object.entries(TOPICS).map(([k,[n]]) => `<div>${icon(k)}${n}</div>`).join('');
+
+/* ---------- Ficha ---------- */
+function renderFicha(id){
+  const p = P.find(x => x.id === id);
+  const f = $('#ficha'); f.setAttribute('style', pv(p));
+  $('#f-crumb').textContent = p.name;
+  $('#f-logo').textContent = p.mono;
+  $('#f-name').textContent = p.fullname && p.name.length < 5 ? p.name : p.name;
+  $('#f-meta').innerHTML = `<span>Candidatura: <b>${p.cand}</b></span>${p.lema ? `<span>Lema: ${p.lema}</span>` : ''}${p.fullname ? `<span>${p.fullname}</span>` : ''}`;
+  const t = p.src.of + p.src.pr + p.src.p23;
+  $('#f-status').className = 'fstatus ' + p.st;
+  $('#f-status').innerHTML = `<div>
+      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">${st(p.st)}<span class="up">Actualizado 9 nov, 10:00</span></div>
+      <p>${p.text}</p></div>
+    <div class="acts"><a class="btn sm ink" href="#">Ver las ${t} fuentes</a><a class="btn sm" href="#">${icon('bell')}Avísame cuando se publique</a></div>`;
+  $('#f-switch').innerHTML = '<span class="lb">Otras fichas</span>' + P.map(q =>
+    `<button style="${pv(q)}" data-party="${q.id}" aria-current="${q.id===id}">${q.mono}</button>`).join('');
+  $('#f-tabs').innerHTML = `<button role="tab" aria-selected="true">Resumen</button><button role="tab">Por temas</button>
+    <button role="tab" class="dis">Programa completo <span class="cnt">${p.st==='ava'?'avance':'aún no'}</span></button>
+    <button role="tab">Fuentes <span class="cnt">${t}</span></button><button role="tab">Historial</button>`;
+  $('#f-props').innerHTML = p.props.map(([tp, title, k, src], i) => `
+    <article class="prop">
+      <div class="top"><span class="tp">${icon(tp)}${TOPICS[tp][0]}</span><span class="ix">${String(i+1).padStart(2,'0')}</span></div>
+      <h3 class="semi">${title}</h3>
+      <div>${tag(k, src)}</div>
+      <div class="ft"><a href="#">Ver en la fuente ↗</a><span class="r"><a href="#">Compartir</a><a href="#">⚑ Error</a></span></div>
+    </article>`).join('');
+  $('#f-ref23').innerHTML = `<div><b>${p.ref}</b><span>${p.refsub}</span></div><span style="font-size:20px">▸</span>`;
+  $('#f-src').innerHTML = p.list.map(([k,ti,d]) => `<li>${tag(k)}<span>${ti}</span><span class="mono mute" style="font-size:11.5px">${d}</span></li>`).join('');
+  $('#f-terr').innerHTML = p.terr.map(x => `<li><span>${x}</span></li>`).join('');
+  f.querySelectorAll('[data-party]').forEach(b => b.addEventListener('click', e => { e.preventDefault(); renderFicha(b.dataset.party); }));
+}
+renderFicha('pp');
+
+/* ---------- Comparador ---------- */
+$('#c-pills').innerHTML = Object.entries(TOPICS).map(([k,[n]]) =>
+  `<button class="pill" aria-pressed="${k==='vivienda'}">${icon(k)}${n}</button>`).join('');
+$('#c-ptog').innerHTML = '<span class="lb">Partidos</span>' + P.map(p =>
+  `<button style="${pv(p)}" aria-pressed="true">${p.name}</button>`).join('');
+$('#cmp').innerHTML =
+  `<div class="crow chdr" role="row"><div class="cap">Subtema ↓ · Partido →</div>${P.map(p =>
+    `<div data-p style="${pv(p)}"><span class="who"><span class="mono-badge sm">${p.mono}</span>${p.name}</span>${st(p.st)}</div>`).join('')}</div>` +
+  CMP.map(([tp, sub, cells]) => `<div class="crow" role="row">
+    <div class="csub">${icon(tp)}<b>${sub}</b></div>
+    ${P.map(p => { const c = cells[p.id]; return `<div class="ccell" style="${pv(p)}"><span class="pl"><span class="mono-badge sm">${p.mono}</span>${p.name}</span>${
+      c ? `<p>${c[0]}</p>${tag(c[1], c[2])}` : `<p class="nc">No consta en las fuentes consultadas</p>`}</div>`; }).join('')}
+  </div>`).join('');
+document.querySelectorAll('#c-ptog button').forEach(b => b.addEventListener('click', () => b.setAttribute('aria-pressed', b.getAttribute('aria-pressed')==='true' ? 'false' : 'true')));
+
+/* ---------- Navegación del mockup ---------- */
+const tabs = document.querySelectorAll('.mk-tabs button');
+function go(id, party){
+  document.querySelectorAll('.screen').forEach(s => s.classList.toggle('on', s.dataset.screen === id));
+  tabs.forEach(t => t.setAttribute('aria-selected', t.dataset.go === id));
+  document.querySelectorAll('.nav a').forEach(a => a.classList.toggle('cur', a.dataset.nav === id && a.textContent !== 'Temas'));
+  if (party) renderFicha(party);
+  history.replaceState(null, '', '#' + id);
+  window.scrollTo({top:0});
+}
+tabs.forEach(t => t.addEventListener('click', () => go(t.dataset.go)));
+document.querySelectorAll('[data-nav]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); go(a.dataset.nav); }));
+document.querySelectorAll('#cabinet [data-party], #cards5 [data-party]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); go('ficha', a.dataset.party); }));
+const h = location.hash.slice(1); if (h && document.querySelector(`[data-screen="${h}"]`)) go(h);
+
+const tm = $('#tg-mobile');
+tm.addEventListener('click', () => { const on = document.body.classList.toggle('mobile'); tm.setAttribute('aria-pressed', on); });
+const setTb = () => document.documentElement.style.setProperty('--tb', document.querySelector('.mk').offsetHeight + 'px');
+setTb(); addEventListener('resize', setTb);
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+partido: "bildu"
+tema: "empleo"
+subtema: "reforma-laboral"
+titulo: "Recuperar indemnizaciones por despido «justas y suficientes» y recargos obligatorios en las horas extra"
+resumen: "Incluye un registro horario efectivo contra las horas extra no pagadas y retomar la reducción de la jornada laboral. No concreta cuantías."
+fuentes:
+  - fuente: "bildu/nota-paquete-laboral-2026-09-16"
+    cita: Recuperar indemnizaciones por despido justas y suficientes. […] Acabar con las horas extra no pagadas, estableciendo recargos obligatorios y un registro horario efectivo.
+fechaAnuncio: "2026-09-16"
+destacada: true
+orden: 5
+comprobacion:
+  estado: encontrada
+  nota: "Son dos puntos de la misma lista. La reducción de jornada está en el punto siguiente: «Retomar la reducción de la jornada laboral, haciendo los esfuerzos de negociación necesarios para sacar adelante la medida.»"
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

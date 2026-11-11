@@ -1,0 +1,15 @@
+---
+import { datos } from '../lib/datos';
+import Icono from './Icono.astro';
+const d = await datos();
+---
+<div class="qs">
+  {d.temas.map((t) => {
+    return (
+      <a class="q" href={`/comparar/${t.id}/`}>
+        <Icono id={t.id} />
+        <span><span class="t">{t.data.nombre}</span><span class="qq">{t.data.pregunta}</span></span>
+      </a>
+    );
+  })}
+</div>

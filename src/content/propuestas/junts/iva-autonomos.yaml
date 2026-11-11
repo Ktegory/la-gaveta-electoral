@@ -1,0 +1,18 @@
+partido: "junts"
+tema: "empleo"
+subtema: "autonomos"
+titulo: "Eximir del IVA a los autónomos que facturan menos de 85.000 € al año"
+fuentes:
+  - fuente: "junts/mesjunts-160-balance"
+    pagina: "1"
+    cita: Josep Maria Cervera ha reivindicat les mesures per als autònoms i les petites empreses, com el fre a la pujada de quotes i la proposta d’exempció de l’IVA per als autònoms que facturen menys de 85.000 euros anuals.
+  - fuente: "junts/prensa-balance-legislatura"
+    cita: Reclamació de l'exempció de l'IVA per als autònoms que facturen menys de 85.000 euros anuals.
+fechaAnuncio: "2026-10-27"
+destacada: true
+orden: 5
+comprobacion:
+  estado: encontrada
+  nota: En el PDF «exempció» está partida al final de línea; si el visor no la encuentra, buscar «per als autònoms que facturen menys de 85.000».
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

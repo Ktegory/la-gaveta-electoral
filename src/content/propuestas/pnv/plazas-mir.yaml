@@ -1,0 +1,17 @@
+partido: "pnv"
+tema: "sanidad"
+subtema: "personal"
+titulo: "Adaptar el sistema MIR para que la oferta de plazas de especialistas responda a las necesidades reales"
+resumen: "En su resumen de 30 propuestas: adaptar la formación de especialistas a las necesidades de Osakidetza."
+fuentes:
+  - fuente: "pnv/programa-29n-2026"
+    pagina: "32"
+    cita: Formar más especialistas sanitarios donde se necesitan, adaptando el sistema MIR para adecuar la oferta de plazas a las necesidades reales de profesionales, evitar que queden vacantes y agilizar la acreditación de nuevas unidades docentes.
+  - fuente: "pnv/programa-29n-web-2026"
+    cita: Adaptar la formación de especialistas a las necesidades de Osakidetza.
+fechaAnuncio: "2026-11-09"
+destacada: false
+comprobacion:
+  estado: encontrada
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

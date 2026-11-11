@@ -1,0 +1,19 @@
+partido: "pnv"
+tema: "fiscalidad"
+subtema: "iva"
+titulo: "Estudiar tipos de IVA cero o superreducidos para alimentos básicos, dentro del marco europeo"
+resumen: "Cita el pescado y la carne, entre otros, y productos para personas celíacas. Propone también revisar el IVA de la electricidad, el gas, los combustibles y el transporte público."
+fuentes:
+  - fuente: "pnv/programa-29n-2026"
+    pagina: "21"
+    cita: Favorecer una reforma integral del IVA de los bienes y servicios esenciales, estudiando la aplicación de tipos cero o superreducidos a determinados alimentos básicos (pescado, carne, entre otros)
+  - fuente: "pnv/programa-29n-web-2026"
+    cita: Proponer la revisión del IVA de determinados alimentos y bienes esenciales, dentro de la normativa europea.
+fechaAnuncio: "2026-11-09"
+destacada: true
+orden: 4
+comprobacion:
+  estado: encontrada
+  nota: "La web es más genérica: habla de revisar el IVA, sin mencionar tipos cero o superreducidos."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

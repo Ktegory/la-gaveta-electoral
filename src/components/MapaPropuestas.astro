@@ -1,0 +1,40 @@
+---
+// Mapa tema × partido con recuentos reales. El tinte es fijo: más propuestas no dan más color.
+import { datos, recuento, varsPartido } from '../lib/datos';
+import Estado from './Estado.astro';
+import Icono from './Icono.astro';
+const d = await datos();
+const n = recuento(d);
+const provisional = (id: string) => d.partidos.find((p) => p.id === id)!.data.estadoPrograma !== 'publicado';
+---
+<div class="map-scroll">
+<div class="map" role="table" aria-label="Propuestas conocidas por tema y partido" style={`--np:${d.partidos.length}`}>
+  <div role="row" style="display:contents">
+    <div class="corner" role="columnheader"><span class="sr-only">Tema</span></div>
+    {d.partidos.map((p) => (
+      <a class="ph on-color" role="columnheader" href={`/partidos/${p.id}/`} style={varsPartido(p)}>
+        <b class="nm">{p.data.nombre}</b><b class="mo">{p.data.siglas}</b>
+        <Estado estado={p.data.estadoPrograma} corto />
+      </a>
+    ))}
+  </div>
+  {d.temas.map((t, fila) => (
+    <div role="row" style={`display:contents;--fila:${fila + 2}`}>
+      {/* Fondo de la fila: se ve al pasar por encima. Todo va colocado a mano para que pueda ir debajo. */}
+      <span class="fila-bg" aria-hidden="true"></span>
+      <a class="tl" role="rowheader" href={`/comparar/${t.id}/`}><Icono id={t.id} />{t.data.nombre}</a>
+      {d.partidos.map((p, col) => {
+        const c = n.get(t.id)!.get(p.id)!;
+        const sitio = `--col:${col + 2}`;
+        return c ? (
+          <a class:list={['cell', { 'prov-c': provisional(p.id) }]} role="cell" href={`/partidos/${p.id}/${t.id}/`} style={`${varsPartido(p)};${sitio}`} title={`${p.data.nombre} · ${t.data.nombre}: ${c} propuesta${c > 1 ? 's' : ''}`}>
+            <span class="n">{c}</span><span class="go">Ver →</span>
+          </a>
+        ) : (
+          <a class="cell z" role="cell" href={`/partidos/${p.id}/${t.id}/`} style={`${varsPartido(p)};${sitio}`} title={`${p.data.nombre} · ${t.data.nombre}: no consta`}><span class="n" aria-label="No consta">—</span></a>
+        );
+      })}
+    </div>
+  ))}
+</div>
+</div>

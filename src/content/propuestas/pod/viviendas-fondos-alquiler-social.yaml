@@ -1,0 +1,17 @@
+partido: "pod"
+tema: "vivienda"
+subtema: "grandes-tenedores"
+titulo: "Pasar a alquiler social las viviendas de los fondos de inversión"
+resumen: "Irene Montero lo planteó en un desayuno informativo de Europa Press. Según la crónica de la agencia, mediante la expropiación del uso de esas viviendas."
+fuentes:
+  - fuente: "pod/prensa-montero-desayuno-2026-11-06"
+    cita: "A ello ha sumado la expropiación del uso de miles de viviendas acumuladas por fondos de inversión para destinarlas al alquiler social"
+  - fuente: "pod/prensa-montero-pensiones-2026-11-06"
+    cita: "También sugirió incorporar al parque público de alquiler social las viviendas que poseen los fondos de inversión."
+fechaAnuncio: "2026-11-06"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Antes citaba la web de campaña, que no lo dice. Las dos crónicas lo cuentan en estilo indirecto (no hay frase literal de Montero). Solo Europa Press habla de «expropiación del uso»; la otra crónica dice «incorporar al parque público»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

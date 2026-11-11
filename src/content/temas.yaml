@@ -1,0 +1,111 @@
+# Temas y subtemas (arquitectura §4). Los subtemas se ajustarán cuando lleguen los programas.
+- id: vivienda
+  nombre: "Vivienda"
+  pregunta: "¿Qué harán con el alquiler, la compra y la vivienda pública?"
+  orden: 1
+  subtemas:
+    - { id: acceso-compra, nombre: "Acceso y compra", pregunta: "¿Cómo facilitarán comprar una casa?" }
+    - { id: alquiler, nombre: "Alquiler", pregunta: "¿Qué pasará con lo que pagas de alquiler?" }
+    - { id: vivienda-publica, nombre: "Vivienda pública", pregunta: "¿Habrá más vivienda pública, y para quién?" }
+    - { id: grandes-tenedores, nombre: "Grandes tenedores y fondos", pregunta: "¿Qué harán con los fondos y los grandes propietarios?" }
+    - { id: okupacion, nombre: "Okupación y desahucios", pregunta: "¿Qué cambia con la okupación y los desahucios?" }
+    - { id: fiscalidad-vivienda, nombre: "Fiscalidad de la vivienda", pregunta: "¿Qué impuestos cambian sobre la vivienda?" }
+- id: fiscalidad
+  nombre: "Fiscalidad y economía"
+  pregunta: "¿Quién pagará más impuestos y quién menos?"
+  orden: 2
+  subtemas:
+    - { id: irpf, nombre: "IRPF", pregunta: "¿Qué cambia en el impuesto sobre la renta?" }
+    - { id: iva, nombre: "IVA", pregunta: "¿Qué pasa con el IVA?" }
+    - { id: sociedades, nombre: "Sociedades", pregunta: "¿Cuánto pagarán las empresas?" }
+    - { id: patrimonio, nombre: "Patrimonio y grandes fortunas", pregunta: "¿Qué pasa con las grandes fortunas?" }
+    - { id: deuda, nombre: "Deuda y gasto público", pregunta: "¿Qué harán con la deuda y el gasto?" }
+- id: pensiones
+  nombre: "Pensiones"
+  pregunta: "¿Cuánto subirán las pensiones y a qué edad nos jubilaremos?"
+  orden: 3
+  subtemas:
+    - { id: revalorizacion, nombre: "Revalorización", pregunta: "¿Cuánto subirán las pensiones?" }
+    - { id: edad-jubilacion, nombre: "Edad de jubilación", pregunta: "¿A qué edad nos jubilaremos?" }
+    - { id: pensiones-minimas, nombre: "Pensiones mínimas", pregunta: "¿Qué pasa con las pensiones más bajas?" }
+    - { id: sostenibilidad, nombre: "Sostenibilidad del sistema", pregunta: "¿Cómo se pagarán las pensiones?" }
+- id: empleo
+  nombre: "Empleo y salarios"
+  pregunta: "¿Qué cambia en salarios, jornada y contratos?"
+  orden: 4
+  subtemas:
+    - { id: smi, nombre: "Salario mínimo", pregunta: "¿Cuánto será el salario mínimo?" }
+    - { id: jornada, nombre: "Jornada", pregunta: "¿Cuántas horas trabajaremos?" }
+    - { id: autonomos, nombre: "Autónomos", pregunta: "¿Qué cambia para los autónomos?" }
+    - { id: reforma-laboral, nombre: "Reforma laboral", pregunta: "¿Qué pasa con la reforma laboral?" }
+- id: inmigracion
+  nombre: "Inmigración"
+  pregunta: "¿Qué proponen sobre regularización, fronteras y nacionalidad?"
+  orden: 5
+  subtemas:
+    - { id: regularizacion, nombre: "Regularización", pregunta: "¿Habrá regularizaciones?" }
+    - { id: nacionalidad, nombre: "Nacionalidad", pregunta: "¿Cómo se obtendrá la nacionalidad?" }
+    - { id: fronteras, nombre: "Fronteras y expulsiones", pregunta: "¿Qué harán en las fronteras?" }
+    - { id: servicios, nombre: "Acceso a servicios", pregunta: "¿Quién podrá acceder a ayudas y servicios?" }
+- id: sanidad
+  nombre: "Sanidad"
+  pregunta: "¿Cómo piensan reducir las listas de espera?"
+  orden: 6
+  subtemas:
+    - { id: listas-espera, nombre: "Listas de espera", pregunta: "¿Cómo reducirán las listas de espera?" }
+    - { id: personal, nombre: "Personal sanitario", pregunta: "¿Qué harán con el personal sanitario?" }
+    - { id: publica-privada, nombre: "Sanidad pública y privada", pregunta: "¿Qué papel tendrá la sanidad privada?" }
+- id: educacion
+  nombre: "Educación"
+  pregunta: "¿Qué cambia en las aulas, la FP y la universidad?"
+  orden: 7
+  subtemas:
+    - { id: infantil, nombre: "De 0 a 3 años", pregunta: "¿Qué pasa con la etapa de 0 a 3 años?" }
+    - { id: contenidos, nombre: "Contenidos", pregunta: "¿Qué se enseñará?" }
+    - { id: lenguas, nombre: "Lenguas", pregunta: "¿En qué lenguas se enseñará?" }
+    - { id: universidad, nombre: "Universidad", pregunta: "¿Qué cambia en la universidad?" }
+- id: energia
+  nombre: "Energía y medio ambiente"
+  pregunta: "¿Nucleares, renovables, precio de la luz?"
+  orden: 8
+  subtemas:
+    - { id: nuclear, nombre: "Nuclear", pregunta: "¿Qué pasará con las centrales nucleares?" }
+    - { id: renovables, nombre: "Renovables", pregunta: "¿Qué harán con las renovables?" }
+    - { id: clima, nombre: "Clima", pregunta: "¿Qué harán contra el cambio climático?" }
+    - { id: agua, nombre: "Agua", pregunta: "¿Qué harán con el agua?" }
+    - { id: precio, nombre: "Precio de la energía", pregunta: "¿Bajará el precio de la luz?" }
+- id: instituciones
+  nombre: "Instituciones"
+  pregunta: "¿Qué cambiarían en la justicia y las instituciones?"
+  orden: 9
+  subtemas:
+    - { id: justicia, nombre: "Justicia", pregunta: "¿Qué cambia en la justicia?" }
+    - { id: organismos, nombre: "Organismos independientes", pregunta: "¿Qué pasa con los organismos independientes?" }
+    - { id: presupuestos, nombre: "Presupuestos", pregunta: "¿Qué harán con los presupuestos?" }
+    - { id: constitucion, nombre: "Constitución", pregunta: "¿Cambiarían la Constitución?" }
+- id: exterior
+  nombre: "Exterior y defensa"
+  pregunta: "¿OTAN, gasto en defensa, Unión Europea?"
+  orden: 10
+  subtemas:
+    - { id: otan, nombre: "OTAN", pregunta: "¿Qué harán con la OTAN?" }
+    - { id: gasto-militar, nombre: "Gasto militar", pregunta: "¿Cuánto se gastará en defensa?" }
+    - { id: ue, nombre: "Unión Europea", pregunta: "¿Qué proponen para Europa?" }
+    - { id: israel-palestina, nombre: "Israel y Palestina", pregunta: "¿Qué harán con Israel y Palestina?" }
+- id: igualdad
+  nombre: "Igualdad"
+  pregunta: "¿Qué proponen sobre igualdad y violencia machista?"
+  orden: 11
+  subtemas:
+    - { id: violencia-machista, nombre: "Violencia machista", pregunta: "¿Qué harán contra la violencia machista?" }
+    - { id: aborto, nombre: "Aborto", pregunta: "¿Qué pasa con el aborto?" }
+    - { id: lgtbi, nombre: "LGTBI", pregunta: "¿Qué proponen sobre derechos LGTBI?" }
+    - { id: cuidados, nombre: "Cuidados", pregunta: "¿Quién se ocupará de los cuidados?" }
+- id: territorial
+  nombre: "Modelo territorial"
+  pregunta: "¿Financiación autonómica, lenguas, competencias?"
+  orden: 12
+  subtemas:
+    - { id: financiacion, nombre: "Financiación autonómica", pregunta: "¿Cómo se financiarán las comunidades?" }
+    - { id: lenguas-cooficiales, nombre: "Lenguas cooficiales", pregunta: "¿Qué pasa con las lenguas cooficiales?" }
+    - { id: competencias, nombre: "Competencias", pregunta: "¿Quién decide qué?" }

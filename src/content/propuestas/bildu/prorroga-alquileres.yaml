@@ -1,0 +1,15 @@
+partido: "bildu"
+tema: "vivienda"
+subtema: "alquiler"
+titulo: "Recuperar la prórroga automática de los contratos de alquiler"
+resumen: "Según su candidato por Bizkaia, Oskar Matute, será la primera iniciativa que lleven al Congreso."
+fuentes:
+  - fuente: "bildu/nota-alquiler-precios-2026-11-09"
+    cita: La primera iniciativa que llevaremos al Congreso será no solo recuperar la prórroga automática de los contratos que las derechas tumbarán esta semana en el Congreso, sino que además plantearemos acabar con la compra especulativa de vivienda
+fechaAnuncio: "2026-11-09"
+destacada: true
+orden: 1
+comprobacion:
+  estado: encontrada
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

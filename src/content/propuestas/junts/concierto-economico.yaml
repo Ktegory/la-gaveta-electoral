@@ -1,0 +1,21 @@
+partido: "junts"
+tema: "territorial"
+subtema: "financiacion"
+titulo: "Concierto económico para Cataluña como el del País Vasco: recaudar y gestionar todos sus impuestos"
+resumen: "Lo plantea como condición para negociar con el próximo Gobierno tras el 29N."
+fuentes:
+  - fuente: "junts/mesjunts-160-balance"
+    pagina: "1"
+    cita: "La candidata ha anunciat que el següent pas és que Catalunya tingui un concert econòmic com el que tenen els bascos: “Els diners dels catalans a Catalunya ja estaven a l’acord de Brussel·les”."
+  - fuente: "junts/nota-diners-catalans"
+    cita: “Volem recaptar, volem gestionar i volem decidir sobre els diners dels catalans. I si ho poden fer els bascos, nosaltres també”, ha defensat.
+  - fuente: "junts/prensa-ser-condiciones"
+    cita: Entre les demandes que Nogueras ha posat sobre la taula hi ha la delegació de competències en immigració; que s'aprovi l'oficialitat del català a la Unió Europea, i que Catalunya gestioni els seus impostos, ha dit en una entrevista a Ser Catalunya recollida per Europa Press.
+fechaAnuncio: "2026-10-27"
+destacada: true
+orden: 1
+comprobacion:
+  estado: encontrada
+  nota: La nota de junts.cat dice además que Nogueras «ha situat aquesta reivindicació com una de les condicions imprescindibles per negociar amb Junts després de les eleccions del 29 de novembre». La SER habla solo de «que Catalunya gestioni els seus impostos», sin nombrar el concierto.
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

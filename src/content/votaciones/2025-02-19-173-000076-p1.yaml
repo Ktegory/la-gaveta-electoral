@@ -1,0 +1,86 @@
+# Votación del Pleno · III. Mociones consecuencia de interpelaciones urgentes.
+# Generado por scripts/votacion.mjs.
+fecha: 2025-02-19
+sesion: 93
+numero: 5
+expediente: 173/000076
+tipo: mocion
+tituloOficial: Moción consecuencia de interpelación urgente del Grupo Parlamentario Mixto (Sra. Belarra Urteaga), sobre la política del Gobierno para garantizar el derecho a la vivienda.
+subtituloOficial: Votación separada por puntos · Punto 1.
+titulo: "Moción de Podemos para bajar todos los alquileres un 40 % por ley"
+resumen: "Pedía al Gobierno «rebajar la cuantía de todos los alquileres un 40 % con respecto a los precios actuales por ley». La moción se votó por puntos; este es el punto 1."
+textoVotado:
+  nombre: "BOCG, Serie D, núm. 291"
+  url: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/D/BOCG-15-D-291.PDF#page=7
+  pagina: "7"
+urlVotacion: https://www.congreso.es/webpublica/opendata/votaciones/Leg15/Sesion093/20250219/Votacion005/VOT_20250219135529.pdf
+urlDatos: https://www.congreso.es/webpublica/opendata/votaciones/Leg15/Sesion093/20250219/Votacion005/VOT_20250219135536.json
+resultado: rechazada
+totales:
+  si: 12
+  no: 301
+  abstencion: 31
+  noVota: 6
+partidos:
+  bildu:
+    voto: abstencion
+    si: 0
+    no: 0
+    abstencion: 6
+    noVota: 0
+  erc:
+    voto: si
+    si: 7
+    no: 0
+    abstencion: 0
+    noVota: 0
+  fa:
+    voto: abstencion
+    si: 1
+    no: 0
+    abstencion: 25
+    noVota: 1
+  junts:
+    voto: no
+    si: 0
+    no: 7
+    abstencion: 0
+    noVota: 0
+  pnv:
+    voto: no
+    si: 0
+    no: 4
+    abstencion: 0
+    noVota: 1
+  pod:
+    voto: si
+    si: 4
+    no: 0
+    abstencion: 0
+    noVota: 0
+  pp:
+    voto: no
+    si: 0
+    no: 136
+    abstencion: 0
+    noVota: 1
+  psoe:
+    voto: no
+    si: 0
+    no: 119
+    abstencion: 0
+    noVota: 1
+  vox:
+    voto: no
+    si: 0
+    no: 32
+    abstencion: 0
+    noVota: 1
+tema: vivienda
+subtema: alquiler
+propuestas:
+  - propuesta: pod/bajar-alquileres-40
+    coincide: si
+    pasaje: "Punto 1 (p. 7): «Rebajar la cuantía de todos los alquileres un 40 % con respecto a los precios actuales por ley»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

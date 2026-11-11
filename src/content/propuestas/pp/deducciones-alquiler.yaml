@@ -1,0 +1,13 @@
+partido: "pp"
+tema: "vivienda"
+subtema: "alquiler"
+titulo: "Deducción en el IRPF al propietario que renueve el alquiler tres años más subiendo por debajo del IPC"
+resumen: "Los inquilinos tendrán también una deducción en el IRPF por el alquiler de su vivienda habitual, según sus ingresos."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "55"
+  - fuente: "pp/plan-vivienda-sevilla-2026"
+fechaAnuncio: "2026-10-21"
+destacada: false
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-10"

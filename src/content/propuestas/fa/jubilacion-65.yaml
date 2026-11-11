@@ -1,0 +1,11 @@
+partido: "fa"
+tema: "pensiones"
+subtema: "edad-jubilacion"
+titulo: "Jubilación efectiva a los 65 años"
+fuentes:
+  - fuente: "fa/nota-pensiones-2026-10-24"
+fechaAnuncio: "2026-10-24"
+destacada: true
+orden: 5
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-10"

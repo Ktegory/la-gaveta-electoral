@@ -1,0 +1,12 @@
+partido: "fa"
+tema: "vivienda"
+subtema: "fiscalidad-vivienda"
+titulo: "Impuesto del 10 % anual sobre la acumulación de vivienda"
+resumen: "Para empresas desde la primera vivienda y para personas físicas desde la cuarta, si el valor total supera 800.000 €."
+fuentes:
+  - fuente: "fa/nota-impuesto-vivienda-2026-10-28"
+fechaAnuncio: "2026-10-28"
+destacada: true
+orden: 2
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-10"

@@ -1,0 +1,15 @@
+partido: "bildu"
+tema: "territorial"
+subtema: "competencias"
+titulo: "Reclamar «todas las capacidades y competencias en materia migratoria» para desarrollar una respuesta propia"
+resumen: "Lo planteó su portavoz en el Congreso, Mertxe Aizpurua, en el debate sobre la crisis de Ceuta."
+fuentes:
+  - fuente: "bildu/nota-politica-migratoria-2026-09-03"
+    cita: "Para ello, ha reclamado todas las capacidades y competencias en materia migratoria: «no para gestionar las políticas que decida el Gobierno español de turno, sino para poder decidir y desarrollar una respuesta propia»."
+fechaAnuncio: "2026-09-03"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Las competencias se reclaman para Euskal Herria (frase anterior de la nota). «Todas las capacidades y competencias en materia migratoria» es redacción de la nota, no una cita literal de Aizpurua entre comillas: si el título lo pone entre comillas, conviene quitarlas o añadir «para Euskal Herria»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

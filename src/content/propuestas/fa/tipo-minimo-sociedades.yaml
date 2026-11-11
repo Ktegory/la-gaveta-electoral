@@ -1,0 +1,11 @@
+partido: "fa"
+tema: "fiscalidad"
+subtema: "sociedades"
+titulo: "Tipo efectivo mínimo del 15 % para la gran empresa y la banca"
+fuentes:
+  - fuente: "fa/nota-fiscalidad-2026-11-05"
+fechaAnuncio: "2026-11-05"
+destacada: true
+orden: 6
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-10"

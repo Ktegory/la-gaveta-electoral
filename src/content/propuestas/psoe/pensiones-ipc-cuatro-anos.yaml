@@ -1,0 +1,16 @@
+partido: "psoe"
+tema: "pensiones"
+subtema: "revalorizacion"
+titulo: "Revalorizar las pensiones con el IPC cuatro años más"
+resumen: "Lo prometió Pedro Sánchez en el mitin de Zaragoza, para la próxima legislatura si sigue en el Gobierno."
+fuentes:
+  - fuente: "psoe/mitin-zaragoza-2026-10-14"
+    cita: "\"Cuatro años más de gobierno progresista, cuatro años más de avances sociales y cero recortes. Y cuatro años más de revalorización de las pensiones conforme al IPC. Ese es mi compromiso\""
+fechaAnuncio: "2026-10-14"
+destacada: true
+orden: 1
+comprobacion:
+  estado: encontrada
+  nota: "Corregido el 11 nov: el resumen decía que aportaría 20.000 millones al fondo de reserva. Las fuentes dicen que esa es la cifra que tiene (o tendrá) la hucha de las pensiones, no una aportación nueva."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

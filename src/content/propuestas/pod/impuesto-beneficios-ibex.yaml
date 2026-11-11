@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "fiscalidad"
+subtema: "sociedades"
+titulo: "Impuesto del 50 % a los beneficios extraordinarios de las empresas del IBEX"
+fuentes:
+  - fuente: "pod/documento-politico-2025"
+    pagina: "30–39"
+    cita: un impuesto a los beneficios extraordinarios de las empresas del IBEX que alcance el 50% de los mismos
+fechaAnuncio: "2025-04-01"
+destacada: true
+orden: 6
+comprobacion:
+  estado: encontrada
+  nota: La frase empieza en la p. 36 («hay que implementar, en particular, un impuesto…»). Es un documento de abril de 2025, no un programa electoral de 2026. La comprobación sitúa el pasaje en la p. 37 del PDF (el archivo dice 30–39).
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

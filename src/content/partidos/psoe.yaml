@@ -1,0 +1,26 @@
+nombre: "PSOE"
+nombreCompleto: "Partido Socialista Obrero Español"
+siglas: "PSOE"
+color: "#E30613"
+colorTexto: "blanco"
+colorOrigen:
+  fuente: "Aproximado: pendiente de su manual de marca"
+  verificado: false
+logo:
+  url: "https://upload.wikimedia.org/wikipedia/commons/9/9e/Logo_PSOE_41_Congreso.svg"
+  origen: "Wikimedia Commons (infobox de es.wikipedia), consultado el 9 nov 2026"
+candidatura: "Pedro Sánchez"
+web: "https://www.psoe.es/"
+estadoPrograma: "pendiente"
+resumenEstado: "Previsto después del 11 nov, según la prensa"
+explicacionEstado: "Todavía no ha publicado su programa para el 29N. Según El Independiente, se presentará después de la huelga general del 11 de noviembre. <b>Varias propuestas solo constan en declaraciones recogidas por la prensa</b>, y lo indicamos en cada una."
+candidaturas:
+  - territorio: "Cataluña"
+    marca: "PSC"
+  - territorio: "Senado"
+    marca: "«Senado de Progreso», con el Frente Amplio en 43 provincias"
+referenciaAnterior:
+  titulo: "Lo que proponía en 2023"
+  detalle: "Programa de 272 págs. No es el programa del 29N."
+  fuente: "psoe/programa-2023"
+ultimaRevision: "2026-11-09T10:00:00+01:00"

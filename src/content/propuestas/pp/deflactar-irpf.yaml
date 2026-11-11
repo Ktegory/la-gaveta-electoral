@@ -1,0 +1,12 @@
+partido: "pp"
+tema: "fiscalidad"
+subtema: "irpf"
+titulo: "Deflactar la tarifa del IRPF para que la inflación no suba los impuestos"
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "60"
+  - fuente: "pp/decalogo-economico-2026"
+fechaAnuncio: "2026-09-27"
+destacada: false
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-10"

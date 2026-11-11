@@ -1,0 +1,16 @@
+partido: "erc"
+tema: "exterior"
+subtema: "israel-palestina"
+titulo: "Promover un embargo completo de armas a Israel y que la UE suspenda sus acuerdos de asociación con Israel"
+resumen: "También pide que el Estado siga apoyando el reconocimiento del Estado de Palestina."
+fuentes:
+  - fuente: "erc/programa-29n-2026"
+    pagina: "16"
+    cita: Promoure un embargament complet d’armes a Israel per part de l’Estat. Donar suport a la Cort Internacional de Justícia i a la Cort Penal Internacional i exigir a l’Estat que pressioni perquè la Unió Europea suspengui els acords d’associació amb Israel mentre duri el genocidi i l’ocupació il·legal de Palestina.
+fechaAnuncio: "2026-11-05"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "La frase siguiente de la misma medida respalda el resumen: «Cal reclamar també a l’Estat que continuï donant ple suport al reconeixement de l’Estat de Palestina.» La fuente pide que el Estado presione para que la UE suspenda los acuerdos."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

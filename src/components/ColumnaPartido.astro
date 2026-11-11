@@ -1,0 +1,40 @@
+---
+import { datos, varsPartido, TITULAR_ESTADO, detalleEstado, diputadosActuales, type Partido } from '../lib/datos';
+import IconoEstado from './IconoEstado.astro';
+interface Props { partido: Partido; orden?: number }
+const { partido: p, orden = 0 } = Astro.props;
+const d = await datos();
+const diputados = diputadosActuales(d, p.id)?.n;
+const todas = [...d.fuentes.values()].filter((f) => f.data.partido.id === p.id);
+const of = todas.filter((f) => !['prensa', 'programa-anterior'].includes(f.data.tipo)).length;
+const pr = todas.filter((f) => f.data.tipo === 'prensa').length;
+const ant = todas.filter((f) => f.data.tipo === 'programa-anterior').length;
+// La primera caja dice si ya tiene programa: blanca si lo tiene; translúcida si aún no.
+// Las fuentes, enumeradas por tipo.
+const grupos = [
+  { n: of, texto: `oficial${of > 1 ? 'es' : ''}` },
+  { n: pr, texto: 'de prensa' },
+  { n: ant, texto: 'de programa anterior' },
+].filter((g) => g.n > 0);
+---
+<a class="col on-color" href={`/partidos/${p.id}/`} style={`${varsPartido(p)};--i:${orden}`} data-p={p.id}>
+  <div class="top">
+    <span class="nm">{p.data.nombre}</span><span class="cd">{p.data.candidatura}</span>
+    {diputados !== undefined && <span class="dip">{diputados} {diputados === 1 ? 'diputado' : 'diputados'}</span>}
+  </div>
+  <div class={`col-prog ${p.data.estadoPrograma}`}>
+    <IconoEstado estado={p.data.estadoPrograma} />
+    <span>
+      <b>{TITULAR_ESTADO[p.data.estadoPrograma]}</b>
+      {detalleEstado(d, p)}
+    </span>
+  </div>
+  <div class="bot">
+    <div class="fx">
+      <i class="ico-fuente" aria-hidden="true"></i>
+      <b>{todas.length} fuentes</b>
+      <ul>{grupos.map((g) => <li>{g.n} {g.texto}</li>)}</ul>
+    </div>
+    <div class="go">Abrir ficha <span class="arrow">→</span></div>
+  </div>
+</a>

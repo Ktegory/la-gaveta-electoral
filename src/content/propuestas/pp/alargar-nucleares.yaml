@@ -1,0 +1,13 @@
+partido: "pp"
+tema: "energia"
+subtema: "nuclear"
+titulo: "Alargar la vida de las centrales nucleares en los primeros cien días"
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "71"
+  - fuente: "pp/decalogo-economico-2026"
+fechaAnuncio: "2026-09-27"
+destacada: true
+orden: 6
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-10"

@@ -1,0 +1,14 @@
+partido: "pod"
+tema: "energia"
+subtema: "precio"
+titulo: "Nacionalizar Repsol"
+resumen: "Irene Montero cifra el coste en 9.100 millones de euros y propone pagarlo con el aumento del gasto militar desde 2023. Lo planteó en un desayuno informativo de Europa Press."
+fuentes:
+  - fuente: "pod/prensa-montero-desayuno-2026-11-06"
+    cita: "Montero ha sostenido que esos 24.000 millones de euros adicionales permitirían financiar numerosas actuaciones sociales y ha puesto como ejemplo la nacionalización de Repsol, cuyo coste ha cifrado en 9.100 millones de euros."
+fechaAnuncio: "2026-11-06"
+destacada: false
+comprobacion:
+  estado: encontrada
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

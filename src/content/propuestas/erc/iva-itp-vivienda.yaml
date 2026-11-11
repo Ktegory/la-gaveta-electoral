@@ -1,0 +1,17 @@
+partido: "erc"
+tema: "vivienda"
+subtema: "fiscalidad-vivienda"
+titulo: "Subir el IVA y el ITP en la compra de viviendas que no sean residencia habitual y bajarlos cuando lo sean"
+resumen: "La subida se aplicaría a usos turísticos, alquiler de temporada, segundas residencias y viviendas vacías. También propone elevar al 21 % el IVA del alquiler turístico."
+fuentes:
+  - fuente: "erc/programa-29n-2026"
+    pagina: "19"
+    cita: Incrementar els tipus de l’IVA i l’ITP sobre la compra d’habitatge quan aquest es destini a usos diferents a l’habitatge habitual.
+fechaAnuncio: "2026-11-05"
+destacada: true
+orden: 3
+comprobacion:
+  estado: encontrada
+  nota: "La subida del IVA del alquiler turístico es otra medida en la misma página: «Augmentar l’IVA al lloguer turístic»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

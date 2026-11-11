@@ -1,0 +1,38 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "web",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": [
+        "-c",
+        "source ~/.nvm/nvm.sh && nvm use >/dev/null && npm run dev -- --port 4321"
+      ],
+      "port": 4321
+    },
+    {
+      "name": "docs",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "4400",
+        "--directory",
+        "docs"
+      ],
+      "port": 4400
+    },
+    {
+      "name": "dist",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "4401",
+        "--directory",
+        "dist"
+      ],
+      "port": 4401
+    }
+  ]
+}

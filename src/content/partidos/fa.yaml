@@ -1,0 +1,32 @@
+nombre: "Frente Amplio"
+siglas: "FA"
+color: "#F03C00"
+colorTexto: "blanco"
+colorOrigen:
+  fuente: "frenteamplio.info"
+  verificado: true
+logo:
+  url: "https://upload.wikimedia.org/wikipedia/commons/2/29/Frente_AMPLIO.svg"
+  origen: "Wikimedia Commons (infobox de es.wikipedia), consultado el 9 nov 2026"
+candidatura: "Ada Colau"
+web: "https://frenteamplio.info/"
+estadoPrograma: "pendiente"
+resumenEstado: "Presenta sus propuestas por bloques"
+explicacionEstado: "Todavía no ha publicado su programa para el 29N. Presenta sus propuestas por bloques, en notas oficiales."
+candidaturas:
+  - territorio: "Cataluña"
+    marca: "Comuns-Front Ampli"
+  - territorio: "Aragón"
+    marca: "CHA-Frente Amplio Aragón"
+  - territorio: "Baleares"
+    marca: "Ara Més-Front Ampli"
+  - territorio: "Senado"
+    marca: "«Senado de Progreso», con el PSOE en 43 provincias"
+referenciaAnterior:
+  titulo: "Lo que proponía Sumar en 2023"
+  detalle: "Programa de la coalición predecesora, 182 págs. No es el programa del 29N."
+  fuente: "fa/sumar-programa-2023"
+ultimaRevision: "2026-11-11T12:50:00+01:00"
+composicion:
+  texto: "Coalición de once partidos registrada ante la Junta Electoral Central: Izquierda Unida, Movimiento Sumar, Catalunya en Comú, Más Madrid, Chunta Aragonesista, Izquierda Asturiana, Recortes Cero, Batzarre-Asamblea de Izquierdas, Iniciativa del Pueblo Andaluz, Verdes Equo y Somos Partido Progresista. La coalición dice reunir 15 organizaciones, contando las confluencias territoriales."
+  fuentes: ["fa/articulo14-composicion-2026-11-07", "fa/comunicado-constitucion-2026-10-17"]

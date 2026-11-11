@@ -1,0 +1,11 @@
+partido: "psoe"
+tema: "vivienda"
+subtema: "okupacion"
+titulo: "Mantener suspendidos los desahucios de personas vulnerables hasta 2030"
+fuentes:
+  - fuente: "psoe/eldiario-decretos-vivienda-2026"
+fechaAnuncio: "2026-09-29"
+destacada: true
+orden: 4
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-10"

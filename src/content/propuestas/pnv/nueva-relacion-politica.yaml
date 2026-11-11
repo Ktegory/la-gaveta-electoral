@@ -1,0 +1,19 @@
+partido: "pnv"
+tema: "territorial"
+subtema: "competencias"
+titulo: "Nueva relación política con el Estado basada en el reconocimiento nacional de Euskadi y la bilateralidad"
+resumen: "Propone avanzar hacia un «Concierto Político», con mecanismos que impidan modificar los acuerdos de forma unilateral, y exige el cumplimiento íntegro del Estatuto de Gernika."
+fuentes:
+  - fuente: "pnv/programa-29n-2026"
+    pagina: "38-39"
+    cita: Favorecer una nueva relación política entre Euskadi y el Estado basada en el reconocimiento de la realidad nacional vasca, el respeto a la voluntad democrática de la sociedad vasca y la capacidad de decisión de sus instituciones.
+  - fuente: "pnv/programa-29n-web-2026"
+    cita: Defender el reconocimiento nacional de Euskadi, la bilateralidad y el respeto a la voluntad democrática.
+fechaAnuncio: "2026-11-09"
+destacada: true
+orden: 6
+comprobacion:
+  estado: encontrada
+  nota: «Bilateralidad» no está en la medida 03 (p. 39) sino en la 04 de la misma página («Avanzar hacia un Concierto Político que traslade los principios de pacto y bilateralidad al ámbito institucional.»). La garantía contra la modificación unilateral es la medida 05 de la p. 39; el Estatuto de Gernika, la medida 01 de la p. 38. La comprobación sitúa el pasaje en la p. 39 del PDF (el archivo dice 38-39).
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

@@ -1,0 +1,17 @@
+partido: "erc"
+tema: "territorial"
+subtema: "financiacion"
+titulo: "Aprobar un modelo de financiación como el pactado en enero de 2026 y condonar más de 17.100 millones del FLA"
+resumen: "Según el programa, el nuevo modelo supondría 4.700 millones de euros anuales más para Cataluña, y la condonación, un ahorro de unos 1.500 millones anuales en intereses para la Generalitat."
+fuentes:
+  - fuente: "erc/programa-29n-2026"
+    pagina: "12"
+    cita: Aprovar un nou model de finançament per garantir la sobirania dels Països Catalans i el benestar de la ciutadania. […] Condonar de forma efectiva els més de 17.100 milions d’euros del FLA.
+fechaAnuncio: "2026-11-05"
+destacada: true
+orden: 2
+comprobacion:
+  estado: encontrada
+  nota: "La parte del modelo de financiación está en la medida 23 de la misma página: «el passat gener de 2026 es va acordar un nou model de finançament amb el Govern de l’Estat», con «uns ingressos addicionals de 4.700 MEUR anuals». El programa pide cambios de modelo «en el sentit dels acords esmentats», no dice literalmente «aplicar» el modelo (el título lo decía; se corrigió el 11 nov). El ahorro de unos 1.500 millones anuales en intereses aparece en la medida 24."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

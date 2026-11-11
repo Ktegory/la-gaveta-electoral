@@ -1,0 +1,11 @@
+partido: "pod"
+tema: "energia"
+subtema: "precio"
+titulo: "Intervenir el mercado eléctrico"
+fuentes:
+  - fuente: "pod/documento-politico-2025"
+    pagina: "30–39"
+fechaAnuncio: "2025-04-01"
+destacada: false
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-10"

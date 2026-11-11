@@ -1,0 +1,87 @@
+# Votación del Pleno · IV. Proposiciones no de Ley.
+# Generado por scripts/votacion.mjs.
+fecha: 2025-10-08
+sesion: 136
+numero: 96
+expediente: 162/000580
+tipo: pnl
+tituloOficial: Proposición no de Ley del Grupo Parlamentario Republicano, de medidas fiscales, regulatorias y de adquisición pública para asegurar el derecho a la vivienda.
+subtituloOficial: Votación separada por puntos. · Punto 8.
+titulo: "Proposición de ERC para pasar gratis las viviendas de la SAREB a comunidades y ayuntamientos"
+resumen: "Pedía «transferir a título gratuito y de forma inmediata la titularidad de las viviendas de la SAREB y SEPES a las comunidades autónomas y los ayuntamientos para ampliar el parque público de vivienda». Se votó por puntos; este es el punto 8."
+textoVotado:
+  nombre: "BOCG, Serie D, núm. 399"
+  url: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/D/BOCG-15-D-399.PDF#page=30
+  pagina: "30-31"
+urlVotacion: https://www.congreso.es/webpublica/opendata/votaciones/Leg15/Sesion136/20251008/Votacion096/VOT_20251008195235.pdf
+urlDatos: https://www.congreso.es/webpublica/opendata/votaciones/Leg15/Sesion136/20251008/Votacion096/VOT_20251008195409.json
+resultado: rechazada
+totales:
+  si: 58
+  no: 169
+  abstencion: 121
+  noVota: 2
+partidos:
+  bildu:
+    voto: si
+    si: 6
+    no: 0
+    abstencion: 0
+    noVota: 0
+  erc:
+    voto: si
+    si: 7
+    no: 0
+    abstencion: 0
+    noVota: 0
+  fa:
+    voto: si
+    si: 26
+    no: 0
+    abstencion: 0
+    noVota: 0
+  junts:
+    voto: si
+    si: 7
+    no: 0
+    abstencion: 0
+    noVota: 0
+  pnv:
+    voto: si
+    si: 4
+    no: 0
+    abstencion: 0
+    noVota: 1
+  pod:
+    voto: si
+    si: 4
+    no: 0
+    abstencion: 0
+    noVota: 0
+  pp:
+    voto: no
+    si: 1
+    no: 135
+    abstencion: 0
+    noVota: 1
+  psoe:
+    voto: abstencion
+    si: 0
+    no: 0
+    abstencion: 120
+    noVota: 0
+  vox:
+    voto: no
+    si: 0
+    no: 33
+    abstencion: 0
+    noVota: 0
+tema: vivienda
+subtema: vivienda-publica
+propuestas:
+  - propuesta: fa/inversion-vivienda-publica
+    coincide: parcial
+    pasaje: "Punto 8 (p. 31): pasar las viviendas de la SAREB al parque público. No incluye la inversión del 1 % del PIB."
+    parte: "El texto votado incluía pasar los pisos de la SAREB al parque público, pero no la inversión del 1 % del PIB."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

@@ -1,0 +1,16 @@
+partido: "psoe"
+tema: "empleo"
+subtema: "smi"
+titulo: "Subir el salario mínimo cada año mientras siga al frente del Gobierno"
+resumen: "Lo dijo Pedro Sánchez en el mitin de Bilbao, según la crónica de agencias. La nota del PSOE sobre ese acto no lo recoge."
+fuentes:
+  - fuente: "psoe/prensa-bilbao-smi-2026-11-08"
+    cita: "Pedro Sánchez ha garantizado que, mientras siga al frente del Gobierno, el SMI se incrementará cada año"
+fechaAnuncio: "2026-11-08"
+destacada: true
+orden: 3
+comprobacion:
+  estado: encontrada
+  nota: "Solo en prensa y en estilo indirecto: no hay frase literal de Sánchez con «cada año»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

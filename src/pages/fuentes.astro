@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import EtiquetaFuente from '../components/EtiquetaFuente.astro';
+import { datos, fecha, varsPartido } from '../lib/datos';
+const d = await datos();
+const todas = [...d.fuentes.values()];
+const porPartido = d.partidos.map((p) => ({
+  p,
+  fs: todas.filter((f) => f.data.partido.id === p.id).sort((a, b) => +b.data.fechaPublicacion - +a.data.fechaPublicacion),
+}));
+const sinArchivar = todas.filter((f) => !f.data.urlArchivada).length;
+---
+<Base titulo="Fuentes" seccion="fuentes" descripcion="Todas las fuentes que usamos, con su tipo, su fecha y cuándo las consultamos.">
+  <div class="chd pad">
+    <h1 class="cond">Fuentes</h1>
+    <p class="lead">Todo lo que mostramos sale de aquí. Cada propuesta enlaza a la suya; esta es la lista completa, por partido.</p>
+  </div>
+  <div class="pad" style="padding-bottom:var(--sec)">
+    {sinArchivar > 0 && <p class="mono mute" style="font-size:.7812rem;margin:0 0 24px">Estamos guardando una copia de cada documento en Internet Archive por si el original cambia o desaparece. Faltan {sinArchivar}.</p>}
+    {porPartido.map(({ p, fs }) => (
+      <section class="blk" id={p.id} aria-labelledby={`h-${p.id}`}>
+        <h2 id={`h-${p.id}`} style={`${varsPartido(p)};display:flex;align-items:center;gap:14px`}><span style="width:18px;height:18px;border-radius:999px;background:var(--pc);flex:none"></span>{p.data.nombre}</h2>
+        <table class="ftable">
+          <thead><tr><th>Tipo</th><th>Documento</th><th>Publicado</th><th>Consultado</th><th>Copia</th></tr></thead>
+          <tbody>
+            {fs.map((f) => (
+              <tr>
+                <td><EtiquetaFuente fuente={f} detalle={false} /></td>
+                <td>{f.data.url ? <a href={f.data.url} rel="noopener" target="_blank">{f.data.titulo}</a> : f.data.titulo}{f.data.medio && <span class="meta"> · {f.data.medio}</span>}{f.data.notas && <div class="mute" style="font-size:.8438rem;margin-top:3px">{f.data.notas}</div>}</td>
+                <td class="meta">{fecha(f.data.fechaPublicacion)} {f.data.fechaPublicacion.getFullYear()}</td>
+                <td class="meta">{fecha(f.data.fechaConsulta)} {f.data.fechaConsulta.getFullYear()}</td>
+                <td>{f.data.urlArchivada ? <a class="meta" href={f.data.urlArchivada} rel="noopener" target="_blank">Archivada ↗</a> : !f.data.url ? <span class="warn">Enlace pendiente</span> : <span class="warn">Pendiente</span>}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+    ))}
+  </div>
+</Base>

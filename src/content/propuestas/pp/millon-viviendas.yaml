@@ -1,0 +1,15 @@
+partido: "pp"
+tema: "vivienda"
+subtema: "vivienda-publica"
+titulo: "Construir un millón de viviendas"
+resumen: "Con suelo público y privado, una nueva Ley del Suelo y licencias de obra resueltas en tres meses."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "53"
+  - fuente: "pp/contrato-con-espana-2026"
+  - fuente: "pp/plan-vivienda-sevilla-2026"
+fechaAnuncio: "2026-10-19"
+destacada: true
+orden: 1
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-10"

@@ -1,0 +1,61 @@
+# Quién cuenta como cada partido en las votaciones del Congreso (XV legislatura, 2023-2026).
+# El script `npm run votacion` usa estas reglas para calcular el voto de cada partido
+# a partir de los datos oficiales, diputado a diputado. Se explican en «Cómo funciona».
+#
+# - grupos: códigos de grupo parlamentario tal como vienen en los datos del Congreso.
+# - diputados: nombres exactos («Apellidos, Nombre»), para quien no tiene grupo propio.
+# - excluir: diputados de esos grupos que no cuentan para este partido.
+
+- id: fa
+  nombreGrupo: "Grupo Plurinacional Sumar"
+  explicacion: "El Frente Amplio no existía en esta legislatura. Contamos el voto del grupo Sumar, en el que estaban IU, Movimiento Sumar, Comuns, Más Madrid, CHA y otros partidos que hoy forman el Frente Amplio. No contamos a los diputados de Podemos, que estuvieron en ese grupo hasta diciembre de 2023."
+  grupos: ["GSUMAR"]
+  excluir:
+    - "Belarra Urteaga, Ione"
+    - "Santana Perera, Noemí"
+    - "Sánchez Serna, Javier"
+    - "Velarde Gómez, Martina"
+
+- id: pnv
+  nombreGrupo: "Grupo Vasco (EAJ-PNV)"
+  explicacion: "Grupo Parlamentario Vasco (EAJ-PNV)."
+  grupos: ["GV (EAJ-PNV)"]
+
+- id: pod
+  nombreGrupo: "Diputados de Podemos"
+  explicacion: "Podemos no tenía grupo propio. Contamos a sus cuatro diputados uno a uno: estuvieron en el grupo Sumar hasta diciembre de 2023 y después en el Grupo Mixto."
+  diputados:
+    - "Belarra Urteaga, Ione"
+    - "Santana Perera, Noemí"
+    - "Sánchez Serna, Javier"
+    - "Velarde Gómez, Martina"
+
+- id: pp
+  nombreGrupo: "Grupo Popular"
+  explicacion: "Grupo Parlamentario Popular en el Congreso."
+  grupos: ["GP"]
+
+- id: psoe
+  nombreGrupo: "Grupo Socialista"
+  explicacion: "Grupo Parlamentario Socialista, que incluye al PSC."
+  grupos: ["GS"]
+
+- id: vox
+  nombreGrupo: "Grupo VOX"
+  explicacion: "Grupo Parlamentario VOX."
+  grupos: ["GVOX"]
+
+- id: bildu
+  nombreGrupo: "Grupo EH Bildu"
+  explicacion: "Grupo Parlamentario Euskal Herria Bildu."
+  grupos: ["GEH Bildu"]
+
+- id: erc
+  nombreGrupo: "Grupo Republicano"
+  explicacion: "Grupo Parlamentario Republicano, el de Esquerra Republicana."
+  grupos: ["GR"]
+
+- id: junts
+  nombreGrupo: "Grupo Junts per Catalunya"
+  explicacion: "Grupo Parlamentario Junts per Catalunya."
+  grupos: ["GJxCAT"]

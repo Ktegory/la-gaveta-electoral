@@ -1,0 +1,17 @@
+partido: "erc"
+tema: "educacion"
+subtema: "lenguas"
+titulo: "Blindar la inmersión lingüística y el catalán como lengua vehicular en la escuela"
+resumen: "Propone modificar la legislación educativa estatal para impedir que se impongan porcentajes lingüísticos a los centros."
+fuentes:
+  - fuente: "erc/programa-29n-2026"
+    pagina: "10-11"
+    cita: Blindar el model d’escola catalana i la immersió lingüística. Defensar un model d’escola pública, laica, gratuïta i de qualitat, amb el català com a llengua vehicular i d’acollida, com a eina de cohesió social, inclusió i igualtat d’oportunitats. […] estatal per impedir les ingerències de l’Estat, la imposició de percentatges lingüístics als centres
+fechaAnuncio: "2026-11-05"
+destacada: true
+orden: 6
+comprobacion:
+  estado: encontrada
+  nota: "Medida 17 (pp. 10-11). Antes el título decía «Fijar por ley»; el programa dice «Blindar», y lo de la ley estatal es para impedir injerencias y porcentajes lingüísticos (resumen)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

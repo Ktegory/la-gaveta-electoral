@@ -1,0 +1,14 @@
+partido: "pod"
+tema: "igualdad"
+subtema: "violencia-machista"
+titulo: "Elevar a 1.000 millones de euros el presupuesto contra las violencias machistas"
+resumen: "Lo planteó Irene Montero en un desayuno informativo de Europa Press, con cargo al aumento del gasto militar desde 2023."
+fuentes:
+  - fuente: "pod/prensa-montero-desayuno-2026-11-06"
+    cita: "También ha planteado elevar hasta los 1.000 millones de euros el presupuesto destinado a combatir las violencias machistas"
+fechaAnuncio: "2026-11-06"
+destacada: false
+comprobacion:
+  estado: encontrada
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

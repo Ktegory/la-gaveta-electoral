@@ -1,0 +1,11 @@
+partido: "fa"
+tema: "pensiones"
+subtema: "pensiones-minimas"
+titulo: "Ninguna pensión por debajo del salario mínimo"
+fuentes:
+  - fuente: "fa/nota-pensiones-2026-10-24"
+fechaAnuncio: "2026-10-24"
+destacada: true
+orden: 4
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-10"

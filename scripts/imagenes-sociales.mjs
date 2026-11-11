@@ -1,0 +1,42 @@
+// Genera las imágenes para compartir y el icono de iOS con Chrome sin ventana:
+//   public/og.png (1200×630, la que se ve al compartir un enlace)
+//   public/apple-touch-icon.png (180×180)
+// Uso: node scripts/imagenes-sociales.mjs   (rehacer cuando cambie el logo)
+import { writeFileSync, mkdtempSync, rmSync, existsSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
+import { join, resolve } from 'node:path';
+import { tmpdir } from 'node:os';
+
+const CHROME = process.env.CHROME ?? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
+if (!existsSync(CHROME)) { console.error(`No encuentro Chrome en ${CHROME} (usa CHROME=/ruta)`); process.exit(1); }
+const nm = (p) => 'file://' + resolve('node_modules', p);
+const fuentes = `
+@font-face { font-family: Cond; src: url(${nm('@fontsource-variable/sofia-sans-extra-condensed/files/sofia-sans-extra-condensed-latin-wght-normal.woff2')}); font-weight: 1 1000 }
+@font-face { font-family: Sans; src: url(${nm('@fontsource-variable/mona-sans/files/mona-sans-latin-wdth-normal.woff2')}); font-weight: 200 900; font-stretch: 75% 125% }
+* { margin: 0; box-sizing: border-box } html, body { overflow: hidden }`;
+
+// Mientras no llegue el SVG definitivo, el logo es el mismo texto que en la cabecera.
+const logo = (tam) => `<div style="display:inline-grid;align-self:flex-start;gap:${tam * .1}px">
+  <div style="font:900 ${tam}px/.85 Cond;letter-spacing:-.01em;text-transform:uppercase">La Gaveta</div>
+  <div style="display:flex;justify-content:space-between;font:700 ${tam * .5}px/1 Sans;font-stretch:125%;text-transform:uppercase">${[...'Electoral'].map((l) => `<span>${l}</span>`).join('')}</div></div>`;
+
+const og = `<!doctype html><meta charset="utf-8"><style>${fuentes}
+body { width: 1200px; height: 630px; background: #FAF6E6; color: #0E0E0E; padding: 72px 80px; display: flex; flex-direction: column; justify-content: space-between }
+p { font: 600 44px/1.2 Sans; max-width: 900px } small { display: block; margin-top: 18px; font: 500 26px/1.3 Sans; color: #3A3A38 }
+.raya { position: absolute; left: 0; right: 0; bottom: 0; height: 14px; background: #0E0E0E }</style>
+<body>${logo(150)}<div><p>Los programas del 29N, ordenados por temas y con la fuente al lado de cada propuesta.<small>Una iniciativa civil · Sin vinculación con ningún partido</small></p></div><div class="raya"></div></body>`;
+
+const icono = `<!doctype html><meta charset="utf-8"><style>${fuentes} body { width: 180px; height: 180px; background: #0E0E0E }</style>
+<body><svg viewBox="0 0 32 32" width="180" height="180"><path d="M8 11h16M8 16h16M8 21h10" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4 2.5" fill="none"/></svg></body>`;
+
+const tmp = mkdtempSync(join(tmpdir(), 'gaveta-og-'));
+const foto = (html, ancho, alto, salida) => {
+  const f = join(tmp, 'p.html'); writeFileSync(f, html);
+  execFileSync(CHROME, ['--headless=new', '--disable-gpu', '--hide-scrollbars', '--force-device-scale-factor=1', '--allow-file-access-from-files',
+    `--window-size=${ancho},${alto}`, '--virtual-time-budget=3000', `--screenshot=${resolve(salida)}`, 'file://' + f], { stdio: 'ignore' });
+  console.log(`✓ ${salida}`);
+};
+try {
+  foto(og, 1200, 630, 'public/og.png');
+  foto(icono, 180, 180, 'public/apple-touch-icon.png');
+} finally { rmSync(tmp, { recursive: true, force: true }); }

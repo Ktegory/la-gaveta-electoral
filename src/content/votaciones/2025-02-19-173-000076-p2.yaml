@@ -1,0 +1,88 @@
+# Votación del Pleno · III. Mociones consecuencia de interpelaciones urgentes.
+# Generado por scripts/votacion.mjs.
+# El script no encontró el expediente (votación por puntos); se ha puesto a mano.
+# No se empareja con psoe/freno-compra-fondos: esto es una prohibición general, más amplia que su propuesta.
+fecha: 2025-02-19
+sesion: 93
+numero: 6
+expediente: 173/000076
+tipo: mocion
+tituloOficial: Moción consecuencia de interpelación urgente del Grupo Parlamentario Mixto (Sra. Belarra Urteaga), sobre la política del Gobierno para garantizar el derecho a la vivienda.
+subtituloOficial: Votación separada por puntos · Punto 2.
+titulo: "Moción de Podemos para prohibir comprar vivienda si no es para vivir en ella"
+resumen: "Pedía al Gobierno «prohibir la compra de vivienda para fines distintos a fijar la residencia del adquirente o sus familiares directos». La moción se votó por puntos; este es el punto 2."
+textoVotado:
+  nombre: "BOCG, Serie D, núm. 291"
+  url: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/D/BOCG-15-D-291.PDF#page=7
+  pagina: "7"
+urlVotacion: https://www.congreso.es/webpublica/opendata/votaciones/Leg15/Sesion093/20250219/Votacion006/VOT_20250219135530.pdf
+urlDatos: https://www.congreso.es/webpublica/opendata/votaciones/Leg15/Sesion093/20250219/Votacion006/VOT_20250219135538.json
+resultado: rechazada
+totales:
+  si: 42
+  no: 298
+  abstencion: 0
+  noVota: 10
+partidos:
+  bildu:
+    voto: si
+    si: 6
+    no: 0
+    abstencion: 0
+    noVota: 0
+  erc:
+    voto: si
+    si: 7
+    no: 0
+    abstencion: 0
+    noVota: 0
+  fa:
+    voto: si
+    si: 25
+    no: 0
+    abstencion: 0
+    noVota: 2
+  junts:
+    voto: no
+    si: 0
+    no: 7
+    abstencion: 0
+    noVota: 0
+  pnv:
+    voto: no
+    si: 0
+    no: 4
+    abstencion: 0
+    noVota: 1
+  pod:
+    voto: si
+    si: 4
+    no: 0
+    abstencion: 0
+    noVota: 0
+  pp:
+    voto: no
+    si: 0
+    no: 133
+    abstencion: 0
+    noVota: 4
+  psoe:
+    voto: no
+    si: 0
+    no: 119
+    abstencion: 0
+    noVota: 1
+  vox:
+    voto: no
+    si: 0
+    no: 32
+    abstencion: 0
+    noVota: 1
+tema: vivienda
+subtema: acceso-compra
+propuestas:
+  - propuesta: pod/prohibir-compra-especulativa
+    coincide: si
+    pasaje: "Punto 2 (p. 7): «Prohibir la compra de vivienda para fines distintos a fijar la residencia del adquirente o sus familiares directos»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

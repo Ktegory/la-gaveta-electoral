@@ -1,0 +1,14 @@
+partido: "pod"
+tema: "igualdad"
+subtema: "cuidados"
+titulo: "Retribuir el permiso de ocho semanas para el cuidado de hijos e hijas"
+resumen: "Lo planteó Irene Montero en un desayuno informativo de Europa Press, con cargo al aumento del gasto militar desde 2023."
+fuentes:
+  - fuente: "pod/prensa-montero-desayuno-2026-11-06"
+    cita: "poner en marcha un supermercado público y remunerar el permiso de ocho semanas para el cuidado de hijos e hijas."
+fechaAnuncio: "2026-11-06"
+destacada: false
+comprobacion:
+  estado: encontrada
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

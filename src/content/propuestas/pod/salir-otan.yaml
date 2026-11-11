@@ -1,0 +1,18 @@
+partido: "pod"
+tema: "exterior"
+subtema: "otan"
+titulo: "Salir de la OTAN y no aumentar el gasto en armas"
+fuentes:
+  - fuente: "pod/documento-politico-2025"
+    pagina: "33"
+    cita: Hay que abandonar la OTAN a la mayor brevedad y hay que desacatar la orden de Donald Trump de aumentar el gasto militar en Europa.
+  - fuente: "pod/web-campana"
+    cita: Ser socio de EEUU en la OTAN nos pone en peligro. […] Estas son las guerras de los dueños del mundo y no de la gente. España tiene que ser un refugio. Ni un euro más a armas.
+fechaAnuncio: "2026-10-19"
+destacada: true
+orden: 5
+comprobacion:
+  estado: encontrada
+  nota: "La web de campaña critica la OTAN y dice «Ni un euro más a armas», pero no dice «salir». Lo de salir está en el Documento Político de la V Asamblea (abril de 2025), p. 33; se añadió como fuente el 11 nov."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

@@ -1,0 +1,13 @@
+partido: "pp"
+tema: "vivienda"
+subtema: "okupacion"
+titulo: "Que el propietario recupere su vivienda okupada en 48 horas por orden judicial"
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "55"
+  - fuente: "pp/plan-vivienda-sevilla-2026"
+fechaAnuncio: "2026-10-21"
+destacada: true
+orden: 2
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-10"

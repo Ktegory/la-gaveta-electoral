@@ -1,0 +1,13 @@
+partido: "pp"
+tema: "pensiones"
+subtema: "revalorizacion"
+titulo: "Revalorizar cada año las pensiones con el IPC, dentro del Pacto de Toledo"
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "42-43"
+  - fuente: "pp/contrato-con-espana-2026"
+fechaAnuncio: "2026-10-19"
+destacada: true
+orden: 3
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-10"

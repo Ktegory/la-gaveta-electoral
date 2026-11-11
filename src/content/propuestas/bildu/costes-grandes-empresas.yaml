@@ -1,0 +1,16 @@
+partido: "bildu"
+tema: "energia"
+subtema: "precio"
+titulo: "Que las grandes energéticas, petroleras y alimentarias asuman las subidas de costes en épocas de inflación"
+resumen: "Para que, en situaciones de inflación o de crisis de abastecimiento, las subidas de productos y servicios básicos no recaigan en la ciudadanía."
+fuentes:
+  - fuente: "bildu/nota-alquiler-precios-2026-11-09"
+    cita: Propondremos que sean las grandes empresas energéticas, petroleras y alimentarias quienes, con sus enormes márgenes de beneficio, deban asumir y absorber, en situaciones inflacionarias y de crisis de abastecimiento, el aumento de los costes de estos productos y servicios básicos.
+fechaAnuncio: "2026-11-09"
+destacada: true
+orden: 3
+comprobacion:
+  estado: encontrada
+  nota: Lo dice el candidato Oskar Matute en el Fórum Europa (cita entre comillas en la nota oficial).
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

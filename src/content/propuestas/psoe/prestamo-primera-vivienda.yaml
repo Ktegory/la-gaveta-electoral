@@ -1,0 +1,10 @@
+partido: "psoe"
+tema: "vivienda"
+subtema: "acceso-compra"
+titulo: "Préstamo al 0 % para la primera vivienda"
+fuentes:
+  - fuente: "psoe/eldiario-decretos-vivienda-2026"
+fechaAnuncio: "2026-09-29"
+destacada: false
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-10"

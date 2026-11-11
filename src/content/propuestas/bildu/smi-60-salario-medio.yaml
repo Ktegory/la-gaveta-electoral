@@ -1,0 +1,16 @@
+partido: "bildu"
+tema: "empleo"
+subtema: "smi"
+titulo: "Fijar por ley el salario mínimo en el 60 % del salario medio y permitir un salario mínimo propio en Euskal Herria"
+resumen: "Pide además subir el SMI en 2027 por encima de la inflación. El 60 % es la referencia de la Carta Social Europea."
+fuentes:
+  - fuente: "bildu/nota-paquete-laboral-2026-09-16"
+    cita: permitir salarios mínimos propios adaptados a las distintas realidades socioeconómicas, también para Euskal Herria; y fijar por ley el 60% del salario medio como referencia mínima, de acuerdo con la Carta Social Europea.
+fechaAnuncio: "2026-09-16"
+destacada: true
+orden: 4
+comprobacion:
+  estado: encontrada
+  nota: "Matiz: la fuente habla del 60 % «como referencia mínima» y de «salarios mínimos propios […] también para Euskal Herria»; la subida en 2027 «por encima de la inflación» está en la misma frase, justo antes."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

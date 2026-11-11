@@ -1,0 +1,108 @@
+---
+// «Qué propone [partido] sobre [tema]»: dos desplegables que llevan a /partidos/<partido>/<tema>/.
+// En esa página el contenido se cambia en el sitio, sin recargar (ver el script).
+// En la portada no hay nada elegido de antemano: el botón se activa al elegir los dos.
+//
+// Dos maneras de pintarse:
+// - Navegadores con desplegables personalizables (appearance: base-select): el <select> se ve tal cual,
+//   con el icono de cada tema y el color de cada partido dentro de las opciones.
+// - El resto: se ve el texto .sel-v y el <select> va encima, transparente, para que el menú
+//   del sistema salga a tamaño normal. Esos navegadores ignoran el <button> y los iconos de las opciones.
+import { datos, varsPartido } from '../lib/datos';
+interface Props { partido?: string; tema?: string }
+const { partido, tema } = Astro.props;
+const d = await datos();
+const enPagina = Boolean(partido && tema);
+const elegido = d.partidos.find((p) => p.id === partido);
+const nombreTema = d.temas.find((t) => t.id === tema)?.data.nombre;
+---
+<div class:list={['foco-sel', { portada: !enPagina }]} data-foco-sel data-modo={enPagina ? 'pagina' : 'portada'}>
+  <span>Qué propone</span>
+  <label class:list={['sel', 'sel-p', { vacio: !partido }]} style={elegido ? varsPartido(elegido) : undefined}>
+    <span class="sel-v" aria-hidden="true">{elegido?.data.nombre ?? 'elige un partido'}</span>
+    <select data-sel="partido" aria-label="Partido">
+      <button type="button"><selectedcontent></selectedcontent></button>
+      {!partido && <option value="" disabled selected>elige un partido</option>}
+      {d.partidos.map((p) => <option value={p.id} selected={p.id === partido} data-pc={p.data.color} style={varsPartido(p)}><span class="dot" aria-hidden="true"></span>{p.data.nombre}</option>)}
+    </select>
+  </label>
+  <span>sobre</span>
+  <label class:list={['sel', 'sel-t', { vacio: !tema }]}>
+    <span class="sel-v" aria-hidden="true">{nombreTema ?? 'elige un tema'}</span>
+    <select data-sel="tema" aria-label="Tema">
+      <button type="button"><selectedcontent></selectedcontent></button>
+      {!tema && <option value="" disabled selected>elige un tema</option>}
+      {d.temas.map((t) => <option value={t.id} selected={t.id === tema}><svg class="i" aria-hidden="true"><use href={`#i-${t.id}`} /></svg>{t.data.nombre}</option>)}
+    </select>
+  </label>
+  {!enPagina && <a class="btn ink" data-foco-ir aria-disabled="true">Ver propuestas <span class="arrow">→</span></a>}
+</div>
+<script>
+  // Lo que se ve en cada desplegable: el texto de la opción elegida.
+  const pintar = (s: HTMLSelectElement) => {
+    const sel = s.closest('.sel')!;
+    sel.querySelector('.sel-v')!.textContent = s.options[s.selectedIndex]?.text.trim() ?? '';
+    sel.classList.toggle('vacio', !s.value);
+    // El partido elegido toma su color.
+    if (s.dataset.sel === 'partido') {
+      const pc = s.options[s.selectedIndex]?.dataset.pc;
+      if (pc) (sel as HTMLElement).style.setProperty('--pc', pc);
+    }
+  };
+  const ruta = (box: Element) => {
+    const v = (k: string) => box.querySelector<HTMLSelectElement>(`[data-sel="${k}"]`)!.value;
+    return v('partido') && v('tema') ? `/partidos/${v('partido')}/${v('tema')}/` : '';
+  };
+  // En la portada, el botón se activa cuando están elegidos los dos.
+  const boton = (box: Element) => {
+    const btn = box.querySelector<HTMLAnchorElement>('[data-foco-ir]');
+    const url = ruta(box);
+    if (btn && url) { btn.href = url; btn.removeAttribute('aria-disabled'); }
+  };
+  // Al volver atrás, el navegador puede restaurar lo elegido: lo repintamos.
+  addEventListener('pageshow', () => document.querySelectorAll<HTMLElement>('[data-foco-sel]').forEach((box) => {
+    box.querySelectorAll('select').forEach(pintar);
+    boton(box);
+  }));
+
+  // Cambia la zona [data-foco] por la de la otra página, sin recargar. Si algo falla, navega normal.
+  const ir = async (url: string, apilar: boolean, enfocar?: string) => {
+    try {
+      const r = await fetch(url);
+      if (!r.ok) throw new Error(String(r.status));
+      const doc = new DOMParser().parseFromString(await r.text(), 'text/html');
+      const nuevo = doc.querySelector('[data-foco]');
+      const viejo = document.querySelector('[data-foco]');
+      if (!nuevo || !viejo) throw new Error('sin zona');
+      const cambiar = () => {
+        viejo.replaceWith(document.adoptNode(nuevo));
+        document.title = doc.title;
+        for (const sel of ['meta[name="description"]', 'link[rel="canonical"]', 'meta[name="robots"]']) {
+          document.head.querySelector(sel)?.remove();
+          const n = doc.head.querySelector(sel);
+          if (n) document.head.append(document.adoptNode(n));
+        }
+        if (enfocar) document.querySelector<HTMLSelectElement>(`[data-foco] [data-sel="${enfocar}"]`)?.focus();
+      };
+      if (apilar) history.pushState({ foco: true }, '', url);
+      if (document.startViewTransition && !matchMedia('(prefers-reduced-motion: reduce)').matches) document.startViewTransition(cambiar);
+      else cambiar();
+    } catch {
+      location.href = url;
+    }
+  };
+
+  // Delegado en el documento: sigue funcionando después de cambiar la zona.
+  document.addEventListener('change', (e) => {
+    const s = (e.target as Element).closest<HTMLSelectElement>('[data-foco-sel] select');
+    if (!s) return;
+    pintar(s);
+    const box = s.closest<HTMLElement>('[data-foco-sel]')!;
+    const url = ruta(box);
+    if (box.dataset.modo === 'pagina') { if (url) ir(url, true, s.dataset.sel); return; }
+    boton(box);
+  });
+  addEventListener('popstate', () => {
+    if (document.querySelector('[data-foco]') && /^\/partidos\/[^/]+\/[^/]+\/$/.test(location.pathname)) ir(location.pathname, false);
+  });
+</script>

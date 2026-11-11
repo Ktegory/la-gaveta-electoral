@@ -1,0 +1,105 @@
+---
+import '../styles/global.css';
+import Fuentes from '../components/Fuentes.astro';
+import Iconos from '../components/Iconos.astro';
+import Icono from '../components/Icono.astro';
+import Marquesina from '../components/Marquesina.astro';
+import Logo from '../components/Logo.astro';
+
+interface Props { titulo?: string; descripcion?: string; seccion?: 'mapa' | 'partidos' | 'comparar' | 'escala' | 'metodo' | 'buscar' | 'fuentes'; estilo?: string; indexar?: boolean; noindex?: boolean }
+const { titulo, descripcion = 'Los programas de los partidos para las elecciones generales del 29N, ordenados por temas, comparables y con la fuente original al lado de cada propuesta.', seccion, estilo, indexar = true, noindex = false } = Astro.props;
+const nombre = 'La Gaveta electoral';
+const t = titulo ? `${titulo} · ${nombre}` : `${nombre} · Elecciones generales 29N`;
+const canonica = new URL(Astro.url.pathname, Astro.site);
+const imagen = new URL('/og.png', Astro.site);
+// Datos estructurados (schema.org) solo en portada: qué es la web y cómo se busca en ella.
+const datosEstructurados = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: nombre,
+  url: new URL('/', Astro.site).href,
+  inLanguage: 'es',
+  description: descripcion,
+  potentialAction: { '@type': 'SearchAction', target: new URL('/buscar/?q={search_term_string}', Astro.site).href, 'query-input': 'required name=search_term_string' },
+};
+const NAV = [
+  { id: 'partidos', href: '/partidos/', txt: 'Partidos' },
+  { id: 'comparar', href: '/comparar/', txt: 'Comparar' },
+  { id: 'escala', href: '/escala/', txt: 'Escala' },
+] as const;
+const cur = (id: string) => (seccion === id ? 'page' : undefined);
+---
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <Fuentes />
+  <title>{t}</title>
+  <meta name="description" content={descripcion} />
+  <link rel="canonical" href={canonica} />
+  <link rel="sitemap" href="/sitemap.xml" />
+  {noindex && <meta name="robots" content="noindex" />}
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#FFFFFF" />
+  <meta property="og:site_name" content={nombre} />
+  <meta property="og:title" content={t} />
+  <meta property="og:description" content={descripcion} />
+  <meta property="og:url" content={canonica} />
+  <meta property="og:image" content={imagen} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="La Gaveta electoral: los programas del 29N, ordenados por temas y con su fuente." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  {Astro.url.pathname === '/' && <script type="application/ld+json" set:html={JSON.stringify(datosEstructurados)} />}
+  <meta property="og:locale" content="es_ES" />
+  <meta name="theme-color" content="#0E0E0E" />
+</head>
+<body>
+<Iconos />
+<div class="site" style={estilo}>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="hdr pad">
+    <Logo />
+    <nav class="nav" aria-label="Principal">
+      {NAV.map((n) => <a href={n.href} aria-current={cur(n.id)}>{n.txt}</a>)}
+    </nav>
+    <a class="search" href="/buscar/" aria-label="Buscar una propuesta" title="Buscar una propuesta" aria-current={cur('buscar')}><Icono id="search" /></a>
+    <details class="menu">
+      <summary aria-label="Menú"><svg class="hamb" viewBox="0 0 18 14" aria-hidden="true"><path d="M1 1h16M1 7h16M1 13h16" /></svg></summary>
+      <nav aria-label="Menú">
+        {NAV.map((n) => <a href={n.href} aria-current={cur(n.id)}>{n.txt}</a>)}
+        <a href="/como-funciona/" aria-current={cur('metodo')}>Cómo funciona</a>
+        <a href="/fuentes/" aria-current={cur('fuentes')}>Fuentes</a>
+        <a href="/buscar/" aria-current={cur('buscar')}>Buscar</a>
+      </nav>
+    </details>
+  </header>
+  <script is:inline>
+    // Altura real de la cabecera fija, para colocar debajo las demás piezas fijas.
+    (() => {
+      const h = document.querySelector('.hdr');
+      if (!h) return;
+      const medir = () => document.documentElement.style.setProperty('--hdr-h', `${h.offsetHeight}px`);
+      medir();
+      if ('ResizeObserver' in window) new ResizeObserver(medir).observe(h);
+    })();
+  </script>
+  <Marquesina />
+  <main id="contenido" data-pagefind-body={indexar ? '' : undefined}>
+    <slot />
+  </main>
+  <footer class="foot pad">
+    <div class="foot-id"><Logo /><span>Una iniciativa civil · Sin vinculación con ningún partido.</span></div>
+    <nav aria-label="Pie"><a href="/como-funciona/" aria-current={cur('metodo')}>Cómo funciona</a><a href="/fuentes/" aria-current={cur('fuentes')}>Fuentes</a><a href="/como-funciona/#errores">¿Has visto un error?</a><a href="/como-funciona/#historial">Historial de cambios</a></nav>
+  </footer>
+  <nav class="tabbar" aria-label="Accesos rápidos">
+    <a href="/partidos/" aria-current={cur('partidos')}><Icono id="home" />Partidos</a>
+    <a href="/comparar/" aria-current={cur('comparar')}><Icono id="cols" />Comparar</a>
+    <a href="/buscar/" aria-current={cur('buscar')}><Icono id="search" />Buscar</a>
+  </nav>
+</div>
+</body>
+</html>

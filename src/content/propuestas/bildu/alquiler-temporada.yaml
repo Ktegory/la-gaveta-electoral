@@ -1,0 +1,13 @@
+partido: "bildu"
+tema: "vivienda"
+subtema: "alquiler"
+titulo: "Regular los alquileres de temporada para que no sirvan para eludir la ley"
+fuentes:
+  - fuente: "bildu/nota-desahucios-2026-09-28"
+    cita: Junto a ello, la coalición soberanista ha insistido en la necesidad de regular los alquileres de temporada para evitar que esta modalidad siga utilizándose como mecanismo para eludir las obligaciones establecidas por la legislación vigente.
+fechaAnuncio: "2026-09-28"
+destacada: false
+comprobacion:
+  estado: encontrada
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

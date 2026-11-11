@@ -1,0 +1,24 @@
+nombre: "VOX"
+siglas: "VOX"
+color: "#63BE21"
+colorTexto: "blanco"
+colorOrigen:
+  fuente: "Aproximado: pendiente de su manual de marca"
+  verificado: false
+logo:
+  url: "https://upload.wikimedia.org/wikipedia/commons/a/aa/VOX_logo.svg"
+  origen: "Wikimedia Commons (infobox de es.wikipedia), consultado el 9 nov 2026"
+candidatura: "Santiago Abascal"
+lema: "Es sentido común"
+web: "https://www.voxespana.es/"
+estadoPrograma: "avance"
+resumenEstado: "Avance oficial: «Recuperar España» (19 oct)"
+explicacionEstado: "Ha publicado un <b>avance oficial</b>, «Recuperar España» (19 de octubre, 6 págs.), pero no su programa completo."
+candidaturas:
+  - territorio: "Toda España"
+    marca: "Listas propias"
+referenciaAnterior:
+  titulo: "Lo que proponía en 2023"
+  detalle: "Programa de 178 págs. (copia publicada por The Objective). No es el programa del 29N."
+  fuente: "vox/programa-2023"
+ultimaRevision: "2026-11-09T10:00:00+01:00"

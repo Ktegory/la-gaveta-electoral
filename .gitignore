@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.astro/
+.netlify/
+.DS_Store
+.env
+.env.*
+
+# Archivos de otro trabajo que no son de este proyecto
+informe-qa-event-hub.md
+.qa-capturas/
+
+# Imagen original de la mano (la web usa public/img/hero-mano.webp)
+election-hand-voter.png
+
+# Ajustes locales de Claude Code
+.claude/settings.local.json

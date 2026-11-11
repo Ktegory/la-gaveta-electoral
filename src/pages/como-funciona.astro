@@ -1,0 +1,121 @@
+---
+import Estado from '../components/Estado.astro';
+import Base from '../layouts/Base.astro';
+import ListaCambios from '../components/ListaCambios.astro';
+import { datos, varsPartido } from '../lib/datos';
+const d = await datos();
+const nDest = Math.min(...d.partidos.map((p) => d.propuestas.filter((x) => x.data.partido.id === p.id && x.data.destacada).length));
+---
+<Base titulo="Cómo funciona" seccion="metodo" descripcion="Método, fuentes, convenciones visuales y cómo avisar de un error en La Gaveta electoral.">
+  <div class="chd pad">
+    <h1 class="cond">Cómo funciona</h1>
+    <p class="lead">Ponemos las propuestas de cada partido una al lado de otra, con la fuente original a un clic. No opinamos sobre ellas ni las puntuamos.</p>
+  </div>
+  <div class="pad metodo">
+    <section class="blk" id="fuentes">
+      <h2>De dónde sale cada dato</h2>
+      <p>Cada propuesta tiene al menos una fuente, y la etiqueta te dice de qué tipo es. Cuando un partido publica su programa para el 29N, lo anotamos en el historial y el programa pasa a ser la única fuente que mostramos junto a cada propuesta que está en él. Las fuentes anteriores siguen en la ficha del partido, en «Fuentes».</p>
+      <p>Si una propuesta que el partido había anunciado no aparece en su programa, la mantenemos con el aviso <span class="fuera">No está en su programa</span> y deja de ser destacada. Si la anuncia después de publicar el programa, la marcamos como <span class="fuera">Anuncio de campaña · No está en su programa</span>.</p>
+      <div class="conv c4">
+        <div><h3>Tipos de fuente</h3>
+          <div class="stack">
+            <span class="src p29"><b>Programa 29N</b>el programa oficial</span>
+            <span class="src av"><b>Avance oficial</b>un adelanto publicado por el partido</span>
+            <span class="src doc"><b>Documento del partido</b>ponencias, planes…</span>
+            <span class="src an"><b>Anuncio oficial</b>notas y webs del partido</span>
+            <span class="src pr"><b>Según la prensa</b>declaraciones recogidas por medios</span>
+            <span class="src p23"><b>Programa anterior</b>solo como referencia</span>
+          </div>
+        </div>
+        <div><h3>Lo que no hacemos</h3><p>No resumimos con adjetivos, no ponemos notas ni semáforos y no calculamos «afinidad». No usamos datos ilustrativos: si no tenemos un dato verificado, no lo mostramos.</p></div>
+        <div id="revision"><h3>Segunda revisión</h3><p>Antes de publicar, cada propuesta se vuelve a comprobar contra su fuente en una pasada aparte, otro día. La hace el mismo autor: no hay un segundo revisor independiente.</p></div>
+        <div><h3>Copias de seguridad</h3><p>Intentamos guardar una copia de cada documento en Internet Archive, por si el original cambia o desaparece. Algunas páginas no se dejan archivar; esas fuentes aparecen sin copia. La fecha de consulta figura junto a cada fuente.</p></div>
+      </div>
+    </section>
+
+    <section class="blk" id="provisional">
+      <h2>Qué es provisional</h2>
+      <p>Mientras los partidos no publiquen su programa, lo que mostramos es provisional. Cada estado tiene su forma, así que se distingue también en blanco y negro.</p>
+      <div class="conv">
+        <div><h3>Estado del programa</h3><div class="stack"><Estado estado="publicado" /><Estado estado="avance" /><Estado estado="pendiente" /></div><p>Círculo lleno con un check, círculo discontinuo medio lleno, círculo discontinuo vacío.</p></div>
+        <div><h3>Casillas del mapa</h3><div class="sample"><i style="background:color-mix(in srgb,#21599E 22%,#fff);outline:1.5px solid var(--ink);outline-offset:-6px"></i><i style="background:color-mix(in srgb,#21599E 22%,#fff);outline:1.5px dashed rgba(14,14,14,.6);outline-offset:-6px"></i><i style="background:#fff;outline:1.5px dotted var(--nc);outline-offset:-1.5px"></i></div><p>Marco continuo: del programa publicado. Discontinuo: provisional. Punteado gris: no consta.</p></div>
+        <div><h3>«No consta»</h3><p>Significa que no hemos encontrado propuestas en las fuentes consultadas, no que el partido no tenga postura.</p></div>
+      </div>
+    </section>
+
+    <section class="blk" id="destacadas">
+      <h2>Cómo elegimos lo destacado</h2>
+      <p>Cada partido tiene el mismo número de propuestas destacadas ({nDest} ahora, con una de margen como mucho). Elegimos las que el propio partido presenta como principales: las que abren su programa, sus documentos o su campaña. Una propuesta de un programa anterior nunca es destacada.</p>
+    </section>
+
+    <section class="blk" id="congreso">
+      <h2>Lo que votaron en el Congreso</h2>
+      <p>Junto a lo que cada partido propone, mostramos qué votó en el Congreso cuando se votó esa misma medida en la legislatura 2023-2026. Las reglas son las mismas para todos los partidos.</p>
+      <div class="conv c4">
+        <div><h3>Solo la misma medida</h3><p>Unimos una votación a una propuesta solo si el texto votado contiene esa misma medida, no algo parecido. Si recogía solo una parte, lo decimos. Si lo votado iba más allá de la propuesta (prohibir del todo lo que el partido propone limitar, por ejemplo), no la unimos: votar no a eso no contradice la propuesta. Si dudamos, no la unimos.</p></div>
+        <div><h3>Qué se votaba exactamente</h3><p>Cada votación enlaza el texto votado (BOCG o BOE) y dice de qué tipo era: no es lo mismo admitir a trámite una ley que aprobarla, ni una moción, que no obliga a nada. Si el texto mezclaba otras medidas, como los decretos «ómnibus», también lo decimos.</p></div>
+        <div><h3>Sin veredictos</h3><p>No etiquetamos a nadie de «coherente» ni de «incoherente». Ponemos la propuesta y el voto uno al lado del otro, con sus fuentes, y que lo juzgue quien lee. Que no haya votación no significa nada: muchas medidas nunca se votaron.</p></div>
+        <div><h3>Datos oficiales</h3><p>El voto sale de los <a href="https://www.congreso.es/es/opendata/votaciones" target="_blank" rel="noopener">datos abiertos del Congreso</a>, diputado a diputado. Cada votación enlaza el detalle oficial para comprobarlo.</p></div>
+      </div>
+      <h3 class="rep-h">Quién cuenta como cada partido</h3>
+      <dl class="rep">
+        {d.partidos.map((p) => {
+          const r = d.representacion.get(p.id)!;
+          return <div class="rep-f" style={varsPartido(p)}><dt>{p.data.nombre}</dt><dd><b>{r.data.nombreGrupo}.</b> {r.data.explicacion}</dd></div>;
+        })}
+      </dl>
+      <p id="escanos">Los <b>escaños actuales</b> que mostramos en la portada y en cada ficha son los diputados que cuentan para cada partido en la última votación del Pleno, con estas mismas reglas. Por eso no coinciden siempre con los escaños que logró cada candidatura en 2023: por ejemplo, los partidos que hoy forman el Frente Amplio y Podemos se presentaron juntos en Sumar.</p>
+      <div class="conv">
+        <div><h3>Marcas de voto</h3><div class="stack vp-ley" style="flex-direction:row;flex-wrap:wrap;--pc:var(--mute)"><span><span class="vc si">Sí</span></span><span><span class="vc no">No</span></span><span><span class="vc abstencion">Abst.</span></span><span><span class="vc dividido">Dividido</span></span><span><span class="vc ausente">No votó</span></span></div><p>Bajo cada propuesta, el «sí» va con el color del partido (aquí, en gris) y el «no», en negro. No hay un verde ni un rojo propios: el color es siempre el del partido, también cuando vota no. Votar sí o no no es bueno ni malo en sí mismo.</p><p>Mostramos lo que votó la mayoría de sus diputados; si alguno votó distinto, va anotado al lado. «Dividido» es que ninguna opción llegó a la mitad.</p></div>
+      </div>
+    </section>
+
+    <section class="blk">
+      <h2>Neutralidad visual</h2>
+      <div class="conv">
+        <div><h3>Mismo espacio</h3><p>Las columnas, filas y casillas de cada partido miden siempre lo mismo. Orden alfabético en todas partes; en la portada se puede ordenar también por escaños, si quien lee lo elige.</p></div>
+        <div><h3>Sin intensidad por cantidad</h3><p>En el mapa, más propuestas no significa más color: el tinte es fijo y el número va escrito. Así no se premia al partido que más publica.</p></div>
+        <div><h3>El color es de los partidos</h3><p>La web no tiene color propio. Sobre el color de cada partido, el texto va en blanco o en negro: el que mejor se lea.</p></div>
+      </div>
+    </section>
+
+    <section class="blk" id="errores">
+      <h2>¿Has visto un error?</h2>
+      <p>Cuéntanos qué está mal y, si puedes, dónde lo has comprobado. Lo revisamos con la fuente original y, si hay que corregir, lo anotamos en el historial.</p>
+      <form class="form" name="errores" method="POST" action="/gracias/" data-netlify="true" netlify-honeypot="web">
+        <input type="hidden" name="form-name" value="errores" />
+        <p class="sr" aria-hidden="true"><label>No rellenes este campo: <input name="web" tabindex="-1" autocomplete="off" /></label></p>
+        <div class="campo">
+          <label for="f-donde">Página o propuesta</label>
+          <input id="f-donde" name="donde" required placeholder="Por ejemplo: Vivienda · Alquiler · título de la propuesta" />
+        </div>
+        <div class="campo">
+          <label for="f-error">Qué está mal</label>
+          <textarea id="f-error" name="error" rows="5" required></textarea>
+        </div>
+        <div class="campo">
+          <label for="f-fuente">Fuente que lo demuestra</label>
+          <input id="f-fuente" name="fuente" type="url" placeholder="https://" aria-describedby="f-fuente-a" />
+          <small id="f-fuente-a">Opcional. El enlace donde lo has comprobado.</small>
+        </div>
+        <div class="campo">
+          <label for="f-correo">Tu correo</label>
+          <input id="f-correo" name="correo" type="email" autocomplete="email" aria-describedby="f-correo-a" />
+          <small id="f-correo-a">Opcional. Solo lo usamos para responderte.</small>
+        </div>
+        <button class="btn ink" type="submit">Enviar aviso <span class="arrow">→</span></button>
+      </form>
+    </section>
+
+    <section class="blk" id="quien">
+      <h2>Quién lo hace</h2>
+      <p>Es una iniciativa personal de Khiustin Tornés, <b>financiada por su autor</b>, sin publicidad ni dinero de terceros, y <b>sin afiliación</b> a ningún partido, ni ahora ni antes. El 28 y el 29 de noviembre no se publica contenido nuevo; solo se corregirían errores, y quedaría anotado.</p>
+    </section>
+
+    <section class="blk" id="historial" style="padding-bottom:var(--sec)">
+      <h2>Historial de cambios</h2>
+      <p>Todo lo que añadimos o corregimos, con su fecha.</p>
+      <ListaCambios />
+    </section>
+  </div>
+</Base>

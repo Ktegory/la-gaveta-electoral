@@ -1,0 +1,36 @@
+---
+import Base from '../layouts/Base.astro';
+import { datos } from '../lib/datos';
+const d = await datos();
+// Para pintar en su color los resultados que son un partido (el título del resultado es su nombre).
+const colores = Object.fromEntries(d.partidos.map((p) => [p.data.nombre, p.data.color]));
+---
+<Base titulo="Buscar" seccion="buscar" indexar={false} descripcion="Busca una palabra (alquiler, IRPF, nucleares…) y encuentra las propuestas de todos los partidos para el 29N que la mencionan.">
+  <div class="chd pad">
+    <h1 class="cond">Buscar</h1>
+    <p class="lead">Busca una palabra: «alquiler», «IRPF», «nucleares»… Encontrarás las propuestas de todos los partidos que la mencionan.</p>
+  </div>
+  <div class="pad buscador">
+    <div id="buscador"></div>
+    <noscript><p>El buscador necesita JavaScript. También puedes recorrer los temas desde <a href="/comparar/">Comparar</a>.</p></noscript>
+  </div>
+  <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
+  <script is:inline src="/pagefind/pagefind-ui.js" onerror="document.getElementById('buscador').innerHTML='<p class=&quot;mute&quot;>El índice de búsqueda se genera al compilar (npm run build). En modo desarrollo no está disponible.</p>'"></script>
+  <script is:inline define:vars={{ colores }}>
+    const caja = document.getElementById('buscador');
+    const pintar = () => caja.querySelectorAll('.pagefind-ui__result').forEach((r) => {
+      const t = r.querySelector('.pagefind-ui__result-title .pagefind-ui__result-link')?.textContent.trim();
+      const c = t && colores[t];
+      r.classList.toggle('es-partido', Boolean(c));
+      if (c) r.style.setProperty('--pc', c); else r.style.removeProperty('--pc');
+    });
+    new MutationObserver(pintar).observe(caja, { childList: true, subtree: true });
+  </script>
+  <script is:inline>
+    if (window.PagefindUI) {
+      new PagefindUI({ element: '#buscador', showSubResults: true, showImages: false, resetStyles: false, autofocus: true });
+      const q = new URLSearchParams(location.search).get('q');
+      if (q) setTimeout(() => { const i = document.querySelector('#buscador input'); if (i) { i.value = q; i.dispatchEvent(new Event('input')); } }, 0);
+    }
+  </script>
+</Base>

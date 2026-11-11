@@ -1,0 +1,14 @@
+partido: "pp"
+tema: "fiscalidad"
+subtema: "iva"
+titulo: "IVA del 0 % en los alimentos básicos mientras dure la crisis de inflación"
+resumen: "Incluye la carne, el pescado y las conservas."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "61"
+  - fuente: "pp/decalogo-economico-2026"
+fechaAnuncio: "2026-09-27"
+destacada: true
+orden: 4
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-10"

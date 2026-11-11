@@ -1,0 +1,87 @@
+# Votación del Pleno · III. Mociones consecuencia de interpelaciones urgentes.
+# Generado por scripts/votacion.mjs.
+fecha: 2026-06-18
+sesion: 188
+numero: 12
+expediente: 173/000179
+tipo: mocion
+tituloOficial: |
+  Moción consecuencia de interpelación urgente del Grupo Parlamentario VOX, sobre las medidas que va a adoptar el Gobierno para garantizar que los españoles siempre vayan primero para comprar, alquilar o recibir una vivienda social.
+titulo: "Moción de VOX para dar prioridad a los españoles en el acceso a la vivienda"
+resumen: "Pedía un sistema de acceso a la vivienda protegida, el alquiler social y las ayudas a la vivienda «inspirado en el principio de prioridad nacional»."
+incluiaAdemas: "Repatriaciones de inmigrantes («remigración»), cambios en el padrón y en la Ley de Extranjería, ventajas fiscales solo para españoles y derogar la Ley de Vivienda."
+textoVotado:
+  nombre: "BOCG, Serie D, núm. 557"
+  url: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/D/BOCG-15-D-557.PDF#page=24
+  pagina: "24-28"
+urlVotacion: https://www.congreso.es/webpublica/opendata/votaciones/Leg15/Sesion188/20260618/Votacion012/VOT_20260618162204.pdf
+urlDatos: https://www.congreso.es/webpublica/opendata/votaciones/Leg15/Sesion188/20260618/Votacion012/VOT_20260618162224.json
+resultado: rechazada
+totales:
+  si: 33
+  no: 314
+  abstencion: 0
+  noVota: 3
+partidos:
+  bildu:
+    voto: no
+    si: 0
+    no: 6
+    abstencion: 0
+    noVota: 0
+  erc:
+    voto: no
+    si: 0
+    no: 6
+    abstencion: 0
+    noVota: 1
+  fa:
+    voto: no
+    si: 0
+    no: 25
+    abstencion: 0
+    noVota: 1
+  junts:
+    voto: no
+    si: 0
+    no: 6
+    abstencion: 0
+    noVota: 1
+  pnv:
+    voto: no
+    si: 0
+    no: 5
+    abstencion: 0
+    noVota: 0
+  pod:
+    voto: no
+    si: 0
+    no: 4
+    abstencion: 0
+    noVota: 0
+  pp:
+    voto: no
+    si: 0
+    no: 137
+    abstencion: 0
+    noVota: 0
+  psoe:
+    voto: no
+    si: 0
+    no: 121
+    abstencion: 0
+    noVota: 0
+  vox:
+    voto: si
+    si: 33
+    no: 0
+    abstencion: 0
+    noVota: 0
+tema: vivienda
+subtema: vivienda-publica
+propuestas:
+  - propuesta: vox/prioridad-nacional-vivienda
+    coincide: si
+    pasaje: "Punto 3 (pp. 26-27): «Establecer un sistema de acceso a vivienda protegida, alquiler social o ayudas a la vivienda inspirado en el principio de prioridad nacional»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

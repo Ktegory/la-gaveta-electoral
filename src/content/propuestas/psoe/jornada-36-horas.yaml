@@ -1,0 +1,11 @@
+partido: "psoe"
+tema: "empleo"
+subtema: "jornada"
+titulo: "Jornada laboral de 36 horas en 2030"
+fuentes:
+  - fuente: "psoe/ponencia-marco-2024"
+fechaAnuncio: "2024-11-01"
+destacada: true
+orden: 6
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-10"

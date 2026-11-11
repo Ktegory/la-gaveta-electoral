@@ -1,0 +1,15 @@
+partido: "pnv"
+tema: "igualdad"
+subtema: "aborto"
+titulo: "Perímetros de al menos 150 metros alrededor de los centros donde se practica la interrupción voluntaria del embarazo"
+resumen: "Mediante una modificación de la Ley de Seguridad Ciudadana, para impedir el acoso a las mujeres."
+fuentes:
+  - fuente: "pnv/programa-29n-2026"
+    pagina: "26"
+    cita: Modificar la Ley de Seguridad Ciudadana para establecer perímetros de protección de al menos 150 metros alrededor de los centros donde se practica la interrupción voluntaria del embarazo
+fechaAnuncio: "2026-11-09"
+destacada: false
+comprobacion:
+  estado: encontrada
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

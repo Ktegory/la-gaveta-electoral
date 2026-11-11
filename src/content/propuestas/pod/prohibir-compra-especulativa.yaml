@@ -1,0 +1,11 @@
+partido: "pod"
+tema: "vivienda"
+subtema: "acceso-compra"
+titulo: "Prohibir la compra especulativa de vivienda"
+fuentes:
+  - fuente: "pod/web-campana"
+fechaAnuncio: "2026-10-19"
+destacada: true
+orden: 3
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-10"

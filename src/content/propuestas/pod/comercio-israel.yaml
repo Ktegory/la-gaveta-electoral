@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "exterior"
+subtema: "israel-palestina"
+titulo: "Dejar de comerciar con Israel"
+resumen: "Pide romper todas las relaciones diplomáticas y comerciales con Israel y un embargo de armas. Lo recoge su documento político de 2025, no un programa para el 29N."
+fuentes:
+  - fuente: "pod/documento-politico-2025"
+    pagina: "33"
+    cita: desde Podemos defendemos la ruptura inmediata de todas las relaciones diplomáticas y comerciales con el estado genocida de Israel y, en particular, un embargo a la compra y a la venta de armamento a dicho país.
+fechaAnuncio: "2025-04-01"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Antes citaba la web de campaña, que no menciona Israel. Se cambió el 11 nov al Documento Político de la V Asamblea (abril de 2025), p. 33."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

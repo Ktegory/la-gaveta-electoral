@@ -1,0 +1,17 @@
+---
+import { datos, fecha, varsPartido } from '../lib/datos';
+interface Props { limite?: number; partido?: string }
+const { limite, partido } = Astro.props;
+const d = await datos();
+const porId = new Map(d.partidos.map((p) => [p.id, p]));
+const base = partido ? d.cambios.filter((c) => c.data.partido?.id === partido) : d.cambios;
+const lista = limite ? base.slice(0, limite) : base;
+---
+<ul class="chg">
+  {lista.map((c) => (
+    <li style={c.data.partido ? varsPartido(porId.get(c.data.partido.id)!) : undefined} class:list={{ 'de-partido': c.data.partido }}>
+      <time datetime={c.data.fecha.toISOString().slice(0, 10)}>{fecha(c.data.fecha)}</time>
+      <div class="chg-t">{c.data.partido && <b>{porId.get(c.data.partido.id)!.data.nombre}</b>}<span>{c.data.descripcion}</span></div>
+    </li>
+  ))}
+</ul>

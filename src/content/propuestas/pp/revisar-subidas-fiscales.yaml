@@ -1,0 +1,15 @@
+partido: "pp"
+tema: "fiscalidad"
+subtema: "irpf"
+titulo: "Revisar más de 100 subidas fiscales"
+resumen: "Es el compromiso 10 de «Mi Contrato con España», que firmó Feijóo para el 29N: revisarlas «una a una» y bajar los impuestos. El programa del 10 de noviembre no lo recoge."
+fuentes:
+  - fuente: "pp/contrato-con-espana-2026"
+    cita: "Revisaremos una a una las más de cien subidas fiscales de los últimos años y bajaremos los impuestos, porque trabajar, ahorrar y emprender tiene que merecer la pena."
+fechaAnuncio: "2026-10-19"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Antes citaba el decálogo económico de septiembre, que no lo dice. Cita tomada del PDF del contrato (compromiso 10) por la búsqueda del 11 nov; el PDF no se ha descargado aquí: compruébala en él. Hacienda dice que la cifra es falsa (Europa Press, abril de 2026); el PP la ha dado como 96 y 97 en 2025."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

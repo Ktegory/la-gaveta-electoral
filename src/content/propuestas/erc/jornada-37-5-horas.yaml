@@ -1,0 +1,15 @@
+partido: "erc"
+tema: "empleo"
+subtema: "jornada"
+titulo: "Reducir la jornada laboral máxima a 37,5 horas semanales sin rebaja de sueldo"
+fuentes:
+  - fuente: "erc/programa-29n-2026"
+    pagina: "26"
+    cita: Reduir la durada màxima de la jornada laboral setmanal a 37 hores i mitja sense reducció salarial.
+fechaAnuncio: "2026-11-05"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: Medida 105.
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

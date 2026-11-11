@@ -1,0 +1,41 @@
+---
+// Tipografías propias, sin las hojas de estilo de fontsource, para controlar cómo se cargan:
+// - Se piden al principio (preload), así en las páginas siguientes salen ya de la caché.
+// - No se pinta antes con otra letra y luego se cambia (eso daba el salto en los titulares):
+//   · Sofia (titulares) y DM Mono (etiquetas): «block», espera un instante a la letra buena.
+//   · Mona Sans (texto): «optional», si no está lista en ~0,1 s esa página sigue con la del
+//     sistema, sin salto; desde la segunda página siempre está en caché.
+// Solo latín y latín extendido: es lo que usa una web en español.
+import sofia from '@fontsource-variable/sofia-sans-extra-condensed/files/sofia-sans-extra-condensed-latin-wght-normal.woff2?url';
+import sofiaExt from '@fontsource-variable/sofia-sans-extra-condensed/files/sofia-sans-extra-condensed-latin-ext-wght-normal.woff2?url';
+import mona from '@fontsource-variable/mona-sans/files/mona-sans-latin-wdth-normal.woff2?url';
+import monaExt from '@fontsource-variable/mona-sans/files/mona-sans-latin-ext-wdth-normal.woff2?url';
+import caveat from '@fontsource-variable/caveat/files/caveat-latin-wght-normal.woff2?url';
+import caveatExt from '@fontsource-variable/caveat/files/caveat-latin-ext-wght-normal.woff2?url';
+import mono400 from '@fontsource/dm-mono/files/dm-mono-latin-400-normal.woff2?url';
+import mono400Ext from '@fontsource/dm-mono/files/dm-mono-latin-ext-400-normal.woff2?url';
+import mono500 from '@fontsource/dm-mono/files/dm-mono-latin-500-normal.woff2?url';
+import mono500Ext from '@fontsource/dm-mono/files/dm-mono-latin-ext-500-normal.woff2?url';
+
+const LATIN = 'U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD';
+const LATIN_EXT = 'U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF';
+
+const cara = (familia: string, url: string, rango: string, mostrar: string, extra: string, formato = 'woff2') =>
+  `@font-face{font-family:'${familia}';font-style:normal;font-display:${mostrar};${extra}src:url(${url}) format('${formato}');unicode-range:${rango}}`;
+
+const css = [
+  cara('Sofia Sans Extra Condensed Variable', sofia, LATIN, 'block', 'font-weight:1 1000;', 'woff2-variations'),
+  cara('Sofia Sans Extra Condensed Variable', sofiaExt, LATIN_EXT, 'block', 'font-weight:1 1000;', 'woff2-variations'),
+  cara('Mona Sans Variable', mona, LATIN, 'optional', 'font-weight:200 900;font-stretch:75% 125%;', 'woff2-variations'),
+  cara('Mona Sans Variable', monaExt, LATIN_EXT, 'optional', 'font-weight:200 900;font-stretch:75% 125%;', 'woff2-variations'),
+  // Caveat (manuscrita): solo la nota del titular de portada. Sin precarga: se pide solo donde se usa.
+  cara('Caveat Variable', caveat, LATIN, 'block', 'font-weight:400 700;', 'woff2-variations'),
+  cara('Caveat Variable', caveatExt, LATIN_EXT, 'block', 'font-weight:400 700;', 'woff2-variations'),
+  cara('DM Mono', mono400, LATIN, 'block', 'font-weight:400;'),
+  cara('DM Mono', mono400Ext, LATIN_EXT, 'block', 'font-weight:400;'),
+  cara('DM Mono', mono500, LATIN, 'block', 'font-weight:500;'),
+  cara('DM Mono', mono500Ext, LATIN_EXT, 'block', 'font-weight:500;'),
+].join('\n');
+---
+{[sofia, mona, mono400, mono500].map((href) => <link rel="preload" href={href} as="font" type="font/woff2" crossorigin />)}
+<style is:inline set:html={css}></style>

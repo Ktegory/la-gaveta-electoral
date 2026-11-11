@@ -1,0 +1,87 @@
+# Votación del Pleno · I. Toma en consideración de Proposiciones de Ley.
+# Generado por scripts/votacion.mjs.
+# No se empareja con vox/fin-okupacion: su propuesta no concreta ninguna medida con la que comparar.
+# Ni con psoe/desahucios-2030: el texto mantiene la suspensión solo hasta el 31/12/2025.
+fecha: 2025-03-18
+sesion: 99
+numero: 1
+expediente: 122/000150
+tipo: toma-en-consideracion
+tituloOficial: Proposición de Ley del Grupo Parlamentario Junts per Catalunya, de medidas urgentes para hacer frente a la ocupación ilegal de inmuebles (Orgánica).
+titulo: "Ley de Junts para recuperar en 48 horas una vivienda ocupada"
+resumen: "Creaba un desalojo cautelar por vía penal: el ocupante tendría 48 horas para acreditar su derecho y, si no, se le desalojaría de inmediato. También permitía el desalojo policial inmediato en delitos flagrantes."
+textoVotado:
+  nombre: "BOCG, Serie B, núm. 173-1"
+  url: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-173-1.PDF#page=4
+  pagina: "4-5"
+urlVotacion: https://www.congreso.es/webpublica/opendata/votaciones/Leg15/Sesion099/20250318/Votacion001/VOT_20250318201319.pdf
+urlDatos: https://www.congreso.es/webpublica/opendata/votaciones/Leg15/Sesion099/20250318/Votacion001/VOT_20250318201321.json
+resultado: aprobada
+totales:
+  si: 300
+  no: 44
+  abstencion: 0
+  noVota: 6
+partidos:
+  bildu:
+    voto: no
+    si: 0
+    no: 6
+    abstencion: 0
+    noVota: 0
+  erc:
+    voto: no
+    si: 0
+    no: 7
+    abstencion: 0
+    noVota: 0
+  fa:
+    voto: no
+    si: 0
+    no: 26
+    abstencion: 0
+    noVota: 1
+  junts:
+    voto: si
+    si: 7
+    no: 0
+    abstencion: 0
+    noVota: 0
+  pnv:
+    voto: si
+    si: 5
+    no: 0
+    abstencion: 0
+    noVota: 0
+  pod:
+    voto: no
+    si: 0
+    no: 4
+    abstencion: 0
+    noVota: 0
+  pp:
+    voto: si
+    si: 135
+    no: 0
+    abstencion: 0
+    noVota: 2
+  psoe:
+    voto: si
+    si: 118
+    no: 0
+    abstencion: 0
+    noVota: 2
+  vox:
+    voto: si
+    si: 32
+    no: 0
+    abstencion: 0
+    noVota: 1
+tema: vivienda
+subtema: okupacion
+propuestas:
+  - propuesta: pp/desalojo-okupas-48h
+    coincide: si
+    pasaje: "Nuevo art. 544 sexies LECrim (pp. 4-5): los ocupantes «tendrán un plazo de 48 horas para acreditar su posesión legítima» y, si no, «se procederá… al desalojo inmediato»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

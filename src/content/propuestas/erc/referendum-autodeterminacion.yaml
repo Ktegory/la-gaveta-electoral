@@ -1,0 +1,16 @@
+partido: "erc"
+tema: "territorial"
+subtema: "competencias"
+titulo: "Negociar un referéndum de autodeterminación en Cataluña con acompañamiento internacional"
+resumen: "Propone a la Unión Europea y al Consejo de Europa como facilitadores, en línea con la resolución Cilevičs del Consejo de Europa."
+fuentes:
+  - fuente: "erc/programa-29n-2026"
+    pagina: "8"
+    cita: Negociar la convocatòria d’un referèndum d’autodeterminació a Catalunya amb acompanyament internacional, amb la Unió Europea i el Consell d’Europa com a facilitadors, en línia amb la resolució Cilevičs del Consell d’Europa
+fechaAnuncio: "2026-11-05"
+destacada: true
+orden: 1
+comprobacion:
+  estado: encontrada
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

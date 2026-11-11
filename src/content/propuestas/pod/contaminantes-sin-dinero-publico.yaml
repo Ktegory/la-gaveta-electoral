@@ -1,0 +1,14 @@
+partido: "pod"
+tema: "energia"
+subtema: "clima"
+titulo: "Prohibir que las grandes empresas contaminantes reciban subvenciones o contraten con la Administración"
+resumen: "Lo anunció Irene Montero tras reunirse en Madrid con organizaciones ecologistas, junto con un impuesto a los beneficios de esas actividades."
+fuentes:
+  - fuente: "pod/prensa-montero-contaminantes-2026-11-10"
+    cita: "con carácter progresivo en función de las ganancias que obtengan de esas actividades, además de prohibir que estas compañías reciban subvenciones o contraten con las administraciones públicas"
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

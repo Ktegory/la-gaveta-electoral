@@ -1,0 +1,11 @@
+---
+import Base from '../../layouts/Base.astro';
+import Preguntas from '../../components/Preguntas.astro';
+---
+<Base titulo="Comparar" seccion="comparar" descripcion="Elige un tema y compara, pregunta a pregunta, qué propone cada partido para el 29N.">
+  <div class="chd pad">
+    <h1 class="cond">Comparar</h1>
+    <p class="lead">Elige una pregunta. Verás la respuesta de cada partido una debajo de otra, con su fuente.</p>
+  </div>
+  <div class="pad" style="padding-bottom:var(--sec)"><Preguntas /></div>
+</Base>

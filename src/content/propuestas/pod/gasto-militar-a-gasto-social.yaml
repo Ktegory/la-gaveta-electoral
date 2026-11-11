@@ -1,0 +1,14 @@
+partido: "pod"
+tema: "exterior"
+subtema: "gasto-militar"
+titulo: "Dedicar a medidas sociales el aumento del gasto militar desde 2023"
+resumen: "Irene Montero cifra ese aumento en 24.000 millones de euros, según sus cálculos, y propone usarlo para nacionalizar Repsol, contratar personal sanitario y docente, expropiar el uso de viviendas de fondos y crear un supermercado público, entre otras medidas. Lo planteó en un desayuno informativo de Europa Press."
+fuentes:
+  - fuente: "pod/prensa-montero-desayuno-2026-11-06"
+    cita: "ha propuesto este viernes destinar los 24.000 millones de euros en los que, según sus cálculos, ha aumentado el gasto militar desde 2023 a nacionalizar Repsol, contratar 40.000 profesionales sanitarios y otros tantos docentes"
+fechaAnuncio: "2026-11-06"
+destacada: false
+comprobacion:
+  estado: encontrada
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

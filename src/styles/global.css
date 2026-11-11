@@ -1,0 +1,891 @@
+/* =========================================================
+   La Gaveta electoral · sistema visual (propuesta B «El mapa»)
+   Panorama primero, detalle después. Sin acento de marca:
+   el único color es el de los partidos.
+   ========================================================= */
+:root {
+  --bg: #fff; --crema: #FAF6E6; --crema-hover: #F2EBD3; --crema-filete: #E6DBBB;
+  /* Los planos de color de la web son crema; el tono más oscuro sirve para hover y pastillas. */
+  --bg2: var(--crema); --bg3: var(--crema-hover); --hover-fila: var(--crema-hover);
+  /* Filetes de cajas: neutros por defecto; dentro de un contexto de partido, de su color. */
+  --filete: var(--hair);
+  --ink: #0E0E0E; --ink2: #3A3A38; --mute: #6A6A66; --hair: #D9D9D3; --hair2: #ECECE7;
+  /* Convención: continua = confirmado, discontinua = provisional, punteada gris = no consta */
+  --nc: #B4B4AD;
+  --sans: 'Mona Sans Variable', ui-sans-serif, system-ui, sans-serif;
+  --mono: 'DM Mono', ui-monospace, Menlo, monospace;
+  --cond: 'Sofia Sans Extra Condensed Variable', 'Arial Narrow', sans-serif;
+  /* Ritmo vertical: el mismo espacio arriba y abajo de cada sección */
+  --sec: clamp(64px, 7cqi, 140px); --sec-s: clamp(40px, 4.5cqi, 88px);
+  --r-card: 22px; --r-in: 16px;
+  --h-ctl: 40px; /* altura común de pastillas, pestañas y botones pequeños */
+}
+* { box-sizing: border-box }
+html, body { margin: 0 }
+body { background: var(--bg); font-family: var(--sans); color: var(--ink) }
+.site { container: site / inline-size; font-size: 1.0625rem; line-height: 1.55; min-height: 100vh; display: flex; flex-direction: column }
+.site > main { flex: 1 }
+a { color: inherit; text-underline-offset: 3px; transition: text-decoration-thickness .12s, background-color .15s, color .15s, opacity .15s, filter .15s }
+/* Todo enlace responde al pasar el ratón: los subrayados engordan; los que no lo están tienen su propio efecto más abajo. */
+a:hover { text-decoration-thickness: 2px }
+button { cursor: pointer }
+button { font: inherit; color: inherit; cursor: pointer }
+img { max-width: 100% }
+svg.i { width: 1em; height: 1em; stroke: currentColor; fill: none; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; flex: none }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; margin: 0 }
+.skip { position: absolute; left: 16px; top: -60px; z-index: 50; background: var(--ink); color: #fff; padding: 10px 16px; border-radius: 999px; font-weight: 700 }
+.skip:focus { top: 12px }
+
+/* ---------- Base ---------- */
+/* --padx: margen lateral de la página. Lo usan también los carruseles para salir a todo el ancho. */
+.pad { --padx: max(clamp(24px, 5.5cqi, 112px), calc((100cqi - 1680px) / 2)); padding-inline: var(--padx) }
+@container site (max-width: 820px) { .pad { --padx: 24px } .br-g { display: none } }
+/* Texto solo para lectores de pantalla. */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0 }
+@container site (max-width: 600px) { .pad { --padx: 16px } main, .hdr, .prov { font-size: 1rem } }
+@container site (min-width: 1440px) { main { font-size: 1.125rem } }
+
+.cond { font-family: var(--cond); font-weight: 900; line-height: .9 }
+.cond-s { font-stretch: 82%; font-weight: 800; letter-spacing: -.005em; line-height: 1.08 }
+.mono { font-family: var(--mono) }
+.lbl { font-family: var(--mono); font-size: .75rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase }
+.mute { color: var(--mute) }
+:where(a, button, [tabindex], summary):focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; box-shadow: 0 0 0 6px #fff, 0 0 0 9px var(--ink) }
+.prose { max-width: 66ch }
+.prose p, .prose li { font-size: 1em }
+.prose h2 { font-family: var(--cond); font-weight: 900; text-transform: uppercase; font-size: clamp(2rem, 3.2cqi, 3.25rem); line-height: .92; margin: 1.6em 0 .4em }
+.prose h3 { font-stretch: 82%; font-weight: 800; font-size: 1.375rem; margin: 1.4em 0 .3em }
+
+/* Botones pill */
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 26px; font-weight: 700; font-size: 1rem; text-decoration: none; border: 1.5px solid var(--ink); background: var(--bg); border-radius: 999px; white-space: nowrap; transition: background .15s, color .15s }
+.btn:hover { background: var(--ink); color: #fff }
+.btn.ink { background: var(--ink); color: #fff }
+.btn.ink:hover { background: var(--ink2) }
+.btn.sm { padding: 9px 18px; font-size: .875rem }
+.arrow { display: inline-block; transition: transform .2s }
+a:hover .arrow, button:hover .arrow { transform: translateX(4px) }
+
+/* Estado del programa (convención de gráficos) */
+.st { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: .75rem; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; line-height: 1.2 }
+/* Icono de estado (IconoEstado.astro): toma el color del texto; el check, el del fondo. */
+.ie { width: 16px; height: 16px; flex: none; overflow: visible }
+.ie .ie-f { fill: currentColor }
+.ie .ie-c { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-dasharray: 2.2 2 }
+.ie .ie-ok { fill: none; stroke: var(--ie-fondo, #fff); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round }
+.on-color { --ie-fondo: var(--pc) }
+
+/* Fuente: un mismo icono para todas; el tipo lo dice el texto («Programa 29N», «Según la prensa»…). */
+.src { display: inline-flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; font-size: .8125rem; line-height: 1.45; color: var(--mute) }
+.src b { font-weight: 650; color: var(--ink2); white-space: nowrap }
+.src::before, .ico-fuente { content: ""; width: 15px; height: 15px; flex: none; align-self: center; background: var(--ink2); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.5' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M3.5 1.75h6l3 3v9.5h-9z'/%3E%3Cpath d='M9.5 1.75v3h3M5.75 8.25h4.5M5.75 11h4.5'/%3E%3C/svg%3E") center/contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.5' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M3.5 1.75h6l3 3v9.5h-9z'/%3E%3Cpath d='M9.5 1.75v3h3M5.75 8.25h4.5M5.75 11h4.5'/%3E%3C/svg%3E") center/contain no-repeat }
+.ftable .src { flex-wrap: nowrap }
+
+/* ---------- Cabecera ---------- */
+/* La cabecera se queda fija arriba al bajar. Su altura (--hdr-h) la pone al día un script de Base.astro;
+   la usan las demás piezas fijas para colocarse debajo y los anclajes para no quedar tapados. */
+:root { --hdr-h: 81px; scroll-padding-top: calc(var(--hdr-h) + 16px) }
+.hdr { display: flex; align-items: center; gap: 32px; padding-block: 18px; border-bottom: 1px solid var(--hair); position: sticky; top: 0; z-index: 10; background: var(--bg) }
+/* Logo: «Electoral» debajo de «La Gaveta», repartida a lo ancho de la primera línea. */
+.logo { display: inline-grid; gap: 3px; text-decoration: none; flex: none }
+.logo .w1 { font-family: var(--cond); font-weight: 900; font-size: 1.875rem; letter-spacing: -.01em; line-height: .85; text-transform: uppercase; white-space: nowrap }
+.logo .w2 { display: flex; justify-content: space-between; font-family: var(--sans); font-weight: 700; font-size: .9375rem; font-stretch: 125%; line-height: 1; text-transform: uppercase }
+.nav { display: flex; gap: 28px; margin-left: auto }
+.nav a { font-weight: 600; font-size: .9688rem; text-decoration: none; padding: 6px 0; border-bottom: 2px solid transparent }
+.nav a:hover { border-bottom-color: var(--ink) }
+.nav a[aria-current="page"] { border-bottom-color: var(--ink) }
+/* Buscar: un botón redondo con la lupa, que lleva a /buscar/. */
+.hdr .search { display: grid; place-items: center; flex: none; width: 44px; height: 44px; border: 1.5px solid var(--ink); border-radius: 50%; color: var(--ink); text-decoration: none; transition: background-color .15s, color .15s, transform .2s cubic-bezier(.2, .7, .2, 1) }
+.hdr .search svg { width: 20px; height: 20px; stroke-width: 2; transition: transform .2s cubic-bezier(.2, .7, .2, 1) }
+.hdr .search[aria-current="page"] { background: var(--ink); color: #fff }
+.hdr .search:hover { background: var(--ink); color: #fff; transform: scale(1.08) }
+.hdr .search:hover svg { transform: rotate(-12deg) }
+.hdr .search[aria-current="page"]:hover { background: var(--ink2) }
+.menu { display: none }
+.menu summary { list-style: none; display: grid; place-items: center; width: 44px; height: 44px; border: 1.5px solid var(--ink); background: #fff; font-size: 1.25rem; border-radius: 999px; cursor: pointer }
+.menu summary::-webkit-details-marker { display: none }
+.menu .hamb { width: 18px; height: 14px; display: block; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round }
+.menu summary { transition: background .15s, color .15s }
+.menu summary:hover, .menu[open] summary { background: var(--ink); color: #fff }
+.menu nav { position: absolute; right: 16px; top: calc(100% + 6px); z-index: 20; background: #fff; border: 1.5px solid var(--ink); border-radius: var(--r-in); padding: 8px; display: grid; min-width: 220px; box-shadow: 0 12px 30px rgba(0,0,0,.12) }
+.menu nav a { padding: 10px 14px; font-weight: 600; text-decoration: none; border-radius: 10px }
+.menu nav a:hover, .menu nav a[aria-current="page"] { background: var(--bg2) }
+
+/* Marquesina de lo provisional */
+.prov { display: flex; gap: 14px; align-items: center; background: var(--ink); color: #fff; font-size: .9062rem; height: 48px }
+.prov .k { color: #fff; border: 1.5px dashed #fff; font-family: var(--mono); font-size: .7188rem; font-weight: 500; letter-spacing: .06em; padding: 3px 10px; flex: none; border-radius: 999px }
+.mq { flex: 1; min-width: 0; overflow: hidden; position: relative; height: 100%; display: flex; align-items: center; -webkit-mask-image: linear-gradient(90deg, transparent, #000 40px, #000 calc(100% - 40px), transparent); mask-image: linear-gradient(90deg, transparent, #000 40px, #000 calc(100% - 40px), transparent) }
+.mq-track { display: flex; width: max-content; animation: mq 60s linear infinite }
+.mq-set { display: flex; align-items: center; flex: none }
+.mq-set > span { white-space: nowrap; padding-right: 28px; display: inline-flex; align-items: center; gap: 10px }
+.mq-set > span::after { content: ""; width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,.55); flex: none; margin-left: 18px }
+/* Estado de cada partido: el mismo icono y titular que en sus tarjetas. */
+.prov { --ie-fondo: var(--ink) }
+.mq-est { display: inline-flex; align-items: center; gap: 8px }
+.mq-est .ie { width: 16px; height: 16px }
+.mq-det { color: rgba(255,255,255,.75) }
+.mq-set b { font-weight: 700 }
+/* Mismo hueco para todos los logos (neutralidad) */
+.mq-logo { display: inline-flex; align-items: center; justify-content: center; height: 28px; width: 92px; padding: 3px 12px; background: #fff; border-radius: 999px; flex: none }
+.mq-logo img { width: 100%; height: 20px; object-fit: contain; display: block }
+.mq-logo.l-psoe img { height: 24px }
+.mq-logo em { display: none; font-style: normal; font-family: var(--cond); font-weight: 900; font-size: .875rem; letter-spacing: .02em }
+.mq-logo.fb { background: var(--pc); color: var(--pt) }
+.mq-logo.fb em { display: block }
+@keyframes mq { to { transform: translateX(-50%) } }
+.prov:hover .mq-track, .prov.paused .mq-track { animation-play-state: paused }
+.mq-pause { flex: none; width: 30px; height: 30px; border: 1px solid rgba(255,255,255,.5); background: none; color: #fff; font-size: .625rem; letter-spacing: -.0625rem; display: grid; place-items: center; padding: 0; border-radius: 999px }
+.mq-pause[aria-pressed="true"] { background: #fff; color: var(--ink) }
+.mq-pause { cursor: pointer; transition: background .15s, border-color .15s }
+.mq-pause:hover { background: rgba(255,255,255,.2); border-color: #fff }
+.mq-pause[aria-pressed="true"]:hover { background: rgba(255,255,255,.85) }
+.mq-more { flex: none; font-weight: 600; color: #fff; font-size: .875rem; white-space: nowrap }
+.mq-more:hover { text-decoration-thickness: 2px; opacity: .85 }
+@media (prefers-reduced-motion: reduce) { .mq-track { animation: none } }
+
+.tabbar { display: none }
+@container site (max-width: 1000px) {
+  .nav, .hdr .search { display: none }
+  .menu { display: block; margin-left: auto }
+  .prov { font-size: .8438rem; gap: 10px } .mq-more { display: none }
+  .tabbar { display: grid; grid-template-columns: repeat(3, 1fr); position: sticky; bottom: 0; z-index: 5; background: #fff; border-top: 1px solid var(--ink) }
+  .tabbar a { display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 9px 0 11px; font-size: .7188rem; font-weight: 600; text-decoration: none; border-top: 3px solid transparent; margin-top: -1px }
+  .tabbar svg { width: 22px; height: 22px }
+  .tabbar a[aria-current="page"] { border-top-color: var(--ink) }
+}
+
+/* =========================================================
+   INICIO
+   ========================================================= */
+.intro { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(32px, 6cqi, 140px); align-items: end; padding-block: var(--sec); position: relative; isolation: isolate; background: var(--crema) }
+/* Mano con papeleta: el borde inferior de la imagen coincide con el del hero, así la papeleta parece entrar en la franja gris de abajo. */
+.intro::before { content: ""; position: absolute; inset: 0; z-index: -1; background: url(/img/hero-mano.webp) right -2% bottom / 43cqi auto no-repeat; filter: drop-shadow(0 4px 12px rgb(0 0 0 / .12)); clip-path: inset(0); -webkit-mask-image: linear-gradient(transparent, #000 22%); mask-image: linear-gradient(transparent, #000 22%); pointer-events: none }
+.intro .l { display: grid; gap: clamp(16px, 1.8cqi, 28px) }
+.intro .eyebrow { margin: 0; font-size: .75rem; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; color: var(--ink2) }
+.intro h1 { font-size: clamp(3.25rem, 8cqi, 10.25rem); margin: 0; text-transform: uppercase; line-height: .86 }
+.intro .r { display: flex; flex-direction: column; gap: clamp(18px, 2cqi, 32px) }
+.intro .lead { font-size: clamp(1.125rem, 1.4cqi, 1.4375rem); line-height: 1.4; margin: 0; max-width: 40ch; color: var(--ink2) }
+/* Titular: las palabras suben una tras otra, con calma. */
+/* Nota manuscrita al final del titular: se «escribe» de izquierda a derecha cuando acaba de entrar el titular. */
+.h1-anim .ult { position: relative }
+.h1-anim .nota { position: absolute; left: calc(100% + .04em + 3px); bottom: 15.3%; white-space: nowrap; font-family: var(--cond); font-weight: 900; font-size: max(.2em, .875rem); line-height: 1; padding: .2em .45em .14em; border-radius: .18em; background: var(--ink); letter-spacing: .02em; color: var(--crema); animation: escribir .9s cubic-bezier(.5, 0, .3, 1) backwards; animation-delay: calc(var(--i) * 70ms + 700ms) }
+@keyframes escribir { from { clip-path: inset(-20% 100% -20% 0); opacity: .4 } to { clip-path: inset(-20% 0 -20% 0); opacity: 1 } }
+.h1-anim .w { display: inline-block; animation: palabra .7s cubic-bezier(.2, .7, .2, 1) backwards; animation-delay: calc(var(--i) * 70ms + 80ms) }
+@keyframes palabra { from { opacity: 0; transform: translateY(.22em) } }
+/* Cuenta atrás */
+.count { display: grid; gap: 10px }
+.count .cnt-l { font-size: .8125rem; font-weight: 650; letter-spacing: .06em; text-transform: uppercase; color: var(--ink2) }
+.reloj { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px clamp(14px, 1.4cqi, 24px); font-family: var(--cond); font-weight: 900; line-height: .9; font-variant-numeric: tabular-nums }
+.reloj span { display: inline-flex; align-items: baseline; gap: 5px }
+.reloj b { font-size: clamp(3.5rem, 6.2cqi, 7.5rem); font-weight: 900 }
+.reloj small { font-size: clamp(1.25rem, 1.9cqi, 2.125rem); font-weight: 800 }
+.progress { height: 10px; background: #fff; box-shadow: inset 0 0 0 1px rgb(0 0 0 / .14), 0 2px 6px rgb(60 45 0 / .10); position: relative; border-radius: 999px; overflow: hidden }
+.progress > i { position: absolute; inset: 0 auto 0 0; background: var(--ink); border-radius: 999px; animation: cargar 1.6s cubic-bezier(.3, .7, .2, 1) .35s backwards }
+@keyframes cargar { from { width: 0 } }
+@media (prefers-reduced-motion: reduce) { .h1-anim .w, .h1-anim .nota, .progress > i { animation: none } }
+.progress-l { display: flex; justify-content: space-between; font-family: var(--mono); font-size: .7188rem; color: var(--mute) }
+.acts-row { display: flex; gap: 10px; flex-wrap: wrap }
+
+/* Banda tras el hero */
+.band { padding-block: var(--sec); background: var(--bg) }
+
+/* Mapa de propuestas */
+/* Portada: crema y blanco alternos. Mapa y preguntas forman un solo bloque crema. */
+.map-wrap, #preguntas { background: var(--crema) }
+.map-wrap { padding-block: var(--sec) }
+.map-head { display: flex; justify-content: space-between; align-items: center; gap: 12px 20px; flex-wrap: wrap; margin-bottom: 16px }
+.map-head .act { font-family: var(--mono); font-size: .75rem; color: var(--mute) }
+.legend { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; font-family: var(--mono); font-size: .75rem; color: var(--ink2) }
+.legend span { display: inline-flex; gap: 7px; align-items: center }
+.legend i { width: 18px; height: 14px; border: 1px solid var(--ink); border-radius: 3px; background: #fff }
+.legend i.c { border: 1.5px solid var(--ink) }
+.legend i.d { border: 1.5px dashed var(--ink) }
+.legend i.z { border: 1.5px dotted var(--nc) }
+/* Fila del mapa: al pasar por encima se sombrea entera, con los extremos redondeados.
+   Cada fila lleva un fondo propio que ocupa todas las columnas; casillas y títulos se colocan en su fila y columna. */
+.map [role="row"] > * { grid-row: var(--fila, 1) }
+.map .tl { grid-column: 1 }
+.map .cell { grid-column: var(--col) }
+.map .fila-bg { grid-column: 1 / -1; margin: calc(var(--fila-gap) / -2) -8px calc(var(--fila-gap) / -2) 0; border-radius: 12px; background: var(--hover-fila); opacity: 0; transition: opacity .25s ease; pointer-events: none; z-index: 0 }
+.map [role="row"]:hover .fila-bg { opacity: 1 }
+.map .tl, .map .cell { position: relative; z-index: 1 }
+/* Si no caben todos los partidos, el mapa se desplaza en horizontal y la columna de temas se queda fija. */
+.map-scroll { overflow-x: auto; overscroll-behavior-x: contain; margin-inline: -8px; padding: 4px 8px 8px; scrollbar-width: thin; scrollbar-color: var(--crema-filete) transparent }
+.map { --map-tl: clamp(190px, 17cqi, 300px); --map-col: 100px; display: grid; grid-template-columns: var(--map-tl) repeat(var(--np, 5), minmax(var(--map-col), 1fr)); min-width: calc(var(--map-tl) + var(--np, 5) * (var(--map-col) + 4px)); --fila-gap: 8px; gap: var(--fila-gap) 4px; overflow-x: clip; overflow-clip-margin: 8px }
+.map .tl, .map .corner { position: sticky; left: 0; z-index: 3; background: transparent }
+/* Respaldo opaco y recto de la columna fija: tapa lo que pasa por debajo, también en las esquinas redondeadas y en el hueco hasta la siguiente columna. */
+.map .tl::before, .map .corner::before { content: ""; position: absolute; z-index: -2; inset: calc(var(--fila-gap) / -2) -4px calc(var(--fila-gap) / -2) -8px; background: var(--crema) }
+/* Sombreado de la fila al pasar por encima, con el extremo izquierdo redondeado. */
+.map .tl::after { content: ""; position: absolute; z-index: -1; inset: 0; border-radius: 12px 0 0 12px; background: var(--hover-fila); opacity: 0; transition: opacity .25s ease }
+.map [role="row"]:hover .tl::after { opacity: 1 }
+.map .ph { background: var(--pc); color: var(--pt); padding: 12px 14px; display: flex; flex-direction: column; justify-content: space-between; min-height: 84px; text-decoration: none; border-radius: 14px 14px 6px 6px; transition: filter .2s ease }
+.map .ph b { font-family: var(--cond); font-weight: 900; font-size: clamp(1.125rem, 1.7cqi, 1.875rem); line-height: .95; text-transform: uppercase }
+.map .ph .st { font-size: .6562rem }
+.map .ph .mo { display: none }
+.map .corner { display: flex; align-items: flex-end; font-family: var(--mono); font-size: .7188rem; color: var(--mute); padding: 0 0 10px 14px }
+.map .tl { display: flex; align-items: center; gap: 12px; padding: 0 12px 0 14px; border-radius: 12px 0 0 12px; font-weight: 650; font-size: clamp(.9375rem, 1.1cqi, 1.125rem); line-height: 1.15; text-decoration: none }
+.map .tl svg { width: 22px; height: 22px }
+.map .cell { position: relative; min-height: clamp(52px, 4.2cqi, 72px); display: flex; align-items: center; justify-content: space-between; padding: 0 14px; text-decoration: none; background: color-mix(in srgb, var(--pc) 22%, #fff); border-radius: 8px; box-shadow: inset 0 0 0 0 var(--pc); transition: box-shadow .2s ease, background-color .2s ease }
+.map .cell.prov-c { outline: 1.5px dashed var(--pc); outline-offset: -6px }
+.map .cell .n { font-family: var(--cond); font-weight: 900; font-size: clamp(1.375rem, 2cqi, 2.125rem); line-height: 1 }
+.map .cell.z { background: transparent; outline: 1.5px dotted var(--nc); outline-offset: -1.5px }
+.map .cell.z .n { font-weight: 500; color: var(--mute); font-size: 1.25rem }
+.map .cell:hover { box-shadow: inset 0 0 0 2.5px var(--pc); z-index: 2 }
+.map .cell .go { opacity: 0; transform: translateX(-4px); font-family: var(--sans); font-weight: 600; font-size: .8125rem; transition: opacity .2s ease, transform .2s ease }
+.map .cell:hover .go { opacity: 1; transform: none }
+@container site (max-width: 900px) {
+  .intro { grid-template-columns: 1fr; padding-top: calc(var(--sec) / 2) }
+  /* En una sola columna, la mano baja desde el borde superior del hero. */
+  .intro::before { background-size: auto 100%; background-position: right -150px top; -webkit-mask-image: none; mask-image: none; opacity: .35 }
+  .map { --map-tl: 112px; --map-col: 58px; --fila-gap: 6px; gap: var(--fila-gap) 3px }
+  .map .ph { min-height: 64px; padding: 8px }
+  .map .ph b { font-size: .9375rem }
+  .map .ph .nm, .map .ph .st { display: none }
+  .map .ph .mo { display: block }
+  .map .tl { font-size: .8125rem; gap: 7px; padding-left: 10px }
+  .map .tl svg { display: none }
+  .map .cell { justify-content: center; padding: 0; min-height: 46px }
+  .map .cell .go { display: none }
+  .map .cell .n { font-size: 1.25rem }
+}
+
+/* Columnas de partido */
+/* Tarjetas de partidos en carrusel: ocupan todo el ancho de la pantalla y se desplazan en horizontal si no caben.
+   La primera queda alineada con el margen de la página. */
+.cols { --gap: clamp(12px, 1.2cqi, 20px); display: grid; grid-auto-flow: column; grid-auto-columns: clamp(250px, 19cqi, 330px); gap: var(--gap); overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-padding-inline: var(--padx); margin-inline: calc(-1 * var(--padx)); padding: 8px var(--padx) 6px; scrollbar-width: none }
+.cols::-webkit-scrollbar { display: none }
+.cols > * { scroll-snap-align: start }
+/* En /partidos/ van en rejilla: ahí se ven todos a la vez. */
+.cols.rejilla { grid-auto-flow: row; grid-template-columns: repeat(4, 1fr); overflow: visible; margin-inline: 0; padding: 0 }
+/* Flechas del carrusel: se ocultan solas si todo cabe. */
+.carr-bar { display: flex; align-items: center; gap: 12px 20px; flex-wrap: wrap; margin: 0 0 14px }
+.carr-bar .orden-nota { margin: 0; font-size: .8438rem; color: var(--mute); flex: 1 1 260px; max-width: 62ch }
+.carr-bar .orden-nota a { color: inherit }
+.carr-nav { display: flex; justify-content: flex-end; gap: 8px; margin: 0 0 0 auto }
+.col .dip { display: none; font-family: var(--mono); font-size: .75rem; opacity: .9 }
+[data-orden="diputados"] > .col .dip { display: block }
+.carr-nav[hidden] { display: none }
+.carr-nav button { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 999px; border: 1.5px solid var(--ink); background: #fff; font-size: 1.125rem; transition: background-color .15s, color .15s, opacity .15s }
+.carr-nav button:hover:not(:disabled) { background: var(--ink); color: #fff }
+.carr-nav button:disabled { opacity: .3; cursor: default }
+.col { background: var(--pc); color: var(--pt); text-decoration: none; display: flex; flex-direction: column; min-height: clamp(380px, 30cqi, 520px); border-radius: var(--r-card); overflow: hidden; transition: transform .25s cubic-bezier(.2, .7, .2, 1), filter .15s }
+/* Tarjetas: entran escalonadas al llegar a la vista; al pasar por encima suben un poco. */
+.cols.espera .col { opacity: 0 }
+.cols.entra .col { animation: entra .6s cubic-bezier(.2, .7, .2, 1) backwards; animation-delay: calc(var(--i, 0) * 90ms) }
+@keyframes entra { from { opacity: 0; transform: translateY(18px) } }
+.col:hover { transform: translateY(-4px) }
+.col .top { padding: clamp(16px, 1.6cqi, 28px); flex: 1; display: flex; flex-direction: column; gap: 10px }
+.col .nm { font-family: var(--cond); font-weight: 900; font-size: clamp(2.125rem, 3.6cqi, 4rem); line-height: .88; text-transform: uppercase; overflow-wrap: anywhere }
+.col .cd { font-size: .9375rem; font-weight: 550; opacity: .92 }
+/* Partido con programa publicado: etiqueta blanca en la parte de color. */
+/* Pegada a la caja blanca de abajo: mismo margen con los bordes (4px) y mismo ancho. */
+/* Aviso neutro: la propuesta no está en el programa publicado. */
+.fuera { display: inline-flex; align-items: center; gap: 6px; width: fit-content; margin: 10px 0 0; padding: 4px 10px 4px 7px; background: var(--bg3); color: var(--ink2); border-radius: 999px; font: 600 .7812rem/1.3 var(--sans) }
+.fuera svg { width: 15px; height: 15px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round }
+p .fuera { margin: 0; vertical-align: 1px }
+.col-prog { display: flex; align-items: center; gap: 10px; margin: 0 4px 4px; padding: 12px clamp(14px, 1.3cqi, 22px); background: #fff; color: var(--ink); border-radius: var(--r-in); line-height: 1.2 }
+.col-prog .ie { width: 22px; height: 22px }
+.col-prog.publicado .ie { color: var(--pc); --ie-fondo: #fff }
+.col-prog span { display: grid; font-size: .7812rem; color: var(--mute) }
+.col-prog b { font-size: .9375rem; font-weight: 700; color: var(--ink) }
+/* Sin programa publicado: la misma caja, translúcida sobre el color del partido. */
+.col-prog:not(.publicado) { background: color-mix(in srgb, var(--pt) 16%, transparent); color: var(--pt) }
+.col-prog:not(.publicado) b { color: var(--pt) }
+.col-prog:not(.publicado) span { color: color-mix(in srgb, var(--pt) 82%, transparent) }
+.col .bot { background: #fff; color: var(--ink); margin: 0 4px 4px; padding: clamp(14px, 1.3cqi, 22px); display: flex; flex-direction: column; gap: 12px; border-radius: var(--r-in) }
+.col .bot .exp { font-size: .9375rem; line-height: 1.35; font-weight: 600 }
+/* Fuentes de la tarjeta: icono, total y la lista por tipo. */
+.col .bot .fx { display: grid; grid-template-columns: auto 1fr; column-gap: 8px; row-gap: 4px; align-items: center; font: 400 .8125rem/1.35 var(--sans); color: var(--mute) }
+.col .bot .fx b { font-size: .875rem; font-weight: 650; color: var(--ink) }
+.col .bot .fx ul { grid-column: 2; list-style: none; margin: 0; padding: 0; display: grid; gap: 2px }
+.col .bot .go { display: flex; justify-content: space-between; font-weight: 700; font-size: .9375rem; border-top: 2px dotted var(--hair); padding-top: 10px }
+@container site (max-width: 1100px) { .cols.rejilla { grid-template-columns: repeat(3, 1fr) } }
+@container site (max-width: 700px) { .cols { grid-auto-columns: 82cqi } .cols.rejilla { grid-template-columns: 1fr } .col { min-height: 0 } .col .top { flex-direction: row; justify-content: space-between; align-items: flex-end; flex-wrap: wrap } }
+
+/* Secciones */
+.sec { padding-block: var(--sec) }
+.sec-h { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 5cqi, 120px); align-items: end; margin-bottom: clamp(28px, 3cqi, 56px) }
+.sec-h h2 { font-size: clamp(2.75rem, 6.5cqi, 7.5rem); margin: 0; text-transform: uppercase }
+.sec-h p { margin: 0; font-size: clamp(1.0625rem, 1.3cqi, 1.3125rem); max-width: 46ch; justify-self: end }
+@container site (max-width: 800px) { .sec-h { grid-template-columns: 1fr } .sec-h p { justify-self: start } }
+
+/* Preguntas */
+.qs { display: grid; grid-template-columns: 1fr 1fr; column-gap: clamp(24px, 4cqi, 96px) }
+.q { position: relative; isolation: isolate; display: grid; grid-template-columns: 44px 1fr; gap: 16px; align-items: center; padding: clamp(16px, 1.6cqi, 26px) 18px; text-decoration: none }
+/* Hover como en las filas del mapa: banda gris clara con los extremos redondeados, con fundido. */
+/* Cada pregunta va en su caja: blanca sobre crema (portada) y crema sobre blanco (Comparar). Al pasar el ratón, la caja baja a crema oscuro. */
+.q::before { content: ""; position: absolute; z-index: -1; inset: 4px 0; border-radius: 12px; background: var(--q-caja, var(--crema)); transition: background-color .25s ease; pointer-events: none }
+#preguntas { --q-caja: #fff }
+.q:hover::before { background: #F6F0DC }
+.q > * { transition: transform .25s ease }
+.q:hover > * { transform: translateX(5px) }
+@media (prefers-reduced-motion: reduce) { .q > * { transition: none } }
+.q svg { width: 30px; height: 30px }
+.q .t { font-family: var(--mono); font-size: .7188rem; letter-spacing: .06em; text-transform: uppercase; color: var(--mute); display: block; margin-bottom: 4px }
+.q .qq { font-stretch: 82%; font-weight: 750; font-size: clamp(1.1875rem, 1.55cqi, 1.625rem); line-height: 1.12 }
+@container site (max-width: 800px) { .qs { grid-template-columns: 1fr } .q { grid-template-columns: 32px 1fr } }
+
+/* Autoría y cambios */
+.bottom { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6cqi, 140px); padding-block: var(--sec); background: var(--bg) }
+.bottom h2, .bottom h3 { font-family: var(--cond); font-weight: 900; font-size: clamp(2rem, 3cqi, 3.25rem); text-transform: uppercase; margin: 0 0 16px; line-height: .92 }
+.bottom p { margin: 0 0 12px; max-width: 52ch }
+.chg { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink) }
+/* Línea de tiempo: fecha · raíl con un punto (color del partido) · texto. */
+.chg { --chg-fecha: 64px; --chg-rail: 40px; --chg-punto: 12px; --chg-y: 17px }
+.chg li { position: relative; display: grid; grid-template-columns: var(--chg-fecha) 1fr; column-gap: var(--chg-rail); padding: 12px 0; font-size: .9688rem; line-height: 1.4 }
+.chg li::before { content: ""; position: absolute; left: calc(var(--chg-fecha) + var(--chg-rail) / 2 - 1px); top: 0; bottom: 0; width: 2px; background: var(--hair) }
+.chg li:first-child::before { top: var(--chg-y) }
+.chg li:last-child::before { bottom: auto; height: var(--chg-y) }
+.chg li:only-child::before { display: none }
+.chg li::after { content: ""; position: absolute; left: calc(var(--chg-fecha) + var(--chg-rail) / 2 - var(--chg-punto) / 2); top: calc(var(--chg-y) + 1px); width: var(--chg-punto); height: var(--chg-punto); box-sizing: border-box; border-radius: 50%; background: var(--pc, var(--ink)); box-shadow: 0 0 0 3px var(--bg), inset 0 0 0 1px rgb(0 0 0 / .15) }
+.chg time { font-family: var(--mono); font-size: .75rem; padding-top: 3px; text-transform: uppercase; white-space: nowrap }
+.chg .de-partido b { color: var(--pc); color: oklch(from var(--pc) min(l, .55) c h) }
+.chg-t { display: grid; gap: 2px; min-width: 0 }
+/* Pie en gris muy oscuro: cierra la página sin usar color de marca */
+.foot { --foot-bg: #1C1C1B; padding-block: 32px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-size: .875rem; background: var(--foot-bg); color: #B9B9B3 }
+.foot b { color: #F4F4F1 }
+.foot-id { display: grid; justify-items: start; gap: 16px }
+.foot .logo { color: #fff }
+.foot .logo:focus-visible { outline-color: #fff }
+.foot nav { display: flex; gap: 20px; flex-wrap: wrap; justify-content: flex-end; align-self: end; margin-left: auto; font-weight: 600; color: #F4F4F1 }
+@container site (max-width: 600px) { .foot nav { justify-content: flex-start; margin-left: 0 } }
+.foot a { text-underline-offset: 3px }
+.foot :where(a):focus-visible { outline-color: #fff; box-shadow: 0 0 0 6px var(--foot-bg), 0 0 0 9px #fff }
+@container site (max-width: 800px) { .bottom { grid-template-columns: 1fr } .chg { --chg-fecha: 0px; --chg-rail: 28px } .chg li { grid-template-columns: 1fr; row-gap: 2px; padding-left: var(--chg-rail) } .chg li::before { left: 13px } .chg li::after { left: calc(14px - var(--chg-punto) / 2) } }
+
+/* =========================================================
+   FICHA (dos columnas: color fijo + contenido)
+   ========================================================= */
+.fic { display: grid; grid-template-columns: minmax(360px, 38%) 1fr }
+.fic, .ar, .col, .vp, .foco { --filete: var(--pc) }
+/* Enlaces en contexto de partido: texto negro (contraste) y subrayado de su color, más grueso al pasar el ratón. */
+:is(.fic-r, .ar .what, .vp, .foco-b) a { text-decoration-color: var(--pc) }
+:is(.fic-r, .ar .what, .vp, .foco-b) a:hover { text-decoration-thickness: 3px }
+.fic-l { background: var(--pc); color: var(--pt); position: relative }
+.fic-l .in { position: sticky; top: var(--hdr-h); padding: var(--sec-s) clamp(24px, 3cqi, 64px); display: flex; flex-direction: column; gap: clamp(28px, 2.6cqi, 44px) }
+/* Nombre y datos del partido, juntos como un bloque. */
+.fid { display: grid; gap: 6px }
+.crumbs { font-size: .875rem; opacity: .92 }
+.flogo { width: clamp(120px, 11cqi, 180px); height: clamp(64px, 5.5cqi, 88px); background: #fff; display: flex; align-items: center; justify-content: center; padding: 12px 18px; border-radius: var(--r-in); overflow: hidden }
+.flogo img { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain }
+.fic-l h1 { font-size: clamp(4rem, 8cqi, 10.5rem); margin: 0; line-height: .82; text-transform: uppercase; overflow-wrap: anywhere }
+.fic-l .meta { display: grid; gap: 4px; font-size: 1.0625rem; line-height: 1.35 }
+.fic-l .meta b { font-weight: 700 }
+.fic-l .meta a { color: inherit; text-underline-offset: 3px }
+.fic-l .meta a:hover { text-decoration-thickness: 2px }
+.fstat { background: #fff; color: var(--ink); padding: clamp(18px, 1.8cqi, 28px); display: flex; flex-direction: column; gap: 12px; border-radius: 18px }
+.fstat.pen, .fstat.ava { outline: 2px dashed var(--filete); outline-offset: -8px }
+.fstat { --ie-fondo: #fff }
+.fstat .ie { width: 18px; height: 18px }
+.fstat .txt { margin: 0; font-size: 1rem; line-height: 1.5 }
+.fstat .row { display: flex; gap: 8px; flex-wrap: wrap; padding-top: 4px }
+.fstat .up { font-family: var(--mono); font-size: .7188rem; color: var(--mute); align-self: flex-start }
+/* Quién forma el partido y con quién se presenta: texto corto, sobre el color del partido. */
+.fcomp { display: grid; gap: 18px; font-size: .9688rem; line-height: 1.45; margin-top: calc(-1 * clamp(8px, 1cqi, 18px)) }
+.fcomp > div { display: grid; gap: 6px; padding-top: 14px; border-top: 2px dotted color-mix(in srgb, currentColor 40%, transparent) }
+.fcomp .l { font-family: inherit; font-size: .875rem; font-weight: 700; margin: 0; letter-spacing: 0 }
+.fcomp p, .fcomp ul { margin: 0 }
+.fcomp ul { padding: 0; list-style: none; display: grid; gap: 3px }
+.fcomp .ftes { font-size: .8125rem }
+.fcomp .ftes a { color: inherit; text-underline-offset: 3px }
+.fcomp .ftes a:hover { text-decoration-thickness: 2px }
+.oth { display: flex; gap: 10px; align-items: center; flex-wrap: wrap }
+.oth .l { font-size: .875rem; font-weight: 600; margin-right: 4px }
+.oth a { width: 52px; height: 36px; display: grid; place-items: center; text-decoration: none; background: var(--pc); color: var(--pt); font-family: var(--cond); font-weight: 900; font-size: .875rem; outline: 2px solid rgba(255,255,255,.55); outline-offset: -2px; border-radius: 999px }
+.oth a[aria-current="page"] { outline: 3px solid #fff; outline-offset: 2px }
+.oth a:hover { outline-color: #fff; filter: brightness(1.12) }
+.fic-r { --pl: clamp(24px, 4cqi, 96px); --pr: max(clamp(24px, 4cqi, 96px), calc((100cqi - 1680px) / 2)); padding: var(--sec-s) var(--pr) var(--sec-s) var(--pl); min-width: 0 }
+/* Pestañas en pastillas. La barra ocupa todo el ancho de la columna para que no se vea nada por debajo al desplazarse. */
+.ftabs { display: flex; gap: 8px; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; position: sticky; top: var(--hdr-h); z-index: 3; background: #fff; margin: 0 calc(-1 * var(--pr)) clamp(28px, 3cqi, 48px) calc(-1 * var(--pl)); padding: 14px var(--pr) 14px var(--pl); border-bottom: 1px solid var(--hair) }
+.ftabs > * { flex: none; display: flex; gap: 8px; align-items: center; height: var(--h-ctl); padding: 0 16px; border-radius: 999px; background: var(--bg2); color: var(--ink); font-weight: 600; font-size: .9375rem; white-space: nowrap; text-decoration: none; transition: background-color .15s }
+.ftabs a:hover { background: var(--bg3) }
+.ftabs a[aria-current] { background: var(--pc); color: var(--pt) }
+.ftabs .c { font-size: .8125rem; font-weight: 500; color: var(--mute) }
+.ftabs a[aria-current] .c { color: inherit; opacity: .85 }
+.ftabs .dis { background: transparent; outline: 1.5px dashed var(--nc); outline-offset: -1.5px; color: var(--mute); font-weight: 500; pointer-events: none }
+.fsec { scroll-margin-top: calc(var(--hdr-h) + 90px); margin-bottom: clamp(56px, 6cqi, 112px) }
+.h2r { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: clamp(24px, 2.4cqi, 36px) }
+.h2r h2 { font-size: clamp(2.25rem, 3.6cqi, 4rem); margin: 0; text-transform: uppercase }
+/* Enlaces secundarios junto a un título («¿Cómo lo elegimos?», «Todos los cambios»…): texto de cuerpo, con hover. */
+.h2r a, .h2r-n, .cong-h a, .crumbs a { font-size: .9062rem; font-weight: 500 }
+.h2r a, .cong-h a, .crumbs a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; transition: text-decoration-thickness .12s, opacity .12s }
+.h2r a { color: var(--ink2) }
+.h2r a:hover, .cong-h a:hover, .crumbs a:hover { color: inherit; text-decoration-thickness: 2px }
+.h2r a:hover { color: var(--ink) }
+.crumbs a { font-size: inherit }
+.h2r-n { color: var(--mute) }
+.plist { list-style: none; margin: 0; padding: 0 }
+.plist > .pi:first-child { padding-top: 0 }
+.pi { display: grid; grid-template-columns: clamp(56px, 5cqi, 96px) 1fr auto; gap: clamp(16px, 2.4cqi, 44px); padding: clamp(28px, 2.8cqi, 48px) 0; border-bottom: 1px solid var(--hair); align-items: start }
+.pi:last-child { border-bottom: 0; padding-bottom: 0 }
+.pi .n { font-family: var(--cond); font-weight: 900; font-size: clamp(2.5rem, 3.6cqi, 4rem); line-height: .85 }
+.pi .tp { display: flex; align-items: center; gap: 7px; font-size: .8438rem; font-weight: 500; color: var(--mute); margin-bottom: 10px }
+.pi .tp svg { width: 16px; height: 16px }
+.pi h3 { font-stretch: 82%; font-weight: 750; font-size: clamp(1.375rem, 1.9cqi, 2rem); line-height: 1.12; margin: 0 0 12px }
+.pi .res { margin: 0 0 18px; color: var(--ink2); font-size: 1rem; line-height: 1.55; max-width: 70ch }
+.pi .fts { display: grid; justify-items: start; gap: 6px }
+.pi .vp { margin-top: 20px; max-width: 70ch }
+.pi .vp + .vp { margin-top: 10px }
+/* Acciones de cada propuesta: una botonera pequeña, todas juntas. */
+.pi .acts { display: flex; flex-direction: column; min-width: 164px; border: 1px solid var(--filete); border-radius: 12px; overflow: hidden; font-size: .8125rem; font-weight: 600; white-space: nowrap }
+.pi .acts > * { display: flex; align-items: center; gap: 9px; padding: 9px 14px; color: var(--ink); text-decoration: none; transition: background-color .12s }
+.pi .acts svg { width: 15px; height: 15px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round }
+.pi .acts > * + * { border-top: 1px solid var(--filete) }
+.pi .acts a:hover { background: var(--bg2) }
+.pi .acts .m { color: var(--mute); font-weight: 500 }
+.plist.compact .pi { grid-template-columns: 1fr auto; padding: clamp(22px, 2cqi, 32px) 0 }
+.plist.compact .pi:last-child { padding-bottom: 0 }
+/* El primer ítem de cada tema va pegado a su título: así se ve a qué tema pertenece. */
+.plist.compact > .pi:first-child { padding-top: 0 }
+.plist.compact .pi h3 { font-size: clamp(1.1875rem, 1.5cqi, 1.5rem); margin-bottom: 10px }
+.h2r + .tema-h { margin-top: 0 }
+.tema-h { display: flex; align-items: center; gap: 10px; margin: clamp(56px, 5.5cqi, 88px) 0 14px; font-stretch: 82%; font-weight: 800; font-size: clamp(1.375rem, 1.8cqi, 1.75rem) }
+.tema-h svg { width: 24px; height: 24px }
+.tema-h .c { font-size: .875rem; font-weight: 500; font-stretch: 100%; color: var(--mute) }
+.ref:hover { background: var(--bg3) }
+.ref { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: clamp(40px, 4cqi, 64px); padding: 18px 22px; background: var(--bg2); border: 1.5px dashed var(--filete); text-decoration: none; border-radius: 18px }
+.ref b { display: block; font-size: 1.0312rem }
+.ref span { font-size: .875rem; color: var(--mute) }
+.fgrid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 3cqi, 64px) }
+.fgrid h3, .h4 { font-size: 1rem; font-weight: 700; margin: 0 0 10px }
+.slist { list-style: none; margin: 0; padding: 0 }
+.slist li:first-child { padding-top: 0 }
+.slist li { padding: 12px 0; border-bottom: 1px solid var(--hair); font-size: .9375rem; display: grid; gap: 4px }
+.slist li:last-child { border-bottom: 0 }
+.slist .meta { font-size: .8125rem; color: var(--mute) }
+.slist a { text-underline-offset: 3px }
+/* Hover de enlaces que no van subrayados */
+.logo:hover { opacity: .7 }
+.map .ph:hover, .ar .who:hover { filter: brightness(1.1) }
+.col:hover { filter: brightness(1.04) }
+.tabbar a:hover { background: var(--bg2) }
+.fic-r .chg { border-top: 0 }
+.fic-r .chg li:first-child { padding-top: 0; --chg-y: 5px }
+/* Programa completo (ficha de partido) */
+.prog { display: flex; justify-content: space-between; align-items: center; gap: 16px 24px; flex-wrap: wrap; padding: clamp(18px, 1.8cqi, 26px) clamp(18px, 2cqi, 28px); background: var(--bg2); border-radius: 18px; text-decoration: none }
+.prog:hover { background: var(--bg3) }
+.prog-t { display: grid; gap: 4px }
+.prog-t b { font-size: clamp(1.125rem, 1.4cqi, 1.375rem); font-weight: 700; line-height: 1.25 }
+.prog-t span { font-size: .875rem; color: var(--mute) }
+.prog-a { display: inline-flex; align-items: center; gap: 8px; height: var(--h-ctl); padding: 0 18px; border-radius: 999px; background: var(--ink); color: #fff; font-weight: 650; font-size: .9062rem; white-space: nowrap }
+.prog-n { margin: 16px 0 0; font-size: .9375rem; line-height: 1.5; color: var(--ink2); max-width: 70ch }
+@container site (max-width: 900px) {
+  .fic { grid-template-columns: 1fr }
+  .fic-l .in { position: static }
+  .fic-r { --pl: 24px; --pr: 24px }
+  .pi { grid-template-columns: 44px 1fr }
+  .pi .acts { grid-column: 1 / -1; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; min-width: 0; white-space: normal; font-size: .8438rem }
+  .pi .acts > * { justify-content: center; gap: 6px; text-align: center; padding: 10px 6px; line-height: 1.25 }
+  .pi .acts > * + * { border-top: 0; border-left: 1px solid var(--filete) }
+  .fgrid { grid-template-columns: 1fr }
+}
+@container site (max-width: 600px) { .fic-r { --pl: 16px; --pr: 16px } }
+
+/* =========================================================
+   COMPARADOR (una pregunta, una respuesta por partido)
+   ========================================================= */
+.chd { padding-block: var(--sec-s) 0 }
+.chd h1 { font-size: clamp(4rem, 10cqi, 12.5rem); line-height: .84; margin: 0 0 clamp(10px, 1cqi, 18px); text-transform: uppercase }
+.chd .lead { font-size: clamp(1.125rem, 1.4cqi, 1.375rem); max-width: 58ch; margin: 0 0 32px }
+/* La barra de temas de Comparar se queda arriba al hacer scroll. */
+.ttabs-fija { position: sticky; top: var(--hdr-h); z-index: 4; background: var(--bg); border-bottom: 1px solid transparent; transition: border-color .2s }
+.ttabs-fija.pegada { border-bottom-color: var(--hair) }
+:root:has(.ttabs-fija) { scroll-padding-top: calc(var(--hdr-h) + var(--h-ctl) + 36px) }
+.ttabs { overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain }
+.ttabs > div { position: relative; display: flex; gap: 6px; width: max-content; min-width: 100%; padding-block: 10px }
+/* Fondo gris del tema elegido: una pieza aparte para que pueda deslizarse de un tema a otro */
+.ttabs-ind { position: absolute; left: 0; top: 10px; height: var(--h-ctl); background: var(--bg3); border-radius: 999px; pointer-events: none }
+.ttabs-ind.mueve { transition: transform .3s cubic-bezier(.2, .8, .2, 1), width .3s cubic-bezier(.2, .8, .2, 1) }
+.ttabs a.yendo { color: var(--ink) }
+.ttabs a.yendo:hover { background: none }
+.ttabs::-webkit-scrollbar { height: 4px }
+.ttabs::-webkit-scrollbar-track { background: var(--hair); border-radius: 999px }
+.ttabs::-webkit-scrollbar-thumb { background: var(--mute); border-radius: 999px }
+.ttabs::-webkit-scrollbar-thumb:hover { background: var(--ink) }
+@supports not selector(::-webkit-scrollbar) { .ttabs { scrollbar-width: thin; scrollbar-color: var(--mute) var(--hair) } }
+.ttabs a { position: relative; display: flex; gap: 8px; align-items: center; height: var(--h-ctl); padding: 0 16px; border-radius: 999px; font-weight: 650; font-size: .9375rem; white-space: nowrap; color: var(--ink2); text-decoration: none; transition: background .15s, color .15s }
+.ttabs a:hover { background: var(--bg2); color: var(--ink) }
+.ttabs a svg { width: 18px; height: 18px }
+.ttabs a[aria-current="page"] { color: var(--ink) }
+.ttabs a[aria-current="page"]:hover { background: none }
+/* El anillo de foco va por dentro: la barra recorta lo que sobresale */
+.ttabs a:focus-visible { outline-offset: -3px; box-shadow: none }
+.cbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; padding-block: 18px }
+.ptg { display: flex; gap: 4px; flex-wrap: wrap; align-items: center }
+.ptg .l { font-family: var(--cond); font-weight: 800; font-size: 1.375rem; line-height: 1; text-transform: uppercase; margin-right: 10px }
+.ptg button { border: 0; background: var(--pc); color: var(--pt); height: var(--h-ctl); padding: 0 16px; font-weight: 700; font-size: .875rem; display: flex; gap: 8px; align-items: center; border-radius: 999px }
+.ptg button::after { content: "✓"; font-size: .75rem }
+.ptg button[aria-pressed="false"] { background: #fff; color: var(--mute); outline: 1px solid var(--hair); outline-offset: -1px }
+.ptg button[aria-pressed="false"]::after { content: "+" }
+/* Hover de los filtros: el activo se aclara un poco; el apagado se rellena en gris. */
+.ptg button { cursor: pointer; transition: filter .15s, background .15s, color .15s }
+.ptg button[aria-pressed="true"]:hover { filter: brightness(1.12) }
+.ptg button[aria-pressed="false"]:hover { background: var(--bg2); color: var(--ink) }
+.subq { display: grid; grid-template-columns: clamp(220px, 22cqi, 380px) 1fr; gap: clamp(20px, 3cqi, 64px); padding-block: clamp(36px, 4cqi, 72px) }
+.subq .hd { position: sticky; top: calc(var(--hdr-h) + var(--h-ctl) + 20px + 24px); align-self: start }
+.subq .hd h2 { font-size: clamp(2.125rem, 3.2cqi, 3.625rem); margin: 0 0 8px; text-transform: uppercase }
+.subq .hd p { margin: 0; color: var(--mute); font-size: .9375rem }
+.ans { display: grid; gap: 4px }
+.ar { display: grid; grid-template-columns: clamp(150px, 13cqi, 220px) 1fr; min-height: 76px; border-radius: var(--r-in); overflow: hidden }
+.ar[hidden] { display: none }
+.ar .who { background: var(--pc); color: var(--pt); padding: 12px 14px; display: flex; flex-direction: column; justify-content: space-between; gap: 8px; text-decoration: none }
+.ar .who b { font-family: var(--cond); font-weight: 900; font-size: clamp(1.125rem, 1.5cqi, 1.5rem); text-transform: uppercase; line-height: .95 }
+.ar .who .st { font-family: var(--sans); font-size: .6875rem; font-weight: 650; letter-spacing: .03em }
+.ar .who .st .ie { width: 14px; height: 14px }
+.ar .what { background: var(--bg2); padding: 14px clamp(16px, 1.6cqi, 26px); display: flex; flex-direction: column; justify-content: center; gap: 12px }
+.ar .what .it { display: flex; flex-direction: column; gap: 8px }
+/* Dentro de la tarjeta, solo la sans: el título manda por tamaño y peso; la fuente, en gris y más pequeña. */
+.ar .what .vp { margin-top: 6px; background: var(--bg) }
+.ar .what .vp + .vp { margin-top: 0 }
+.ar .what .it + .it { border-top: 2px dotted var(--crema-filete); padding-top: 12px }
+.ar .what p { margin: 0; font-size: clamp(1.0625rem, 1.25cqi, 1.25rem); line-height: 1.3; font-weight: 600; color: var(--ink) }
+.ar .what .src a { color: inherit }
+.ar.z .what { background: #fff; outline: 1.5px dotted var(--nc); outline-offset: -1.5px; border-radius: 0 var(--r-in) var(--r-in) 0 }
+.ar.z .what p { color: var(--mute); font-weight: 400; font-size: .9375rem }
+/* Acciones del comparador: selector de vista + copiar enlace */
+.cacts { display: flex; gap: 10px; align-items: center; flex-wrap: wrap }
+.cacts .btn { height: var(--h-ctl); padding-block: 0 }
+/* Desplegable de partidos (solo en móvil): opción múltiple con casillas. */
+.ptg-dd { display: none; position: relative }
+.ptg-dd summary { list-style: none; display: flex; align-items: center; gap: 10px; height: var(--h-ctl); padding: 0 16px; border-radius: 999px; background: var(--bg2); cursor: pointer; font-weight: 600; font-size: .9062rem; transition: background-color .15s }
+.ptg-dd summary::-webkit-details-marker { display: none }
+.ptg-dd summary:hover, .ptg-dd[open] summary { background: var(--bg3) }
+.ptg-dd .l { font-family: var(--cond); font-weight: 800; font-size: 1.1875rem; line-height: 1; text-transform: uppercase }
+.ptg-res { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--ink2) }
+.ptg-dd .chev { flex: none; width: 8px; height: 8px; border: solid currentColor; border-width: 0 2px 2px 0; transform: translateY(-2px) rotate(45deg); transition: transform .2s }
+.ptg-dd[open] .chev { transform: translateY(2px) rotate(225deg) }
+.ptg-menu { position: absolute; z-index: 6; top: calc(100% + 6px); left: 0; right: 0; background: #fff; border: 1px solid var(--hair); border-radius: 16px; padding: 6px; box-shadow: 0 12px 32px rgb(0 0 0 / .12) }
+.ptg-ops { display: grid }
+.ptg-ops label { display: flex; align-items: center; gap: 12px; padding: 11px 12px; border-radius: 10px; font-weight: 600; font-size: .9375rem; cursor: pointer; transition: background-color .15s }
+.ptg-ops label:hover { background: var(--bg2) }
+.ptg-ops input { flex: none; width: 18px; height: 18px; margin: 0; accent-color: var(--ink) }
+.ptg-ops .dot { flex: none; width: 12px; height: 12px; border-radius: 50%; background: var(--pc) }
+.ptg-todos { display: block; width: 100%; margin-top: 4px; padding: 12px; border: 0; border-top: 1px solid var(--hair); background: none; font: inherit; font-weight: 600; font-size: .875rem; text-align: left; cursor: pointer; border-radius: 0 0 10px 10px; transition: background-color .15s }
+.ptg-todos:hover { background: var(--bg2) }
+@container site (max-width: 600px) {
+  .ptg { display: none }
+  .ptg-dd { display: block; grid-column: 1 / 3; grid-row: 1 }
+  /* Partidos y copiar enlace en la primera fila; orden y vista en la segunda. Así el botón de copiar nunca queda solo. */
+  .cbar { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 10px 8px }
+  .cacts { display: contents }
+  .cacts .btn-ico { grid-column: 3; grid-row: 1 }
+  .cacts [data-orden-ctl] { grid-column: 1; grid-row: 2 }
+  .cacts .vista:not([data-orden-ctl]) { grid-column: 2 / 4; grid-row: 2; justify-self: end }
+  .cacts .vista button { padding: 0 10px; gap: 6px }
+}
+/* Botón solo de icono (copiar enlace): al copiar, la cadena cambia por una marca. */
+.btn-ico { display: grid; place-items: center; width: var(--h-ctl); height: var(--h-ctl); border-radius: 999px; border: 0; background: var(--bg2); color: var(--ink2); cursor: pointer; transition: background-color .15s, color .15s }
+.btn-ico:hover { background: var(--bg3); color: var(--ink) }
+.btn-ico .i { width: 18px; height: 18px; grid-area: 1 / 1 }
+.btn-ico .ok, .btn-ico.hecho .i:not(.ok) { display: none }
+.btn-ico.hecho .ok { display: block }
+.vista { display: flex; gap: 2px; height: var(--h-ctl); padding: 3px; background: var(--bg2); border-radius: 999px }
+.vista button { display: flex; gap: 7px; align-items: center; border: 0; background: none; padding: 0 14px; border-radius: 999px; font: inherit; font-weight: 600; font-size: .8438rem; color: var(--ink2); cursor: pointer; transition: background .15s, color .15s }
+.vista button svg { width: 16px; height: 16px }
+.vista button:hover { color: var(--ink) }
+.vista button[aria-pressed="false"]:hover { background: color-mix(in srgb, var(--ink) 7%, transparent) }
+.vista button[aria-pressed="true"] { background: #fff; color: var(--ink); box-shadow: 0 0 0 1px var(--hair) }
+
+/* ---- Vista en tarjetas: los partidos uno al lado de otro, mismo ancho para todos ---- */
+:root[data-vista="tarjetas"] .subq { grid-template-columns: 1fr; gap: clamp(20px, 2cqi, 32px) }
+:root[data-vista="tarjetas"] .subq .hd { position: static; display: flex; align-items: baseline; gap: 6px 18px; flex-wrap: wrap }
+:root[data-vista="tarjetas"] .subq .hd h2 { margin: 0 }
+:root[data-vista="tarjetas"] .subq .hd p { display: block }
+:root[data-vista="tarjetas"] .ans { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: clamp(14px, 1.4cqi, 24px); align-items: stretch }
+:root[data-vista="tarjetas"] .ar:not([hidden]) { display: flex; flex-direction: column; min-height: 240px; background: var(--pc); border-radius: var(--r-card) }
+:root[data-vista="tarjetas"] .ar .who { flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 10px; padding: clamp(16px, 1.5cqi, 24px) }
+:root[data-vista="tarjetas"] .ar .who b { font-size: clamp(1.625rem, 2.2cqi, 2.25rem); line-height: .9 }
+:root[data-vista="tarjetas"] .ar .what { flex: 1; justify-content: flex-start; background: #fff; margin: 0 5px 5px; padding: clamp(16px, 1.4cqi, 22px); gap: 16px; border-radius: var(--r-in) }
+:root[data-vista="tarjetas"] .ar .what p { font-size: 1.0312rem }
+:root[data-vista="tarjetas"] .ar .what .it { gap: 10px }
+:root[data-vista="tarjetas"] .ar .what .vp { background: var(--bg2) }
+:root[data-vista="tarjetas"] .ar .who { gap: 14px }
+:root[data-vista="tarjetas"] .ar.z .what { outline: 1.5px dotted var(--nc); outline-offset: -1.5px; justify-content: center; border-radius: var(--r-in) }
+:root[data-vista="tarjetas"] .ar.z .what p { font-size: .9062rem }
+.ar .what p.fuera, :root[data-vista="tarjetas"] .ar .what p.fuera { margin: 0; font: 600 .7812rem/1.3 var(--sans); color: var(--ink2) }
+@container site (max-width: 700px) {
+  /* En el móvil, carrusel: un partido cada vez, deslizando */
+  :root[data-vista="tarjetas"] .ans { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 84%; gap: 12px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; padding-bottom: 10px }
+  :root[data-vista="tarjetas"] .ar { scroll-snap-align: start; min-height: 200px }
+  :root[data-vista="tarjetas"] .ans::-webkit-scrollbar { height: 4px }
+  :root[data-vista="tarjetas"] .ans::-webkit-scrollbar-track { background: var(--hair); border-radius: 999px }
+  :root[data-vista="tarjetas"] .ans::-webkit-scrollbar-thumb { background: var(--mute); border-radius: 999px }
+}
+
+/* Al cambiar de vista: solo se mueven las piezas; el resto, sin fundido */
+.vt-vista::view-transition-old(root), .vt-vista::view-transition-new(root) { animation: none }
+.vt-vista::view-transition-group(*.pieza) { animation-duration: .38s; animation-timing-function: cubic-bezier(.2, .8, .2, 1); overflow: clip; border-radius: var(--r-in) }
+.vt-vista::view-transition-old(*.pieza), .vt-vista::view-transition-new(*.pieza) { height: 100%; object-fit: none; object-position: left top }
+
+.empty-subs { border-top: 1px solid var(--ink); padding-block: 22px; font-size: .9375rem; color: var(--ink2) }
+.empty-subs b { font-family: var(--mono); font-size: .75rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); display: block; margin-bottom: 6px }
+.cnote { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start; padding: 18px 0 var(--sec-s); border-top: 1px solid var(--ink); font-size: .9375rem }
+.cnote b { font-family: var(--mono); font-weight: 500; font-size: .75rem; letter-spacing: .06em; border: 1.5px solid var(--ink); padding: 2px 9px; border-radius: 999px }
+/* ---- En el Congreso: votaciones de un subtema y voto bajo cada propuesta ----
+   Marcas neutras, sin verde/rojo: sí = relleno, no = contorno, abstención = gris. */
+.vc { display: inline-flex; align-items: center; justify-content: center; min-width: 40px; height: 24px; padding: 0 9px; border-radius: 999px; font-size: .75rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; border: 1.5px solid var(--ink); background: #fff; color: var(--ink) }
+.vc.si { background: var(--ink); color: #fff }
+.vc.abstencion { background: var(--bg3); border-color: var(--bg3) }
+.vc.dividido { border-style: dashed }
+.vc.ausente { border: 1.5px dotted var(--nc); color: var(--mute) }
+
+.cong { grid-column: 2; display: grid; gap: 16px; margin-top: 8px; container: cong / inline-size }
+.cong-h { padding: 24px 0 8px; border-top: 1px dashed var(--hair) }
+.cong-h h3 { margin: 0 0 4px; font-family: var(--cond); font-size: clamp(1.375rem, 1.9cqi, 1.875rem); text-transform: uppercase }
+.cong-h p { margin: 0; max-width: 75ch; font-size: .9062rem; color: var(--ink2) }
+.cong-h a { white-space: nowrap; color: var(--ink) }
+.vt { display: grid; gap: 24px; border: 1px solid var(--hair); border-radius: var(--r-in); padding: clamp(20px, 3cqi, 36px); scroll-margin-top: calc(var(--hdr-h) + 90px) }
+.vt-txt { min-width: 0; max-width: 72ch }
+/* Dos columnas si el bloque es ancho: textos a la izquierda, voto de cada partido a la derecha.
+   Si no, el voto va debajo, repartido a lo ancho. */
+@container cong (min-width: 780px) {
+  .vt { grid-template-columns: minmax(0, 1fr) 260px; column-gap: clamp(32px, 5cqi, 64px); align-items: start }
+  .vt .vt-votos { grid-template-columns: 1fr }
+}
+.vt:target { outline: 3px solid var(--ink); outline-offset: 3px }
+/* Dos tamaños de texto: 14px gris para datos y notas, 16.5px para el resumen. */
+.vt-meta, .vt-tipo, .vt-links { font-size: .875rem; line-height: 1.5 }
+.vt-meta { margin: 0 0 10px; color: var(--mute) }
+.vt-meta [title] { text-decoration: underline dotted; text-underline-offset: 3px; cursor: help }
+.vt-meta .vt-res { color: var(--ink); font-weight: 600; white-space: nowrap }
+.vt h4 { margin: 0 0 12px; font-stretch: 82%; font-weight: 750; font-size: clamp(1.3125rem, 2.1cqi, 1.625rem); line-height: 1.15 }
+.vt-res-txt { margin: 0 0 10px; font-size: 1.0312rem; line-height: 1.55; color: var(--ink2) }
+.vt-tipo { margin: 0; color: var(--mute) }
+.vt-mezcla { margin: 18px 0 0; padding: 14px 18px; background: var(--bg2); border-radius: 12px; font-size: .9375rem; line-height: 1.55; color: var(--ink2) }
+.vt-mezcla b { color: var(--ink); font-weight: 650 }
+/* Voto de cada partido: una columna, con el color del partido de fondo y el texto en blanco. */
+.vt-votos { display: grid; grid-template-columns: repeat(auto-fill, minmax(175px, 1fr)); gap: 8px; margin: 0; padding: 0; list-style: none }
+.vt-votos li { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: 6px 12px; min-height: 48px; padding: 8px 16px 8px 10px; border-radius: 12px; background: var(--pc); color: var(--pt) }
+.vt-votos li[hidden] { display: none }
+.vt-votos b { font-family: var(--cond); font-weight: 900; font-size: 1.1875rem; text-transform: uppercase; line-height: 1 }
+.vt-votos small { flex-basis: 100%; padding-left: 6px; font-size: .7812rem; opacity: .9 }
+.vt-votos .vc { min-width: 48px; justify-content: center; border-color: var(--pt); background: transparent; color: var(--pt) }
+.vt-votos .vc.si { background: #fff; border-color: #fff; color: var(--ink) }
+.vt-votos .vc.abstencion { background: rgba(255,255,255,.28); border-color: transparent }
+.vt-votos .vc.ausente { border-color: var(--pt); opacity: .8 }
+.vt-links { display: flex; flex-wrap: wrap; gap: 6px 24px; margin: 18px 0 0; font-weight: 500 }
+
+/* Voto bajo una propuesta: caja propia; jerarquía con peso y color, sin cambiar de tipografía. */
+.vp { display: block; padding: 14px 16px; background: var(--bg2); border-radius: 12px; font-size: .875rem; line-height: 1.45; color: var(--ink2) }
+.vp .vp-h { display: block; margin-bottom: 10px }
+/* Voto grande a la izquierda, frase a la derecha. Si la caja es estrecha, el voto va encima. */
+.vp { container-type: inline-size }
+.vp .vp-c { display: flex; align-items: flex-start; gap: 12px }
+@container (max-width: 300px) { .vp .vp-c { flex-direction: column; gap: 10px } }
+.vp .vc { flex: none; min-width: 52px; height: 34px; padding: 0 12px; font-size: .875rem }
+/* Sí: color del partido; No: negro. Ambos con el texto en blanco. */
+.vp .vc.si, .vp-ley .vc.si { background: var(--pc); border-color: var(--pc); color: #fff }
+.vp .vc.no, .vp-ley .vc.no { background: var(--ink); border-color: var(--ink); color: #fff }
+.vp .vp-txt { flex: 1; min-width: 0 }
+.vp b { font-weight: 650; color: var(--ink); line-height: 1.2 }
+.vp .vp-txt { display: block }
+.vp strong { font-weight: 700; color: var(--ink) }
+.vp a { color: var(--ink) }
+.vp .vp-parte { display: block; margin-top: 12px; padding-top: 10px; border-top: 2px dotted var(--crema-filete); font-size: .8438rem; color: var(--mute) }
+:root[data-vista="tarjetas"] .cong { grid-column: auto }
+
+@container site (max-width: 900px) {
+  .subq { grid-template-columns: 1fr }
+  .cong { grid-column: auto }
+  .subq .hd { position: static }
+  .subq .hd p { display: none }
+  .ar { grid-template-columns: 1fr }
+  .ar .who { flex-direction: row; align-items: center; padding: 8px 12px }
+  .ar.z .what { border-radius: 0 0 var(--r-in) var(--r-in) }
+}
+
+/* =========================================================
+   ESCALA, MÉTODO Y FUENTES
+   ========================================================= */
+.wip { display: flex; gap: 14px; align-items: flex-start; background: var(--bg2); border: 1.5px dashed var(--ink); padding: 20px 22px; border-radius: 18px; max-width: 72ch }
+.wip b { display: block; font-size: 1.0625rem; margin-bottom: 4px }
+.why { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 3cqi, 56px); margin-top: clamp(32px, 3cqi, 56px); padding-bottom: var(--sec-s) }
+.why h2, .why h3 { font-stretch: 82%; font-weight: 800; font-size: 1.375rem; margin: 0 0 8px; padding-top: 12px; border-top: 1px solid var(--ink); font-family: var(--sans); text-transform: none; line-height: 1.2 }
+.why p { margin: 0; font-size: .9375rem; line-height: 1.5 }
+.conv { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 3cqi, 56px) }
+.conv > div { border-top: 1px solid var(--ink); padding-top: 16px; display: flex; flex-direction: column; gap: 12px }
+.conv h3 { margin: 0; font-family: var(--mono); font-weight: 500; font-size: .75rem; letter-spacing: .06em; text-transform: uppercase }
+.conv p { margin: 0; font-size: .9062rem; color: var(--ink2); line-height: 1.5 }
+.conv.c4 { grid-template-columns: repeat(2, 1fr) }
+.conv .stack { display: flex; flex-direction: column; gap: 9px }
+.sample { display: flex; gap: 4px }
+.sample i { display: block; flex: 1; height: 44px; border-radius: 8px }
+.blk { padding-block: var(--sec-s); border-top: 1px solid var(--ink) }
+.blk > h2 { font-family: var(--cond); font-weight: 900; font-size: clamp(2.5rem, 4.5cqi, 5rem); line-height: .9; margin: 0 0 12px; text-transform: uppercase }
+.blk > p { font-size: clamp(1.0625rem, 1.3cqi, 1.25rem); max-width: 64ch; margin: 0 0 24px }
+/* Cómo funciona: menos filetes, bloques en tarjeta crema como en la portada. */
+.metodo .blk { border-top: 0 }
+.metodo .blk + .blk { padding-top: 0 }
+.metodo .conv > div { border-top: 0; padding: clamp(20px, 2cqi, 28px); background: var(--bg2); border-radius: var(--r-card) }
+.metodo .rep { border-top: 0; padding-top: 0 }
+.rep-f { display: contents }
+.rep-f dt { color: var(--pc); color: oklch(from var(--pc) min(l, .55) c h) }
+.rep-h { margin: 40px 0 12px; font-family: var(--mono); font-weight: 500; font-size: .75rem; letter-spacing: .06em; text-transform: uppercase }
+.rep { display: grid; grid-template-columns: max-content 1fr; gap: 10px 24px; margin: 0 0 40px; padding-top: 14px; border-top: 1px solid var(--ink); max-width: 980px }
+.rep dt { font-family: var(--cond); font-weight: 900; font-size: 1.25rem; text-transform: uppercase; line-height: 1.2 }
+.rep dd { margin: 0; font-size: .9062rem; color: var(--ink2); line-height: 1.5 }
+.rep dd b { color: var(--ink) }
+@container site (max-width: 700px) { .rep { grid-template-columns: 1fr; gap: 2px } .rep dd { margin-bottom: 10px } }
+.ftable { width: 100%; border-collapse: collapse; font-size: .9375rem }
+.ftable th { text-align: left; font-family: var(--mono); font-size: .7188rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--mute); padding: 8px 12px 8px 0; border-bottom: 1px solid var(--ink) }
+.ftable td { padding: 12px 12px 12px 0; border-bottom: 1px solid var(--hair); vertical-align: top }
+.ftable .meta { font-family: var(--mono); font-size: .7188rem; color: var(--mute); white-space: nowrap }
+.ftable .warn { font-family: var(--mono); font-size: .7188rem; color: var(--ink2); border: 1px dashed var(--ink2); border-radius: 999px; padding: 1px 8px; white-space: nowrap }
+@container site (max-width: 800px) {
+  .why, .conv, .conv.c4 { grid-template-columns: 1fr }
+  .ftable thead { display: none }
+  .ftable tr { display: grid; padding: 10px 0; border-bottom: 1px solid var(--hair) }
+  .ftable td { border: 0; padding: 2px 0 }
+}
+
+/* Buscador (Pagefind) */
+.buscador { padding-bottom: var(--sec); --pagefind-ui-scale: .9; --pagefind-ui-primary: var(--ink); --pagefind-ui-text: var(--ink); --pagefind-ui-border: var(--ink); --pagefind-ui-border-width: 1.5px; --pagefind-ui-border-radius: 18px; --pagefind-ui-font: var(--sans) }
+/* Cada resultado es una tarjeta entera pulsable (el enlace del título la cubre; los subresultados quedan por encima).
+   Con #buscador, estas reglas pesan más que las de pagefind-ui.css. */
+#buscador .pagefind-ui__results { display: grid; gap: 12px }
+#buscador .pagefind-ui__result { position: relative; border: 1px solid var(--hair2); padding: clamp(18px, 1.8cqi, 26px) clamp(18px, 2cqi, 30px); background: #fff; border-radius: var(--r-card); transition: border-color .15s, box-shadow .15s }
+#buscador .pagefind-ui__result:hover { border-color: var(--hair); box-shadow: 0 6px 20px rgb(0 0 0 / .06) }
+#buscador .pagefind-ui__result-inner { margin-top: 0 }
+#buscador .pagefind-ui__result-title .pagefind-ui__result-link::after { content: ""; position: absolute; inset: 0; border-radius: inherit }
+#buscador .pagefind-ui__result:hover .pagefind-ui__result-title .pagefind-ui__result-link { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px }
+#buscador .pagefind-ui__result-nested { position: relative; z-index: 1 }
+#buscador .pagefind-ui__result-nested .pagefind-ui__result-link:hover { text-decoration-thickness: 2px }
+/* Si el resultado es un partido: su nombre en su color (oscurecido si es muy claro) y una franja a la izquierda. */
+#buscador .pagefind-ui__result.es-partido { border-left: 6px solid var(--pc) }
+#buscador .es-partido .pagefind-ui__result-title .pagefind-ui__result-link { color: var(--pc); color: oklch(from var(--pc) min(l, .55) c h) }
+/* «Ver más resultados»: centrado y pequeño; en móvil, a todo el ancho. */
+#buscador .pagefind-ui__button { display: block; width: auto; height: auto; margin: 28px auto 0; padding: 11px 26px; border-radius: 999px; font-size: .9375rem; transition: background-color .15s, color .15s }
+#buscador .pagefind-ui__button:hover { background: var(--ink); color: #fff }
+@container site (max-width: 600px) { #buscador .pagefind-ui__button { width: 100% } }
+/* Limpiar: un botón redondo con una X. El texto «Limpiar» sigue ahí para los lectores de pantalla. */
+#buscador .pagefind-ui__search-clear { top: calc(32px * var(--pagefind-ui-scale)); right: 12px; transform: translateY(-50%); width: 36px; height: 36px; padding: 0; border: 0; border-radius: 50%; background: var(--bg2); color: var(--ink); font-size: 0; overflow: hidden; transition: background-color .15s, color .15s }
+#buscador .pagefind-ui__search-clear::before { content: ""; position: absolute; inset: 0; margin: auto; width: 14px; height: 14px; background: currentColor; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M2 2l10 10M12 2 2 12'/%3E%3C/svg%3E") center/contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none' stroke='black' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M2 2l10 10M12 2 2 12'/%3E%3C/svg%3E") center/contain no-repeat }
+#buscador .pagefind-ui__search-clear:hover { background: var(--ink); color: #fff }
+#buscador .pagefind-ui__search-clear:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important } }
+
+/* Ficha de partido: las pestañas llevan a cada sección deslizando, no de golpe.
+   Solo en esa página (para no afectar a otros anclajes) y solo si no se ha pedido reducir el movimiento. */
+@media (prefers-reduced-motion: no-preference) { html:has(.ftabs) { scroll-behavior: smooth } }
+
+/* Formularios */
+.form { display: grid; gap: 20px; max-width: 720px; padding: clamp(20px, 3cqi, 36px); border: 1px solid var(--hair); border-radius: var(--r-card); background: #fff }
+.form .campo { display: grid; gap: 6px }
+.form .campo label { font-weight: 600; font-size: .9375rem }
+.form small { font-size: .8125rem; line-height: 1.4; color: var(--mute) }
+.form input, .form textarea { font: inherit; font-weight: 400; font-size: 1rem; padding: 12px 16px; border: 1.5px solid var(--ink); border-radius: 14px; background: #fff; color: var(--ink) }
+.form textarea { resize: vertical }
+.form button { justify-self: start }
+
+/* =========================================================
+   Transiciones entre páginas (View Transitions entre documentos).
+   Solo CSS: los navegadores que no lo admiten cambian de página como siempre.
+   ========================================================= */
+@view-transition { navigation: auto }
+
+/* Lo que es igual en todas las páginas no se mueve */
+.hdr { view-transition-name: cabecera }
+.prov { view-transition-name: marquesina }
+.tabbar { view-transition-name: accesos }
+
+/* La pastilla del tema elegido se desliza hasta el nuevo tema */
+.ttabs { view-transition-name: temas-barra }
+.ttabs-ind { view-transition-name: tema-fondo }
+/* La barra queda quieta (encima) y el fondo gris se desliza por debajo de un tema al otro */
+::view-transition-group(temas-barra) { z-index: 2; animation-duration: .32s }
+::view-transition-group(tema-fondo) { z-index: 1; background: var(--bg3); border-radius: 999px; animation-duration: .36s; animation-timing-function: cubic-bezier(.2, .8, .2, 1) }
+::view-transition-old(tema-fondo), ::view-transition-new(tema-fondo) { display: none }
+
+/* El contenido: sale con un fundido rápido y entra subiendo un poco */
+::view-transition-old(root) { animation: vt-salir .14s ease-in both }
+::view-transition-new(root) { animation: vt-entrar .26s cubic-bezier(.2, .8, .2, 1) .04s both }
+@keyframes vt-salir { to { opacity: 0 } }
+@keyframes vt-entrar { from { opacity: 0; transform: translateY(10px) } }
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important }
+}
+
+/* ============================================================
+   UN PARTIDO, UN TEMA (/partidos/<partido>/<tema>/)
+   ============================================================ */
+.foco-h { background: var(--pc); color: var(--pt); padding-block: var(--sec-s) clamp(28px, 3cqi, 48px); display: grid; gap: clamp(14px, 1.4cqi, 22px) }
+.foco-h .crumbs a { color: inherit }
+.foco-t { display: grid; gap: .1em; margin: 0; text-transform: uppercase; overflow-wrap: anywhere }
+.foco-n { font-size: clamp(3.5rem, 7cqi, 8.75rem); line-height: .82 }
+.foco-tm { display: flex; align-items: center; gap: .22em; font-size: clamp(1.75rem, 3cqi, 3.5rem); line-height: .9 }
+.foco-tm svg { width: .8em; height: .8em; stroke-width: 2 }
+.foco-q { margin: 0; font-size: clamp(1.0625rem, 1.3cqi, 1.3125rem); max-width: 60ch }
+/* El selector va debajo de la cabecera, en una franja propia que se queda fija arriba al bajar.
+   La raya superior, del color del partido, se funde con la cabecera y al bajar marca de quién es la página. */
+.foco { --foco-s-h: calc(clamp(24px, 2.3cqi, 38px) * 1.6 + 2 * clamp(24px, 2.4cqi, 36px) + 8px) }
+.foco-s { position: sticky; top: var(--hdr-h); z-index: 4; background: var(--bg); padding-block: clamp(24px, 2.4cqi, 36px); border-top: 5px solid var(--pc); border-bottom: 1px solid var(--hair) }
+.foco-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; font-size: .9375rem }
+.foco-meta a { color: inherit; text-underline-offset: 3px }
+.foco-meta a:hover { text-decoration-thickness: 2px }
+.foco-est { display: inline-flex; background: #fff; color: var(--ink); border-radius: 999px; padding: 4px 12px 4px 8px; --ie-fondo: #fff }
+.foco-b { padding-block: clamp(36px, 4cqi, 64px) var(--sec) }
+.foco-b > section + section { margin-top: clamp(48px, 5cqi, 80px) }
+.foco-b .tema-h { margin-top: 0 }
+.foco-b .plist > .pi { grid-template-columns: minmax(0, 1fr) auto }
+/* En pantallas anchas, el subtema va en su columna (fija al bajar) y las propuestas ocupan el resto. */
+@container site (min-width: 1000px) {
+  .foco-b > section { display: grid; grid-template-columns: minmax(200px, 1fr) minmax(0, 3fr); column-gap: clamp(32px, 4cqi, 80px); align-items: start }
+  .foco-b > section .tema-h { position: sticky; top: calc(var(--hdr-h) + var(--foco-s-h) + 24px); padding-top: 4px; border-top: 3px solid var(--pc) }
+  .foco-b > section + section { padding-top: clamp(40px, 4cqi, 64px); border-top: 1px solid var(--hair) }
+}
+@container site (max-width: 700px) { .foco-b .plist > .pi { grid-template-columns: minmax(0, 1fr) } }
+.foco-b .wip { margin-bottom: 32px }
+.foco-b .empty-subs { margin-top: clamp(40px, 4cqi, 64px) }
+.foco-pie { margin-top: 32px }
+
+/* La frase con los desplegables (portada y página del cruce). Cada desplegable es una caja con borde y esquinas redondeadas. */
+.foco-sel { display: flex; flex-wrap: wrap; align-items: center; gap: .25em .3em; font-family: var(--cond); font-weight: 900; text-transform: uppercase; line-height: .95; font-size: clamp(1.5rem, 2.3cqi, 2.375rem); min-width: 0 }
+.foco-sel .sel { position: relative; display: inline-flex; align-items: center; gap: .14em; max-width: 100%; min-width: 0; padding: .3em .36em .26em .44em; border: max(2px, .035em) solid currentColor; border-radius: max(8px, .16em); cursor: pointer; transition: background-color .15s, color .15s, border-color .15s }
+.foco-sel .sel:hover { background: color-mix(in srgb, currentColor 12%, transparent) }
+.foco-sel .sel-v { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0 }
+.foco-sel .sel::after { content: ""; flex: none; width: .2em; height: .2em; border: solid currentColor; border-width: 0 .05em .05em 0; transform: translateY(-.1em) rotate(45deg); margin: 0 .06em 0 .02em }
+/* Navegadores sin desplegables personalizables: el <select> va encima, transparente, a tamaño normal. */
+.foco-sel select { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; font: 1rem/1.2 var(--sans); text-transform: none; appearance: auto; margin: 0; border: 0 }
+.foco-sel select > button { display: none }
+.foco-sel .sel:focus-within { outline: 3px solid currentColor; outline-offset: 3px }
+/* Sin elegir, en gris. El partido elegido, en su color (oscurecido si es muy claro, para que se lea sobre blanco).
+   En la portada, el botón va a la derecha. */
+.foco-sel .sel.vacio { color: var(--mute); border-color: var(--hair) }
+.foco-sel .sel-p:not(.vacio) { color: var(--pc); color: oklch(from var(--pc) min(l, .62) c h) }
+.foco-sel.portada .btn { font-family: var(--sans); text-transform: none; margin-left: auto }
+.foco-sel.portada .btn[aria-disabled="true"] { opacity: .35; pointer-events: none }
+@container site (max-width: 600px) {
+  .intro::before { background-position: right -190px top }
+  .foco-sel.portada { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 12px 10px }
+  .foco-sel.portada .sel { justify-self: start }
+  .foco-sel.portada .btn { grid-column: 1 / -1; justify-self: start; margin: 6px 0 0 }
+}
+.foco-portada { margin: 0 0 clamp(28px, 3cqi, 48px); padding: clamp(20px, 2cqi, 32px) clamp(20px, 2.4cqi, 36px); background: #fff; border-radius: 18px }
+
+/* Desplegables personalizables (Chrome y Edge 135+, de momento): el <select> se ve tal cual
+   y su lista lleva el icono de cada tema y el color de cada partido. */
+@supports (appearance: base-select) {
+  .foco-sel .sel { padding: 0; cursor: auto }
+  .foco-sel .sel-v, .foco-sel .sel::after { display: none }
+  .foco-sel select, .foco-sel ::picker(select) { appearance: base-select }
+  .foco-sel select { position: static; opacity: 1; width: auto; height: auto; max-width: 100%; min-width: 0; font: inherit; text-transform: inherit; letter-spacing: inherit; color: inherit; background: transparent; border: 0; border-radius: max(8px, .16em); padding: .3em .36em .26em .44em; display: inline-flex; align-items: center; gap: .14em }
+  .foco-sel select:focus-visible { outline: 0 }
+  .foco-sel select > button { all: unset; display: inline-flex; align-items: center; min-width: 0; overflow: hidden }
+  .foco-sel selectedcontent { display: inline-flex; align-items: center; gap: .18em; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis }
+  .foco-sel selectedcontent .i { width: .72em; height: .72em; flex: none; stroke-width: 2 }
+  .foco-sel selectedcontent .dot { display: none }
+  .foco-sel select::picker-icon { content: ""; width: .2em; height: .2em; border: solid currentColor; border-width: 0 .05em .05em 0; transform: translateY(-.1em) rotate(45deg); margin: 0 .06em 0 .02em; transition: transform .2s }
+  .foco-sel select:open::picker-icon { transform: translateY(.04em) rotate(225deg) }
+  /* La lista: letra normal, en tinta, sobre blanco. */
+  .foco-sel ::picker(select) { font: 500 1rem/1.3 var(--sans); text-transform: none; color: var(--ink); background: #fff; border: 1px solid var(--hair); border-radius: 16px; padding: 6px; margin-block: 8px; min-inline-size: 0; inline-size: max-content; min-width: 200px; max-width: min(92vw, 340px); max-height: min(70vh, 520px); box-shadow: 0 12px 40px rgb(0 0 0 / .16) }
+  .foco-sel option { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-radius: 10px; font: 500 1rem/1.3 var(--sans); text-transform: none; color: var(--ink); cursor: pointer }
+  .foco-sel option[value=""] { display: none }
+  .foco-sel option:hover, .foco-sel option:focus-visible { background: var(--bg2); outline: 0 }
+  .foco-sel option:checked { font-weight: 700 }
+  .foco-sel option::checkmark { order: 1; margin-left: auto; content: "✓" }
+  .foco-sel option .i { width: 20px; height: 20px; flex: none }
+  .foco-sel option .dot { width: 14px; height: 14px; flex: none; border-radius: 50%; background: var(--pc); box-shadow: inset 0 0 0 1px rgb(0 0 0 / .15) }
+}
+.tema-ver { margin-left: auto; font-family: var(--sans); font-stretch: 100%; font-size: .9062rem; font-weight: 500; color: inherit; text-underline-offset: 4px }
+.tema-ver:hover { text-decoration-thickness: 2px }

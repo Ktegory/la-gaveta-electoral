@@ -1,0 +1,18 @@
+partido: "pnv"
+tema: "inmigracion"
+subtema: "regularizacion"
+titulo: "Avanzar en los procesos de regularización de personas migrantes previstos en la legislación"
+resumen: "Junto a más competencias para Euskadi en acogida, residencia y trabajo. Rechaza los grandes centros de acogida, como el previsto en Arana (Vitoria-Gasteiz)."
+fuentes:
+  - fuente: "pnv/programa-29n-2026"
+    pagina: "24-25"
+    cita: Avanzar en los procesos de regularización previstos en la legislación, facilitando la integración social y laboral de las personas que cumplen los requisitos establecidos.
+  - fuente: "pnv/programa-29n-web-2026"
+    cita: Reclamar mayor capacidad para Euskadi en acogida, residencia, trabajo e integración; reducir demoras en permisos y reconocimiento de titulaciones extranjeras.
+fechaAnuncio: "2026-11-09"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "La web no menciona la regularización: su pasaje solo respalda el resumen (competencias en acogida, residencia y trabajo), no el título. La comprobación sitúa el pasaje en la p. 25 del PDF (el archivo dice 24-25)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

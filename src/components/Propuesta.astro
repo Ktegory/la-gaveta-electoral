@@ -1,0 +1,37 @@
+---
+// Una propuesta en lista: número (opcional), tema, título, fuente principal y acciones.
+import { datos, fuentesVisibles, relacionPrograma, AVISO_PROGRAMA, type Propuesta } from '../lib/datos';
+import EtiquetaFuente from './EtiquetaFuente.astro';
+import Icono from './Icono.astro';
+import VotoPropuesta from './VotoPropuesta.astro';
+interface Props { propuesta: Propuesta; numero?: number; mostrarTema?: boolean }
+const { propuesta: p, numero, mostrarTema = true } = Astro.props;
+const d = await datos();
+const tema = d.temas.find((t) => t.id === p.data.tema.id)!;
+const sub = tema.data.subtemas.find((s) => s.id === p.data.subtema);
+const [principal, ...otras] = fuentesVisibles(d, p);
+const rel = relacionPrograma(d, p);
+---
+<li class="pi" id={p.id.replace('/', '-')}>
+  {numero != null && <span class="n">{String(numero).padStart(2, '0')}</span>}
+  <div>
+    <div class="tp">{mostrarTema ? <><Icono id={tema.id} />{tema.data.nombre}{sub && ` · ${sub.nombre}`}</> : sub?.nombre}</div>
+    <h3>{p.data.titulo}</h3>
+    {p.data.resumen && <p class="res">{p.data.resumen}</p>}
+    <div class="fts">
+      <EtiquetaFuente fuente={principal.fuente} pagina={principal.pagina} />
+      {otras.map((o) => <EtiquetaFuente fuente={o.fuente} pagina={o.pagina} />)}
+    </div>
+    {rel && rel !== 'en-programa' && (
+      <p class="fuera"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.25" /><path d="M8 4.75v4M8 11v.25" /></svg>{AVISO_PROGRAMA[rel]}</p>
+    )}
+    <VotoPropuesta propuesta={p} />
+  </div>
+  <div class="acts" role="group" aria-label="Acciones">
+    {principal.fuente.data.url
+      ? <a href={principal.fuente.data.url} rel="noopener" target="_blank"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2 7.5 8.5" /></svg>Ver fuente</a>
+      : <span class="m"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2 7.5 8.5" /></svg>Enlace pendiente</span>}
+    <a href={`/comparar/${tema.id}/`}><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 2.5h5v11H2zM9 2.5h5v11H9z" /></svg>Comparar</a>
+    <a href="/como-funciona/#errores"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 14.5v-12M3.5 3h9l-2 3 2 3h-9" /></svg>Avisar de un error</a>
+  </div>
+</li>

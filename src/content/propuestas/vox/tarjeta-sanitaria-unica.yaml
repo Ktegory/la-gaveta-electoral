@@ -1,0 +1,11 @@
+partido: "vox"
+tema: "sanidad"
+subtema: "listas-espera"
+titulo: "Tarjeta sanitaria única y plan nacional contra las listas de espera"
+fuentes:
+  - fuente: "vox/recuperar-espana-2026"
+fechaAnuncio: "2026-10-19"
+destacada: true
+orden: 6
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-10"

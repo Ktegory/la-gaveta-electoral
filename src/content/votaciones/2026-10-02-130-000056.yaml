@@ -1,0 +1,87 @@
+# Votación del Pleno · Convalidación o derogación de Reales Decretos-leyes.
+# Escrito a mano: fue una votación pública por llamamiento y el Congreso no publicó el JSON.
+# El voto de cada diputado sale del Diario de Sesiones (pp. 63-70); el grupo de cada uno,
+# del JSON de la votación anterior (30/09/2026). Cuadra con el total oficial: 166-184.
+fecha: 2026-10-02
+sesion: 203
+numero: 3
+expediente: 130/000056
+tipo: convalidacion
+tituloOficial: Real Decreto-ley 27/2026, de 29 de septiembre, por el que se adoptan medidas urgentes para reforzar la estabilidad de los contratos de arrendamiento de vivienda habitual.
+titulo: "Decreto para que los contratos de alquiler se prorroguen por periodos de cinco años sin fecha de fin"
+resumen: "Si el casero no avisaba, el contrato de vivienda habitual se prorrogaría obligatoriamente por periodos sucesivos de cinco años (siete si el casero es una empresa). No renovar sin una de las causas previstas costaría al menos doce mensualidades. Añadía prórrogas extraordinarias para inquilinos vulnerables y en zonas tensionadas."
+textoVotado:
+  nombre: "BOE, Real Decreto-ley 27/2026, artículo único"
+  url: https://www.boe.es/boe/dias/2026/10/01/pdfs/BOE-A-2026-20385.pdf
+  pagina: "4-6 del PDF"
+urlVotacion: https://www.congreso.es/public_oficiales/L15/CONG/DS/PL/DSCD-15-PL-210.PDF#page=63
+urlDatos: https://www.congreso.es/webpublica/opendata/votaciones/Leg15/Sesion203/20261002/VOT_20261002180000.zip
+resultado: rechazada
+totales:
+  si: 166
+  no: 184
+  abstencion: 0
+  noVota: 0
+partidos:
+  bildu:
+    voto: si
+    si: 6
+    no: 0
+    abstencion: 0
+    noVota: 0
+  erc:
+    voto: si
+    si: 7
+    no: 0
+    abstencion: 0
+    noVota: 0
+  fa:
+    voto: si
+    si: 26
+    no: 0
+    abstencion: 0
+    noVota: 0
+  junts:
+    voto: no
+    si: 0
+    no: 7
+    abstencion: 0
+    noVota: 0
+  pnv:
+    voto: no
+    si: 0
+    no: 5
+    abstencion: 0
+    noVota: 0
+  pod:
+    voto: si
+    si: 4
+    no: 0
+    abstencion: 0
+    noVota: 0
+  pp:
+    voto: no
+    si: 0
+    no: 137
+    abstencion: 0
+    noVota: 0
+  psoe:
+    voto: si
+    si: 121
+    no: 0
+    abstencion: 0
+    noVota: 0
+  vox:
+    voto: no
+    si: 0
+    no: 32
+    abstencion: 0
+    noVota: 0
+tema: vivienda
+subtema: alquiler
+propuestas:
+  - propuesta: psoe/alquiler-indefinido
+    coincide: si
+    pasaje: "Nuevo art. 10.1 LAU: «el contrato se prorrogará obligatoriamente por plazos sucesivos de cinco años, o siete años si el arrendador fuese persona jurídica», y prórrogas extraordinarias en el art. 10.5 y 10.6."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

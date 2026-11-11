@@ -1,0 +1,11 @@
+partido: "fa"
+tema: "fiscalidad"
+subtema: "patrimonio"
+titulo: "Impuesto anual al patrimonio neto: 2 % desde 1 M€ y 3 % desde 50 M€"
+fuentes:
+  - fuente: "fa/nota-fiscalidad-2026-11-05"
+fechaAnuncio: "2026-11-05"
+destacada: true
+orden: 1
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-10"

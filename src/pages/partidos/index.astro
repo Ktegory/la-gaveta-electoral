@@ -1,0 +1,17 @@
+---
+import Base from '../../layouts/Base.astro';
+import ColumnaPartido from '../../components/ColumnaPartido.astro';
+import OrdenPartidos from '../../components/OrdenPartidos.astro';
+import { datos } from '../../lib/datos';
+const d = await datos();
+---
+<Base titulo="Partidos" seccion="partidos" descripcion="Qué ha publicado cada partido para el 29N, en qué estado está su programa y de dónde sale cada propuesta.">
+  <div class="chd pad">
+    <h1 class="cond">Partidos</h1>
+    <p class="lead">Qué ha publicado cada uno para el 29N y en cuántas fuentes se basa su ficha. Más partidos, próximamente.</p>
+  </div>
+  <div class="pad" style="padding-bottom:var(--sec)">
+    <div class="carr-bar"><OrdenPartidos /></div>
+    <div class="cols rejilla" data-ordenable data-orden="az">{d.partidos.map((p, i) => <ColumnaPartido partido={p} orden={i} />)}</div>
+  </div>
+</Base>

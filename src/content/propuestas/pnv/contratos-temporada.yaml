@@ -1,0 +1,19 @@
+partido: "pnv"
+tema: "vivienda"
+subtema: "alquiler"
+titulo: "Impedir que los contratos de temporada se usen para eludir las garantías del alquiler de vivienda habitual"
+resumen: "Propone también regular los alquileres de temporada y turísticos para que no resten viviendas al alquiler residencial."
+fuentes:
+  - fuente: "pnv/programa-29n-2026"
+    pagina: "8"
+    cita: Evitar que los contratos de temporada se utilicen fraudulentamente para eludir las garantías del alquiler de vivienda habitual.
+  - fuente: "pnv/programa-29n-web-2026"
+    cita: Evitar el uso de contratos de temporada para eludir los derechos de quienes necesitan una vivienda habitual.
+fechaAnuncio: "2026-11-09"
+destacada: true
+orden: 1
+comprobacion:
+  estado: encontrada
+  nota: "El programa dice «Evitar», no «Impedir». El resumen corresponde a la medida 04 de la misma página: «Regular los alquileres de temporada y turísticos para que no resten viviendas al alquiler residencial.»"
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

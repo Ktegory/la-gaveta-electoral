@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "vivienda"
+subtema: "fiscalidad-vivienda"
+titulo: "Deducción del 15 % en el IRPF por el alquiler o la hipoteca"
+fuentes:
+  - fuente: "junts/prensa-balance-legislatura"
+    cita: Entre les propostes de la formació hi ha una deducció del 15% de l'IRPF pel lloguer i la hipoteca.
+  - fuente: "junts/prensa-deduccion-vivienda"
+    cita: Segons fonts de Junts, la seva proposta inclou una deducció del 15% a l’IRPF pels gastos de lloguer o hipoteca, amb un límit anual de 11.630 euros.
+fechaAnuncio: "2026-05-13"
+destacada: true
+orden: 6
+comprobacion:
+  estado: encontrada
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

@@ -1,0 +1,11 @@
+partido: "vox"
+tema: "vivienda"
+subtema: "vivienda-publica"
+titulo: "Preferencia de los españoles en el acceso a la vivienda pública («prioridad nacional»)"
+fuentes:
+  - fuente: "vox/recuperar-espana-2026"
+fechaAnuncio: "2026-10-19"
+destacada: true
+orden: 3
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-10"

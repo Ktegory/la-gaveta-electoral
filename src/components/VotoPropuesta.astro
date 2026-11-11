@@ -1,0 +1,36 @@
+---
+// Bajo una propuesta: qué votó ese partido en el Congreso cuando se votó esa misma medida.
+// Se dice con una frase completa («El Grupo Popular votó sí a…») para que la marca no quede suelta.
+import { datos, fecha, votacionesDePropuesta, varsPartido, VOTO, type Propuesta } from '../lib/datos';
+interface Props { propuesta: Propuesta; enlaceLocal?: boolean }
+const { propuesta: p, enlaceLocal = false } = Astro.props;
+const d = await datos();
+const vs = votacionesDePropuesta(d, p);
+const grupo = d.representacion.get(p.data.partido.id)!.data.nombreGrupo;
+const colores = varsPartido(d.partidos.find((x) => x.id === p.data.partido.id)!);
+// «Grupo …» va en singular; «Diputados de …», en plural.
+const plural = !grupo.startsWith('Grupo');
+const sujeto = plural ? `Los ${grupo.charAt(0).toLowerCase()}${grupo.slice(1)}` : `El ${grupo}`;
+const VERBO = {
+  si: plural ? ['votaron', 'sí', 'a'] : ['votó', 'sí', 'a'],
+  no: plural ? ['votaron', 'no', 'a'] : ['votó', 'no', 'a'],
+  abstencion: plural ? ['se', 'abstuvieron', 'en'] : ['se', 'abstuvo', 'en'],
+  dividido: plural ? ['se', 'dividieron', 'en'] : ['se', 'dividió', 'en'],
+  ausente: plural ? ['no', 'votaron', 'en'] : ['no', 'votó', 'en'],
+} as const;
+---
+{vs.map(({ votacion: v, coincide, parte }) => {
+  const r = v.data.partidos[p.data.partido.id];
+  const href = `${enlaceLocal ? '' : `/comparar/${v.data.tema.id}/`}#v-${v.id}`;
+  const [antes, clave, prep] = VERBO[r.voto];
+  return (
+    <div class="vp" style={colores}>
+      <b class="vp-h">Lo que votó en el Congreso</b>
+      <span class="vp-c">
+        <span class={`vc ${r.voto}`} aria-hidden="true">{VOTO[r.voto].corto}</span>
+        <span class="vp-txt">{sujeto} {antes} {clave} {prep} «<a href={href}>{v.data.titulo}</a>» ({fecha(v.data.fecha)} {v.data.fecha.getFullYear()}).</span>
+      </span>
+      {coincide === 'parcial' && <span class="vp-parte">Coincide solo en parte. {parte}</span>}
+    </div>
+  );
+})}

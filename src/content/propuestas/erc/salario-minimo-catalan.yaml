@@ -1,0 +1,17 @@
+partido: "erc"
+tema: "empleo"
+subtema: "smi"
+titulo: "Traspasar a la Generalitat la competencia para fijar un salario mínimo catalán de 1.460 euros"
+resumen: "Además, subir el salario mínimo interprofesional estatal hasta el 60 % del salario medio bruto."
+fuentes:
+  - fuente: "erc/programa-29n-2026"
+    pagina: "20"
+    cita: Transferir les competències a la Generalitat de Catalunya per establir un salari mínim català (SMC) a 1.460 €.
+fechaAnuncio: "2026-11-05"
+destacada: true
+orden: 4
+comprobacion:
+  estado: encontrada
+  nota: Medida 67. La subida del SMI estatal al 60 % del salario medio bruto es la medida 66 de la misma página.
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

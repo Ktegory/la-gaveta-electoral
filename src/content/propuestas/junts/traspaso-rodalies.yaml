@@ -1,0 +1,21 @@
+partido: "junts"
+tema: "territorial"
+subtema: "competencias"
+titulo: "Traspasar Rodalies íntegramente a Cataluña"
+resumen: "En el debate de RTVE del 8 de noviembre pidió que lo gestione Ferrocarrils de la Generalitat (FGC), según la prensa."
+fuentes:
+  - fuente: "junts/mesjunts-161-rodalies"
+    pagina: "1"
+    cita: Davant d’aquesta situació, ha defensat que Catalunya gestioni els seus propis recursos per garantir millors serveis públics, més inversió i manteniment, i el traspàs integral de Rodalies.
+  - fuente: "junts/nota-rodalies-puente"
+    cita: fer efectiu el traspàs integral de Rodalies, amb vies, trens, estacions i diners; i completar un Corredor Mediterrani que separi el trànsit de mercaderies del de Rodalies.
+  - fuente: "junts/prensa-debate-rtve"
+    cita: La candidata de Junts ha arrencat demanant el traspàs integral de Rodalies, que passaria a gestionar Ferrocarrils de la Generalitat (FGC).
+fechaAnuncio: "2026-11-02"
+destacada: true
+orden: 2
+comprobacion:
+  estado: encontrada
+  nota: La nota de junts.cat no contiene la frase «El traspàs sencer de Rodalies a Catalunya és imprescindible i innegociable» (si el resumen o el título la citan, viene de otro sitio). Lo de FGC sale solo de Nació Digital (debate de RTVE).
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

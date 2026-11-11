@@ -1,0 +1,17 @@
+partido: "pnv"
+tema: "territorial"
+subtema: "financiacion"
+titulo: "Más capacidad normativa de las Haciendas Forales en el IVA y los Impuestos Especiales"
+resumen: "Mediante la actualización del Concierto Económico, dentro de los límites de armonización de la Unión Europea."
+fuentes:
+  - fuente: "pnv/programa-29n-2026"
+    pagina: "21"
+    cita: Ampliar la capacidad normativa de las Haciendas Forales en el IVA y los Impuestos Especiales.
+  - fuente: "pnv/programa-29n-web-2026"
+    cita: Reclamar, mediante la actualización del Concierto Económico y las reformas necesarias, mayor capacidad normativa de las Haciendas Forales en IVA e Impuestos Especiales, dentro del marco europeo.
+fechaAnuncio: "2026-11-09"
+destacada: false
+comprobacion:
+  estado: encontrada
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

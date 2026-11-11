@@ -1,0 +1,19 @@
+partido: "pnv"
+tema: "energia"
+subtema: "precio"
+titulo: "Rebajar de forma permanente el Impuesto Especial sobre la Electricidad al 0,5 %"
+resumen: "Dentro de los límites de la normativa europea. Forma parte del compromiso «Energía a precios competitivos», que incluye acelerar las inversiones en redes eléctricas."
+fuentes:
+  - fuente: "pnv/programa-29n-2026"
+    pagina: "15-16"
+    cita: Reducir de forma permanente el Impuesto Especial sobre la Electricidad al 0,5 %, dentro de los límites permitidos por la normativa europea.
+  - fuente: "pnv/programa-29n-web-2026"
+    cita: Reclamar inversiones en redes eléctricas y medidas para reducir los costes energéticos de empresas y hogares, incidiendo en las fuentes de energía renovables.
+fechaAnuncio: "2026-11-09"
+destacada: true
+orden: 3
+comprobacion:
+  estado: encontrada
+  nota: "La medida del 0,5 % está solo en la p. 16 del PDF (la 15 recoge la inversión en redes eléctricas). La web no menciona el 0,5 %: solo habla en general de reducir costes energéticos. La comprobación sitúa el pasaje en la p. 16 del PDF (el archivo dice 15-16)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

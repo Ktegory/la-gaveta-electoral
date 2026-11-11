@@ -1,0 +1,90 @@
+# Votación del Pleno · III. Mociones consecuencia de interpelaciones urgentes.
+# Generado por scripts/votacion.mjs.
+# vox/prioridad-nacional-vivienda (punto 1.e) se empareja con la moción 173/000179, centrada en eso.
+fecha: 2025-09-24
+sesion: 134
+numero: 8
+expediente: 173/000120
+tipo: mocion
+tituloOficial: Moción consecuencia de interpelación urgente del Grupo Parlamentario VOX, sobre cuál es la estrategia que va a adoptar el Gobierno para posibilitar el acceso a la vivienda de los jóvenes españoles.
+titulo: "Moción de VOX sobre vivienda para jóvenes: derogar la Ley de Vivienda e impuestos cero a la compra"
+resumen: "Pedía al Gobierno, entre otras cosas, derogar la Ley de Vivienda de 2023 y no cobrar IVA ni impuesto de transmisiones a los españoles que compren su vivienda habitual."
+incluiaAdemas: "Prioridad de los españoles en la vivienda social y protegida, supresión del impuesto de Sucesiones, ventajas en el IRPF por hijo, medidas contra la okupación y más impuestos a la compra por capital extranjero."
+textoVotado:
+  nombre: "BOCG, Serie D, núm. 403"
+  url: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/D/BOCG-15-D-403.PDF#page=12
+  pagina: "12-16"
+urlVotacion: https://www.congreso.es/webpublica/opendata/votaciones/Leg15/Sesion134/20250924/Votacion008/VOT_20250924171304.pdf
+urlDatos: https://www.congreso.es/webpublica/opendata/votaciones/Leg15/Sesion134/20250924/Votacion008/VOT_20250924171313.json
+resultado: rechazada
+totales:
+  si: 33
+  no: 179
+  abstencion: 136
+  noVota: 2
+partidos:
+  bildu:
+    voto: no
+    si: 0
+    no: 6
+    abstencion: 0
+    noVota: 0
+  erc:
+    voto: no
+    si: 0
+    no: 7
+    abstencion: 0
+    noVota: 0
+  fa:
+    voto: no
+    si: 0
+    no: 25
+    abstencion: 0
+    noVota: 1
+  junts:
+    voto: no
+    si: 0
+    no: 7
+    abstencion: 0
+    noVota: 0
+  pnv:
+    voto: no
+    si: 0
+    no: 5
+    abstencion: 0
+    noVota: 0
+  pod:
+    voto: no
+    si: 0
+    no: 4
+    abstencion: 0
+    noVota: 0
+  pp:
+    voto: abstencion
+    si: 1
+    no: 0
+    abstencion: 136
+    noVota: 0
+  psoe:
+    voto: no
+    si: 0
+    no: 120
+    abstencion: 0
+    noVota: 0
+  vox:
+    voto: si
+    si: 32
+    no: 0
+    abstencion: 0
+    noVota: 1
+tema: vivienda
+subtema: alquiler
+propuestas:
+  - propuesta: vox/derogar-ley-vivienda
+    coincide: si
+    pasaje: "Punto 1.b (p. 15): «se procederá a la derogación de la Ley 12/2023»."
+  - propuesta: vox/impuestos-cero-primera-vivienda
+    coincide: si
+    pasaje: "Punto 2.a y 2.b (p. 15): IVA «no sujeta» y bonificación del 100 % del ITP en la compra de la vivienda habitual «por parte de españoles»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

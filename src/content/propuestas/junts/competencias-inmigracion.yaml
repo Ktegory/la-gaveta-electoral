@@ -1,0 +1,21 @@
+partido: "junts"
+tema: "territorial"
+subtema: "competencias"
+titulo: "Que la Generalitat gestione la inmigración, con la delegación de las competencias del Estado"
+resumen: "Es otra de sus condiciones para negociar tras el 29N, junto con los impuestos y el catalán en la UE."
+fuentes:
+  - fuente: "junts/mesjunts-161-rodalies"
+    pagina: "3"
+    cita: una gestió pròpia de Catalunya de la immigració.
+  - fuente: "junts/prensa-ser-condiciones"
+    cita: Entre les demandes que Nogueras ha posat sobre la taula hi ha la delegació de competències en immigració; que s'aprovi l'oficialitat del català a la Unió Europea, i que Catalunya gestioni els seus impostos, ha dit en una entrevista a Ser Catalunya recollida per Europa Press.
+  - fuente: "junts/prensa-balance-legislatura"
+    cita: Reclamació de competències, control i recursos en immigració per a Catalunya.
+fechaAnuncio: "2026-10-27"
+destacada: true
+orden: 3
+comprobacion:
+  estado: encontrada
+  nota: En el «Més Junts» 161 (p. 3) la frase es de Cruset en Riudoms; el PDF la parte entre columnas, así que la cita es un fragmento (la frase completa empieza «També ha reclamat més seguretat…»). La delegación de competencias como condición para negociar sale de la SER.
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

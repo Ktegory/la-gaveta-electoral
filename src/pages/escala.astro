@@ -1,0 +1,21 @@
+---
+import IconoEstado from '../components/IconoEstado.astro';
+import Base from '../layouts/Base.astro';
+---
+<Base titulo="Escala izquierda–derecha" seccion="escala" descripcion="Dónde sitúan a cada partido las mediciones externas publicadas (CIS y CHES), sin promedios ni valoraciones propias.">
+  <div class="chd pad">
+    <h1 class="cond">¿Dónde está cada uno?</h1>
+    <p class="lead">No los colocamos nosotros: mostraremos mediciones externas publicadas, una debajo de otra, para que veas si coinciden.</p>
+  </div>
+  <div class="pad">
+    <div class="wip">
+      <span class="st pen" aria-hidden="true"><IconoEstado estado="pendiente" /></span>
+      <div><b>Todavía no mostramos datos.</b>Estamos comprobando las cifras del CIS y de la encuesta a expertos CHES, y cómo tratar a los partidos nuevos (Frente Amplio no existía en 2024). Las publicaremos con su fuente cuando estén verificadas, nunca antes.</div>
+    </div>
+    <div class="why">
+      <div><h2>Ciudadanía · CIS</h2><p>Dónde sitúan los encuestados a cada partido. Mide percepción, no programa. Mostraremos también el margen de error.</p></div>
+      <div><h2>Expertos · CHES</h2><p>Valoración de politólogos sobre la posición general de cada partido, con un método comparable en toda Europa.</p></div>
+      <div><h2>Sin promedios</h2><p>Miden cosas distintas. Las pondremos juntas para que se vea si coinciden, sin mezclarlas en una cifra nuestra.</p></div>
+    </div>
+  </div>
+</Base>

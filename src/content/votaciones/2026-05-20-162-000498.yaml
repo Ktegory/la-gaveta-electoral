@@ -1,0 +1,87 @@
+# Votación del Pleno · II. Proposiciones no de Ley.
+# Generado por scripts/votacion.mjs.
+# Sin propuestas emparejadas: «establecer limitaciones» es más vago que prohibir (pod) o frenar la compra por fondos (psoe).
+# Se muestra como contexto del subtema.
+fecha: 2026-05-20
+sesion: 180
+numero: 5
+expediente: 162/000498
+tipo: pnl
+tituloOficial: |-
+  Proposición no de Ley del Grupo Parlamentario Plurinacional SUMAR, para frenar la especulación inmobiliaria y garantizar el acceso a una vivienda digna.
+  Se vota en los términos de la enmienda transaccional presentada por el Grupo Parlamentario Socialista y el Grupo Parlamentario Plurinacional SUMAR.
+titulo: "Proposición pactada por PSOE y Sumar para limitar la compra especulativa de vivienda"
+resumen: "Pedía al Gobierno limitar la compra de inmuebles según el territorio y el comprador «para terminar con la compra especulativa». Se votó el texto pactado por PSOE y Sumar, más suave que el original de Sumar, que pedía prohibir la compra a empresas y fondos."
+incluiaAdemas: "Una reforma fiscal general: mejor trato a las rentas del trabajo y fin de los beneficios fiscales de las rentas del capital y de las SOCIMI."
+textoVotado:
+  nombre: "BOCG, Serie D, núm. 538 (texto transaccional)"
+  url: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/D/BOCG-15-D-538.PDF#page=5
+  pagina: "5"
+urlVotacion: https://www.congreso.es/webpublica/opendata/votaciones/Leg15/Sesion180/20260520/Votacion005/VOT_20260520142320.pdf
+urlDatos: https://www.congreso.es/webpublica/opendata/votaciones/Leg15/Sesion180/20260520/Votacion005/VOT_20260520142326.json
+resultado: rechazada
+totales:
+  si: 169
+  no: 170
+  abstencion: 8
+  noVota: 3
+partidos:
+  bildu:
+    voto: si
+    si: 6
+    no: 0
+    abstencion: 0
+    noVota: 0
+  erc:
+    voto: si
+    si: 7
+    no: 0
+    abstencion: 0
+    noVota: 0
+  fa:
+    voto: si
+    si: 26
+    no: 0
+    abstencion: 0
+    noVota: 0
+  junts:
+    voto: abstencion
+    si: 0
+    no: 0
+    abstencion: 7
+    noVota: 0
+  pnv:
+    voto: si
+    si: 5
+    no: 0
+    abstencion: 0
+    noVota: 0
+  pod:
+    voto: si
+    si: 4
+    no: 0
+    abstencion: 0
+    noVota: 0
+  pp:
+    voto: no
+    si: 0
+    no: 137
+    abstencion: 0
+    noVota: 0
+  psoe:
+    voto: si
+    si: 119
+    no: 0
+    abstencion: 0
+    noVota: 2
+  vox:
+    voto: no
+    si: 0
+    no: 32
+    abstencion: 0
+    noVota: 1
+tema: vivienda
+subtema: grandes-tenedores
+propuestas: []
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

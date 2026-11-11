@@ -1,0 +1,14 @@
+partido: "pod"
+tema: "pensiones"
+subtema: "pensiones-minimas"
+titulo: "Subir las pensiones mínimas, también las no contributivas"
+resumen: "Lo planteó Irene Montero en un desayuno informativo de Europa Press, sin dar cifras según la fuente."
+fuentes:
+  - fuente: "pod/prensa-montero-pensiones-2026-11-06"
+    cita: "ha planteado reducir la edad de jubilación a 63 años y aumentar las pensiones mínimas, incluyendo las no contributivas."
+fechaAnuncio: "2026-11-06"
+destacada: false
+comprobacion:
+  estado: encontrada
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

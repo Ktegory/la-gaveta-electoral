@@ -1,0 +1,10 @@
+---
+// Etiqueta de tipo de fuente con su marca geométrica, y el detalle (título · fecha · página).
+import { TIPO, fecha, type Fuente } from '../lib/datos';
+interface Props { fuente: Fuente; pagina?: string; detalle?: boolean; enlace?: boolean }
+const { fuente, pagina, detalle = true, enlace = false } = Astro.props;
+const t = TIPO[fuente.data.tipo];
+const d = fuente.data;
+const texto = [d.medio ?? d.titulo, fecha(d.fechaPublicacion) + ' ' + d.fechaPublicacion.getFullYear(), pagina && `p. ${pagina}`].filter(Boolean).join(' · ');
+---
+<span class={`src ${t.clase}`}><b>{t.etiqueta}</b>{detalle && (enlace && d.url ? <a href={d.url} rel="noopener" target="_blank">{texto}</a> : <span>{texto}</span>)}</span>

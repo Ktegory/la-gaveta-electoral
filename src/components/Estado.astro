@@ -1,0 +1,8 @@
+---
+import { ESTADO } from '../lib/datos';
+import IconoEstado from './IconoEstado.astro';
+interface Props { estado: keyof typeof ESTADO; corto?: boolean }
+const { estado, corto = false } = Astro.props;
+const e = ESTADO[estado];
+---
+<span class={`st ${e.clase}`} title={corto ? e.etiqueta : undefined}><IconoEstado estado={estado} />{corto ? e.corto : e.etiqueta}</span>

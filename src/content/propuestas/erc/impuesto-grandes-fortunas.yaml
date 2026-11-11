@@ -1,0 +1,16 @@
+partido: "erc"
+tema: "fiscalidad"
+subtema: "patrimonio"
+titulo: "Hacer permanente el impuesto de solidaridad de las grandes fortunas, con un tramo nuevo desde 100 millones de euros"
+resumen: "También subiría el tipo para las fortunas de más de 10 millones de euros."
+fuentes:
+  - fuente: "erc/programa-29n-2026"
+    pagina: "22"
+    cita: Fer permanent l’impost temporal de solidaritat de les grans fortunes, augmentant el tipus per a fortunes de més de 10 milions d’euros i creant un tram nou a partir de 100 milions d’euros.
+fechaAnuncio: "2026-11-05"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: Medida 74 («Fiscalitat dels multimilionaris»).
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

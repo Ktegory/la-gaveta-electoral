@@ -1,0 +1,798 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wireframes · La gaveta de los programas</title>
+<style>
+  :root{
+    --ink:#1f1f1f; --mute:#6b6b6b; --soft:#9a9a9a; --line:#c9c9c9; --line2:#e2e2e2;
+    --fill:#ececec; --fill2:#f5f5f5; --paper:#fff; --bg:#dcdcdc;
+    --note:#fff1a6; --note-ink:#5b4700; --note-line:#e3c800;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{font:14px/1.45 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+  a{color:inherit}
+  button{font:inherit;color:inherit}
+
+  /* ---------- Barra de herramientas de los wireframes (fuera del diseño) ---------- */
+  .wf-bar{position:sticky;top:0;z-index:50;background:#2b2b2b;color:#eee;padding:10px 16px;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+  .wf-bar h1{font-size:13px;font-weight:600;margin:0;letter-spacing:.02em}
+  .wf-bar h1 span{color:#aaa;font-weight:400}
+  .wf-tabs{display:flex;flex-wrap:wrap;gap:4px}
+  .wf-tabs button{background:#3c3c3c;border:0;border-radius:4px;padding:5px 10px;color:#ddd;cursor:pointer;font-size:12.5px}
+  .wf-tabs button[aria-selected="true"]{background:#fff;color:#111}
+  .wf-opts{display:flex;gap:6px;margin-left:auto}
+  .wf-opts button{background:transparent;border:1px solid #666;border-radius:4px;padding:4px 10px;color:#ddd;cursor:pointer;font-size:12.5px}
+  .wf-opts button[aria-pressed="true"]{background:#ddd;color:#111;border-color:#ddd}
+  .wf-stage{padding:24px 16px 60px}
+  .wf-caption{max-width:1200px;margin:0 auto 10px;color:#444;font-size:12.5px}
+  .wf-caption b{color:#111}
+
+  /* ---------- Marco del sitio ---------- */
+  .frame{container:site / inline-size;background:var(--paper);width:min(1200px,100%);margin:0 auto;border:1px solid #999;box-shadow:0 2px 14px rgba(0,0,0,.15);position:relative;transition:width .25s}
+  body.mobile .frame{width:390px}
+  .screen{display:none}
+  .screen.active{display:block}
+
+  /* ---------- Notas (anotaciones) ---------- */
+  .note{display:block;background:var(--note);color:var(--note-ink);border-left:3px solid var(--note-line);padding:6px 9px;font-size:12px;line-height:1.4;margin:8px 0;border-radius:2px}
+  .note::before{content:"✎ " attr(data-n) " · ";font-weight:700}
+  body.no-notes .note{display:none}
+
+  /* ---------- Primitivas de wireframe ---------- */
+  .wrap{padding:0 28px}
+  @container site (max-width:700px){ .wrap{padding:0 16px} }
+  .ph{background:var(--fill);border:1px solid var(--line);position:relative;overflow:hidden}
+  .ph.x{background:
+      linear-gradient(to top right,transparent calc(50% - .5px),var(--line) 50%,transparent calc(50% + .5px)),
+      linear-gradient(to bottom right,transparent calc(50% - .5px),var(--line) 50%,transparent calc(50% + .5px)),var(--fill)}
+  .btn{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--ink);border-radius:6px;padding:8px 14px;background:var(--paper);font-weight:600;font-size:13.5px;cursor:default;text-decoration:none}
+  .btn.primary{background:var(--ink);color:#fff}
+  .btn.ghost{border-color:var(--line);font-weight:500}
+  .btn.sm{padding:4px 10px;font-size:12.5px}
+  .btn[disabled]{opacity:.45}
+  .chip{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line);border-radius:999px;padding:3px 10px;font-size:12.5px;background:var(--paper);white-space:nowrap}
+  .chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .muted{color:var(--mute)}
+  .small{font-size:12px}
+  .xs{font-size:11px}
+  h2.sec{font-size:18px;margin:0 0 4px}
+  .sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin:34px 0 12px}
+  .grid{display:grid;gap:12px}
+  .card{border:1px solid var(--line);border-radius:8px;padding:14px;background:var(--paper)}
+  .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .between{justify-content:space-between}
+  .hr{height:1px;background:var(--line2);margin:10px 0}
+  .pdot{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--ink);font-size:10px;font-weight:700;flex:none;background:var(--fill2)}
+  .pdot.sm{width:20px;height:20px;font-size:8.5px;border-width:1px}
+
+  /* Etiquetas de estado y fuente */
+  .st{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;padding:2px 8px;border-radius:4px;border:1px solid var(--ink);white-space:nowrap}
+  .st.pub{background:var(--ink);color:#fff}
+  .st.ava{background:repeating-linear-gradient(135deg,#fff 0 4px,#e4e4e4 4px 8px)}
+  .st.pen{border-style:dashed;background:#fff}
+  .src{display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:1px 6px;border-radius:3px;background:var(--fill);border:1px solid var(--line);white-space:nowrap;color:#333}
+  .src b{font-weight:700}
+  .src.prensa{background:#fff;border-style:dashed}
+  .src.prev{background:#fff;border-style:dotted}
+
+  /* ---------- Cabecera del sitio ---------- */
+  .site-h{display:flex;align-items:center;gap:16px;padding:14px 28px;border-bottom:1px solid var(--line)}
+  .logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:15px;letter-spacing:-.01em}
+  .logo .mark{width:30px;height:24px;border:2px solid var(--ink);border-radius:3px;position:relative}
+  .logo .mark::after{content:"";position:absolute;left:9px;right:9px;top:9px;height:3px;background:var(--ink);border-radius:2px}
+  .site-nav{display:flex;gap:18px;margin-left:auto;font-size:13.5px}
+  .site-nav a{text-decoration:none}
+  .site-nav a.cur{font-weight:700;text-decoration:underline;text-underline-offset:5px}
+  .site-search{width:34px;height:34px;border:1px solid var(--line);border-radius:6px;display:grid;place-items:center}
+  .burger{display:none;margin-left:auto;width:34px;height:34px;border:1px solid var(--line);border-radius:6px;place-items:center}
+  .bottom-bar{display:none}
+  @container site (max-width:700px){
+    .site-h{padding:12px 16px}
+    .site-nav,.site-search{display:none}
+    .burger{display:grid}
+    .bottom-bar{display:grid;grid-template-columns:repeat(4,1fr);position:sticky;bottom:0;border-top:1px solid var(--line);background:#fff;font-size:11px;text-align:center}
+    .bottom-bar div{padding:8px 0 10px}
+    .bottom-bar i{display:block;width:20px;height:20px;margin:0 auto 3px;border:1.5px solid var(--ink);border-radius:5px}
+    .bottom-bar .cur{font-weight:700}
+  }
+
+  /* Aviso global */
+  .gbanner{display:flex;gap:10px;align-items:flex-start;padding:10px 28px;background:repeating-linear-gradient(135deg,#f7f7f7 0 8px,#efefef 8px 16px);border-bottom:1px solid var(--line);font-size:13px}
+  .gbanner .ico{flex:none;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--ink);display:grid;place-items:center;font-weight:700;font-size:12px}
+  @container site (max-width:700px){ .gbanner{padding:10px 16px;font-size:12.5px} }
+
+  .crumbs{font-size:12px;color:var(--mute);padding-top:18px}
+
+  /* ---------- Inicio ---------- */
+  .hero{display:grid;grid-template-columns:1.6fr 1fr;gap:28px;padding:34px 0 8px;align-items:center}
+  .hero h2{font-size:38px;line-height:1.05;margin:0 0 12px;letter-spacing:-.02em}
+  .hero p{font-size:16px;margin:0 0 18px;max-width:52ch}
+  .countdown{border:1.5px solid var(--ink);border-radius:10px;padding:16px}
+  .countdown .big{font-size:44px;font-weight:800;line-height:1}
+  .status-grid{grid-template-columns:repeat(5,1fr)}
+  .scard{display:flex;flex-direction:column;gap:8px}
+  .scard .name{font-weight:700;font-size:15px}
+  .topics{grid-template-columns:repeat(6,1fr)}
+  .topic{border:1px solid var(--line);border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:6px}
+  .topic .ico{width:26px;height:26px}
+  .quick{display:grid;grid-template-columns:1fr 2fr auto;gap:10px;align-items:end;border:1px solid var(--line);border-radius:10px;padding:16px;background:var(--fill2)}
+  .field label{display:block;font-size:11.5px;color:var(--mute);margin-bottom:4px;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+  .select{border:1px solid var(--ink);border-radius:6px;padding:7px 10px;background:#fff;display:flex;justify-content:space-between;gap:10px;font-size:13.5px}
+  .changes li{padding:8px 0;border-bottom:1px solid var(--line2);list-style:none;display:flex;gap:10px}
+  .changes{padding:0;margin:0}
+  .changes time{color:var(--mute);font-size:12px;flex:none;width:52px}
+  .foot{margin-top:40px;border-top:1px solid var(--line);padding:22px 28px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;background:var(--fill2)}
+  @container site (max-width:1000px){
+    .status-grid{grid-template-columns:repeat(3,1fr)}
+    .topics{grid-template-columns:repeat(4,1fr)}
+  }
+  @container site (max-width:700px){
+    .hero{grid-template-columns:1fr;padding-top:22px}
+    .hero h2{font-size:28px}
+    .status-grid{grid-template-columns:1fr}
+    .topics{grid-template-columns:repeat(2,1fr)}
+    .quick{grid-template-columns:1fr}
+    .foot{padding:18px 16px}
+  }
+
+  /* ---------- Ficha de partido ---------- */
+  .phead{display:flex;gap:18px;align-items:flex-start;padding:16px 0 18px}
+  .phead .plogo{width:72px;height:72px;border-radius:12px;flex:none}
+  .phead h2{margin:0 0 4px;font-size:28px;letter-spacing:-.01em}
+  .statusbox{border:2px dashed var(--ink);border-radius:10px;padding:16px 18px;display:grid;grid-template-columns:auto 1fr;gap:14px;background:#fff}
+  .statusbox .big-ico{width:40px;height:40px;border-radius:50%;border:2px dashed var(--ink)}
+  .tabs{display:flex;gap:2px;border-bottom:1px solid var(--line);margin:22px 0 0;overflow-x:auto}
+  .tabs div{padding:10px 14px;font-size:13.5px;white-space:nowrap;border-bottom:3px solid transparent}
+  .tabs .cur{border-bottom-color:var(--ink);font-weight:700}
+  .tabs .dis{color:var(--soft)}
+  .party-layout{display:grid;grid-template-columns:1fr 280px;gap:28px}
+  .props{grid-template-columns:repeat(2,1fr)}
+  .prop{display:flex;flex-direction:column;gap:8px}
+  .prop .topic-tag{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--mute);font-weight:700}
+  .prop h3{font-size:15px;margin:0;line-height:1.3}
+  .prop .meta{margin-top:auto;padding-top:8px;border-top:1px solid var(--line2);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:11.5px;color:var(--mute)}
+  .collapse{border:1px dotted var(--ink);border-radius:8px;padding:12px 14px;margin-top:18px;display:flex;justify-content:space-between;gap:10px}
+  .side .card{margin-bottom:12px}
+  .side ul{margin:0;padding:0;list-style:none}
+  .side li{padding:7px 0;border-bottom:1px solid var(--line2);font-size:12.5px}
+  @container site (max-width:900px){
+    .party-layout{grid-template-columns:1fr}
+  }
+  @container site (max-width:700px){
+    .phead .plogo{width:52px;height:52px}
+    .phead h2{font-size:22px}
+    .statusbox{grid-template-columns:1fr}
+    .statusbox .big-ico{display:none}
+    .props{grid-template-columns:1fr}
+  }
+
+  /* ---------- Tema ---------- */
+  .filters{display:flex;flex-direction:column;gap:10px;border:1px solid var(--line);border-radius:10px;padding:14px;background:var(--fill2)}
+  .seg{display:inline-flex;border:1px solid var(--ink);border-radius:6px;overflow:hidden}
+  .seg span{padding:5px 12px;font-size:12.5px}
+  .seg .on{background:var(--ink);color:#fff}
+  .pblock{border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+  .pblock ul{margin:8px 0 0;padding:0;list-style:none}
+  .pblock li{padding:9px 0;border-top:1px solid var(--line2);display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+  .pblock li .t{font-weight:600}
+  .gloss{border-bottom:1.5px dotted var(--ink);cursor:help}
+  .tip{display:inline-block;margin-left:8px;border:1px solid var(--ink);background:#fff;border-radius:6px;padding:6px 9px;font-size:11.5px;max-width:280px;vertical-align:top;box-shadow:2px 2px 0 var(--line)}
+  @container site (max-width:700px){
+    .pblock li{flex-direction:column;gap:4px}
+    .tip{display:block;margin:8px 0 0}
+  }
+
+  /* ---------- Comparador ---------- */
+  .cmp-controls{display:grid;grid-template-columns:220px 1fr auto;gap:12px;align-items:end;border:1px solid var(--line);border-radius:10px;padding:14px;background:var(--fill2)}
+  .cmp{margin-top:16px;border:1px solid var(--ink);border-radius:8px;overflow:hidden}
+  .cmp-row{display:grid;grid-template-columns:150px repeat(5,minmax(0,1fr));border-top:1px solid var(--line)}
+  .cmp-row:first-child{border-top:0}
+  .cmp-row > div{padding:10px;border-left:1px solid var(--line2);font-size:12.5px}
+  .cmp-row > div:first-child{border-left:0}
+  .cmp-head{background:var(--fill2);position:sticky;top:0}
+  .cmp-head > div{display:flex;flex-direction:column;gap:5px;font-weight:700}
+  .cmp-sub{font-weight:700;background:var(--fill2)}
+  .cmp-cell p{margin:0 0 6px}
+  .cmp-cell .src{margin-top:2px}
+  .nc{color:var(--soft);font-style:italic}
+  .cmp-cell[data-party]::before{display:none}
+  @container site (max-width:900px){
+    .cmp-controls{grid-template-columns:1fr}
+  }
+  @container site (max-width:700px){
+    .cmp{border:0;border-radius:0;overflow:visible}
+    .cmp-head{display:none !important}
+    .cmp-row{display:block;border:1px solid var(--line);border-radius:10px;margin-bottom:12px;overflow:hidden}
+    .cmp-row > div{border-left:0;border-top:1px solid var(--line2)}
+    .cmp-sub{font-size:14px;border-top:0 !important}
+    .cmp-cell[data-party]::before{display:flex;content:attr(data-party);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;color:var(--mute)}
+  }
+
+  /* ---------- Escala ---------- */
+  .scale-wrap{border:1px solid var(--line);border-radius:10px;padding:18px 20px;position:relative;overflow:hidden}
+  .watermark{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;font-weight:800;font-size:26px;color:rgba(0,0,0,.07);letter-spacing:.1em;transform:rotate(-8deg);text-align:center}
+  .axis-row{display:grid;grid-template-columns:200px 1fr;gap:16px;align-items:center;padding:16px 0;border-top:1px solid var(--line2)}
+  .axis-row:first-of-type{border-top:0}
+  .axis{position:relative;height:44px}
+  .axis .line{position:absolute;left:0;right:0;top:22px;height:2px;background:var(--ink)}
+  .axis .tick{position:absolute;top:16px;width:1px;height:14px;background:var(--ink)}
+  .axis .tick span{position:absolute;top:16px;left:-4px;font-size:10px;color:var(--mute)}
+  .axis .dot{position:absolute;top:8px;transform:translateX(-50%);width:28px;height:28px;border-radius:50%;border:1.5px solid var(--ink);background:#fff;font-size:10px;font-weight:700;display:grid;place-items:center}
+  .axis .ci{position:absolute;top:21px;height:4px;background:#bbb}
+  .axis-ends{display:flex;justify-content:space-between;font-size:12px;font-weight:700;margin:0 0 0 216px}
+  .twod{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center}
+  @container site (max-width:700px){
+    .axis-row{grid-template-columns:1fr;gap:4px}
+    .axis-ends{margin-left:0}
+    .twod{grid-template-columns:1fr}
+  }
+
+  /* ---------- Fuentes ---------- */
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  table.reg{width:100%;border-collapse:collapse;font-size:12.5px}
+  table.reg th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--mute);border-bottom:1.5px solid var(--ink);padding:8px 6px}
+  table.reg td{border-bottom:1px solid var(--line2);padding:9px 6px;vertical-align:top}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px}
+  .scroll-x{overflow-x:auto}
+  @container site (max-width:700px){
+    .twocol{grid-template-columns:1fr}
+    table.reg{min-width:640px}
+  }
+
+  /* ---------- Componentes ---------- */
+  .legend{display:grid;grid-template-columns:200px 1fr;gap:10px 18px;align-items:start}
+  .legend > div:nth-child(odd){padding-top:2px}
+  .anatomy{max-width:420px}
+  @container site (max-width:700px){ .legend{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+
+<div class="wf-bar" role="toolbar">
+  <h1>La gaveta de los programas <span>· wireframes v0.1 · 9 nov 2026</span></h1>
+  <div class="wf-tabs" role="tablist">
+    <button role="tab" data-go="inicio" aria-selected="true">1 · Inicio</button>
+    <button role="tab" data-go="partido">2 · Ficha de partido</button>
+    <button role="tab" data-go="tema">3 · Tema</button>
+    <button role="tab" data-go="comparar">4 · Comparador</button>
+    <button role="tab" data-go="escala">5 · Escala</button>
+    <button role="tab" data-go="fuentes">6 · Fuentes y método</button>
+    <button role="tab" data-go="componentes">7 · Componentes de transparencia</button>
+  </div>
+  <div class="wf-opts">
+    <button id="t-mobile" aria-pressed="false">Móvil (390 px)</button>
+    <button id="t-notes" aria-pressed="true">Notas</button>
+  </div>
+</div>
+
+<div class="wf-stage">
+  <p class="wf-caption"><b>Baja fidelidad:</b> sin colores, tipografía ni identidad visual, que llegarán en la fase de diseño. El contenido sale de la investigación del 9 nov. <b>La pantalla de la escala no contiene datos reales.</b> Las notas amarillas (✎) explican decisiones de diseño.</p>
+
+  <div class="frame" id="frame">
+
+    <!-- Cabecera común -->
+    <header class="site-h">
+      <div class="logo"><span class="mark" aria-hidden="true"></span>La gaveta de los programas</div>
+      <nav class="site-nav">
+        <a href="#" data-nav="partido">Partidos</a><a href="#" data-nav="tema">Temas</a><a href="#" data-nav="comparar">Comparar</a><a href="#" data-nav="escala">Escala</a><a href="#" data-nav="fuentes">Cómo trabajamos</a>
+      </nav>
+      <div class="site-search" aria-label="Buscar">⌕</div>
+      <div class="burger" aria-label="Menú">☰</div>
+    </header>
+    <div class="gbanner">
+      <span class="ico">i</span>
+      <div><b>Información provisional.</b> 4 de los 5 partidos aún no han publicado su programa para el 29N. Lo que ves resume documentos y anuncios oficiales previos, siempre con su fuente. <u>Ver estado de los programas ›</u></div>
+    </div>
+    <div class="wrap"><span class="note" data-n="A">Aviso global fijo en todas las páginas mientras falte algún programa. El número se calcula a partir de los datos y el aviso desaparece cuando estén todos publicados.</span></div>
+
+    <!-- ===================== 1. INICIO ===================== -->
+    <section class="screen active" data-screen="inicio">
+      <div class="wrap">
+        <div class="hero">
+          <div>
+            <h2>Sacamos los programas del cajón.</h2>
+            <p>Qué propone cada partido para las elecciones generales del 29 de noviembre, explicado en claro y con la fuente al lado.</p>
+            <div class="row"><span class="btn primary">Comparar partidos →</span><span class="btn">Explorar por temas</span></div>
+          </div>
+          <div class="countdown">
+            <div class="big">20 días</div>
+            <div class="muted">para las elecciones del 29N</div>
+            <div class="hr"></div>
+            <div class="small"><b>Próximo:</b> el PP presenta su programa · mar 10 nov</div>
+            <div class="small muted">Campaña: 13–27 nov · Reflexión: 28 nov</div>
+          </div>
+        </div>
+
+        <div class="sec-head">
+          <div><h2 class="sec">Estado de los programas</h2><div class="small muted">Actualizado hoy, 10:00 · <u>Cómo lo comprobamos</u></div></div>
+          <span class="small muted">↻ El orden de los partidos es aleatorio</span>
+        </div>
+        <div class="grid status-grid">
+          <div class="card scard">
+            <div class="row"><span class="pdot">PP</span><div><div class="name">PP</div><div class="small muted">Alberto Núñez Feijóo</div></div></div>
+            <span class="st pen">○ Pendiente</span>
+            <div class="small">Presentación anunciada: <b>10 nov</b></div>
+            <div class="small muted">Basado en <u>6 fuentes oficiales</u></div>
+            <span class="btn sm ghost">Ver ficha ›</span>
+          </div>
+          <div class="card scard">
+            <div class="row"><span class="pdot">VOX</span><div><div class="name">VOX</div><div class="small muted">Santiago Abascal</div></div></div>
+            <span class="st ava">◐ Avance oficial</span>
+            <div class="small">«Recuperar España» · 19 oct</div>
+            <div class="small muted">Basado en <u>5 fuentes oficiales</u></div>
+            <span class="btn sm ghost">Ver ficha ›</span>
+          </div>
+          <div class="card scard">
+            <div class="row"><span class="pdot">POD</span><div><div class="name">Podemos</div><div class="small muted">Irene Montero</div></div></div>
+            <span class="st pen">○ Pendiente</span>
+            <div class="small">Sin fecha anunciada</div>
+            <div class="small muted">Basado en <u>3 fuentes oficiales</u></div>
+            <span class="btn sm ghost">Ver ficha ›</span>
+          </div>
+          <div class="card scard">
+            <div class="row"><span class="pdot">PSOE</span><div><div class="name">PSOE</div><div class="small muted">Pedro Sánchez</div></div></div>
+            <span class="st pen">○ Pendiente</span>
+            <div class="small">Previsto ≈ 13–15 nov <span class="src prensa">según prensa</span></div>
+            <div class="small muted">Basado en <u>3 fuentes</u> (1 oficial)</div>
+            <span class="btn sm ghost">Ver ficha ›</span>
+          </div>
+          <div class="card scard">
+            <div class="row"><span class="pdot">FA</span><div><div class="name">Frente Amplio</div><div class="small muted">Ada Colau</div></div></div>
+            <span class="st pen">○ Pendiente</span>
+            <div class="small">Presenta propuestas por bloques</div>
+            <div class="small muted">Basado en <u>7 fuentes oficiales</u></div>
+            <span class="btn sm ghost">Ver ficha ›</span>
+          </div>
+        </div>
+        <span class="note" data-n="1">Esta es la pieza principal hasta el 29N. Cada tarjeta muestra el estado (con icono y texto, no solo color), qué se espera y en cuántas fuentes se basa. El número de fuentes enlaza al registro filtrado por ese partido.</span>
+        <span class="note" data-n="2">El orden es aleatorio en cada visita y se indica arriba. Las fechas que vienen de prensa se marcan como tales.</span>
+
+        <div class="sec-head"><h2 class="sec">Explora por tema</h2><span class="small"><u>Todos los temas ›</u></span></div>
+        <div class="grid topics">
+          <div class="topic"><span class="ph ico"></span><b>Vivienda</b><span class="xs muted">31 propuestas</span></div>
+          <div class="topic"><span class="ph ico"></span><b>Fiscalidad y economía</b><span class="xs muted">24 propuestas</span></div>
+          <div class="topic"><span class="ph ico"></span><b>Pensiones</b><span class="xs muted">9 propuestas</span></div>
+          <div class="topic"><span class="ph ico"></span><b>Empleo y salarios</b><span class="xs muted">11 propuestas</span></div>
+          <div class="topic"><span class="ph ico"></span><b>Inmigración</b><span class="xs muted">12 propuestas</span></div>
+          <div class="topic"><span class="ph ico"></span><b>Sanidad</b><span class="xs muted">7 propuestas</span></div>
+          <div class="topic"><span class="ph ico"></span><b>Educación</b><span class="xs muted">5 propuestas</span></div>
+          <div class="topic"><span class="ph ico"></span><b>Energía y medio ambiente</b><span class="xs muted">10 propuestas</span></div>
+          <div class="topic"><span class="ph ico"></span><b>Instituciones</b><span class="xs muted">8 propuestas</span></div>
+          <div class="topic"><span class="ph ico"></span><b>Exterior y defensa</b><span class="xs muted">5 propuestas</span></div>
+          <div class="topic"><span class="ph ico"></span><b>Igualdad</b><span class="xs muted">6 propuestas</span></div>
+          <div class="topic"><span class="ph ico"></span><b>Modelo territorial</b><span class="xs muted">4 propuestas</span></div>
+        </div>
+        <span class="note" data-n="3">Los recuentos de propuestas son de ejemplo. Un tema con pocas propuestas también da información: deja ver dónde aún no hay contenido.</span>
+
+        <div class="sec-head"><h2 class="sec">Compara en un clic</h2></div>
+        <div class="quick">
+          <div class="field"><label>Tema</label><div class="select">Vivienda <span>▾</span></div></div>
+          <div class="field"><label>Partidos</label><div class="row"><span class="chip on">PP</span><span class="chip on">PSOE</span><span class="chip on">VOX</span><span class="chip on">Frente Amplio</span><span class="chip on">Podemos</span></div></div>
+          <span class="btn primary">Comparar →</span>
+        </div>
+
+        <div class="sec-head"><h2 class="sec">Últimos cambios</h2><span class="small"><u>Todo el historial</u> · <u>RSS</u></span></div>
+        <ul class="changes">
+          <li><time>9 nov</time><span><b>VOX</b> · Añadido «Recuperar España» (19 oct) como avance oficial del programa.</span></li>
+          <li><time>9 nov</time><span><b>Frente Amplio</b> · 6 notas oficiales incorporadas: fiscalidad, vivienda, pensiones y tren.</span></li>
+          <li><time>9 nov</time><span><b>PP</b> · Presentación del programa anunciada para el 10 nov (fuente: prensa).</span></li>
+        </ul>
+      </div>
+      <footer class="foot">
+        <div><b>La gaveta de los programas</b><br><span class="muted">Proyecto independiente, sin vinculación con ningún partido.</span></div>
+        <div class="row" style="gap:16px"><u>Cómo trabajamos</u><u>Fuentes</u><u>¿Has visto un error?</u><u>Datos abiertos</u><u>RSS</u></div>
+      </footer>
+      <div class="bottom-bar"><div class="cur"><i></i>Inicio</div><div><i></i>Temas</div><div><i></i>Comparar</div><div><i></i>Buscar</div></div>
+    </section>
+
+    <!-- ===================== 2. FICHA DE PARTIDO ===================== -->
+    <section class="screen" data-screen="partido">
+      <div class="wrap">
+        <div class="crumbs">Inicio › Partidos › PP</div>
+        <div class="phead">
+          <div class="ph x plogo" aria-label="Logo o siglas"></div>
+          <div>
+            <h2>Partido Popular (PP)</h2>
+            <div class="small">Candidato: <b>Alberto Núñez Feijóo</b> · Lema: «El cambio necesario»</div>
+            <div class="small muted">En Navarra se presenta como <u>UPN en coalición con el PP</u> · <u>Candidaturas por territorio ›</u></div>
+          </div>
+        </div>
+
+        <div class="statusbox">
+          <span class="big-ico" aria-hidden="true"></span>
+          <div>
+            <div class="row" style="margin-bottom:6px"><span class="st pen">○ Programa pendiente</span><span class="xs muted">Actualizado 9 nov, 10:00</span></div>
+            <div>El PP todavía no ha publicado su programa para el 29N (presentación anunciada para el <b>martes 10 de noviembre</b>). Esta ficha resume <b>6 fuentes oficiales</b> publicadas entre julio de 2025 y octubre de 2026. Cuando se publique el programa, sustituiremos esta información y lo anotaremos en el historial.</div>
+            <div class="row" style="margin-top:10px"><span class="btn sm">Ver las 6 fuentes</span><span class="btn sm ghost">🔔 Avísame cuando se publique</span></div>
+          </div>
+        </div>
+        <span class="note" data-n="4">El recuadro de estado va siempre por encima de las pestañas, así que no se puede leer ninguna propuesta sin haberlo visto. Cuando el estado sea «publicado», se reduce a una línea: «Programa publicado el 10 nov · 112 págs. · Descargar PDF».</span>
+
+        <div class="tabs">
+          <div class="cur">Resumen</div><div>Por temas</div><div class="dis">Programa completo · aún no publicado</div><div>Fuentes (6)</div><div>Historial</div>
+        </div>
+
+        <div class="party-layout">
+          <div>
+            <div class="sec-head" style="margin-top:20px"><div><h2 class="sec">Propuestas destacadas</h2><div class="small muted">8 propuestas · <u>Cómo las elegimos ⓘ</u></div></div></div>
+            <div class="grid props">
+              <article class="card prop"><span class="topic-tag">Vivienda</span><h3>Construir un millón de viviendas en la legislatura</h3><span class="src"><b>Documento oficial</b> · «Mi Contrato con España», 19 oct 2026</span><div class="meta"><span>Ver en la fuente ↗</span><span>Compartir · ⚑ Error</span></div></article>
+              <article class="card prop"><span class="topic-tag">Vivienda</span><h3>Desalojar viviendas okupadas en un plazo de 48 horas</h3><span class="src"><b>Anuncio oficial</b> · pp.es, 21 oct 2026</span><div class="meta"><span>Ver en la fuente ↗</span><span>Compartir · ⚑ Error</span></div></article>
+              <article class="card prop"><span class="topic-tag">Vivienda</span><h3>Avales de hasta el 100 % y rebaja del 60 % de IVA e ITP para menores de 40 años</h3><span class="src"><b>Anuncio oficial</b> · pp.es, 21 oct 2026</span><div class="meta"><span>Ver en la fuente ↗</span><span>Compartir · ⚑ Error</span></div></article>
+              <article class="card prop"><span class="topic-tag">Pensiones</span><h3>Revalorizar las pensiones con el IPC, dentro del Pacto de Toledo</h3><span class="src"><b>Documento oficial</b> · «Mi Contrato con España», 19 oct 2026</span><div class="meta"><span>Ver en la fuente ↗</span><span>Compartir · ⚑ Error</span></div></article>
+              <article class="card prop"><span class="topic-tag">Fiscalidad</span><h3>IVA del 0 % en alimentos básicos y del 10 % en la energía</h3><span class="src"><b>Anuncio oficial</b> · Decálogo económico, 27 sep 2026</span><div class="meta"><span>Ver en la fuente ↗</span><span>Compartir · ⚑ Error</span></div></article>
+              <article class="card prop"><span class="topic-tag">Inmigración</span><h3>Prohibir por ley las regularizaciones colectivas</h3><span class="src"><b>Documento oficial</b> · «Mi Contrato con España», 19 oct 2026</span><div class="meta"><span>Ver en la fuente ↗</span><span>Compartir · ⚑ Error</span></div></article>
+              <article class="card prop"><span class="topic-tag">Instituciones</span><h3>Que los jueces elijan a los jueces</h3><span class="src"><b>Documento oficial</b> · «Mi Contrato con España», 19 oct 2026</span><div class="meta"><span>Ver en la fuente ↗</span><span>Compartir · ⚑ Error</span></div></article>
+              <article class="card prop"><span class="topic-tag">Energía</span><h3>Alargar la vida de las centrales nucleares</h3><span class="src"><b>Anuncio oficial</b> · Decálogo económico, 27 sep 2026</span><div class="meta"><span>Ver en la fuente ↗</span><span>Compartir · ⚑ Error</span></div></article>
+            </div>
+            <span class="note" data-n="5">Todos los partidos tienen el mismo número de destacadas y la misma plantilla. Cada tarjeta muestra el tipo de fuente, el documento y la fecha, y se puede abrir como página propia con URL e imagen para compartir.</span>
+
+            <div class="collapse"><span><b>Referencia: lo que proponía en 2023</b> <span class="muted small">· Programa de 365 medidas. No es el programa del 29N.</span></span><span>▸</span></div>
+            <span class="note" data-n="6">El programa de 2023 va siempre aparte y plegado, sin mezclarse con las propuestas actuales.</span>
+          </div>
+
+          <aside class="side" style="padding-top:20px">
+            <div class="card">
+              <b>Fuentes de esta ficha</b>
+              <ul>
+                <li><span class="src"><b>Doc. oficial</b></span> Mi Contrato con España · 19 oct 2026</li>
+                <li><span class="src"><b>Anuncio</b></span> Plan de vivienda (Sevilla) · 21 oct 2026</li>
+                <li><span class="src"><b>Anuncio</b></span> Decálogo económico · 27 sep 2026</li>
+                <li><span class="src"><b>Doc. oficial</b></span> Ponencia política XXI Congreso · jul 2025</li>
+                <li><span class="src"><b>Doc. oficial</b></span> Plan de autónomos · nov 2025</li>
+                <li><span class="src prev"><b>2023</b></span> Programa 23J · jul 2023</li>
+              </ul>
+              <div class="small" style="margin-top:8px"><u>Registro completo ›</u></div>
+            </div>
+            <div class="card">
+              <b>Historial</b>
+              <ul>
+                <li><span class="muted">9 nov</span> · Ficha creada con 6 fuentes</li>
+              </ul>
+            </div>
+            <div class="card">
+              <b>Web oficial</b><div class="small muted">pp.es ↗</div>
+            </div>
+          </aside>
+        </div>
+      </div>
+      <div class="bottom-bar"><div><i></i>Inicio</div><div><i></i>Temas</div><div><i></i>Comparar</div><div><i></i>Buscar</div></div>
+    </section>
+
+    <!-- ===================== 3. TEMA ===================== -->
+    <section class="screen" data-screen="tema">
+      <div class="wrap">
+        <div class="crumbs">Inicio › Temas › Vivienda</div>
+        <div style="padding:14px 0 6px">
+          <h2 style="font-size:28px;margin:0 0 6px">Vivienda</h2>
+          <p style="margin:0;max-width:70ch">Acceso a la compra, alquiler, vivienda pública, <span class="gloss">grandes tenedores</span><span class="tip"><b>Gran tenedor:</b> persona o empresa propietaria de muchas viviendas. La ley estatal de 2023 fija el umbral general en más de 10 viviendas. <u>Glosario ›</u></span> y okupación. El rechazo de los decretos de vivienda en el Congreso dio lugar al adelanto electoral.</p>
+        </div>
+        <span class="note" data-n="7">Los términos técnicos llevan definición emergente, enlazada al glosario. La introducción del tema solo describe, no opina.</span>
+
+        <div class="filters" style="margin-top:14px">
+          <div class="row"><span class="small muted" style="width:80px">Subtema</span><span class="chip on">Todos</span><span class="chip">Acceso y compra</span><span class="chip">Alquiler</span><span class="chip">Vivienda pública</span><span class="chip">Grandes tenedores</span><span class="chip">Okupación y desahucios</span></div>
+          <div class="row"><span class="small muted" style="width:80px">Fuente</span><span class="chip on">✓ Oficiales</span><span class="chip">☐ Prensa</span><span class="chip">☐ Programa 2023</span></div>
+          <div class="row between"><div class="row"><span class="small muted" style="width:80px">Ver</span><span class="seg"><span class="on">Por partido</span><span>Por subtema</span></span></div><span class="btn sm primary">Comparar este tema →</span></div>
+        </div>
+        <span class="note" data-n="8">Por defecto solo se muestran fuentes oficiales; la prensa y el programa de 2023 se activan a mano. Es el mismo contenido que el comparador, pero en formato de lista para leer con calma.</span>
+        <div class="small muted" style="margin:14px 0 8px">↻ Orden aleatorio · 4 partidos con información provisional</div>
+
+        <div class="grid">
+          <div class="pblock">
+            <div class="row between"><div class="row"><span class="pdot sm">FA</span><b>Frente Amplio</b></div><span class="st pen">○ Pendiente</span></div>
+            <ul>
+              <li><span class="t">Impuesto anual del 10 % sobre la acumulación de viviendas</span><span class="src"><b>Anuncio oficial</b> · 28 oct</span></li>
+              <li><span class="t">Ley para expropiar viviendas a propietarios corporativos, en tres fases</span><span class="src"><b>Anuncio oficial</b> · 6 nov</span></li>
+              <li><span class="t">Invertir hasta el 1 % del PIB en vivienda pública asequible</span><span class="src"><b>Anuncio oficial</b> · 28 oct</span></li>
+            </ul>
+          </div>
+          <div class="pblock">
+            <div class="row between"><div class="row"><span class="pdot sm">VOX</span><b>VOX</b></div><span class="st ava">◐ Avance oficial</span></div>
+            <ul>
+              <li><span class="t">Acceso preferente de los españoles a la vivienda pública («prioridad nacional»)</span><span class="src"><b>Avance oficial</b> · 19 oct</span></li>
+              <li><span class="t">«Impuestos cero» a la primera vivienda y liberación de suelo</span><span class="src"><b>Avance oficial</b> · 19 oct</span></li>
+              <li><span class="t">Derogar la Ley 12/2023 por el derecho a la vivienda</span><span class="src"><b>Doc. oficial</b> · jun 2026</span></li>
+            </ul>
+          </div>
+          <div class="pblock">
+            <div class="row between"><div class="row"><span class="pdot sm">PSOE</span><b>PSOE</b></div><span class="st pen">○ Pendiente</span></div>
+            <ul>
+              <li><span class="t">Suspender los desahucios de personas vulnerables hasta 2030</span><span class="src prensa"><b>Prensa</b> · elDiario.es, 29 sep</span></li>
+              <li><span class="t">Préstamo al 0 % para la compra de la primera vivienda</span><span class="src prensa"><b>Prensa</b> · elDiario.es, 29 sep</span></li>
+              <li><span class="t">Parque público de vivienda de al menos el 6 %</span><span class="src"><b>Doc. oficial</b> · 41º Congreso, 2024</span></li>
+            </ul>
+          </div>
+          <div class="pblock">
+            <div class="row between"><div class="row"><span class="pdot sm">PP</span><b>PP</b></div><span class="st pen">○ Pendiente</span></div>
+            <ul>
+              <li><span class="t">Construir un millón de viviendas en la legislatura</span><span class="src"><b>Doc. oficial</b> · 19 oct</span></li>
+              <li><span class="t">Desalojar viviendas okupadas en 48 horas</span><span class="src"><b>Anuncio oficial</b> · 21 oct</span></li>
+              <li><span class="t">Avales de hasta el 100 % para menores de 40 años</span><span class="src"><b>Anuncio oficial</b> · 21 oct</span></li>
+            </ul>
+          </div>
+          <div class="pblock">
+            <div class="row between"><div class="row"><span class="pdot sm">POD</span><b>Podemos</b></div><span class="st pen">○ Pendiente</span></div>
+            <ul>
+              <li><span class="t">Prohibir la compra de vivienda que no sea para vivir en ella</span><span class="src"><b>Anuncio oficial</b> · web de campaña</span></li>
+              <li><span class="t">Bajar los alquileres un 40 % por ley</span><span class="src"><b>Doc. oficial</b> · Documento Político 2025</span></li>
+              <li><span class="t">Pasar las viviendas de los fondos a alquiler social</span><span class="src"><b>Anuncio oficial</b> · web de campaña</span></li>
+            </ul>
+          </div>
+        </div>
+        <span class="note" data-n="9">En el caso del PSOE, mientras no haya programa, algunas medidas solo constan en prensa. Se muestran con etiqueta discontinua «Prensa», y en el wireframe aparecen activadas para enseñar el caso.</span>
+      </div>
+      <div class="bottom-bar"><div><i></i>Inicio</div><div class="cur"><i></i>Temas</div><div><i></i>Comparar</div><div><i></i>Buscar</div></div>
+    </section>
+
+    <!-- ===================== 4. COMPARADOR ===================== -->
+    <section class="screen" data-screen="comparar">
+      <div class="wrap">
+        <div class="crumbs">Inicio › Comparar</div>
+        <h2 style="font-size:28px;margin:12px 0 12px">Comparador</h2>
+        <div class="cmp-controls">
+          <div class="field"><label>Tema</label><div class="select">Vivienda <span>▾</span></div></div>
+          <div class="field"><label>Partidos (hasta 5)</label><div class="row"><span class="chip on">PP ✕</span><span class="chip on">PSOE ✕</span><span class="chip on">VOX ✕</span><span class="chip on">Frente Amplio ✕</span><span class="chip on">Podemos ✕</span><span class="chip">+ Añadir</span></div></div>
+          <div class="row"><span class="btn sm ghost">⎘ Copiar enlace</span><span class="btn sm ghost">Compartir imagen</span></div>
+        </div>
+        <span class="note" data-n="10">La selección se guarda en la URL (<code>/comparar?tema=vivienda&amp;partidos=pp,psoe,…</code>), así que se puede compartir. La imagen para redes incluye siempre fuentes y fecha.</span>
+
+        <div class="cmp" role="table">
+          <div class="cmp-row cmp-head" role="row">
+            <div class="small muted" style="font-weight:600">Subtema</div>
+            <div><span class="row"><span class="pdot sm">PP</span>PP</span><span class="st pen xs">○ Pendiente</span></div>
+            <div><span class="row"><span class="pdot sm">PSOE</span>PSOE</span><span class="st pen xs">○ Pendiente</span></div>
+            <div><span class="row"><span class="pdot sm">VOX</span>VOX</span><span class="st ava xs">◐ Avance</span></div>
+            <div><span class="row"><span class="pdot sm">FA</span>Frente Amplio</span><span class="st pen xs">○ Pendiente</span></div>
+            <div><span class="row"><span class="pdot sm">POD</span>Podemos</span><span class="st pen xs">○ Pendiente</span></div>
+          </div>
+
+          <div class="cmp-row" role="row">
+            <div class="cmp-sub">Acceso y compra</div>
+            <div class="cmp-cell" data-party="PP"><p>Avales de hasta el 100 % y rebaja del 60 % de IVA e ITP a menores de 40; Hucha Hogar Joven</p><span class="src">Anuncio · 21 oct</span></div>
+            <div class="cmp-cell" data-party="PSOE"><p>Préstamo al 0 % para la primera vivienda</p><span class="src prensa">Prensa · 29 sep</span></div>
+            <div class="cmp-cell" data-party="VOX"><p>«Impuestos cero» a la primera vivienda; liberar suelo</p><span class="src">Avance · 19 oct</span></div>
+            <div class="cmp-cell" data-party="Frente Amplio"><p class="nc">No consta en las fuentes consultadas</p></div>
+            <div class="cmp-cell" data-party="Podemos"><p>Solo se podrá comprar vivienda para vivir en ella</p><span class="src">Anuncio · web campaña</span></div>
+          </div>
+
+          <div class="cmp-row" role="row">
+            <div class="cmp-sub">Alquiler</div>
+            <div class="cmp-cell" data-party="PP"><p>Deducciones a quien prorrogue contratos hasta 3 años con subidas por debajo del IPC</p><span class="src">Anuncio · 21 oct</span></div>
+            <div class="cmp-cell" data-party="PSOE"><p>Alquileres indefinidos y prórroga de contratos; regular el alquiler de temporada y por habitaciones</p><span class="src prensa">Prensa · 29 sep</span></div>
+            <div class="cmp-cell" data-party="VOX"><p>Derogar la Ley 12/2023 de vivienda</p><span class="src">Doc. oficial · jun 2026</span></div>
+            <div class="cmp-cell" data-party="Frente Amplio"><p class="nc">No consta en las fuentes consultadas</p></div>
+            <div class="cmp-cell" data-party="Podemos"><p>Bajar los alquileres un 40 % por ley</p><span class="src">Doc. oficial · 2025</span></div>
+          </div>
+
+          <div class="cmp-row" role="row">
+            <div class="cmp-sub">Vivienda pública</div>
+            <div class="cmp-cell" data-party="PP"><p>Un millón de viviendas en la legislatura</p><span class="src">Doc. oficial · 19 oct</span></div>
+            <div class="cmp-cell" data-party="PSOE"><p>Parque público de al menos el 6 %</p><span class="src">Doc. oficial · 2024</span></div>
+            <div class="cmp-cell" data-party="VOX"><p>Acceso preferente de españoles («prioridad nacional»)</p><span class="src">Avance · 19 oct</span></div>
+            <div class="cmp-cell" data-party="Frente Amplio"><p>Hasta el 1 % del PIB; pisos de la SAREB al parque público</p><span class="src">Anuncio · 28 oct / 6 nov</span></div>
+            <div class="cmp-cell" data-party="Podemos"><p>Compra pública masiva de vivienda</p><span class="src">Doc. oficial · 2025</span></div>
+          </div>
+
+          <div class="cmp-row" role="row">
+            <div class="cmp-sub">Grandes tenedores y fondos</div>
+            <div class="cmp-cell" data-party="PP"><p class="nc">No consta en las fuentes consultadas</p></div>
+            <div class="cmp-cell" data-party="PSOE"><p>Prohibir que los fondos compren vivienda hasta 2028</p><span class="src prensa">Prensa · 29 sep</span></div>
+            <div class="cmp-cell" data-party="VOX"><p class="nc">No consta en las fuentes consultadas</p></div>
+            <div class="cmp-cell" data-party="Frente Amplio"><p>Expropiación a tenedores corporativos (+1.000, +700, +50 viviendas); impuesto del 10 % anual</p><span class="src">Anuncio · 6 nov</span></div>
+            <div class="cmp-cell" data-party="Podemos"><p>Viviendas de los fondos a alquiler social</p><span class="src">Anuncio · web campaña</span></div>
+          </div>
+
+          <div class="cmp-row" role="row">
+            <div class="cmp-sub">Okupación y desahucios</div>
+            <div class="cmp-cell" data-party="PP"><p>Desalojo de okupas en 48 horas</p><span class="src">Anuncio · 21 oct</span></div>
+            <div class="cmp-cell" data-party="PSOE"><p>Suspender los desahucios de personas vulnerables hasta 2030</p><span class="src prensa">Prensa · 29 sep</span></div>
+            <div class="cmp-cell" data-party="VOX"><p>«Fin de la okupación»</p><span class="src">Avance · 19 oct</span></div>
+            <div class="cmp-cell" data-party="Frente Amplio"><p class="nc">No consta en las fuentes consultadas</p></div>
+            <div class="cmp-cell" data-party="Podemos"><p>Disolver Desokupa</p><span class="src">Doc. oficial · 2025</span></div>
+          </div>
+        </div>
+        <p class="small muted" style="margin-top:10px">«No consta» significa que no hemos encontrado propuestas en las fuentes consultadas, no que el partido no tenga postura. Cada celda enlaza a su fuente. Actualizado 9 nov, 10:00.</p>
+        <span class="note" data-n="11">En escritorio, la tabla tiene una columna por partido. En móvil (activa «Móvil») se convierte en una tarjeta por subtema con los partidos apilados, sin desplazamiento horizontal. La cabecera de columnas queda fija al hacer scroll.</span>
+        <span class="note" data-n="12">«No consta» va en gris e itálica, nunca en blanco ni con un «✕», para no sugerir que el partido rechaza la medida.</span>
+      </div>
+      <div class="bottom-bar"><div><i></i>Inicio</div><div><i></i>Temas</div><div class="cur"><i></i>Comparar</div><div><i></i>Buscar</div></div>
+    </section>
+
+    <!-- ===================== 5. ESCALA ===================== -->
+    <section class="screen" data-screen="escala">
+      <div class="wrap">
+        <div class="crumbs">Inicio › Escala izquierda–derecha</div>
+        <h2 style="font-size:28px;margin:12px 0 6px">¿Dónde se sitúa cada partido?</h2>
+        <p style="margin:0 0 14px;max-width:72ch">No ubicamos a los partidos nosotros. Mostramos <b>mediciones externas publicadas</b>, cada una con su método, para que puedas compararlas.</p>
+        <span class="note" data-n="13">Este wireframe usa partidos «A–E» y posiciones inventadas a propósito. Los datos reales del CIS y de CHES se verificarán antes de publicar.</span>
+
+        <div class="row" style="margin-bottom:12px"><span class="seg"><span class="on">Todas las fuentes</span><span>Percepción ciudadana · CIS</span><span>Expertos · CHES</span></span></div>
+
+        <div class="scale-wrap">
+          <div class="watermark">ILUSTRATIVO<br>SIN DATOS REALES</div>
+          <div class="axis-ends"><span>← Izquierda</span><span>Derecha →</span></div>
+          <div class="axis-row">
+            <div><b>Percepción ciudadana</b><div class="xs muted">CIS · estudio nº XXXX · oct 2026 · n = X.XXX</div></div>
+            <div class="axis">
+              <div class="line"></div>
+              <div class="tick" style="left:0"><span>1</span></div><div class="tick" style="left:50%"><span>5,5</span></div><div class="tick" style="left:100%"><span>10</span></div>
+              <div class="ci" style="left:10%;width:8%"></div><div class="dot" style="left:14%">A</div>
+              <div class="ci" style="left:20%;width:8%"></div><div class="dot" style="left:24%">B</div>
+              <div class="ci" style="left:30%;width:8%"></div><div class="dot" style="left:34%">C</div>
+              <div class="ci" style="left:64%;width:8%"></div><div class="dot" style="left:68%">D</div>
+              <div class="ci" style="left:84%;width:8%"></div><div class="dot" style="left:88%">E</div>
+            </div>
+          </div>
+          <div class="axis-row">
+            <div><b>Expertos en ciencia política</b><div class="xs muted">Chapel Hill Expert Survey · 2024</div></div>
+            <div class="axis">
+              <div class="line"></div>
+              <div class="tick" style="left:0"><span>0</span></div><div class="tick" style="left:50%"><span>5</span></div><div class="tick" style="left:100%"><span>10</span></div>
+              <div class="dot" style="left:10%">A</div>
+              <div class="dot" style="left:20%">B</div>
+              <div class="dot" style="left:38%;border-style:dashed">C*</div>
+              <div class="dot" style="left:71%">D</div>
+              <div class="dot" style="left:92%">E</div>
+            </div>
+          </div>
+          <p class="xs muted" style="margin:6px 0 0">* Partido sin dato propio en esta fuente: se muestra el de su formación predecesora, con borde discontinuo y nota. (Caso del Frente Amplio, por decidir.)</p>
+        </div>
+        <span class="note" data-n="14">Hay una fila por fuente para que se vea si coinciden o no. Cuando la fuente lo publica, se muestra el margen de error (barra gris). Al pulsar un punto se ve el valor exacto, la pregunta literal y el enlace al estudio.</span>
+
+        <div class="twocol" style="margin-top:18px">
+          <div class="card">
+            <b>Cómo se mide</b>
+            <ul class="small" style="padding-left:18px;margin:8px 0 0">
+              <li><b>CIS:</b> pregunta literal «…», escala de 1 a 10, fecha, muestra y enlace al estudio.</li>
+              <li><b>CHES:</b> valoración de politólogos sobre la posición general de cada partido, de 0 a 10.</li>
+              <li>Son medidas distintas: percepción frente a análisis experto. No se promedian.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <b>Más allá de un eje</b> <span class="xs muted">· fase 2</span>
+            <div class="twod" style="margin-top:8px">
+              <div class="ph x" style="aspect-ratio:1/1"></div>
+              <div class="small muted">Mapa de dos ejes: economía (izquierda–derecha) y valores (progresista–conservador), con datos de CHES.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-bar"><div><i></i>Inicio</div><div><i></i>Temas</div><div><i></i>Comparar</div><div><i></i>Buscar</div></div>
+    </section>
+
+    <!-- ===================== 6. FUENTES Y MÉTODO ===================== -->
+    <section class="screen" data-screen="fuentes">
+      <div class="wrap">
+        <div class="crumbs">Inicio › Cómo trabajamos</div>
+        <h2 style="font-size:28px;margin:12px 0 14px">Cómo trabajamos</h2>
+        <div class="twocol">
+          <div class="card"><b>Qué hacemos</b>
+            <ul class="small" style="padding-left:18px;margin:8px 0 0">
+              <li>Resumimos lo que proponen los partidos en sus documentos, con la fuente al lado.</li>
+              <li>Indicamos siempre si la información es provisional y de qué tipo de fuente sale.</li>
+              <li>Guardamos una copia de cada documento y anotamos los cambios.</li>
+            </ul>
+          </div>
+          <div class="card"><b>Qué no hacemos</b>
+            <ul class="small" style="padding-left:18px;margin:8px 0 0">
+              <li>No opinamos ni valoramos las propuestas.</li>
+              <li>No situamos nosotros a los partidos en la escala ideológica.</li>
+              <li>No ordenamos a los partidos por votos ni por encuestas.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row" style="margin:14px 0 0;gap:6px"><span class="chip">Criterios para las destacadas</span><span class="chip">Tipos de fuente</span><span class="chip">Uso de IA</span><span class="chip">Correcciones</span><span class="chip">Quién hay detrás</span></div>
+        <span class="note" data-n="15">El apartado «Uso de IA» explica en qué se ha usado (extraer y resumir) y que toda propuesta la revisa una persona antes de publicarse. «Quién hay detrás» falta por decidir (R7).</span>
+
+        <div class="sec-head"><div><h2 class="sec">Registro de fuentes</h2><div class="small muted">24 fuentes · <u>Descargar CSV</u></div></div>
+          <div class="row"><span class="select small">Partido: todos ▾</span><span class="select small">Tipo: todos ▾</span></div></div>
+        <div class="scroll-x">
+          <table class="reg">
+            <thead><tr><th>Partido</th><th>Documento</th><th>Tipo</th><th>Publicado</th><th>Consultado</th><th>Copia</th><th>Huella</th></tr></thead>
+            <tbody>
+              <tr><td>VOX</td><td>Recuperar España <span class="muted">· 6 págs.</span></td><td><span class="src"><b>Avance oficial</b></span></td><td>19 oct 2026</td><td>9 nov 2026</td><td><u>archivo ↗</u></td><td class="mono">sha256: 3fa9…c21e</td></tr>
+              <tr><td>PP</td><td>Mi Contrato con España <span class="muted">· 4 págs.</span><div class="xs muted">PDF alojado en eldebate.com; no está en pp.es</div></td><td><span class="src"><b>Doc. oficial</b></span></td><td>19 oct 2026</td><td>9 nov 2026</td><td><u>archivo ↗</u></td><td class="mono">sha256: 81bd…07aa</td></tr>
+              <tr><td>Frente Amplio</td><td>Nota: impuesto a la acumulación de vivienda</td><td><span class="src"><b>Anuncio oficial</b></span></td><td>28 oct 2026</td><td>9 nov 2026</td><td><u>archivo ↗</u></td><td class="mono muted">— (HTML)</td></tr>
+              <tr><td>Podemos</td><td>Documento Político V Asamblea <span class="muted">· 42 págs.</span></td><td><span class="src"><b>Doc. oficial</b></span></td><td>abr 2025</td><td>9 nov 2026</td><td><u>archivo ↗</u></td><td class="mono">sha256: c0d4…9b13</td></tr>
+              <tr><td>PSOE</td><td>Acuerdo sobre decretos de vivienda (elDiario.es)</td><td><span class="src prensa"><b>Prensa</b></span></td><td>29 sep 2026</td><td>9 nov 2026</td><td><u>archivo ↗</u></td><td class="mono muted">— (HTML)</td></tr>
+              <tr><td>PSOE</td><td>Programa Generales 2023 <span class="muted">· 272 págs.</span></td><td><span class="src prev"><b>Programa 2023</b></span></td><td>jul 2023</td><td>9 nov 2026</td><td><u>archivo ↗</u></td><td class="mono">sha256: 5e72…aa40</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <span class="note" data-n="16">Las huellas son de ejemplo. La huella SHA-256 permite comprobar que un PDF no ha cambiado, y la vigilancia diaria avisa cuando cambia. El registro completo se puede descargar como datos abiertos.</span>
+      </div>
+      <div class="bottom-bar"><div><i></i>Inicio</div><div><i></i>Temas</div><div><i></i>Comparar</div><div><i></i>Buscar</div></div>
+    </section>
+
+    <!-- ===================== 7. COMPONENTES ===================== -->
+    <section class="screen" data-screen="componentes">
+      <div class="wrap">
+        <h2 style="font-size:28px;margin:22px 0 4px">Componentes de transparencia</h2>
+        <p class="muted" style="margin:0 0 18px">Piezas que se repiten en toda la web. Siempre llevan texto y forma, no solo color.</p>
+
+        <div class="legend">
+          <div><b>Estado del programa</b><div class="xs muted">por partido</div></div>
+          <div class="grid" style="gap:8px">
+            <div class="row"><span class="st pub">● Programa publicado</span><span class="small muted">El partido ha publicado su programa para el 29N.</span></div>
+            <div class="row"><span class="st ava">◐ Avance oficial</span><span class="small muted">Documento oficial parcial (hoy: VOX).</span></div>
+            <div class="row"><span class="st pen">○ Programa pendiente</span><span class="small muted">Solo hay otras fuentes (hoy: PP, PSOE, Podemos y Frente Amplio).</span></div>
+          </div>
+
+          <div class="hr" style="grid-column:1/-1"></div>
+          <div><b>Tipo de fuente</b><div class="xs muted">por propuesta, de más a menos fiable</div></div>
+          <div class="grid" style="gap:8px">
+            <div class="row"><span class="src"><b>Programa 29N</b> · p. 34</span><span class="small muted">Fuente principal en cuanto exista. Enlaza a la página exacta.</span></div>
+            <div class="row"><span class="src"><b>Avance oficial</b></span><span class="small muted">Documentos de campaña del partido.</span></div>
+            <div class="row"><span class="src"><b>Doc. oficial</b></span><span class="small muted">Ponencias, planes sectoriales, documentos de congreso.</span></div>
+            <div class="row"><span class="src"><b>Anuncio oficial</b></span><span class="small muted">Notas de prensa y webs de campaña del propio partido.</span></div>
+            <div class="row"><span class="src prensa"><b>Prensa</b> · medio, fecha</span><span class="small muted">Solo si no hay fuente oficial. Borde discontinuo.</span></div>
+            <div class="row"><span class="src prev"><b>Programa 2023</b></span><span class="small muted">Solo como referencia, en una sección aparte. Borde punteado.</span></div>
+          </div>
+
+          <div class="hr" style="grid-column:1/-1"></div>
+          <div><b>Anatomía de una propuesta</b></div>
+          <div>
+            <article class="card prop anatomy">
+              <span class="topic-tag">① Pensiones › Revalorización</span>
+              <h3>② Revalorizar las pensiones con el IPC, dentro del Pacto de Toledo</h3>
+              <div class="small muted">③ «…las pensiones subirán con el IPC…» <span class="xs">(cita literal)</span></div>
+              <span class="src">④ <b>Documento oficial</b> · «Mi Contrato con España», 19 oct 2026</span>
+              <div class="meta"><span>⑤ Ver en la fuente ↗ · Revisado 9 nov</span><span>⑥ Compartir · ⚑ Error</span></div>
+            </article>
+            <ol class="small" style="margin:10px 0 0;padding-left:18px">
+              <li>Tema y subtema, que enlazan a la página del tema y al comparador.</li>
+              <li>Título: verbo en infinitivo, de 90 caracteres como máximo y sin adjetivos valorativos.</li>
+              <li>Cita literal, si la hay, para contrastar el resumen con el original.</li>
+              <li>Tipo de fuente, documento y fecha de publicación.</li>
+              <li>Enlace a la fuente (con número de página si es un PDF) y fecha de revisión.</li>
+              <li>Compartir (URL propia) y avisar de un error.</li>
+            </ol>
+          </div>
+
+          <div class="hr" style="grid-column:1/-1"></div>
+          <div><b>Celda sin datos</b></div>
+          <div class="row"><div class="card" style="width:220px"><p class="nc" style="margin:0">No consta en las fuentes consultadas</p></div><span class="small muted">No es lo mismo que «no propone» ni que «está en contra».</span></div>
+
+          <div class="hr" style="grid-column:1/-1"></div>
+          <div><b>Propuesta sustituida</b><div class="xs muted">cuando llega el programa</div></div>
+          <div class="card" style="border-style:dotted;max-width:520px">
+            <div class="small" style="margin-bottom:6px"><b>⚠ No aparece en el programa publicado el 10 nov.</b> Se mantiene para que quede registro.</div>
+            <div style="text-decoration:line-through;color:var(--mute)">Título de la propuesta anunciada antes del programa</div>
+            <div class="xs muted" style="margin-top:6px">Anunciada el 21 oct · <u>Ver en el historial</u></div>
+          </div>
+
+          <div class="hr" style="grid-column:1/-1"></div>
+          <div><b>Sello de actualización</b></div>
+          <div class="row"><span class="xs muted">↻ Actualizado hace 2 h · 9 nov, 10:00</span><span class="small muted">— En cada ficha, cada celda del comparador y en el aviso global.</span></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script>
+  const tabs = document.querySelectorAll('.wf-tabs button');
+  const screens = document.querySelectorAll('.screen');
+  const navMap = {partido:'Partidos',tema:'Temas',comparar:'Comparar',escala:'Escala',fuentes:'Cómo trabajamos'};
+  function go(id){
+    screens.forEach(s => s.classList.toggle('active', s.dataset.screen === id));
+    tabs.forEach(t => t.setAttribute('aria-selected', t.dataset.go === id));
+    document.querySelectorAll('.site-nav a').forEach(a => a.classList.toggle('cur', a.dataset.nav === id));
+    history.replaceState(null, '', '#' + id);
+    window.scrollTo({top:0});
+  }
+  tabs.forEach(t => t.addEventListener('click', () => go(t.dataset.go)));
+  document.querySelectorAll('.site-nav a').forEach(a => a.addEventListener('click', e => { e.preventDefault(); go(a.dataset.nav); }));
+  const initial = location.hash.slice(1);
+  if (initial && document.querySelector(`[data-screen="${initial}"]`)) go(initial);
+
+  const tm = document.getElementById('t-mobile'), tn = document.getElementById('t-notes');
+  tm.addEventListener('click', () => { const on = document.body.classList.toggle('mobile'); tm.setAttribute('aria-pressed', on); });
+  tn.addEventListener('click', () => { const off = document.body.classList.toggle('no-notes'); tn.setAttribute('aria-pressed', !off); });
+</script>
+</body>
+</html>

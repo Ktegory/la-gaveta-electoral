@@ -1,0 +1,172 @@
+---
+import Base from '../../layouts/Base.astro';
+import Estado from '../../components/Estado.astro';
+import EtiquetaFuente from '../../components/EtiquetaFuente.astro';
+import Propuesta from '../../components/Propuesta.astro';
+import Icono from '../../components/Icono.astro';
+import ListaCambios from '../../components/ListaCambios.astro';
+import { datos, destacadasDe, propuestasDe, fuentesDe, varsPartido, fecha, diputadosActuales, type Partido } from '../../lib/datos';
+
+export async function getStaticPaths() {
+  const d = await datos();
+  return d.partidos.map((p) => ({ params: { id: p.id }, props: { partido: p } }));
+}
+const { partido: p } = Astro.props as { partido: Partido };
+const d = await datos();
+const dest = destacadasDe(d, p.id);
+const todas = propuestasDe(d, p.id);
+const fuentes = fuentesDe(d, p.id);
+const ref = p.data.referenciaAnterior;
+const refFuente = ref && d.fuentes.get(ref.fuente.id);
+const porTema = d.temas.map((t) => ({ t, ps: todas.filter((x) => x.data.tema.id === t.id) })).filter((x) => x.ps.length);
+const cambios = d.cambios.filter((c) => c.data.partido?.id === p.id);
+const fmtAct = new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Madrid' });
+const nFuentes = fuentes.length + (refFuente ? 1 : 0);
+const comp = p.data.composicion;
+const dip = diputadosActuales(d, p.id);
+const compFuentes = (comp?.fuentes ?? []).map((r) => d.fuentes.get(r.id)).filter((f) => f !== undefined);
+// Programa del 29N, si ya está publicado: activa su pestaña y su sección.
+const programa = p.data.estadoPrograma === 'publicado' ? fuentes.find((f) => f.data.tipo === 'programa-29n') : undefined;
+const nDelPrograma = programa ? todas.filter((x) => x.data.fuentes.some((r) => r.fuente.id === programa.id)).length : 0;
+---
+<Base titulo={p.data.nombre} seccion="partidos" estilo={varsPartido(p)}
+  descripcion={`Qué propone ${p.data.nombreCompleto ?? p.data.nombre} para el 29N, con la fuente de cada propuesta. ${p.data.resumenEstado}.`}>
+  <div class="fic">
+    <div class="fic-l on-color"><div class="in">
+      <div class="crumbs"><a href="/partidos/">Partidos</a> › {p.data.nombre}</div>
+      {p.data.logo && <div class="flogo"><img src={p.data.logo.url} alt={`Logotipo de ${p.data.nombre}`} /></div>}
+      <div class="fid">
+        <h1 class="cond">{p.data.nombre}</h1>
+        <div class="meta">
+          <span>Candidatura: <b>{p.data.candidatura}</b></span>
+          {p.data.lema && <span>Lema: «{p.data.lema}»</span>}
+          {dip && <span>Escaños actuales: <b>{dip.n} {dip.n === 1 ? 'diputado' : 'diputados'}</b> en el Congreso saliente · <a href="/como-funciona/#escanos">cómo los contamos</a></span>}
+        </div>
+      </div>
+      {(comp || p.data.candidaturas.length > 0) && (
+        <div class="fcomp">
+          {comp && (
+            <div>
+              <h2 class="l">Quién lo forma</h2>
+              <p set:html={comp.texto} />
+              <p class="ftes">{compFuentes.map((f, i) => <>{i > 0 && ' · '}<a href={f.data.url} rel="noopener" target="_blank">{f.data.tipo === 'prensa' ? `Según la prensa (${f.data.medio})` : f.data.tipo === 'anuncio-oficial' ? 'Comunicado oficial' : f.data.titulo} ↗</a></>)}</p>
+            </div>
+          )}
+          {p.data.candidaturas.length > 0 && (
+            <div>
+              <h2 class="l">Dónde y con quién se presenta</h2>
+              <ul>{p.data.candidaturas.map((c) => <li><b>{c.territorio}:</b> {c.marca}</li>)}</ul>
+            </div>
+          )}
+        </div>
+      )}
+      <div class={`fstat ${p.data.estadoPrograma === 'publicado' ? 'pub' : p.data.estadoPrograma === 'avance' ? 'ava' : 'pen'}`}>
+        <Estado estado={p.data.estadoPrograma} />
+        <p class="txt" set:html={p.data.explicacionEstado} />
+        <span class="up">Revisado {fmtAct.format(p.data.ultimaRevision)}</span>
+        <div class="row"><a class="btn sm ink" href="#fuentes">Ver las {nFuentes} fuentes</a><a class="btn sm" href={p.data.web} rel="noopener" target="_blank">Web oficial ↗</a></div>
+      </div>
+      <div class="oth">
+        <span class="l">Otros partidos</span>
+        {d.partidos.map((q) => <a href={`/partidos/${q.id}/`} style={varsPartido(q)} aria-current={q.id === p.id ? 'page' : undefined} aria-label={q.data.nombre}>{q.data.siglas}</a>)}
+      </div>
+    </div></div>
+
+    <div class="fic-r">
+      <nav class="ftabs" aria-label="Secciones de la ficha">
+        <a href="#destacadas" aria-current="true">Lo destacado</a>
+        <a href="#temas">Por temas <span class="c">{todas.length}</span></a>
+        {programa
+          ? <a href="#programa">Programa completo</a>
+          : <span class="dis">Programa completo <span class="c">{p.data.estadoPrograma === 'avance' ? 'solo avance' : 'aún no'}</span></span>}
+        <a href="#fuentes">Fuentes <span class="c">{nFuentes}</span></a>
+        <a href="#historial">Historial</a>
+      </nav>
+
+      <section class="fsec" id="destacadas">
+        <div class="h2r"><h2 class="cond">Lo más destacado</h2><a href="/como-funciona/#destacadas">¿Cómo lo elegimos?</a></div>
+        <ol class="plist">{dest.map((x, i) => <Propuesta propuesta={x} numero={i + 1} />)}</ol>
+        {ref && refFuente && (
+          <a class="ref" href={refFuente.data.url} rel="noopener" target="_blank">
+            <div><b>{ref.titulo}</b><span>{ref.detalle}</span></div><span style="font-size:1.25rem" aria-hidden="true">↗</span>
+          </a>
+        )}
+      </section>
+
+      <section class="fsec" id="temas">
+        <div class="h2r"><h2 class="cond">Por temas</h2><span class="h2r-n">{todas.length} propuestas conocidas</span></div>
+        {porTema.map(({ t, ps }) => (
+          <>
+            <h3 class="tema-h"><Icono id={t.id} />{t.data.nombre} <span class="c">{ps.length}</span><a class="tema-ver" href={`/partidos/${p.id}/${t.id}/`}>Solo este tema <span aria-hidden="true">→</span></a></h3>
+            <ul class="plist compact">{ps.map((x) => <Propuesta propuesta={x} mostrarTema={false} />)}</ul>
+          </>
+        ))}
+      </section>
+
+      {programa && (
+        <section class="fsec" id="programa">
+          <div class="h2r"><h2 class="cond">Programa completo</h2></div>
+          <a class="prog" href={programa.data.url} rel="noopener" target="_blank">
+            <span class="prog-t"><b>{programa.data.titulo}</b><span>Publicado el {fecha(programa.data.fechaPublicacion)} {programa.data.fechaPublicacion.getFullYear()}{programa.data.paginas && ` · ${programa.data.paginas} páginas`} · PDF</span></span>
+            <span class="prog-a">Abrir el programa <span aria-hidden="true">↗</span></span>
+          </a>
+          <p class="prog-n">En esta ficha recogemos {nDelPrograma} {nDelPrograma === 1 ? 'propuesta' : 'propuestas'} de este programa, con la página de cada una.{programa.data.urlArchivada && <> <a href={programa.data.urlArchivada} rel="noopener" target="_blank">Copia guardada en Internet Archive</a>.</>}</p>
+        </section>
+      )}
+
+      <section class="fsec" id="fuentes">
+        <div class="h2r"><h2 class="cond">Fuentes</h2><a href="/fuentes/">Todas las fuentes</a></div>
+        <div>
+          <ul class="slist">
+            {fuentes.map((f) => (
+              <li>
+                <EtiquetaFuente fuente={f} detalle={false} />
+                {f.data.url ? <a href={f.data.url} rel="noopener" target="_blank">{f.data.titulo}</a> : <span>{f.data.titulo} <span class="meta">· enlace pendiente</span></span>}
+                <span class="meta">{[f.data.medio, `${fecha(f.data.fechaPublicacion)} ${f.data.fechaPublicacion.getFullYear()}`, f.data.paginas && `${f.data.paginas} págs.`, `consultada ${fecha(f.data.fechaConsulta)}`].filter(Boolean).join(' · ')}</span>
+              </li>
+            ))}
+            {refFuente && (
+              <li>
+                <EtiquetaFuente fuente={refFuente} detalle={false} />
+                <a href={refFuente.data.url} rel="noopener" target="_blank">{refFuente.data.titulo}</a>
+                <span class="meta">Solo como referencia · no es el programa del 29N</span>
+              </li>
+            )}
+          </ul>
+        </div>
+      </section>
+
+      <section class="fsec" id="historial">
+        <div class="h2r"><h2 class="cond">Historial</h2><a href="/como-funciona/#historial">Todos los cambios</a></div>
+        {cambios.length ? <ListaCambios partido={p.id} /> : <p class="mute">Sin cambios registrados todavía.</p>}
+      </section>
+    </div>
+  </div>
+</Base>
+<script>
+  // Pestaña activa: la de la sección que se está leyendo (o la que se acaba de pulsar).
+  const tabs = [...document.querySelectorAll<HTMLAnchorElement>('.ftabs a[href^="#"]')];
+  const activar = (id: string) => tabs.forEach((t) => (t.getAttribute('href') === `#${id}` ? t.setAttribute('aria-current', 'true') : t.removeAttribute('aria-current')));
+  let bloqueo = 0;
+  tabs.forEach((t) => t.addEventListener('click', () => { activar(t.getAttribute('href')!.slice(1)); bloqueo = Date.now(); }));
+  const secs = tabs.map((t) => document.querySelector(t.getAttribute('href')!)).filter(Boolean) as HTMLElement[];
+  const io = new IntersectionObserver((es) => {
+    if (Date.now() - bloqueo < 900) return; // deja terminar el desplazamiento tras un clic
+    const vis = es.filter((e) => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+    if (vis) activar(vis.target.id);
+  }, { rootMargin: '-90px 0px -60% 0px' });
+  secs.forEach((s) => io.observe(s));
+
+  // La columna del partido se queda fija al bajar, bajo la cabecera. Si es más alta que el hueco,
+  // primero se desplaza hasta enseñar su final y luego se fija ahí.
+  const col = document.querySelector<HTMLElement>('.fic-l .in');
+  const hdr = document.querySelector<HTMLElement>('.hdr');
+  if (col) {
+    const ajustar = () => {
+      const arriba = hdr?.offsetHeight ?? 0;
+      col.style.top = `${Math.min(arriba, innerHeight - col.offsetHeight)}px`;
+    };
+    new ResizeObserver(ajustar).observe(col);
+    addEventListener('resize', ajustar, { passive: true });
+  }
+</script>

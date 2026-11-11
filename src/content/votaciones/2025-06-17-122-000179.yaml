@@ -1,0 +1,86 @@
+# Votación del Pleno · I. Toma en consideración de Proposiciones de Ley.
+# Generado por scripts/votacion.mjs.
+# No se empareja con vox/plan-nuclear: la ley no crea un plan nuclear ni trata el precio de la energía.
+fecha: 2025-06-17
+sesion: 119
+numero: 1
+expediente: 122/000179
+tipo: toma-en-consideracion
+tituloOficial: Proposición de Ley del Grupo Parlamentario Popular en el Congreso, para garantizar la aportación de la energía nuclear en la descarbonización del sistema energético.
+titulo: "Ley del PP para que las centrales nucleares sigan funcionando y no se cierren por calendario"
+resumen: "Las centrales funcionarían hasta que su dueño pidiera el cierre o el Consejo de Seguridad Nuclear lo desaconsejara. Anulaba las fechas de cierre definitivo de Almaraz, Ascó I y Cofrentes y pedía que la planificación energética no contemplara cerrar ninguna central."
+textoVotado:
+  nombre: "BOCG, Serie B, núm. 206-1, 11 abr 2025"
+  url: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/B/BOCG-15-B-206-1.PDF#page=11
+  pagina: "11-12"
+urlVotacion: https://www.congreso.es/webpublica/opendata/votaciones/Leg15/Sesion119/20250617/Votacion001/VOT_20250617203249.pdf
+urlDatos: https://www.congreso.es/webpublica/opendata/votaciones/Leg15/Sesion119/20250617/Votacion001/VOT_20250617203251.json
+resultado: aprobada
+totales:
+  si: 171
+  no: 166
+  abstencion: 7
+  noVota: 5
+partidos:
+  bildu:
+    voto: no
+    si: 0
+    no: 6
+    abstencion: 0
+    noVota: 0
+  erc:
+    voto: no
+    si: 0
+    no: 7
+    abstencion: 0
+    noVota: 0
+  fa:
+    voto: no
+    si: 0
+    no: 26
+    abstencion: 0
+    noVota: 1
+  junts:
+    voto: abstencion
+    si: 0
+    no: 0
+    abstencion: 7
+    noVota: 0
+  pnv:
+    voto: no
+    si: 0
+    no: 5
+    abstencion: 0
+    noVota: 0
+  pod:
+    voto: no
+    si: 0
+    no: 3
+    abstencion: 0
+    noVota: 1
+  pp:
+    voto: si
+    si: 137
+    no: 0
+    abstencion: 0
+    noVota: 0
+  psoe:
+    voto: no
+    si: 0
+    no: 117
+    abstencion: 0
+    noVota: 2
+  vox:
+    voto: si
+    si: 33
+    no: 0
+    abstencion: 0
+    noVota: 0
+tema: energia
+subtema: nuclear
+propuestas:
+  - propuesta: pp/alargar-nucleares
+    coincide: si
+    pasaje: "Art. 1: la operación de las centrales «se extenderá hasta el cese de la actividad» que pida el titular o imponga el CSN. Disposición derogatoria: anula las fechas de cierre de Almaraz, Ascó I y Cofrentes. (El plazo de cien días es del programa, no de esta ley.)"
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

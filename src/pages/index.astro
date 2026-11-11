@@ -1,0 +1,159 @@
+---
+import Base from '../layouts/Base.astro';
+import ColumnaPartido from '../components/ColumnaPartido.astro';
+import MapaPropuestas from '../components/MapaPropuestas.astro';
+import Preguntas from '../components/Preguntas.astro';
+import ListaCambios from '../components/ListaCambios.astro';
+import OrdenPartidos from '../components/OrdenPartidos.astro';
+import SelectorFoco from '../components/SelectorFoco.astro';
+import { datos, ELECCIONES, fecha } from '../lib/datos';
+const d = await datos();
+const CONVOCATORIA = new Date('2026-10-06T00:00:00+02:00');
+// Valores al compilar; el script del cliente los pone al día.
+const hoy = new Date();
+const dias = Math.floor(Math.max(0, +ELECCIONES - +hoy) / 864e5);
+const pct = Math.min(100, Math.max(0, ((+hoy - +CONVOCATORIA) / (+ELECCIONES - +CONVOCATORIA)) * 100));
+const actualizado = d.partidos.map((p) => p.data.ultimaRevision).sort((a, b) => +b - +a)[0];
+const fmtAct = new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Madrid' });
+const publicados = d.partidos.filter((p) => p.data.estadoPrograma === 'publicado').length;
+const TITULAR = 'Todo lo que proponen los partidos';
+const resta = Math.max(0, +ELECCIONES - +hoy);
+const horas = Math.floor(resta / 36e5) % 24, minutos = Math.floor(resta / 6e4) % 60, segundos = Math.floor(resta / 1e3) % 60;
+const dosCifras = (n: number) => String(n).padStart(2, '0');
+---
+<Base seccion="mapa">
+  <div class="intro pad">
+    <div class="l">
+      <p class="eyebrow">Elecciones generales · España · 29 nov 2026</p>
+      <h1 class="cond h1-anim">
+        {TITULAR.split(' ').map((w, i, ws) => i < ws.length - 1
+          ? <><span class="w" style={`--i:${i}`}>{w}</span>{' '}</>
+          : <span class="w ult" style={`--i:${i}`}>{w}{' '}<span class="nota" style={`--i:${ws.length}`}>en un solo sitio</span></span>)}
+      </h1>
+      <p class="lead">Los programas de los partidos para el 29N, ordenados por temas, comparables y con la fuente original al lado de cada propuesta.</p>
+    </div>
+    <div class="r">
+      <div class="count" id="cuenta" data-convocatoria={CONVOCATORIA.toISOString()} data-elecciones={ELECCIONES.toISOString()}>
+        <span class="cnt-l">Faltan para votar · 29 nov</span>
+        <div class="reloj" role="timer" aria-live="off" aria-label={`Faltan ${dias} días para votar`}>
+          <span><b data-u="d">{dias}</b><small>días</small></span>
+          <span><b data-u="h">{dosCifras(horas)}</b><small>h</small></span>
+          <span><b data-u="m">{dosCifras(minutos)}</b><small>min</small></span>
+          <span><b data-u="s">{dosCifras(segundos)}</b><small>s</small></span>
+        </div>
+        <div class="progress" role="img" aria-label={`Ha pasado el ${Math.round(pct)} % del tiempo entre la convocatoria y las elecciones`}><i style={`width:${pct}%`}></i></div>
+        <div class="progress-l"><span>Convocatoria · 6 oct</span><span>Hoy · <span data-hoy>{fecha(hoy)}</span></span><span>29 nov</span></div>
+      </div>
+      <div class="acts-row"><a class="btn ink" href="/comparar/">Comparar partidos <span class="arrow">→</span></a><a class="btn" href="#preguntas">Ver por preguntas</a></div>
+    </div>
+  </div>
+
+  <section class="band pad" aria-labelledby="h-publicado">
+    <div class="sec-h"><h2 class="cond" id="h-publicado">Estado de los programas</h2><p>{publicados === 0 ? 'Ninguno completo todavía. ' : ''}Cada tarjeta te dice si el partido ya tiene programa y en cuántas fuentes se basa lo que mostramos.</p></div>
+    <div class="carr-bar">
+      <OrdenPartidos />
+      <div class="carr-nav" data-carr-nav hidden>
+        <button type="button" data-carr-prev aria-label="Partidos anteriores">←</button>
+        <button type="button" data-carr-next aria-label="Más partidos">→</button>
+      </div>
+    </div>
+    <div class="cols aparece" data-carr data-ordenable data-orden="az">{d.partidos.map((p, i) => <ColumnaPartido partido={p} orden={i} />)}</div>
+  </section>
+
+  <section class="pad" id="preguntas" style="padding-top:var(--sec)" aria-labelledby="h-preguntas">
+    <div class="sec-h"><h2 class="cond" id="h-preguntas">Empieza por lo que te importa</h2><p>Cada tema, convertido en la pregunta que te harías. O elige un partido y un tema para ver solo lo suyo.</p></div>
+    <div class="foco-portada"><SelectorFoco /></div>
+    <Preguntas />
+  </section>
+
+  <section class="map-wrap pad" aria-labelledby="h-mapa">
+    <div class="sec-h"><h2 class="cond" id="h-mapa">Propuestas<br class="br-g" /> por tema</h2><p>Cuántas propuestas conocemos de cada partido en cada tema. Pulsa una casilla para ver lo que propone ese partido sobre ese tema, o un tema para compararlos todos. Partidos en orden alfabético.</p></div>
+    <div class="map-head">
+      <div class="legend" aria-hidden="true">
+        <span><i class="c"></i>Programa publicado</span>
+        <span><i class="d"></i>Provisional</span>
+        <span><i class="z"></i>No consta</span>
+      </div>
+      <span class="act">Actualizado {fmtAct.format(actualizado)}</span>
+    </div>
+    <MapaPropuestas />
+  </section>
+
+  <section class="bottom pad">
+    <div>
+      <h2>Una iniciativa civil</h2>
+      <p>Para destejer la maraña de propuestas de cada partido y ponerlas una al lado de otra, con la fuente original a un clic.</p>
+      <p><b>Financiada por su autor</b>, sin publicidad ni dinero de terceros. <b>Sin afiliación</b> a ningún partido, ni ahora ni antes.</p>
+      <a class="btn sm" href="/como-funciona/">Cómo funciona <span class="arrow">→</span></a>
+    </div>
+    <div>
+      <h2>Últimos cambios</h2>
+      <ListaCambios limite={5} />
+    </div>
+  </section>
+</Base>
+<script>
+  // La web es estática: la cuenta atrás se calcula y se actualiza cada segundo en el navegador de quien la visita.
+  const el = document.getElementById('cuenta');
+  if (el) {
+    const ini = +new Date(el.dataset.convocatoria!), fin = +new Date(el.dataset.elecciones!);
+    const reloj = el.querySelector<HTMLElement>('.reloj')!;
+    const u = (k: string) => el.querySelector<HTMLElement>(`[data-u="${k}"]`)!;
+    const dos = (n: number) => String(n).padStart(2, '0');
+    const pintar = () => {
+      const resta = Math.max(0, fin - Date.now());
+      const d = Math.floor(resta / 864e5);
+      u('d').textContent = String(d);
+      u('h').textContent = dos(Math.floor(resta / 36e5) % 24);
+      u('m').textContent = dos(Math.floor(resta / 6e4) % 60);
+      u('s').textContent = dos(Math.floor(resta / 1e3) % 60);
+      reloj.setAttribute('aria-label', `Faltan ${d} días para votar`);
+    };
+    pintar();
+    setInterval(pintar, 1000);
+    const now = Date.now();
+    el.querySelector('[data-hoy]')!.textContent = new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'short', timeZone: 'Europe/Madrid' }).format(now).replace('.', '');
+    const pct = Math.min(100, Math.max(0, ((now - ini) / (fin - ini)) * 100));
+    (el.querySelector('.progress > i') as HTMLElement).style.width = pct + '%';
+  }
+
+  // Las tarjetas de los partidos aparecen escalonadas cuando llegan a la vista.
+  const cols = document.querySelector('.cols.aparece');
+  if (cols && 'IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    cols.classList.add('espera');
+    const io = new IntersectionObserver((e) => {
+      if (!e[0].isIntersecting) return;
+      cols.classList.remove('espera');
+      cols.classList.add('entra');
+      io.disconnect();
+    }, { threshold: 0.15 });
+    io.observe(cols);
+  }
+
+  // Carrusel de tarjetas: las flechas avanzan una tarjeta y se desactivan en los extremos.
+  // Si todas caben, las flechas no se muestran.
+  const carr = document.querySelector<HTMLElement>('[data-carr]');
+  const nav = document.querySelector<HTMLElement>('[data-carr-nav]');
+  if (carr && nav) {
+    const prev = nav.querySelector<HTMLButtonElement>('[data-carr-prev]')!;
+    const next = nav.querySelector<HTMLButtonElement>('[data-carr-next]')!;
+    const paso = () => {
+      const c = carr.children[0] as HTMLElement | undefined;
+      return c ? c.offsetWidth + parseFloat(getComputedStyle(carr).columnGap || '0') : carr.clientWidth;
+    };
+    const actualizar = () => {
+      const max = carr.scrollWidth - carr.clientWidth;
+      nav.hidden = max <= 2;
+      prev.disabled = carr.scrollLeft <= 2;
+      next.disabled = carr.scrollLeft >= max - 2;
+    };
+    prev.addEventListener('click', () => carr.scrollBy({ left: -paso(), behavior: 'smooth' }));
+    next.addEventListener('click', () => carr.scrollBy({ left: paso(), behavior: 'smooth' }));
+    carr.addEventListener('scroll', actualizar, { passive: true });
+    new ResizeObserver(actualizar).observe(carr);
+    actualizar();
+
+    // Al cambiar el orden, vuelve al principio.
+    carr.addEventListener('ordenado', () => { carr.scrollTo({ left: 0 }); actualizar(); });
+  }
+</script>

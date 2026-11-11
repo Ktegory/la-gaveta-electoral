@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gaveta-programas.netlify.app/sitemap.xml

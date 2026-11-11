@@ -1,0 +1,19 @@
+partido: "pnv"
+tema: "empleo"
+subtema: "smi"
+titulo: "Competencia plena para que Euskadi fije un salario mínimo propio, siempre por encima del estatal"
+resumen: "Lo plantea «en el marco de un nuevo estatus político para Euskadi»: un salario mínimo adaptado al coste de vida y definido mediante el diálogo social con sindicatos y organizaciones empresariales."
+fuentes:
+  - fuente: "pnv/programa-29n-2026"
+    pagina: "9"
+    cita: Reclamar, en el marco de un nuevo estatus político para Euskadi, la competencia plena para establecer un salario mínimo propio, adaptado al coste de vida y siempre por encima del mínimo estatal.
+  - fuente: "pnv/programa-29n-web-2026"
+    cita: Reclamar, en el marco de un nuevo estatus político para Euskadi, la competencia plena para establecer un salario mínimo propio, adaptado al coste de vida y superior al estatal, mediante el diálogo social.
+fechaAnuncio: "2026-11-09"
+destacada: true
+orden: 2
+comprobacion:
+  estado: encontrada
+  nota: El programa lo plantea como «Reclamar […] la competencia plena», no como una competencia ya existente.
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

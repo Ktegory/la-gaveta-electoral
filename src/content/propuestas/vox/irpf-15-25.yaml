@@ -1,0 +1,16 @@
+partido: "vox"
+tema: "fiscalidad"
+subtema: "irpf"
+titulo: "IRPF del 15 % hasta 70.000 € y del 25 % por encima, con un mínimo exento de 22.000 €"
+fuentes:
+  - fuente: "vox/programa-economico-2025"
+    cita: Reformar totalmente el sistema de tributación sobre la renta. Se establecerá un mínimo exento de 22.000€, un primer tramo hasta los 70.000€ que tributará a un tipo del 15% y un segundo tramo a partir de los
+    pagina: "36"
+fechaAnuncio: "2025-10-02"
+destacada: true
+orden: 1
+comprobacion:
+  estado: encontrada
+  nota: La frase sigue en la p. 37 («70.000€ que tributará a un tipo del 25%»), donde se añade una rebaja de 4 puntos por cada descendiente.
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

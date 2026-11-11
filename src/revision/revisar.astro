@@ -1,0 +1,266 @@
+---
+// Segunda revisión de propuestas. Solo en local: la añade integracion.mjs con `npm run dev`.
+import Base from '../layouts/Base.astro';
+import EtiquetaFuente from '../components/EtiquetaFuente.astro';
+import { datos, fuentesDePropuesta, varsPartido, fechaLarga } from '../lib/datos';
+import { REVISOR } from './integracion.mjs';
+
+const d = await datos();
+const temas = new Map(d.temas.map((t) => [t.id, t]));
+const nombre = new Map(d.partidos.map((p) => [p.id, p]));
+const orden = (id: string) => d.partidos.findIndex((p) => p.id === id);
+const ps = [...d.propuestas].sort((a, b) => {
+  const ta = temas.get(a.data.tema.id)!, tb = temas.get(b.data.tema.id)!;
+  return (
+    orden(a.data.partido.id) - orden(b.data.partido.id) ||
+    ta.data.orden - tb.data.orden ||
+    ta.data.subtemas.findIndex((s) => s.id === a.data.subtema) - tb.data.subtemas.findIndex((s) => s.id === b.data.subtema)
+  );
+});
+const total = ps.length;
+const hechas = ps.filter((p) => p.data.revisadaPor).length;
+const fmt = (f: Date) => fechaLarga(f);
+const esPdf = (url: string) => /\.pdf($|[?#])|\/pdf\//i.test(url);
+/** Para el fragmento de texto, los guiones, comas y & van codificados (son separadores). */
+const cod = (t: string) => encodeURIComponent(t).replace(/-/g, '%2D').replace(/,/g, '%2C');
+/**
+ * En los PDF, el enlace abre en la página citada. En las páginas web lleva un fragmento de texto
+ * (#:~:text=principio,final) para que el navegador baje hasta el pasaje y lo resalte.
+ */
+const enlace = (url: string | undefined, pagina?: string, cita?: string) => {
+  if (!url) return undefined;
+  const n = pagina?.match(/\d+/)?.[0];
+  if (esPdf(url)) return n ? `${url}#page=${n}` : url;
+  if (!cita) return url;
+  const pal = cita.replace(/[«»"“”]/g, '').trim().split(/\s+/);
+  const frag = pal.length <= 10 ? cod(pal.join(' ')) : `${cod(pal.slice(0, 5).join(' '))},${cod(pal.slice(-5).join(' '))}`;
+  return `${url.split('#')[0]}#:~:text=${frag}`;
+};
+const COMP = {
+  encontrada: { txt: 'Pasaje encontrado en la fuente', ico: '✓' },
+  parcial: { txt: 'La fuente lo respalda solo en parte', ico: '≈' },
+  'no-encontrada': { txt: 'No se encontró en la fuente', ico: '✗' },
+} as const;
+---
+<Base titulo="Revisión" indexar={false}>
+  <div class="chd pad">
+    <h1 class="cond">Revisión</h1>
+    <p class="lead">Comprueba cada propuesta contra su fuente. Si está bien, fírmala: se guarda en su archivo como «{REVISOR}», con la fecha de hoy. Si algo falla, edita el archivo y fírmala después. Esta página solo existe en local.</p>
+    <div class="rv-prog">
+      <p><b data-hechas>{hechas}</b> de {total} revisadas · quedan <b data-quedan>{total - hechas}</b></p>
+      <div class="rv-barra" aria-hidden="true"><span data-barra style={`width:${(hechas / total) * 100}%`}></span></div>
+    </div>
+    <div class="rv-filtros">
+      <div class="rv-grupo" role="group" aria-label="Partido">
+        <button type="button" data-partido="" aria-pressed="true">Todos</button>
+        {d.partidos.map((p) => <button type="button" data-partido={p.id} aria-pressed="false">{p.data.nombre}</button>)}
+      </div>
+      <div class="rv-grupo" role="group" aria-label="Qué mostrar">
+        <button type="button" data-ver="pendientes" aria-pressed="true">Pendientes</button>
+        <button type="button" data-ver="dudas" aria-pressed="false">Con dudas</button>
+        <button type="button" data-ver="todas" aria-pressed="false">Todas</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="pad rv-lista">
+    {ps.map((p) => {
+      const t = temas.get(p.data.tema.id)!;
+      const s = t.data.subtemas.find((x) => x.id === p.data.subtema);
+      const partido = nombre.get(p.data.partido.id)!;
+      const firmada = !!p.data.revisadaPor;
+      return (
+        <article class="rv" data-id={p.id} data-p={partido.id} data-firmada={firmada ? '' : undefined} data-comp={p.data.comprobacion?.estado} style={varsPartido(partido)}>
+          <header>
+            <b>{partido.data.nombre}</b>
+            <span>{t.data.nombre} › {s?.nombre ?? p.data.subtema}</span>
+            {p.data.destacada && <span>★ Destacada</span>}
+            <code>{p.id}</code>
+          </header>
+          <div class="rv-cuerpo">
+            <h2>{p.data.titulo}</h2>
+            {p.data.resumen && <p>{p.data.resumen}</p>}
+            {p.data.citaLiteral && <blockquote>«{p.data.citaLiteral}»</blockquote>}
+            <p class="rv-fecha">Anunciada el {fmt(p.data.fechaAnuncio)}</p>
+            {p.data.comprobacion && (
+              <p class={`rv-comp ${p.data.comprobacion.estado}`}>
+                <b><span aria-hidden="true">{COMP[p.data.comprobacion.estado].ico}</span> {COMP[p.data.comprobacion.estado].txt}</b>
+                {p.data.comprobacion.nota && <span>{p.data.comprobacion.nota}</span>}
+              </p>
+            )}
+            <ol class="rv-fuentes">
+              {fuentesDePropuesta(d, p).map(({ fuente: f, pagina, cita }) => {
+                const href = enlace(f.data.url, pagina, cita);
+                const pdf = f.data.url ? esPdf(f.data.url) : false;
+                return (
+                  <li>
+                    <EtiquetaFuente fuente={f} pagina={pagina} />
+                    {f.data.medio && <span class="rv-tit">{f.data.titulo}</span>}
+                    {cita && <blockquote class="rv-cita">{cita}</blockquote>}
+                    {href
+                      ? <a href={href} target="_blank" rel="noopener">{cita && !pdf ? 'Ver el pasaje en la fuente' : `Abrir fuente${pagina ? ` en p. ${pagina}` : ''}`} ↗</a>
+                      : <em>Sin enlace todavía</em>}
+                    {cita && pdf && <button type="button" class="rv-copiar" data-copiar={cita}>Copiar frase para buscarla (⌘F)</button>}
+                    {f.data.urlArchivada && <a href={f.data.urlArchivada} target="_blank" rel="noopener">Copia archivada ↗</a>}
+                    {f.data.notas && <small>{f.data.notas}</small>}
+                  </li>
+                );
+              })}
+            </ol>
+          </div>
+          <footer>
+            <span class="rv-estado" data-estado>
+              {firmada ? `Revisada por ${p.data.revisadaPor} el ${fmt(p.data.fechaRevision!)}` : 'Sin revisar'}
+            </span>
+            <button class="btn sm" type="button" data-editar={p.filePath}>Editar archivo</button>
+            <button class:list={['btn sm', { ink: !firmada }]} type="button" data-firmar>{firmada ? 'Quitar firma' : 'Firmar'}</button>
+          </footer>
+        </article>
+      );
+    })}
+    <p class="rv-vacio" data-vacio hidden>No queda nada por revisar con este filtro.</p>
+  </div>
+</Base>
+
+<style>
+  .rv-prog { max-width: 640px; margin-bottom: 28px }
+  .rv-prog p { margin: 0 0 10px; font-size: 1rem }
+  .rv-barra { height: 8px; border-radius: 999px; background: var(--bg3); overflow: hidden }
+  .rv-barra span { display: block; height: 100%; background: var(--ink); transition: width .3s }
+  .rv-filtros { display: flex; flex-wrap: wrap; gap: 12px 24px; padding-bottom: 28px; border-bottom: 1px solid var(--ink) }
+  .rv-grupo { display: flex; flex-wrap: wrap; gap: 6px }
+  .rv-grupo button { height: var(--h-ctl); padding: 0 16px; border: 0; border-radius: 999px; background: var(--bg2); font: inherit; font-size: .875rem; font-weight: 600; cursor: pointer }
+  .rv-grupo button:hover { background: var(--bg3) }
+  .rv-grupo button[aria-pressed="true"] { background: var(--ink); color: #fff }
+
+  .rv-lista { display: grid; gap: 20px; padding-block: 32px var(--sec-s) }
+  .rv { max-width: 900px; border: 1.5px solid var(--ink); border-radius: var(--r-card); overflow: hidden; background: var(--bg) }
+  .rv[data-firmada] { border-color: var(--hair) }
+  .rv header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; padding: 12px 20px; background: var(--pc); color: var(--pt); font-size: .875rem }
+  .rv header b { font-family: var(--cond); font-size: 1.375rem; font-weight: 800; text-transform: uppercase }
+  .rv header code { margin-left: auto; font-family: var(--mono); font-size: .75rem; opacity: .85 }
+  .rv-cuerpo { padding: 20px 20px 8px }
+  .rv h2 { margin: 0 0 10px; font-size: 1.375rem; line-height: 1.25 }
+  .rv-cuerpo > p { margin: 0 0 10px; max-width: 70ch }
+  .rv blockquote { margin: 0 0 10px; padding-left: 14px; border-left: 3px solid var(--hair); color: var(--ink2) }
+  .rv .rv-fecha { font-family: var(--mono); font-size: .75rem; color: var(--mute) }
+  .rv-fuentes { display: grid; gap: 12px; margin: 16px 0 0; padding: 16px 0 0; border-top: 1px solid var(--hair2); list-style: none }
+  .rv-fuentes li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px }
+  .rv-tit { flex: 1 1 100%; font-size: .9375rem }
+  .rv-fuentes a { font-weight: 600; font-size: .875rem }
+  .rv-fuentes em, .rv-fuentes small { color: var(--mute); font-size: .8125rem }
+  .rv-fuentes small { flex: 1 1 100% }
+  .rv footer { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 14px 20px 20px }
+  .rv-estado { margin-right: auto; font-family: var(--mono); font-size: .75rem; color: var(--mute) }
+  .rv[data-firmada] .rv-estado { color: var(--ink) }
+  .rv[data-firmada] .rv-estado::before { content: "✓ " }
+  .rv-vacio { font-size: 1.125rem; color: var(--mute) }
+  .rv-cita { flex: 1 1 100%; margin: 4px 0; padding: 10px 14px; border-left: 3px solid var(--pc); background: var(--bg2); border-radius: 0 10px 10px 0; font-size: .9375rem; line-height: 1.5; color: var(--ink) }
+  .rv-copiar { border: 0; background: none; padding: 0; font: inherit; font-size: .875rem; font-weight: 600; text-decoration: underline; cursor: pointer }
+  .rv-comp { display: grid; gap: 4px; margin: 12px 0 0; padding: 10px 14px; border-radius: 10px; font-size: .9375rem; max-width: none }
+  .rv-comp b { font-size: .875rem }
+  .rv-comp.encontrada { background: #E7F4EA; color: #1F5130 }
+  .rv-comp.parcial { background: #FFF3D6; color: #6B4A00 }
+  .rv-comp.no-encontrada { background: #FDE5E3; color: #8A1C12 }
+</style>
+
+<script>
+  const tarjetas = [...document.querySelectorAll<HTMLElement>('.rv')];
+  const total = tarjetas.length;
+  let partido = '';
+  let ver = 'pendientes';
+
+  // Al firmar cambia el archivo y el servidor de desarrollo recarga la página.
+  // Se guarda aquí el filtro, la posición y las recién firmadas para seguir donde estabas.
+  const CLAVE = 'revision-estado';
+  const guardar = () => {
+    const recientes = tarjetas.filter((t) => 'reciente' in t.dataset).map((t) => t.dataset.id);
+    try { sessionStorage.setItem(CLAVE, JSON.stringify({ partido, ver, recientes, y: document.documentElement.scrollTop })); } catch {}
+  };
+  let previo: { partido?: string; ver?: string; recientes?: string[]; y?: number } = {};
+  try { previo = JSON.parse(sessionStorage.getItem(CLAVE) || '{}'); } catch {}
+  partido = previo.partido ?? '';
+  ver = previo.ver ?? 'pendientes';
+  tarjetas.forEach((t) => { if (previo.recientes?.includes(t.dataset.id!) && 'firmada' in t.dataset) t.dataset.reciente = ''; });
+  document.querySelectorAll<HTMLButtonElement>('[data-partido]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.partido === partido)));
+  document.querySelectorAll<HTMLButtonElement>('[data-ver]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.ver === ver)));
+  addEventListener('pagehide', guardar);
+
+  const filtrar = () => {
+    let visibles = 0;
+    for (const t of tarjetas) {
+      // Las recién firmadas siguen a la vista hasta cambiar el filtro, para poder deshacer.
+      const pendiente = !('firmada' in t.dataset) || 'reciente' in t.dataset;
+      const duda = t.dataset.comp === 'parcial' || t.dataset.comp === 'no-encontrada';
+      const ok = (!partido || t.dataset.p === partido) && (ver === 'todas' || (ver === 'dudas' ? pendiente && duda : pendiente));
+      t.hidden = !ok;
+      if (ok) visibles++;
+    }
+    document.querySelector<HTMLElement>('[data-vacio]')!.hidden = visibles > 0;
+  };
+  const contar = () => {
+    const hechas = tarjetas.filter((t) => 'firmada' in t.dataset).length;
+    document.querySelector('[data-hechas]')!.textContent = String(hechas);
+    document.querySelector('[data-quedan]')!.textContent = String(total - hechas);
+    document.querySelector<HTMLElement>('[data-barra]')!.style.width = `${(hechas / total) * 100}%`;
+  };
+
+  const elegir = (grupo: string, alPulsar: (b: HTMLButtonElement) => void) =>
+    document.querySelectorAll<HTMLButtonElement>(`[${grupo}]`).forEach((b, _, todos) =>
+      b.addEventListener('click', () => {
+        todos.forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+        tarjetas.forEach((t) => delete t.dataset.reciente);
+        alPulsar(b);
+        filtrar();
+      }),
+    );
+  elegir('data-partido', (b) => (partido = b.dataset.partido!));
+  elegir('data-ver', (b) => (ver = b.dataset.ver!));
+  filtrar();
+  if (previo.y) document.documentElement.scrollTop = previo.y;
+
+  for (const t of tarjetas) {
+    const boton = t.querySelector<HTMLButtonElement>('[data-firmar]')!;
+    const estado = t.querySelector<HTMLElement>('[data-estado]')!;
+    boton.addEventListener('click', async () => {
+      const firmar = !('firmada' in t.dataset);
+      boton.disabled = true;
+      if (firmar) t.dataset.reciente = '';
+      guardar();
+      try {
+        const r = await fetch('/__revisar', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: t.dataset.id, firmar }),
+        });
+        const res = await r.json();
+        if (!r.ok) throw new Error(res.error);
+        if (firmar) {
+          t.dataset.firmada = '';
+          t.dataset.reciente = '';
+          const fecha = new Date(res.fechaRevision + 'T12:00').toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+          estado.textContent = `Revisada por ${res.revisadaPor} el ${fecha}`;
+        } else {
+          delete t.dataset.firmada;
+          estado.textContent = 'Sin revisar';
+        }
+        boton.textContent = firmar ? 'Quitar firma' : 'Firmar';
+        boton.classList.toggle('ink', !firmar);
+        contar();
+      } catch (e) {
+        estado.textContent = `No se pudo guardar: ${(e as Error).message}`;
+      } finally {
+        boton.disabled = false;
+      }
+    });
+    // En los PDF no hay enlace al pasaje: se copia la frase para buscarla con ⌘F.
+    t.querySelectorAll<HTMLButtonElement>('[data-copiar]').forEach((b) => b.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(b.dataset.copiar!); b.textContent = 'Copiada ✓'; } catch { b.textContent = 'No se pudo copiar'; }
+      setTimeout(() => (b.textContent = 'Copiar frase para buscarla (⌘F)'), 2000);
+    }));
+    // Abre el YAML en el editor del ordenador (lo hace el servidor de desarrollo).
+    t.querySelector<HTMLButtonElement>('[data-editar]')!.addEventListener('click', (e) => {
+      fetch(`/__open-in-editor?file=${encodeURIComponent((e.currentTarget as HTMLElement).dataset.editar!)}`);
+    });
+  }
+</script>

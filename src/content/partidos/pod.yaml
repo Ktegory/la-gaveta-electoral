@@ -1,0 +1,26 @@
+nombre: "Podemos"
+siglas: "POD"
+color: "#9169F4"
+colorTexto: "blanco"
+colorOrigen:
+  fuente: "podemos.info: color del logo y de la barra superior de la web, consultado el 11 nov 2026"
+  verificado: true
+logo:
+  url: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Podemos_logo_completo_%282022%29.svg"
+  origen: "Wikimedia Commons (infobox de es.wikipedia), consultado el 9 nov 2026"
+candidatura: "Irene Montero"
+lema: "Paz, casa y trabajo"
+web: "https://pazcasaytrabajo.es/"
+estadoPrograma: "pendiente"
+resumenEstado: "Sin fecha anunciada"
+explicacionEstado: "Todavía no ha publicado su programa para el 29N ni ha anunciado fecha. Presentó un plan de cinco ejes el 19 de octubre."
+candidaturas:
+  - territorio: "Cataluña"
+    marca: "Dentro de la lista de ERC"
+  - territorio: "Canarias"
+    marca: "Unidad del Pueblo Canario"
+  - territorio: "Comunitat Valenciana"
+    marca: "Compromís-Front Valencià"
+  - territorio: "Resto de España"
+    marca: "Listas propias"
+ultimaRevision: "2026-11-11T12:50:00+01:00"

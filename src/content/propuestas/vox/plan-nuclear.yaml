@@ -1,0 +1,11 @@
+partido: "vox"
+tema: "energia"
+subtema: "nuclear"
+titulo: "Plan Nuclear Nacional y «energía a precio de coste»"
+fuentes:
+  - fuente: "vox/recuperar-espana-2026"
+fechaAnuncio: "2026-10-19"
+destacada: true
+orden: 5
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-10"

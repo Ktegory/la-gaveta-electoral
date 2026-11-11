@@ -1,0 +1,245 @@
+---
+import Base from '../../layouts/Base.astro';
+import Estado from '../../components/Estado.astro';
+import EtiquetaFuente from '../../components/EtiquetaFuente.astro';
+import Icono from '../../components/Icono.astro';
+import Votaciones from '../../components/Votaciones.astro';
+import OrdenPartidos from '../../components/OrdenPartidos.astro';
+import VotoPropuesta from '../../components/VotoPropuesta.astro';
+import { datos, propuestasDeTema, fuentesVisibles, relacionPrograma, AVISO_PROGRAMA, varsPartido, votacionesDe, type Tema } from '../../lib/datos';
+
+export async function getStaticPaths() {
+  const d = await datos();
+  return d.temas.map((t) => ({ params: { tema: t.id }, props: { tema: t } }));
+}
+const { tema: t } = Astro.props as { tema: Tema };
+const d = await datos();
+const ps = propuestasDeTema(d, t.id);
+const subtemas = t.data.subtemas.map((s) => ({ s, ps: ps.filter((p) => p.data.subtema === s.id), vs: votacionesDe(d, t.id, s.id) }));
+const conDatos = subtemas.filter((x) => x.ps.length || x.vs.length);
+const vacios = subtemas.filter((x) => !x.ps.length && !x.vs.length);
+const fmtAct = new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Madrid' });
+const actualizado = d.partidos.map((p) => p.data.ultimaRevision).sort((a, b) => +b - +a)[0];
+---
+<Base titulo={`Comparar: ${t.data.nombre}`} seccion="comparar" descripcion={`${t.data.pregunta} Qué propone cada partido para el 29N, con su fuente.`}>
+  <div class="chd pad">
+    <h1 class="cond">{t.data.nombre}</h1>
+    <p class="lead">{t.data.pregunta}</p>
+  </div>
+  <!-- Barra de temas: se queda arriba al hacer scroll. -->
+  <div class="ttabs-fija pad">
+    <nav class="ttabs" aria-label="Temas">
+      <div><span class="ttabs-ind" aria-hidden="true"></span>{d.temas.map((x) => <a href={`/comparar/${x.id}/`} aria-current={x.id === t.id ? 'page' : undefined}><Icono id={x.id} />{x.data.nombre}</a>)}</div>
+    </nav>
+    <script is:inline>
+      // Que el tema actual quede a la vista aunque esté al final de la barra.
+      // Va aquí, en línea, para que ocurra antes de pintar y la transición no dé un salto.
+      // También coloca el fondo gris bajo el tema actual (y lo recoloca si cambia el tamaño o cargan las fuentes).
+      (function () {
+        var barra = document.querySelector('.ttabs');
+        var actual = barra && barra.querySelector('[aria-current]');
+        var fondo = barra && barra.querySelector('.ttabs-ind');
+        if (!actual || !fondo) return;
+        var destino = actual; // pestaña bajo la que debe estar el fondo
+        function colocar() {
+          fondo.style.width = destino.offsetWidth + 'px';
+          fondo.style.transform = 'translateX(' + destino.offsetLeft + 'px)';
+        }
+        colocar();
+        var b = barra.getBoundingClientRect(), a = actual.getBoundingClientRect();
+        if (a.right > b.right) barra.scrollLeft += a.left - b.left - (b.width - a.width) / 2;
+        if (window.ResizeObserver) {
+          var ro = new ResizeObserver(colocar);
+          ro.observe(actual);
+          ro.observe(barra.firstElementChild);
+        }
+
+        // Al hacer clic en otro tema, el fondo se desliza hasta él y después cambia la página.
+        // Clics con teclas modificadoras (abrir en otra pestaña…) y «reducir movimiento»: sin animación.
+        var ESPERA = 300;
+        barra.addEventListener('click', function (e) {
+          var enlace = e.target.closest('a');
+          if (!enlace || enlace === actual || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+          if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+          e.preventDefault();
+          destino = enlace;
+          fondo.classList.add('mueve');
+          actual.removeAttribute('aria-current');
+          enlace.classList.add('yendo');
+          colocar();
+          setTimeout(function () { location.href = enlace.href; }, ESPERA);
+        });
+
+        // Si se vuelve atrás y el navegador recupera esta página de su memoria, el fondo vuelve a su sitio.
+        addEventListener('pageshow', function (e) {
+          if (!e.persisted) return;
+          fondo.classList.remove('mueve');
+          barra.querySelectorAll('.yendo').forEach(function (x) { x.classList.remove('yendo'); });
+          actual.setAttribute('aria-current', 'page');
+          destino = actual;
+          colocar();
+        });
+      })();
+    </script>
+  </div>
+  <script is:inline>
+    // Una línea bajo la barra solo cuando ya está pegada arriba.
+    (function () {
+      var fija = document.querySelector('.ttabs-fija');
+      if (!fija || !('IntersectionObserver' in window)) return;
+      var marca = document.createElement('div');
+      marca.setAttribute('aria-hidden', 'true');
+      fija.before(marca);
+      new IntersectionObserver(function (e) { fija.classList.toggle('pegada', !e[0].isIntersecting); }).observe(marca);
+    })();
+  </script>
+  <div class="pad">
+    <div class="cbar">
+      <div class="ptg" role="group" aria-label="Mostrar u ocultar partidos" data-ordenable>
+        <span class="l">Partidos</span>
+        {d.partidos.map((p) => <button type="button" data-p={p.id} style={varsPartido(p)} aria-pressed="true">{p.data.nombre}</button>)}
+      </div>
+      <!-- En móvil, los mismos partidos en un desplegable de opción múltiple. -->
+      <details class="ptg-dd" data-ptg-dd>
+        <summary><span class="l">Partidos</span><span class="ptg-res" data-ptg-res>Todos</span><span class="chev" aria-hidden="true"></span></summary>
+        <div class="ptg-menu">
+          <div class="ptg-ops" role="group" aria-label="Mostrar u ocultar partidos" data-ordenable>
+            {d.partidos.map((p) => <label data-p={p.id} style={varsPartido(p)}><input type="checkbox" value={p.id} checked /><span class="dot" aria-hidden="true"></span>{p.data.nombre}</label>)}
+          </div>
+          <button type="button" class="ptg-todos" data-ptg-todos>Ver todos</button>
+        </div>
+      </details>
+      <div class="cacts">
+        <OrdenPartidos nota={false} />
+        <div class="vista" role="group" aria-label="Vista">
+          <button type="button" data-vista="filas" aria-pressed="true"><Icono id="filas" />Filas</button>
+          <button type="button" data-vista="tarjetas" aria-pressed="false"><Icono id="tarjetas" />Tarjetas</button>
+        </div>
+        <button class="btn-ico" type="button" data-copiar aria-label="Copiar enlace" title="Copiar enlace"><Icono id="enlace" /><Icono id="hecho" class="ok" /></button>
+      </div>
+    </div>
+    <script is:inline>
+      // Vista elegida (filas o tarjetas): primero la del enlace, si no la última que usó esta persona.
+      // En línea para aplicarla antes de pintar y que no parpadee.
+      (function () {
+        var v = new URLSearchParams(location.search).get('vista');
+        if (v !== 'tarjetas' && v !== 'filas') { try { v = localStorage.getItem('vista-comparador'); } catch (e) {} }
+        if (v !== 'tarjetas') v = 'filas';
+        document.documentElement.dataset.vista = v;
+        document.querySelectorAll('.vista button[data-vista]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.vista === v)); });
+      })();
+    </script>
+  </div>
+
+  <div class="pad cmp">
+    {conDatos.map(({ s, ps, vs }) => (
+      <section class="subq" aria-labelledby={`h-${s.id}`}>
+        <div class="hd"><h2 class="cond" id={`h-${s.id}`}>{s.nombre}</h2><p>{s.pregunta}</p></div>
+        <div class="ans" data-ordenable>
+          {d.partidos.map((p) => {
+            const suyas = ps.filter((x) => x.data.partido.id === p.id);
+            return (
+              <div class:list={['ar', { z: !suyas.length }]} data-p={p.id} style={varsPartido(p)}>
+                <a class="who on-color" href={`/partidos/${p.id}/`}><b>{p.data.nombre}</b><Estado estado={p.data.estadoPrograma} corto /></a>
+                <div class="what">
+                  {suyas.length ? suyas.map((x) => {
+                    const f = fuentesVisibles(d, x)[0];
+                    const rel = relacionPrograma(d, x);
+                    return <div class="it"><p>{x.data.titulo}</p><EtiquetaFuente fuente={f.fuente} pagina={f.pagina} enlace />{rel && rel !== 'en-programa' && <p class="fuera"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.25" /><path d="M8 4.75v4M8 11v.25" /></svg>{AVISO_PROGRAMA[rel]}</p>}<VotoPropuesta propuesta={x} enlaceLocal /></div>;
+                  }) : <p>No consta en las fuentes consultadas</p>}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <Votaciones votaciones={vs} />
+      </section>
+    ))}
+    {conDatos.length === 0 && <div class="wip" style="margin-block:var(--sec-s)"><div><b>Todavía no conocemos propuestas sobre este tema.</b>Lo completaremos cuando los partidos publiquen sus programas.</div></div>}
+    {vacios.length > 0 && (
+      <div class="empty-subs"><b>Sin propuestas todavía</b>{vacios.map((x) => x.s.nombre).join(' · ')}</div>
+    )}
+    <div class="cnote"><b>OJO</b><span>«No consta» significa que no hemos encontrado propuestas en las fuentes consultadas, no que el partido no tenga postura. <span data-orden-txt data-orden-az="Partidos en orden alfabético" data-orden-escanos="Partidos ordenados por escaños actuales en el Congreso">Partidos en orden alfabético</span> · Actualizado {fmtAct.format(actualizado)}.</span></div>
+  </div>
+</Base>
+<script>
+  // Mostrar u ocultar partidos. La selección se guarda en la URL (?partidos=pp,psoe) para poder compartirla.
+  const botones = [...document.querySelectorAll<HTMLButtonElement>('.ptg button[data-p]')];
+  const todos = botones.map((b) => b.dataset.p!);
+  const casillas = [...document.querySelectorAll<HTMLInputElement>('.ptg-ops input')];
+  const resumen = document.querySelector<HTMLElement>('[data-ptg-res]');
+  const nombres = Object.fromEntries(botones.map((b) => [b.dataset.p!, b.textContent!.trim()]));
+  const aplicar = (sel: string[]) => {
+    botones.forEach((b) => b.setAttribute('aria-pressed', String(sel.includes(b.dataset.p!))));
+    casillas.forEach((c) => (c.checked = sel.includes(c.value)));
+    // Lo que dice el desplegable cerrado: «Todos», los nombres si son uno o dos, o cuántos de cuántos.
+    if (resumen) resumen.textContent = sel.length === todos.length ? 'Todos' : sel.length <= 2 ? sel.map((x) => nombres[x]).join(', ') : `${sel.length} de ${todos.length}`;
+    document.querySelectorAll<HTMLElement>('.ar[data-p], .vt-votos [data-p]').forEach((el) => (el.hidden = !sel.includes(el.dataset.p!)));
+  };
+  const leer = () => {
+    const q = new URLSearchParams(location.search).get('partidos');
+    const sel = q ? q.split(',').filter((x) => todos.includes(x)) : todos;
+    return sel.length ? sel : todos;
+  };
+  let sel = leer();
+  aplicar(sel);
+  const guardar = (nueva: string[]) => {
+    sel = nueva;
+    const url = new URL(location.href);
+    if (sel.length === todos.length) url.searchParams.delete('partidos'); else url.searchParams.set('partidos', sel.join(','));
+    history.replaceState(null, '', url);
+    aplicar(sel);
+  };
+  const alternar = (id: string) => {
+    const nueva = sel.includes(id) ? sel.filter((x) => x !== id) : todos.filter((x) => sel.includes(x) || x === id);
+    guardar(nueva.length ? nueva : [id]); // siempre al menos uno
+  };
+  botones.forEach((b) => b.addEventListener('click', () => alternar(b.dataset.p!)));
+  casillas.forEach((c) => c.addEventListener('change', () => alternar(c.value)));
+  document.querySelector('[data-ptg-todos]')?.addEventListener('click', () => guardar(todos));
+  // El desplegable se cierra al pulsar fuera o con Escape.
+  const dd = document.querySelector<HTMLDetailsElement>('[data-ptg-dd]');
+  if (dd) {
+    document.addEventListener('click', (e) => { if (dd.open && !dd.contains(e.target as Node)) dd.open = false; });
+    dd.addEventListener('keydown', (e) => { if (e.key === 'Escape' && dd.open) { dd.open = false; dd.querySelector('summary')!.focus(); } });
+  }
+  // Cambiar de vista. Se recuerda en este navegador y va en el enlace (?vista=tarjetas) para compartirla.
+  // Con View Transitions, cada fila se transforma en su tarjeta (y al revés).
+  document.querySelectorAll<HTMLButtonElement>('.vista button[data-vista]').forEach((b) => b.addEventListener('click', () => {
+    const v = b.dataset.vista!;
+    if (document.documentElement.dataset.vista === v) return;
+    try { localStorage.setItem('vista-comparador', v); } catch {}
+    const url = new URL(location.href);
+    if (v === 'filas') url.searchParams.delete('vista'); else url.searchParams.set('vista', v);
+    history.replaceState(null, '', url);
+    const cambiar = () => {
+      document.documentElement.dataset.vista = v;
+      document.querySelectorAll('.vista button[data-vista]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    };
+    if (!document.startViewTransition || matchMedia('(prefers-reduced-motion: reduce)').matches) return cambiar();
+    // Nombres solo durante el cambio, para que no interfieran al pasar de un tema a otro
+    const piezas = [...document.querySelectorAll<HTMLElement>('.cmp .subq .hd, .cmp .ar:not([hidden])')];
+    piezas.forEach((el, i) => {
+      el.style.viewTransitionName = `vista-${i}`;
+      el.style.setProperty('view-transition-class', 'pieza');
+    });
+    document.documentElement.classList.add('vt-vista');
+    const t = document.startViewTransition(cambiar);
+    t.finished.finally(() => {
+      piezas.forEach((el) => {
+        el.style.viewTransitionName = '';
+        el.style.removeProperty('view-transition-class');
+      });
+      document.documentElement.classList.remove('vt-vista');
+    });
+  }));
+
+  const copiar = document.querySelector<HTMLButtonElement>('[data-copiar]');
+  copiar?.addEventListener('click', async () => {
+    // Icono de cadena; al copiar, una marca de hecho durante dos segundos.
+    const poner = (texto: string, hecho: boolean) => { copiar.setAttribute('aria-label', texto); copiar.title = texto; copiar.classList.toggle('hecho', hecho); };
+    try { await navigator.clipboard.writeText(location.href); poner('Enlace copiado', true); }
+    catch { poner('No se pudo copiar', false); }
+    setTimeout(() => poner('Copiar enlace', false), 2000);
+  });
+</script>

@@ -1,0 +1,87 @@
+# Votación del Pleno · III. Mociones consecuencia de interpelaciones urgentes.
+# Generado por scripts/votacion.mjs.
+fecha: 2026-05-20
+sesion: 180
+numero: 10
+expediente: 173/000171
+tipo: mocion
+tituloOficial: Moción consecuencia de interpelación urgente del Grupo Parlamentario Popular en el Congreso, sobre las políticas en materia de vivienda de este Gobierno.
+subtituloOficial: Votación separada por puntos. · Punto 4.
+titulo: "Moción del PP: avales públicos e IVA del 4 % para que los jóvenes compren vivienda"
+resumen: "Pedía una política para jóvenes «con avales públicos que permitan facilitar el acceso y con medidas fiscales como la rebaja del IVA al 4 % en la vivienda nueva y rehabilitación». La moción se votó por puntos; este es el punto 4."
+textoVotado:
+  nombre: "BOCG, Serie D, núm. 538"
+  url: https://www.congreso.es/public_oficiales/L15/CONG/BOCG/D/BOCG-15-D-538.PDF#page=18
+  pagina: "18-20"
+urlVotacion: https://www.congreso.es/webpublica/opendata/votaciones/Leg15/Sesion180/20260520/Votacion010/VOT_20260520142322.pdf
+urlDatos: https://www.congreso.es/webpublica/opendata/votaciones/Leg15/Sesion180/20260520/Votacion010/VOT_20260520142334.json
+resultado: aprobada
+totales:
+  si: 183
+  no: 162
+  abstencion: 2
+  noVota: 3
+partidos:
+  bildu:
+    voto: no
+    si: 0
+    no: 6
+    abstencion: 0
+    noVota: 0
+  erc:
+    voto: no
+    si: 0
+    no: 7
+    abstencion: 0
+    noVota: 0
+  fa:
+    voto: no
+    si: 0
+    no: 26
+    abstencion: 0
+    noVota: 0
+  junts:
+    voto: si
+    si: 7
+    no: 0
+    abstencion: 0
+    noVota: 0
+  pnv:
+    voto: si
+    si: 5
+    no: 0
+    abstencion: 0
+    noVota: 0
+  pod:
+    voto: no
+    si: 0
+    no: 4
+    abstencion: 0
+    noVota: 0
+  pp:
+    voto: si
+    si: 137
+    no: 0
+    abstencion: 0
+    noVota: 0
+  psoe:
+    voto: no
+    si: 0
+    no: 119
+    abstencion: 0
+    noVota: 2
+  vox:
+    voto: si
+    si: 32
+    no: 0
+    abstencion: 0
+    noVota: 1
+tema: vivienda
+subtema: acceso-compra
+propuestas:
+  - propuesta: pp/avales-jovenes
+    coincide: parcial
+    pasaje: "Punto 4 (p. 18): avales públicos y IVA del 4 % en vivienda nueva. No fija el aval del 20 %, la edad de 40 años ni la «Hucha Hogar Joven»."
+    parte: "El texto votado incluía los avales públicos y el IVA del 4 % en vivienda nueva, pero no el aval del 20 %, el límite de 40 años ni la «Hucha Hogar Joven»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

@@ -1,0 +1,21 @@
+partido: "pnv"
+tema: "pensiones"
+subtema: "edad-jubilacion"
+titulo: "Eliminar las penalizaciones por jubilación anticipada a quienes hayan cotizado más de 40 años"
+resumen: "Propone además medidas para corregir las penalizaciones que afectan a quienes ya están jubilados."
+fuentes:
+  - fuente: "pnv/programa-29n-2026"
+    pagina: "31"
+    cita: Eliminar las penalizaciones de la jubilación anticipada para las personas trabajadoras con más de 40 años cotizados, reconociendo las largas carreras laborales
+  - fuente: "pnv/programa-29n-web-2026"
+    cita: Eliminar las penalizaciones de jubilación anticipada para quienes hayan cotizado más de 40 años.
+  - fuente: "pnv/nota-presentacion-programa-2026-11-09"
+    cita: El programa plantea garantizar el poder adquisitivo de las pensiones, mejorar las mínimas, eliminar las penalizaciones injustas a quienes han cotizado 40 o más años y reducir la brecha de género.
+fechaAnuncio: "2026-11-09"
+destacada: true
+orden: 5
+comprobacion:
+  estado: encontrada
+  nota: La nota de prensa dice «40 o más años»; el programa y la web, «más de 40 años». Diferencia menor.
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

@@ -1,0 +1,27 @@
+nombre: "EH Bildu"
+nombreCompleto: "Euskal Herria Bildu"
+siglas: "BILDU"
+color: "#00C19F"
+colorTexto: "tinta"
+colorOrigen:
+  fuente: "ehbildu.eus (color principal de la hoja de estilos de su web)"
+  verificado: true
+logo:
+  url: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Logo_de_EH_Bildu_%282023%29.svg"
+  origen: "Wikimedia Commons (infobox de es.wikipedia), consultado el 11 nov 2026"
+candidatura: "Oskar Matute"
+lema: "Posible Egin. Garantía y derechos"
+web: "https://ehbildu.eus/es"
+estadoPrograma: "pendiente"
+resumenEstado: "Sin programa publicado ni fecha anunciada"
+explicacionEstado: "Todavía no ha publicado su programa para el 29N ni ha anunciado cuándo lo hará. Esta ficha recoge propuestas de <b>notas oficiales de ehbildu.eus</b> publicadas entre septiembre y noviembre de 2026. Según el partido, sus ejes de campaña son la vivienda, el encarecimiento de la vida, los salarios, las pensiones y los servicios públicos."
+candidaturas:
+  - territorio: "País Vasco (Álava, Bizkaia y Gipuzkoa)"
+    marca: "EH Bildu"
+  - territorio: "Navarra"
+    marca: "EH Bildu"
+referenciaAnterior:
+  titulo: "Lo que proponía en 2023"
+  detalle: "«Compromiso de Euskal Herria Bildu», 16 págs. No es el programa del 29N."
+  fuente: "bildu/programa-2023"
+ultimaRevision: "2026-11-11T10:00:00+01:00"

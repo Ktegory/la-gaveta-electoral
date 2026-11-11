@@ -1,0 +1,17 @@
+partido: "erc"
+tema: "fiscalidad"
+subtema: "irpf"
+titulo: "Subir del 30 % al 35 % el IRPF máximo del capital y bajar el del trabajo en los tramos de menos de 35.000 euros"
+resumen: "El 35 % se aplicaría a las ganancias de capital. También propone rebajar el IVA de los alimentos básicos y de los productos de higiene."
+fuentes:
+  - fuente: "erc/programa-29n-2026"
+    pagina: "21"
+    cita: Augmentar el tipus màxim de l’IRPF sobre els guanys de capital del 30 % al 35 % per acabar amb el tracte de favor respecte a les rendes del treball. Alhora, cal reduir els tipus de la fiscalitat del treball per als trams inferiors als 35.000 euros
+fechaAnuncio: "2026-11-05"
+destacada: true
+orden: 5
+comprobacion:
+  estado: encontrada
+  nota: Medida 69. La rebaja del IVA de alimentos básicos e higiene es la medida 70 de la misma página.
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

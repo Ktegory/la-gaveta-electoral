@@ -1,0 +1,14 @@
+partido: "pp"
+tema: "fiscalidad"
+subtema: "iva"
+titulo: "IVA del 10 % en la energía"
+resumen: "Lo anunció en su decálogo económico de septiembre."
+fuentes:
+  - fuente: "pp/decalogo-economico-2026"
+    cita: Bajada del 21% al 10% del IVA a la energía y eliminación del IVA para autónomos que facturen por debajo de 85.000 euro e incremento de las ayudas al gasóleo y los fertilizantes de forma real hasta el límite que permite la Comisión Europea y tramitación ágil.
+fechaAnuncio: "2026-09-27"
+destacada: false
+comprobacion:
+  estado: encontrada
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

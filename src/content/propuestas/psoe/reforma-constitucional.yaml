@@ -1,0 +1,17 @@
+partido: "psoe"
+tema: "instituciones"
+subtema: "constitucion"
+titulo: "Reformar la Constitución para blindar la revalorización de las pensiones y el derecho al aborto"
+fuentes:
+  - fuente: "psoe/mitin-bilbao-2026-11-08"
+    cita: "También ha mostrado su \"compromiso solemne\" con blindar en la Constitución la revalorización de las pensiones."
+  - fuente: "psoe/nota-granada-2026-10-24"
+    cita: "\"la próxima legislatura reformaremos y blindaremos el derecho al aborto de las mujeres en la Constitución Española\""
+fechaAnuncio: "2026-10-24"
+destacada: true
+orden: 2
+comprobacion:
+  estado: encontrada
+  nota: "El título decía «blindar las pensiones»; las fuentes hablan de blindar su revalorización. Lo de las pensiones es del mitin de Bilbao (8 nov) y lo del aborto, del de Granada (24 oct). Según EFE, retoma la reforma constitucional del aborto que no salió adelante en la legislatura anterior."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-11"

@@ -1,0 +1,78 @@
+---
+// Marquesina de lo provisional. Se genera con los datos: un mensaje por partido (orden alfabético).
+import { datos, varsPartido, TITULAR_ESTADO, detalleEstado } from '../lib/datos';
+import IconoEstado from './IconoEstado.astro';
+const d = await datos();
+const sinPrograma = d.partidos.filter((p) => p.data.estadoPrograma !== 'publicado').length;
+const general =
+  sinPrograma === d.partidos.length
+    ? 'Ningún partido ha publicado aún su <b>programa completo</b> para el 29N'
+    : `<b>${sinPrograma} de ${d.partidos.length} partidos</b> aún no han publicado su programa completo para el 29N`;
+const items = [
+  { p: null, t: general },
+  ...d.partidos.map((p) => ({ p, t: detalleEstado(d, p) })),
+  { p: null, t: 'Lo marcado con línea discontinua es <b>provisional</b>' },
+];
+const resumen = `${general.replace(/<[^>]+>/g, '')}. ${d.partidos.map((p) => `${p.data.nombre}: ${TITULAR_ESTADO[p.data.estadoPrograma].toLowerCase()} (${detalleEstado(d, p)})`).join('. ')}.`;
+---
+<div class="prov pad" role="region" aria-label="Aviso: información provisional">
+  <span class="k">PROVISIONAL</span>
+  <div class="mq">
+    <p class="sr">{resumen}</p>
+    <div class="mq-track" aria-hidden="true">
+      {[0, 1].map(() => (
+        <div class="mq-set">
+          {items.map(({ p, t }) => (
+            <span>
+              {p && (
+                <span class={`mq-logo l-${p.id} ${p.data.logo ? '' : 'fb'}`} style={varsPartido(p)}>
+                  {p.data.logo && <img src={p.data.logo.url} alt="" loading="lazy" decoding="async" onerror="this.parentNode.classList.add('fb');this.remove()" />}
+                  <em>{p.data.siglas}</em>
+                </span>
+              )}
+              {p ? (
+                <span class="mq-est"><IconoEstado estado={p.data.estadoPrograma} /><b>{TITULAR_ESTADO[p.data.estadoPrograma]}</b><span class="mq-det">{t}</span></span>
+              ) : <span set:html={t} />}
+            </span>
+          ))}
+        </div>
+      ))}
+    </div>
+  </div>
+  <button class="mq-pause" type="button" aria-pressed="false" aria-label="Pausar la marquesina">❚❚</button>
+  <a class="mq-more" href="/como-funciona/#provisional">Qué significa ›</a>
+</div>
+<script is:inline>
+  // En línea, justo después de la marquesina, para que actúe antes de pintar:
+  // así sigue donde estaba en la página anterior (y la transición no da un salto)
+  // y, si se pausó, sigue pausada.
+  (function () {
+    var prov = document.querySelector('.prov');
+    var b = prov && prov.querySelector('.mq-pause');
+    var track = prov && prov.querySelector('.mq-track');
+    if (!b || !track) return;
+    function leer(k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } }
+    function guardar(k, v) { try { sessionStorage.setItem(k, v); } catch (e) {} }
+    function pausar(on) {
+      b.setAttribute('aria-pressed', String(on));
+      b.setAttribute('aria-label', on ? 'Reanudar la marquesina' : 'Pausar la marquesina');
+      b.textContent = on ? '▶' : '❚❚';
+      prov.classList.toggle('paused', on);
+    }
+    var pausada = leer('mq-pausa') === '1';
+    if (pausada) pausar(true);
+    var anim = track.getAnimations ? track.getAnimations()[0] : null;
+    var t = leer('mq-t'), en = leer('mq-en');
+    if (anim && t !== null) anim.currentTime = Number(t) + (pausada ? 0 : Date.now() - Number(en));
+    b.addEventListener('click', function () {
+      var on = b.getAttribute('aria-pressed') !== 'true';
+      pausar(on);
+      guardar('mq-pausa', on ? '1' : '0');
+    });
+    addEventListener('pagehide', function () {
+      if (!anim) return;
+      guardar('mq-t', String(anim.currentTime));
+      guardar('mq-en', String(Date.now()));
+    });
+  })();
+</script>

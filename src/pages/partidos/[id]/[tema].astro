@@ -1,0 +1,52 @@
+---
+// Un partido y un tema: todo lo que conocemos de ese partido sobre ese tema.
+// Una página por cada cruce, para poder enlazarla (desde el mapa, por ejemplo) y compartirla.
+// Al cambiar de partido o de tema, el selector cambia el contenido sin recargar.
+import Base from '../../../layouts/Base.astro';
+import Estado from '../../../components/Estado.astro';
+import Icono from '../../../components/Icono.astro';
+import Propuesta from '../../../components/Propuesta.astro';
+import SelectorFoco from '../../../components/SelectorFoco.astro';
+import { datos, propuestasDe, varsPartido, type Partido, type Tema } from '../../../lib/datos';
+
+export async function getStaticPaths() {
+  const d = await datos();
+  return d.partidos.flatMap((p) => d.temas.map((t) => ({ params: { id: p.id, tema: t.id }, props: { partido: p, tema: t } })));
+}
+const { partido: p, tema: t } = Astro.props as { partido: Partido; tema: Tema };
+const d = await datos();
+const ps = propuestasDe(d, p.id).filter((x) => x.data.tema.id === t.id);
+const subtemas = t.data.subtemas.map((s) => ({ s, ps: ps.filter((x) => x.data.subtema === s.id) }));
+const con = subtemas.filter((x) => x.ps.length);
+const sin = subtemas.filter((x) => !x.ps.length);
+const nombre = p.data.nombre;
+---
+<Base titulo={`${nombre}: ${t.data.nombre}`} seccion="partidos" indexar={false} noindex={ps.length === 0}
+  descripcion={`Qué propone ${p.data.nombreCompleto ?? nombre} sobre ${t.data.nombre.toLowerCase()} para el 29N, con la fuente de cada propuesta.`}>
+  <div class="foco" data-foco style={varsPartido(p)}>
+    <div class="foco-h on-color pad">
+      <div class="crumbs"><a href="/partidos/">Partidos</a> › <a href={`/partidos/${p.id}/`}>{nombre}</a> › {t.data.nombre}</div>
+      <h1 class="foco-t"><span class="cond foco-n">{nombre}</span><span class="sr-only">: </span><span class="cond foco-tm"><Icono id={t.id} />{t.data.nombre}</span></h1>
+      <p class="foco-q">{t.data.pregunta}</p>
+      <div class="foco-meta">
+        <span class="foco-est"><Estado estado={p.data.estadoPrograma} corto /></span>
+        <span>{ps.length === 1 ? '1 propuesta conocida' : `${ps.length} propuestas conocidas`} en este tema</span>
+        <a href={`/partidos/${p.id}/`}>Ficha completa de {nombre}</a>
+      </div>
+    </div>
+    <div class="foco-s pad"><SelectorFoco partido={p.id} tema={t.id} /></div>
+    <div class="foco-b pad">
+      {con.map(({ s, ps }) => (
+        <section aria-labelledby={`h-${s.id}`}>
+          <h2 class="tema-h" id={`h-${s.id}`}>{s.nombre} <span class="c">{ps.length}</span></h2>
+          <ul class="plist compact">{ps.map((x) => <Propuesta propuesta={x} mostrarTema={false} />)}</ul>
+        </section>
+      ))}
+      {con.length === 0 && <div class="wip"><div><b>No consta ninguna propuesta de {nombre} sobre este tema en las fuentes consultadas.</b> No quiere decir que no tenga postura: puede que aún no la haya publicado.</div></div>}
+      {con.length > 0 && sin.length > 0 && <div class="empty-subs"><b>Sin propuestas conocidas</b>{sin.map((x) => x.s.nombre).join(' · ')}</div>}
+      <div class="foco-pie">
+        <a class="btn" href={`/comparar/${t.id}/`}>Comparar con los demás partidos <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</Base>

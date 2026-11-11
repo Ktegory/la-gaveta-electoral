@@ -1,0 +1,11 @@
+partido: "psoe"
+tema: "vivienda"
+subtema: "vivienda-publica"
+titulo: "Un parque público de vivienda de al menos el 6 %"
+fuentes:
+  - fuente: "psoe/ponencia-marco-2024"
+fechaAnuncio: "2024-11-01"
+destacada: true
+orden: 5
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-10"

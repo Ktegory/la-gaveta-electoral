@@ -1,0 +1,26 @@
+nombre: "ERC"
+nombreCompleto: "Esquerra Republicana de Catalunya"
+siglas: "ERC"
+color: "#F95838"
+colorTexto: "tinta"
+colorOrigen:
+  fuente: "Naranja de la portada de su programa para el 29N (esquerrarepublicana.cat), igual al del logo; consultado el 11 nov 2026"
+  verificado: true
+logo:
+  url: "https://upload.wikimedia.org/wikipedia/commons/9/9a/ERC_logo_2025.svg"
+  origen: "Wikimedia Commons (infobox de es.wikipedia), consultado el 11 nov 2026"
+candidatura: "Gabriel Rufián"
+lema: "Defensa't"
+web: "https://www.esquerra.cat/"
+estadoPrograma: "publicado"
+fechaProgramaPublicado: "2026-11-05"
+resumenEstado: "Programa publicado el 5 nov"
+explicacionEstado: "Presentó su programa para el 29N, <b>«Pel país. Per la gent. Pel futur.»</b>, el 5 de noviembre: 48 páginas en catalán, con medidas numeradas hasta la 258 y ordenadas en tres ejes: defender el país, la gente y los servicios públicos."
+candidaturas:
+  - territorio: "Cataluña"
+    marca: "Lista propia; Podemos no se presenta y aporta candidatos a la lista de ERC (según la prensa)"
+referenciaAnterior:
+  titulo: "Lo que proponía en 2023"
+  detalle: "Programa «Defensa Catalunya!», 132 págs., en catalán. No es el programa del 29N."
+  fuente: "erc/programa-2023"
+ultimaRevision: "2026-11-11T10:00:00+01:00"

@@ -1,0 +1,11 @@
+partido: "pod"
+tema: "empleo"
+subtema: "jornada"
+titulo: "Jornada laboral de 30 horas semanales"
+fuentes:
+  - fuente: "pod/web-campana"
+fechaAnuncio: "2026-10-19"
+destacada: true
+orden: 2
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-10"

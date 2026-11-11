@@ -1,0 +1,26 @@
+# Netlify · plan personal, sitio estático (sin funciones; un formulario de Netlify Forms para avisar de errores).
+[build]
+  command = "npm run netlify-build"
+  publish = "dist"
+  # Ahorro de créditos: no se compila si el cambio solo toca docs/ u otros archivos que no afectan a la web.
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- src public scripts astro.config.mjs package.json package-lock.json netlify.toml"
+
+[build.environment]
+  NODE_VERSION = "22.23.4"
+  # En producción, los datos sin verificar bloquean la publicación (ver src/lib/validar.ts).
+  PUBLICACION_ESTRICTA = "1"
+
+[context.deploy-preview.environment]
+  PUBLICACION_ESTRICTA = "0"
+
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"
