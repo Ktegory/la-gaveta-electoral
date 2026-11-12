@@ -1,0 +1,15 @@
+partido: "psoe"
+tema: "sanidad"
+subtema: "listas-espera"
+titulo: "Garantizar que el 85 % de los pacientes obtenga cita en Atención Primaria en un máximo de 48 horas"
+resumen: "Lo avanzó Kilian Sánchez, secretario de Sanidad del PSOE, como medida del programa electoral. Para lograrlo propone interconectar los sistemas nacionales de datos y reforzar el trabajo multidisciplinar en Atención Primaria."
+fuentes:
+  - fuente: "psoe/prensa-sanidad-listas-espera-2026-11-07"
+    cita: "su formación incluirá en su programa electoral medidas para reducir los tiempos de las listas de espera, entre ellas, que el 85 por ciento de los pacientes que acudan a Atención Primaria puedan obtener una cita en un plazo máximo de 48 horas."
+fechaAnuncio: "2026-11-06"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 12 nov en la crónica de Redacción Médica (primer párrafo; busca «plazo máximo de 48 horas»). Es resumen del medio, no palabras literales de Sánchez. La crónica dice «este viernes» y se publicó el sábado 7, así que el anuncio es del 6 nov. El PSOE aún no ha publicado programa."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"

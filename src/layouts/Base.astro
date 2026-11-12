@@ -96,7 +96,7 @@ const cur = (id: string) => (seccion === id ? 'page' : undefined);
   </main>
   <footer class="foot pad">
     <div class="foot-id"><Logo /><span>Una iniciativa civil · Sin vinculación con ningún partido.</span></div>
-    <nav aria-label="Pie"><a href="/como-funciona/" aria-current={cur('metodo')}>Cómo funciona</a><a href="/fuentes/" aria-current={cur('fuentes')}>Fuentes</a><a href="/como-funciona/#errores">¿Has visto un error?</a><a href="/novedades/" aria-current={cur('novedades')}>Novedades</a><a class="foot-rss" href="/novedades.xml" type="application/rss+xml" aria-label="RSS de las novedades" title="RSS de las novedades"><Icono id="rss" /></a></nav>
+    <nav aria-label="Pie"><a href="/como-funciona/" aria-current={cur('metodo')}>Cómo funciona</a><a href="/fuentes/" aria-current={cur('fuentes')}>Fuentes</a><a href="/como-funciona/#errores">¿Has visto un error?</a><a href="/novedades/" aria-current={cur('novedades')}>Novedades</a><a class="foot-rss" href="/novedades.xml" type="application/rss+xml" aria-label="RSS de las novedades" title="RSS de las novedades"><Icono id="rss" class="rss" /></a></nav>
   </footer>
   <nav class="tabbar" aria-label="Accesos rápidos">
     <a href="/partidos/" aria-current={cur('partidos')}><Icono id="home" />Partidos</a>

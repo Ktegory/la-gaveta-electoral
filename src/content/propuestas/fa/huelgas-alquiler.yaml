@@ -1,0 +1,15 @@
+partido: "fa"
+tema: "vivienda"
+subtema: "alquiler"
+titulo: "Regular las huelgas de alquiler: depositar la renta en un fondo público sin riesgo de desahucio por impago"
+resumen: "Los inquilinos podrían retener colectivamente el pago directo al propietario ante incumplimientos justificados, como la falta de mantenimiento, depositando el 100 % de la renta en un fondo público. Ese depósito valdría como pago, por lo que no cabría desahucio por impago ni reclamación de intereses. Incluye protección frente a represalias, como no renovar el contrato."
+fuentes:
+  - fuente: "fa/nota-sindicatos-inquilinas-2026-11-12"
+    cita: "El mecanismo propuesto establece que los arrendatarios depositen el 100% del importe de sus alquileres en un fondo público, en lugar de transferirlo directamente a los propietarios."
+fechaAnuncio: "2026-11-12"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 12 nov en la nota de frenteamplio.info (busca «fondo público»; los párrafos siguientes recogen lo del desahucio y las represalias). Es texto de la nota del partido, no palabras literales de Delgado. El Frente Amplio aún no ha publicado programa."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"

@@ -1,6 +1,7 @@
 fecha: "2026-11-12"
 partido: "psoe"
 tipo: "propuestas"
-descripcion: "Añadimos su posición sobre el calendario de cierre nuclear, expuesta en el Foro Solar de UNEF (27 oct)."
+descripcion: "Añadimos su posición sobre el calendario de cierre nuclear, expuesta en el Foro Solar de UNEF (27 oct), y el objetivo de cita en Atención Primaria en 48 horas que avanzó su secretario de Sanidad (6 nov)."
 propuestas:
   - "psoe/calendario-cierre-nuclear"
+  - "psoe/cita-primaria-48-horas"

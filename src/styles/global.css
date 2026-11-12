@@ -912,7 +912,9 @@ a.nov-p:hover { text-decoration: underline; text-underline-offset: 3px }
   .nov > li { grid-template-columns: 1fr }
   .nov-cab { flex-direction: row; align-items: center; flex-wrap: wrap }
 }
+/* Naranja de RSS: el color con el que se suele reconocer el icono. */
+.i.rss { color: #F26522 }
 .foot nav:has(.foot-rss) { align-items: center }
-.foot-rss { display: inline-grid; place-items: center; width: 32px; height: 32px; margin-left: -8px; border-radius: 999px; border: 1.5px solid #5A5A57; color: #F4F4F1; transition: background-color .15s, border-color .15s }
-.foot-rss:hover { background: #F4F4F1; border-color: #F4F4F1; color: var(--foot-bg) }
-.foot-rss .i { width: 16px; height: 16px }
+.foot-rss { display: inline-grid; place-items: center; width: 32px; height: 32px; margin-left: -8px; border-radius: 999px; background: #F26522; transition: background-color .15s }
+.foot-rss:hover { background: #D9541A }
+.foot-rss .i { width: 16px; height: 16px; color: #fff }

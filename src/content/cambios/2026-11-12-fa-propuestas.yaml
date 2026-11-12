@@ -1,7 +1,9 @@
 fecha: "2026-11-12"
 partido: "fa"
 tipo: "propuestas"
-descripcion: "Añadimos dos propuestas que expuso en el Foro Solar de UNEF (27 oct): 100 % renovables en 2040 y fin de las matriculaciones de coches de combustión en 2035."
+descripcion: "Añadimos dos propuestas que expuso en el Foro Solar de UNEF (27 oct): 100 % renovables en 2040 y fin de las matriculaciones de coches de combustión en 2035. Y dos de vivienda que anunció hoy en Madrid: reconocer a los sindicatos de inquilinos y regular las huelgas de alquiler."
 propuestas:
   - "fa/renovables-100-2040"
   - "fa/fin-coches-combustion-2035"
+  - "fa/sindicatos-inquilinas"
+  - "fa/huelgas-alquiler"

@@ -1,0 +1,15 @@
+partido: "fa"
+tema: "vivienda"
+subtema: "alquiler"
+titulo: "Reconocer legalmente a los sindicatos de inquilinos y su capacidad para negociar convenios colectivos de alquiler"
+resumen: "Cualquier inquilino podría constituir un sindicato de vivienda con un mínimo de tres personas. Los convenios podrían negociarse para un edificio o para ámbitos territoriales más amplios. Según su nota, la medida la planteó antes el Sindicato de Inquilinas y la incluirá en su programa."
+fuentes:
+  - fuente: "fa/nota-sindicatos-inquilinas-2026-11-12"
+    cita: "Estas organizaciones contarían con reconocimiento legal pleno y capacidad para negociar convenios colectivos de arrendamiento, tanto en edificios concretos como en ámbitos territoriales más amplios."
+fechaAnuncio: "2026-11-12"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 12 nov en la nota de frenteamplio.info (tercer párrafo; busca «convenios colectivos de arrendamiento»). Es texto de la nota del partido, no palabras literales de Delgado. El Frente Amplio aún no ha publicado programa."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"
