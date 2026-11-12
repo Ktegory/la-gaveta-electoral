@@ -1,0 +1,16 @@
+partido: "vox"
+tema: "exterior"
+subtema: "agenda-2030"
+titulo: "Derogar todas las normas inspiradas en el Pacto Verde Europeo y en la Agenda 2030"
+resumen: "Lo pidió en el Congreso en abril de 2026, antes de la campaña, en una proposición no de ley sobre Mercosur y el campo. Cita en especial la Estrategia de la Granja a la Mesa y la Estrategia por la Biodiversidad, y pide un estudio sobre el impacto de esas políticas en España."
+fuentes:
+  - fuente: "vox/pnl-mercosur-campo-2026-04-28"
+    pagina: "15"
+    cita: "3. Rechazar frontalmente el Pacto Verde Europeo ante las graves consecuencias que está teniendo para la economía española, en especial para nuestro sector primario. De igual modo, promover la derogación de todas las normas inspiradas en el mismo y en la Agenda 2030, especialmente la Estrategia de la Granja a la Mesa y la Estrategia por la Biodiversidad."
+fechaAnuncio: "2026-04-28"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita extraída el 12 nov del PDF oficial del BOCG (huella sha256 guardada), p. 15, punto 3 de la proposición 162/000781. Es anterior a la campaña; VOX aún no ha publicado programa para el 29N. Abascal volvió a criticar la Agenda 2030 el 9 nov en La Revuelta, sin propuesta concreta."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"

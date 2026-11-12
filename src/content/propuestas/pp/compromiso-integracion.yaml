@@ -1,0 +1,16 @@
+partido: "pp"
+tema: "inmigracion"
+subtema: "regularizacion"
+titulo: "Compromiso de integración obligatorio para renovar la residencia y prohibir el burka y el niqab en espacios públicos"
+resumen: "Medida 43 del programa: aprender español, conocer la Constitución y los valores de la UE y, si corresponde, formarse para el empleo."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "23"
+    cita: "Quien quiera renovar su residencia temporal en el régimen general deberá firmar un compromiso de integración. [...] Prohibiremos el uso del burka y el niqab en los espacios públicos."
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita extraída del PDF del programa (copia local con la misma huella sha256) en la búsqueda del 12 nov. La señaló una columna de opinión de elDiario.es (boletín «Sin filtro», 12 nov); la propuesta sale del programa, no de la columna. Subtema provisional (no hay uno propio para esto): revísalo."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"

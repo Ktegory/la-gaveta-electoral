@@ -1,12 +1,16 @@
 partido: "fa"
 tema: "vivienda"
 subtema: "fiscalidad-vivienda"
-titulo: "Impuesto del 10 % anual sobre la acumulación de vivienda"
-resumen: "Para empresas desde la primera vivienda y para personas físicas desde la cuarta, si el valor total supera 800.000 €."
+titulo: "Impuesto del 10 % sobre el valor de las viviendas acumuladas"
+resumen: "Para empresas desde la primera vivienda y para personas físicas desde la cuarta, si el valor total supera 800.000 €. Quedan fuera las viviendas que se alquilen de forma asequible y estable."
 fuentes:
   - fuente: "fa/nota-impuesto-vivienda-2026-10-28"
+    cita: "Se gravará con un tipo del 10 % del valor de cada vivienda, salvo si se alquilan de forma asequible y estable."
 fechaAnuncio: "2026-10-28"
 destacada: true
 orden: 2
+comprobacion:
+  estado: encontrada
+  nota: "Corrección del 12 nov: el título decía «10 % anual» y la nota oficial no dice «anual» (sí lo dice del impuesto al patrimonio). Se añade la excepción del alquiler asequible. Pendiente de volver a firmar."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-10"
+fechaRevision: "2026-11-12"

@@ -38,6 +38,7 @@
     - { id: jornada, nombre: "Jornada", pregunta: "¿Cuántas horas trabajaremos?" }
     - { id: autonomos, nombre: "Autónomos", pregunta: "¿Qué cambia para los autónomos?" }
     - { id: reforma-laboral, nombre: "Reforma laboral", pregunta: "¿Qué pasa con la reforma laboral?" }
+    - { id: cesta-compra, nombre: "Precios y cesta de la compra", pregunta: "¿Bajará lo que pagamos por la compra?" }
 - id: inmigracion
   nombre: "Inmigración"
   pregunta: "¿Qué proponen sobre regularización, fronteras y nacionalidad?"
@@ -92,6 +93,7 @@
     - { id: gasto-militar, nombre: "Gasto militar", pregunta: "¿Cuánto se gastará en defensa?" }
     - { id: ue, nombre: "Unión Europea", pregunta: "¿Qué proponen para Europa?" }
     - { id: israel-palestina, nombre: "Israel y Palestina", pregunta: "¿Qué harán con Israel y Palestina?" }
+    - { id: agenda-2030, nombre: "Agenda 2030", pregunta: "¿Qué harán con la Agenda 2030 de Naciones Unidas?" }
 - id: igualdad
   nombre: "Igualdad"
   pregunta: "¿Qué proponen sobre igualdad y violencia machista?"

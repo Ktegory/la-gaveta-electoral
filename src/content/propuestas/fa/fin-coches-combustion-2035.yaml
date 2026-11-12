@@ -1,0 +1,15 @@
+partido: "fa"
+tema: "energia"
+subtema: "clima"
+titulo: "Acabar con las nuevas matriculaciones de coches de combustión en 2035"
+resumen: "Junto con una fiscalidad eléctrica más favorable que la de los combustibles fósiles y limitar el gas en los edificios."
+fuentes:
+  - fuente: "fa/prensa-foro-solar-2026-10-27"
+    cita: "La formación defiende una fiscalidad eléctrica más favorable que la aplicada a los combustibles fósiles, limitar el uso del gas en los edificios y acabar con las nuevas matriculaciones de vehículos con motor de combustión en 2035."
+fechaAnuncio: "2026-10-27"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 12 nov en la nota de EFE (resumen de la agencia, no palabras literales). Misma intervención que «renovables-100-2040»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"

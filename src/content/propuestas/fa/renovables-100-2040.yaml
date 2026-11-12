@@ -1,0 +1,15 @@
+partido: "fa"
+tema: "energia"
+subtema: "renovables"
+titulo: "Llegar al 100 % de energías renovables en 2040"
+resumen: "Con la electrificación de la economía como prioridad, una empresa pública de energía y el calendario de cierre nuclear actual. Lo expuso Rosa Martínez en nombre de Frente Amplio."
+fuentes:
+  - fuente: "fa/prensa-foro-solar-2026-10-27"
+    cita: "La secretaria de Estado de Derechos Sociales, Rosa Martínez, expuso la propuesta energética de Frente Amplio, que sitúa la electrificación de la economía entre sus prioridades y fija como objetivo alcanzar un 100 % de energías renovables en 2040."
+fechaAnuncio: "2026-10-27"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 12 nov en la nota de EFE (resumen de la agencia). Otra crónica del foro presenta a Rosa Martínez como representante de Movimiento Sumar; EFE dice que expuso la propuesta de Frente Amplio."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"

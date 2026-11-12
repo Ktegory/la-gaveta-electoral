@@ -1,0 +1,16 @@
+partido: "erc"
+tema: "territorial"
+subtema: "competencias"
+titulo: "Culminar el traspaso integral de Rodalies a la Generalitat"
+resumen: "Medida 222 del programa: pasar la operación a la nueva empresa Rodalies de Catalunya, completar el traspaso de la R1 y empezar el de la R2 Sud, R3, R4 Nord y R16, con vías, estaciones e instalaciones."
+fuentes:
+  - fuente: "erc/programa-29n-2026"
+    pagina: "40"
+    cita: "222. Culminar el traspàs integral de Rodalies a la Generalitat. Accelerar el traspàs de l’operació dels serveis de Rodalies a la nova empresa Rodalies de Catalunya"
+fechaAnuncio: "2026-11-05"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita extraída el 12 nov de una copia del PDF de 48 págs. descargada el 11 nov (la fuente no tiene huella sha256 guardada, así que no puedo asegurar que sea idéntica byte a byte). La pista vino de prensa (El Nacional, 5 nov). Junts tiene una propuesta equivalente."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"

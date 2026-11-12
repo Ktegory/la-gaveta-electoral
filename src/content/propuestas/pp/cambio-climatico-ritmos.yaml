@@ -1,0 +1,16 @@
+partido: "pp"
+tema: "energia"
+subtema: "clima"
+titulo: "Revisar el ritmo de descarbonización de cada sector y frenar los «calendarios imposibles»"
+resumen: "Medida 232 del programa («Afrontaremos el cambio climático con rigor científico»). Mantiene la descarbonización como objetivo, pero retiraría las obligaciones climáticas que perjudiquen la competitividad, la industria o el empleo."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "72"
+    cita: "Pero ha llegado el momento de revisar los ritmos de cada sector atendiendo a tres factores: lo que está ocurriendo en el resto del mundo, la tecnología realmente disponible y la evolución de la demanda. Pondremos freno a la imposición de calendarios imposibles."
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita extraída el 12 nov del PDF del programa (copia local, misma huella sha256), p. 72 del PDF de 82. Para encontrarla, busca «calendarios imposibles». La misma medida dice: «No impondremos obligaciones innecesarias y retiraremos las que perjudiquen la competitividad, la industria o el empleo»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"

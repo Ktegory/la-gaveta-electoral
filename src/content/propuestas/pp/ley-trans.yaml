@@ -1,0 +1,16 @@
+partido: "pp"
+tema: "igualdad"
+subtema: "lgtbi"
+titulo: "Revisar la Ley Trans y eliminar la libre autodeterminación registral del sexo"
+resumen: "Medida 115 del programa («Ni trabas ni culpas. Igualdad real»). Incluye que el sexo biológico sea el criterio en las categorías deportivas femeninas."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "44"
+    cita: "Revisaremos las normas que hayan generado inseguridad jurídica en nombre de la igualdad, como la Ley Trans, y eliminaremos la libre autodeterminación registral del sexo, para reforzar la seguridad jurídica y proteger a los menores."
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita extraída del PDF del programa (copia local con la misma huella sha256) en la búsqueda del 12 nov. La señaló una columna de opinión de elDiario.es (boletín «Sin filtro», 12 nov); la propuesta sale del programa, no de la columna."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"

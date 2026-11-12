@@ -1,0 +1,16 @@
+partido: "pnv"
+tema: "energia"
+subtema: "clima"
+titulo: "Una estrategia de adaptación al cambio climático con financiación suficiente"
+resumen: "Dando prioridad a la prevención de inundaciones, temporales, incendios y fenómenos meteorológicos extremos. Está en el apartado «Una transición ecológica que proteja el medio ambiente y genere oportunidades»."
+fuentes:
+  - fuente: "pnv/programa-29n-2026"
+    pagina: "17"
+    cita: "Favorecer una estrategia de adaptación al cambio climático con financiación suficiente, priorizando la prevención de inundaciones, temporales, incendios y fenómenos meteorológicos extremos."
+fechaAnuncio: "2026-11-09"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita extraída el 12 nov de la copia local del PDF de 43 págs. (descargada el 11 nov), p. 17, punto 06 de «Adaptación climática y biodiversidad». La fuente no tiene huella sha256 guardada."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"

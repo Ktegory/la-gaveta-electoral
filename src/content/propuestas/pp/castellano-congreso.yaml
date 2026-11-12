@@ -1,0 +1,16 @@
+partido: "pp"
+tema: "territorial"
+subtema: "lenguas-cooficiales"
+titulo: "Que el castellano sea la lengua de trabajo en el Congreso"
+resumen: "Medida 127 del programa: reformar el Reglamento del Congreso. Mantiene el uso de las lenguas cooficiales en el Senado."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "47"
+    cita: "Propondremos la reforma del Reglamento de la Cámara para que los debates parlamentarios se desarrollen en la lengua común de todos los españoles."
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita extraída del PDF del programa (copia local con la misma huella sha256) en la búsqueda del 12 nov. La señaló una columna de opinión de elDiario.es (boletín «Sin filtro», 12 nov); la propuesta sale del programa, no de la columna."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"

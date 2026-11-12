@@ -1,0 +1,16 @@
+partido: "erc"
+tema: "energia"
+subtema: "clima"
+titulo: "Reducir las emisiones de CO₂ al menos un 65 % en 2030 y un 95 % en 2040 respecto a 1990"
+resumen: "Medida 153 del programa: alinear la planificación energética y climática con los objetivos científicos."
+fuentes:
+  - fuente: "erc/programa-29n-2026"
+    pagina: "32"
+    cita: "153. Alinear la planificació energètica i climàtica amb els objectius científics. Cal assegurar el compliment amb els objectius de reducció d’emissions de CO2 d’almenys el 65 % el 2030 i del 95 % el 2040, respecte a 1990."
+fechaAnuncio: "2026-11-05"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita extraída el 12 nov de la copia local del PDF de 48 págs. (descargada el 11 nov; la fuente no tiene huella sha256 guardada). Para encontrarla, busca «65 %»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"

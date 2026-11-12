@@ -1,0 +1,16 @@
+partido: "pp"
+tema: "instituciones"
+subtema: "justicia"
+titulo: "Derogar la Ley de Memoria Democrática y sustituirla por una ley de concordia"
+resumen: "Medida 129 del programa."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "47"
+    cita: "DEROGAREMOS LA LEY DE MEMORIA DEMOCRÁTICA Y APROBAREMOS UNA LEY DE CONCORDIA."
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita extraída del PDF del programa (copia local con la misma huella sha256) en la búsqueda del 12 nov. La señaló una columna de opinión de elDiario.es (boletín «Sin filtro», 12 nov); la propuesta sale del programa, no de la columna. Subtema provisional (no hay uno propio para esto): revísalo."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"

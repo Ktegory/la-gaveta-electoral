@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "empleo"
+subtema: "cesta-compra"
+titulo: "Crear un supermercado público con precios justos para productores y consumidores"
+resumen: "Lo presentó Irene Montero junto al impuesto a las empresas más contaminantes, tras reunirse con organizaciones ecologistas. No ha dado más detalles ni cifras."
+fuentes:
+  - fuente: "pod/instagram-supermercado-2026-11-10"
+    cita: "Supermercado público con precios justos para los productores y la gente."
+  - fuente: "pod/prensa-montero-contaminantes-2026-11-10"
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita tomada el 12 nov del texto de la publicación oficial de @ahorapodemos (10 nov). Subtema nuevo «Precios y cesta de la compra», dentro de Empleo y salarios. Ya se mencionaba de pasada en «permiso-cuidado-retribuido» y «gasto-militar-a-gasto-social»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"

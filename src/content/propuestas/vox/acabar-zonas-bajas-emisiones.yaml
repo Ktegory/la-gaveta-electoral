@@ -1,0 +1,15 @@
+partido: "vox"
+tema: "energia"
+subtema: "clima"
+titulo: "Acabar con las Zonas de Bajas Emisiones"
+resumen: "Vox las llama «políticas de fanatismo climático». Lo dijo su portavoz Isabel Moñino en Vigo, donde Vox ha recurrido la ordenanza municipal. No concretó si derogaría la obligación estatal de crearlas."
+fuentes:
+  - fuente: "vox/prensa-monino-zbe-2026-11-10"
+    cita: "ha puesto las Zonas de Bajas Emisiones como un ejemplo de «políticas de fanatismo climático» con la que su partido va a «acabar»."
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 12 nov en la nota de Europa Press. Es una declaración ante los medios, sin medida concreta."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"
