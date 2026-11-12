@@ -4,6 +4,7 @@ import ColumnaPartido from '../components/ColumnaPartido.astro';
 import MapaPropuestas from '../components/MapaPropuestas.astro';
 import Preguntas from '../components/Preguntas.astro';
 import ListaCambios from '../components/ListaCambios.astro';
+import Icono from '../components/Icono.astro';
 import OrdenPartidos from '../components/OrdenPartidos.astro';
 import SelectorFoco from '../components/SelectorFoco.astro';
 import { datos, ELECCIONES, fecha } from '../lib/datos';
@@ -89,6 +90,10 @@ const dosCifras = (n: number) => String(n).padStart(2, '0');
     <div>
       <h2>Últimos cambios</h2>
       <ListaCambios limite={5} />
+      <div class="nov-acc">
+        <a class="btn sm" href="/novedades/">Todas las novedades <span class="arrow">→</span></a>
+        <a class="btn sm" href="/novedades.xml" type="application/rss+xml"><Icono id="rss" />RSS</a>
+      </div>
     </div>
   </section>
 </Base>

@@ -2,3 +2,5 @@ fecha: "2026-11-12"
 partido: "pnv"
 tipo: "propuestas"
 descripcion: "Añadimos de su programa la estrategia de adaptación al cambio climático."
+propuestas:
+  - "pnv/adaptacion-cambio-climatico"

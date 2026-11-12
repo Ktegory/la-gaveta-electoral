@@ -171,6 +171,8 @@ const cambios = defineCollection({
     partido: reference('partidos').optional(),
     tipo: z.enum(['fuente-nueva', 'estado-programa', 'propuestas', 'correccion', 'sitio']),
     descripcion: z.string(),
+    // Propuestas a las que se refiere el cambio (se enlazan en /novedades/ y en el RSS).
+    propuestas: z.array(reference('propuestas')).optional(),
   }),
 });
 

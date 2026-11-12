@@ -889,3 +889,30 @@ p .fuera { margin: 0; vertical-align: 1px }
 }
 .tema-ver { margin-left: auto; font-family: var(--sans); font-stretch: 100%; font-size: .9062rem; font-weight: 500; color: inherit; text-underline-offset: 4px }
 .tema-ver:hover { text-decoration-thickness: 2px }
+
+/* ---------- Novedades (/novedades/) y RSS ---------- */
+.btn .i { width: 18px; height: 18px; flex: none }
+.nov-rss { display: flex; align-items: center; gap: 12px 20px; flex-wrap: wrap; margin: 0 0 clamp(24px, 3cqi, 40px) }
+.nov-rss p { margin: 0; font-size: .875rem; max-width: 52ch }
+.nov-acc { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px }
+.nov-dia h2 { font-family: var(--cond); font-weight: 900; font-size: clamp(1.75rem, 2.6cqi, 2.75rem); text-transform: uppercase; line-height: .95; margin: 0 0 18px }
+.nov { list-style: none; margin: 0; padding: 0; display: grid; gap: 0 }
+.nov > li { display: grid; grid-template-columns: minmax(150px, 220px) 1fr; gap: 8px 32px; padding: 16px 0; border-top: 1px solid var(--hair) }
+.nov > li:first-child { border-top: 0; padding-top: 0 }
+.nov-cab { display: flex; flex-direction: column; align-items: flex-start; gap: 8px }
+.nov-p { display: inline-block; padding: 5px 12px; border-radius: 999px; background: var(--pc, var(--ink)); color: var(--pt, #fff); font-weight: 700; font-size: .875rem; text-decoration: none; line-height: 1.2 }
+a.nov-p:hover { text-decoration: underline; text-underline-offset: 3px }
+.nov-tipo { font-family: var(--mono); font-size: .75rem; letter-spacing: .04em; text-transform: uppercase; color: var(--mute) }
+.nov-cuerpo p { margin: 0; max-width: 70ch; line-height: 1.45 }
+.nov-ps { margin: 10px 0 0; padding: 0; list-style: none; display: grid; gap: 6px }
+.nov-ps li { position: relative; padding-left: 20px; font-size: .9375rem; line-height: 1.35 }
+.nov-ps li::before { content: "→"; position: absolute; left: 0; color: var(--mute) }
+.nov-ps a { text-underline-offset: 3px }
+@container site (max-width: 600px) {
+  .nov > li { grid-template-columns: 1fr }
+  .nov-cab { flex-direction: row; align-items: center; flex-wrap: wrap }
+}
+.foot nav:has(.foot-rss) { align-items: center }
+.foot-rss { display: inline-grid; place-items: center; width: 32px; height: 32px; margin-left: -8px; border-radius: 999px; border: 1.5px solid #5A5A57; color: #F4F4F1; transition: background-color .15s, border-color .15s }
+.foot-rss:hover { background: #F4F4F1; border-color: #F4F4F1; color: var(--foot-bg) }
+.foot-rss .i { width: 16px; height: 16px }

@@ -2,3 +2,6 @@ fecha: "2026-11-11"
 partido: "erc"
 tipo: "correccion"
 descripcion: "Ajustamos dos títulos a lo que dice su programa: «Blindar» (no «Fijar por ley») la inmersión lingüística, y «Aprobar un modelo de financiación como el pactado en enero de 2026» (no «Aplicar» ese modelo)."
+propuestas:
+  - "erc/inmersion-linguistica"
+  - "erc/financiacion-condonacion-fla"

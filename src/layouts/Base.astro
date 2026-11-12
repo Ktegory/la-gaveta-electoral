@@ -6,7 +6,7 @@ import Icono from '../components/Icono.astro';
 import Marquesina from '../components/Marquesina.astro';
 import Logo from '../components/Logo.astro';
 
-interface Props { titulo?: string; descripcion?: string; seccion?: 'mapa' | 'partidos' | 'comparar' | 'escala' | 'metodo' | 'buscar' | 'fuentes'; estilo?: string; indexar?: boolean; noindex?: boolean }
+interface Props { titulo?: string; descripcion?: string; seccion?: 'mapa' | 'partidos' | 'comparar' | 'escala' | 'metodo' | 'buscar' | 'fuentes' | 'novedades'; estilo?: string; indexar?: boolean; noindex?: boolean }
 const { titulo, descripcion = 'Los programas de los partidos para las elecciones generales del 29N, ordenados por temas, comparables y con la fuente original al lado de cada propuesta.', seccion, estilo, indexar = true, noindex = false } = Astro.props;
 const nombre = 'La Gaveta electoral';
 const t = titulo ? `${titulo} · ${nombre}` : `${nombre} · Elecciones generales 29N`;
@@ -25,6 +25,7 @@ const datosEstructurados = {
 const NAV = [
   { id: 'partidos', href: '/partidos/', txt: 'Partidos' },
   { id: 'comparar', href: '/comparar/', txt: 'Comparar' },
+  { id: 'novedades', href: '/novedades/', txt: 'Novedades' },
   { id: 'metodo', href: '/como-funciona/', txt: 'Cómo funciona' },
 ] as const;
 const cur = (id: string) => (seccion === id ? 'page' : undefined);
@@ -40,6 +41,7 @@ const cur = (id: string) => (seccion === id ? 'page' : undefined);
   <meta name="description" content={descripcion} />
   <link rel="canonical" href={canonica} />
   <link rel="sitemap" href="/sitemap.xml" />
+  <link rel="alternate" type="application/rss+xml" title="La Gaveta electoral · Novedades" href="/novedades.xml" />
   {noindex && <meta name="robots" content="noindex" />}
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -94,7 +96,7 @@ const cur = (id: string) => (seccion === id ? 'page' : undefined);
   </main>
   <footer class="foot pad">
     <div class="foot-id"><Logo /><span>Una iniciativa civil · Sin vinculación con ningún partido.</span></div>
-    <nav aria-label="Pie"><a href="/como-funciona/" aria-current={cur('metodo')}>Cómo funciona</a><a href="/fuentes/" aria-current={cur('fuentes')}>Fuentes</a><a href="/como-funciona/#errores">¿Has visto un error?</a><a href="/como-funciona/#historial">Historial de cambios</a></nav>
+    <nav aria-label="Pie"><a href="/como-funciona/" aria-current={cur('metodo')}>Cómo funciona</a><a href="/fuentes/" aria-current={cur('fuentes')}>Fuentes</a><a href="/como-funciona/#errores">¿Has visto un error?</a><a href="/novedades/" aria-current={cur('novedades')}>Novedades</a><a class="foot-rss" href="/novedades.xml" type="application/rss+xml" aria-label="RSS de las novedades" title="RSS de las novedades"><Icono id="rss" /></a></nav>
   </footer>
   <nav class="tabbar" aria-label="Accesos rápidos">
     <a href="/partidos/" aria-current={cur('partidos')}><Icono id="home" />Partidos</a>

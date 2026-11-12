@@ -2,3 +2,5 @@ fecha: "2026-11-12"
 partido: "fa"
 tipo: "correccion"
 descripcion: "Quitamos «anual» del impuesto del 10 % sobre la acumulación de vivienda: su nota no lo dice. Añadimos que quedan fuera las viviendas en alquiler asequible y estable."
+propuestas:
+  - "fa/impuesto-acumulacion-vivienda"

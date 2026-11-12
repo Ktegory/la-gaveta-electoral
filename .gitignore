@@ -19,3 +19,9 @@ icon-la-gaveta-electoral.svg
 
 # Ajustes locales de Claude Code
 .claude/settings.local.json
+
+# Informes de las rondas de vigilancia (skill revisar-novedades)
+revisiones/
+
+# Piezas para redes sociales (anuncios, vídeos)
+redes/

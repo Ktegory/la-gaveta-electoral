@@ -1,0 +1,58 @@
+---
+import Base from '../layouts/Base.astro';
+import Icono from '../components/Icono.astro';
+import { datos, fechaLarga, iso, varsPartido } from '../lib/datos';
+import { TIPO_CAMBIO, propuestasDeCambio, urlPropuesta } from '../lib/novedades';
+const d = await datos();
+const porId = new Map(d.partidos.map((p) => [p.id, p]));
+// Agrupados por día, del más reciente al más antiguo; dentro del día, por partido.
+const dias = new Map<string, typeof d.cambios>();
+for (const c of d.cambios) {
+  const k = iso(c.data.fecha);
+  dias.set(k, [...(dias.get(k) ?? []), c]);
+}
+const grupos = [...dias].map(([k, cs]) => ({
+  k,
+  f: cs[0].data.fecha,
+  cs: cs.sort((a, b) => (a.data.partido ? porId.get(a.data.partido.id)!.data.nombre : '').localeCompare(b.data.partido ? porId.get(b.data.partido.id)!.data.nombre : '', 'es')),
+}));
+---
+<Base titulo="Novedades" seccion="novedades" descripcion="Lo que cambia cada día en La Gaveta electoral: propuestas nuevas, programas publicados y correcciones, con su fuente.">
+  <div class="chd pad">
+    <h1 class="cond">Novedades</h1>
+    <p class="lead">Lo que cambia cada día en la gaveta: propuestas nuevas, programas publicados y correcciones. Cada novedad enlaza a la propuesta, y la propuesta, a su fuente.</p>
+    <div class="nov-rss">
+      <a class="btn sm" href="/novedades.xml" type="application/rss+xml"><Icono id="rss" />Suscríbete por RSS</a>
+      <p class="mute">Copia el enlace en tu lector de noticias (Feedly, Inoreader, NetNewsWire…) y te llegará cada novedad sin entrar en la web.</p>
+    </div>
+  </div>
+  <div class="pad" style="padding-bottom:var(--sec)">
+    {grupos.map((g) => (
+      <section class="blk nov-dia" id={g.k} aria-labelledby={`h-${g.k}`}>
+        <h2 id={`h-${g.k}`}><time datetime={g.k}>{fechaLarga(g.f)}</time></h2>
+        <ul class="nov">
+          {g.cs.map((c) => {
+            const p = c.data.partido ? porId.get(c.data.partido.id)! : undefined;
+            const ps = propuestasDeCambio(d, c);
+            return (
+              <li id={c.id} style={p ? varsPartido(p) : undefined}>
+                <div class="nov-cab">
+                  {p ? <a class="nov-p on-color" href={`/partidos/${p.id}/`}>{p.data.nombre}</a> : <span class="nov-p">La Gaveta</span>}
+                  <span class="nov-tipo">{TIPO_CAMBIO[c.data.tipo]}</span>
+                </div>
+                <div class="nov-cuerpo">
+                  <p>{c.data.descripcion}</p>
+                  {ps.length > 0 && (
+                    <ul class="nov-ps">
+                      {ps.map((x) => <li><a href={urlPropuesta(x)}>{x.data.titulo}</a></li>)}
+                    </ul>
+                  )}
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    ))}
+  </div>
+</Base>
