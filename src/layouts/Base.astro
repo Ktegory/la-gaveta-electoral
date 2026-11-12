@@ -74,7 +74,6 @@ const cur = (id: string) => (seccion === id ? 'page' : undefined);
       <summary aria-label="Menú"><svg class="hamb" viewBox="0 0 18 14" aria-hidden="true"><path d="M1 1h16M1 7h16M1 13h16" /></svg></summary>
       <nav aria-label="Menú">
         {NAV.map((n) => <a href={n.href} aria-current={cur(n.id)}>{n.txt}</a>)}
-        <a href="/como-funciona/" aria-current={cur('metodo')}>Cómo funciona</a>
         <a href="/fuentes/" aria-current={cur('fuentes')}>Fuentes</a>
         <a href="/buscar/" aria-current={cur('buscar')}>Buscar</a>
       </nav>
