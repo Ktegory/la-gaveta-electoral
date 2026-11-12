@@ -1,6 +1,11 @@
 fecha: "2026-11-12"
 partido: "pnv"
 tipo: "propuestas"
-descripcion: "Añadimos de su programa la estrategia de adaptación al cambio climático."
+descripcion: "Añadimos de su programa la estrategia de adaptación al cambio climático. Y la reforma de la Ley del Suelo que defendió hoy Maribel Vaquero en la Diputación Permanente, para que un defecto subsanable no tumbe un plan urbanístico. Y cuatro de seguridad, el tema nuevo, de su programa: la Ertzaintza como policía integral, la multirreincidencia, la reforma de la «ley mordaza» y la de los delitos de opinión sobre la Corona."
 propuestas:
   - "pnv/adaptacion-cambio-climatico"
+  - "pnv/ley-suelo-planes-urbanisticos"
+  - "pnv/ertzaintza-policia-integral"
+  - "pnv/multirreincidencia"
+  - "pnv/reformar-ley-mordaza"
+  - "pnv/delitos-expresion-corona"

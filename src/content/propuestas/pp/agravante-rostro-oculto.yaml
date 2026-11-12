@@ -1,0 +1,16 @@
+partido: "pp"
+tema: "seguridad"
+subtema: "delitos"
+titulo: "Recuperar la agravante por actuar con el rostro cubierto en actos violentos o vandálicos"
+resumen: "Medida 22 del programa. Recupera la agravante que se eliminó del Código Penal en 2022."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "18"
+    cita: "Actuar con el rostro cubierto para evitar la identificación durante la comisión de actos violentos, vandálicos o delictivos tendrá consecuencias más graves."
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita extraída del PDF del programa (copia local con la misma huella sha256) el 12 nov, al crear el tema Seguridad. Feijóo la presentó también ese día en Girona como parte de su plan de seguridad. Busca «rostro cubierto» en la página 18."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"

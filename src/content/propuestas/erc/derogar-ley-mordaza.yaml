@@ -1,0 +1,16 @@
+partido: "erc"
+tema: "seguridad"
+subtema: "delitos"
+titulo: "Derogar la Ley de Seguridad Ciudadana («ley mordaza»)"
+resumen: "Punto 2 del programa. Propone revisar también las normas que restringen los derechos de protesta, movilización y libertad de expresión, y que mientras tanto no se aplique en los territorios con competencias de seguridad."
+fuentes:
+  - fuente: "erc/programa-29n-2026"
+    pagina: "8"
+    cita: "2. Derogar la Llei mordassa. La Llei Orgànica 4/2015 de protecció de la seguretat ciutadana"
+fechaAnuncio: "2026-11-05"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita extraída el 12 nov, al crear el tema Seguridad, de la copia local del PDF de 48 págs. (descargada el 11 nov; la fuente no tiene huella sha256 guardada). Página 8, punto 2. Busca «Llei mordassa»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"

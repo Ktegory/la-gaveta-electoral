@@ -1,0 +1,16 @@
+partido: "pp"
+tema: "seguridad"
+subtema: "delitos"
+titulo: "Elevar a 3.000 euros la multa mínima por vandalismo en desórdenes multitudinarios"
+resumen: "Medida 24 del programa. Se aplica cuando la conducta no es delito. Incluye agilizar las indemnizaciones a los comerciantes afectados."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "18"
+    cita: "Elevaremos la multa mínima a 3.000 euros para quienes participen activamente en actos de vandalismo contra bienes públicos o privados durante desórdenes multitudinarios que alteren gravemente la seguridad ciudadana, cuando su conducta no constituya delito."
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita extraída del PDF del programa (copia local con la misma huella sha256) el 12 nov, al crear el tema Seguridad. Feijóo la presentó también ese día en Girona como parte de su plan de seguridad. Busca «multa mínima a 3.000» en la página 18."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"

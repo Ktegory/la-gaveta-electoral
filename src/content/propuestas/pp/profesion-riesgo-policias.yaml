@@ -1,0 +1,16 @@
+partido: "pp"
+tema: "seguridad"
+subtema: "policia"
+titulo: "Reconocer a la Policía Nacional y la Guardia Civil como profesiones de riesgo y culminar la equiparación salarial"
+resumen: "Medida 32 del programa. Incluye actualizar las dietas, planificar las convocatorias de plazas, renovar medios y reforzar la atención a la salud mental de los agentes."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "20"
+    cita: "Reconoceremos a Policía Nacional y Guardia Civil como profesiones de riesgo, culminaremos el acuerdo de equiparación salarial y actualizaremos las dietas."
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita extraída del PDF del programa (copia local con la misma huella sha256) el 12 nov, al crear el tema Seguridad. Feijóo la presentó también ese día en Girona como parte de su plan de seguridad. Busca «profesiones de riesgo» en la página 20."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"

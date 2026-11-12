@@ -1,0 +1,16 @@
+partido: "erc"
+tema: "seguridad"
+subtema: "policia"
+titulo: "Que los Mossos d'Esquadra actúen como policía integral en toda Cataluña, también en puertos y aeropuertos"
+resumen: "Puntos 36 y 239 del programa. Incluye que los Mossos accedan a las bases de datos y a la cooperación policial internacional (Interpol y Europol) en igualdad con los cuerpos estatales (punto 240)."
+fuentes:
+  - fuente: "erc/programa-29n-2026"
+    pagina: "14"
+    cita: "36. Assumir noves competències en seguretat. Cal garantir la competència del Cos de Mossos d’Esquadra com a policia integral al conjunt del país, sense excepcions."
+fechaAnuncio: "2026-11-05"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita extraída el 12 nov, al crear el tema Seguridad, de la copia local del PDF de 48 págs. (descargada el 11 nov; la fuente no tiene huella sha256 guardada). Página 14, punto 36; el traspaso de puertos y aeropuertos y el acceso a Interpol y Europol están en la página 42, puntos 239 y 240."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"

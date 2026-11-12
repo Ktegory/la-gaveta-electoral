@@ -1,0 +1,16 @@
+partido: "pnv"
+tema: "seguridad"
+subtema: "delitos"
+titulo: "Reformar los delitos de opinión sobre la Corona, las instituciones y los símbolos del Estado"
+resumen: "Punto 03 del apartado de derechos y libertades del programa: adecuarlos a los estándares europeos de libertad de expresión."
+fuentes:
+  - fuente: "pnv/programa-29n-2026"
+    pagina: "27"
+    cita: "Favorecer la reforma del Código Penal en los delitos relacionados con la expresión de opiniones sobre la Corona, las instituciones y los símbolos del Estado, adecuando la legislación a los estándares europeos de libertad de expresión."
+fechaAnuncio: "2026-11-09"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita extraída el 12 nov, al crear el tema Seguridad, de la copia local del PDF de 43 págs. (descargada el 11 nov; la fuente no tiene huella sha256 guardada). Página 27, punto 03. Busca «símbolos del Estado»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"

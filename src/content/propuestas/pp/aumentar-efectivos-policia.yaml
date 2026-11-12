@@ -1,0 +1,15 @@
+partido: "pp"
+tema: "seguridad"
+subtema: "policia"
+titulo: "Aumentar los efectivos de la Policía Nacional, la Guardia Civil y los Mossos d'Esquadra"
+resumen: "Lo anunció Feijóo en Girona el 12 de noviembre. La nota no da cifras."
+fuentes:
+  - fuente: "pp/nota-plan-seguridad-girona-2026-11-12"
+    cita: "comprometiéndose a incrementar los efectivos de la Policía Nacional, la Guardia Civil y los Mossos d’Esquadra"
+fechaAnuncio: "2026-11-12"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada en la nota oficial del PP el 12 nov. Es estilo indirecto de la nota, no una cita entre comillas de Feijóo. Busca «incrementar los efectivos». El programa no recoge un aumento general de plantilla (sí «planificaremos las convocatorias de plazas», medida 32)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"

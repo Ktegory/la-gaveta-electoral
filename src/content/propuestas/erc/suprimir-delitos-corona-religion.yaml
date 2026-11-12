@@ -1,0 +1,16 @@
+partido: "erc"
+tema: "seguridad"
+subtema: "delitos"
+titulo: "Suprimir los delitos de ofensa a los sentimientos religiosos y de injurias y calumnias a la Corona"
+resumen: "Punto 3 del programa. Incluye también las injurias y calumnias contra las asambleas legislativas."
+fuentes:
+  - fuente: "erc/programa-29n-2026"
+    pagina: "8"
+    cita: "3. Suprimir els delictes d’ofensa als sentiments religiosos i d’injúries i calúmnies contra la Corona i contra les assemblees legislatives."
+fechaAnuncio: "2026-11-05"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita extraída el 12 nov, al crear el tema Seguridad, de la copia local del PDF de 48 págs. (descargada el 11 nov; la fuente no tiene huella sha256 guardada). Página 8, punto 3. Busca «sentiments religiosos»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"

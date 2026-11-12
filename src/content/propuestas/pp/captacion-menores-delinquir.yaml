@@ -1,0 +1,16 @@
+partido: "pp"
+tema: "seguridad"
+subtema: "delitos"
+titulo: "Castigar como delito propio la captación y utilización de menores para cometer delitos"
+resumen: "Medida 26 del programa. Incluye un plan contra las bandas juveniles y las armas blancas, y reformar la Ley del Menor para alargar el internamiento en delitos graves."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "19"
+    cita: "Castigaremos como delito propio la captación y utilización de menores para cometer delitos."
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita extraída del PDF del programa (copia local con la misma huella sha256) el 12 nov, al crear el tema Seguridad. Feijóo la presentó también ese día en Girona como parte de su plan de seguridad. Busca «delito propio» en la página 19."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"

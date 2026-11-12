@@ -111,3 +111,10 @@
     - { id: financiacion, nombre: "Financiación autonómica", pregunta: "¿Cómo se financiarán las comunidades?" }
     - { id: lenguas-cooficiales, nombre: "Lenguas cooficiales", pregunta: "¿Qué pasa con las lenguas cooficiales?" }
     - { id: competencias, nombre: "Competencias", pregunta: "¿Quién decide qué?" }
+- id: seguridad
+  nombre: "Seguridad"
+  pregunta: "¿Qué harán con la policía, los delitos y las penas?"
+  orden: 13
+  subtemas:
+    - { id: policia, nombre: "Policía y Guardia Civil", pregunta: "¿Qué cambia para la policía y la Guardia Civil?" }
+    - { id: delitos, nombre: "Delitos y sanciones", pregunta: "¿Qué delitos, penas y multas cambiarían?" }

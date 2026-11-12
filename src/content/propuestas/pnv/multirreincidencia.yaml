@@ -1,0 +1,16 @@
+partido: "pnv"
+tema: "seguridad"
+subtema: "delitos"
+titulo: "Reformar las leyes para dar una respuesta judicial más ágil a la multirreincidencia"
+resumen: "Apartado «Respuesta a la delincuencia reincidente» del programa. Incluye coordinar mejor la Ertzaintza y la Administración de Justicia."
+fuentes:
+  - fuente: "pnv/programa-29n-2026"
+    pagina: "24"
+    cita: "Impulsar las reformas legales necesarias para garantizar una respuesta judicial ágil, eficaz y proporcionada frente a quienes cometen delitos de manera reiterada"
+fechaAnuncio: "2026-11-09"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita extraída el 12 nov, al crear el tema Seguridad, de la copia local del PDF de 43 págs. (descargada el 11 nov; la fuente no tiene huella sha256 guardada). Página 24, punto 05. Busca «multirreincidencia»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"

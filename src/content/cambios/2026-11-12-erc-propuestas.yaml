@@ -1,7 +1,10 @@
 fecha: "2026-11-12"
 partido: "erc"
 tipo: "propuestas"
-descripcion: "Añadimos dos propuestas de su programa: el traspaso de Rodalies y los objetivos de reducción de emisiones para 2030 y 2040."
+descripcion: "Añadimos dos propuestas de su programa: el traspaso de Rodalies y los objetivos de reducción de emisiones para 2030 y 2040. Y tres de seguridad, el tema nuevo: derogar la «ley mordaza», suprimir los delitos de ofensa a los sentimientos religiosos y de injurias a la Corona, y los Mossos como policía integral, también en puertos y aeropuertos."
 propuestas:
   - "erc/rodalies"
   - "erc/objetivos-emisiones"
+  - "erc/derogar-ley-mordaza"
+  - "erc/suprimir-delitos-corona-religion"
+  - "erc/mossos-puertos-aeropuertos"

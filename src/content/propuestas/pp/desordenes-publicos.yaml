@@ -1,0 +1,16 @@
+partido: "pp"
+tema: "seguridad"
+subtema: "delitos"
+titulo: "Reformar el delito de desórdenes públicos para castigar más conductas y endurecer las penas por disturbios violentos"
+resumen: "Medida 21 del programa."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "17"
+    cita: "Reformaremos el delito de desórdenes públicos para ampliar las conductas castigadas y endurecer las penas por participar en disturbios violentos"
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita extraída del PDF del programa (copia local con la misma huella sha256) el 12 nov, al crear el tema Seguridad. Feijóo la presentó también ese día en Girona como parte de su plan de seguridad. Busca «delito de desórdenes públicos» en la página 17."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"

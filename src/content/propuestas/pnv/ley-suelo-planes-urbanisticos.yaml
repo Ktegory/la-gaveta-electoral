@@ -1,0 +1,15 @@
+partido: "pnv"
+tema: "vivienda"
+subtema: "vivienda-publica"
+titulo: "Modificar la Ley del Suelo para que un defecto subsanable no anule un plan urbanístico"
+resumen: "Lo plantea para construir más vivienda, porque considera que la oferta no cubre la demanda actual: que un error corregible no obligue a empezar de cero la tramitación de un plan urbanístico."
+fuentes:
+  - fuente: "pnv/nota-decreto-vivienda-2026-11-12"
+    cita: "la formación jeltzale mantiene que es necesario modificar la Ley del Suelo para que años de acuerdos para aprobar un Plan Urbanístico no supongan volver a la casilla de inicio por un defecto subsanable."
+fechaAnuncio: "2026-11-12"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 12 nov (ronda de las 20:04) en la nota de eaj-pnv.eus; busca «Ley del Suelo» en el cuarto párrafo. Es estilo indirecto de la nota sobre Maribel Vaquero, no cita entre comillas. No aparece en la versión web del programa (busqué «suelo» y «urbaníst»); el PDF no se ha revisado. Subtema elegido por coherencia con pp/millon-viviendas (nueva Ley del Suelo en vivienda-publica): confírmalo al firmar."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"

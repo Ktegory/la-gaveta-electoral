@@ -1,0 +1,16 @@
+partido: "pnv"
+tema: "seguridad"
+subtema: "policia"
+titulo: "Reconocer a la Ertzaintza como policía integral de Euskadi y darle acceso directo a la cooperación policial europea"
+resumen: "Apartado «Calles y barrios seguros» del programa. Incluye el acceso pleno de la Ertzaintza a las bases de datos policiales europeas."
+fuentes:
+  - fuente: "pnv/programa-29n-2026"
+    pagina: "24"
+    cita: "Defender el reconocimiento efectivo de la Ertzaintza como policía integral de Euskadi, respetando sus competencias y garantizando su capacidad para ejercer plenamente las funciones que le corresponden."
+fechaAnuncio: "2026-11-09"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita extraída el 12 nov, al crear el tema Seguridad, de la copia local del PDF de 43 págs. (descargada el 11 nov; la fuente no tiene huella sha256 guardada). Página 24, puntos 01 a 03. Busca «policía integral»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"

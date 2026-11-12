@@ -1,0 +1,16 @@
+partido: "pnv"
+tema: "seguridad"
+subtema: "delitos"
+titulo: "Reformar la «ley mordaza» para eliminar las restricciones desproporcionadas a derechos y libertades"
+resumen: "Punto 02 del apartado de derechos y libertades del programa."
+fuentes:
+  - fuente: "pnv/programa-29n-2026"
+    pagina: "27"
+    cita: "Impulsar la reforma de la legislación conocida como «ley mordaza», eliminando las restricciones desproporcionadas al ejercicio de derechos y libertades."
+fechaAnuncio: "2026-11-09"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita extraída el 12 nov, al crear el tema Seguridad, de la copia local del PDF de 43 págs. (descargada el 11 nov; la fuente no tiene huella sha256 guardada). Página 27, punto 02. Busca «ley mordaza»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-12"
