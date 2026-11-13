@@ -1,0 +1,16 @@
+partido: "vox"
+tema: "igualdad"
+subtema: "violencia-machista"
+titulo: "Derogar las leyes de género y aprobar otras normas de protección de las mujeres víctimas de violencia"
+fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "30"
+    cita: "Derogar las leyes que han criminalizado a los hombres y desprotegido a las mujeres."
+fechaAnuncio: "2026-11-12"
+destacada: true
+orden: 4
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «criminalizado a los hombres» en la página 30. Medida 47. Más abajo: «En su lugar, impulsar la aprobación de leyes y normas que protejan de verdad a las mujeres víctimas de violencia». El texto habla de «leyes de género» sin enumerarlas."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

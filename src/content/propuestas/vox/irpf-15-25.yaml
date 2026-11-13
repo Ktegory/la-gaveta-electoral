@@ -7,10 +7,9 @@ fuentes:
     cita: Reformar totalmente el sistema de tributación sobre la renta. Se establecerá un mínimo exento de 22.000€, un primer tramo hasta los 70.000€ que tributará a un tipo del 15% y un segundo tramo a partir de los
     pagina: "36"
 fechaAnuncio: "2025-10-02"
-destacada: true
-orden: 1
+destacada: false
 comprobacion:
   estado: encontrada
-  nota: La frase sigue en la p. 37 («70.000€ que tributará a un tipo del 25%»), donde se añade una rebaja de 4 puntos por cada descendiente.
+  nota: "La frase sigue en la p. 37 («70.000€ que tributará a un tipo del 25%»), donde se añade una rebaja de 4 puntos por cada descendiente. Desde el 13 nov deja de ser destacada: el programa del 29N (p. 9) promete «Simplificación y bajada del IRPF» sin estas cifras (ver vox/bajar-irpf)."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-11"
+fechaRevision: "2026-11-13"

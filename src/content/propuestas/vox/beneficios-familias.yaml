@@ -1,0 +1,15 @@
+partido: "vox"
+tema: "igualdad"
+subtema: "cuidados"
+titulo: "Extender los beneficios de las familias numerosas a todas las familias desde el primer hijo"
+fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "51"
+    cita: "Todos los beneficios que ahora existen para las familias numerosas se aumentarán y se extenderán a todas las familias de manera progresiva desde el primer hijo"
+fechaAnuncio: "2026-11-12"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «familias numerosas» en la página 51. Medida 94."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

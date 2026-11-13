@@ -3,6 +3,9 @@ tema: "inmigracion"
 subtema: "servicios"
 titulo: "Prohibir alquilar vivienda a inmigrantes en situación irregular"
 fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "24"
+    cita: "Prohibición del arrendamiento a inmigrantes ilegales. Exigir la verificación previa de la residencia legal como requisito obligatorio para la formalización de contratos de alquiler"
   - fuente: "vox/recuperar-espana-2026"
     pagina: "3"
     cita: "Prohibición del arrendamiento a inmigrantes ilegales."
@@ -10,6 +13,6 @@ fechaAnuncio: "2026-10-19"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cotejada el 13 nov en el PDF del avance descargado de voxespana.es (sha256 6e57ecd3…). Busca «arrendamiento» en la página 3, al final del mismo punto que la supresión de ayudas. La prensa (elConstitucional, 13 nov) lo resume como «exigir residencia legal para alquilar»."
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «arrendamiento» en la página 24. Medida 32. Se mantiene como antecedente «vox/recuperar-espana-2026»."
 revisadaPor: "Khiustin Tornés"
 fechaRevision: "2026-11-13"

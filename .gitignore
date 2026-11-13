@@ -6,10 +6,6 @@ dist/
 .env
 .env.*
 
-# Archivos de otro trabajo que no son de este proyecto
-informe-qa-event-hub.md
-.qa-capturas/
-
 # Imagen original de la mano (la web usa public/img/hero-mano.webp)
 election-hand-voter.png
 # Original del logo (la web usa src/assets/logo.svg)

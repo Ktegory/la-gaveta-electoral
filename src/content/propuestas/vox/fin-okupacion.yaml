@@ -1,10 +1,16 @@
 partido: "vox"
 tema: "vivienda"
 subtema: "okupacion"
-titulo: "Acabar con la okupación"
+titulo: "Desalojar las viviendas okupadas en menos de 24 horas y castigar la «inquiocupación» como estafa"
 fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "24"
+    cita: "Desalojo de la vivienda okupada en menos de 24 horas y recuperación inmediata de la posesión por su legítimo titular, el propietario."
   - fuente: "vox/recuperar-espana-2026"
 fechaAnuncio: "2026-10-19"
 destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «menos de 24 horas» en la página 24. Medida 31: incluye también asistencia jurídica gratuita a los afectados, endurecer el Código Penal y la «tipificación de la inquiocupación como delito de estafa». Se mantiene como antecedente «vox/recuperar-espana-2026»."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-10"
+fechaRevision: "2026-11-13"

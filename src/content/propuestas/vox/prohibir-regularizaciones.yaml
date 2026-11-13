@@ -3,6 +3,9 @@ tema: "inmigracion"
 subtema: "regularizacion"
 titulo: "Prohibir las regularizaciones masivas; quien entre de forma irregular no podrá regularizar nunca su situación"
 fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "15"
+    cita: "Prohibición de las regularizaciones masivas. Quien entra de forma ilegal jamás podrá regularizar su situación."
   - fuente: "vox/recuperar-espana-2026"
     pagina: "5"
     cita: "Prohibición de las regularizaciones masivas. Quien entra de forma ilegal jamás podrá regularizar su situación."
@@ -10,6 +13,6 @@ fechaAnuncio: "2026-10-19"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cotejada el 13 nov en el PDF del avance descargado de voxespana.es (sha256 6e57ecd3…). Busca «regularizaciones masivas» en la página 5."
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «regularizaciones masivas» en la página 15. Medida 9. Se mantiene como antecedente «vox/recuperar-espana-2026»."
 revisadaPor: "Khiustin Tornés"
 fechaRevision: "2026-11-13"

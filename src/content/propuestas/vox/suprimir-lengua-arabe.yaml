@@ -1,0 +1,15 @@
+partido: "vox"
+tema: "educacion"
+subtema: "lenguas"
+titulo: "Eliminar el programa de Lengua Árabe y Cultura Marroquí"
+fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "42"
+    cita: "Eliminación del programa educativo de Lengua Árabe y Cultura Marroquí."
+fechaAnuncio: "2026-11-12"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «Lengua Árabe» en la página 42. Medida 73."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

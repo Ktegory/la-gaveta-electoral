@@ -3,9 +3,15 @@ tema: "inmigracion"
 subtema: "fronteras"
 titulo: "Repatriar a los inmigrantes en situación irregular («remigración»)"
 fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "15"
+    cita: "Repatriación de quienes permanezcan en situación ilegal en nuestra nación."
   - fuente: "vox/recuperar-espana-2026"
 fechaAnuncio: "2026-10-19"
 destacada: true
 orden: 2
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «Repatriación» en la página 15. Medida 12. Se mantiene como antecedente «vox/recuperar-espana-2026»."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-10"
+fechaRevision: "2026-11-13"

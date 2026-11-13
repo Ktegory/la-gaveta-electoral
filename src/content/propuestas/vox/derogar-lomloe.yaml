@@ -1,0 +1,15 @@
+partido: "vox"
+tema: "educacion"
+subtema: "contenidos"
+titulo: "Derogar la LOMLOE, prohibir los móviles en clase y reforzar la autoridad del profesor"
+fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "41"
+    cita: "Derogación de la LOMLOE y recuperación de una enseñanza basada en el esfuerzo, el saber, el mérito, la exigencia, la disciplina y la responsabilidad personal."
+fechaAnuncio: "2026-11-12"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «LOMLOE» en la página 41. Medida 69: incluye el «fin de los móviles en clase» y el refuerzo de la autoridad del profesor."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

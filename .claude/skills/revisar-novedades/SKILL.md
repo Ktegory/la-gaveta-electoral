@@ -42,8 +42,9 @@ Usa `curl -sL -A "Mozilla/5.0"` (WebFetch suele recibir 403 en estas webs).
 Programas ya publicados (vigila si cambian: compara `content-length` y `last-modified` con `curl -sI`, y con la `sha256` de su YAML en `src/content/fuentes/<partido>/programa-29n-2026.yaml` si la tiene):
 - PP: la URL de `src/content/fuentes/pp/programa-29n-2026.yaml` (82 págs., 12.279.932 bytes; hay también una maquetación de 64 págs.). Vigila si desvela alguna de las 8 medidas en blanco: 83, 109, 132, 164, 167, 173, 200, 210.
 - ERC y PNV: URL en su `programa-29n-2026.yaml`.
+- VOX: la URL de `src/content/fuentes/vox/programa-29n-2026.yaml` (66 págs., 14.536.418 bytes, `last-modified` 12 nov 16:07 GMT). voxespana.es responde 403 a `curl -sI`: usa un GET de rango, `curl -s -A "Mozilla/5.0" -r 0-1023 -D - -o /dev/null <url>`, y lee `content-range` y `last-modified`. Busca también si sube otro PDF en `wp-content/uploads/2026/11/` (las rondas del 12 nov a las 20:04 y del 13 a las 8:19 no vieron este por el 403).
 
-Programas pendientes (PSOE, Frente Amplio, Podemos, Junts, EH Bildu; VOX solo tiene avance): busca si se han publicado.
+Programas pendientes (PSOE, Frente Amplio, Podemos, Junts, EH Bildu): busca si se han publicado.
 
 ## Paso 2. Instagram (navegador integrado de la app)
 

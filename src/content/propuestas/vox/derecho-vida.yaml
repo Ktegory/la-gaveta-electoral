@@ -1,0 +1,15 @@
+partido: "vox"
+tema: "igualdad"
+subtema: "aborto"
+titulo: "Defender «el derecho a la vida desde su concepción» y la objeción de conciencia de sanitarios y farmacéuticos"
+fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "52"
+    cita: "Defensa del derecho a la vida desde su concepción hasta la muerte natural y fin de la cultura de la muerte. Garantizar la objeción de conciencia de los profesionales sanitarios y farmacéuticos"
+fechaAnuncio: "2026-11-12"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «derecho a la vida» en la página 52. Medida 98. No menciona expresamente la ley del aborto ni la de eutanasia."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

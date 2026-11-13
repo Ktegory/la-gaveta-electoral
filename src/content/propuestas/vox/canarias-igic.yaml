@@ -1,0 +1,15 @@
+partido: "vox"
+tema: "fiscalidad"
+subtema: "iva"
+titulo: "Bajar el IGIC en Canarias y suprimir el arbitrio sobre importaciones (AIEM)"
+fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "10"
+    cita: "Rebaja general del Impuesto General Indirecto Canario y supresión del Arbitrio sobre Importaciones y Entregas de Mercancías en las Islas Canarias."
+fechaAnuncio: "2026-11-12"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «Impuesto General Indirecto Canario» en la página 10. Medida 4, sobre Baleares y Canarias."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

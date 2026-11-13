@@ -1,0 +1,15 @@
+partido: "vox"
+tema: "inmigracion"
+subtema: "regularizacion"
+titulo: "Suprimir el arraigo como vía de regularización y las «pasarelas rápidas» a la nacionalidad"
+fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "15"
+    cita: "Supresión de la institución del arraigo como forma de atajar la inmigración ilegal y revocación de las pasarelas rápidas para adquirir la nacionalidad española."
+fechaAnuncio: "2026-11-12"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «arraigo» en la página 15. Medida 11."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

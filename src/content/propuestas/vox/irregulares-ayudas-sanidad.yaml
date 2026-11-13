@@ -1,8 +1,11 @@
 partido: "vox"
 tema: "inmigracion"
 subtema: "servicios"
-titulo: "Suprimir las ayudas sociales a los inmigrantes en situación irregular y limitar su sanidad a la urgencia vital"
+titulo: "Suprimir las ayudas sociales a los inmigrantes en situación irregular y limitar su sanidad a la urgencia grave"
 fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "19"
+    cita: "Suprimir toda ayuda y beneficio social a los inmigrantes ilegales."
   - fuente: "vox/recuperar-espana-2026"
     pagina: "3"
     cita: "Suprimir toda ayuda y beneficio social a los inmigrantes irregulares y limitar su acceso a la sanidad a supuestos de urgencia vital."
@@ -10,6 +13,6 @@ fechaAnuncio: "2026-10-19"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cotejada el 13 nov en el PDF del avance descargado de voxespana.es (sha256 6e57ecd3…). Busca «urgencia vital» en la página 3, bloque «Prioridad nacional». La prensa (elConstitucional, 13 nov) lo resume como «urgencias graves»."
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «toda ayuda y beneficio social» en la página 19. Medidas 19 y 20. La 20 excluye de la sanidad a «los extranjeros en situación ilegal salvo casos de urgencia grave»; el avance de octubre decía «urgencia vital». Se mantiene como antecedente «vox/recuperar-espana-2026»."
 revisadaPor: "Khiustin Tornés"
 fechaRevision: "2026-11-13"

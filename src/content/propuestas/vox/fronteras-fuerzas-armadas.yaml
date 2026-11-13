@@ -1,0 +1,15 @@
+partido: "vox"
+tema: "inmigracion"
+subtema: "fronteras"
+titulo: "Proteger las fronteras con las Fuerzas Armadas en apoyo de la Guardia Civil y la Policía Nacional"
+fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "46"
+    cita: "Establecer un nuevo modelo de protección permanente de las fronteras terrestres, marítimas y aéreas, con participación de las Fuerzas Armadas, en apoyo a la Guardia Civil y el Cuerpo Nacional de Policía"
+fechaAnuncio: "2026-11-12"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «participación de las Fuerzas Armadas» en la página 46. Medida 88."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

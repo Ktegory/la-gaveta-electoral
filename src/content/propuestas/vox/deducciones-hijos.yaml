@@ -3,6 +3,9 @@ tema: "fiscalidad"
 subtema: "irpf"
 titulo: "Aumentar las ayudas y deducciones a las familias y bajar impuestos según el número de hijos"
 fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "9"
+    cita: "Reducción del tipo aplicable del IRPF para cada contribuyente o familia en función del número de hijos."
   - fuente: "vox/recuperar-espana-2026"
     pagina: "3"
     cita: "Incrementar sustancialmente las ayudas, deducciones y bonificaciones a las familias. Reducciones impositivas por número de hijos."
@@ -10,6 +13,6 @@ fechaAnuncio: "2026-10-19"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cotejada el 13 nov en el PDF del avance descargado de voxespana.es (sha256 6e57ecd3…). Busca «número de hijos» en la página 3. El avance no da cuantías."
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «número de hijos» en la página 9. Medida 2. En la página 51 (medida 94) añade intensificar «las ayudas y bonificaciones en función del número de hijos». No da cuantías. Se mantiene como antecedente «vox/recuperar-espana-2026»."
 revisadaPor: "Khiustin Tornés"
 fechaRevision: "2026-11-13"

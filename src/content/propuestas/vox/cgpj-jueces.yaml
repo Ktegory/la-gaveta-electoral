@@ -1,0 +1,15 @@
+partido: "vox"
+tema: "instituciones"
+subtema: "justicia"
+titulo: "Reformar la ley para que los jueces elijan a los doce vocales judiciales del CGPJ"
+fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "55"
+    cita: "Modificar la Ley Orgánica del Poder Judicial para que los doce vocales de procedencia judicial del Consejo General del Poder Judicial sean elegidos mediante voto personal, directo y secreto por y entre los propios jueces y magistrados"
+fechaAnuncio: "2026-11-12"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «doce vocales» en la página 55. Medida 100."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

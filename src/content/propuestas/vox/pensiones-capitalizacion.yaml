@@ -5,7 +5,6 @@ titulo: "Crear un fondo de capitalización y avanzar hacia un sistema mixto de p
 fuentes:
   - fuente: "vox/programa-economico-2025"
 fechaAnuncio: "2025-10-02"
-destacada: true
-orden: 4
+destacada: false
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-10"
+fechaRevision: "2026-11-13"

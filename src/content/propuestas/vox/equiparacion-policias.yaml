@@ -1,0 +1,15 @@
+partido: "vox"
+tema: "seguridad"
+subtema: "policia"
+titulo: "Equiparar los sueldos de policías y guardias civiles y reconocer su profesión como de riesgo"
+fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "46"
+    cita: "Reconocimiento de la profesión y servicio en la Guardia Civil y el Cuerpo Nacional de Policía como profesión de riesgo."
+fechaAnuncio: "2026-11-12"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «profesión de riesgo» en la página 46. Medida 84, que empieza con «Aumento de la inversión, equiparación salarial y sueldos dignos»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

@@ -1,8 +1,11 @@
 partido: "vox"
 tema: "exterior"
 subtema: "ue"
-titulo: "Suspender el acuerdo con Mercosur y los tratados que obligan a los productores a competir en desigualdad"
+titulo: "Rechazar el acuerdo UE-Mercosur y los acuerdos comerciales que obligan a los productores a competir en desigualdad"
 fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "33"
+    cita: "Rechazo explícito al acuerdo UE-Mercosur y de todo acuerdo comercial que obligue a nuestros productores a competir en desigualdad de condiciones."
   - fuente: "vox/recuperar-espana-2026"
     pagina: "4"
     cita: "Suspensión del acuerdo con Mercosur y de los tratados internacionales que obligan a nuestros productores a competir en situación desigual."
@@ -10,6 +13,6 @@ fechaAnuncio: "2026-10-19"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cotejada el 13 nov en el PDF del avance descargado de voxespana.es (sha256 6e57ecd3…). Busca «Mercosur» en la página 4."
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «Mercosur» en la página 33. Medida 48. El avance de octubre hablaba de «suspensión» del acuerdo. Se mantiene como antecedente «vox/recuperar-espana-2026»."
 revisadaPor: "Khiustin Tornés"
 fechaRevision: "2026-11-13"

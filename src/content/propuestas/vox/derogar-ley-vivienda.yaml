@@ -3,13 +3,16 @@ tema: "vivienda"
 subtema: "alquiler"
 titulo: "Derogar la Ley de Vivienda de 2023"
 fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "23"
+    cita: "Derogación de la Ley de Vivienda."
   - fuente: "vox/programa-desregulacion-2026"
-    cita: Ley 12/2023, de 24 de mayo, por el derecho a la vivienda y todas las modificaciones en materia de vivienda previstas en el Real Decreto-ley 7/2019 y el Real Decreto-ley 11/2020.
     pagina: "73"
+    cita: "Ley 12/2023, de 24 de mayo, por el derecho a la vivienda y todas las modificaciones en materia de vivienda previstas en el Real Decreto-ley 7/2019 y el Real Decreto-ley 11/2020."
 fechaAnuncio: "2026-06-01"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: Es el primer punto de la lista «PRIMERAS LEYES QUE DEROGAREMOS» (p. 73).
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «Ley de Vivienda» en la página 23. Medida 30. Se mantiene como antecedente «vox/programa-desregulacion-2026»."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-11"
+fechaRevision: "2026-11-13"

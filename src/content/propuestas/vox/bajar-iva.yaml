@@ -1,0 +1,15 @@
+partido: "vox"
+tema: "fiscalidad"
+subtema: "iva"
+titulo: "Bajar los tipos general y reducido del IVA, sobre todo en productos esenciales"
+fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "9"
+    cita: "Rebaja del tipo reducido y del tipo general del IVA atendiendo prioritariamente a productos esenciales y de primera necesidad."
+fechaAnuncio: "2026-11-12"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «Rebaja del tipo reducido» en la página 9. Medida 2. No da tipos: el 18 % y el 8 % de su programa económico de 2025 no aparecen en el programa del 29N."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

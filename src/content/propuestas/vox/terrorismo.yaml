@@ -1,0 +1,15 @@
+partido: "vox"
+tema: "seguridad"
+subtema: "delitos"
+titulo: "Aprobar una ley contra el enaltecimiento del terrorismo y hacer imprescriptibles sus delitos, incluidos los de ETA"
+fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "57"
+    cita: "Aprobación de una ley que impida de forma efectiva el enaltecimiento del terrorismo, homenajes a terroristas, actos de humillación de las víctimas o ataques a instituciones y símbolos de España."
+fechaAnuncio: "2026-11-12"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «enaltecimiento» en la página 57. Medida 109: pide también considerar los delitos de ETA crímenes de lesa humanidad y la «efectiva imprescriptibilidad de todos los delitos de terrorismo»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

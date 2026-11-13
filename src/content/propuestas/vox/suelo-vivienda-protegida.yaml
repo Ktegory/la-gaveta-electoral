@@ -1,8 +1,11 @@
 partido: "vox"
 tema: "vivienda"
 subtema: "vivienda-publica"
-titulo: "Liberar suelo e invertir en vivienda protegida"
+titulo: "Reformar la Ley del Suelo para ampliar el suelo disponible y construir más vivienda, también protegida"
 fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "23"
+    cita: "Incrementar de manera sustancial y sostenida en el tiempo la construcción de vivienda nueva: ampliación de suelo disponible, agilización de procedimientos, supresión de trabas regulatorias innecesarias, simplificación administrativa."
   - fuente: "vox/recuperar-espana-2026"
     pagina: "3"
     cita: "Volver a tener un hogar: liberación de suelo, inversión en vivienda protegida, fin de la okupación e impuestos cero a tu primera vivienda."
@@ -10,6 +13,6 @@ fechaAnuncio: "2026-10-19"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cotejada el 13 nov en el PDF del avance descargado de voxespana.es (sha256 6e57ecd3…). Busca «liberación de suelo» en la página 3. El fin de la okupación y los impuestos cero a la primera vivienda ya están publicados aparte."
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «construcción de vivienda nueva» en la página 23. Medidas 28 (reforma de la Ley del Suelo) y 29 (más vivienda protegida mediante colaboración público-privada). Se mantiene como antecedente «vox/recuperar-espana-2026»."
 revisadaPor: "Khiustin Tornés"
 fechaRevision: "2026-11-13"

@@ -1,0 +1,15 @@
+partido: "vox"
+tema: "sanidad"
+subtema: "publica-privada"
+titulo: "Fomentar la colaboración público-privada en sanidad cuando ayude a reducir las listas de espera"
+fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "37"
+    cita: "Fomento de la colaboración público-privada cuando ayude efectivamente a reducir demoras, con transparencia, evaluación de calidad y control del gasto."
+fechaAnuncio: "2026-11-12"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «colaboración público-privada» en la página 37. Medida 62."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

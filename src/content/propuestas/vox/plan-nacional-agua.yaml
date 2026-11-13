@@ -3,6 +3,9 @@ tema: "energia"
 subtema: "agua"
 titulo: "Plan nacional del agua: interconexión de cuencas, modernización de regadíos y producción de energía"
 fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "61"
+    cita: "Plan Nacional del Agua. Interconexión de todas las cuencas"
   - fuente: "vox/recuperar-espana-2026"
     pagina: "4"
     cita: "Plan nacional del agua: interconexión de cuencas, modernización de regadíos, producción de energía."
@@ -10,6 +13,6 @@ fechaAnuncio: "2026-10-19"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cotejada el 13 nov en el PDF del avance descargado de voxespana.es (sha256 6e57ecd3…). Busca «interconexión de cuencas» en la página 4."
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «Plan Nacional del Agua» en la página 61. Medida 115: la interconexión servirá «para impulsar y modernizar los regadíos y la producción de energía»; sigue en la página 62. Se mantiene como antecedente «vox/recuperar-espana-2026»."
 revisadaPor: "Khiustin Tornés"
 fechaRevision: "2026-11-13"

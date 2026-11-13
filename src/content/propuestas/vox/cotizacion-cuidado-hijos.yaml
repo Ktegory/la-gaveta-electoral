@@ -1,0 +1,15 @@
+partido: "vox"
+tema: "igualdad"
+subtema: "cuidados"
+titulo: "Financiar con dinero público la cotización a la Seguridad Social de los españoles que cuiden de sus hijos"
+fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "51"
+    cita: "Cotización a la Seguridad Social financiada por el Estado para los españoles dedicados al cuidado de sus hijos."
+fechaAnuncio: "2026-11-12"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «Cotización a la Seguridad Social» en la página 51. Medida 94."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

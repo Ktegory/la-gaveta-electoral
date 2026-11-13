@@ -2,9 +2,16 @@ partido: "vox"
 tema: "vivienda"
 subtema: "acceso-compra"
 titulo: "«Impuestos cero» a la compra de la primera vivienda"
+resumen: "IVA del 0 % en la primera vivienda nueva y bonificación del 100 % del ITP en la de segunda mano, para la vivienda habitual. También recupera la deducción por inversión en vivienda habitual."
 fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "24"
+    cita: "Tipo 0% de IVA para la compra de tu primera vivienda habitual -de nueva construcción- y bonificación 100% del ITP para la compra de tu primera vivienda habitual -de segunda mano-."
   - fuente: "vox/recuperar-espana-2026"
 fechaAnuncio: "2026-10-19"
 destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «Tipo 0% de IVA» en la página 24. Medida 34: también recupera la deducción por inversión en vivienda habitual. Se mantiene como antecedente «vox/recuperar-espana-2026»."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-10"
+fechaRevision: "2026-11-13"

@@ -1,0 +1,15 @@
+partido: "vox"
+tema: "energia"
+subtema: "precio"
+titulo: "Bajar los impuestos de la electricidad y acabar con la doble imposición"
+fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "11"
+    cita: "Bajada masiva de los impuestos de la energía eléctrica a familias, empresas e industrias españolas. Fin de la doble imposición."
+fechaAnuncio: "2026-11-12"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «Bajada masiva» en la página 11. Medida 8."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

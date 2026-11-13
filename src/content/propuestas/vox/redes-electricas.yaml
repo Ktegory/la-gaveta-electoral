@@ -1,0 +1,15 @@
+partido: "vox"
+tema: "energia"
+subtema: "precio"
+titulo: "Eliminar el tope a la inversión en redes eléctricas y autorizar las nuevas líneas con silencio positivo"
+fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "11"
+    cita: "Eliminar el tope a la inversión en redes para que España tenga la red eléctrica que necesita para crecer, contratar y construir vivienda."
+fechaAnuncio: "2026-11-12"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «tope a la inversión» en la página 11. Medida 8: las autorizaciones de líneas y subestaciones se resolverán «en plazos máximos cerrados y con silencio administrativo positivo»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

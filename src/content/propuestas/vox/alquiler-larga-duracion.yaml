@@ -1,0 +1,15 @@
+partido: "vox"
+tema: "vivienda"
+subtema: "alquiler"
+titulo: "Incentivar el alquiler de larga duración con deducciones para inquilinos españoles y regular los pisos turísticos"
+fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "23-24"
+    cita: "Incentivos fiscales al alquiler de larga duración y deducciones para inquilinos españoles. Regulación de la proliferación masiva de VUT y refuerzo del servicio de inspección de pisos turísticos ilegales."
+fechaAnuncio: "2026-11-12"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «Incentivos fiscales al alquiler» en la página 23. Medida 30; la frase empieza al final de la página 23. VUT son las viviendas de uso turístico."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

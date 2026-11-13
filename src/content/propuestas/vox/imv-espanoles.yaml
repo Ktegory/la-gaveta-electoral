@@ -3,8 +3,14 @@ tema: "inmigracion"
 subtema: "servicios"
 titulo: "Ingreso mínimo vital solo para españoles"
 fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "19"
+    cita: "El Ingreso Mínimo Vital atenderá únicamente las necesidades de los españoles con menos recursos."
   - fuente: "vox/recuperar-espana-2026"
 fechaAnuncio: "2026-10-19"
 destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «Ingreso Mínimo Vital» en la página 19. Medida 22: también promoverá «el retorno de aquellos inmigrantes que estén cobrando el IMV». Se mantiene como antecedente «vox/recuperar-espana-2026»."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-10"
+fechaRevision: "2026-11-13"

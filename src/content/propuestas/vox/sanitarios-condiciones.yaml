@@ -1,0 +1,15 @@
+partido: "vox"
+tema: "sanidad"
+subtema: "personal"
+titulo: "Mejorar sueldos y guardias del personal sanitario e incentivar las plazas rurales o de difícil cobertura"
+fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "37"
+    cita: "Mejora progresiva de retribuciones, reconocimiento de guardias y turnos, conciliación efectiva y carrera profesional basada en formación, experiencia y méritos."
+fechaAnuncio: "2026-11-12"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «Mejora progresiva de retribuciones» en la página 37. Medida 63: incluye incentivos para plazas rurales y un plan de retorno de los sanitarios que trabajan en el extranjero."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

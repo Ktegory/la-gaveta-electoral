@@ -1,0 +1,15 @@
+partido: "vox"
+tema: "fiscalidad"
+subtema: "sociedades"
+titulo: "Bajar el Impuesto de Sociedades"
+fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "9"
+    cita: "Reducir el tipo del Impuesto de Sociedades con el fin de promover la dinamización de nuestra economía, el crecimiento de nuestras empresas y la creación efectiva de empleo."
+fechaAnuncio: "2026-11-12"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «Impuesto de Sociedades» en la página 9. Medida 2. No da el tipo: el 15 % de su programa económico de 2025 no aparece en el programa del 29N."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

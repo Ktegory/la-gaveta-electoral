@@ -3,9 +3,15 @@ tema: "vivienda"
 subtema: "vivienda-publica"
 titulo: "Preferencia de los españoles en el acceso a la vivienda pública («prioridad nacional»)"
 fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "23"
+    cita: "Prioridad nacional para acceder a una vivienda protegida, social o a una ayuda al alquiler."
   - fuente: "vox/recuperar-espana-2026"
 fechaAnuncio: "2026-10-19"
 destacada: true
 orden: 3
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «Prioridad nacional para acceder» en la página 23. Medida 27. Se mantiene como antecedente «vox/recuperar-espana-2026»."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-10"
+fechaRevision: "2026-11-13"

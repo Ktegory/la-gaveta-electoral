@@ -3,6 +3,9 @@ tema: "inmigracion"
 subtema: "fronteras"
 titulo: "Deportar a los extranjeros que cometan delitos graves o reincidan en delitos leves"
 fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "15"
+    cita: "Deportación de quienes cometan delitos graves o hagan del delito leve su forma de vida"
   - fuente: "vox/recuperar-espana-2026"
     pagina: "5"
     cita: "Deportación de quienes cometan delitos graves o hagan del delito leve su forma de vida."
@@ -10,6 +13,6 @@ fechaAnuncio: "2026-10-19"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cotejada el 13 nov en el PDF del avance descargado de voxespana.es (sha256 6e57ecd3…). Busca «delito leve» en la página 5, bloque «Remigración». El avance no dice «extranjeros», pero el punto está en el bloque de inmigración, junto a la repatriación de irregulares."
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «delito leve» en la página 15. Medida 14. Se mantiene como antecedente «vox/recuperar-espana-2026»."
 revisadaPor: "Khiustin Tornés"
 fechaRevision: "2026-11-13"

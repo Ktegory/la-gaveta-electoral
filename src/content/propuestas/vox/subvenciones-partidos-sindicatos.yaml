@@ -1,8 +1,11 @@
 partido: "vox"
 tema: "instituciones"
 subtema: "presupuestos"
-titulo: "Eliminar las subvenciones a partidos, sindicatos, patronales, organismos ideológicos y agencias de cooperación"
+titulo: "Reducir hasta suprimir las subvenciones a partidos, sindicatos, patronales, ONG y otros «organismos ideológicos»"
 fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "29"
+    cita: "Reducir progresivamente hasta su eliminación total las subvenciones a partidos, sindicatos, patronales, ONGs, observatorios y otros organismos ideológicos."
   - fuente: "vox/recuperar-espana-2026"
     pagina: "4"
     cita: "Eliminación de subvenciones a partidos, sindicatos, patronales, organismos ideológicos, agencias de cooperación, etc."
@@ -10,6 +13,6 @@ fechaAnuncio: "2026-10-19"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cotejada el 13 nov en el PDF del avance descargado de voxespana.es (sha256 6e57ecd3…). Busca «patronales» en la página 4. El avance no define «organismos ideológicos». Va en el mismo subtema que las medidas de gasto del PP."
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «eliminación total» en la página 29. Medida 43. No define «organismos ideológicos». Se mantiene como antecedente «vox/recuperar-espana-2026»."
 revisadaPor: "Khiustin Tornés"
 fechaRevision: "2026-11-13"

@@ -3,6 +3,9 @@ tema: "inmigracion"
 subtema: "servicios"
 titulo: "Preferencia de los españoles en guarderías, comedor, transporte, ayudas y servicios sociales («prioridad nacional»)"
 fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "19"
+    cita: "Acceso preferente de los españoles a vivienda pública, plazas de guardería, bonos de comedor o transporte, ayudas, prestaciones y servicios sociales."
   - fuente: "vox/recuperar-espana-2026"
     pagina: "3"
     cita: "Acceso preferente de los españoles a vivienda pública, plazas de guardería, bonos de comedor o transporte, ayudas, prestaciones y servicios sociales."
@@ -10,6 +13,6 @@ fechaAnuncio: "2026-10-19"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cotejada el 13 nov en el PDF del avance descargado de voxespana.es (sha256 6e57ecd3…). Busca «plazas de guardería» en la página 3. La parte de vivienda pública ya está publicada aparte (vox/prioridad-nacional-vivienda)."
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «plazas de guardería» en la página 19. Medida 18. Se mantiene como antecedente «vox/recuperar-espana-2026»."
 revisadaPor: "Khiustin Tornés"
 fechaRevision: "2026-11-13"

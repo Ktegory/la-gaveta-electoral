@@ -3,8 +3,14 @@ tema: "empleo"
 subtema: "reforma-laboral"
 titulo: "Derogar la reforma laboral"
 fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "13"
+    cita: "Derogar la legislación laboral de Sánchez que ha agravado la precariedad, desincentivado la contratación"
   - fuente: "vox/programa-desregulacion-2026"
 fechaAnuncio: "2026-06-01"
 destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «legislación laboral de Sánchez» en la página 13. Medida 8. Se mantiene como antecedente «vox/programa-desregulacion-2026»."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-10"
+fechaRevision: "2026-11-13"

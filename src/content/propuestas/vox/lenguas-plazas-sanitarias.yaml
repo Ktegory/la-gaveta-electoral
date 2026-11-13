@@ -1,0 +1,15 @@
+partido: "vox"
+tema: "territorial"
+subtema: "lenguas-cooficiales"
+titulo: "Garantizar que no saber la lengua cooficial no impida acceder a una plaza de personal sanitario"
+fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "37"
+    cita: "Garantizar que el desconocimiento de las lenguas regionales no sea en ningún caso impedimento para el acceso por oposición a plazas de personal sanitario ni un perjuicio para los pacientes."
+fechaAnuncio: "2026-11-12"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «lenguas regionales» en la página 37. Medida 60."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

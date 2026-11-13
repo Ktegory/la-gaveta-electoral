@@ -1,0 +1,15 @@
+partido: "vox"
+tema: "inmigracion"
+subtema: "nacionalidad"
+titulo: "Ampliar los casos de pérdida de la nacionalidad para quienes no son españoles de origen y cometan delitos graves"
+fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "15"
+    cita: "Aumento de los supuestos de pérdida de nacionalidad española para los españoles no de origen en casos de delitos graves o reiterados."
+fechaAnuncio: "2026-11-12"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «pérdida de nacionalidad» en la página 15. Medida 10."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

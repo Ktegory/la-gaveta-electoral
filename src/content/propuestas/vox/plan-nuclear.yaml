@@ -1,11 +1,17 @@
 partido: "vox"
 tema: "energia"
 subtema: "nuclear"
-titulo: "Plan Nuclear Nacional y «energía a precio de coste»"
+titulo: "Recuperar el Plan Nuclear Nacional y derogar el calendario de cierre de las centrales"
 fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "12"
+    cita: "Recuperar urgentemente el plan nuclear nacional. Se garantizará la supervivencia de las centrales nucleares actuales, derogando el calendario de cierre."
   - fuente: "vox/recuperar-espana-2026"
 fechaAnuncio: "2026-10-19"
 destacada: true
 orden: 5
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «plan nuclear nacional» en la página 12. Medida 8. También propone estudiar nuevas centrales en emplazamientos junto a las actuales. Se mantiene como antecedente «vox/recuperar-espana-2026»."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-10"
+fechaRevision: "2026-11-13"

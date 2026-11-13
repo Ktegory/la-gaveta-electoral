@@ -1,0 +1,16 @@
+partido: "vox"
+tema: "fiscalidad"
+subtema: "irpf"
+titulo: "Simplificar y bajar el IRPF"
+fuentes:
+  - fuente: "vox/programa-29n-2026"
+    pagina: "9"
+    cita: "Reforma del sistema de tributación sobre la renta (IRPF). Simplificación y bajada del IRPF."
+fechaAnuncio: "2026-11-12"
+destacada: true
+orden: 1
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el programa completo de VOX (PDF de voxespana.es, sha256 065abf67…). Busca «Simplificación y bajada del IRPF» en la página 9. Medida 2 («Rebaja masiva de impuestos»). No da tipos ni tramos: el IRPF del 15 % y el 25 % de su programa económico de 2025 no aparece en el programa del 29N."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"
