@@ -98,6 +98,17 @@ a:hover .arrow, button:hover .arrow { transform: translateX(4px) }
 .hdr .search[aria-current="page"] { background: var(--ink); color: #fff }
 .hdr .search:hover { background: var(--ink); color: #fff; transform: scale(1.08) }
 .hdr .search:hover svg { transform: rotate(-12deg) }
+/* Lupa al pasar el cursor: crece hasta salirse del círculo y vuelve a entrar desde pequeña. */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .hdr .search { overflow: hidden }
+  .hdr .search:hover svg { animation: lupa-sale .9s both }
+}
+@keyframes lupa-sale {
+  0% { transform: scale(1) rotate(0); animation-timing-function: cubic-bezier(.5, 0, .9, .4) }
+  45% { transform: scale(5) rotate(-12deg) }
+  45.01% { transform: scale(0) rotate(-12deg); animation-timing-function: cubic-bezier(.2, .9, .3, 1.25) }
+  100% { transform: scale(1) rotate(-12deg) }
+}
 .hdr .search[aria-current="page"]:hover { background: var(--ink2) }
 .menu { display: none }
 .menu summary { list-style: none; display: grid; place-items: center; width: 44px; height: 44px; border: 1.5px solid var(--ink); background: #fff; font-size: 1.25rem; border-radius: 999px; cursor: pointer }
@@ -108,6 +119,11 @@ a:hover .arrow, button:hover .arrow { transform: translateX(4px) }
 .menu nav { position: absolute; right: 16px; top: calc(100% + 6px); z-index: 20; background: #fff; border: 1.5px solid var(--ink); border-radius: var(--r-in); padding: 8px; display: grid; min-width: 220px; box-shadow: 0 12px 30px rgba(0,0,0,.12) }
 .menu nav a { padding: 10px 14px; font-weight: 600; text-decoration: none; border-radius: 10px }
 .menu nav a:hover, .menu nav a[aria-current="page"] { background: var(--bg2) }
+/* Punto naranja (el del RSS) en «Novedades» cuando hay algo nuevo desde la última visita. */
+.nov-punto { display: inline-block; width: 7px; height: 7px; margin-left: 5px; vertical-align: super; border-radius: 50%; background: #F26522 }
+.nov-punto[hidden] { display: none }
+.menu summary { position: relative }
+.menu summary .nov-punto { position: absolute; top: 1px; right: 1px; width: 10px; height: 10px; margin: 0; border: 2px solid #fff; box-sizing: content-box }
 
 /* Marquesina de lo provisional */
 .prov { display: flex; gap: 14px; align-items: center; background: var(--ink); color: #fff; font-size: .9062rem; height: 48px }
@@ -131,22 +147,19 @@ a:hover .arrow, button:hover .arrow { transform: translateX(4px) }
 .mq-logo.fb { background: var(--pc); color: var(--pt) }
 .mq-logo.fb em { display: block }
 @keyframes mq { to { transform: translateX(-50%) } }
-.prov:hover .mq-track, .prov.paused .mq-track { animation-play-state: paused }
-.mq-pause { flex: none; width: 30px; height: 30px; border: 1px solid rgba(255,255,255,.5); background: none; color: #fff; font-size: .625rem; letter-spacing: -.0625rem; display: grid; place-items: center; padding: 0; border-radius: 999px }
-.mq-pause[aria-pressed="true"] { background: #fff; color: var(--ink) }
-.mq-pause { cursor: pointer; transition: background .15s, border-color .15s }
-.mq-pause:hover { background: rgba(255,255,255,.2); border-color: #fff }
-.mq-pause[aria-pressed="true"]:hover { background: rgba(255,255,255,.85) }
-.mq-more { flex: none; font-weight: 600; color: #fff; font-size: .875rem; white-space: nowrap }
-.mq-more:hover { text-decoration-thickness: 2px; opacity: .85 }
+.prov:hover .mq-track, .prov:focus-within .mq-track { animation-play-state: paused }
+/* Cerrar la marquesina: misma forma que el botón de pausa, sin borde para que pese menos. */
+.mq-cerrar { flex: none; width: 30px; height: 30px; margin-right: -6px; border: 0; background: none; color: rgba(255,255,255,.75); font-size: 1.375rem; line-height: 1; display: grid; place-items: center; padding: 0 0 2px; border-radius: 999px; cursor: pointer; transition: background .15s, color .15s }
+.mq-cerrar:hover { background: rgba(255,255,255,.2); color: #fff }
+.prov[hidden] { display: none }
+.prov.cerrando { height: 0; opacity: 0; overflow: hidden; transition: height .3s ease, opacity .2s ease }
 @media (prefers-reduced-motion: reduce) { .mq-track { animation: none } }
 
 .tabbar { display: none }
 @container site (max-width: 1000px) {
   .nav, .hdr .search { display: none }
   .menu { display: block; margin-left: auto }
-  .prov { font-size: .8438rem; gap: 10px } .mq-more { display: none }
-  .tabbar { display: grid; grid-template-columns: repeat(3, 1fr); position: sticky; bottom: 0; z-index: 5; background: #fff; border-top: 1px solid var(--ink) }
+  .prov { font-size: .8438rem; gap: 10px }   .tabbar { display: grid; grid-template-columns: repeat(3, 1fr); position: sticky; bottom: 0; z-index: 5; background: #fff; border-top: 1px solid var(--ink) }
   .tabbar a { display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 9px 0 11px; font-size: .7188rem; font-weight: 600; text-decoration: none; border-top: 3px solid transparent; margin-top: -1px }
   .tabbar svg { width: 22px; height: 22px }
   .tabbar a[aria-current="page"] { border-top-color: var(--ink) }
@@ -177,6 +190,8 @@ a:hover .arrow, button:hover .arrow { transform: translateX(4px) }
 .reloj span { display: inline-flex; align-items: baseline; gap: 5px }
 .reloj b { font-size: clamp(3.5rem, 6.2cqi, 7.5rem); font-weight: 900 }
 .reloj small { font-size: clamp(1.25rem, 1.9cqi, 2.125rem); font-weight: 800 }
+.reloj[hidden] { display: none }
+.reloj-msg { margin: 0; font-family: var(--cond); font-weight: 900; font-size: clamp(3.5rem, 6.2cqi, 7.5rem); line-height: .9 }
 .progress { height: 10px; background: #fff; box-shadow: inset 0 0 0 1px rgb(0 0 0 / .14), 0 2px 6px rgb(60 45 0 / .10); position: relative; border-radius: 999px; overflow: hidden }
 .progress > i { position: absolute; inset: 0 auto 0 0; background: var(--ink); border-radius: 999px; animation: cargar 1.6s cubic-bezier(.3, .7, .2, 1) .35s backwards }
 @keyframes cargar { from { width: 0 } }
@@ -266,7 +281,12 @@ a:hover .arrow, button:hover .arrow { transform: translateX(4px) }
 .carr-nav button { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 999px; border: 1.5px solid var(--ink); background: #fff; font-size: 1.125rem; transition: background-color .15s, color .15s, opacity .15s }
 .carr-nav button:hover:not(:disabled) { background: var(--ink); color: #fff }
 .carr-nav button:disabled { opacity: .3; cursor: default }
-.col { background: var(--pc); color: var(--pt); text-decoration: none; display: flex; flex-direction: column; min-height: clamp(380px, 30cqi, 520px); border-radius: var(--r-card); overflow: hidden; transition: transform .25s cubic-bezier(.2, .7, .2, 1), filter .15s }
+.col { background: var(--pc); color: var(--pt); text-decoration: none; display: flex; flex-direction: column; min-height: clamp(380px, 30cqi, 520px); border-radius: var(--r-card); overflow: hidden; transition: transform .25s cubic-bezier(.2, .7, .2, 1), filter .15s, background-position .9s cubic-bezier(.4, 0, .2, 1) }
+/* Al pasar por encima, el color del partido se oscurece un poco en diagonal (de abajo a la izquierda a arriba a la derecha). */
+@supports (background: color-mix(in oklch, red, black)) {
+  .col { --col-fin: color-mix(in oklch, var(--pc), #000 12%); background: linear-gradient(45deg, var(--col-fin) 33.3%, var(--pc) 66.7%) 100% 0 / 300% 300% var(--pc) }
+  .col:hover { background-position: 0 100% }
+}
 /* Tarjetas: entran escalonadas al llegar a la vista; al pasar por encima suben un poco. */
 .cols.espera .col { opacity: 0 }
 .cols.entra .col { animation: entra .6s cubic-bezier(.2, .7, .2, 1) backwards; animation-delay: calc(var(--i, 0) * 90ms) }
@@ -429,7 +449,10 @@ p .fuera { margin: 0; vertical-align: 1px }
 .pi .acts > * { display: flex; align-items: center; gap: 9px; padding: 9px 14px; color: var(--ink); text-decoration: none; transition: background-color .12s }
 .pi .acts svg { width: 15px; height: 15px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round }
 .pi .acts > * + * { border-top: 1px solid var(--filete) }
-.pi .acts a:hover { background: var(--bg2) }
+.pi .acts a:hover, .pi .acts button:hover { background: var(--bg2) }
+:where(.pi .acts button) { appearance: none; font: inherit; color: inherit; background: none; border: 0; text-align: left; cursor: pointer }
+.pi .acts .ic-hecho, .pi .acts .hecho .ic-enlace { display: none }
+.pi .acts .hecho .ic-hecho { display: block }
 .pi .acts .m { color: var(--mute); font-weight: 500 }
 .plist.compact .pi { grid-template-columns: 1fr auto; padding: clamp(22px, 2cqi, 32px) 0 }
 .plist.compact .pi:last-child { padding-bottom: 0 }
@@ -455,7 +478,6 @@ p .fuera { margin: 0; vertical-align: 1px }
 /* Hover de enlaces que no van subrayados */
 .logo:hover { opacity: .7 }
 .map .ph:hover, .ar .who:hover { filter: brightness(1.1) }
-.col:hover { filter: brightness(1.04) }
 .tabbar a:hover { background: var(--bg2) }
 .fic-r .chg { border-top: 0 }
 .fic-r .chg li:first-child { padding-top: 0; --chg-y: 5px }
@@ -475,6 +497,13 @@ p .fuera { margin: 0; vertical-align: 1px }
   .pi .acts { grid-column: 1 / -1; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; min-width: 0; white-space: normal; font-size: .8438rem }
   .pi .acts > * { justify-content: center; gap: 6px; text-align: center; padding: 10px 6px; line-height: 1.25 }
   .pi .acts > * + * { border-top: 0; border-left: 1px solid var(--filete) }
+}
+/* En móvil, las cuatro acciones en dos filas de dos. */
+@container site (max-width: 600px) {
+  .pi .acts { grid-auto-flow: row; grid-template-columns: 1fr 1fr }
+  .pi .acts > * + * { border-left: 0 }
+  .pi .acts > :nth-child(even) { border-left: 1px solid var(--filete) }
+  .pi .acts > :nth-child(n+3) { border-top: 1px solid var(--filete) }
   .fgrid { grid-template-columns: 1fr }
 }
 @container site (max-width: 600px) { .fic-r { --pl: 16px; --pr: 16px } }
@@ -543,6 +572,17 @@ p .fuera { margin: 0; vertical-align: 1px }
 /* Acciones del comparador: selector de vista + copiar enlace */
 .cacts { display: flex; gap: 10px; align-items: center; flex-wrap: wrap }
 .cacts .btn { height: var(--h-ctl); padding-block: 0 }
+/* Interruptor «Solo partidos con propuestas»: oculta los «No consta» y las preguntas que se quedan vacías. */
+.solo-con { position: relative; display: inline-flex; align-items: center; gap: 9px; height: var(--h-ctl); padding: 0 16px 0 8px; border-radius: 999px; background: var(--bg2); font-weight: 600; font-size: .8438rem; color: var(--ink2); cursor: pointer; white-space: nowrap; user-select: none; transition: background-color .15s, color .15s }
+.solo-con:hover { background: var(--bg3); color: var(--ink) }
+.solo-con input { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; pointer-events: none }
+.solo-con:has(input:focus-visible) { outline: 2px solid var(--ink); outline-offset: 2px }
+.solo-con .sw { flex: none; position: relative; width: 32px; height: 20px; border-radius: 999px; background: var(--nc); transition: background-color .2s }
+.solo-con .sw::after { content: ''; position: absolute; top: 3px; left: 3px; width: 14px; height: 14px; border-radius: 50%; background: #fff; box-shadow: 0 1px 2px rgb(0 0 0 / .2); transition: transform .2s cubic-bezier(.4, 0, .2, 1) }
+.solo-con input:checked + .sw { background: var(--ink) }
+.solo-con input:checked + .sw::after { transform: translateX(12px) }
+.cmp[data-solo-con] .ar.z, .cmp .subq[hidden] { display: none }
+.solo-vacio { margin: var(--sec-s) 0; color: var(--mute) }
 /* Desplegable de partidos (solo en móvil): opción múltiple con casillas. */
 .ptg-dd { display: none; position: relative }
 .ptg-dd summary { list-style: none; display: flex; align-items: center; gap: 10px; height: var(--h-ctl); padding: 0 16px; border-radius: 999px; background: var(--bg2); cursor: pointer; font-weight: 600; font-size: .9062rem; transition: background-color .15s }
@@ -570,6 +610,7 @@ p .fuera { margin: 0; vertical-align: 1px }
   .cacts [data-orden-ctl] { grid-column: 1; grid-row: 2 }
   .cacts .vista:not([data-orden-ctl]) { grid-column: 2 / 4; grid-row: 2; justify-self: end }
   .cacts .vista button { padding: 0 10px; gap: 6px }
+  .cacts .solo-con { grid-column: 1 / -1; grid-row: 3; justify-self: start }
 }
 /* Botón solo de icono (copiar enlace): al copiar, la cadena cambia por una marca. */
 .btn-ico { display: grid; place-items: center; width: var(--h-ctl); height: var(--h-ctl); border-radius: 999px; border: 0; background: var(--bg2); color: var(--ink2); cursor: pointer; transition: background-color .15s, color .15s }
@@ -918,3 +959,12 @@ a.nov-p:hover { text-decoration: underline; text-underline-offset: 3px }
 .foot-rss { display: inline-grid; place-items: center; width: 32px; height: 32px; margin-left: -8px; border-radius: 999px; background: #F26522; transition: background-color .15s }
 .foot-rss:hover { background: #D9541A }
 .foot-rss .i { width: 16px; height: 16px; color: #fff }
+
+/* Pantallas táctiles: zona de toque de al menos 44 × 44 px en los controles pequeños, sin cambiar
+   lo que se ve. Una capa invisible sobresale lo que le falta al control por cada lado (nada si ya llega). */
+@media (pointer: coarse) {
+  .mq-cerrar, .vista button, .btn-ico, .ptg-dd summary, .solo-con, .foot nav a { position: relative }
+  .mq-cerrar::after, .vista button::after, .btn-ico::after, .ptg-dd summary::after, .solo-con::after, .foot nav a::after {
+    content: ''; position: absolute; inset: min(0px, calc((100% - 44px) / 2));
+  }
+}

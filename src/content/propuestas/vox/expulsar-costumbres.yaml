@@ -1,0 +1,15 @@
+partido: "vox"
+tema: "inmigracion"
+subtema: "fronteras"
+titulo: "Expulsar a quienes traten de imponer costumbres ajenas o incompatibles con el respeto a las mujeres"
+fuentes:
+  - fuente: "vox/recuperar-espana-2026"
+    pagina: "5"
+    cita: "Expulsión de todos los que traten de imponer costumbres, hábitos o culturas ajenas a nuestro modo de vida o incompatibles con el respeto a las mujeres."
+fechaAnuncio: "2026-10-19"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el PDF del avance descargado de voxespana.es (sha256 6e57ecd3…). Busca «costumbres, hábitos» en la página 5. El avance no concreta los supuestos."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

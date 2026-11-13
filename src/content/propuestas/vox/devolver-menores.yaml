@@ -1,0 +1,15 @@
+partido: "vox"
+tema: "inmigracion"
+subtema: "fronteras"
+titulo: "Devolver a sus familias a los menores extranjeros no acompañados"
+fuentes:
+  - fuente: "vox/recuperar-espana-2026"
+    pagina: "5"
+    cita: "Devolución de menores extranjeros no acompañados a sus familias."
+fechaAnuncio: "2026-10-19"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el PDF del avance descargado de voxespana.es (sha256 6e57ecd3…). Busca «no acompañados» en la página 5."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

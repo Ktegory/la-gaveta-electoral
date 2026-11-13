@@ -1,0 +1,16 @@
+partido: "pp"
+tema: "instituciones"
+subtema: "presupuestos"
+titulo: "Reducir ministerios, altos cargos y asesores, y fusionar o cerrar organismos duplicados o sin finalidad"
+resumen: "Medida 3 del programa. Cada nuevo organismo, agencia o fundación del Estado tendrá fecha de caducidad y solo se prorrogará si lo votan las Cortes. También revisará las participaciones empresariales del Estado y venderá las que no respondan a un interés público o estratégico."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "13"
+    cita: "REDUCIREMOS LA ESTRUCTURA POLÍTICA. Habrá menos ministerios, altos cargos y asesores. Fusionaremos organismos con funciones duplicadas"
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita extraída el 13 nov de la copia local del texto del programa (la misma versión del 10 nov). Busca «REDUCIREMOS LA ESTRUCTURA POLÍTICA» en la página 13. El programa no da un número de ministerios."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

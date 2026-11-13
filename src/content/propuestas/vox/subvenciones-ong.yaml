@@ -1,0 +1,15 @@
+partido: "vox"
+tema: "inmigracion"
+subtema: "fronteras"
+titulo: "Eliminar las subvenciones a las ONG que colaboren con el «efecto llamada»"
+fuentes:
+  - fuente: "vox/recuperar-espana-2026"
+    pagina: "5"
+    cita: "Eliminación de subvenciones a ONGs que colaboren con el efecto llamada."
+fechaAnuncio: "2026-10-19"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el PDF del avance descargado de voxespana.es (sha256 6e57ecd3…). Busca «subvenciones a ONGs» en la página 5 (la frase sigue en la línea siguiente: «efecto llamada» está partido en dos líneas y la búsqueda del visor no lo encuentra). El avance no concreta qué ONG ni con qué criterio."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

@@ -1,0 +1,15 @@
+partido: "vox"
+tema: "vivienda"
+subtema: "vivienda-publica"
+titulo: "Liberar suelo e invertir en vivienda protegida"
+fuentes:
+  - fuente: "vox/recuperar-espana-2026"
+    pagina: "3"
+    cita: "Volver a tener un hogar: liberación de suelo, inversión en vivienda protegida, fin de la okupación e impuestos cero a tu primera vivienda."
+fechaAnuncio: "2026-10-19"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el PDF del avance descargado de voxespana.es (sha256 6e57ecd3…). Busca «liberación de suelo» en la página 3. El fin de la okupación y los impuestos cero a la primera vivienda ya están publicados aparte."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

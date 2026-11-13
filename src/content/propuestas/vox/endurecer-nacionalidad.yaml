@@ -1,0 +1,15 @@
+partido: "vox"
+tema: "inmigracion"
+subtema: "nacionalidad"
+titulo: "Revisar las concesiones fraudulentas de la nacionalidad y endurecer los requisitos para obtenerla"
+fuentes:
+  - fuente: "vox/recuperar-espana-2026"
+    pagina: "5"
+    cita: "Revisión de las concesiones fraudulentas de la nacionalidad y endurecimiento de los requisitos para obtenerla."
+fechaAnuncio: "2026-10-19"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el PDF del avance descargado de voxespana.es (sha256 6e57ecd3…). Busca «nacionalidad» en la página 5. El avance no concreta qué requisitos."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

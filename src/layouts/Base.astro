@@ -5,6 +5,7 @@ import Iconos from '../components/Iconos.astro';
 import Icono from '../components/Icono.astro';
 import Marquesina from '../components/Marquesina.astro';
 import Logo from '../components/Logo.astro';
+import { datos } from '../lib/datos';
 
 interface Props { titulo?: string; descripcion?: string; seccion?: 'mapa' | 'partidos' | 'comparar' | 'escala' | 'metodo' | 'buscar' | 'fuentes' | 'novedades'; estilo?: string; indexar?: boolean; noindex?: boolean }
 const { titulo, descripcion = 'Los programas de los partidos para las elecciones generales del 29N, ordenados por temas, comparables y con la fuente original al lado de cada propuesta.', seccion, estilo, indexar = true, noindex = false } = Astro.props;
@@ -29,6 +30,10 @@ const NAV = [
   { id: 'metodo', href: '/como-funciona/', txt: 'Cómo funciona' },
 ] as const;
 const cur = (id: string) => (seccion === id ? 'page' : undefined);
+// Cuántas novedades hay publicadas (cada propuesta nueva cuenta una). Sirve para marcar
+// «Novedades» en el menú cuando hay alguna desde la última vez que se visitó esa página.
+const nNovedades = (await datos()).cambios.reduce((n, c) => n + Math.max(1, c.data.propuestas?.length ?? 0), 0);
+
 ---
 <!doctype html>
 <html lang="es">
@@ -67,13 +72,13 @@ const cur = (id: string) => (seccion === id ? 'page' : undefined);
   <header class="hdr pad">
     <Logo />
     <nav class="nav" aria-label="Principal">
-      {NAV.map((n) => <a href={n.href} aria-current={cur(n.id)}>{n.txt}</a>)}
+      {NAV.map((n) => <a href={n.href} aria-current={cur(n.id)}>{n.txt}{n.id === 'novedades' && <span class="nov-punto" hidden><span class="sr-only"> (hay novedades)</span></span>}</a>)}
     </nav>
     <a class="search" href="/buscar/" aria-label="Buscar una propuesta" title="Buscar una propuesta" aria-current={cur('buscar')}><Icono id="search" /></a>
     <details class="menu">
-      <summary aria-label="Menú"><svg class="hamb" viewBox="0 0 18 14" aria-hidden="true"><path d="M1 1h16M1 7h16M1 13h16" /></svg></summary>
+      <summary aria-label="Menú"><svg class="hamb" viewBox="0 0 18 14" aria-hidden="true"><path d="M1 1h16M1 7h16M1 13h16" /></svg><span class="nov-punto" hidden></span></summary>
       <nav aria-label="Menú">
-        {NAV.map((n) => <a href={n.href} aria-current={cur(n.id)}>{n.txt}</a>)}
+        {NAV.map((n) => <a href={n.href} aria-current={cur(n.id)}>{n.txt}{n.id === 'novedades' && <span class="nov-punto" hidden><span class="sr-only"> (hay novedades)</span></span>}</a>)}
         <a href="/fuentes/" aria-current={cur('fuentes')}>Fuentes</a>
         <a href="/buscar/" aria-current={cur('buscar')}>Buscar</a>
       </nav>
@@ -87,6 +92,19 @@ const cur = (id: string) => (seccion === id ? 'page' : undefined);
       const medir = () => document.documentElement.style.setProperty('--hdr-h', `${h.offsetHeight}px`);
       medir();
       if ('ResizeObserver' in window) new ResizeObserver(medir).observe(h);
+    })();
+  </script>
+  <script is:inline define:vars={{ nNovedades }}>
+    // Punto en «Novedades» si se ha publicado algo desde la última visita a esa página.
+    // En la primera visita a la web no se marca nada: solo cuenta lo que llegue después.
+    (() => {
+      let vistas = null;
+      try { vistas = localStorage.getItem('novedades-vistas'); } catch (e) {}
+      const guardar = () => { try { localStorage.setItem('novedades-vistas', String(nNovedades)); } catch (e) {} };
+      if (vistas === null || location.pathname.startsWith('/novedades')) return guardar();
+      if (!(nNovedades > Number(vistas))) return;
+      document.querySelectorAll('.nov-punto').forEach((p) => { p.hidden = false; });
+      document.querySelector('.menu summary')?.setAttribute('aria-label', 'Menú (hay novedades)');
     })();
   </script>
   <Marquesina />

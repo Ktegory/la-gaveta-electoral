@@ -46,8 +46,13 @@ const actualizado = d.partidos.map((p) => p.data.ultimaRevision).sort((a, b) => 
           fondo.style.transform = 'translateX(' + destino.offsetLeft + 'px)';
         }
         colocar();
-        var b = barra.getBoundingClientRect(), a = actual.getBoundingClientRect();
-        if (a.right > b.right) barra.scrollLeft += a.left - b.left - (b.width - a.width) / 2;
+        function centrar() {
+          var b = barra.getBoundingClientRect(), a = actual.getBoundingClientRect();
+          if (a.right > b.right || a.left < b.left) barra.scrollLeft += a.left - b.left - (b.width - a.width) / 2;
+        }
+        centrar();
+        // Las fuentes cambian el ancho de las pestañas: se vuelve a comprobar cuando han cargado.
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(centrar);
         if (window.ResizeObserver) {
           var ro = new ResizeObserver(colocar);
           ro.observe(actual);
@@ -110,6 +115,9 @@ const actualizado = d.partidos.map((p) => p.data.ultimaRevision).sort((a, b) => 
         </div>
       </details>
       <div class="cacts">
+        <label class="solo-con" title="Oculta en cada pregunta los partidos de los que no consta ninguna propuesta">
+          <input type="checkbox" role="switch" data-solo-con /><span class="sw" aria-hidden="true"></span>Solo partidos con propuestas
+        </label>
         <OrdenPartidos nota={false} />
         <div class="vista" role="group" aria-label="Vista">
           <button type="button" data-vista="filas" aria-pressed="true"><Icono id="filas" />Filas</button>
@@ -155,6 +163,7 @@ const actualizado = d.partidos.map((p) => p.data.ultimaRevision).sort((a, b) => 
         <Votaciones votaciones={vs} />
       </section>
     ))}
+    <p class="solo-vacio" data-solo-vacio hidden>Ninguno de los partidos elegidos tiene propuestas sobre este tema en las fuentes consultadas.</p>
     {conDatos.length === 0 && <div class="wip" style="margin-block:var(--sec-s)"><div><b>Todavía no conocemos propuestas sobre este tema.</b>Lo completaremos cuando los partidos publiquen sus programas.</div></div>}
     {vacios.length > 0 && (
       <div class="empty-subs"><b>Sin propuestas todavía</b>{vacios.map((x) => x.s.nombre).join(' · ')}</div>
@@ -163,6 +172,30 @@ const actualizado = d.partidos.map((p) => p.data.ultimaRevision).sort((a, b) => 
   </div>
 </Base>
 <script>
+  // «Solo partidos con propuestas»: apagado por defecto, para que todos los partidos salgan siempre
+  // con el mismo peso. Encendido, se ocultan los «No consta» y las preguntas que se quedan vacías.
+  // Va en el enlace (?solo=propuestas) para poder compartirlo, pero no se recuerda entre visitas.
+  const cmp = document.querySelector<HTMLElement>('.cmp')!;
+  const soloCon = document.querySelector<HTMLInputElement>('[data-solo-con]');
+  const marcarVacias = () => {
+    const solo = cmp.hasAttribute('data-solo-con');
+    const secciones = [...cmp.querySelectorAll<HTMLElement>('.subq')];
+    secciones.forEach((s) => (s.hidden = solo && !s.querySelector('.ar:not(.z):not([hidden])') && !s.querySelector('.cong')));
+    const aviso = cmp.querySelector<HTMLElement>('[data-solo-vacio]');
+    if (aviso) aviso.hidden = !(solo && secciones.length && secciones.every((s) => s.hidden));
+  };
+  const ponerSolo = (on: boolean, guardar = true) => {
+    if (soloCon) soloCon.checked = on;
+    cmp.toggleAttribute('data-solo-con', on);
+    if (guardar) {
+      const url = new URL(location.href);
+      if (on) url.searchParams.set('solo', 'propuestas'); else url.searchParams.delete('solo');
+      history.replaceState(null, '', url);
+    }
+    marcarVacias();
+  };
+  soloCon?.addEventListener('change', () => ponerSolo(soloCon.checked));
+
   // Mostrar u ocultar partidos. La selección se guarda en la URL (?partidos=pp,psoe) para poder compartirla.
   const botones = [...document.querySelectorAll<HTMLButtonElement>('.ptg button[data-p]')];
   const todos = botones.map((b) => b.dataset.p!);
@@ -175,6 +208,7 @@ const actualizado = d.partidos.map((p) => p.data.ultimaRevision).sort((a, b) => 
     // Lo que dice el desplegable cerrado: «Todos», los nombres si son uno o dos, o cuántos de cuántos.
     if (resumen) resumen.textContent = sel.length === todos.length ? 'Todos' : sel.length <= 2 ? sel.map((x) => nombres[x]).join(', ') : `${sel.length} de ${todos.length}`;
     document.querySelectorAll<HTMLElement>('.ar[data-p], .vt-votos [data-p]').forEach((el) => (el.hidden = !sel.includes(el.dataset.p!)));
+    marcarVacias();
   };
   const leer = () => {
     const q = new URLSearchParams(location.search).get('partidos');
@@ -183,6 +217,7 @@ const actualizado = d.partidos.map((p) => p.data.ultimaRevision).sort((a, b) => 
   };
   let sel = leer();
   aplicar(sel);
+  ponerSolo(new URLSearchParams(location.search).get('solo') === 'propuestas', false);
   const guardar = (nueva: string[]) => {
     sel = nueva;
     const url = new URL(location.href);

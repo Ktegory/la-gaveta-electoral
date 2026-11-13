@@ -1,0 +1,16 @@
+partido: "pp"
+tema: "instituciones"
+subtema: "presupuestos"
+titulo: "Auditar en los primeros cien días todo el gasto público, las ayudas, los contratos y las empresas del Estado"
+resumen: "Medida 1 del programa. Las conclusiones se tendrán en cuenta en el primer presupuesto: qué gastos se suprimen, qué estructuras se reducen y qué servicios necesitan más recursos."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "13"
+    cita: "EN CIEN DÍAS, LOS ESPAÑOLES LO SABRÁN TODO. Realizaremos una auditoría de todo el gasto que se ha hecho estos años y del funcionamiento de la Administración, de los organismos y de las empresas del Estado."
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita extraída el 13 nov de la copia local del texto del programa (la misma versión del 10 nov: el PDF no ha cambiado). Busca «EN CIEN DÍAS» en la página 13. Feijóo la repitió el 12 nov en Badalona como «auditoría del saqueo»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

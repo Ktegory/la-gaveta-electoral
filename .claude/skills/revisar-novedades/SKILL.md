@@ -70,7 +70,7 @@ out
 
 Usa WebSearch (`mode: "standard"`; `extended` solo si hace falta) con búsquedas por partido y fecha, p. ej. `"<partido>" propuesta 29N <día> noviembre 2026`. Prioriza EFE, Europa Press, elDiario.es, El País, El Mundo, RTVE, La Vanguardia, El Periódico, Público, NacióDigital, El Nacional, Naiz, Deia, El Correo. Abre la noticia y copia el pasaje: no te fíes del resumen del buscador.
 
-Fechas de campaña que conviene vigilar (actualiza esta lista cuando cambie): mítines de apertura 12-13 nov; VOX en Colón 13 nov; Frente Amplio en Sevilla y Bildu en Bilbao 14 nov; programa del PSOE previsto hacia el 19-20 nov; Frente Amplio en Barcelona 21 nov; Junts en Castelldefels 22 nov; cierres 27 nov.
+Fechas de campaña que conviene vigilar (actualiza esta lista cuando cambie): mítines de apertura 12-13 nov; VOX en Colón 13 nov; Frente Amplio en Sevilla y Bildu en Bilbao 14 nov; programa del PSOE previsto hacia el 19-20 nov (elConstitucional apunta al domingo 15 en Alcorcón; sin confirmar); cara a cara PSOE-PP el 16 nov; Frente Amplio en Barcelona 21 nov; Junts en Castelldefels 22 nov; cierres 27 nov.
 
 ## Paso 4. Verificar y redactar
 

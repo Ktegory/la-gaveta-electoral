@@ -1,0 +1,15 @@
+partido: "vox"
+tema: "inmigracion"
+subtema: "servicios"
+titulo: "Gravar las remesas que se envían al extranjero"
+fuentes:
+  - fuente: "vox/recuperar-espana-2026"
+    pagina: "3"
+    cita: "Gravamen sobre las remesas al extranjero: el dinero generado en España ha de redundar en mejores servicios aquí."
+fechaAnuncio: "2026-10-19"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el PDF del avance descargado de voxespana.es (sha256 6e57ecd3…). Busca «remesas» en la página 3. El avance no da tipo ni cuantía. Va en Inmigración porque el avance lo incluye en «prioridad nacional»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

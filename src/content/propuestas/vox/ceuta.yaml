@@ -1,0 +1,15 @@
+partido: "vox"
+tema: "inmigracion"
+subtema: "fronteras"
+titulo: "Recuperar Ceuta «para los ceutíes»: expulsiones inmediatas, fin de los acuerdos con Marruecos y frontera militarizada"
+fuentes:
+  - fuente: "vox/recuperar-espana-2026"
+    pagina: "3"
+    cita: "Recuperar Ceuta para los ceutíes: expulsión de todos los invasores con carácter inmediato, suspensión de acuerdos con Marruecos y militarización de la frontera."
+fechaAnuncio: "2026-10-19"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 13 nov en el PDF del avance descargado de voxespana.es (sha256 6e57ecd3…). Busca «Ceuta» en la página 3. El avance no precisa a quiénes se refiere con «invasores»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

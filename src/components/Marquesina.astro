@@ -14,8 +14,13 @@ const items = [
   { p: null, t: 'Lo marcado con línea discontinua es <b>provisional</b>' },
 ];
 const resumen = `${general.replace(/<[^>]+>/g, '')}. ${d.partidos.map((p) => `${p.data.nombre}: ${TITULAR_ESTADO[p.data.estadoPrograma].toLowerCase()} (${detalleEstado(d, p)})`).join('. ')}.`;
+// Huella del contenido: si alguien cierra la marquesina, vuelve a salir cuando cambie lo que dice
+// (por ejemplo, cuando un partido publique su programa).
+let h = 0;
+for (const c of resumen) h = (h * 31 + c.charCodeAt(0)) | 0;
+const huella = (h >>> 0).toString(36);
 ---
-<div class="prov pad" role="region" aria-label="Aviso: información provisional">
+<div class="prov pad" role="region" aria-label="Aviso: información provisional" data-huella={huella}>
   <span class="k">PROVISIONAL</span>
   <div class="mq">
     <p class="sr">{resumen}</p>
@@ -39,38 +44,36 @@ const resumen = `${general.replace(/<[^>]+>/g, '')}. ${d.partidos.map((p) => `${
       ))}
     </div>
   </div>
-  <button class="mq-pause" type="button" aria-pressed="false" aria-label="Pausar la marquesina">❚❚</button>
-  <a class="mq-more" href="/como-funciona/#provisional">Qué significa ›</a>
+  <button class="mq-cerrar" type="button" aria-label="Ocultar el aviso de información provisional" title="Ocultar">×</button>
 </div>
 <script is:inline>
   // En línea, justo después de la marquesina, para que actúe antes de pintar:
-  // así sigue donde estaba en la página anterior (y la transición no da un salto)
-  // y, si se pausó, sigue pausada.
+  // así sigue donde estaba en la página anterior (y la transición no da un salto).
+  // Se para al pasar el cursor por encima (CSS) y se puede cerrar con la ×.
   (function () {
     var prov = document.querySelector('.prov');
-    var b = prov && prov.querySelector('.mq-pause');
+    // Cerrada por la persona: no se muestra hasta que cambie su contenido.
+    function leerL(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+    function guardarL(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+    if (prov && leerL('mq-cerrada') === prov.dataset.huella) { prov.hidden = true; return; }
+    var x = prov && prov.querySelector('.mq-cerrar');
+    if (x) x.addEventListener('click', function () {
+      guardarL('mq-cerrada', prov.dataset.huella);
+      var quieto = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (quieto) { prov.hidden = true; return; }
+      prov.classList.add('cerrando');
+      setTimeout(function () { prov.hidden = true; }, 300);
+    });
     var track = prov && prov.querySelector('.mq-track');
-    if (!b || !track) return;
+    if (!track) return;
     function leer(k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } }
     function guardar(k, v) { try { sessionStorage.setItem(k, v); } catch (e) {} }
-    function pausar(on) {
-      b.setAttribute('aria-pressed', String(on));
-      b.setAttribute('aria-label', on ? 'Reanudar la marquesina' : 'Pausar la marquesina');
-      b.textContent = on ? '▶' : '❚❚';
-      prov.classList.toggle('paused', on);
-    }
-    var pausada = leer('mq-pausa') === '1';
-    if (pausada) pausar(true);
     var anim = track.getAnimations ? track.getAnimations()[0] : null;
     var t = leer('mq-t'), en = leer('mq-en');
-    if (anim && t !== null) anim.currentTime = Number(t) + (pausada ? 0 : Date.now() - Number(en));
-    b.addEventListener('click', function () {
-      var on = b.getAttribute('aria-pressed') !== 'true';
-      pausar(on);
-      guardar('mq-pausa', on ? '1' : '0');
-    });
+    var donde = Number(t) + Date.now() - Number(en);
+    if (anim && t !== null && en !== null && isFinite(donde)) anim.currentTime = donde;
     addEventListener('pagehide', function () {
-      if (!anim) return;
+      if (!anim || anim.currentTime === null) return;
       guardar('mq-t', String(anim.currentTime));
       guardar('mq-en', String(Date.now()));
     });

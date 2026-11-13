@@ -42,6 +42,7 @@ const dosCifras = (n: number) => String(n).padStart(2, '0');
           <span><b data-u="m">{dosCifras(minutos)}</b><small>min</small></span>
           <span><b data-u="s">{dosCifras(segundos)}</b><small>s</small></span>
         </div>
+        <p class="reloj-msg" hidden></p>
         <div class="progress" role="img" aria-label={`Ha pasado el ${Math.round(pct)} % del tiempo entre la convocatoria y las elecciones`}><i style={`width:${pct}%`}></i></div>
         <div class="progress-l"><span>Convocatoria · 6 oct</span><span>Hoy · <span data-hoy>{fecha(hoy)}</span></span><span>29 nov</span></div>
       </div>
@@ -105,7 +106,27 @@ const dosCifras = (n: number) => String(n).padStart(2, '0');
     const reloj = el.querySelector<HTMLElement>('.reloj')!;
     const u = (k: string) => el.querySelector<HTMLElement>(`[data-u="${k}"]`)!;
     const dos = (n: number) => String(n).padStart(2, '0');
+    // El día anterior es jornada de reflexión; el mismo día ya no hay cuenta atrás, sino «Hoy se vota».
+    // Los días se cuentan en hora de Madrid, sea cual sea la zona de quien visita.
+    const etiqueta = el.querySelector<HTMLElement>('.cnt-l')!, msg = el.querySelector<HTMLElement>('.reloj-msg')!;
+    const diaMadrid = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Madrid' });
+    const VOTO = diaMadrid.format(fin), REFLEXION = diaMadrid.format(fin - 864e5);
+    // Solo en desarrollo: ?hoy=AAAA-MM-DD para ver cómo queda cada día.
+    const hoyForzado = import.meta.env.DEV ? new URLSearchParams(location.search).get('hoy') : null;
+    const fase = () => {
+      const hoy = hoyForzado ?? diaMadrid.format(Date.now());
+      const [l, m] = hoy === REFLEXION ? ['Jornada de reflexión · Mañana se vota', '']
+        : hoy === VOTO ? ['Colegios abiertos de 9:00 a 20:00', 'Hoy se vota']
+        : hoy > VOTO ? ['Elecciones generales · 29 nov', 'Ya se ha votado']
+        : ['Faltan para votar · 29 nov', ''];
+      if (etiqueta.textContent !== l) etiqueta.textContent = l;
+      reloj.hidden = Boolean(m);
+      msg.hidden = !m;
+      msg.textContent = m;
+      return Boolean(m);
+    };
     const pintar = () => {
+      if (fase()) return;
       const resta = Math.max(0, fin - Date.now());
       const d = Math.floor(resta / 864e5);
       u('d').textContent = String(d);

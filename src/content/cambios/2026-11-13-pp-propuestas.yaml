@@ -1,0 +1,7 @@
+fecha: "2026-11-13"
+partido: "pp"
+tipo: "propuestas"
+descripcion: "Añadimos dos propuestas de su programa sobre el gasto del Estado: una auditoría de todo el gasto público en los primeros cien días y la reducción de ministerios, altos cargos, asesores y organismos."
+propuestas:
+  - "pp/auditoria-gasto-cien-dias"
+  - "pp/reducir-estructura-politica"
