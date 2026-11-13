@@ -1,0 +1,18 @@
+partido: "pp"
+tema: "empleo"
+subtema: "autonomos"
+titulo: "Eximir de la cuota de autónomos el primer año a los nuevos autónomos, y el segundo si no llegan al salario mínimo"
+resumen: "Los nuevos autónomos no pagarían cuota a la Seguridad Social el primer año, ni el segundo si sus ingresos no llegan al salario mínimo. En el mitin con los jóvenes del 13 de noviembre lo presentó para los jóvenes autónomos y añadió que se bonificarían las cotizaciones del primer año si contratan a un trabajador."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "59"
+    cita: "Los nuevos autónomos no pagarán cuota a la Seguridad Social durante su primer año, ni durante el segundo si sus ingresos no llegan al salario mínimo."
+  - fuente: "pp/nota-mitin-jovenes-madrid-2026-11-13"
+    cita: "anuncia que los jóvenes autónomos no pagarán cuota durante su primer año y se bonificarán las cotizaciones a la Seguridad Social durante el primer año si contratan a un trabajador"
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Es la medida 170 del programa (pág. 59, busca «DEJAREMOS EMPRENDER»), cotejada el 13 nov con el texto extraído del PDF. El programa habla de todos los nuevos autónomos, sin límite de edad. La nota de pp.es del mitin del 13 nov la presenta para los jóvenes y añade la bonificación por contratar, que no está en esa medida del programa (busca «jóvenes autónomos»; es texto de la nota, no frase literal de Feijóo)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

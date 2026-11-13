@@ -1,7 +1,10 @@
 fecha: "2026-11-13"
 partido: "pp"
 tipo: "propuestas"
-descripcion: "Añadimos dos propuestas de su programa sobre el gasto del Estado: una auditoría de todo el gasto público en los primeros cien días y la reducción de ministerios, altos cargos, asesores y organismos."
+descripcion: "Añadimos dos propuestas de su programa sobre el gasto del Estado: una auditoría de todo el gasto público en los primeros cien días y la reducción de ministerios, altos cargos, asesores y organismos. Y tres más de su programa que Feijóo repitió el 13 de noviembre en el mitin con los jóvenes en Madrid: no pagar IRPF el primer año para los jóvenes de 18 a 35 años, no pagar cuota el primer año los nuevos autónomos y la escuela infantil gratuita de 0 a 3 años."
 propuestas:
   - "pp/auditoria-gasto-cien-dias"
   - "pp/reducir-estructura-politica"
+  - "pp/irpf-primer-empleo-jovenes"
+  - "pp/cuota-cero-jovenes-autonomos"
+  - "pp/escuelas-infantiles-gratuitas"

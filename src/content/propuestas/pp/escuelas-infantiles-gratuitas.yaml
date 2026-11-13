@@ -1,0 +1,18 @@
+partido: "pp"
+tema: "educacion"
+subtema: "infantil"
+titulo: "Hacer gratuita la escuela infantil de 0 a 3 años, con el Estado y las comunidades pagando cada uno la mitad de la plaza"
+resumen: "El Estado financiaría la mitad del coste de cada plaza de 0 a 3 años, pública o concertada, y las comunidades autónomas la otra mitad. Al terminar la legislatura sería gratuita para todas las familias que la soliciten."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "57"
+    cita: "LA ESCUELA INFANTIL DE CERO A TRES AÑOS SERÁ GRATUITA. Acordaremos con las Comunidades Autónomas que el Estado financie la mitad del coste de cada plaza de cero a tres años, pública o concertada, y las Comunidades, la otra mitad."
+  - fuente: "pp/nota-mitin-jovenes-madrid-2026-11-13"
+    cita: "extender a toda España las escuelas infantiles gratuitas de 0 a 3 años para que formar una familia deje de parecer imposible"
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Es la medida 163 del programa (pág. 57, busca «ESCUELA INFANTIL DE CERO A TRES»), cotejada el 13 nov con el texto extraído del PDF; lo de «al terminar la legislatura» está en la frase siguiente. Feijóo la repitió en el mitin con los jóvenes en Madrid el 13 nov (nota de pp.es, busca «escuelas infantiles gratuitas»; es texto de la nota, no frase literal)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-13"

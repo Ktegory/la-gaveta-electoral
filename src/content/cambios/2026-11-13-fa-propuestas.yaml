@@ -1,0 +1,7 @@
+fecha: "2026-11-13"
+partido: "fa"
+tipo: "propuestas"
+descripcion: "Añadimos dos de las tres medidas contra la corrupción que presentó hoy en Barcelona: vetar 20 años en la contratación pública a las empresas condenadas por corrupción y crear una Agencia Independiente contra la Corrupción."
+propuestas:
+  - "fa/veto-contratacion-empresas-corruptoras"
+  - "fa/agencia-contra-corrupcion"

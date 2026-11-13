@@ -2,7 +2,7 @@ partido: "junts"
 tema: "territorial"
 subtema: "financiacion"
 titulo: "Concierto económico para Cataluña como el del País Vasco: recaudar y gestionar todos sus impuestos"
-resumen: "Lo plantea como condición para negociar con el próximo Gobierno tras el 29N."
+resumen: "Lo plantea como condición para negociar con el próximo Gobierno tras el 29N. El 13 de noviembre detalló cómo: sacar a Cataluña del régimen común de la LOFCA con una disposición adicional y una ley propia para que la Agència Tributària de Catalunya recaude, liquide e inspeccione todos los impuestos, incluidos el IRPF, el IVA y Sociedades. La Generalitat podría fijar los tipos, pagaría al Estado por los servicios que presta en Cataluña y decidiría su propio sistema de solidaridad."
 fuentes:
   - fuente: "junts/mesjunts-160-balance"
     pagina: "1"
@@ -11,11 +11,13 @@ fuentes:
     cita: “Volem recaptar, volem gestionar i volem decidir sobre els diners dels catalans. I si ho poden fer els bascos, nosaltres també”, ha defensat.
   - fuente: "junts/prensa-ser-condiciones"
     cita: Entre les demandes que Nogueras ha posat sobre la taula hi ha la delegació de competències en immigració; que s'aprovi l'oficialitat del català a la Unió Europea, i que Catalunya gestioni els seus impostos, ha dit en una entrevista a Ser Catalunya recollida per Europa Press.
+  - fuente: "junts/nota-sobirania-economica-2026-11-13"
+    cita: "Castellà ha explicat que la proposta passa per excloure Catalunya del règim comú de la LOFCA mitjançant una disposició addicional i aprovar una llei pròpia que permeti a l’Agència Tributària de Catalunya recaptar, liquidar i inspeccionar tots els impostos, inclosos l’IRPF, l’IVA i societats."
 fechaAnuncio: "2026-10-27"
 destacada: true
 orden: 1
 comprobacion:
   estado: encontrada
-  nota: La nota de junts.cat dice además que Nogueras «ha situat aquesta reivindicació com una de les condicions imprescindibles per negociar amb Junts després de les eleccions del 29 de novembre». La SER habla solo de «que Catalunya gestioni els seus impostos», sin nombrar el concierto.
+  nota: "La nota de junts.cat del 7 nov dice además que Nogueras «ha situat aquesta reivindicació com una de les condicions imprescindibles per negociar amb Junts després de les eleccions del 29 de novembre». La SER habla solo de «que Catalunya gestioni els seus impostos», sin nombrar el concierto. Ampliada el 13 nov con la nota de junts.cat de ese día (busca «disposició addicional»); lo de los tipos, el pago por servicios y la solidaridad está en la frase siguiente (busca «capacitat normativa»)."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-11"
+fechaRevision: "2026-11-13"
