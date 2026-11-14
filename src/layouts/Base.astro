@@ -7,7 +7,7 @@ import Marquesina from '../components/Marquesina.astro';
 import Logo from '../components/Logo.astro';
 import { datos } from '../lib/datos';
 
-interface Props { titulo?: string; descripcion?: string; seccion?: 'mapa' | 'partidos' | 'comparar' | 'escala' | 'metodo' | 'buscar' | 'fuentes' | 'novedades'; estilo?: string; indexar?: boolean; noindex?: boolean }
+interface Props { titulo?: string; descripcion?: string; seccion?: 'mapa' | 'partidos' | 'comparar' | 'escala' | 'metodo' | 'buscar' | 'fuentes' | 'novedades' | 'historia'; estilo?: string; indexar?: boolean; noindex?: boolean }
 const { titulo, descripcion = 'Los programas de los partidos para las elecciones generales del 29N, ordenados por temas, comparables y con la fuente original al lado de cada propuesta.', seccion, estilo, indexar = true, noindex = false } = Astro.props;
 const nombre = 'La Gaveta electoral';
 const t = titulo ? `${titulo} · ${nombre}` : `${nombre} · Elecciones generales 29N`;
@@ -26,6 +26,7 @@ const datosEstructurados = {
 const NAV = [
   { id: 'partidos', href: '/partidos/', txt: 'Partidos' },
   { id: 'comparar', href: '/comparar/', txt: 'Comparar' },
+  { id: 'historia', href: '/historia/', txt: 'Promesas y hechos' },
   { id: 'novedades', href: '/novedades/', txt: 'Novedades' },
   { id: 'metodo', href: '/como-funciona/', txt: 'Cómo funciona' },
 ] as const;

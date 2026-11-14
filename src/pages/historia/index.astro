@@ -1,0 +1,73 @@
+---
+// Portada de «Promesas y hechos».
+// Explica por qué solo salen PP y PSOE, qué legislatura de cada uno y lleva a cada tema.
+import Base from '../../layouts/Base.astro';
+import Icono from '../../components/Icono.astro';
+import { datos, varsPartido } from '../../lib/datos';
+import { TEMAS } from '../../lib/historia';
+
+const d = await datos();
+const partido = new Map(d.partidos.map((p) => [p.id, p]));
+// Legislatura y programa de cada partido: son los mismos en todos los temas.
+const bloques = TEMAS[0].bloques;
+// Subtemas con promesas de cada tema, en el orden de temas.yaml.
+const subtemasDe = (id: string) => {
+  const usados = new Set(TEMAS.find((t) => t.id === id)!.bloques.flatMap((b) => b.promesas.map((x) => x.subtema ?? '')));
+  return (d.temas.find((t) => t.id === id)?.data.subtemas ?? []).filter((s) => usados.has(s.id)).map((s) => s.nombre);
+};
+---
+<Base seccion="historia" titulo="Promesas y hechos" descripcion="Qué prometieron PP y PSOE en el programa con el que llegaron al Gobierno y qué pasó con cada promesa.">
+  <div class="chd pad hi-top">
+    <h1 class="cond">Promesas y hechos</h1>
+    <p class="lead">Qué prometieron PP y PSOE en el programa con el que llegaron al Gobierno, y qué pasó con cada promesa durante esa legislatura: la cita del programa, la norma del BOE que la llevó a cabo (o que no hubo) y lo que votó cada grupo del Congreso.</p>
+  </div>
+
+  <div class="pad hi">
+    <section class="hi-por" aria-labelledby="h-por">
+      <h2 id="h-por">Por qué solo PP y PSOE</h2>
+      <p>Son los dos únicos partidos que han presidido el Gobierno de España desde 1982, así que son los únicos de los que se puede comparar lo que prometieron con lo que aprobaron. De cada uno tomamos una legislatura entera, empezada tras ganar las elecciones, y el programa con el que se presentaron a ellas.</p>
+    </section>
+
+    <div class="hi-legs">
+      {bloques.map((b) => {
+        const p = partido.get(b.partido)!;
+        return (
+          <section class="hi-leg" style={varsPartido(p)} aria-labelledby={`h-${b.partido}`}>
+            <h2 class="cond" id={`h-${b.partido}`}>{p.data.nombre}</h2>
+            <p class="hv-leg">{b.legislatura} · {b.periodo}</p>
+            <p class="hi-ctx">{b.contexto}</p>
+            <p class="hi-prog">Programa: <a href={b.programa.url} target="_blank" rel="noopener">{b.programa.titulo}</a></p>
+          </section>
+        );
+      })}
+    </div>
+
+    <section aria-labelledby="h-temas">
+      <h2 class="hi-h" id="h-temas">Temas</h2>
+      <div class="qs">
+        {TEMAS.map((t) => (
+          <a class="q" href={`/historia/${t.id}/`}>
+            <Icono id={t.id} />
+            <span><span class="t">{t.nombre}</span><span class="qq">{subtemasDe(t.id).join(' · ')}</span></span>
+          </a>
+        ))}
+      </div>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .hi-top { padding-bottom: var(--sec-s) }
+  .hi { display: grid; gap: 48px; padding-bottom: var(--sec-s) }
+  .hi-por { max-width: 68ch }
+  .hi-por h2, .hi-h { margin: 0 0 12px; font-size: 1.25rem }
+  .hi-por p { margin: 0; font-size: 1.0625rem; line-height: 1.5; color: var(--ink2) }
+  .hi-legs { display: grid; gap: 24px 32px }
+  @container site (min-width: 800px) { .hi-legs { grid-template-columns: 1fr 1fr } }
+  .hi-leg { padding-top: 12px; border-top: 6px solid var(--pc, var(--ink)) }
+  .hi-leg h2 { margin: 0 0 8px; font-size: clamp(2.5rem, 4cqi, 3.5rem); line-height: .9; text-transform: uppercase; color: var(--pc); color: oklch(from var(--pc) min(l, .55) c h) }
+  .hv-leg { margin: 0 0 4px; font-size: .75rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--mute) }
+  .hi-ctx { margin: 0 0 8px; font-size: .9375rem; line-height: 1.4; color: var(--ink2) }
+  .hi-prog { margin: 0; font-size: .875rem; color: var(--mute) }
+  .hi-prog a { color: var(--ink) }
+</style>

@@ -1,0 +1,386 @@
+---
+// «Promesas y hechos», un tema por página.
+// Por tema: promesas de los dos últimos partidos que han gobernado y qué pasó con cada una.
+// Sin notas ni recuentos: cada promesa con su cita, la norma que la resolvió (o que no hubo) y su fuente.
+import Base from '../../layouts/Base.astro';
+import { datos, varsPartido } from '../../lib/datos';
+import { ESTADOS, type Promesa, type Tema } from '../../lib/historia/tipos';
+import { TEMAS } from '../../lib/historia';
+
+export function getStaticPaths() {
+  return TEMAS.map((t) => ({ params: { tema: t.id }, props: { tema: t } }));
+}
+const { tema } = Astro.props as { tema: Tema };
+
+const d = await datos();
+const partido = new Map(d.partidos.map((p) => [p.id, p]));
+const pdf = (url: string, pagina: string) => `${url}#page=${pagina.split('-')[0]}`;
+const SENTIDOS = [['si', 'Votaron sí'], ['no', 'Votaron no'], ['abstencion', 'Se abstuvieron'], ['dividido', 'Votaron divididos']] as const;
+const clave = (b: string, p: Promesa) => `${b}-${p.id}`;
+// Filas: los subtemas del tema (orden de temas.yaml) que tienen alguna promesa, y al final las que no encajan en ninguno.
+const subtemas = d.temas.find((t) => t.id === tema.id)?.data.subtemas ?? [];
+const usados = new Set(tema.bloques.flatMap((b) => b.promesas.map((x) => x.subtema ?? '')));
+const filas: { id: string; nombre: string; pregunta?: string }[] = [
+  ...subtemas.filter((st) => usados.has(st.id)),
+  ...(usados.has('') ? [{ id: '', nombre: 'Otras promesas' }] : []),
+];
+const sinFila = [...usados].filter((u) => u && !subtemas.some((st) => st.id === u));
+if (sinFila.length) throw new Error(`Subtemas que no existen en ${tema.id}: ${sinFila.join(', ')}`);
+---
+<Base seccion="historia" titulo={`Promesas y hechos: ${tema.nombre}`} descripcion={`Promesas de ${tema.nombre.toLowerCase()} de los programas con los que PP y PSOE llegaron al Gobierno, y qué norma las resolvió.`}>
+  <div class="chd pad hv-top">
+    <div class="hv-intro">
+      <p class="hv-volver"><a href="/historia/">Promesas y hechos</a></p>
+      <nav class="hv-temas" aria-label="Temas">
+        {TEMAS.map((t) => <a href={`/historia/${t.id}/`} aria-current={t.id === tema.id ? 'page' : undefined}>{t.nombre}</a>)}
+      </nav>
+      <h1 class="cond">{tema.nombre}</h1>
+      <p class="lead">{tema.lead} Una legislatura completa de cada uno, empezada tras ganar las elecciones, y el programa con el que se presentaron a ellas.</p>
+    </div>
+    <section class="hv-metodo" aria-label="Cómo leer esta página">
+      <div class="hv-m-in">
+        <div class="hv-m-txt">
+          <h2>Cómo leerlo</h2>
+          <p>Solo recogemos promesas que dicen algo concreto que se pueda comprobar. Para cada una buscamos en el BOE la norma que la llevó a cabo. Si fue una ley, añadimos qué votó cada grupo del Congreso <b>de entonces</b>: no siempre son los mismos partidos que hoy. No sumamos ni puntuamos.</p>
+          <p>Si la norma es un real decreto-ley, ponemos su convalidación en el Congreso. Algunas leyes no tienen votación final en el Pleno: las aprobó una comisión del Congreso con competencia legislativa plena, y el Pleno solo votó después los cambios del Senado. En ese caso no ponemos votación y lo decimos en la nota. Los reales decretos los aprueba el Gobierno y no se votan.</p>
+          <p>Las promesas van agrupadas por los mismos subtemas que usa el resto de la web, para que cada fila compare lo mismo. Si un partido no tenía promesas concretas sobre un subtema, lo indica un recuadro punteado. Lo que no encaja en ninguno va en «Otras promesas».</p>
+        </div>
+        <ul class="hv-leyenda">
+          {Object.entries(ESTADOS).map(([k, e]) => (
+            <li><span class={`hv-e ${k}`}><i aria-hidden="true"></i>{e.corto}</span> {e.explica}</li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <div class="pad hv">
+    {/* Filas por subtema y una columna por partido; en pantallas estrechas, pestañas (sin JS se ve todo seguido). */}
+    <div class="hv-duo" data-activo={tema.bloques[0].partido}>
+      <div class="hv-pest" aria-label="Partido">
+        {tema.bloques.map((b, i) => {
+          const p = partido.get(b.partido)!;
+          return <button type="button" data-p={b.partido} aria-pressed={i === 0 ? 'true' : 'false'} style={varsPartido(p)}>{p.data.siglas}</button>;
+        })}
+      </div>
+      <div class="hv-tabla">
+        {/* Cabeceras de los partidos: fijas arriba al bajar (en escritorio). */}
+        <div class="hv-cabs">
+          {tema.bloques.map((b) => {
+            const p = partido.get(b.partido)!;
+            return (
+              <header class="hv-bh" style={varsPartido(p)} id={b.partido} data-p={b.partido}>
+                <h2 class="cond">{p.data.nombre}</h2>
+                <div>
+                  <p class="hv-leg">{b.legislatura} · {b.periodo}</p>
+                  <p class="hv-ctx">{b.contexto}</p>
+                </div>
+              </header>
+            );
+          })}
+        </div>
+        {filas.map((f) => (
+          <section class="hv-sec" id={`st-${f.id || 'otras'}`}>
+            <div class="hv-st">
+              <details class="hv-sel">
+                <summary><h2>{f.nombre}</h2><span class="hv-sel-i" aria-hidden="true"></span></summary>
+                <ul>
+                  {filas.map((g) => <li><a href={`#st-${g.id || 'otras'}`} aria-current={g.id === f.id ? 'true' : undefined}>{g.nombre}</a></li>)}
+                </ul>
+              </details>
+              {f.pregunta && <p class="hv-st-q">{f.pregunta}</p>}
+            </div>
+            {tema.bloques.map((b) => {
+              const p = partido.get(b.partido)!;
+              const lista = b.promesas.filter((x) => (x.subtema ?? '') === f.id);
+              return (
+                <div class="hv-celda" style={varsPartido(p)} data-p={b.partido}>
+                  {lista.length === 0 ? (
+                    <p class="hv-vacio">No hemos recogido promesas concretas del {p.data.siglas} sobre esto.</p>
+                  ) : (
+                    <ol class="hv-lista">
+                      {lista.map((x) => (
+                        <li class="hv-p" id={clave(b.partido, x)}>
+                          <p class="hv-cab">
+                            <span class="hv-sig">{p.data.siglas}</span>
+                            <span class={`hv-e ${x.estado}`}><i aria-hidden="true"></i>{ESTADOS[x.estado].corto}</span>
+                          </p>
+                          <h3>{x.titulo}</h3>
+                          <blockquote>
+                            <p>«{x.cita}»</p>
+                            <footer><a href={pdf(b.programa.url, x.pagina)} target="_blank" rel="noopener">Programa, pág. {x.pagina} ↗</a></footer>
+                          </blockquote>
+                          {x.votacion && (
+                            <div class="hv-voto">
+                              <p class="hv-vh"><b>Cómo votó el Congreso</b> · {x.votacion.resultado}</p>
+                              <dl>
+                                {SENTIDOS.map(([k, t]) => {
+                                  const gs = x.votacion!.grupos.filter((g) => g.voto === k);
+                                  return gs.length > 0 && (
+                                    <div class={`hv-fila ${k}`}>
+                                      <dt>{t}</dt>
+                                      <dd>{gs.map((g) => <span class="hv-g">{g.grupo}</span>)}</dd>
+                                    </div>
+                                  );
+                                })}
+                              </dl>
+                              <p class="hv-vf">{x.votacion.que} · <a href={x.votacion.url} target="_blank" rel="noopener">Voto de cada diputado ↗</a></p>
+                            </div>
+                          )}
+                          <div class="hv-paso">
+                            <p class="hv-ph"><b>Qué pasó</b></p>
+                            <p class="hv-txt">{x.quePaso}</p>
+                            {(x.normas.length > 0 || x.nota || x.quePaso.length > 220) && (
+                              <details class="hv-mas">
+                                <summary><span class="hv-ab">Leer más</span><span class="hv-ce">Leer menos</span></summary>
+                                {x.normas.length > 0 && (
+                                  <ul class="hv-normas">
+                                    {x.normas.map((n) => (
+                                      <li>
+                                        <a href={n.url} target="_blank" rel="noopener">{n.nombre} ↗</a>
+                                        {n.cita && <q>{n.cita}</q>}
+                                        {n.donde && <small>{n.donde}</small>}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                )}
+                                {x.nota && <p class="hv-nota">{x.nota}</p>}
+                              </details>
+                            )}
+                          </div>
+                        </li>
+                      ))}
+                    </ol>
+                  )}
+                </div>
+              );
+            })}
+          </section>
+        ))}
+      </div>
+    </div>
+
+    <section class="hv-progs" aria-label="Programas consultados">
+      <h2>Programas consultados</h2>
+      <ul>
+        {tema.bloques.map((b) => {
+          const p = partido.get(b.partido)!;
+          return <li><b>{p.data.siglas}:</b> <a href={b.programa.url} target="_blank" rel="noopener">{b.programa.titulo} ↗</a>{b.programa.nota && <> · {b.programa.nota}</>}</li>;
+        })}
+      </ul>
+    </section>
+  </div>
+</Base>
+
+<script>
+  // Pestañas PP | PSOE en pantallas estrechas. En escritorio las columnas se ven a la vez y las pestañas no se muestran.
+  for (const duo of document.querySelectorAll<HTMLElement>('.hv-duo')) {
+    duo.classList.add('js');
+    const tabs = [...duo.querySelectorAll<HTMLButtonElement>('.hv-pest button')];
+    const activar = (p: string) => {
+      duo.dataset.activo = p;
+      for (const t of tabs) t.setAttribute('aria-pressed', String(t.dataset.p === p));
+    };
+    for (const t of tabs) {
+      t.addEventListener('click', () => {
+        activar(t.dataset.p!);
+        // Si ya se había bajado por la lista, se vuelve al principio del otro partido.
+        if (duo.getBoundingClientRect().top < 0) duo.scrollIntoView();
+      });
+    }
+    // Un enlace a una promesa (#psoe-ley-vivienda) abre la pestaña de su partido.
+    const h = location.hash.slice(1).split('-')[0];
+    if (tabs.some((t) => t.dataset.p === h)) activar(h);
+
+    // Altura de lo que queda fijo encima del título del subtema: las cabeceras de partido (escritorio)
+    // o las pestañas (móvil). El título del subtema se pega justo debajo.
+    const cabs = duo.querySelector<HTMLElement>('.hv-cabs')!;
+    const pest = duo.querySelector<HTMLElement>('.hv-pest')!;
+    const medir = () => {
+      const fijo = getComputedStyle(cabs).position === 'sticky' ? cabs : pest;
+      duo.style.setProperty('--fijo-h', `${fijo.offsetHeight}px`);
+    };
+    medir();
+    new ResizeObserver(medir).observe(document.documentElement);
+    new ResizeObserver(medir).observe(cabs);
+
+    // Selector de subtema: se cierra al elegir uno o al pulsar fuera.
+    const selectores = [...duo.querySelectorAll<HTMLDetailsElement>('.hv-sel')];
+    for (const sel of selectores) {
+      sel.addEventListener('click', (e) => {
+        const a = (e.target as HTMLElement).closest('a');
+        if (!a) return;
+        sel.open = false;
+        // Desplazamiento suave hasta el subtema (salto directo si la persona pide menos movimiento).
+        const destino = document.getElementById(a.hash.slice(1));
+        if (!destino) return;
+        e.preventDefault();
+        const suave = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+        destino.scrollIntoView({ behavior: suave ? 'smooth' : 'auto' });
+        history.pushState(null, '', a.hash);
+      });
+    }
+    document.addEventListener('click', (e) => {
+      for (const sel of selectores) if (sel.open && !sel.contains(e.target as Node)) sel.open = false;
+    });
+  }
+</script>
+
+<style>
+  .hv-volver { margin: 0 0 12px; font-size: .9375rem; font-weight: 700 }
+  .hv-volver a { color: var(--ink); text-underline-offset: 3px }
+  .hv-volver a::before { content: "← " }
+  .hv-temas { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px }
+  .hv-temas a { padding: 6px 16px; border: 1.5px solid var(--ink); border-radius: 999px; font-size: .9375rem; font-weight: 700; color: var(--ink); text-decoration: none }
+  .hv-temas a[aria-current='page'] { background: var(--ink); color: #fff }
+  .hv { display: grid; gap: var(--sec-s); padding-bottom: var(--sec) }
+  .hv-leyenda { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: .9375rem; color: var(--ink2) }
+  .hv-leyenda li { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline }
+
+  /* Estado: etiqueta crema, como las demás pastillas de la web (sin semáforo).
+     El estado lo distinguen la forma del icono y el texto. */
+  .hv-e { display: inline-flex; align-items: center; gap: 8px; min-height: 32px; padding: 4px 14px 4px 10px; border-radius: 999px; font-size: .8125rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; color: var(--ink); background: var(--bg3) }
+  .hv-e.sin-concreto { color: var(--mute) }
+  /* Iconos: un cuadrado por sentido, los mismos para el estado de la promesa y para el voto.
+     Sí / se aprobó = ✓ sobre negro · No = ✕ · Una parte / divididos = medio relleno · Se deshizo = ↺ ·
+     Abstención = guion · Nada concreto = guion gris en cuadrado punteado. Sin color: la forma basta. */
+  .hv-top, .hv {
+    --ic-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M3 7.4l2.6 2.6L11 4.4' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    --ic-cruz: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M4.2 4.2l5.6 5.6M9.8 4.2l-5.6 5.6' fill='none' stroke='%230E0E0E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    --ic-guion: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M4 7h6' fill='none' stroke='%230E0E0E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    --ic-guion-gris: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M4 7h6' fill='none' stroke='%23B4B4AD' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    --ic-deshacer: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M5.2 3L3 5.2l2.2 2.2M3 5.2h5.2a2.9 2.9 0 0 1 0 5.8H5' fill='none' stroke='%230E0E0E' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+  .hv-e i, .hv-fila dt::before { content: ''; width: 16px; height: 16px; border: 2px solid var(--ink); border-radius: 4px; flex: none; box-sizing: border-box; background: #fff center / 100% no-repeat }
+  .hv-e.hecho i, .hv-fila.si dt::before { background-color: var(--ink); background-image: var(--ic-check) }
+  .hv-e.no i, .hv-fila.no dt::before { background-image: var(--ic-cruz) }
+  .hv-e.parte i, .hv-fila.dividido dt::before { background-image: linear-gradient(135deg, var(--ink) 50%, #fff 50%) }
+  .hv-e.revertido i { background-image: var(--ic-deshacer) }
+  .hv-fila.abstencion dt::before { background-image: var(--ic-guion) }
+  .hv-e.sin-concreto i { border-style: dotted; border-color: var(--nc); background-image: var(--ic-guion-gris) }
+  .hv-fila.si dt::before, .hv-fila.no dt::before { width: 18px; height: 18px }
+  .hv-cab { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 }
+  .hv-sig { display: inline-grid; place-items: center; min-width: 56px; height: 32px; padding: 0 14px; border-radius: 999px; background: var(--pc); color: var(--pt); font-family: var(--cond); font-weight: 900; font-size: 1.1875rem; letter-spacing: .02em }
+
+
+  .hv-lista { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px }
+  .hv-p { border: 1px solid var(--hair); border-radius: var(--r-in); padding: clamp(20px, 2.5cqi, 32px); scroll-margin-top: calc(var(--fijo-h, 0px) + 60px) }
+  .hv-p h3 { margin: 10px 0 12px; font-size: 1.25rem; line-height: 1.25 }
+  .hv-p blockquote { margin: 0; padding-left: 16px; border-left: 3px solid var(--pc, var(--ink)) }
+  .hv-p blockquote p { margin: 0 0 6px; font-size: .9688rem; color: var(--ink2) }
+  .hv-p footer, .hv-normas small { font-size: .8125rem; color: var(--mute) }
+  /* «Qué pasó»: hechos, normas y nota con el mismo cuerpo de texto; los distingue el icono de delante
+     (calendario = lo que pasó, documento = norma del BOE, i = nota). */
+  .hv-paso {
+    --ic-paso: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 3.5h8a1.5 1.5 0 0 1 1.5 1.5v7a1.5 1.5 0 0 1-1.5 1.5H4A1.5 1.5 0 0 1 2.5 12V5A1.5 1.5 0 0 1 4 3.5zM2.5 6.8h11M5.5 2v3M10.5 2v3' fill='none' stroke='%233A3A38' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    --ic-norma: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 1.8h5.5l3 3v9.4H4zM9.5 1.8v3h3M6 8.2h4.5M6 10.8h4.5' fill='none' stroke='%233A3A38' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    --ic-nota: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 1.8a6.2 6.2 0 1 1 0 12.4A6.2 6.2 0 0 1 8 1.8zM8 7.3v3.9M8 4.9v.1' fill='none' stroke='%233A3A38' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+  .hv-txt, .hv-normas li, .hv-nota { position: relative; margin: 0 0 14px; padding-left: 28px; font-size: .9375rem; line-height: 1.45; color: var(--ink) }
+  .hv-txt::before, .hv-normas li::before, .hv-nota::before { content: ''; position: absolute; left: 0; top: .17em; width: 18px; height: 18px; background: var(--ic-paso) center / contain no-repeat }
+  .hv-normas li::before { background-image: var(--ic-norma) }
+  .hv-nota::before { background-image: var(--ic-nota) }
+  /* «Qué pasó»: se ve el principio (tres líneas); «Leer más» abre el resto, las normas y la nota (details nativo). */
+  .hv-paso { margin-top: 24px }
+  .hv-ph { margin: 0 0 10px; font-size: .9375rem }
+  .hv-txt { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-clamp: 3; overflow: hidden }
+  .hv-paso:has(> .hv-mas[open]) .hv-txt { display: block; -webkit-line-clamp: unset; line-clamp: none; overflow: visible }
+  .hv-paso > .hv-txt { margin-bottom: 10px }
+  .hv-paso > .hv-txt:last-child { margin-bottom: 0 }
+  .hv-mas summary { display: inline-flex; align-items: center; gap: 6px; padding-left: 28px; cursor: pointer; list-style: none; font-size: .875rem; font-weight: 700; text-decoration: underline; text-underline-offset: 3px }
+  .hv-mas summary::-webkit-details-marker { display: none }
+  .hv-mas summary:hover { text-decoration-thickness: 2px }
+  .hv-mas summary::after { content: ''; width: 7px; height: 7px; margin-left: 2px; border: solid currentColor; border-width: 0 2px 2px 0; transform: translateY(-2px) rotate(45deg); transition: transform .15s }
+  .hv-mas[open] summary::after { transform: translateY(2px) rotate(-135deg) }
+  .hv-mas .hv-ce, .hv-mas[open] .hv-ab { display: none }
+  .hv-mas[open] .hv-ce { display: inline }
+  .hv-mas[open] summary { margin-bottom: 14px }
+  .hv-mas > :last-child { margin-bottom: 0 }
+
+  /* Sin promesas: recuadro punteado gris, la convención de la web para «no consta». */
+  .hv-vacio { margin: 0; padding: 18px 20px; border: 1.5px dotted var(--nc); border-radius: var(--r-in); font-size: .9375rem; color: var(--mute) }
+
+  /* Pestañas en estrecho. */
+  .hv-pest { display: none }
+  .hv-duo.js .hv-pest { display: flex; gap: 8px; position: sticky; top: var(--hdr-h); z-index: 4; margin-bottom: 8px; padding: 10px 0; background: var(--bg) }
+  .hv-pest button { flex: 1; height: var(--h-ctl); border: 2px solid var(--pc); border-radius: 999px; background: #fff; color: var(--ink); font-family: var(--cond); font-weight: 900; font-size: 1.25rem; letter-spacing: .02em; cursor: pointer }
+  .hv-pest button[aria-pressed='true'] { background: var(--pc); color: var(--pt) }
+  @container site (max-width: 999.98px) {
+    .hv-duo.js[data-activo='pp'] :is(.hv-bh, .hv-celda):not([data-p='pp']), .hv-duo.js[data-activo='psoe'] :is(.hv-bh, .hv-celda):not([data-p='psoe']) { display: none }
+  }
+  @container site (min-width: 1000px) {
+    .hv-duo.js .hv-pest { display: none }
+  }
+  .hv-normas { list-style: none; margin: 0 0 14px; padding: 0 }
+  .hv-normas li:last-child { margin-bottom: 0 }
+  .hv-normas li { display: grid; gap: 2px }
+  .hv-normas li > a { justify-self: start }
+  .hv-normas q { color: var(--ink2) }
+  /* Votación, resaltada en la columna de la promesa: una fila por sentido del voto. */
+  /* Caja de la votación en crema rebajado (la mitad del crema de la web) con su filete crema. */
+  .hv-voto { margin-top: 20px; padding: 16px 18px; border: 1px solid var(--crema-filete); border-radius: var(--r-in); background: color-mix(in srgb, var(--crema) 50%, #fff) }
+  .hv-vh { margin: 0 0 18px; font-size: .9375rem }
+  .hv-voto dl { margin: 0; display: grid; gap: 20px }
+  .hv-fila { display: grid; gap: 10px }
+  .hv-fila dt { display: flex; align-items: center; gap: 8px; font-size: .75rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase }
+  /* Sí y No mandan: título más grande, en la letra condensada de los titulares, con su marca. */
+  .hv-fila.si dt, .hv-fila.no dt { display: flex; align-items: center; gap: 8px; font-family: var(--cond); font-size: 1.375rem; font-weight: 900; letter-spacing: .02em; line-height: 1 }
+  .hv-fila dd { margin: 0; display: flex; flex-wrap: wrap; gap: 8px }
+  .hv-g { display: inline-flex; align-items: center; min-height: 32px; padding: 3px 12px; border-radius: 999px; border: 1.5px solid var(--ink); font-size: .9062rem; font-weight: 700; line-height: 1.2 }
+  .hv-fila.si .hv-g { background: var(--ink); color: #fff }
+  .hv-fila.no .hv-g { background: #fff }
+  .hv-fila.abstencion .hv-g { background: var(--bg3); border-color: var(--bg3); font-weight: 600 }
+  .hv-fila.dividido .hv-g { border-style: dashed; font-weight: 600 }
+  .hv-fila.abstencion dt, .hv-fila.dividido dt { color: var(--mute) }
+  .hv-vf { margin: 18px 0 0; font-size: .8125rem; color: var(--mute) }
+  /* Arriba: título a la izquierda y «Cómo leerlo» a la derecha (en escritorio, con texto y leyenda en dos columnas). */
+  .hv-top { display: grid; gap: 32px; padding-bottom: var(--sec-s) }
+  .hv-metodo { container: metodo / inline-size; padding: 24px 28px; background: var(--bg2); border-radius: var(--r-in); font-size: .9375rem }
+  .hv-metodo > * { min-width: 0 }
+  /* Texto y leyenda en dos columnas solo si la caja tiene sitio (en pantallas anchas). */
+  @container metodo (min-width: 620px) {
+    .hv-m-in { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 0 28px; align-items: start }
+    .hv-leyenda li { flex-direction: column; align-items: flex-start; gap: 4px }
+  }
+  .hv-metodo h2 { margin: 0 0 8px; font-size: 1.125rem }
+  .hv-metodo p { margin: 0 0 12px; color: var(--ink2) }
+  @container site (min-width: 1000px) {
+    /* Mismo corte que las columnas PP | PSOE de abajo: mitad y mitad, con el mismo hueco. */
+    .hv-top { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: start }
+  }
+
+  /* Cabeceras de partido, compactas: nombre en su color y, al lado, legislatura y Gobierno. Fijas arriba en escritorio. */
+  .hv-cabs { display: grid; gap: 16px 32px; background: var(--bg) }
+  .hv-bh { display: flex; align-items: center; gap: 8px 18px; padding: 12px 0; border-top: 6px solid var(--pc, var(--ink)) }
+  /* Nombre del partido en su color (oscurecido si es claro, como en Novedades, para que se lea sobre blanco). */
+  .hv-bh h2 { margin: 0; font-size: clamp(2.5rem, 4cqi, 3.5rem); line-height: .9; text-transform: uppercase; color: var(--pc); color: oklch(from var(--pc) min(l, .55) c h) }
+  .hv-leg { margin: 0 0 2px; font-size: .75rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--mute) }
+  .hv-ctx { margin: 0; font-size: .875rem; line-height: 1.35; color: var(--ink2) }
+
+  /* Un bloque por subtema; su título se queda fijo debajo de las cabeceras y sirve de selector para saltar a otro. */
+  .hv-sec { display: grid; gap: 20px; padding-top: 28px; scroll-margin-top: calc(var(--fijo-h, 0px) - 16px) }
+  .hv-st { position: sticky; top: calc(var(--hdr-h) + var(--fijo-h, 0px)); z-index: 3; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; padding: 12px 0; border-top: 1px solid var(--hair); background: var(--bg) }
+  .hv-st-q { margin: 0; font-size: .9375rem; color: var(--mute) }
+  .hv-sel { position: relative }
+  .hv-sel summary { display: inline-flex; align-items: center; gap: 10px; cursor: pointer; list-style: none }
+  .hv-sel summary::-webkit-details-marker { display: none }
+  .hv-sel h2 { margin: 0; font-family: var(--cond); font-size: clamp(1.75rem, 2.6cqi, 2.375rem); font-weight: 900; line-height: 1; text-transform: uppercase }
+  .hv-sel-i { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--bg3); transition: background-color .15s }
+  .hv-sel-i::after { content: ''; width: 8px; height: 8px; border: solid var(--ink); border-width: 0 2px 2px 0; transform: translateY(-2px) rotate(45deg); transition: transform .15s }
+  .hv-sel summary:hover .hv-sel-i { background: var(--crema-filete) }
+  .hv-sel[open] .hv-sel-i::after { transform: translateY(2px) rotate(-135deg) }
+  .hv-sel ul { position: absolute; top: calc(100% + 8px); left: 0; z-index: 5; min-width: 280px; margin: 0; padding: 8px; list-style: none; background: var(--bg); border: 1px solid var(--hair); border-radius: 14px; box-shadow: 0 12px 32px rgb(0 0 0 / .12) }
+  .hv-sel li a { display: block; padding: 8px 12px; border-radius: 8px; font-weight: 600; text-decoration: none }
+  .hv-sel li a:hover { background: var(--bg3) }
+  .hv-sel li a[aria-current] { background: var(--ink); color: #fff }
+  @container site (min-width: 1000px) {
+    .hv-cabs { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); position: sticky; top: var(--hdr-h); z-index: 4 }
+    .hv-sec { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px 32px; align-items: start }
+    .hv-st { grid-column: 1 / -1 }
+  }
+
+  /* Programas consultados: nota al final de la página. */
+  .hv-progs { padding-top: 20px; border-top: 1px solid var(--hair); font-size: .875rem; color: var(--ink2) }
+  .hv-progs h2 { margin: 0 0 8px; font-size: .9375rem; color: var(--ink) }
+  .hv-progs ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px }
+</style>

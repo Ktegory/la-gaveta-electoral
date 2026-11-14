@@ -7,6 +7,7 @@ import Votaciones from '../../components/Votaciones.astro';
 import OrdenPartidos from '../../components/OrdenPartidos.astro';
 import VotoPropuesta from '../../components/VotoPropuesta.astro';
 import { datos, propuestasDeTema, fuentesVisibles, relacionPrograma, AVISO_PROGRAMA, varsPartido, votacionesDe, type Tema } from '../../lib/datos';
+import { TEMAS as HISTORIA } from '../../lib/historia';
 
 export async function getStaticPaths() {
   const d = await datos();
@@ -18,6 +19,9 @@ const ps = propuestasDeTema(d, t.id);
 const subtemas = t.data.subtemas.map((s) => ({ s, ps: ps.filter((p) => p.data.subtema === s.id), vs: votacionesDe(d, t.id, s.id) }));
 const conDatos = subtemas.filter((x) => x.ps.length || x.vs.length);
 const vacios = subtemas.filter((x) => !x.ps.length && !x.vs.length);
+// «Promesas y hechos»: enlace desde cada subtema que tenga promesas de cuando gobernaron PP o PSOE.
+const historia = HISTORIA.find((x) => x.id === t.id);
+const enHistoria = (sub: string) => !!historia?.bloques.some((b) => b.promesas.some((x) => x.subtema === sub));
 const fmtAct = new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Madrid' });
 const actualizado = d.partidos.map((p) => p.data.ultimaRevision).sort((a, b) => +b - +a)[0];
 ---
@@ -142,7 +146,7 @@ const actualizado = d.partidos.map((p) => p.data.ultimaRevision).sort((a, b) => 
   <div class="pad cmp">
     {conDatos.map(({ s, ps, vs }) => (
       <section class="subq" aria-labelledby={`h-${s.id}`}>
-        <div class="hd"><h2 class="cond" id={`h-${s.id}`}>{s.nombre}</h2><p>{s.pregunta}</p></div>
+        <div class="hd"><h2 class="cond" id={`h-${s.id}`}>{s.nombre}</h2><p>{s.pregunta}</p>{enHistoria(s.id) && <a class="hd-hist" href={`/historia/${t.id}/#st-${s.id}`}><span>Promesas y hechos</span>Qué prometieron PP y PSOE cuando gobernaron, y qué pasó <span class="arrow" aria-hidden="true">→</span></a>}</div>
         <div class="ans" data-ordenable>
           {d.partidos.map((p) => {
             const suyas = ps.filter((x) => x.data.partido.id === p.id);
@@ -278,3 +282,11 @@ const actualizado = d.partidos.map((p) => p.data.ultimaRevision).sort((a, b) => 
     setTimeout(() => poner('Copiar enlace', false), 2000);
   });
 </script>
+
+<style>
+  /* Enlace a «Promesas y hechos» bajo la pregunta del subtema */
+  .hd-hist { display: block; margin-top: 16px; padding: 10px 14px; border-radius: 10px; background: var(--crema); font-size: .875rem; font-weight: 700; line-height: 1.3; color: var(--ink); text-decoration: none; transition: background-color .25s ease }
+  .hd-hist:hover { background: #F6F0DC }
+  .hd-hist > span:first-child { display: block; margin-bottom: 3px; font-family: var(--mono); font-size: .6875rem; font-weight: 400; letter-spacing: .06em; text-transform: uppercase; color: var(--mute) }
+  :root[data-vista="tarjetas"] .hd-hist { flex-basis: 100%; margin-top: 4px }
+</style>
