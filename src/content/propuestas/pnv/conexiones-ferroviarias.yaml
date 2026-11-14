@@ -1,0 +1,15 @@
+partido: "pnv"
+tema: "fiscalidad"
+subtema: "transporte"
+titulo: "Hacer el tren Baiona-Donostia, conectar Pasaia y Navarra por tren y ejecutar el tramo Astigarraga-Oiartzun-Lezo"
+resumen: "Cuatro conexiones ferroviarias pendientes en Euskadi: el tren Baiona-Donostia, la conexión con el puerto de Pasaia, la de la Y vasca con Navarra y el tramo Astigarraga-Oiartzun-Lezo del Corredor Atlántico, para que las mercancías no pasen por Donostialdea. Lo presentó la candidata por Gipuzkoa, Maribel Vaquero, en Tolosa."
+fuentes:
+  - fuente: "pnv/nota-ferrocarril-2026-11-14"
+    cita: "hacer realidad el tren Baiona-Donostia, superando la histórica barrera ferroviaria de Irun; garantizar la conexión ferroviaria con el Puerto de Pasaia; la conexión de la Y vasca con Iruña/Nafarroa y ejecutar el tramo Astigarraga-Oiartzun-Lezo"
+fechaAnuncio: "2026-11-14"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita tomada el 14 nov de la nota oficial de EAJ-PNV (busca «Baiona-Donostia»). Subtema nuevo «Transporte», dentro de Fiscalidad y economía. La nota también habla de los pasos a nivel de Zalla y del Irun-Brinkola, pero como críticas, sin una medida concreta: no los incluyo."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-14"

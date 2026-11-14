@@ -1,0 +1,6 @@
+fecha: "2026-11-14"
+partido: "pnv"
+tipo: "propuestas"
+descripcion: "Añadimos las conexiones ferroviarias que reclamó hoy en Tolosa: el tren Baiona-Donostia, la conexión con el puerto de Pasaia, la de la Y vasca con Navarra y el tramo Astigarraga-Oiartzun-Lezo del Corredor Atlántico."
+propuestas:
+  - "pnv/conexiones-ferroviarias"

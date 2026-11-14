@@ -1,0 +1,15 @@
+partido: "erc"
+tema: "territorial"
+subtema: "competencias"
+titulo: "Traspasar a la Generalitat la gestión y renovación de las infraestructuras ferroviarias del Estado en Cataluña"
+resumen: "Va más allá del traspaso de Rodalies que ya recoge su programa: pide la gestión y la renovación de toda la infraestructura ferroviaria del Estado en Cataluña. Lo anunció junto a la «Llei del 30%» de mantenimiento ferroviario."
+fuentes:
+  - fuente: "erc/instagram-ley-30-2026-11-14"
+    cita: "reclamar el traspàs a la Generalitat de la gestió i renovació de les infraestructures ferroviàries de l’Estat a Catalunya"
+fechaAnuncio: "2026-11-14"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita tomada el 14 nov del texto de la publicación oficial de @esquerrarepublicana (busca «gestió i renovació»). Es una propuesta aparte de «erc/rodalies» (medida 222 del programa), que solo trata Rodalies."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-14"

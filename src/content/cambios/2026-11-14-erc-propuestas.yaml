@@ -1,0 +1,7 @@
+fecha: "2026-11-14"
+partido: "erc"
+tipo: "propuestas"
+descripcion: "Añadimos dos medidas sobre el tren que publicó hoy: la «Llei del 30%», para que al menos un 30 % del presupuesto ferroviario vaya a mantenimiento y seguridad, y el traspaso a la Generalitat de la gestión y renovación de las infraestructuras ferroviarias del Estado en Cataluña."
+propuestas:
+  - "erc/ley-30-mantenimiento-ferroviario"
+  - "erc/traspaso-infraestructuras-ferroviarias"

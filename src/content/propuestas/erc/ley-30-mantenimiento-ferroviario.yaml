@@ -1,0 +1,15 @@
+partido: "erc"
+tema: "fiscalidad"
+subtema: "transporte"
+titulo: "Destinar por ley al menos el 30 % del presupuesto ferroviario a mantenimiento y seguridad"
+resumen: "La llaman «Llei del 30%». ERC compara con Francia, Alemania e Italia, que según el partido dedican entre el 34 % y el 39 % del presupuesto de alta velocidad al mantenimiento, frente al 16 % del Estado. No ha dado más detalles."
+fuentes:
+  - fuente: "erc/instagram-ley-30-2026-11-14"
+    cita: "Per això proposem la Llei del 30%: garantir per llei que almenys un 30% del pressupost ferroviari es destini al manteniment i la seguretat"
+fechaAnuncio: "2026-11-14"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita tomada el 14 nov del texto de la publicación oficial de @esquerrarepublicana (busca «Llei del 30%»). Las cifras de otros países son del propio partido. Subtema nuevo «Transporte», dentro de Fiscalidad y economía. No la he encontrado en el programa ni en prensa."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-14"

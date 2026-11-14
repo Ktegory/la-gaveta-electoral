@@ -20,6 +20,7 @@
     - { id: sociedades, nombre: "Sociedades", pregunta: "¿Cuánto pagarán las empresas?" }
     - { id: patrimonio, nombre: "Patrimonio y grandes fortunas", pregunta: "¿Qué pasa con las grandes fortunas?" }
     - { id: deuda, nombre: "Deuda y gasto público", pregunta: "¿Qué harán con la deuda y el gasto?" }
+    - { id: transporte, nombre: "Transporte", pregunta: "¿Qué harán con el tren y el resto del transporte?" }
 - id: pensiones
   nombre: "Pensiones"
   pregunta: "¿Cuánto subirán las pensiones y a qué edad nos jubilaremos?"

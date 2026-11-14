@@ -46,9 +46,9 @@ const subtemasDe = (id: string) => {
       <h2 class="hi-h" id="h-temas">Temas</h2>
       <div class="qs">
         {TEMAS.map((t) => (
-          <a class="q" href={`/historia/${t.id}/`}>
+          <a class="q" href={`/promesas-y-hechos/${t.id}/`}>
             <Icono id={t.id} />
-            <span><span class="t">{t.nombre}</span><span class="qq">{subtemasDe(t.id).join(' · ')}</span></span>
+            <span><span class="qq">{t.nombre}</span><span class="hi-subs">{subtemasDe(t.id).join(' · ')}</span></span>
           </a>
         ))}
       </div>
@@ -70,4 +70,10 @@ const subtemasDe = (id: string) => {
   .hi-ctx { margin: 0 0 8px; font-size: .9375rem; line-height: 1.4; color: var(--ink2) }
   .hi-prog { margin: 0; font-size: .875rem; color: var(--mute) }
   .hi-prog a { color: var(--ink) }
+  /* Tarjetas de tema: dos columnas con el mismo corte que PP y PSOE; el nombre del tema manda y los subtemas van debajo. */
+  .hi .qs { grid-template-columns: 1fr; gap: 8px 32px }
+  @container site (min-width: 800px) { .hi .qs { grid-template-columns: 1fr 1fr } }
+  .hi .q { align-items: start }
+  .hi .q svg { margin-top: 2px }
+  .hi-subs { display: block; margin-top: 8px; font-size: .875rem; line-height: 1.4; color: var(--ink2) }
 </style>

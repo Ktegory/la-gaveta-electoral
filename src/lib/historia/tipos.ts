@@ -41,7 +41,7 @@ export interface Bloque {
 export const PP11 = 'https://www.pp.es/storage/2013/11/5742-20111031195458.pdf';
 export const PSOE19 = 'https://www.psib-psoe.org/wp-content/uploads/Programa-PSOE-10N.pdf';
 export interface Tema {
-  id: string; // ruta: /historia/<id>
+  id: string; // ruta: /promesas-y-hechos/<id>
   nombre: string;
   lead: string;
   bloques: Bloque[];

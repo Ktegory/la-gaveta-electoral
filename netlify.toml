@@ -32,3 +32,14 @@
   for = "/img/*"
   [headers.values]
     Cache-Control = "public, max-age=3600"
+
+# «Promesas y hechos» se publicó primero en /historia/ (14 nov): las direcciones antiguas llevan a las nuevas.
+[[redirects]]
+  from = "/historia"
+  to = "/promesas-y-hechos/"
+  status = 301
+
+[[redirects]]
+  from = "/historia/*"
+  to = "/promesas-y-hechos/:splat"
+  status = 301

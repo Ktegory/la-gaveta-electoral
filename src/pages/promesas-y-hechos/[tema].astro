@@ -30,9 +30,9 @@ if (sinFila.length) throw new Error(`Subtemas que no existen en ${tema.id}: ${si
 <Base seccion="historia" titulo={`Promesas y hechos: ${tema.nombre}`} descripcion={`Promesas de ${tema.nombre.toLowerCase()} de los programas con los que PP y PSOE llegaron al Gobierno, y qué norma las resolvió.`}>
   <div class="chd pad hv-top">
     <div class="hv-intro">
-      <p class="hv-volver"><a href="/historia/">Promesas y hechos</a></p>
+      <p class="hv-volver"><a href="/promesas-y-hechos/">Promesas y hechos</a></p>
       <nav class="hv-temas" aria-label="Temas">
-        {TEMAS.map((t) => <a href={`/historia/${t.id}/`} aria-current={t.id === tema.id ? 'page' : undefined}>{t.nombre}</a>)}
+        {TEMAS.map((t) => <a href={`/promesas-y-hechos/${t.id}/`} aria-current={t.id === tema.id ? 'page' : undefined}>{t.nombre}</a>)}
       </nav>
       <h1 class="cond">{tema.nombre}</h1>
       <p class="lead">{tema.lead} Una legislatura completa de cada uno, empezada tras ganar las elecciones, y el programa con el que se presentaron a ellas.</p>
@@ -227,7 +227,7 @@ if (sinFila.length) throw new Error(`Subtemas que no existen en ${tema.id}: ${si
 </script>
 
 <style>
-  .hv-volver { margin: 0 0 12px; font-size: .9375rem; font-weight: 700 }
+  .hv-volver { margin: 0 0 24px; font-size: .9375rem; font-weight: 700 }
   .hv-volver a { color: var(--ink); text-underline-offset: 3px }
   .hv-volver a::before { content: "← " }
   .hv-temas { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px }

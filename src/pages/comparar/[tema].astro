@@ -146,7 +146,7 @@ const actualizado = d.partidos.map((p) => p.data.ultimaRevision).sort((a, b) => 
   <div class="pad cmp">
     {conDatos.map(({ s, ps, vs }) => (
       <section class="subq" aria-labelledby={`h-${s.id}`}>
-        <div class="hd"><h2 class="cond" id={`h-${s.id}`}>{s.nombre}</h2><p>{s.pregunta}</p>{enHistoria(s.id) && <a class="hd-hist" href={`/historia/${t.id}/#st-${s.id}`}><span>Promesas y hechos</span>Qué prometieron PP y PSOE cuando gobernaron, y qué pasó <span class="arrow" aria-hidden="true">→</span></a>}</div>
+        <div class="hd"><h2 class="cond" id={`h-${s.id}`}>{s.nombre}</h2><p>{s.pregunta}</p>{enHistoria(s.id) && <a class="hd-hist" href={`/promesas-y-hechos/${t.id}/#st-${s.id}`}><span>Promesas y hechos</span>Qué prometieron PP y PSOE cuando gobernaron, y qué pasó <span class="arrow" aria-hidden="true">→</span></a>}</div>
         <div class="ans" data-ordenable>
           {d.partidos.map((p) => {
             const suyas = ps.filter((x) => x.data.partido.id === p.id);
