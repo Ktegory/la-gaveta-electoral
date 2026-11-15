@@ -1,0 +1,16 @@
+partido: "psoe"
+tema: "vivienda"
+subtema: "fiscalidad-vivienda"
+titulo: "Permitir a los ayuntamientos cobrar un recargo por pernoctación en las viviendas de uso turístico"
+resumen: "Un marco estatal habilitaría a los municipios que quieran, respetando los tributos autonómicos que ya existen. Lo recaudado iría a servicios públicos, movilidad, limpieza, patrimonio y vivienda."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "33"
+    cita: "Aprobaremos un marco estatal que habilite a los ayuntamientos para aplicar recargos sobre las estancias turísticas, respetando los tributos autonómicos ya existentes."
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 73, página 33 (página impresa). Busca «Aprobaremos un marco estatal que»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

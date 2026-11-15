@@ -1,0 +1,16 @@
+partido: "psoe"
+tema: "empleo"
+subtema: "cesta-compra"
+titulo: "Unificar en un bono social único y automático los descuentos de luz, calefacción, transporte, telecomunicaciones y agua"
+resumen: "Se reconocería de oficio con los datos de Hacienda y la Seguridad Social, sin tener que pedirlo."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "39"
+    cita: "Integrar el bono social eléctrico, el térmico, las bonificaciones de transporte y las tarifas sociales de telecomunicaciones y agua (estas últimas por convenio) en un único derecho que se reconozca de oficio"
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 93, página 39 (página impresa). Busca «Integrar el bono social eléctrico,»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

@@ -1,0 +1,15 @@
+partido: "psoe"
+tema: "exterior"
+subtema: "agenda-2030"
+titulo: "Liderar una nueva agenda global de desarrollo sostenible que tome el relevo de la Agenda 2030"
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "109"
+    cita: "Liderar la construcción de la agenda global de desarrollo sostenible que tome el relevo de la Agenda 2030"
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 460, página 109 (página impresa). Busca «Liderar la construcción de la»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

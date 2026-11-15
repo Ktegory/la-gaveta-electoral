@@ -5,7 +5,9 @@ titulo: "Mantener suspendidos los desahucios de personas vulnerables hasta 2030"
 fuentes:
   - fuente: "psoe/eldiario-decretos-vivienda-2026"
 fechaAnuncio: "2026-09-29"
-destacada: true
-orden: 4
+destacada: false
 revisadaPor: "Khiustin Tornés"
 fechaRevision: "2026-11-10"
+comprobacion:
+  estado: encontrada
+  nota: "15 nov: deja de ser destacada porque el programa no recoge el plazo de 2030 (habla de un «marco estable» de protección, medida 84, p. 34; ver psoe/coste-desahucios-administraciones). El texto no cambia."

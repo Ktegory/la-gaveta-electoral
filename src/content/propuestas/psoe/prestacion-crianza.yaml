@@ -1,0 +1,16 @@
+partido: "psoe"
+tema: "igualdad"
+subtema: "cuidados"
+titulo: "Crear una prestación estatal por crianza para todos los hogares con menores, mayor para los de renta baja"
+resumen: "Sería progresiva y se financiaría con la nueva tributación de grandes patrimonios y rentas del capital. No da cuantías."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "57"
+    cita: "Prestación estatal por crianza para todos los hogares con menores de edad, con un diseño fiscal redistributivo y una protección adicional para los hogares de renta baja"
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 192, página 57 (página impresa). Busca «Prestación estatal por crianza para»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

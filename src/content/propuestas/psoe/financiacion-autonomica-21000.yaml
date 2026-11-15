@@ -1,0 +1,16 @@
+partido: "psoe"
+tema: "territorial"
+subtema: "financiacion"
+titulo: "Aplicar el nuevo sistema de financiación autonómica, con 21.000 millones adicionales"
+resumen: "Es el modelo que propuso el Gobierno y aprobó el Consejo de Política Fiscal y Financiera."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "61"
+    cita: "Impulsaremos el nuevo sistema de financiación autonómica propuesto por el Gobierno de España y aprobado en el Consejo de Política Fiscal y Financiera, que aporta 21.000 millones de euros adicionales"
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 229, página 61 (página impresa). Busca «Impulsaremos el nuevo sistema de»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

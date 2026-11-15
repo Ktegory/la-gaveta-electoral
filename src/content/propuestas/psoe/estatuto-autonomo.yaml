@@ -1,0 +1,16 @@
+partido: "psoe"
+tema: "empleo"
+subtema: "autonomos"
+titulo: "Actualizar el Estatuto del Autónomo, avanzar en la cotización por ingresos reales y facilitar el cese de actividad"
+resumen: "Incluye también una pasarela al RETA para quienes cotizan en mutualidades alternativas, que dejarían de ser alternativas de forma progresiva (medida 116)."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "43"
+    cita: "avanzando en la cotización por ingresos reales; simplificar el acceso a la prestación por cese de actividad"
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 117, página 43 (página impresa). Busca «avanzando en la cotización por»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

@@ -1,0 +1,16 @@
+partido: "psoe"
+tema: "igualdad"
+subtema: "cuidados"
+titulo: "Crear en el Código Civil la «unión de amistad» para amigos que se comprometan a cuidarse"
+resumen: "Daría amparo legal a personas unidas por amistad o compañerismo que asumen un compromiso mutuo de cuidados, con beneficios que el programa no detalla."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "90"
+    cita: "Crearemos una nueva figura jurídica de unión de amistad que dotará de un amparo legal a aquellas situaciones en las que personas unidas por un vínculo de amistad o compañerismo deciden asumir un compromiso mutuo de cuidados."
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 370, página 90 (página impresa). Busca «Crearemos una nueva figura jurídica»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

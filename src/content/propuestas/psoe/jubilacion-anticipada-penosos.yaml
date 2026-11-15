@@ -1,0 +1,16 @@
+partido: "psoe"
+tema: "pensiones"
+subtema: "edad-jubilacion"
+titulo: "Estudiar mejores coeficientes por trabajos penosos y menos penalización en la jubilación anticipada involuntaria"
+resumen: "Sobre todo para carreras largas de cotización. El coste podría compensarse con aportaciones de empresas con beneficios que hagan ERE."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "41"
+    cita: "Evaluar la mejora de los coeficientes reductores de edad por penosidad y la reducción de las penalizaciones de las pensiones por jubilación anticipada involuntaria"
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 103, página 41 (página impresa). Busca «Evaluar la mejora de los»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

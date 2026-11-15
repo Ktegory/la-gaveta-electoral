@@ -1,0 +1,16 @@
+partido: "psoe"
+tema: "empleo"
+subtema: "cesta-compra"
+titulo: "Reforzar la CNMC para que cualquier rebaja del IVA de los alimentos básicos llegue al precio final"
+resumen: "Incluye más sanciones por abuso de posición dominante y seguimiento de los precios de alimentos, carburantes y energía."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "39"
+    cita: "garantizar que cualquier rebaja del IVA de los alimentos básicos llegue al precio final."
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 94, página 39 (página impresa). Busca «garantizar que cualquier rebaja del»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

@@ -1,0 +1,11 @@
+fecha: "2026-11-15"
+partido: "psoe"
+tipo: "estado-programa"
+descripcion: "Publica su programa para el 29N, «La fuerza de seguir avanzando» (114 págs., 500 medidas numeradas), presentado en Alcorcón. Pasa a ser la fuente principal de sus propuestas: hemos cotejado con él las que ya teníamos y citamos la página. La jornada de 36 horas en 2030, de la ponencia de 2024, queda sustituida por la del programa (37,5 horas y avanzar hacia 35 en los convenios). El préstamo al 0 % para la primera vivienda se concreta en hasta 50.000 € sin intereses. No aparecen en el programa el alquiler indefinido, la suspensión de desahucios hasta 2030, el 6 % de parque público, la cita en primaria en 48 horas ni la subida del SMI cada año: quedan con su fuente anterior."
+propuestas:
+  - "psoe/reforma-constitucional"
+  - "psoe/pensiones-ipc-cuatro-anos"
+  - "psoe/freno-compra-fondos"
+  - "psoe/prestamo-primera-vivienda"
+  - "psoe/calendario-cierre-nuclear"
+  - "psoe/jornada-36-horas"

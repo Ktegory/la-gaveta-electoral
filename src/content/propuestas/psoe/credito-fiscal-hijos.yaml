@@ -1,0 +1,16 @@
+partido: "psoe"
+tema: "fiscalidad"
+subtema: "irpf"
+titulo: "Convertir el mínimo por hijo del IRPF en un crédito fiscal reembolsable"
+resumen: "Según el PSOE, beneficiaría a 2 millones de hogares de ingresos medios y bajos que no declaran o no tienen cuota suficiente. También promete que las subidas del SMI no supongan pagar más impuestos."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "50"
+    cita: "Convertiremos el mínimo exento por descendiente en el IRPF en un crédito fiscal reembolsable"
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 134, página 50 (página impresa). Busca «Convertiremos el mínimo exento por»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

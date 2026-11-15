@@ -1,0 +1,16 @@
+partido: "psoe"
+tema: "sanidad"
+subtema: "publica-privada"
+titulo: "Hacer de la gestión directa la forma preferente de prestar la sanidad pública y limitar la privatización"
+resumen: "Con una Ley de Buen Gobierno y Buena Gestión del Sistema Nacional de Salud."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "50"
+    cita: "Limitar la privatización de la sanidad estableciendo la gestión directa como modalidad preferente en la prestación sanitaria."
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 138, página 50 (página impresa). Busca «Limitar la privatización de la»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

@@ -1,0 +1,16 @@
+partido: "psoe"
+tema: "energia"
+subtema: "agua"
+titulo: "Crear bancos públicos de agua en las confederaciones hidrográficas"
+resumen: "Para gestionar y reasignar recursos y evitar la sobreexplotación y la contaminación de ríos y acuíferos."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "69"
+    cita: "Crear bancos públicos de agua en las confederaciones hidrográficas"
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 263, página 69 (página impresa). Busca «Crear bancos públicos de agua»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

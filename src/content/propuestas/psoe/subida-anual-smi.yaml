@@ -7,10 +7,9 @@ fuentes:
   - fuente: "psoe/prensa-bilbao-smi-2026-11-08"
     cita: "Pedro Sánchez ha garantizado que, mientras siga al frente del Gobierno, el SMI se incrementará cada año"
 fechaAnuncio: "2026-11-08"
-destacada: true
-orden: 3
+destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Solo en prensa y en estilo indirecto: no hay frase literal de Sánchez con «cada año»."
+  nota: "15 nov: deja de ser destacada; el programa propone fijar por ley el SMI por encima del 60 % del salario medio (psoe/smi-60-salario-medio), sin hablar de subidas cada año. El texto no cambia. Solo en prensa y en estilo indirecto: no hay frase literal de Sánchez con «cada año»."
 revisadaPor: "Khiustin Tornés"
 fechaRevision: "2026-11-11"

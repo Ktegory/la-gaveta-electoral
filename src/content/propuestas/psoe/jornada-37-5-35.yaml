@@ -1,0 +1,17 @@
+partido: "psoe"
+tema: "empleo"
+subtema: "jornada"
+titulo: "Completar la reducción de la jornada a 37,5 horas y fomentar en los convenios el avance hacia las 35"
+resumen: "Sin rebaja de salario, con un calendario pactado en el diálogo social y periodos de transición para las pymes."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "42"
+    cita: "Completar la reducción de la jornada a 37,5 horas e incentivar los avances en la negociación colectiva hacia las 35 horas."
+fechaAnuncio: "2026-11-15"
+destacada: true
+orden: 6
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 108, página 42 (página impresa). Busca «Completar la reducción de la»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

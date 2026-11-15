@@ -1,0 +1,16 @@
+partido: "psoe"
+tema: "sanidad"
+subtema: "prestaciones"
+titulo: "Incluir en la sanidad pública los tratamientos dentales básicos y, mientras tanto, dar una ayuda de hasta 200 € al año"
+resumen: "Lo llama Plan Sonríe y empezaría por empastes, endodoncias, reconstrucciones y tratamientos periodontales. La ayuda empezaría por los hogares de rentas medias y bajas."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "50"
+    cita: "crearemos una ayuda directa de hasta 200 euros anuales por persona, que empezará por los hogares de rentas medias y bajas"
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 137, página 50 (página impresa). Busca «crearemos una ayuda directa de»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

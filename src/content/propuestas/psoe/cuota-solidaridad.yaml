@@ -1,0 +1,16 @@
+partido: "psoe"
+tema: "pensiones"
+subtema: "sostenibilidad"
+titulo: "Acelerar la cuota de solidaridad y buscar nuevas fuentes de financiación para la Seguridad Social"
+resumen: "Propone acordar en el Pacto de Toledo que los aumentos de productividad por la automatización también financien la Seguridad Social, y que el Estado pague las prestaciones no contributivas (medida 99)."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "40"
+    cita: "Acelerar el despliegue de la cuota de solidaridad para completar su aplicación durante la próxima legislatura"
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 98, página 40 (página impresa). Busca «Acelerar el despliegue de la»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

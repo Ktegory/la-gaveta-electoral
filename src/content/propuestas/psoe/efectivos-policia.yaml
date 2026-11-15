@@ -1,0 +1,16 @@
+partido: "psoe"
+tema: "seguridad"
+subtema: "policia"
+titulo: "Aumentar y redistribuir los efectivos de Policía Nacional y Guardia Civil según población, dispersión y jubilaciones"
+resumen: "Con más seguridad rural y patrullas de proximidad. No da cifras."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "100"
+    cita: "Incrementar y redistribuir los efectivos de Policía Nacional y Guardia Civil según la población, la dispersión territorial y las jubilaciones"
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 425, página 100 (página impresa). Busca «Incrementar y redistribuir los efectivos»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

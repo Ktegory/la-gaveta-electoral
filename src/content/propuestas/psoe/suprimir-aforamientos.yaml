@@ -1,0 +1,15 @@
+partido: "psoe"
+tema: "instituciones"
+subtema: "constitucion"
+titulo: "Suprimir los aforamientos para los delitos que no tengan que ver con el cargo"
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "91"
+    cita: "Suprimir los aforamientos de los cargos públicos para los delitos ajenos al ejercicio de su cargo."
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 373, página 91 (página impresa). Busca «Suprimir los aforamientos de los»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

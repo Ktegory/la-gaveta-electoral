@@ -1,0 +1,15 @@
+partido: "fa"
+tema: "empleo"
+subtema: "autonomos"
+titulo: "Mantener la tarifa plana de autónomos mientras se ingrese menos del SMI, en lugar de limitarla a 2 años"
+resumen: "Hoy la tarifa plana de 88 € dura 2 años. El Frente Amplio propone que dependa de los ingresos y no del tiempo: se pagaría esa cuota mientras se cobre menos del salario mínimo. No ha dado más detalles."
+fuentes:
+  - fuente: "fa/instagram-autonomos-2026-11-15"
+    cita: "Proponemos ajustarla a tus ingresos, no al tiempo: que no empieces a pagar más hasta que tu negocio sea sólido."
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita transcrita el 15 nov de la imagen 3 de 6 del carrusel de @elfrenteamplio, titulada «Tarifa plana mientras cobres menos del SMI» (de ahí el umbral del SMI, que no aparece en la frase citada). No está en el pie de la publicación. El Frente Amplio aún no ha publicado programa."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-15"

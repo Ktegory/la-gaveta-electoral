@@ -1,0 +1,16 @@
+partido: "psoe"
+tema: "igualdad"
+subtema: "lgtbi"
+titulo: "Castigar en el Código Penal las llamadas «terapias de conversión»"
+resumen: "Retoma la iniciativa de la legislatura anterior."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "98"
+    cita: "Culminar la reforma del Código Penal para penalizar las llamadas «terapias de conversión»"
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 414, página 98 (página impresa). Busca «Culminar la reforma del Código»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

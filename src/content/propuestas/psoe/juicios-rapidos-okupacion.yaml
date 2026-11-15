@@ -1,0 +1,16 @@
+partido: "psoe"
+tema: "vivienda"
+subtema: "okupacion"
+titulo: "Mantener los juicios rápidos por ocupación ilegal y dar más recursos a los juzgados de guardia"
+resumen: "La introducción del capítulo de justicia habla de «desalojo de viviendas ocupadas en 48 horas» (p. 101), pero la medida numerada no da plazo."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "102"
+    cita: "seguiremos combatiendo las mafias de la ocupación y dando recursos a los juzgados de guardia para tramitar de forma ágil y efectiva estos delitos."
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 438, página 102 (página impresa). Busca «seguiremos combatiendo las mafias de»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

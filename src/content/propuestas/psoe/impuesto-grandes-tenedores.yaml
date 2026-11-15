@@ -1,0 +1,17 @@
+partido: "psoe"
+tema: "vivienda"
+subtema: "grandes-tenedores"
+titulo: "Crear un impuesto progresivo a las viviendas de grandes propietarios y fondos que no se alquilen a precio asequible"
+resumen: "Pagarían las viviendas turísticas, las vacías y las alquiladas a un precio abusivo. El objetivo declarado es frenar la acumulación y llevar esas viviendas al alquiler asequible."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "32-33"
+    cita: "Se gravará con un impuesto progresivo la posesión de todas aquellas viviendas de grandes propietarios y fondos buitre que no se destinen a alquiler residencial asequible."
+fechaAnuncio: "2026-11-15"
+destacada: true
+orden: 4
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 70, página 32-33 (página impresa). Busca «Se gravará con un impuesto»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

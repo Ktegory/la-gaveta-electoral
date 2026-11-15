@@ -1,0 +1,16 @@
+partido: "psoe"
+tema: "educacion"
+subtema: "infantil"
+titulo: "Universalizar la educación de 0 a 3 años con más escuelas infantiles públicas"
+resumen: "También propone reducir el número de alumnos por aula. No fija plazo."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "52"
+    cita: "Universalizar la educación de 0 a 3 años, promoviendo su inclusión plena en el sistema, aumentando progresivamente la oferta de escuelas infantiles públicas"
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 157, página 52 (página impresa). Busca «Universalizar la educación de 0»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

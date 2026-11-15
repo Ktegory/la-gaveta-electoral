@@ -1,0 +1,16 @@
+partido: "psoe"
+tema: "vivienda"
+subtema: "alquiler"
+titulo: "Congelar temporalmente los alquileres que superen los índices de referencia en mercados tensionados"
+resumen: "El programa propone también ampliar la duración de los contratos de alquiler (medida 61), sin concretar cuánto."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "31"
+    cita: "Congelar temporalmente las rentas que superen los índices de referencia, evitando incrementos abusivos en los mercados tensionados."
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 62, página 31 (página impresa). Busca «Congelar temporalmente las rentas que»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

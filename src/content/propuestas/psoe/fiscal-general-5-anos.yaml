@@ -1,0 +1,16 @@
+partido: "psoe"
+tema: "instituciones"
+subtema: "justicia"
+titulo: "Dar al fiscal general un mandato de 5 años desligado de la legislatura y prohibir que el Gobierno le dé instrucciones"
+resumen: "La prohibición se refiere a instrucciones sobre casos concretos. También propone una nueva Ley de Enjuiciamiento Criminal que dé la investigación a la Fiscalía, bajo supervisión judicial."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "101"
+    cita: "con un mandato de cinco años para la Fiscalía General del Estado desvinculado de la legislatura y la prohibición de instrucciones del Gobierno sobre casos concretos"
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 436, página 101 (página impresa). Busca «con un mandato de cinco»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

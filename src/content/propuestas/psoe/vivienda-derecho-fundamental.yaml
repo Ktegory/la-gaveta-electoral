@@ -1,0 +1,16 @@
+partido: "psoe"
+tema: "instituciones"
+subtema: "constitucion"
+titulo: "Reformar la Constitución para que la vivienda sea un derecho fundamental"
+resumen: "Así la ciudadanía podría exigir su cumplimiento a los poderes públicos."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "28"
+    cita: "Reformar la Constitución Española para que la vivienda se considere un derecho fundamental, permitiendo así que la ciudadanía pueda exigir su cumplimiento a los poderes públicos."
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 37, página 28 (página impresa). Busca «Reformar la Constitución Española para»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

@@ -1,0 +1,17 @@
+partido: "psoe"
+tema: "vivienda"
+subtema: "vivienda-publica"
+titulo: "Crear un parque público estatal de 100.000 viviendas, construidas o compradas, para venta o alquiler asequible"
+resumen: "Se sumarían a las que promuevan comunidades autónomas y ayuntamientos, y los ingresos se reinvertirían en vivienda asequible. El programa se fija además como objetivo alcanzar la media europea de vivienda pública y protegida (medida 39)."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "29"
+    cita: "Constituir un parque público estatal de 100.000 viviendas mediante la construcción y adquisición para incrementar la oferta de vivienda para la venta o alquiler estable a precio asequible"
+fechaAnuncio: "2026-11-15"
+destacada: true
+orden: 5
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 42, página 29 (página impresa). Busca «Constituir un parque público estatal»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

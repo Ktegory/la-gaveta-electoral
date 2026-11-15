@@ -1,0 +1,16 @@
+partido: "psoe"
+tema: "fiscalidad"
+subtema: "patrimonio"
+titulo: "Crear una tasa a los megayates, los vuelos privados y los billetes en business que salgan de España"
+resumen: "La plantea para viajes de alto impacto ambiental del 0,1 % más rico; en las embarcaciones se cobraría a través de los amarres en puertos deportivos."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "49"
+    cita: "El gravamen alcanzará a las grandes embarcaciones de recreo a través de los amarres en puertos deportivos y a los vuelos privados y billetes en clase business con salida desde España"
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 132, página 49 (página impresa). Busca «El gravamen alcanzará a las»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

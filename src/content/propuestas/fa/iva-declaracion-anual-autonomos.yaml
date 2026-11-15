@@ -1,0 +1,15 @@
+partido: "fa"
+tema: "empleo"
+subtema: "autonomos"
+titulo: "Permitir una sola declaración informativa anual del IVA a quien facture menos de 85.000 € al año"
+resumen: "Quien facture menos de 85.000 € al año podría elegir una declaración informativa anual en lugar de la trimestral. El Frente Amplio propone además trasponer de inmediato la directiva europea del IVA franquiciado."
+fuentes:
+  - fuente: "fa/instagram-autonomos-2026-11-15"
+    cita: "Si facturas menos de 85.000 € al año, puedes elegir presentar una sola declaración informativa anual en lugar de la trimestral. Aprobaremos la transposición inmediata de la directiva europea del IVA franquiciado."
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita transcrita el 15 nov de la imagen 2 de 6 del carrusel de @elfrenteamplio («Menos papeleo con el IVA»). No está en el pie de la publicación. El Frente Amplio aún no ha publicado programa."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-15"

@@ -1,0 +1,16 @@
+partido: "psoe"
+tema: "vivienda"
+subtema: "fiscalidad-vivienda"
+titulo: "Crear un impuesto sobre los solares residenciales sin construir"
+resumen: "Para movilizar suelo y construir vivienda. No ha dado más detalles."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "31"
+    cita: "Movilizar suelo para construir vivienda fijando un impuesto sobre los solares residenciales ociosos."
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 53, página 31 (página impresa). Busca «Movilizar suelo para construir vivienda»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

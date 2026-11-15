@@ -1,0 +1,16 @@
+partido: "psoe"
+tema: "energia"
+subtema: "clima"
+titulo: "Aprobar una Ley de Adaptación al Cambio Climático"
+resumen: "Y dar más recursos y seguimiento al Plan Nacional de Adaptación."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "68"
+    cita: "Aprobar una Ley de Adaptación al Cambio Climático y reforzar la ejecución del Plan Nacional de Adaptación"
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 253, página 68 (página impresa). Busca «Aprobar una Ley de Adaptación»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

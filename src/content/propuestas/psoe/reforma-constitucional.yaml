@@ -3,6 +3,12 @@ tema: "instituciones"
 subtema: "constitucion"
 titulo: "Reformar la Constitución para blindar la revalorización de las pensiones y el derecho al aborto"
 fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "41"
+    cita: "Blindar constitucionalmente el sistema público de pensiones y su revalorización conforme al IPC"
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "82"
+    cita: "Impulsaremos la reforma del artículo 43 de la Constitución, iniciada en 2026, para reforzar la garantía del derecho al aborto"
   - fuente: "psoe/mitin-bilbao-2026-11-08"
     cita: "También ha mostrado su \"compromiso solemne\" con blindar en la Constitución la revalorización de las pensiones."
   - fuente: "psoe/nota-granada-2026-10-24"
@@ -12,6 +18,6 @@ destacada: true
 orden: 2
 comprobacion:
   estado: encontrada
-  nota: "El título decía «blindar las pensiones»; las fuentes hablan de blindar su revalorización. Lo de las pensiones es del mitin de Bilbao (8 nov) y lo del aborto, del de Granada (24 oct). Según EFE, retoma la reforma constitucional del aborto que no salió adelante en la legislatura anterior."
-revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-11"
+  nota: "15 nov: añadimos como fuente principal el programa (medida 100, p. 41; se repite como medida 365, p. 90). Lo del aborto está en la medida 327, p. 82: busca «reforma del artículo 43». Quitada la firma para revisar de nuevo."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

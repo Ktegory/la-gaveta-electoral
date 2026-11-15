@@ -1,0 +1,17 @@
+partido: "psoe"
+tema: "empleo"
+subtema: "smi"
+titulo: "Fijar por ley el salario mínimo por encima del 60 % del salario medio"
+resumen: "Se actualizaría periódicamente según precios, salarios y productividad, y las subidas no podrían absorberse con complementos salariales."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "38"
+    cita: "Blindar por ley el SMI por encima del 60% del salario medio y actualizarlo periódicamente"
+fechaAnuncio: "2026-11-15"
+destacada: true
+orden: 3
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 87, página 38 (página impresa). Busca «Blindar por ley el SMI»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

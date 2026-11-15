@@ -3,8 +3,14 @@ tema: "vivienda"
 subtema: "acceso-compra"
 titulo: "Préstamo al 0 % para la primera vivienda"
 fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "32"
+    cita: "Desplegar el Programa TUCASA y ampliar su dotación en caso de que se agoten los 10.000 millones de euros de la línea de préstamos de hasta 50 mil euros sin intereses para adquisición de una primera vivienda."
   - fuente: "psoe/eldiario-decretos-vivienda-2026"
 fechaAnuncio: "2026-09-29"
 destacada: false
-revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-10"
+comprobacion:
+  estado: encontrada
+  nota: "15 nov: añadimos el programa como fuente principal (medida 67, p. 32; busca «Programa TUCASA»). Concreta préstamos de hasta 50.000 € sin intereses, con 10.000 millones. Quitada la firma para revisar de nuevo."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

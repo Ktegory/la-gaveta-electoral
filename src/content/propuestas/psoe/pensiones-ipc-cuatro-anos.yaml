@@ -4,6 +4,9 @@ subtema: "revalorizacion"
 titulo: "Revalorizar las pensiones con el IPC cuatro años más"
 resumen: "Lo prometió Pedro Sánchez en el mitin de Zaragoza, para la próxima legislatura si sigue en el Gobierno."
 fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "40"
+    cita: "Seguir desplegando las medidas de refuerzo del sistema público de pensiones y de garantía de poder adquisitivo de las pensiones actuales y futuras"
   - fuente: "psoe/mitin-zaragoza-2026-10-14"
     cita: "\"Cuatro años más de gobierno progresista, cuatro años más de avances sociales y cero recortes. Y cuatro años más de revalorización de las pensiones conforme al IPC. Ese es mi compromiso\""
 fechaAnuncio: "2026-10-14"
@@ -11,6 +14,6 @@ destacada: true
 orden: 1
 comprobacion:
   estado: encontrada
-  nota: "Corregido el 11 nov: el resumen decía que aportaría 20.000 millones al fondo de reserva. Las fuentes dicen que esa es la cifra que tiene (o tendrá) la hucha de las pensiones, no una aportación nueva."
-revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-11"
+  nota: "15 nov: añadimos el programa como fuente principal (medida 98, p. 40; busca «garantía de poder adquisitivo»). El programa no dice «cuatro años más»: eso es del mitin de Zaragoza. Revalorizar con el IPC aparece también en la medida 100 (p. 41), dentro de la reforma constitucional. Quitada la firma para revisar de nuevo."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

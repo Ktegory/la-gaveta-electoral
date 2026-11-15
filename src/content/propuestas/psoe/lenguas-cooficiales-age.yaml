@@ -1,0 +1,16 @@
+partido: "psoe"
+tema: "territorial"
+subtema: "lenguas-cooficiales"
+titulo: "Extender las lenguas cooficiales a la atención de la Administración General del Estado donde son oficiales"
+resumen: "Y consolidar su uso en las Cortes Generales."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "92"
+    cita: "Consolidaremos el uso de las lenguas cooficiales en las Cortes Generales y lo extenderemos a la atención de la Administración General del Estado en los territorios donde son oficiales."
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 385, página 92 (página impresa). Busca «Consolidaremos el uso de las»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

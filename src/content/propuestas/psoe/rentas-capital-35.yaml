@@ -1,0 +1,16 @@
+partido: "psoe"
+tema: "fiscalidad"
+subtema: "irpf"
+titulo: "Subir el IRPF de las rentas del capital por encima de 50.000 €, hasta un tipo máximo del 35 % a partir de 300.000 €"
+resumen: "Los dos primeros tramos (19 % hasta 6.000 € y 21 % hasta 50.000 €) no cambiarían."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "49"
+    cita: "Mantener intactos los dos primeros tramos (19% hasta 6.000€ y 21% hasta 50.000 €) y elevar los tipos a partir de ahí, llegando progresivamente a un tipo máximo del 35% para rentas del capital superiores a 300.000€."
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 130, página 49 (página impresa). Busca «Mantener intactos los dos primeros»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

@@ -1,0 +1,15 @@
+partido: "psoe"
+tema: "instituciones"
+subtema: "constitucion"
+titulo: "Reformar el Senado como cámara territorial, con las comunidades autónomas como circunscripciones"
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "92"
+    cita: "Reformar el Senado para convertirlo en una auténtica Cámara de representación territorial, haciendo coincidir sus circunscripciones con el ámbito autonómico."
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 382, página 92 (página impresa). Busca «Reformar el Senado para convertirlo»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"

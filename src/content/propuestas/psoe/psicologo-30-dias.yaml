@@ -1,0 +1,16 @@
+partido: "psoe"
+tema: "sanidad"
+subtema: "prestaciones"
+titulo: "Garantizar atención psicológica gratuita en la sanidad pública, con primera consulta en 30 días como máximo"
+resumen: "Con más psicólogos clínicos, sobre todo en atención primaria, y atención inmediata en los casos urgentes."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "51"
+    cita: "Garantizar el derecho a la atención psicológica gratuita en la sanidad pública, con una primera consulta en un plazo máximo de 30 días."
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 143, página 51 (página impresa). Busca «Garantizar el derecho a la»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-15"
