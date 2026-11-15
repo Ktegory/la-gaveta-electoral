@@ -2,6 +2,7 @@
 // Portada de «Promesas y hechos».
 // Explica por qué solo salen PP y PSOE, qué legislatura de cada uno y lleva a cada tema.
 import Base from '../../layouts/Base.astro';
+import { HUB } from '../../lib/guias';
 import Icono from '../../components/Icono.astro';
 import { datos, varsPartido } from '../../lib/datos';
 import { TEMAS } from '../../lib/historia';
@@ -16,8 +17,9 @@ const subtemasDe = (id: string) => {
   return (d.temas.find((t) => t.id === id)?.data.subtemas ?? []).filter((s) => usados.has(s.id)).map((s) => s.nombre);
 };
 ---
-<Base seccion="historia" titulo="Promesas y hechos" descripcion="Qué prometieron PP y PSOE en el programa con el que llegaron al Gobierno y qué pasó con cada promesa.">
+<Base seccion="guias" titulo="Promesas y hechos" descripcion="Qué prometieron PP y PSOE en el programa con el que llegaron al Gobierno y qué pasó con cada promesa.">
   <div class="chd pad hi-top">
+    <div class="crumbs hi-crumbs"><a href={HUB.href}>{HUB.nombre}</a> › Promesas y hechos</div>
     <h1 class="cond">Promesas y hechos</h1>
     <p class="lead">Qué prometieron PP y PSOE en el programa con el que llegaron al Gobierno, y qué pasó con cada promesa durante esa legislatura: la cita del programa, la norma del BOE que la llevó a cabo (o que no hubo) y lo que votó cada grupo del Congreso.</p>
   </div>
@@ -58,6 +60,7 @@ const subtemasDe = (id: string) => {
 
 <style>
   .hi-top { padding-bottom: var(--sec-s) }
+  .hi-crumbs { margin-bottom: clamp(28px, 2.6cqi, 44px) }
   .hi { display: grid; gap: 48px; padding-bottom: var(--sec-s) }
   .hi-por { max-width: 68ch }
   .hi-por h2, .hi-h { margin: 0 0 12px; font-size: 1.25rem }

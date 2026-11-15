@@ -1,0 +1,590 @@
+---
+// Guía: cómo se reparten los 350 escaños del Congreso (y lo básico del Senado y la investidura).
+// Todo sale del BOE: el anexo del decreto de convocatoria y los artículos de la LOREG y la Constitución que se citan.
+// El simulador usa candidaturas inventadas (A, B, C…): explica el método, no predice nada.
+import Base from '../../layouts/Base.astro';
+import { CIRCUNSCRIPCIONES, RD_CONVOCATORIA } from '../../lib/guias/circunscripciones';
+import { HUB } from '../../lib/guias';
+import Icono from '../../components/Icono.astro';
+
+const total = CIRCUNSCRIPCIONES.reduce((n, c) => n + c.diputados, 0);
+if (total !== 350 || CIRCUNSCRIPCIONES.length !== 52) throw new Error(`Circunscripciones: ${CIRCUNSCRIPCIONES.length}, diputados: ${total}`);
+// «Coruña (A)» → «A Coruña», como se dice al hablar.
+const nombre = (n: string) => n.replace(/^(.*) \((.*)\)$/, '$2 $1');
+// Provincias agrupadas por número de diputados, de más a menos (vista de lista).
+const grupos = [...new Set(CIRCUNSCRIPCIONES.map((c) => c.diputados))]
+  .sort((a, b) => b - a)
+  .map((n) => ({ n, sitios: CIRCUNSCRIPCIONES.filter((c) => c.diputados === n).map((c) => nombre(c.nombre)) }));
+// Tono de cada casilla del mapa según los diputados que elige.
+const TRAMOS = [
+  { hasta: 2, txt: '1-2' },
+  { hasta: 4, txt: '3-4' },
+  { hasta: 7, txt: '5-7' },
+  { hasta: 12, txt: '8-12' },
+  { hasta: 99, txt: '16 o más' },
+];
+const tramo = (n: number) => TRAMOS.findIndex((t) => n <= t.hasta);
+// Opciones del simulador: un número de escaños por cada tamaño real, con ejemplos.
+const opciones = [...grupos].reverse().map((g) => ({
+  n: g.n,
+  txt: `${g.n} ${g.n === 1 ? 'escaño' : 'escaños'} · ${g.sitios.slice(0, 3).join(', ')}${g.sitios.length > 3 ? '…' : ''}`,
+}));
+
+const LOREG = 'https://www.boe.es/buscar/act.php?id=BOE-A-1985-11672';
+const CE = 'https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229';
+const art = {
+  l96: `${LOREG}#anoventayseis`,
+  l162: `${LOREG}#acientosesentaydos`,
+  l163: `${LOREG}#acientosesentaytres`,
+  l166: `${LOREG}#acientosesentayseis`,
+  c68: `${CE}#a68`,
+  c69: `${CE}#a69`,
+  c99: `${CE}#a99`,
+};
+// Ejemplo práctico del artículo 163 de la LOREG: 480.000 votos, ocho escaños, seis candidaturas.
+const EJEMPLO = { escanos: 8, votos: [168000, 104000, 72000, 64000, 40000, 32000], blancos: 0 };
+const LETRAS = ['A', 'B', 'C', 'D', 'E', 'F'];
+// Pasos, en el orden en que pasan las cosas: del voto al Gobierno. El Senado va aparte.
+const PASOS = [
+  { id: 'tu-voto', n: '1', txt: 'Tu voto' },
+  { id: 'tu-provincia', n: '2', txt: 'Tu provincia' },
+  { id: 'el-reparto', n: '3', txt: 'El reparto' },
+  { id: 'despues', n: '4', txt: 'La investidura' },
+];
+---
+<Base titulo="Cómo se reparten los escaños" seccion="guias" descripcion="Cómo se convierten los votos del 29N en los 350 diputados del Congreso: el voto en blanco, las provincias, el 3 %, la ley D'Hondt con un simulador, la investidura y el Senado.">
+  <div class="chd pad gr-top">
+    <div class="crumbs gr-crumbs"><a href={HUB.href}>{HUB.nombre}</a> › Cómo se reparten los escaños</div>
+    <h1 class="cond">Cómo se reparten los escaños</h1>
+    <p class="lead">El 29N no se suman los votos de toda España: cada provincia reparte sus propios diputados. Aquí tienes cómo, paso a paso, con un simulador para probarlo y la ley a un clic.</p>
+  </div>
+
+  <div class="pad gr">
+    <section class="gr-cifras" aria-label="El 29N en cuatro cifras">
+      <div><p class="gr-c"><b class="cond">350</b><strong class="cond">diputados</strong></p><span>forman el Congreso.</span><a href={art.l162} target="_blank" rel="noopener">LOREG, art. 162</a></div>
+      <div><p class="gr-c"><b class="cond">52</b><strong class="cond">circunscripciones</strong></p><span>las 50 provincias, más Ceuta y Melilla.</span><a href={art.c68} target="_blank" rel="noopener">Constitución, art. 68</a></div>
+      <div><p class="gr-c"><b class="cond">3 %</b><strong class="cond">mínimo</strong></p><span>de los votos válidos de la provincia para optar a escaño.</span><a href={art.l163} target="_blank" rel="noopener">LOREG, art. 163</a></div>
+      <div><p class="gr-c"><b class="cond">176</b><strong class="cond">diputados</strong></p><span>son la mayoría absoluta, la que se pide en la primera votación de investidura.</span><a href={art.c99} target="_blank" rel="noopener">Constitución, art. 99</a></div>
+    </section>
+
+    {/* Los pasos, en orden: cada uno lleva a su sección. Se queda arriba al bajar. */}
+    <nav class="gr-pasos" aria-label="Pasos de la guía">
+      <ol>
+        {PASOS.map((p) => <li><a href={`#${p.id}`}><span>{p.n}</span>{p.txt}</a></li>)}
+        <li class="gr-pasos-y"><a href="#senado"><span>+</span>Y el Senado</a></li>
+      </ol>
+    </nav>
+
+    <section class="gr-sec" id="tu-voto" aria-labelledby="h-tu-voto">
+      <div class="gr-h">
+        <p class="gr-paso" aria-hidden="true">1</p>
+        <div>
+          <h2 class="cond" id="h-tu-voto">Tu voto</h2>
+          <p>Antes de repartir nada se cuentan los votos válidos: los de cada candidatura y los votos en blanco. El voto en blanco cuenta para el 3 %; el nulo y la abstención, no.</p>
+        </div>
+      </div>
+      <div class="gr-tres">
+        <div>
+          <h3><span class="gr-ico"><Icono id="sobre" /></span>En blanco</h3>
+          <p>Un sobre sin papeleta. La ley lo considera <b>válido</b>: suma a los votos válidos de la provincia, sobre los que se calcula el 3 %. No da escaños a nadie.</p>
+          <p class="gr-ef">Sube el mínimo del 3 %. Pruébalo en el simulador, con la casilla «En blanco».</p>
+        </div>
+        <div>
+          <h3><span class="gr-ico"><Icono id="tachada" /></span>Nulo</h3>
+          <p>Un sobre con papeletas de varias candidaturas, una papeleta tachada o con algo escrito, o que no es el modelo oficial, entre otros casos.</p>
+          <p class="gr-ef">No cuenta para el reparto ni para el 3 %.</p>
+        </div>
+        <div>
+          <h3><span class="gr-ico"><Icono id="urna" /></span>Abstención</h3>
+          <p>No votar.</p>
+          <p class="gr-ef">No cuenta para el reparto ni para el 3 %.</p>
+        </div>
+      </div>
+      <p class="gr-nota"><a href={art.l96} target="_blank" rel="noopener">LOREG, art. 96</a> (voto nulo y en blanco) y <a href={art.l163} target="_blank" rel="noopener">art. 163</a> (el 3 % se calcula sobre los votos válidos emitidos en la circunscripción).</p>
+    </section>
+
+    <section class="gr-sec" id="tu-provincia" aria-labelledby="h-tu-provincia">
+      <div class="gr-h">
+        <p class="gr-paso" aria-hidden="true">2</p>
+        <div>
+          <h2 class="cond" id="h-tu-provincia">Tu provincia</h2>
+          <p>Tu voto solo cuenta en tu provincia, y cada una elige un número fijo de diputados. Todas parten de dos (Ceuta y Melilla, de uno) y el resto se reparte según la población. Por eso Madrid elige 38 y Soria, 2.</p>
+        </div>
+      </div>
+      <div class="gr-prov" data-vistas>
+        <div class="gr-prov-bar">
+          <h3>Diputados que elige cada circunscripción el 29N</h3>
+          <div class="vista gr-vista" role="group" aria-label="Ver como">
+            <button type="button" data-v="mapa" aria-pressed="true">Mapa</button>
+            <button type="button" data-v="lista" aria-pressed="false">Lista</button>
+          </div>
+        </div>
+        <div class="gr-mapa-w" data-panel="mapa">
+          <ol class="gr-mapa" aria-label="Mapa de casillas: una por circunscripción, en su posición aproximada">
+            {CIRCUNSCRIPCIONES.map((c) => (
+              <li class={`t${tramo(c.diputados)}`} style={`grid-column:${c.x + 1};grid-row:${c.y + 1}`} title={`${nombre(c.nombre)}: ${c.diputados}`}>
+                <span class="gr-mn">{c.corto}</span>
+                <b class="cond">{c.diputados}</b>
+                <span class="sr-only">{` ${c.diputados === 1 ? 'diputado' : 'diputados'}`}</span>
+              </li>
+            ))}
+          </ol>
+          <ul class="gr-ley" aria-label="Leyenda">
+            {TRAMOS.map((t, i) => <li><i class={`t${i}`}></i>{t.txt}</li>)}
+          </ul>
+          <p class="gr-nota">Casillas en su posición aproximada; Canarias, abajo a la derecha.</p>
+        </div>
+        <ul class="gr-lista" data-panel="lista" hidden>
+          {grupos.map((g) => (
+            <li>
+              <span class="gr-n cond">{g.n}</span>
+              <span class="gr-dots" aria-hidden="true">{Array.from({ length: g.n }, () => <i />)}</span>
+              <span class="gr-sitios">{g.sitios.join(' · ')}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <p class="gr-nota">Cada provincia tiene dos diputados de partida, Ceuta y Melilla uno cada una, y los 248 restantes se reparten según la población (<a href={art.l162} target="_blank" rel="noopener">LOREG, art. 162</a>). Las cifras son las del anexo del <a href={RD_CONVOCATORIA.url} target="_blank" rel="noopener">Real Decreto 806/2026</a> de convocatoria.</p>
+    </section>
+
+    <section class="gr-sec" id="el-reparto" aria-labelledby="h-el-reparto">
+      <div class="gr-h">
+        <p class="gr-paso" aria-hidden="true">3</p>
+        <div>
+          <h2 class="cond" id="h-el-reparto">El reparto</h2>
+          <p>Dentro de cada provincia, los escaños se reparten con el método que la ley describe en el artículo 163 de la LOREG, conocido como <b>ley D'Hondt</b>. Cambia los votos o los escaños y mira qué pasa. Empieza con el ejemplo que trae la propia ley.</p>
+        </div>
+      </div>
+
+      <div class="sim" data-sim data-ejemplo={JSON.stringify(EJEMPLO)}>
+        <form class="sim-ctl" aria-label="Datos de la provincia del ejemplo" onsubmit="return false">
+          <label class="sim-esc">
+            <span>Escaños en juego</span>
+            <select name="escanos">
+              {opciones.map((o) => <option value={o.n} selected={o.n === EJEMPLO.escanos}>{o.txt}</option>)}
+            </select>
+          </label>
+          <fieldset>
+            <legend>Votos de cada candidatura</legend>
+            {LETRAS.map((l, i) => (
+              <label class="sim-fila" data-i={i}>
+                <span class={`sim-l p${i}`}>{l}</span>
+                <input type="range" min="0" max="250000" step="1000" value={EJEMPLO.votos[i]} aria-label={`Votos de ${l}`} data-rango />
+                <input type="number" min="0" step="1000" value={EJEMPLO.votos[i]} aria-label={`Votos de ${l}, en cifra`} data-cifra />
+              </label>
+            ))}
+            <label class="sim-fila sim-blanco">
+              <span class="sim-l pb" aria-hidden="true"></span>
+              <span class="sim-bl">En blanco</span>
+              <input type="number" min="0" step="1000" value={EJEMPLO.blancos} name="blancos" aria-label="Votos en blanco" />
+            </label>
+          </fieldset>
+          <button type="button" class="sim-reset" data-ejemplo-btn>Volver al ejemplo de la ley</button>
+        </form>
+
+        <div class="sim-out">
+          <div class="sim-paso">
+            <h3><span>1</span> ¿Quién pasa del 3 %?</h3>
+            <p data-umbral-txt></p>
+            <ul class="sim-umbral" data-umbral></ul>
+          </div>
+          <div class="sim-paso">
+            <h3><span>2</span> Se dividen los votos entre 1, 2, 3…</h3>
+            <p>Hasta tantas veces como escaños hay. Los escaños van a los cocientes más altos, de mayor a menor; el número de cada casilla marcada es el orden en que se adjudica.</p>
+            <div class="sim-tabla-w"><table class="sim-tabla" data-tabla></table></div>
+          </div>
+          <div class="sim-paso">
+            <h3><span>3</span> Resultado</h3>
+            <div class="sim-esc-res" data-res aria-hidden="true"></div>
+            <p class="sim-resumen" data-resumen aria-live="polite"></p>
+            <div class="sim-ultimo" data-ultimo></div>
+          </div>
+        </div>
+      </div>
+      <p class="gr-nota">Si dos cocientes empatan, el escaño es para la candidatura con más votos en total; si también empatan en votos, la primera vez se sortea. En Ceuta y Melilla, que eligen un solo diputado, gana quien tiene más votos. <a href={art.l163} target="_blank" rel="noopener">LOREG, art. 163</a></p>
+    </section>
+
+    <section class="gr-sec" id="despues" aria-labelledby="h-despues">
+      <div class="gr-h">
+        <p class="gr-paso" aria-hidden="true">4</p>
+        <div>
+          <h2 class="cond" id="h-despues">La investidura</h2>
+          <p>Votar no elige directamente a quien preside el Gobierno: lo elige el Congreso que sale de las urnas.</p>
+        </div>
+      </div>
+      <ol class="gr-linea">
+        <li><b>23 de diciembre, 10:00</b><span>Se constituyen el nuevo Congreso y el nuevo Senado.</span><a href={RD_CONVOCATORIA.url} target="_blank" rel="noopener">Real Decreto 806/2026, art. 5</a></li>
+        <li><b>Propuesta de candidato</b><span>Tras consultar a los grupos, el Rey propone un candidato, que presenta su programa al Congreso y pide su confianza.</span><a href={art.c99} target="_blank" rel="noopener">Constitución, art. 99</a></li>
+        <li><b>Primera votación</b><span>Necesita la mayoría absoluta: 176 síes.</span></li>
+        <li><b>48 horas después</b><span>Si no la logra, basta la mayoría simple: más síes que noes.</span></li>
+        <li><b>Dos meses</b><span>Si pasados dos meses desde la primera votación nadie ha sido investido, se disuelven las Cortes y se repiten las elecciones.</span></li>
+      </ol>
+    </section>
+
+    <section class="gr-sec" id="senado" aria-labelledby="h-senado">
+      <div class="gr-h">
+        <p class="gr-paso gr-paso-y" aria-hidden="true">+</p>
+        <div>
+          <h2 class="cond" id="h-senado">Y el Senado</h2>
+          <p>El mismo día se vota también el Senado, con otra papeleta y otras reglas: aquí se vota a personas, no a listas.</p>
+        </div>
+      </div>
+      <div class="gr-tres">
+        <div>
+          <h3><span class="gr-ico"><Icono id="escanos" /></span>Cuántos se eligen</h3>
+          <p>Cuatro senadores por provincia. En las islas, tres en Gran Canaria, Mallorca y Tenerife y uno en cada una de las demás islas con Cabildo o Consejo. Dos en Ceuta y dos en Melilla.</p>
+        </div>
+        <div>
+          <h3><span class="gr-ico"><Icono id="papeleta" /></span>Cómo se vota</h3>
+          <p>Marcas a los candidatos que quieras, de cualquier partido: hasta tres en las provincias; hasta dos en Gran Canaria, Mallorca, Tenerife, Ceuta y Melilla; uno en el resto de islas. Si marcas más, el voto es nulo.</p>
+        </div>
+        <div>
+          <h3><span class="gr-ico"><Icono id="podio" /></span>Quién sale</h3>
+          <p>Los candidatos más votados, uno a uno, hasta cubrir los puestos. Además, cada comunidad autónoma designa un senador y otro más por cada millón de habitantes.</p>
+        </div>
+      </div>
+      <p class="gr-nota"><a href={art.c69} target="_blank" rel="noopener">Constitución, art. 69</a>; <a href={art.l166} target="_blank" rel="noopener">LOREG, art. 166</a> y <a href={art.l96} target="_blank" rel="noopener">art. 96</a>.</p>
+    </section>
+
+    <section class="gr-fuentes" aria-labelledby="h-fuentes">
+      <h2 id="h-fuentes">Fuentes</h2>
+      <ul>
+        <li><a href={RD_CONVOCATORIA.url} target="_blank" rel="noopener">{RD_CONVOCATORIA.nombre}</a> (BOE, 6 oct 2026): diputados por circunscripción y fecha de constitución de las Cámaras.</li>
+        <li><a href={LOREG} target="_blank" rel="noopener">Ley Orgánica 5/1985, del Régimen Electoral General</a>: artículos 96, 162, 163 y 166.</li>
+        <li><a href={CE} target="_blank" rel="noopener">Constitución Española</a>: artículos 68, 69 y 99.</li>
+      </ul>
+      <p>Las candidaturas del simulador son inventadas y no reflejan ningún resultado real ni previsto.</p>
+    </section>
+  </div>
+</Base>
+
+<script>
+  // Mapa o lista de provincias.
+  const vistas = document.querySelector<HTMLElement>('[data-vistas]');
+  vistas?.querySelectorAll<HTMLButtonElement>('[data-v]').forEach((b) =>
+    b.addEventListener('click', () => {
+      vistas.classList.add('cambiada'); // solo a partir del primer cambio: al cargar, sin fundido
+      vistas.querySelectorAll<HTMLButtonElement>('[data-v]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+      vistas.querySelectorAll<HTMLElement>('[data-panel]').forEach((p) => (p.hidden = p.dataset.panel !== b.dataset.v));
+    }),
+  );
+
+  // Pasos: marca el de la sección que se está leyendo; al pulsar, baja con suavidad.
+  const nav = document.querySelector<HTMLElement>('.gr-pasos');
+  if (nav) {
+    const enlaces = [...nav.querySelectorAll<HTMLAnchorElement>('a[href^="#"]')];
+    const secciones = enlaces.map((a) => document.getElementById(a.hash.slice(1))).filter((s): s is HTMLElement => !!s);
+    const marcar = () => {
+      const corte = innerHeight * 0.35;
+      let actual = '';
+      for (const s of secciones) if (s.getBoundingClientRect().top <= corte) actual = s.id;
+      enlaces.forEach((a) => (a.hash.slice(1) === actual ? a.setAttribute('aria-current', 'step') : a.removeAttribute('aria-current')));
+      nav.classList.toggle('pegada', nav.getBoundingClientRect().top <= parseFloat(getComputedStyle(nav).top) + 1 && scrollY > 0);
+      const activo = nav.querySelector<HTMLElement>('[aria-current]');
+      if (activo && nav.scrollWidth > nav.clientWidth) nav.scrollTo({ left: nav.scrollLeft + activo.getBoundingClientRect().left - nav.getBoundingClientRect().left - 16 });
+    };
+    addEventListener('scroll', marcar, { passive: true });
+    marcar();
+    // Altura de la barra, para que el título de cada sección no quede debajo al saltar.
+    const medir = () => document.documentElement.style.setProperty('--pasos-h', `${nav.offsetHeight}px`);
+    medir();
+    new ResizeObserver(medir).observe(nav);
+    for (const a of enlaces)
+      a.addEventListener('click', (e) => {
+        const destino = document.getElementById(a.hash.slice(1));
+        if (!destino) return;
+        e.preventDefault();
+        destino.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+        history.pushState(null, '', a.hash);
+      });
+  }
+
+  // Simulador del reparto D'Hondt (art. 163 LOREG). Sin dependencias; se recalcula con cada cambio.
+  const LETRAS = ['A', 'B', 'C', 'D', 'E', 'F'];
+  const fmt = new Intl.NumberFormat('es-ES');
+  const fmtQ = new Intl.NumberFormat('es-ES', { maximumFractionDigits: 0 });
+  const sim = document.querySelector<HTMLElement>('[data-sim]');
+  if (sim) {
+    const ejemplo = JSON.parse(sim.dataset.ejemplo!) as { escanos: number; votos: number[]; blancos: number };
+    const selEsc = sim.querySelector<HTMLSelectElement>('select[name="escanos"]')!;
+    const blancos = sim.querySelector<HTMLInputElement>('input[name="blancos"]')!;
+    const filas = [...sim.querySelectorAll<HTMLElement>('.sim-fila[data-i]')];
+    const $ = (s: string) => sim.querySelector<HTMLElement>(s)!;
+    const num = (v: string) => Math.max(0, Math.floor(Number(v) || 0));
+    const leer = () => filas.map((f) => num(f.querySelector<HTMLInputElement>('[data-cifra]')!.value));
+    const fichaP = (i: number) => `<span class="sim-l p${i}">${LETRAS[i]}</span>`;
+
+    const pintar = () => {
+      const votos = leer();
+      const esc = Number(selEsc.value);
+      const bl = num(blancos.value);
+      const validos = votos.reduce((a, b) => a + b, 0) + bl;
+      const minimo = validos * 0.03;
+      const presentes = votos.map((_, i) => i).filter((i) => votos[i] > 0);
+      const entran = presentes.filter((i) => votos[i] >= minimo);
+
+      // 1) Umbral
+      $('[data-umbral-txt]').innerHTML = validos
+        ? `Votos válidos: <b>${fmt.format(validos)}</b>${bl ? ` (incluidos ${fmt.format(bl)} en blanco)` : ''}. El 3 % son <b>${fmt.format(Math.ceil(minimo))}</b> votos: la línea vertical.`
+        : 'Pon algún voto para empezar.';
+      const maxV = Math.max(1, ...votos);
+      $('[data-umbral]').innerHTML = presentes
+        .map((i) => {
+          const ok = votos[i] >= minimo;
+          return `<li class="${ok ? '' : 'fuera'}">${fichaP(i)}<span class="sim-bar"><i class="p${i}" style="width:${(votos[i] / maxV) * 100}%"></i><em style="left:${(minimo / maxV) * 100}%" aria-hidden="true"></em></span><span class="sim-v">${fmt.format(votos[i])}<small>${((votos[i] / validos) * 100).toLocaleString('es-ES', { maximumFractionDigits: 1 })} %${ok ? '' : ' · fuera'}</small></span></li>`;
+        })
+        .join('');
+
+      // 2) Cocientes
+      const cs: { i: number; d: number; q: number }[] = [];
+      for (const i of entran) for (let d = 1; d <= esc; d++) cs.push({ i, d, q: votos[i] / d });
+      // Mayor cociente primero; si empatan, más votos totales (art. 163.1.d); si también, el primero (sorteo).
+      cs.sort((a, b) => b.q - a.q || votos[b.i] - votos[a.i] || a.i - b.i);
+      const ganan = cs.slice(0, esc);
+      const orden = new Map(ganan.map((c, k) => [`${c.i}-${c.d}`, k + 1]));
+      const ultimo = ganan[ganan.length - 1];
+      const escanos = LETRAS.map((_, i) => ganan.filter((c) => c.i === i).length);
+      // El que se quedó más cerca: el primer cociente sin escaño de otra candidatura.
+      const rival = cs.slice(esc).find((c) => !ultimo || c.i !== ultimo.i);
+
+      const cols = Array.from({ length: esc }, (_, k) => k + 1);
+      $('[data-tabla]').innerHTML = entran.length
+        ? `<thead><tr><th scope="col">Entre</th>${cols.map((d) => `<th scope="col">${d}</th>`).join('')}</tr></thead><tbody>${entran
+            .map(
+              (i) =>
+                `<tr><th scope="row">${fichaP(i)}</th>${cols
+                  .map((d) => {
+                    const k = orden.get(`${i}-${d}`);
+                    const esUlt = ultimo && ultimo.i === i && ultimo.d === d;
+                    const esRival = rival && rival.i === i && rival.d === d;
+                    const cls = [k ? 'gana' : '', esUlt ? 'ult' : '', esRival ? 'riv' : ''].filter(Boolean).join(' ');
+                    return `<td class="${cls}">${k ? `<sup>${k}.º</sup>` : ''}${fmtQ.format(votos[i] / d)}</td>`;
+                  })
+                  .join('')}</tr>`,
+            )
+            .join('')}</tbody>`
+        : '';
+
+      // 3) Resultado
+      $('[data-res]').innerHTML = ganan.map((c, k) => `<span class="sim-l p${c.i}${k === ganan.length - 1 ? ' ult' : ''}">${LETRAS[c.i]}</span>`).join('');
+      const conEscano = escanos.map((n, i) => ({ n, i })).filter((x) => x.n > 0).sort((a, b) => b.n - a.n || a.i - b.i);
+      const sin = presentes.filter((i) => !escanos[i]);
+      $('[data-resumen]').innerHTML = ganan.length
+        ? `${conEscano.map((x) => `<b>${LETRAS[x.i]}</b> ${x.n} ${x.n === 1 ? 'escaño' : 'escaños'}`).join(', ')}.${sin.length ? ` Sin escaño: ${sin.map((i) => `${LETRAS[i]} (${fmt.format(votos[i])} votos)`).join(', ')}.` : ''}`
+        : '';
+
+      // El último escaño: cuántos votos más necesitaba el rival para quitárselo (con el resto de votos igual).
+      let txt = '';
+      if (ultimo && rival && esc > 1) {
+        const s = escanos[rival.i];
+        const N = votos[ultimo.i] * (s + 1);
+        const D = ultimo.d;
+        let y = Math.floor(N / D) + 1;
+        if (N % D === 0 && N / D > votos[ultimo.i]) y = N / D; // empate de cocientes: gana quien tiene más votos
+        const faltan = y - votos[rival.i];
+        txt = `<p><b>El último escaño</b>, el ${esc}.º, fue para <b>${LETRAS[ultimo.i]}</b> con un cociente de ${fmtQ.format(ultimo.q)}. El cociente más alto que se quedó fuera era de <b>${LETRAS[rival.i]}</b>: ${fmtQ.format(rival.q)}. Con <b>${fmt.format(faltan)} votos más</b>, y lo demás igual, ese escaño habría sido para ${LETRAS[rival.i]}.</p>`;
+      }
+      const casi = presentes.filter((i) => votos[i] < minimo).map((i) => ({ i, f: Math.ceil((minimo - votos[i]) / 0.97) }));
+      if (casi.length)
+        txt += `<p>${casi.map((c) => `<b>${LETRAS[c.i]}</b> no llega al 3 %: le faltan ${fmt.format(c.f)} votos para entrar en el reparto`).join('; ')}.</p>`;
+      $('[data-ultimo]').innerHTML = txt;
+      $('[data-ultimo]').hidden = !txt;
+    };
+
+    // Rango y cifra van sincronizados; la cifra puede pasar del tope del rango.
+    for (const f of filas) {
+      const r = f.querySelector<HTMLInputElement>('[data-rango]')!;
+      const c = f.querySelector<HTMLInputElement>('[data-cifra]')!;
+      r.addEventListener('input', () => { c.value = r.value; pintar(); });
+      c.addEventListener('input', () => { const v = num(c.value); if (v > Number(r.max)) r.max = String(v); r.value = String(v); pintar(); });
+    }
+    selEsc.addEventListener('change', pintar);
+    blancos.addEventListener('input', pintar);
+    sim.querySelector('[data-ejemplo-btn]')!.addEventListener('click', () => {
+      selEsc.value = String(ejemplo.escanos);
+      blancos.value = String(ejemplo.blancos);
+      filas.forEach((f, i) => {
+        const r = f.querySelector<HTMLInputElement>('[data-rango]')!;
+        r.max = '250000';
+        r.value = f.querySelector<HTMLInputElement>('[data-cifra]')!.value = String(ejemplo.votos[i]);
+      });
+      pintar();
+    });
+    pintar();
+  }
+</script>
+
+<style>
+  /* Tonos de la guía: crema y tostado en vez de negro; el negro queda para el texto y los detalles. */
+  .gr-top, .gr { --tost: #E3D4A8; --tost2: #C9B47E; --tost3: #9C8650; --tost4: #6B5A2E }
+  .gr-top { padding-bottom: var(--sec-s) }
+  .gr-crumbs { margin-bottom: clamp(28px, 2.6cqi, 44px) }
+  .gr { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--sec-s); padding-bottom: var(--sec) }
+  .gr a { color: var(--ink); text-underline-offset: 3px }
+  :global(:root:has(.gr-pasos)) { scroll-padding-top: calc(var(--hdr-h) + var(--pasos-h, 56px) - 1px) }
+
+  /* Cifras: número grande y la palabra clave al lado */
+  .gr-cifras { display: grid; gap: 8px 32px; grid-template-columns: 1fr }
+  @container site (min-width: 640px) { .gr-cifras { grid-template-columns: 1fr 1fr } }
+  @container site (min-width: 1100px) { .gr-cifras { grid-template-columns: repeat(4, 1fr) } }
+  .gr-cifras > div { display: flex; flex-direction: column; gap: 6px; padding: 20px 22px; border-radius: var(--r-in); background: var(--crema) }
+  .gr-c { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 10px; margin: 0 }
+  .gr-c b { font-size: clamp(3.5rem, 6cqi, 5.5rem); line-height: .85; font-weight: 800 }
+  .gr-c strong { font-size: clamp(1.5rem, 2.2cqi, 2rem); line-height: 1; font-weight: 800; text-transform: uppercase; color: var(--ink) }
+  .gr-cifras span { font-size: 1rem; line-height: 1.35; color: var(--ink2) }
+  .gr-cifras a { margin-top: auto; padding-top: 8px; font-size: .8125rem; color: var(--mute) }
+
+  /* Barra de pasos: del voto a la investidura, con flechas; se queda fija al bajar */
+  .gr-pasos { position: sticky; top: var(--hdr-h); z-index: 3; margin-bottom: calc(var(--sec-s) * -.5); padding: 12px 0; background: var(--bg); border-bottom: 1px solid transparent; overflow-x: auto; scrollbar-width: none }
+  /* Fija arriba: fondo y filete de lado a lado de la pantalla, no solo del ancho del contenido. */
+  .gr-pasos.pegada { box-shadow: 0 0 0 100vmax var(--bg); clip-path: inset(0 -100vmax); border-image: linear-gradient(var(--hair), var(--hair)) 0 0 1 0 / 0 0 1px 0 / 0 100vmax }
+  .gr-pasos ol { display: flex; align-items: center; width: max-content; margin: 0; padding: 0; list-style: none }
+  .gr-pasos li { display: flex; align-items: center; flex: none }
+  .gr-pasos li:not(:first-child, .gr-pasos-y) { position: relative }
+  .gr-pasos li:not(:first-child, .gr-pasos-y)::before { content: ""; width: clamp(16px, 3cqi, 48px); height: 2px; margin: 0 6px; background: var(--tost2) }
+  .gr-pasos li:not(:first-child, .gr-pasos-y)::after { content: ""; position: absolute; left: calc(clamp(16px, 3cqi, 48px) + 1px); top: 50%; width: 7px; height: 7px; border-top: 2px solid var(--tost2); border-right: 2px solid var(--tost2); transform: translate(-2px, -50%) rotate(45deg) }
+  .gr-pasos .gr-pasos-y { margin-left: 12px; padding-left: 12px; border-left: 1px solid var(--crema-filete) }
+  .gr-pasos a { display: inline-flex; align-items: center; gap: 8px; height: var(--h-ctl); padding: 0 14px 0 6px; border-radius: 999px; background: var(--crema); color: var(--ink); font-size: .9375rem; font-weight: 700; text-decoration: none; white-space: nowrap; transition: background-color .2s ease }
+  .gr-pasos a:hover { background: var(--crema-hover) }
+  .gr-pasos a span { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: #fff; font-family: var(--mono); font-size: .8125rem; font-weight: 500 }
+  .gr-pasos a[aria-current] { background: var(--tost) }
+
+  /* Secciones: número a la izquierda del título */
+  .gr-sec { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; padding-top: 32px; border-top: 1px solid var(--hair) }
+  .gr-h { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0 clamp(14px, 1.6cqi, 24px); align-items: start; max-width: 80ch }
+  .gr-h .gr-paso { display: grid; place-items: center; width: clamp(44px, 4cqi, 60px); aspect-ratio: 1; margin: 0; border-radius: 50%; background: var(--tost); color: var(--ink); font-family: var(--cond); font-size: clamp(1.75rem, 2.6cqi, 2.375rem); font-weight: 800; line-height: 1 }
+  .gr-h .gr-paso-y { background: transparent; box-shadow: inset 0 0 0 2px var(--tost2) }
+  .gr-h h2 { margin: 0 0 12px; font-size: clamp(2.25rem, 4cqi, 3.5rem); line-height: .95; text-transform: uppercase; padding-top: clamp(4px, .5cqi, 8px) }
+  .gr-h p { margin: 0; font-size: 1.0625rem; line-height: 1.5; color: var(--ink2) }
+  .gr-nota { margin: 0; font-size: .875rem; line-height: 1.45; color: var(--mute); max-width: 90ch }
+  .gr-nota a { color: var(--mute) }
+
+  /* Provincias: mapa de casillas o lista */
+  .gr-prov-bar { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 24px }
+  .gr-prov-bar h3 { margin: 0; font-size: 1.125rem }
+  /* Mismo selector que la vista de Comparar (.vista, en global.css); el foco, dentro de la píldora. */
+  .gr-vista button:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; box-shadow: none }
+  /* Al cambiar de mapa a lista (o al revés), lo nuevo aparece con un fundido. */
+  .gr-prov.cambiada [data-panel]:not([hidden]) { animation: gr-fundido .25s ease }
+  @keyframes gr-fundido { from { opacity: 0 } }
+  @media (prefers-reduced-motion: reduce) { .gr-prov.cambiada [data-panel]:not([hidden]) { animation: none } }
+  .gr-prov [data-panel][hidden] { display: none }
+  .gr-mapa-w { display: grid; gap: 12px; container: mapa / inline-size }
+  .gr-mapa { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); grid-template-rows: repeat(9, auto); gap: 4px; max-width: 840px; margin: 0; padding: 0; list-style: none }
+  .gr-mapa li { display: flex; flex-direction: column; justify-content: space-between; aspect-ratio: 1; min-width: 0; padding: 6px 7px; border-radius: 8px; background: var(--crema) }
+  .gr-mn { font-size: .6875rem; line-height: 1.1; font-weight: 600; color: var(--ink2); hyphens: auto }
+  .gr-mapa b { align-self: flex-end; font-size: clamp(1.25rem, 3.4cqi, 2.25rem); font-weight: 800; line-height: .85 }
+  @container mapa (max-width: 600px) {
+    .gr-mapa { gap: 2px }
+    .gr-mapa li { justify-content: center; align-items: center; padding: 0; border-radius: 4px }
+    .gr-mn { display: none }
+    .gr-mapa b { align-self: center; font-size: 1rem }
+  }
+  .t0 { background: var(--crema) !important }
+  .t1 { background: var(--tost) !important }
+  .t2 { background: var(--tost2) !important }
+  .t3 { background: var(--tost3) !important; color: #fff }
+  .t4 { background: var(--tost4) !important; color: #fff }
+  .gr-mapa .t3 .gr-mn, .gr-mapa .t4 .gr-mn { color: #fff }
+  .gr-ley { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0; padding: 0; list-style: none; font-size: .8125rem; color: var(--ink2) }
+  .gr-ley li { display: inline-flex; align-items: center; gap: 6px }
+  .gr-ley i { width: 14px; height: 14px; border-radius: 3px }
+  .gr-lista { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--hair2) }
+  .gr-lista li { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 4px 16px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--hair2) }
+  @container site (min-width: 900px) { .gr-lista li { grid-template-columns: 3rem minmax(0, 23rem) minmax(0, 1fr) } }
+  .gr-n { grid-row: span 2; font-size: 2rem; font-weight: 800; line-height: 1; text-align: right }
+  @container site (min-width: 900px) { .gr-n { grid-row: auto } }
+  .gr-dots { display: flex; flex-wrap: wrap; gap: 3px }
+  .gr-dots i { width: 9px; height: 9px; border-radius: 2px; background: var(--tost2) }
+  .gr-sitios { font-size: .9375rem; line-height: 1.4; color: var(--ink2) }
+
+  /* Simulador */
+  .sim { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; padding: clamp(16px, 2cqi, 28px); border-radius: var(--r-card); background: var(--crema) }
+  @container site (min-width: 1000px) { .sim { grid-template-columns: minmax(300px, 25rem) minmax(0, 1fr); align-items: start } }
+  .sim-ctl { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; min-width: 0 }
+  @container site (min-width: 1000px) { .sim-ctl { position: sticky; top: calc(var(--hdr-h) + var(--pasos-h, 56px) + 16px) } }
+  .sim-esc { display: grid; gap: 6px; font-size: .875rem; font-weight: 700 }
+  .sim-esc select { width: 100%; min-width: 0; height: var(--h-ctl); padding: 0 12px; border: 1.5px solid var(--tost2); border-radius: 10px; background: #fff; font: inherit; font-weight: 600; font-size: .9375rem }
+  .sim fieldset { display: grid; min-width: 0; gap: 8px; margin: 0; padding: 0; border: 0 }
+  .sim legend { margin-bottom: 8px; padding: 0; font-size: .875rem; font-weight: 700 }
+  .sim-fila { display: grid; grid-template-columns: 28px minmax(0, 1fr) 7.5rem; gap: 10px; align-items: center }
+  .sim-fila input[type="range"] { width: 100%; accent-color: var(--tost3) }
+  .sim-fila input[type="number"] { width: 100%; height: 36px; padding: 0 8px; border: 1px solid var(--crema-filete); border-radius: 8px; background: #fff; font: inherit; font-size: .9375rem; font-variant-numeric: tabular-nums; text-align: right }
+  .sim-blanco { margin-top: 4px; padding-top: 10px; border-top: 1px solid var(--crema-filete) }
+  .sim-bl { font-size: .875rem; color: var(--ink2) }
+  .sim-reset { justify-self: start; height: 36px; padding: 0 14px; border: 1.5px solid var(--tost3); border-radius: 999px; background: transparent; font: inherit; font-size: .875rem; font-weight: 700; cursor: pointer }
+  .sim-reset:hover { background: var(--tost) }
+
+  /* Fichas de candidatura: letra y tono tostado (sin colores de partido, porque son inventadas) */
+  .sim :global(.sim-l) { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 6px; font-family: var(--mono); font-size: .875rem; font-weight: 500 }
+  .sim :global(.p0) { background: #5A4A24; color: #fff }
+  .sim :global(.p1) { background: #8C7646; color: #fff }
+  .sim :global(.p2) { background: #B9A26C; color: var(--ink) }
+  .sim :global(.p3) { background: #DCCB98; color: var(--ink) }
+  .sim :global(.p4) { background: #fff; color: var(--ink); box-shadow: inset 0 0 0 1.5px #8C7646 }
+  .sim :global(.p5) { background: repeating-linear-gradient(135deg, #fff 0 4px, #DCCB98 4px 6px); color: var(--ink); box-shadow: inset 0 0 0 1.5px #8C7646 }
+  .sim :global(.pb) { background: #fff; outline: 1.5px dashed var(--mute); outline-offset: -1.5px }
+
+  .sim-out { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; min-width: 0 }
+  .sim-paso { padding: 18px 20px; border-radius: var(--r-in); background: #fff }
+  .sim-paso h3 { display: flex; align-items: center; gap: 10px; margin: 0 0 10px; font-size: 1.125rem }
+  .sim-paso h3 span { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--tost); font-family: var(--mono); font-size: .8125rem; font-weight: 500 }
+  .sim-paso p { margin: 0 0 12px; font-size: .9375rem; line-height: 1.45; color: var(--ink2) }
+
+  .sim-umbral { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none }
+  .sim-umbral :global(li) { display: grid; grid-template-columns: 28px minmax(0, 1fr) 7.5rem; gap: 10px; align-items: center }
+  .sim-umbral :global(li.fuera) { opacity: .55 }
+  .sim-umbral :global(.sim-bar) { position: relative; height: 14px; border-radius: 4px; background: var(--hair2) }
+  .sim-umbral :global(.sim-bar i) { position: absolute; inset: 0 auto 0 0; border-radius: 4px }
+  .sim-umbral :global(.sim-bar em) { position: absolute; top: -4px; bottom: -4px; width: 2px; margin-left: -1px; background: var(--ink); outline: 2px solid #fff }
+  .sim-umbral :global(.sim-v) { font-size: .875rem; font-variant-numeric: tabular-nums; text-align: right; line-height: 1.2 }
+  .sim-umbral :global(.sim-v small) { display: block; font-size: .75rem; color: var(--mute) }
+
+  .sim-tabla-w { overflow-x: auto; margin: 0 -4px; padding: 4px }
+  .sim-tabla { border-collapse: separate; border-spacing: 3px; font-size: .8125rem; font-variant-numeric: tabular-nums }
+  .sim-tabla :global(th) { padding: 4px 6px; font-family: var(--mono); font-weight: 400; color: var(--mute) }
+  .sim-tabla :global(thead th:not(:first-child))::before { content: "÷" }
+  .sim-tabla :global(tbody th) { position: sticky; left: 0; background: #fff }
+  .sim-tabla :global(td) { position: relative; min-width: 4.5rem; padding: 14px 8px 6px; border-radius: 6px; background: var(--hair2); text-align: right; color: var(--mute) }
+  .sim-tabla :global(td.gana) { background: var(--tost); color: var(--ink); font-weight: 700 }
+  .sim-tabla :global(td sup) { position: absolute; top: 3px; left: 6px; font-family: var(--mono); font-size: .6875rem; font-weight: 400; color: var(--tost4) }
+  .sim-tabla :global(td.ult) { box-shadow: inset 0 0 0 2px var(--tost4) }
+  .sim-tabla :global(td.riv) { background: #fff; color: var(--ink); font-weight: 700; outline: 2px dashed var(--tost4); outline-offset: -2px }
+
+  .sim-esc-res { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 12px }
+  .sim-esc-res :global(.ult) { outline: 2px solid var(--tost4); outline-offset: 2px }
+  .sim-resumen { font-size: 1rem !important; color: var(--ink) !important }
+  .sim-ultimo { padding: 14px 16px; border-radius: 10px; background: var(--crema) }
+  .sim-ultimo :global(p) { margin: 0; font-size: .9375rem; line-height: 1.45; color: var(--ink) }
+  .sim-ultimo :global(p + p) { margin-top: 8px }
+
+  /* Tres tarjetas */
+  .gr-tres { display: grid; gap: 16px 32px }
+  @container site (min-width: 800px) { .gr-tres { grid-template-columns: repeat(3, 1fr) } }
+  .gr-tres > div { padding: 20px 22px; border-radius: var(--r-in); background: var(--crema) }
+  .gr-tres h3 { display: flex; align-items: center; gap: 12px; margin: 0 0 12px; font-size: 1.125rem }
+  .gr-ico { display: grid; place-items: center; flex: none; width: 48px; height: 48px; border-radius: 50%; background: #fff; font-size: 1.75rem }
+  .gr-tres p { margin: 0 0 10px; font-size: .9375rem; line-height: 1.45; color: var(--ink2) }
+  .gr-tres p:last-child { margin: 0 }
+  .gr-ef { font-weight: 700; color: var(--ink) !important }
+
+  /* Línea temporal */
+  .gr-linea { display: grid; gap: 0; margin: 0; padding: 0; list-style: none }
+  .gr-linea li { position: relative; display: grid; gap: 4px; padding: 0 0 24px 40px }
+  .gr-linea li::before { content: ""; position: absolute; left: 9px; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: var(--tost2) }
+  .gr-linea li:not(:last-child)::after { content: ""; position: absolute; left: 15px; top: 28px; bottom: 2px; width: 2px; background: var(--tost) }
+  .gr-linea b { font-size: 1.125rem }
+  .gr-linea span { font-size: .9375rem; line-height: 1.45; color: var(--ink2); max-width: 70ch }
+  .gr-linea a { font-size: .8125rem; color: var(--mute) }
+  @container site (min-width: 1000px) {
+    .gr-linea { grid-template-columns: repeat(5, 1fr); gap: 24px }
+    .gr-linea li { padding: 36px 0 0 }
+    .gr-linea li::before { left: 0; top: 0 }
+    .gr-linea li:not(:last-child)::after { left: 22px; right: -16px; top: 6px; bottom: auto; width: auto; height: 2px }
+  }
+
+  .gr-fuentes { padding-top: 24px; border-top: 1px solid var(--hair); font-size: .875rem; color: var(--ink2) }
+  .gr-fuentes h2 { margin: 0 0 10px; font-size: 1rem }
+  .gr-fuentes ul { margin: 0 0 10px; padding-left: 18px; line-height: 1.5 }
+  .gr-fuentes p { margin: 0; color: var(--mute) }
+</style>

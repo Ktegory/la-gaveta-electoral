@@ -3,6 +3,7 @@
 // Por tema: promesas de los dos últimos partidos que han gobernado y qué pasó con cada una.
 // Sin notas ni recuentos: cada promesa con su cita, la norma que la resolvió (o que no hubo) y su fuente.
 import Base from '../../layouts/Base.astro';
+import { HUB } from '../../lib/guias';
 import { datos, varsPartido } from '../../lib/datos';
 import { ESTADOS, type Promesa, type Tema } from '../../lib/historia/tipos';
 import { TEMAS } from '../../lib/historia';
@@ -27,10 +28,10 @@ const filas: { id: string; nombre: string; pregunta?: string }[] = [
 const sinFila = [...usados].filter((u) => u && !subtemas.some((st) => st.id === u));
 if (sinFila.length) throw new Error(`Subtemas que no existen en ${tema.id}: ${sinFila.join(', ')}`);
 ---
-<Base seccion="historia" titulo={`Promesas y hechos: ${tema.nombre}`} descripcion={`Promesas de ${tema.nombre.toLowerCase()} de los programas con los que PP y PSOE llegaron al Gobierno, y qué norma las resolvió.`}>
+<Base seccion="guias" titulo={`Promesas y hechos: ${tema.nombre}`} descripcion={`Promesas de ${tema.nombre.toLowerCase()} de los programas con los que PP y PSOE llegaron al Gobierno, y qué norma las resolvió.`}>
   <div class="chd pad hv-top">
     <div class="hv-intro">
-      <p class="hv-volver"><a href="/promesas-y-hechos/">Promesas y hechos</a></p>
+      <div class="crumbs hv-volver"><a href={HUB.href}>{HUB.nombre}</a> › <a href="/promesas-y-hechos/">Promesas y hechos</a> › {tema.nombre}</div>
       <nav class="hv-temas" aria-label="Temas">
         {TEMAS.map((t) => <a href={`/promesas-y-hechos/${t.id}/`} aria-current={t.id === tema.id ? 'page' : undefined}>{t.nombre}</a>)}
       </nav>
@@ -227,9 +228,7 @@ if (sinFila.length) throw new Error(`Subtemas que no existen en ${tema.id}: ${si
 </script>
 
 <style>
-  .hv-volver { margin: 0 0 24px; font-size: .9375rem; font-weight: 700 }
-  .hv-volver a { color: var(--ink); text-underline-offset: 3px }
-  .hv-volver a::before { content: "← " }
+  .hv-volver { margin: 0 0 clamp(28px, 2.6cqi, 44px) }
   .hv-temas { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px }
   .hv-temas a { padding: 6px 16px; border: 1.5px solid var(--ink); border-radius: 999px; font-size: .9375rem; font-weight: 700; color: var(--ink); text-decoration: none }
   .hv-temas a[aria-current='page'] { background: var(--ink); color: #fff }
