@@ -1,0 +1,15 @@
+partido: "fa"
+tema: "fiscalidad"
+subtema: "transporte"
+titulo: "Unificar Renfe y Adif en un solo operador público ferroviario"
+resumen: "Es la primera medida del «Pacto de Estado por el Tren» que propone el Frente Amplio, para coordinar trenes e infraestructuras. El partido cita como modelo a Francia, Italia, Austria y Suiza."
+fuentes:
+  - fuente: "fa/nota-tren-2026-11-02"
+    cita: "Las propuestas del Frente Amplio para este pacto pasan, en primer lugar, por unificar Renfe y Adif, de manera que haya un gran operador público que lidere el sector y para favorecer la coordinación entre trenes e infraestructuras"
+fechaAnuncio: "2026-11-02"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 14 nov (ronda de las 20:03) en la nota oficial del 2 nov (busca «unificar Renfe y Adif»). Es texto de la nota, no una cita entre comillas de Colau. La fuente ya existía desde el 9 nov, pero no había subtema donde ponerla hasta que se creó «Transporte»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-15"

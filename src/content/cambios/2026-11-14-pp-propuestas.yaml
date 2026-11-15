@@ -1,0 +1,6 @@
+fecha: "2026-11-14"
+partido: "pp"
+tipo: "propuestas"
+descripcion: "Añadimos el compromiso que Feijóo hizo hoy en el mitin de Santiago de no conceder indultos a los condenados por corrupción."
+propuestas:
+  - "pp/sin-indultos-corrupcion"

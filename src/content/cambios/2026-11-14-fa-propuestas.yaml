@@ -1,0 +1,7 @@
+fecha: "2026-11-14"
+partido: "fa"
+tipo: "propuestas"
+descripcion: "Añadimos dos medidas de su «Pacto de Estado por el Tren», presentado el 2 de noviembre, ahora que hay subtema de transporte: unificar Renfe y Adif en un solo operador público y destinar a la red ferroviaria los fondos del plan de ampliación de aeropuertos."
+propuestas:
+  - "fa/unificar-renfe-adif"
+  - "fa/fondos-aeropuertos-al-tren"

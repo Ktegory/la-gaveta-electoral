@@ -1,0 +1,15 @@
+partido: "pp"
+tema: "instituciones"
+subtema: "justicia"
+titulo: "No conceder indultos a los condenados por corrupción"
+resumen: "Feijóo lo dijo en el mitin de Santiago, junto a la auditoría de lo que ha gestionado el Gobierno saliente. No ha concretado si cambiaría la ley del indulto."
+fuentes:
+  - fuente: "pp/nota-mitin-santiago-2026-11-14"
+    cita: "No habrá indultos para los corruptos. Quien haya robado, lo pagará; todo se sabrá, todo tendrá consecuencias. No habrá impunidad."
+fechaAnuncio: "2026-11-14"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 14 nov (ronda de las 20:03) en la nota oficial del PP (busca «No habrá indultos»); está entre comillas de Feijóo. Pendiente: comprobar si el programa del 10 nov recoge algo sobre indultos para añadir la página (no hay copia local del texto y en esta ronda no se descargan PDF)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-15"

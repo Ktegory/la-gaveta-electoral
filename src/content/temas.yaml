@@ -57,6 +57,7 @@
     - { id: listas-espera, nombre: "Listas de espera", pregunta: "¿Cómo reducirán las listas de espera?" }
     - { id: personal, nombre: "Personal sanitario", pregunta: "¿Qué harán con el personal sanitario?" }
     - { id: publica-privada, nombre: "Sanidad pública y privada", pregunta: "¿Qué papel tendrá la sanidad privada?" }
+    - { id: prestaciones, nombre: "Prestaciones y cartera de servicios", pregunta: "¿Qué cubrirá la sanidad pública?" }
 - id: educacion
   nombre: "Educación"
   pregunta: "¿Qué cambia en las aulas, la FP y la universidad?"

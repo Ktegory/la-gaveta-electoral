@@ -1,0 +1,15 @@
+partido: "fa"
+tema: "sanidad"
+subtema: "prestaciones"
+titulo: "Ampliar la atención dental pública hasta cubrir al menos al 50 % de la población en cuatro años"
+resumen: "Empezaría por los menores de 14 años, las personas en situación de vulnerabilidad y las personas con discapacidad. Es una de las tres medidas para incorporar la salud bucodental, visual y auditiva a la sanidad pública que presentó Ada Colau en Sevilla."
+fuentes:
+  - fuente: "fa/nota-salud-bucodental-2026-11-14"
+    cita: "ampliar la cobertura de salud bucodental hasta alcanzar, como mínimo, al 50% de la población en cuatro años"
+fechaAnuncio: "2026-11-14"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita tomada el 15 nov de la nota oficial del Frente Amplio (busca «como mínimo, al 50%»). Subtema nuevo «Prestaciones y cartera de servicios», dentro de Sanidad."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-15"

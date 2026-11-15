@@ -6,11 +6,13 @@ resumen: "Para que, en situaciones de inflación o de crisis de abastecimiento, 
 fuentes:
   - fuente: "bildu/nota-alquiler-precios-2026-11-09"
     cita: Propondremos que sean las grandes empresas energéticas, petroleras y alimentarias quienes, con sus enormes márgenes de beneficio, deban asumir y absorber, en situaciones inflacionarias y de crisis de abastecimiento, el aumento de los costes de estos productos y servicios básicos.
+  - fuente: "bildu/nota-smi-mercabilbao-2026-11-13"
+    cita: "Queremos que esas grandes empresas, que cada trimestre nos anuncian sus miles de millones de ganancias, asuman el aumento de los costes con esos enormes márgenes de beneficio."
 fechaAnuncio: "2026-11-09"
 destacada: true
 orden: 3
 comprobacion:
   estado: encontrada
-  nota: Lo dice el candidato Oskar Matute en el Fórum Europa (cita entre comillas en la nota oficial).
+  nota: "Lo dice el candidato Oskar Matute en el Fórum Europa (cita entre comillas en la nota oficial). 15 nov: añadida como segunda fuente la nota de Mercabilbao (13 nov), donde Matute lo repite para las grandes empresas energéticas y alimentarias (busca «asuman el aumento de los costes»)."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-11"
+fechaRevision: "2026-11-15"

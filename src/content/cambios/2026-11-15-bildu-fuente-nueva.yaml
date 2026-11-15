@@ -1,0 +1,7 @@
+fecha: "2026-11-15"
+partido: "bildu"
+tipo: "fuente-nueva"
+descripcion: "Añadida la nota del 13 de noviembre en Mercabilbao como segunda fuente del salario mínimo propio y de que las grandes empresas asuman la subida de costes."
+propuestas:
+  - "bildu/smi-60-salario-medio"
+  - "bildu/costes-grandes-empresas"
