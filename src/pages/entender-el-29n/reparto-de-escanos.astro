@@ -41,7 +41,7 @@ const art = {
   c69: `${CE}#a69`,
   c99: `${CE}#a99`,
 };
-// Ejemplo práctico del artículo 163 de la LOREG: 480.000 votos, ocho escaños, seis candidaturas.
+// Ejemplo práctico del artículo 163 de la LOREG: 480.000 votos, 8 escaños, 6 candidaturas.
 const EJEMPLO = { escanos: 8, votos: [168000, 104000, 72000, 64000, 40000, 32000], blancos: 0 };
 const LETRAS = ['A', 'B', 'C', 'D', 'E', 'F'];
 // Pasos, en el orden en que pasan las cosas: del voto al Gobierno. El Senado va aparte.
@@ -60,7 +60,7 @@ const PASOS = [
   </div>
 
   <div class="pad gr">
-    <section class="gr-cifras" aria-label="El 29N en cuatro cifras">
+    <section class="gr-cifras" aria-label="El 29N en 4 cifras">
       <div><p class="gr-c"><b class="cond">350</b><strong class="cond">diputados</strong></p><span>forman el Congreso.</span><a href={art.l162} target="_blank" rel="noopener">LOREG, art. 162</a></div>
       <div><p class="gr-c"><b class="cond">52</b><strong class="cond">circunscripciones</strong></p><span>las 50 provincias, más Ceuta y Melilla.</span><a href={art.c68} target="_blank" rel="noopener">Constitución, art. 68</a></div>
       <div><p class="gr-c"><b class="cond">3 %</b><strong class="cond">mínimo</strong></p><span>de los votos válidos de la provincia para optar a escaño.</span><a href={art.l163} target="_blank" rel="noopener">LOREG, art. 163</a></div>
@@ -91,7 +91,7 @@ const PASOS = [
         </div>
         <div>
           <h3><span class="gr-ico"><Icono id="tachada" /></span>Nulo</h3>
-          <p>Un sobre con papeletas de varias candidaturas, una papeleta tachada o con algo escrito, o que no es el modelo oficial, entre otros casos.</p>
+          <p>Un sobre con papeletas de varias candidaturas, una papeleta tachada o con algo escrito, o una papeleta que no es la oficial, entre otros casos.</p>
           <p class="gr-ef">No cuenta para el reparto ni para el 3 %.</p>
         </div>
         <div>
@@ -108,7 +108,7 @@ const PASOS = [
         <p class="gr-paso" aria-hidden="true">2</p>
         <div>
           <h2 class="cond" id="h-tu-provincia">Tu provincia</h2>
-          <p>Tu voto solo cuenta en tu provincia, y cada una elige un número fijo de diputados. Todas parten de dos (Ceuta y Melilla, de uno) y el resto se reparte según la población. Por eso Madrid elige 38 y Soria, 2.</p>
+          <p>Tu voto solo cuenta en tu provincia, y cada una elige un número fijo de diputados. Todas parten de 2 (Ceuta y Melilla, de 1) y el resto se reparte según la población. Por eso Madrid elige 38 y Soria, 2.</p>
         </div>
       </div>
       <div class="gr-prov" data-vistas>
@@ -144,7 +144,7 @@ const PASOS = [
           ))}
         </ul>
       </div>
-      <p class="gr-nota">Cada provincia tiene dos diputados de partida, Ceuta y Melilla uno cada una, y los 248 restantes se reparten según la población (<a href={art.l162} target="_blank" rel="noopener">LOREG, art. 162</a>). Las cifras son las del anexo del <a href={RD_CONVOCATORIA.url} target="_blank" rel="noopener">Real Decreto 806/2026</a> de convocatoria.</p>
+      <p class="gr-nota">Cada provincia tiene 2 diputados de partida, Ceuta y Melilla 1 cada una, y los 248 restantes se reparten según la población (<a href={art.l162} target="_blank" rel="noopener">LOREG, art. 162</a>). Las cifras son las del anexo del <a href={RD_CONVOCATORIA.url} target="_blank" rel="noopener">Real Decreto 806/2026</a> de convocatoria.</p>
     </section>
 
     <section class="gr-sec" id="el-reparto" aria-labelledby="h-el-reparto">
@@ -201,7 +201,7 @@ const PASOS = [
           </div>
         </div>
       </div>
-      <p class="gr-nota">Si dos cocientes empatan, el escaño es para la candidatura con más votos en total; si también empatan en votos, la primera vez se sortea. En Ceuta y Melilla, que eligen un solo diputado, gana quien tiene más votos. <a href={art.l163} target="_blank" rel="noopener">LOREG, art. 163</a></p>
+      <p class="gr-nota">Si 2 cocientes empatan, el escaño es para la candidatura con más votos en total; si también empatan en votos, la primera vez se sortea. En Ceuta y Melilla, que eligen 1 diputado cada una, gana la candidatura con más votos. <a href={art.l163} target="_blank" rel="noopener">LOREG, art. 163</a></p>
     </section>
 
     <section class="gr-sec" id="despues" aria-labelledby="h-despues">
@@ -213,11 +213,11 @@ const PASOS = [
         </div>
       </div>
       <ol class="gr-linea">
-        <li><b>23 de diciembre, 10:00</b><span>Se constituyen el nuevo Congreso y el nuevo Senado.</span><a href={RD_CONVOCATORIA.url} target="_blank" rel="noopener">Real Decreto 806/2026, art. 5</a></li>
-        <li><b>Propuesta de candidato</b><span>Tras consultar a los grupos, el Rey propone un candidato, que presenta su programa al Congreso y pide su confianza.</span><a href={art.c99} target="_blank" rel="noopener">Constitución, art. 99</a></li>
+        <li><b>23 de diciembre, 10:00 h</b><span>Se constituyen el nuevo Congreso y el nuevo Senado.</span><a href={RD_CONVOCATORIA.url} target="_blank" rel="noopener">Real Decreto 806/2026, art. 5</a></li>
+        <li><b>Propuesta de candidato</b><span>Tras consultar a los grupos, el rey propone un candidato, que presenta su programa al Congreso y pide su confianza.</span><a href={art.c99} target="_blank" rel="noopener">Constitución, art. 99</a></li>
         <li><b>Primera votación</b><span>Necesita la mayoría absoluta: 176 síes.</span></li>
         <li><b>48 horas después</b><span>Si no la logra, basta la mayoría simple: más síes que noes.</span></li>
-        <li><b>Dos meses</b><span>Si pasados dos meses desde la primera votación nadie ha sido investido, se disuelven las Cortes y se repiten las elecciones.</span></li>
+        <li><b>2 meses después</b><span>Si pasados 2 meses desde la primera votación nadie ha sido investido, se disuelven las Cortes y se repiten las elecciones.</span></li>
       </ol>
     </section>
 
@@ -232,15 +232,15 @@ const PASOS = [
       <div class="gr-tres">
         <div>
           <h3><span class="gr-ico"><Icono id="escanos" /></span>Cuántos se eligen</h3>
-          <p>Cuatro senadores por provincia. En las islas, tres en Gran Canaria, Mallorca y Tenerife y uno en cada una de las demás islas con Cabildo o Consejo. Dos en Ceuta y dos en Melilla.</p>
+          <p>Cada provincia elige 4 senadores. En las islas, Gran Canaria, Mallorca y Tenerife eligen 3, y cada una de las demás islas con Cabildo o Consejo, 1. Ceuta y Melilla eligen 2 cada una.</p>
         </div>
         <div>
           <h3><span class="gr-ico"><Icono id="papeleta" /></span>Cómo se vota</h3>
-          <p>Marcas a los candidatos que quieras, de cualquier partido: hasta tres en las provincias; hasta dos en Gran Canaria, Mallorca, Tenerife, Ceuta y Melilla; uno en el resto de islas. Si marcas más, el voto es nulo.</p>
+          <p>Marcas a los candidatos que quieras, de cualquier partido: hasta 3 en las provincias; hasta 2 en Gran Canaria, Mallorca, Tenerife, Ceuta y Melilla, y 1 en el resto de islas. Si marcas más, el voto es nulo.</p>
         </div>
         <div>
           <h3><span class="gr-ico"><Icono id="podio" /></span>Quién sale</h3>
-          <p>Los candidatos más votados, uno a uno, hasta cubrir los puestos. Además, cada comunidad autónoma designa un senador y otro más por cada millón de habitantes.</p>
+          <p>Los candidatos más votados, uno a uno, hasta cubrir los puestos. Además, cada comunidad autónoma designa 1 senador, y 1 más por cada millón de habitantes.</p>
         </div>
       </div>
       <p class="gr-nota"><a href={art.c69} target="_blank" rel="noopener">Constitución, art. 69</a>; <a href={art.l166} target="_blank" rel="noopener">LOREG, art. 166</a> y <a href={art.l96} target="_blank" rel="noopener">art. 96</a>.</p>
@@ -249,7 +249,7 @@ const PASOS = [
     <section class="gr-fuentes" aria-labelledby="h-fuentes">
       <h2 id="h-fuentes">Fuentes</h2>
       <ul>
-        <li><a href={RD_CONVOCATORIA.url} target="_blank" rel="noopener">{RD_CONVOCATORIA.nombre}</a> (BOE, 6 oct 2026): diputados por circunscripción y fecha de constitución de las Cámaras.</li>
+        <li><a href={RD_CONVOCATORIA.url} target="_blank" rel="noopener">{RD_CONVOCATORIA.nombre}</a> (BOE, 6 de octubre de 2026): diputados por circunscripción y fecha de constitución de las Cámaras.</li>
         <li><a href={LOREG} target="_blank" rel="noopener">Ley Orgánica 5/1985, del Régimen Electoral General</a>: artículos 96, 162, 163 y 166.</li>
         <li><a href={CE} target="_blank" rel="noopener">Constitución Española</a>: artículos 68, 69 y 99.</li>
       </ul>
@@ -570,7 +570,7 @@ const PASOS = [
 
   /* Línea temporal */
   .gr-linea { display: grid; gap: 0; margin: 0; padding: 0; list-style: none }
-  .gr-linea li { position: relative; display: grid; gap: 4px; padding: 0 0 24px 40px }
+  .gr-linea li { position: relative; display: grid; align-content: start; gap: 4px; padding: 0 0 24px 40px }
   .gr-linea li::before { content: ""; position: absolute; left: 9px; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: var(--tost2) }
   .gr-linea li:not(:last-child)::after { content: ""; position: absolute; left: 15px; top: 28px; bottom: 2px; width: 2px; background: var(--tost) }
   .gr-linea b { font-size: 1.125rem }
