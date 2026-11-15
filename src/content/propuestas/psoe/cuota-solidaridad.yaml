@@ -12,5 +12,5 @@ destacada: false
 comprobacion:
   estado: encontrada
   nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 98, página 40 (página impresa). Busca «Acelerar el despliegue de la»."
-revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+revisadaPor: "Khiustin Tornés"
 fechaRevision: "2026-11-15"

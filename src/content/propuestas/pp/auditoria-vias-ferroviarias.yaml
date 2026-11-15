@@ -1,0 +1,15 @@
+partido: "pp"
+tema: "fiscalidad"
+subtema: "transporte"
+titulo: "Auditar el estado de las vías del tren al llegar al Gobierno e invertir después en mejorarlas y mantenerlas"
+resumen: "Lo anunció la portavoz de campaña, Ester Muñoz, en Segovia. No ha dado cifras ni plazos de inversión."
+fuentes:
+  - fuente: "pp/nota-munoz-segovia-2026-11-15"
+    cita: "lo que va a hacer Feijóo en cuanto llegue al Gobierno es una auditoría para conocer el estado real de las vías y, después, invertir el dinero que sea necesario para mejorarlas y mantenerlas"
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 15 nov (ronda de las 20:02) en la nota oficial del PP (busca «estado real de las vías»). Es texto de la nota en estilo indirecto, no una frase entre comillas de Muñoz; la frase entrecomillada que sigue es «Se trata de quitar enchufados, poner técnicos y saber invertir». Pendiente: comprobar si el programa del 10 nov recoge algo sobre auditoría ferroviaria para añadir la página."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-15"

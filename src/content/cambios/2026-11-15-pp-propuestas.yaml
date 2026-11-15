@@ -1,0 +1,6 @@
+fecha: "2026-11-15"
+partido: "pp"
+tipo: "propuestas"
+descripcion: "Añadimos el compromiso que anunció hoy en Segovia la portavoz de campaña, Ester Muñoz: auditar el estado de las vías del tren y después invertir en mejorarlas y mantenerlas."
+propuestas:
+  - "pp/auditoria-vias-ferroviarias"

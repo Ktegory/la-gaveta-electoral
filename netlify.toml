@@ -43,3 +43,14 @@
   from = "/historia/*"
   to = "/promesas-y-hechos/:splat"
   status = 301
+
+# Iconos que algunos navegadores y apps piden por su cuenta aunque la página declare favicon.svg (salían como 404).
+[[redirects]]
+  from = "/apple-touch-icon-precomposed.png"
+  to = "/apple-touch-icon.png"
+  status = 200
+
+[[redirects]]
+  from = "/favicon.png"
+  to = "/apple-touch-icon.png"
+  status = 200

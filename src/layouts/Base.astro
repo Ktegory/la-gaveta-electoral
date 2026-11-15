@@ -32,6 +32,10 @@ const NAV = [
   { id: 'metodo', href: '/como-funciona/', txt: 'Cómo funciona' },
 ] as const;
 const cur = (id: string) => (seccion === id ? 'page' : undefined);
+// Analítica sin cookies (Umami Cloud), solo en la web publicada: ni en local ni en /revisar/.
+// data-domains evita contar las vistas previas de Netlify; data-do-not-track respeta esa opción del navegador.
+const UMAMI_ID = 'bc00adce-6467-4a51-86dd-a5e9f7ab304f';
+const analitica = import.meta.env.PROD;
 // Cuántas novedades hay publicadas (cada propuesta nueva cuenta una). Sirve para marcar
 // «Novedades» en el menú cuando hay alguna desde la última vez que se visitó esa página.
 const nNovedades = (await datos()).cambios.reduce((n, c) => n + Math.max(1, c.data.propuestas?.length ?? 0), 0);
@@ -66,6 +70,7 @@ const nNovedades = (await datos()).cambios.reduce((n, c) => n + Math.max(1, c.da
   {Astro.url.pathname === '/' && <script type="application/ld+json" set:html={JSON.stringify(datosEstructurados)} />}
   <meta property="og:locale" content="es_ES" />
   <meta name="theme-color" content="#0E0E0E" />
+  {analitica && <script is:inline defer src="https://cloud.umami.is/script.js" data-website-id={UMAMI_ID} data-domains="lagavetaelectoral.org" data-do-not-track="true"></script>}
 </head>
 <body>
 <Iconos />
@@ -123,5 +128,37 @@ const nNovedades = (await datos()).cambios.reduce((n, c) => n + Math.max(1, c.da
     <a href="/buscar/" aria-current={cur('buscar')}><Icono id="search" />Buscar</a>
   </nav>
 </div>
+{analitica && (
+  <script is:inline>
+    // Eventos anónimos para Umami: qué fuentes se abren, qué se busca y si se usa el simulador.
+    (() => {
+      const ev = (n, d) => window.umami?.track(n, d);
+      document.addEventListener('click', (e) => {
+        const a = e.target.closest?.('a[href^="http"]');
+        if (!a || a.host === location.host) return;
+        ev('fuente', { dominio: a.host.replace(/^www\./, '') });
+      });
+      const caja = document.getElementById('buscador');
+      if (caja) {
+        let t, ultima = '';
+        caja.addEventListener('input', (e) => {
+          clearTimeout(t);
+          t = setTimeout(() => {
+            const q = (e.target.value || '').trim().toLowerCase().slice(0, 60);
+            if (q.length < 3 || q === ultima) return;
+            ultima = q;
+            ev('busqueda', { q, resultados: caja.querySelectorAll('.pagefind-ui__result').length });
+          }, 2000);
+        });
+      }
+      const sim = document.querySelector('[data-sim]');
+      if (sim) {
+        const una = () => { ev('simulador'); sim.removeEventListener('input', una); sim.removeEventListener('change', una); };
+        sim.addEventListener('input', una);
+        sim.addEventListener('change', una);
+      }
+    })();
+  </script>
+)}
 </body>
 </html>

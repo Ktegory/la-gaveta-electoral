@@ -4,12 +4,14 @@ import Base from '../layouts/Base.astro';
 import EtiquetaFuente from '../components/EtiquetaFuente.astro';
 import { datos, fuentesDePropuesta, varsPartido, fechaLarga } from '../lib/datos';
 import { REVISOR } from './integracion.mjs';
+import { getCollection } from 'astro:content';
 
 const d = await datos();
 const temas = new Map(d.temas.map((t) => [t.id, t]));
 const nombre = new Map(d.partidos.map((p) => [p.id, p]));
 const orden = (id: string) => d.partidos.findIndex((p) => p.id === id);
-const ps = [...d.propuestas].sort((a, b) => {
+// Incluye también las sustituidas (no salen en la web, pero llevan firma y hay que poder revisarlas).
+const ps = (await getCollection('propuestas')).sort((a, b) => {
   const ta = temas.get(a.data.tema.id)!, tb = temas.get(b.data.tema.id)!;
   return (
     orden(a.data.partido.id) - orden(b.data.partido.id) ||
@@ -18,7 +20,9 @@ const ps = [...d.propuestas].sort((a, b) => {
   );
 });
 const total = ps.length;
-const hechas = ps.filter((p) => p.data.revisadaPor).length;
+// Una firma de Claude (cotejo delegado) es provisional: cuenta como pendiente hasta que firme REVISOR.
+const provisional = (p: (typeof ps)[number]) => !!p.data.revisadaPor?.startsWith('Claude');
+const hechas = ps.filter((p) => p.data.revisadaPor && !provisional(p)).length;
 const fmt = (f: Date) => fechaLarga(f);
 const esPdf = (url: string) => /\.pdf($|[?#])|\/pdf\//i.test(url);
 /** Para el fragmento de texto, los guiones, comas y & van codificados (son separadores). */
@@ -68,13 +72,14 @@ const COMP = {
       const t = temas.get(p.data.tema.id)!;
       const s = t.data.subtemas.find((x) => x.id === p.data.subtema);
       const partido = nombre.get(p.data.partido.id)!;
-      const firmada = !!p.data.revisadaPor;
+      const firmada = !!p.data.revisadaPor && !provisional(p);
       return (
         <article class="rv" data-id={p.id} data-p={partido.id} data-firmada={firmada ? '' : undefined} data-comp={p.data.comprobacion?.estado} style={varsPartido(partido)}>
           <header>
             <b>{partido.data.nombre}</b>
             <span>{t.data.nombre} › {s?.nombre ?? p.data.subtema}</span>
             {p.data.destacada && <span>★ Destacada</span>}
+            {p.data.estado !== 'vigente' && <span>Sustituida por {p.data.sustituidaPor?.id} · no sale en la web</span>}
             <code>{p.id}</code>
           </header>
           <div class="rv-cuerpo">
@@ -110,7 +115,7 @@ const COMP = {
           </div>
           <footer>
             <span class="rv-estado" data-estado>
-              {firmada ? `Revisada por ${p.data.revisadaPor} el ${fmt(p.data.fechaRevision!)}` : 'Sin revisar'}
+              {p.data.revisadaPor ? `${firmada ? '' : 'Firma provisional · '}Revisada por ${p.data.revisadaPor} el ${fmt(p.data.fechaRevision!)}` : 'Sin revisar'}
             </span>
             <button class="btn sm" type="button" data-editar={p.filePath}>Editar archivo</button>
             <button class:list={['btn sm', { ink: !firmada }]} type="button" data-firmar>{firmada ? 'Quitar firma' : 'Firmar'}</button>

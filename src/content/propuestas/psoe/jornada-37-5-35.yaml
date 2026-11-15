@@ -13,5 +13,5 @@ orden: 6
 comprobacion:
   estado: encontrada
   nota: "Cita cotejada el 15 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 108, página 42 (página impresa). Busca «Completar la reducción de la»."
-revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+revisadaPor: "Khiustin Tornés"
 fechaRevision: "2026-11-15"
