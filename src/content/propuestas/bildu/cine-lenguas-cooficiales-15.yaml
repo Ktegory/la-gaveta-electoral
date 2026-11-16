@@ -1,0 +1,16 @@
+partido: "bildu"
+tema: "territorial"
+subtema: "lenguas-cooficiales"
+titulo: "Destinar al menos el 15 % del Fondo de Protección de la Cinematografía a proyectos en lenguas distintas del castellano"
+resumen: "La reserva sería para proyectos en lenguas oficiales distintas del castellano, como el euskera. También propone blindar por ley las ayudas a las producciones en esas lenguas."
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "25"
+    cita: "Que un mínimo del 15% del presupuesto del Fondo de Protección de la Cinematografía se destine específicamente a proyectos en lenguas oficiales distintas al castellano, asegurando la financiación y el desarrollo del cine en euskara."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa de EH Bildu (PDF oficial, sha256 ceb655c9…), página 25. Busca «Fondo de Protección de la Cinematografía»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

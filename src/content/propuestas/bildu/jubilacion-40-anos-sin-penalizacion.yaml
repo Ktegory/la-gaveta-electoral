@@ -1,0 +1,17 @@
+partido: "bildu"
+tema: "pensiones"
+subtema: "edad-jubilacion"
+titulo: "Pensión sin penalización para quien haya cotizado al menos 40 años"
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "8"
+    cita: "Culminar la tramitación de la Ley que reconoce el derecho a pensión sin penalización de las personas con al menos 40 años de cotización."
+  - fuente: "bildu/nota-programa-2026-11-16"
+    cita: "culminar el reconocimiento de una pensión sin penalización para quienes acrediten al menos 40 años cotizados"
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "16 nov: añadimos el programa como fuente principal (página 8). Busca «pensión sin penalización». Quitada la firma para revisar de nuevo."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

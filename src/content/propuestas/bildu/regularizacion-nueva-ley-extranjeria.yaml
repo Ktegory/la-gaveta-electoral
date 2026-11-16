@@ -1,0 +1,16 @@
+partido: "bildu"
+tema: "inmigracion"
+subtema: "regularizacion"
+titulo: "Regularizar a las personas migrantes y aprobar una nueva Ley de Extranjería basada en los derechos humanos"
+resumen: "La regularización sería «efectiva, accesible y estable». Se facilitarían los permisos de residencia y trabajo y se evitaría que quien tiene papeles los pierda («irregularidad sobrevenida»). El programa no detalla requisitos ni plazos."
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "20"
+    cita: "Garantizar una regularización efectiva, accesible y estable. […] Avanzar hacia una nueva legislación de extranjería basada en los derechos humanos."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa de EH Bildu (PDF oficial, sha256 ceb655c9…), página 20. Busca «Garantizar una regularización efectiva, accesible y estable»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

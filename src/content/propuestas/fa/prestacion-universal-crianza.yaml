@@ -1,0 +1,19 @@
+partido: "fa"
+tema: "igualdad"
+subtema: "cuidados"
+titulo: "Crear una prestación universal por crianza de 200 € al mes por cada menor de 18 años"
+resumen: "Sería un derecho del menor, inembargable y sin depender de los ingresos de los padres, abonado cada mes por la Agencia Tributaria como deducción reembolsable del IRPF. Se implantaría en tres fases por edades durante la legislatura."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "25"
+    cita: "Aprobaremos la Ley de Prestación Universal por Crianza que concederá 200 € al mes por cada menor de 18 años a cargo."
+  - fuente: "fa/nota-programa-herencias-2026-11-16"
+    cita: "Aprobaremos la Ley de Prestación Universal por Crianza que concederá 200 € al mes por cada menor de 18 años a cargo."
+fechaAnuncio: "2026-11-16"
+destacada: true
+orden: 4
+comprobacion:
+  estado: encontrada
+  nota: "16 nov: añadimos el programa como fuente principal (página 25; página 21 del PDF). Busca «Ley de Prestación Universal por Crianza»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

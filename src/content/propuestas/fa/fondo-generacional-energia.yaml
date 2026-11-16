@@ -1,0 +1,18 @@
+partido: "fa"
+tema: "energia"
+subtema: "renovables"
+titulo: "Crear un fondo soberano con participación pública del 30 % en las nuevas instalaciones renovables pequeñas y medianas"
+resumen: "Fondo Generacional de la Energía, inspirado en el modelo noruego. La mitad de los beneficios se reinvertiría en el fondo y la otra mitad iría a vivienda pública, rehabilitación y pensiones; una parte financiaría comunidades energéticas municipales."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "69"
+    cita: "Crearemos un Fondo Generacional de la Energía, inspirado en el modelo noruego, con participación pública del 30 % en las nuevas instalaciones renovables y de almacenamiento pequeñas y medianas."
+  - fuente: "fa/nota-programa-herencias-2026-11-16"
+    cita: "Crearemos un Fondo Soberano inspirado en el modelo noruego, con participación pública del 30 % en las nuevas instalaciones renovables y de almacenamiento pequeñas y medianas."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "16 nov: añadimos el programa como fuente principal (página 69; página 62 del PDF). Busca «Fondo Generacional de la Energía»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

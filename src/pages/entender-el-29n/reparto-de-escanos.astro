@@ -32,7 +32,10 @@ const opciones = [...grupos].reverse().map((g) => ({
 
 const LOREG = 'https://www.boe.es/buscar/act.php?id=BOE-A-1985-11672';
 const CE = 'https://www.boe.es/buscar/act.php?id=BOE-A-1978-31229';
+// Catálogo del CIS, del más reciente al más antiguo. Solo el enlace: no mostramos cifras de encuestas.
+const CIS = 'https://www.cis.es/es/estudios/catalogo?catalogo=estudio&sort=createDateBDE-&t=0';
 const art = {
+  l69: `${LOREG}#asesentaynueve`,
   l96: `${LOREG}#anoventayseis`,
   l162: `${LOREG}#acientosesentaydos`,
   l163: `${LOREG}#acientosesentaytres`,
@@ -254,6 +257,7 @@ const PASOS = [
         <li><a href={CE} target="_blank" rel="noopener">Constitución Española</a>: artículos 68, 69 y 99.</li>
       </ul>
       <p>Las candidaturas del simulador son inventadas y no reflejan ningún resultado real ni previsto.</p>
+      <p id="encuestas">Si buscas estimaciones de voto, el CIS publica sus encuestas preelectorales en su <a href={CIS} target="_blank" rel="noopener">catálogo de estudios</a>. Del 24 al 28 de noviembre la ley no permite publicar sondeos (<a href={art.l69} target="_blank" rel="noopener">LOREG, art. 69.7</a>).</p>
     </section>
   </div>
 </Base>

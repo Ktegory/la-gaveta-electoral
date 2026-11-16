@@ -1,0 +1,16 @@
+partido: "fa"
+tema: "educacion"
+subtema: "lenguas"
+titulo: "Lanzar un plan estatal para aprender las lenguas cooficiales y mantener el catalán como lengua vehicular en Cataluña"
+resumen: "El plan serviría para enseñar y difundir las lenguas cooficiales en todo el Estado. En Cataluña se garantizaría la inmersión lingüística en catalán."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "36"
+    cita: "Lanzaremos un Plan Estatal para el aprendizaje y divulgación de las lenguas cooficiales en todo el Estado, garantizando la inmersión lingüística en catalán como lengua vehicular en Cataluña."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 36 (página 32 del PDF). Busca «Plan Estatal para el aprendizaje y divulgación»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

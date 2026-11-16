@@ -1,0 +1,16 @@
+partido: "fa"
+tema: "vivienda"
+subtema: "vivienda-publica"
+titulo: "Crear una contribución del 0,45 % sobre la masa salarial de las empresas de 50 o más empleados para vivienda pública"
+resumen: "Seguiría el modelo francés de participación de las empresas en la construcción de vivienda. El programa calcula que recaudaría unos 1.000 millones de euros al año y que permitiría promover unas 10.000 viviendas de alquiler asequible al año."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "20"
+    cita: "Se aplicará a todas las empresas privadas que emplean un promedio anual de 50 o más asalariados durante cinco años consecutivos. Aplicaremos un tipo del 0,45 % sobre la masa salarial bruta pagada por las empresas en el ejercicio anterior."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 20 (página 17 del PDF). Busca «un tipo del 0,45 % sobre la masa salarial»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-16"

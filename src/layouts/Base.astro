@@ -119,7 +119,7 @@ const nNovedades = (await datos()).cambios.reduce((n, c) => n + Math.max(1, c.da
     <slot />
   </main>
   <footer class="foot pad">
-    <div class="foot-id"><Logo /><span>Una iniciativa civil · Sin vinculación con ningún partido.</span></div>
+    <div class="foot-id"><Logo /><span>Una iniciativa civil · Sin vinculación con ningún partido.</span><span class="foot-autor">Diseño y desarrollo: <a href="https://khiustin.com/" rel="author noopener" target="_blank">Khiustin Tornés</a></span></div>
     <nav aria-label="Pie"><a href="/como-funciona/" aria-current={cur('metodo')}>Cómo funciona</a><a href="/fuentes/" aria-current={cur('fuentes')}>Fuentes</a><a href="/como-funciona/#errores">¿Has visto un error?</a><a href="/novedades/" aria-current={cur('novedades')}>Novedades</a><a class="foot-rss" href="/novedades.xml" type="application/rss+xml" aria-label="RSS de las novedades" title="RSS de las novedades"><Icono id="rss" class="rss" /></a></nav>
   </footer>
   <nav class="tabbar" aria-label="Accesos rápidos">
@@ -135,7 +135,7 @@ const nNovedades = (await datos()).cambios.reduce((n, c) => n + Math.max(1, c.da
       const ev = (n, d) => window.umami?.track(n, d);
       document.addEventListener('click', (e) => {
         const a = e.target.closest?.('a[href^="http"]');
-        if (!a || a.host === location.host) return;
+        if (!a || a.host === location.host || a.relList.contains('author')) return;
         ev('fuente', { dominio: a.host.replace(/^www\./, '') });
       });
       const caja = document.getElementById('buscador');

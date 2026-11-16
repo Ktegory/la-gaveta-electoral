@@ -1,0 +1,16 @@
+partido: "bildu"
+tema: "territorial"
+subtema: "financiacion"
+titulo: "Acordar un nuevo modelo de negociación y cálculo del Cupo vasco y la Aportación navarra"
+resumen: "El Cupo y la Aportación son lo que el País Vasco y Navarra pagan al Estado por los servicios que presta allí. EH Bildu también quiere ampliar el Concierto y el Convenio Económico con nuevas capacidades."
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "24"
+    cita: "Igualmente, trabajaremos para lograr ensanchar estos instrumentos, dotándolos de nuevas capacidades y, además, acordar un nuevo modelo de negociación y cálculo para el Cupo y la Aportación, que acabe con la actual situación de desigualdad que perjudica los intereses de la sociedad vasca."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa de EH Bildu (PDF oficial, sha256 ceb655c9…), página 24. Busca «nuevo modelo de negociación y cálculo»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

@@ -1,0 +1,16 @@
+partido: "fa"
+tema: "pensiones"
+subtema: "edad-jubilacion"
+titulo: "Eliminar la penalización por jubilación anticipada involuntaria a quien haya cotizado más de 40 años"
+resumen: "Se suprimirían los coeficientes reductores que hoy recortan la pensión de quien se jubila antes de tiempo de forma involuntaria tras más de 40 años cotizados."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "64"
+    cita: "Eliminaremos los coeficientes reductores en las jubilaciones anticipadas de quienes han cotizado más de 40 años y tienen que acogerse a la misma de manera involuntaria."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 64 (página 58 del PDF). Busca «Eliminaremos los coeficientes reductores en las jubilaciones»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

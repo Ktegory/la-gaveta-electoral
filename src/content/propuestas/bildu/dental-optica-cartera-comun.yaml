@@ -1,0 +1,16 @@
+partido: "bildu"
+tema: "sanidad"
+subtema: "prestaciones"
+titulo: "Incluir la salud bucodental y los productos ópticos en la cartera común para los colectivos más vulnerables"
+resumen: "La ampliación iría dirigida a los colectivos «históricamente desatendidos o en situación de mayor vulnerabilidad». El programa prevé también prestaciones para las personas afectadas por la talidomida o la poliomielitis."
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "10"
+    cita: "Ampliar la cartera común básica con prestaciones como la de la salud bucodental y los productos ópticos y salud visual para aquellos colectivos históricamente desatendidos o en situación de mayor vulnerabilidad con un enfoque transversal de equidad social."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa de EH Bildu (PDF oficial, sha256 ceb655c9…), página 10. Busca «Ampliar la cartera común básica con prestaciones»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

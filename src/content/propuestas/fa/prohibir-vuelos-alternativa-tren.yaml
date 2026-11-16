@@ -1,0 +1,16 @@
+partido: "fa"
+tema: "fiscalidad"
+subtema: "transporte"
+titulo: "Prohibir los vuelos nacionales con alternativa en tren de 2,5 horas"
+resumen: "Quedarían fuera los vuelos que conectan con vuelos internacionales. El programa añade una tasa progresiva a los viajeros frecuentes y frenaría las ampliaciones de aeropuertos incompatibles con los objetivos climáticos."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "75"
+    cita: "Prohibiremos vuelos domésticos que dispongan de una alternativa competitiva en tren de 2,5 horas (salvo los dedicados a conexión con vuelos internacionales)."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 75 (página 68 del PDF), punto «Reducción de vuelos domésticos de corto radio». Busca «alternativa competitiva en tren de 2,5 horas». La tasa a viajeros frecuentes está en el punto siguiente («Fiscalidad verde al sector aéreo y transportes de lujo»)."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

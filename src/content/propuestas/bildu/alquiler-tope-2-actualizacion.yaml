@@ -1,0 +1,16 @@
+partido: "bildu"
+tema: "vivienda"
+subtema: "alquiler"
+titulo: "Limitar de forma permanente al 2 % la subida anual del alquiler cuando el IPC supere esa cifra"
+resumen: "El tope se aplicaría a la actualización anual de la renta en los contratos de alquiler. El programa propone además eliminar cualquier deducción fiscal cuando la renta suba respecto al contrato anterior o al índice de precios de referencia."
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "5"
+    cita: "Establecer de manera estructural el máximo de 2% de actualización anual de renta en los contratos de arrendamiento, siempre que el IPC interanual a fecha de actualización supere este porcentaje."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa de EH Bildu (PDF oficial, sha256 ceb655c9…), página 5. Busca «máximo de 2% de actualización anual de renta»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-16"

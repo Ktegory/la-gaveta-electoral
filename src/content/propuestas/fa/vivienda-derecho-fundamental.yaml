@@ -1,0 +1,16 @@
+partido: "fa"
+tema: "instituciones"
+subtema: "constitucion"
+titulo: "Reformar el artículo 47 de la Constitución para que la vivienda sea un derecho fundamental"
+resumen: "Podría reclamarse ante los tribunales ordinarios y, mediante recurso de amparo, ante el Tribunal Constitucional. Hasta la reforma, una ley reconocería un derecho subjetivo a la vivienda, empezando por las personas sin hogar, las familias con menores y las víctimas de violencia machista. La reforma también impediría privatizar o vender el parque público de vivienda."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "22"
+    cita: "Impulsaremos una reforma constitucional de urgencia para trasladar el derecho a la vivienda desde los principios rectores (Capítulo III) a la Sección 1.ª del Capítulo II del Título I de la Constitución Española."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 22 (página 19 del PDF). Busca «reforma constitucional de urgencia para trasladar»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

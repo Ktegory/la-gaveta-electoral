@@ -1,0 +1,16 @@
+partido: "fa"
+tema: "territorial"
+subtema: "financiacion"
+titulo: "Aportar cada año al menos un 2,3 % del PIB adicional al sistema de financiación autonómica"
+resumen: "Serían unos 38.000 millones de euros más al año para reforzar los servicios públicos. El nuevo modelo partiría de la propuesta del Gobierno de coalición y mediría las necesidades de gasto con criterios sociales, como los parados sin prestación o la población mayor de 80 años. Ese gasto no computaría en la regla de gasto."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "117"
+    cita: "Destinaremos al menos un 2,3 % del PIB adicional al sistema de financiación autonómica cada año. Supondrá unos 38.000 millones adicionales con los que se afrontará la necesidad de fortalecimiento de los servicios públicos."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 117 (página 103 del PDF). Busca «al menos un 2,3 % del PIB adicional»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

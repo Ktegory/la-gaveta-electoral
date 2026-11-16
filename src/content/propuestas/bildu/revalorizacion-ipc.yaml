@@ -1,0 +1,17 @@
+partido: "bildu"
+tema: "pensiones"
+subtema: "revalorizacion"
+titulo: "Garantizar la subida anual de las pensiones conforme al IPC"
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "7"
+    cita: "Garantizar el poder adquisitivo de las y los pensionistas, manteniendo y blindando la revalorización anual al IPC."
+  - fuente: "bildu/nota-programa-2026-11-16"
+    cita: "garantizar la actualización anual conforme al IPC"
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "16 nov: añadimos el programa como fuente principal (página 7). Busca «revalorización anual al IPC». Quitada la firma para revisar de nuevo."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

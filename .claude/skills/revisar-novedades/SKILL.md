@@ -43,8 +43,10 @@ Programas ya publicados (vigila si cambian: compara `content-length` y `last-mod
 - PP: la URL de `src/content/fuentes/pp/programa-29n-2026.yaml` (82 págs., 12.279.932 bytes; hay también una maquetación de 64 págs.). Vigila si desvela alguna de las 8 medidas en blanco: 83, 109, 132, 164, 167, 173, 200, 210.
 - ERC y PNV: URL en su `programa-29n-2026.yaml`.
 - VOX: la URL de `src/content/fuentes/vox/programa-29n-2026.yaml` (66 págs., 14.536.418 bytes, `last-modified` 12 nov 16:07 GMT). voxespana.es responde 403 a `curl -sI`: usa un GET de rango, `curl -s -A "Mozilla/5.0" -r 0-1023 -D - -o /dev/null <url>`, y lee `content-range` y `last-modified`. Busca también si sube otro PDF en `wp-content/uploads/2026/11/` (las rondas del 12 nov a las 20:04 y del 13 a las 8:19 no vieron este por el 403).
+- Frente Amplio: la URL de `src/content/fuentes/fa/programa-29n-2026.yaml` (1.139.608 bytes, `last-modified` 16 nov 11:16 GMT, etag `"6afae5fb-116398"`).
+- EH Bildu: la URL de `src/content/fuentes/bildu/programa-29n-2026.yaml` (30 págs., 571.442 bytes). El servidor no da tamaño ni fecha: si hace falta comprobar cambios, pide permiso para descargarlo y compara la sha256.
 
-Programas pendientes (Frente Amplio, Podemos, Junts, EH Bildu): busca si se han publicado. El Frente Amplio tiene desde el 15 nov una sección de programa en su web (frenteamplio.info/programa/todas/, 8 medidas, una ficha por medida en el sitemap) y anuncia el PDF «próximamente»: mira si hay fichas nuevas (compara el sitemap) y si ya enlaza el PDF.
+Programas pendientes (Podemos, Junts): busca si se han publicado.
 
 ## Paso 2. Instagram (navegador integrado de la app)
 

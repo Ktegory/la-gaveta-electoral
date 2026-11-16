@@ -1,0 +1,16 @@
+partido: "bildu"
+tema: "sanidad"
+subtema: "personal"
+titulo: "Reservar el 53 % de las plazas MIR, EIR y PIR a quienes dominen las dos lenguas oficiales del País Vasco"
+resumen: "Sería una medida transitoria, mientras no se haga efectiva la transferencia de competencias sanitarias que reclama EH Bildu. El programa no aclara si la reserva afectaría a todas las plazas del Estado o solo a las del País Vasco."
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "10"
+    cita: "Transitoriamente y mientras la transferencia no se haga efectiva, proponer la reserva de un 53% de las plazas del MIR, EIR, PIR, etc. para aquellos profesionales que dominen las dos lenguas oficiales del País Vasco."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa de EH Bildu (PDF oficial, sha256 ceb655c9…), página 10. Busca «reserva de un 53% de las plazas del MIR». La transferencia de la formación sanitaria especializada se pide en la página 11."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

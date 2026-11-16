@@ -8,7 +8,10 @@ fuentes:
     cita: "La jubilación a los 65, otros 10.000 millones, se pagará eliminando progresivamente el tope máximo de cotización, lo que aportaría entre 7.000 y 8.500 millones"
 fechaAnuncio: "2026-10-24"
 destacada: false
+estado: "sustituida"
+sustituidaPor: "fa/elevar-tope-cotizacion"
 comprobacion:
   estado: encontrada
-revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-11"
+  nota: "16 nov: el programa del 29N no habla de eliminar el tope máximo de cotización, sino de seguir elevándolo de forma progresiva (página 64). La marcamos como sustituida por fa/elevar-tope-cotizacion. Quitada la firma para revisar de nuevo."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

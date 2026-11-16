@@ -1,0 +1,16 @@
+partido: "bildu"
+tema: "sanidad"
+subtema: "publica-privada"
+titulo: "Derogar la Ley 15/1997, que habilita nuevas formas de gestión en el Sistema Nacional de Salud"
+resumen: "Según el programa, esa ley, aprobada por el PP, permite privatizar y externalizar servicios sanitarios. No detalla qué modelo de gestión la sustituiría."
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "11"
+    cita: "Derogar la Ley 15/1997 de 25 de abril, sobre habilitación de nuevas formas de gestión del Sistema Nacional de Salud, aprobada por el PP que permite la privatización y externalización de los servicios sanitarios."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa de EH Bildu (PDF oficial, sha256 ceb655c9…), página 11. Busca «Derogar la Ley 15/1997 de 25 de abril»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

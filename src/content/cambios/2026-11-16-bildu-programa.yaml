@@ -1,0 +1,9 @@
+fecha: "2026-11-16"
+partido: "bildu"
+tipo: "estado-programa"
+descripcion: "Publica su programa para el 29N, «Garantía y derechos» (30 páginas, 3 capítulos), y pasa de «pendiente» a «publicado». Es la fuente principal de sus propuestas: hemos cotejado con él las que ya teníamos y citamos la página. Las pensiones mínimas se concretan en al menos 1.220 € ligados al SMI; la indemnización por despido improcedente, en al menos 45 días; para el salario mínimo, el programa propone que cada comunidad pueda fijar el suyo y no da la cifra del 60 %. No aparece en el programa la regulación de los alquileres de temporada: queda con su fuente anterior."
+propuestas:
+  - "bildu/pensiones-minimas-smi"
+  - "bildu/despido-horas-extra-jornada"
+  - "bildu/smi-60-salario-medio"
+  - "bildu/rechazo-otan-gasto-militar"

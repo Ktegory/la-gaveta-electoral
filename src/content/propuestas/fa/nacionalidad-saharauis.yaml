@@ -1,0 +1,16 @@
+partido: "fa"
+tema: "inmigracion"
+subtema: "nacionalidad"
+titulo: "Devolver la nacionalidad española a los saharauis nacidos bajo administración española antes de 1977"
+resumen: "Afectaría a quienes nacieron antes de septiembre de 1977 y a sus descendientes en primer grado."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "151"
+    cita: "Devolveremos la nacionalidad española a las y los saharauis nacidos bajo administración española antes de septiembre de 1977, así como a sus descendientes en primer grado de consanguinidad."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 151 (página 128 del PDF). Busca «nacidos bajo administración española antes de septiembre»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

@@ -363,9 +363,12 @@ p .fuera { margin: 0; vertical-align: 1px }
 .foot { --foot-bg: #1C1C1B; padding-block: 32px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-size: .875rem; background: var(--foot-bg); color: #B9B9B3 }
 .foot b { color: #F4F4F1 }
 .foot-id { display: grid; justify-items: start; gap: 16px }
+.foot-autor { margin-top: -8px; font-size: .75rem; color: #8F8F89 }
+.foot-autor a { color: inherit; text-decoration: underline; text-decoration-color: rgba(185,185,179,.4) }
+.foot-autor a:hover { color: #F4F4F1 }
 .foot .logo { color: #fff }
 .foot .logo:focus-visible { outline-color: #fff }
-.foot nav { display: flex; gap: 20px; flex-wrap: wrap; justify-content: flex-end; align-self: end; margin-left: auto; font-weight: 600; color: #F4F4F1 }
+.foot nav { display: flex; gap: 20px; flex-wrap: wrap; justify-content: flex-end; align-self: center; margin-left: auto; font-weight: 600; color: #F4F4F1 }
 @container site (max-width: 600px) { .foot nav { justify-content: flex-start; margin-left: 0 } }
 .foot a { text-underline-offset: 3px }
 .foot :where(a):focus-visible { outline-color: #fff; box-shadow: 0 0 0 6px var(--foot-bg), 0 0 0 9px #fff }

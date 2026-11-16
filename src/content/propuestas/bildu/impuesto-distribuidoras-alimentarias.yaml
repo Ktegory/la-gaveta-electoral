@@ -1,0 +1,16 @@
+partido: "bildu"
+tema: "fiscalidad"
+subtema: "sociedades"
+titulo: "Crear un impuesto especial sobre los beneficios de las grandes distribuidoras de alimentación"
+resumen: "Estaría concertado con las haciendas forales, que lo gestionarían y recaudarían. El programa no fija tipo ni umbral."
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "14"
+    cita: "Aprobar un nuevo impuesto especial sobre los beneficios de las grandes distribuidoras alimentarias, concertado con las haciendas forales para su gestión y recaudación."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa de EH Bildu (PDF oficial, sha256 ceb655c9…), página 14. Busca «impuesto especial sobre los beneficios de las grandes distribuidoras»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

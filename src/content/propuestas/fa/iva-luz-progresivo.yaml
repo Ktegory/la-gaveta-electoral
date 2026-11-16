@@ -1,0 +1,16 @@
+partido: "fa"
+tema: "fiscalidad"
+subtema: "iva"
+titulo: "Hacer progresivo el IVA de la luz según el consumo por persona, del 0 % al 21 %"
+resumen: "El 0 % se aplicaría a los consumos más bajos, a las personas en situación de vulnerabilidad y al autoconsumo. Los consumos eléctricos vitales también tendrían un tipo reducido en el Impuesto Especial sobre la Electricidad."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "52"
+    cita: "El IVA de la electricidad dependerá del consumo por persona: empezará en el 0 % para los consumos más bajos y personas en situación de vulnerabilidad y el autoconsumo y subirá de forma progresiva en los tramos altos hasta el 21 %."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 52 (página 47 del PDF). Busca «El IVA de la electricidad dependerá del consumo»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

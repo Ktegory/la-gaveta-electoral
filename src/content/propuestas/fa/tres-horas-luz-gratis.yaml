@@ -1,0 +1,17 @@
+partido: "fa"
+tema: "energia"
+subtema: "precio"
+titulo: "Dar tres horas de luz gratis al día a todos los hogares en la franja de más producción solar"
+resumen: "Las ofrecería una comercializadora pública y las grandes comercializadoras estarían obligadas por ley a incluirlas. La CNMC sancionaría las subidas en el resto del día que las compensen. Los peajes de red de esas horas se pagarían con el gravamen a las grandes energéticas."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "71"
+    cita: "En las horas de mayor producción de energía eléctrica solar y en las que hay excedente con respecto a lo que consumimos, la luz será gratis para todos los hogares, tengan o no placas solares."
+fechaAnuncio: "2026-11-16"
+destacada: true
+orden: 6
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 71 (página 64 del PDF), punto «Tres horas de luz gratis al día». Busca «la luz será gratis para todos los hogares»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

@@ -1,0 +1,16 @@
+partido: "bildu"
+tema: "seguridad"
+subtema: "delitos"
+titulo: "Presentar de nuevo la reforma de la «ley mordaza», con la desobediencia como infracción leve y sin pelotas de goma"
+resumen: "Se basaría en el acuerdo que EH Bildu alcanzó «hace dos años», cuya tramitación quedó bloqueada. Las pelotas de goma se sustituirían por medios menos lesivos. Las sanciones se cancelarían si la persona denunciada se retracta."
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "22"
+    cita: "Volveremos a presentar la Proposición de Ley de Protección de las Libertades y Seguridad Ciudadana para acabar con la Ley Mordaza […] Acabar con el uso de las pelotas de goma mediante su sustitución por medios menos lesivos y la implantación de protocolos específicos de actuación."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa de EH Bildu (PDF oficial, sha256 ceb655c9…), página 22. Busca «Volveremos a presentar la Proposición de Ley»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

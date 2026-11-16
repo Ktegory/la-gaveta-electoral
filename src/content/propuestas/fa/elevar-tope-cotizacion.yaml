@@ -1,0 +1,16 @@
+partido: "fa"
+tema: "pensiones"
+subtema: "sostenibilidad"
+titulo: "Seguir elevando de forma progresiva el tope máximo de cotización a la Seguridad Social"
+resumen: "Junto con una aportación adicional de las empresas más automatizadas al Mecanismo de Equidad Intergeneracional. El programa no da cifras ni dice hasta dónde subiría el tope."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "64"
+    cita: "Continuaremos elevando progresivamente el tope máximo de cotización y reforzaremos el mecanismo de equidad intergeneracional con una aportación adicional de las empresas más automatizadas."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 64 (página 58 del PDF). Busca «Continuaremos elevando progresivamente». Sustituye a fa/eliminar-tope-cotizacion: la nota del 24 oct hablaba de eliminar el tope; el programa, de elevarlo."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

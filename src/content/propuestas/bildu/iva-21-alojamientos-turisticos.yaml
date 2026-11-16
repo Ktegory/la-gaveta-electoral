@@ -1,0 +1,16 @@
+partido: "bildu"
+tema: "fiscalidad"
+subtema: "iva"
+titulo: "Aplicar un IVA del 21 % a los alojamientos turísticos de corta duración"
+resumen: "La medida figura en el apartado de vivienda y se repite en el de política fiscal. En vivienda, EH Bildu dice también que volverá a presentar su proposición de ley para prohibir que las plataformas digitales anuncien y contraten pisos turísticos ilegales."
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "6"
+    cita: "Establecer un IVA del 21% para alojamientos turísticos de corta duración."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa de EH Bildu (PDF oficial, sha256 ceb655c9…), página 6. Busca «IVA del 21% para alojamientos turísticos». La medida se repite en la página 14 («Establecer un 21% de IVA para los alojamientos turísticos de corta duración»); la proposición de ley sobre pisos turísticos ilegales está en la página 5."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

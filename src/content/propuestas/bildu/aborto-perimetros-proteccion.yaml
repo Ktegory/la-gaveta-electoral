@@ -1,0 +1,16 @@
+partido: "bildu"
+tema: "igualdad"
+subtema: "aborto"
+titulo: "Establecer perímetros de protección frente al acoso en los centros sanitarios que practican abortos"
+resumen: "Se sumarían protocolos preventivos y la recogida de datos sobre coacciones, acoso o intimidaciones. El programa no fija la distancia de esos perímetros. También propone «blindar» el derecho al aborto."
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "19"
+    cita: "Avanzar en medidas de protección frente al acoso en el acceso al aborto. Particularmente defenderemos medidas concretas de protección en torno a los centros sanitarios que practican interrupciones voluntarias del embarazo como perímetros de protección, protocolos preventivos y recogida de datos sobre posibles coacciones, acoso o intimidaciones."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa de EH Bildu (PDF oficial, sha256 ceb655c9…), página 19. Busca «como perímetros de protección, protocolos preventivos»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

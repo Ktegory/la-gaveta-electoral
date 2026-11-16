@@ -1,0 +1,16 @@
+partido: "fa"
+tema: "instituciones"
+subtema: "justicia"
+titulo: "Elegir a los vocales judiciales del CGPJ por mayoría absoluta si en dos meses no hay acuerdo"
+resumen: "Se mantendría la mayoría de tres quintos en la primera votación. Si en dos meses no hay acuerdo, las Cámaras podrían elegirlos en segunda votación por mayoría absoluta. El nuevo Consejo podría constituirse aunque falten los vocales del turno de juristas."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "175"
+    cita: "Los vocales del turno judicial se seguirán eligiendo por mayoría de tres quintos, pero si en dos meses no hay acuerdo, las Cámaras podrán elegirlos en segunda votación por mayoría absoluta."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 175 (página 148 del PDF). Busca «en segunda votación por mayoría absoluta»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

@@ -4,12 +4,15 @@ subtema: "prestaciones"
 titulo: "Ampliar a todas las edades las ayudas para gafas y lentillas del Plan VEO"
 resumen: "Según la nota, el Plan VEO da hoy ayudas de hasta 100 euros al año para gafas y lentillas a menores de 16 años. El objetivo que fija el Frente Amplio es el acceso gratuito para cualquier persona que las necesite."
 fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "31"
+    cita: "Universalizaremos el «Plan Veo» (gafas y lentillas gratuitas) a todos los grupos de edad de la población residente (ampliando la medida inicial para menores de 16 años)."
   - fuente: "fa/nota-salud-bucodental-2026-11-14"
     cita: "La formación propone ampliar a todas las edades el Plan VEO"
 fechaAnuncio: "2026-11-14"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cita tomada el 15 nov de la nota oficial del Frente Amplio (busca «a todas las edades el Plan VEO»). Subtema nuevo «Prestaciones y cartera de servicios», dentro de Sanidad."
-revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-15"
+  nota: "16 nov: añadimos el programa como fuente principal (página 31; página 27 del PDF). Busca «Universalizaremos el «Plan Veo»». Quitada la firma para revisar de nuevo."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

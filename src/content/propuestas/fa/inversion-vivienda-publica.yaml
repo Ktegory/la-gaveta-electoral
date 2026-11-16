@@ -1,11 +1,19 @@
 partido: "fa"
 tema: "vivienda"
 subtema: "vivienda-publica"
-titulo: "Invertir hasta el 1 % del PIB en vivienda pública y pasar los pisos de la SAREB al parque público"
+titulo: "Invertir cada año el 1 % del PIB en un parque público de 1,5 millones de viviendas y pasar la SAREB a Casa 47"
+resumen: "Unos 17.000 millones de euros al año. El objetivo es sumar 1,5 millones de viviendas públicas en 12 años (125.000 al año) y llegar al 20 % del parque en 2035. Todas las fincas y suelos residenciales de la SAREB pasarían a la empresa pública Casa 47."
 fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "13"
+    cita: "Asignación presupuestaria permanente del 1 % del PIB anual (aprox. 17.000 M€/ año) consagrada a la creación del parque público de vivienda."
   - fuente: "fa/nota-impuesto-vivienda-2026-10-28"
   - fuente: "fa/nota-expropiacion-vivienda-2026-11-06"
 fechaAnuncio: "2026-11-06"
-destacada: false
+destacada: true
+orden: 1
+comprobacion:
+  estado: encontrada
+  nota: "16 nov: añadimos el programa como fuente principal (página 13; página 10 del PDF). Busca «Asignación presupuestaria permanente del 1 %». La SAREB pasa a Casa 47 en la misma página: busca «SAREB a la empresa pública Casa 47». El objetivo de 1,5 millones está en la misma página: busca «1,5 millones de viviendas públicas en 12 años». Quitada la firma para revisar de nuevo."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-10"
+fechaRevision: "2026-11-16"

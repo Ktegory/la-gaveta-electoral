@@ -1,0 +1,16 @@
+partido: "bildu"
+tema: "fiscalidad"
+subtema: "transporte"
+titulo: "Renovar las vías como alternativa a la alta velocidad en el corredor navarro y en la conexión del País Vasco con Burgos"
+resumen: "Seguiría el principio de «una plataforma, tres servicios»: trenes de media y larga distancia a 200 km/h, cercanías y transporte de mercancías."
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "17"
+    cita: "Apostar por una renovación integral de las vías en aquellos corredores en los que es posible ofrecer una alternativa de renovación a la Alta Velocidad (especialmente el corredor navarro y la conexión de la CAPV con Burgos). Desarrollar la alternativa bajo el principio de “una plataforma, tres servicios” donde, además de un servicio de media y larga distancia de velocidad alta (200 km/h) se garantice un servicio de cercanías de calidad y la posibilidad de transportar mercancías."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa de EH Bildu (PDF oficial, sha256 ceb655c9…), página 17. Busca «una plataforma, tres servicios»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

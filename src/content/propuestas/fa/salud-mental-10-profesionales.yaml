@@ -1,0 +1,16 @@
+partido: "fa"
+tema: "sanidad"
+subtema: "prestaciones"
+titulo: "Crear un fondo para la salud mental comunitaria y llegar a 10 profesionales por cada 100.000 habitantes"
+resumen: "El fondo sería específico para la Red de Salud Mental Comunitaria. La ratio mínima incluiría psiquiatría, psicología clínica, enfermería especializada, trabajo social, terapeutas y expertos por experiencia."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "32"
+    cita: "Crearemos un fondo específico para la Red de Salud Mental Comunitaria y aumentaremos las ratios de profesionales (psiquiatría, psicología clínica, enfermería especializada, trabajo social, terapeutas y expertos por experiencia) hasta un mínimo de 10 por cada 100.000 habitantes."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 32 (página 28 del PDF). Busca «fondo específico para la Red de Salud Mental»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

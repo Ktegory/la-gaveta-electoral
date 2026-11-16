@@ -1,0 +1,18 @@
+partido: "bildu"
+tema: "territorial"
+subtema: "lenguas-cooficiales"
+titulo: "Garantizar el derecho a usar el euskera ante todas las administraciones del Estado"
+resumen: "También reforzar su presencia en el ámbito digital y audiovisual."
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "25"
+    cita: "Garantizar la atención y uso del euskera en todas las administraciones del estado, asegurando el derecho de la ciudadanía vasca a interactuar y ser atendida en nuestra lengua tanto de manera presencial como telemática o telefónica."
+  - fuente: "bildu/nota-programa-2026-11-16"
+    cita: "plantea garantizar el derecho a utilizar el euskera ante todas las administraciones del Estado y reforzar su presencia en el ámbito digital y audiovisual"
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "16 nov: añadimos el programa como fuente principal (página 25). Busca «uso del euskera en todas las administraciones»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

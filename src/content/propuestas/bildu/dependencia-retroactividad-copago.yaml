@@ -1,0 +1,16 @@
+partido: "bildu"
+tema: "igualdad"
+subtema: "cuidados"
+titulo: "Pagar la dependencia desde la fecha de solicitud y quitar el copago de los cuidados personales"
+resumen: "Las prestaciones económicas por dependencia serían retroactivas desde el día en que se piden. Las familias solo pagarían el alojamiento y la manutención, como paso hacia un sistema gratuito."
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "12"
+    cita: "Dar pasos en el derecho subjetivo a los cuidados, empezando por la retroactividad de las prestaciones económicas por la dependencia desde la fecha de solicitud. […] Modificar cuestiones relativas al copago en la ley de dependencia, con el objetivo de excluir el copago relativo a los cuidados personales y que las familias o personas afectadas, solamente, se hagan cargo del copago correspondiente al hospedaje y manutención avanzando hacia la gratuidad del sistema."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa de EH Bildu (PDF oficial, sha256 ceb655c9…), página 12. Busca «retroactividad de las prestaciones económicas por la dependencia». El copago está en el mismo apartado («excluir el copago relativo a los cuidados personales»)."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

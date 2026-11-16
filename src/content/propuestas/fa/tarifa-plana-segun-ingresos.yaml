@@ -2,14 +2,17 @@ partido: "fa"
 tema: "empleo"
 subtema: "autonomos"
 titulo: "Mantener la tarifa plana de autónomos mientras se ingrese menos del SMI, en lugar de limitarla a 2 años"
-resumen: "Hoy la tarifa plana de 88 € dura 2 años. El Frente Amplio propone que dependa de los ingresos y no del tiempo: se pagaría esa cuota mientras se cobre menos del salario mínimo. No ha dado más detalles."
+resumen: "Mientras los ingresos reales sean inferiores al salario mínimo anual por causas objetivas, como las condiciones del mercado o el inicio de la actividad, se podría pagar una cotización fija bonificada sin perder derechos de protección. Hoy la tarifa plana de 88 € dura 2 años."
 fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "103"
+    cita: "Cuando los ingresos reales percibidos por la persona trabajadora autónoma sean inferiores al SMI anual por causas objetivas, tales como las condiciones del mercado o el inicio de actividad, se podrá acoger a una cotización fija bonificada sin pérdida de derechos de protección."
   - fuente: "fa/instagram-autonomos-2026-11-15"
     cita: "Proponemos ajustarla a tus ingresos, no al tiempo: que no empieces a pagar más hasta que tu negocio sea sólido."
 fechaAnuncio: "2026-11-15"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cita transcrita el 15 nov de la imagen 3 de 6 del carrusel de @elfrenteamplio, titulada «Tarifa plana mientras cobres menos del SMI» (de ahí el umbral del SMI, que no aparece en la frase citada). No está en el pie de la publicación. El Frente Amplio aún no ha publicado programa."
-revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-15"
+  nota: "16 nov: añadimos el programa como fuente principal (página 103; página 92 del PDF). Busca «cotización fija bonificada». Quitada la firma para revisar de nuevo."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

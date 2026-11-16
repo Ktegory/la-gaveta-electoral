@@ -1,0 +1,16 @@
+partido: "fa"
+tema: "sanidad"
+subtema: "personal"
+titulo: "Librar también la mañana del día de la guardia de 24 horas en la sanidad pública"
+resumen: "El descanso se aplicaría antes de la guardia, igual que ahora se libra el día siguiente. Las comunidades autónomas aumentarían sus plantillas para implantar turnos de 8 y 12 horas."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "34"
+    cita: "Impondremos el descanso/libranza la mañana del día de la guardia (libranza del entrante) igual que ahora se libra la posterior. Promoveremos que los servicios autonómicos de salud aumenten sus plantillas en función de sus especificidades para implantar turnos de 8 y 12 h."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 34 (página 30 del PDF). Busca «libranza la mañana del día de la guardia»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

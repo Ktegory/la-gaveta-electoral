@@ -1,0 +1,16 @@
+partido: "fa"
+tema: "fiscalidad"
+subtema: "irpf"
+titulo: "Bajar el IRPF a los salarios de hasta 27.000 euros y que quien cobre el salario mínimo no lo pague"
+resumen: "Se haría ampliando la reducción por rendimientos del trabajo. La rebaja sería decreciente hasta los 27.000 euros al año, 1,5 veces el SMI."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "51"
+    cita: "Bajaremos el IRPF a las rentas del trabajo de hasta 27.000 euros (1,5 veces el SMI). Aumentaremos la reducción por rendimientos del trabajo para que quien cobre el salario mínimo no pague IRPF y extenderemos esa rebaja, de forma decreciente, hasta los 27.000 euros."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 51 (página 46 del PDF). Busca «Bajaremos el IRPF a las rentas del trabajo»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

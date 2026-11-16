@@ -1,0 +1,18 @@
+partido: "bildu"
+tema: "pensiones"
+subtema: "pensiones-minimas"
+titulo: "Subir las pensiones mínimas al menos a 1.220 € y actualizarlas conforme al salario mínimo"
+resumen: "La cuantía y su actualización irían ligadas al SMI, como pide el movimiento de pensionistas. No da plazo."
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "8"
+    cita: "Aumentar las pensiones mínimas al menos hasta los 1.220 €, estableciendo la cuantía y su actualización acorde al SMI como exige el movimiento de pensionistas."
+  - fuente: "bildu/nota-pensiones-2026-11-16"
+    cita: "EH Bildu propondrá equiparar las pensiones mínimas al Salario Mínimo Interprofesional (SMI)"
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "16 nov: añadimos el programa como fuente principal (página 8). Busca «al menos hasta los 1.220 €». El programa concreta la cifra (1.220 €) y liga la actualización al SMI. Título y resumen ajustados. Quitada la firma para revisar de nuevo."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

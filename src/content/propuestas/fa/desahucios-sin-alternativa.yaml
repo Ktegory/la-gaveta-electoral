@@ -1,0 +1,16 @@
+partido: "fa"
+tema: "vivienda"
+subtema: "okupacion"
+titulo: "Prohibir por ley los desahucios de personas vulnerables sin una alternativa habitacional previa"
+resumen: "La administración pagaría el alquiler, a precio de índice, a los pequeños propietarios que sean personas físicas. Los grandes tenedores tendrían que ofrecer un alquiler social de al menos 7 años, ajustado a los ingresos de la familia, antes de pedir el desalojo en los tribunales."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "18"
+    cita: "Prohibiremos de forma permanente y con rango de ley la ejecución de lanzamientos o desahucios de personas y familias en situación de vulnerabilidad económica o social sin que las administraciones públicas hayan proporcionado con carácter previo una alternativa habitacional digna, adecuada y estable."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 18 (página 15 del PDF). Busca «con rango de ley la ejecución de lanzamientos»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-16"

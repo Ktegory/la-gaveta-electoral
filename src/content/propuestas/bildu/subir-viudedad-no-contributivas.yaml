@@ -1,0 +1,18 @@
+partido: "bildu"
+tema: "pensiones"
+subtema: "pensiones-minimas"
+titulo: "Subir al menos un 15 % las pensiones más bajas, en especial las de viudedad y las no contributivas"
+resumen: "No da plazo."
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "8"
+    cita: "Nuevo alza de las pensiones de viudedad y no contributivas de al menos un 15 % hasta alcanzar valores de suficiencia"
+  - fuente: "bildu/nota-pensiones-2026-11-16"
+    cita: "incrementar al menos un 15% las pensiones más bajas, especialmente las de viudedad y las no contributivas"
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "16 nov: añadimos el programa como fuente principal (página 8). Busca «al menos un 15 %». Quitada la firma para revisar de nuevo."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

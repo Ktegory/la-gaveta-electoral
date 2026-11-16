@@ -1,0 +1,18 @@
+partido: "bildu"
+tema: "fiscalidad"
+subtema: "sociedades"
+titulo: "Recuperar el impuesto a las empresas energéticas"
+resumen: "Dentro de una mayor contribución de grandes empresas, banca y grandes fortunas."
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "14"
+    cita: "Recuperar el impuesto a la energéticas que PNV, UPN, PP, VOX y JUNTS tumbaron, haciéndolo permanente."
+  - fuente: "bildu/nota-programa-2026-11-16"
+    cita: "recuperar el impuesto a las empresas energéticas"
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "16 nov: añadimos el programa como fuente principal (página 14). Busca «Recuperar el impuesto a la energéticas». Quitada la firma para revisar de nuevo."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

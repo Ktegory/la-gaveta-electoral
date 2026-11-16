@@ -1,0 +1,16 @@
+partido: "bildu"
+tema: "exterior"
+subtema: "israel-palestina"
+titulo: "Romper el acuerdo de la UE con Israel, dejar de comerciar con empresas israelíes y bloquear toda venta de armas"
+resumen: "El programa llama a ese acuerdo «Tratado de Amistad» entre la UE e Israel. Busca el aislamiento económico y político de Israel. También pide que el reconocimiento del Estado palestino vaya acompañado de políticas específicas."
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "29"
+    cita: "propondremos tomar todas las medidas que busquen el aislamiento económico y político de Israel, rompiendo para ello el Tratado de Amistad que la UE mantiene con Israel, así como la finalización de las relaciones económicas y comerciales con empresas o capital israelíes. […] Además, propondremos endurecer el embargo de armas para un embargo real y efectivo, bloqueando por completo la venta de armas."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa de EH Bildu (PDF oficial, sha256 ceb655c9…), página 29. Busca «rompiendo para ello el Tratado de Amistad»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

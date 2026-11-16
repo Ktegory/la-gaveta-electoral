@@ -1,0 +1,16 @@
+partido: "fa"
+tema: "vivienda"
+subtema: "grandes-tenedores"
+titulo: "Prohibir por ley comprar vivienda para algo que no sea residir en ella o alquilarla a precio asequible regulado"
+resumen: "La prohibición sería absoluta para las personas jurídicas con ánimo de lucro, como fondos, SOCIMI, inmobiliarias y bancos. Además, la empresa pública Casa 47 tendría un derecho de tanteo y retracto para comprar edificios completos y carteras de viviendas antes de su venta privada, por detrás de comunidades y ayuntamientos."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "14"
+    cita: "Prohibiremos por ley la compra de viviendas residenciales para cualquier fin que no sea la residencia habitual y permanente de la persona compradora o su arrendamiento bajo el régimen de alquiler asequible regulado. Esta prohibición alcanzará de forma absoluta a cualquier persona jurídica con ánimo de lucro, como fondos buitre, SOCIMIs, inmobiliarias, entidades bancarias y fondos de inversión."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 14 (página 11 del PDF). Busca «Prohibiremos por ley la compra de viviendas residenciales»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-16"

@@ -4,12 +4,15 @@ subtema: "prestaciones"
 titulo: "Incluir los audífonos en la cartera común de servicios del Sistema Nacional de Salud"
 resumen: "Financiación pública de los audífonos para todas las personas que los necesiten, con especial atención a los mayores de 65 años."
 fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "31"
+    cita: "Financiación pública e inclusión de los audífonos en la cartera común de servicios para toda la población que los necesite, con programas prioritarios de ayudas para mayores de 65 años y personas con discapacidad."
   - fuente: "fa/nota-salud-bucodental-2026-11-14"
     cita: "Incorporar los audífonos a la cartera común de servicios del Sistema Nacional de Salud."
 fechaAnuncio: "2026-11-14"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cita tomada el 15 nov de la nota oficial del Frente Amplio: es el título de la tercera medida (busca «Incorporar los audífonos»). Subtema nuevo «Prestaciones y cartera de servicios», dentro de Sanidad."
-revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-15"
+  nota: "16 nov: añadimos el programa como fuente principal (página 31; página 27 del PDF). Busca «inclusión de los audífonos en la cartera». Quitada la firma para revisar de nuevo."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

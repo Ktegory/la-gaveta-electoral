@@ -5,7 +5,11 @@ titulo: "Tipo efectivo mínimo del 15 % para la gran empresa y la banca"
 fuentes:
   - fuente: "fa/nota-fiscalidad-2026-11-05"
 fechaAnuncio: "2026-11-05"
-destacada: true
-orden: 6
-revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-10"
+destacada: false
+estado: "sustituida"
+sustituidaPor: "fa/tipo-minimo-sociedades-20"
+comprobacion:
+  estado: encontrada
+  nota: "16 nov: el programa del 29N fija un tipo mínimo efectivo del 20 %, no del 15 % (página 49). La marcamos como sustituida por fa/tipo-minimo-sociedades-20, que pasa a ser destacada. Quitada la firma para revisar de nuevo."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

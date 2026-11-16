@@ -1,0 +1,16 @@
+partido: "fa"
+tema: "educacion"
+subtema: "infantil"
+titulo: "Universalizar la educación de 0 a 3 años con plaza pública gratuita para toda familia que la pida"
+resumen: "El primer ciclo de Infantil se integraría del todo en el sistema educativo. Se reformaría el Real Decreto 132/2010 para fijar un máximo de 4 niños por profesional de 0 a 1 año, 6 de 1 a 2 años y 8 de 2 a 3 años."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "29"
+    cita: "Integraremos plenamente el primer ciclo de educación infantil en el sistema educativo, ampliaremos plazas públicas gratuitas garantizadas para toda familia solicitante y comedor gratuito en la red pública de Infantil y Primaria."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 29 (página 25 del PDF). Busca «plazas públicas gratuitas garantizadas para toda familia»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

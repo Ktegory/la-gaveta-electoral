@@ -4,6 +4,9 @@ subtema: "okupacion"
 titulo: "Poner fin a los desahucios sin alternativa habitacional"
 resumen: "Pide una protección permanente frente a los desahucios."
 fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "5"
+    cita: "Establecer de manera estructural y permanente la prohibición de desahucios para personas y familias vulnerables sin alternativa habitacional, acompañado del mecanismo de compensación con financiación estatal."
   - fuente: "bildu/nota-desahucios-2026-09-28"
     cita: EH Bildu considera prioritario que ninguna persona o familia vulnerable pueda ser expulsada de su vivienda sin una solución habitacional garantizada.
   - fuente: "bildu/nota-decretos-vivienda-2026-09-30"
@@ -13,5 +16,6 @@ destacada: true
 orden: 6
 comprobacion:
   estado: encontrada
-revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-11"
+  nota: "16 nov: añadimos el programa como fuente principal (página 5). Busca «prohibición de desahucios para personas». Quitada la firma para revisar de nuevo."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

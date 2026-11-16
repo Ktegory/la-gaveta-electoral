@@ -1,0 +1,16 @@
+partido: "bildu"
+tema: "instituciones"
+subtema: "constitucion"
+titulo: "Derogar la reforma del artículo 135 de la Constitución que da prioridad al pago de la deuda"
+resumen: "La reforma la aprobaron PP y PSOE. En el mismo apartado, EH Bildu propone revertir las reglas fiscales que limitan la inversión de los ayuntamientos y rechaza volver a políticas de austeridad."
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "14"
+    cita: "Derogar la modificación del artículo 135 de la constitución española realizada por PP y PSOE que establece la prioridad del pago de deuda sobre la inversión social y pública."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa de EH Bildu (PDF oficial, sha256 ceb655c9…), página 14. Busca «modificación del artículo 135 de la constitución»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

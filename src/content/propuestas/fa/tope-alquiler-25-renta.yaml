@@ -1,0 +1,17 @@
+partido: "fa"
+tema: "vivienda"
+subtema: "alquiler"
+titulo: "Limitar el alquiler en zonas tensionadas al 25 % de la renta media del barrio o al índice SERPAVI, si es menor"
+resumen: "Se aplicaría por ley en todas las zonas tensionadas. El programa calcula una bajada media del 35 % sobre los precios actuales. En municipios de más de 200.000 habitantes o con masificación turística severa habría una rebaja adicional obligatoria del 30 % sobre el valor regulado."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "16"
+    cita: "el techo máximo de la mensualidad será la cifra menor resultante de comparar el 25 % de la renta neta media por hogar de la sección censal y el tope fijado por el índice SERPAVI."
+fechaAnuncio: "2026-11-16"
+destacada: true
+orden: 2
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 16 (página 13 del PDF). Busca «el 25 % de la renta neta media por hogar»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-16"

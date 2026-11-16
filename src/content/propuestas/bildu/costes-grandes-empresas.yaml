@@ -1,9 +1,12 @@
 partido: "bildu"
 tema: "energia"
 subtema: "precio"
-titulo: "Que las grandes energéticas, petroleras y alimentarias asuman las subidas de costes en épocas de inflación"
-resumen: "Para que, en situaciones de inflación o de crisis de abastecimiento, las subidas de productos y servicios básicos no recaigan en la ciudadanía."
+titulo: "Obligar a las grandes empresas energéticas y alimentarias a absorber parte de las subidas de costes en las crisis"
+resumen: "Sería un mecanismo de intervención extraordinaria sobre sus márgenes, para que en emergencias, crisis de abastecimiento o subidas extraordinarias de costes no trasladen esas subidas de forma desproporcionada a los precios finales. Notas anteriores de EH Bildu mencionaban también a las petroleras."
 fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "8"
+    cita: "Establecer un mecanismo de intervención extraordinaria sobre los márgenes de las grandes empresas de los sectores energético y alimentario, que impida que, en situaciones de emergencia, crisis de abastecimiento o incrementos extraordinarios de costes, trasladen de forma desproporcionada dichas subidas a los precios finales al consumidor"
   - fuente: "bildu/nota-alquiler-precios-2026-11-09"
     cita: Propondremos que sean las grandes empresas energéticas, petroleras y alimentarias quienes, con sus enormes márgenes de beneficio, deban asumir y absorber, en situaciones inflacionarias y de crisis de abastecimiento, el aumento de los costes de estos productos y servicios básicos.
   - fuente: "bildu/nota-smi-mercabilbao-2026-11-13"
@@ -13,6 +16,6 @@ destacada: true
 orden: 3
 comprobacion:
   estado: encontrada
-  nota: "Lo dice el candidato Oskar Matute en el Fórum Europa (cita entre comillas en la nota oficial). 15 nov: añadida como segunda fuente la nota de Mercabilbao (13 nov), donde Matute lo repite para las grandes empresas energéticas y alimentarias (busca «asuman el aumento de los costes»)."
-revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-15"
+  nota: "16 nov: añadimos el programa como fuente principal (página 8). Busca «intervención extraordinaria sobre los márgenes». Título ajustado al programa. Quitada la firma para revisar de nuevo."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

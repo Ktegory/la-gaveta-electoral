@@ -1,4 +1,10 @@
 fecha: "2026-11-16"
 partido: "fa"
 tipo: "estado-programa"
-descripcion: "El Frente Amplio pasa de «pendiente» a «avance»: desde la noche del 15 de noviembre tiene en su web una sección de programa, «Un programa como una casa», con 8 medidas, y anuncia el programa completo en PDF «próximamente». Siete de esas medidas ya estaban en la gaveta por sus notas anteriores."
+descripcion: "El Frente Amplio pasa de «pendiente» a «avance»: desde la noche del 15 de noviembre tiene en su web una sección de programa, «Un programa como una casa», con 8 medidas, y anuncia el programa completo en PDF «próximamente». Siete de esas medidas ya estaban en la gaveta por sus notas anteriores. El 16 de noviembre, a mediodía, publicó el programa completo (178 páginas impresas, 18 capítulos), presentado en Madrid, y pasa a «publicado». Es la fuente principal de sus propuestas: hemos cotejado con él las que ya teníamos y citamos la página. El tipo mínimo de Sociedades pasa del 15 % al 20 %; el tope de cotización se eleva de forma progresiva en lugar de eliminarse; la huelga de alquileres deposita la renta en consignación judicial y no en un fondo público, y la agencia contra la corrupción se llama Oficina. No aparecen en el programa el fin de los coches de combustión en 2035 ni la ventanilla única para pymes: quedan con su fuente anterior."
+propuestas:
+  - "fa/tipo-minimo-sociedades"
+  - "fa/eliminar-tope-cotizacion"
+  - "fa/huelgas-alquiler"
+  - "fa/agencia-contra-corrupcion"
+  - "fa/renovables-100-2040"

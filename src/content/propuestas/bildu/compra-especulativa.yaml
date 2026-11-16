@@ -3,6 +3,9 @@ tema: "vivienda"
 subtema: "grandes-tenedores"
 titulo: "Prohibir la compra especulativa de vivienda"
 fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "5"
+    cita: "Prohibición de la compra especulativa de viviendas por parte de entidades jurídicas con ánimo de lucro, fondos de inversión y persona gran tenedora física o jurídica."
   - fuente: "bildu/nota-decretos-vivienda-2026-09-30"
     cita: Por ello, EH Bildu mantiene la exigencia de aprobar medidas estructurales como los contratos indefinidos, la protección permanente frente a los desahucios, la prohibición de la compra especulativa y una regulación estructural de los precios.
   - fuente: "bildu/nota-alquiler-precios-2026-11-09"
@@ -12,6 +15,6 @@ destacada: true
 orden: 2
 comprobacion:
   estado: encontrada
-  nota: La frase de la nota del 9 nov tiene una errata en el original («impulsará en el Congreso será»); se copia tal cual.
-revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-11"
+  nota: "16 nov: añadimos el programa como fuente principal (página 5). Busca «Prohibición de la compra especulativa». Quitada la firma para revisar de nuevo."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

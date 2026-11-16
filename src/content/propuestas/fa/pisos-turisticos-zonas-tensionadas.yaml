@@ -1,0 +1,16 @@
+partido: "fa"
+tema: "vivienda"
+subtema: "alquiler"
+titulo: "Extinguir en 3 años las licencias de pisos turísticos en edificios residenciales de zonas tensionadas"
+resumen: "Afectaría también a los alquileres de temporada fraudulentos. Los pisos turísticos pasarían a pagar el IVA general del 21 %, perderían deducciones en Sociedades e IRPF y tendrían un recargo de hasta el 150 % en el IBI. Los alquileres de 30 días o menos se considerarían turísticos."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "15"
+    cita: "Tramitaremos la extinción progresiva y definitiva de todas las licencias de Viviendas de Uso Turístico (VUT) y alquileres de temporada fraudulentos en edificios residenciales en un plazo máximo de 3 años dentro de las zonas tensionadas, devolviendo las fincas al uso residencial estable."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 15 (página 12 del PDF). Busca «en un plazo máximo de 3 años dentro de las zonas tensionadas»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-16"

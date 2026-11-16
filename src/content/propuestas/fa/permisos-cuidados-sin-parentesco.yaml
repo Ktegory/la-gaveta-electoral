@@ -4,12 +4,15 @@ subtema: "cuidados"
 titulo: "Ampliar los permisos retribuidos por enfermedad, fallecimiento y cuidados a personas designadas sin parentesco"
 resumen: "Incluye también la hospitalización, y valdría aunque no convivan en el mismo domicilio."
 fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "28"
+    cita: "Las personas designadas, sin necesidad de parentesco ni convivencia, serán referentes a efectos de permisos retribuidos por enfermedad, hospitalización, fallecimiento y cuidados, así como para el acompañamiento y la crianza de menores."
   - fuente: "fa/programa-web-familias-elegidas-2026-11-15"
     cita: "Proponemos ampliar los permisos laborales retribuidos para que las personas designadas como referentes puedan ejercer derechos por enfermedad, hospitalización, fallecimiento y cuidados, aunque no sean familiares ni convivan en el mismo domicilio."
 fechaAnuncio: "2026-11-15"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cita cotejada el 16 nov en la ficha del programa en la web del Frente Amplio (busca «ampliar los permisos laborales retribuidos»). La misma medida la presentó Ada Colau en Instagram el 15 nov."
-revisadaPor: "Khiustin Tornés"
+  nota: "16 nov: añadimos el programa como fuente principal (página 28; página 24 del PDF). Busca «sin necesidad de parentesco ni convivencia». Quitada la firma para revisar de nuevo."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
 fechaRevision: "2026-11-16"

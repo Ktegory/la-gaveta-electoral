@@ -4,12 +4,15 @@ subtema: "transporte"
 titulo: "Destinar a la red ferroviaria los fondos del plan DORA de ampliación de aeropuertos"
 resumen: "Según el partido, el plan suma casi 13.000 millones de euros. La misma nota pide aumentar la inversión en personal y mantenimiento ferroviario y reforzar cercanías, sin dar cifras."
 fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "120"
+    cita: "Proponemos destinar al ferrocarril los casi 13.000 millones previstos para ampliar aeropuertos en el Documento de Regulación Aeroportuaria (plan DORA) del Ministerio de Transportes y Movilidad Sostenible."
   - fuente: "fa/nota-tren-2026-11-02"
     cita: "Colau ha propuesto destinar de forma inmediata a la mejora de la red ferroviaria los fondos del plan DORA, que contempla la ampliación de los aeropuertos y suma casi 13.000 millones de euros."
 fechaAnuncio: "2026-11-02"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cita cotejada el 14 nov (ronda de las 20:03) en la nota oficial del 2 nov (busca «plan DORA»). Es texto de la nota, no una cita entre comillas de Colau. La cifra de 13.000 millones es del partido."
-revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-15"
+  nota: "16 nov: añadimos el programa como fuente principal (página 120; página 106 del PDF). Busca «destinar al ferrocarril los casi 13.000». Quitada la firma para revisar de nuevo."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

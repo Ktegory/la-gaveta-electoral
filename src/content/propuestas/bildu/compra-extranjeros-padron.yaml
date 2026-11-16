@@ -1,0 +1,16 @@
+partido: "bildu"
+tema: "vivienda"
+subtema: "grandes-tenedores"
+titulo: "Exigir a los extranjeros con varias viviendas dos años de empadronamiento antes de comprar otra"
+resumen: "La vivienda comprada tendría que ser la residencia habitual del propietario o alquilarse a precio regulado según los índices de referencia. El programa también condiciona la compra de edificios enteros a que se destinen a alquiler regulado y prohíbe comprarlos con fines turísticos o especulativos."
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "5"
+    cita: "Condicionar la compra de vivienda por parte de extranjeros multipropietarios a la inscripción en el padrón municipal durante al menos los 2 años previos a la compra de vivienda. El inmueble adquirido deberá dedicarse a vivienda habitual y efectiva del propietario o a alquiler regulado bajo los índices de precios de referencia."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa de EH Bildu (PDF oficial, sha256 ceb655c9…), página 5. Busca «compra de vivienda por parte de extranjeros multipropietarios»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

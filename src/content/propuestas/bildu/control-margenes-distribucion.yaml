@@ -1,0 +1,16 @@
+partido: "bildu"
+tema: "empleo"
+subtema: "cesta-compra"
+titulo: "Establecer controles obligatorios sobre los precios y márgenes de las grandes distribuidoras de alimentos"
+resumen: "Los controles alcanzarían también a los intermediarios. El programa añade más inspección y sanciones contra las prácticas comerciales abusivas, medidas contra la reduflación y un Observatorio de la Cadena Alimentaria que siga precios, costes y márgenes."
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "9"
+    cita: "Para ello, deberán establecerse controles obligatorios sobre los precios y márgenes comerciales de las grandes distribuidoras e intermediarios, reforzar la inspección y el régimen sancionador frente a las prácticas comerciales abusivas y garantizar el cumplimiento efectivo de la normativa que prohíbe las compras por debajo de los costes efectivos de producción."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa de EH Bildu (PDF oficial, sha256 ceb655c9…), página 9. Busca «controles obligatorios sobre los precios y márgenes comerciales»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

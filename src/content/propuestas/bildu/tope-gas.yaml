@@ -1,0 +1,16 @@
+partido: "bildu"
+tema: "energia"
+subtema: "precio"
+titulo: "Recuperar el «tope al gas» para la generación eléctrica en situaciones extraordinarias de encarecimiento"
+resumen: "Tomaría como referencia el mecanismo ibérico. El programa no fija cuándo se activaría ni con qué precio máximo."
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "8"
+    cita: "Recuperar el mecanismo de intervención sobre el precio del gas utilizado para generación eléctrica en situaciones extraordinarias de encarecimiento como la actual, tomando como referencia la experiencia del mecanismo ibérico o “tope al gas”."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa de EH Bildu (PDF oficial, sha256 ceb655c9…), página 8. Busca «intervención sobre el precio del gas utilizado». En la página 9 el programa propone además defender ante la UE una reforma del mercado eléctrico que supere el modelo marginalista."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

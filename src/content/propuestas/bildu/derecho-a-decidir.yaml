@@ -1,0 +1,16 @@
+partido: "bildu"
+tema: "territorial"
+subtema: "competencias"
+titulo: "Reconocer el derecho a decidir del pueblo vasco"
+resumen: "Forma parte del reconocimiento de Euskal Herria como nación y del Estado como plurinacional. El programa pide además respetar los nuevos estatus o marcos de relación con el Estado que la sociedad vasca refrende."
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "24"
+    cita: "El reconocimiento del derecho a decidir del pueblo vasco como mecanismo democrático y legítimo para dicha solución, basado en la voluntad y decisión de la ciudadanía vasca libre y democráticamente expresada."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa de EH Bildu (PDF oficial, sha256 ceb655c9…), página 24. Busca «derecho a decidir del pueblo vasco»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

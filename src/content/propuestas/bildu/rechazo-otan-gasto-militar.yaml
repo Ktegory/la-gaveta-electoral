@@ -1,0 +1,18 @@
+partido: "bildu"
+tema: "exterior"
+subtema: "otan"
+titulo: "Rechazar la OTAN y el aumento del gasto militar"
+resumen: "Rechaza la pertenencia de Euskal Herria a la OTAN, en línea con el voto vasco en el referéndum de 1986, y el aumento del gasto en defensa que pide la Alianza. Propone a cambio un proyecto de seguridad europeo propio."
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "28"
+    cita: "Igualmente, rechazaremos el aumento del gasto en defensa que la OTAN está exigiendo. […] Rechazamos la OTAN y la pertenencia de Euskal Herria a la misma"
+  - fuente: "bildu/nota-programa-2026-11-16"
+    cita: "el programa recoge el rechazo a la OTAN y al incremento del gasto militar"
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "16 nov: añadimos el programa como fuente principal (página 28). Busca «Rechazamos la OTAN». El programa rechaza la pertenencia a la OTAN y el aumento del gasto en defensa (apartados 3.2.2 y 3.2.4). Resumen ajustado."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

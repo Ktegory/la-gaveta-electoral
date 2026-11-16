@@ -3,9 +3,14 @@ tema: "fiscalidad"
 subtema: "patrimonio"
 titulo: "Impuesto anual al patrimonio neto: 2 % desde 1 M€ y 3 % desde 50 M€"
 fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "50"
+    cita: "Garantizaremos que todos los patrimonios de más de un millón de euros tributen como mínimo un 2 %."
   - fuente: "fa/nota-fiscalidad-2026-11-05"
 fechaAnuncio: "2026-11-05"
-destacada: true
-orden: 1
-revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "16 nov: añadimos el programa como fuente principal (página 50; página 45 del PDF). Busca «tributen como mínimo un 2 %». El 3 % desde 50 millones es la «Tasa Zucman», en la misma página: busca «Implantaremos la Tasa Zucman». Quitada la firma para revisar de nuevo."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

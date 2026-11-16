@@ -1,0 +1,16 @@
+partido: "fa"
+tema: "inmigracion"
+subtema: "servicios"
+titulo: "Garantizar por ley la atención sanitaria a todos los residentes en España, sea cual sea su situación administrativa"
+resumen: "Se impulsaría una ley de universalidad del Sistema Nacional de Salud para consolidar lo fijado en el Real Decreto 180/2026 del Ministerio de Sanidad."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "30"
+    cita: "Blindaremos por ley la universalidad de la atención sanitaria para residentes en España, independientemente de su estatus administrativo."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 30 (página 26 del PDF). Busca «universalidad de la atención sanitaria para residentes»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

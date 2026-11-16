@@ -1,0 +1,18 @@
+partido: "fa"
+tema: "fiscalidad"
+subtema: "patrimonio"
+titulo: "Limitar las herencias a 10 millones de euros por heredero con un tipo del 100 % en Sucesiones"
+resumen: "Lo que supere esa cifra tributaría al 100 % en Sucesiones, contando las donaciones recibidas en vida y sin bonificaciones autonómicas. En la nota de presentación del programa añadía un tramo del 75 % entre 5 y 10 millones y una bajada de tipos por debajo de 120.000 €."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "51"
+    cita: "Limitaremos las herencias de los ultrarricos a un máximo de 10 millones de euros por heredero."
+  - fuente: "fa/nota-programa-herencias-2026-11-16"
+    cita: "Esta limitación se implementará estableciendo un tipo impositivo marginal del 100 % sobre el tramo de la base imponible que supere esa cifra en el Impuesto sobre Sucesiones y Donaciones."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "16 nov: añadimos el programa como fuente principal (página 51; página 46 del PDF). Busca «Limitaremos las herencias»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

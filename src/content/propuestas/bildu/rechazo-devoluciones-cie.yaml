@@ -1,0 +1,16 @@
+partido: "bildu"
+tema: "inmigracion"
+subtema: "fronteras"
+titulo: "Rechazar las devoluciones sumarias, los CIE y las partes restrictivas del Pacto Europeo sobre Migración y Asilo"
+resumen: "Cada caso se resolvería en un procedimiento individual con todas las garantías jurídicas. También rechaza la externalización de fronteras. El programa no dice expresamente si cerraría los centros de internamiento de extranjeros (CIE)."
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "20"
+    cita: "Rechazar las disposiciones restrictivas del Pacto Europeo sobre Migración y Asilo, las devoluciones sumarias, la externalización de fronteras y los CIE, garantizando procedimientos individuales con todas las garantías jurídicas."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa de EH Bildu (PDF oficial, sha256 ceb655c9…), página 20. Busca «las devoluciones sumarias, la externalización de fronteras»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

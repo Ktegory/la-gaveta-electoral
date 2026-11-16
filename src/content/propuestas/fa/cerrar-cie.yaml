@@ -1,0 +1,16 @@
+partido: "fa"
+tema: "inmigracion"
+subtema: "fronteras"
+titulo: "Cerrar los Centros de Internamiento de Extranjeros (CIE)"
+resumen: "En el asilo en frontera, la detención sería solo un último recurso, con prioridad para las medidas alternativas. El programa también propone derogar el «rechazo en frontera» de la Ley de Extranjería y crear un mecanismo independiente de control de derechos humanos en la Frontera Sur."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "150"
+    cita: "Cerraremos los Centros de Internamiento de Extranjeros (CIE). En los procedimientos de asilo en frontera, la detención se aplicará únicamente como último recurso excepcional, priorizando medidas alternativas y garantizando la no prolongación de plazos."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 150 (página 127 del PDF). Busca «Cerraremos los Centros de Internamiento de Extranjeros»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

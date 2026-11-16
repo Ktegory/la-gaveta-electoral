@@ -1,0 +1,16 @@
+partido: "bildu"
+tema: "igualdad"
+subtema: "lgtbi"
+titulo: "Prohibir las terapias de conversión"
+resumen: "Según el programa, vulneran derechos como la no discriminación, la salud, la identidad personal y la integridad física y psicológica. No concreta si la prohibición sería penal o administrativa."
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "19"
+    cita: "Prohibir las terapias de conversión, ya que estas violan, entre otros, el derecho a la no discriminación, a la salud, a la identidad personal, a la integridad física y psicológica y a no ser sujeto a torturas."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov en el programa de EH Bildu (PDF oficial, sha256 ceb655c9…), página 19. Busca «Prohibir las terapias de conversión, ya que»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

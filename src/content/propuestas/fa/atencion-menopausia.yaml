@@ -4,12 +4,15 @@ subtema: "prestaciones"
 titulo: "Reconocer en la sanidad pública el derecho a una atención integral al climaterio y la menopausia"
 resumen: "Con más consultas, una valoración individualizada y multidisciplinar, y mecanismos de control de los precios de los medicamentos para evitar desabastecimientos y subidas."
 fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "33"
+    cita: "Incluiremos la atención a la menopausia como derecho con consultas extendidas, valoración individualizada multidisciplinar y control de precios de medicamentos para evitar desabastecimientos e incrementos especulativos."
   - fuente: "fa/nota-salud-bucodental-2026-11-14"
     cita: "el Frente Amplio propone incorporar la atención integral al climaterio y la menopausia como un derecho garantizado por la sanidad pública"
 fechaAnuncio: "2026-11-14"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cita tomada el 15 nov de la nota oficial del Frente Amplio (busca «climaterio y la menopausia»). Va en la misma nota que las tres medidas de salud bucodental, visual y auditiva, como añadido. Subtema nuevo «Prestaciones y cartera de servicios», dentro de Sanidad."
-revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-15"
+  nota: "16 nov: añadimos el programa como fuente principal (página 33; página 29 del PDF). Busca «atención a la menopausia como derecho». Quitada la firma para revisar de nuevo."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

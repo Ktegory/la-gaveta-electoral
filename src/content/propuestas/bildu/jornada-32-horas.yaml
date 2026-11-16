@@ -1,0 +1,18 @@
+partido: "bildu"
+tema: "empleo"
+subtema: "jornada"
+titulo: "Reducir la jornada a 32 horas semanales o cuatro días sin bajar el salario"
+resumen: "Empezaría en 35 horas y llegaría a 32 en un máximo de tres años, para que las pequeñas empresas se adapten."
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "6"
+    cita: "Reducción de la jornada laboral hasta las 32 horas semanales o la jornada de 4 días sin reducción salarial."
+  - fuente: "bildu/nota-programa-2026-11-16"
+    cita: "la formación defiende reducir la jornada hasta las 32 horas semanales o cuatro días, sin disminución salarial"
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "16 nov: añadimos el programa como fuente principal (página 6). Busca «hasta las 32 horas semanales». Quitada la firma para revisar de nuevo."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"

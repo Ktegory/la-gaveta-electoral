@@ -1,0 +1,18 @@
+partido: "bildu"
+tema: "territorial"
+subtema: "competencias"
+titulo: "Asumir competencias en Seguridad Social, desempleo, energía, relaciones laborales, puertos, aeropuertos y migración"
+resumen: "También la protección social. Además, completar las transferencias pendientes del Estatuto de Gernika y del Amejoramiento del Fuero navarro."
+fuentes:
+  - fuente: "bildu/programa-29n-2026"
+    pagina: "24"
+    cita: "Propondremos la asunción de nuevas competencias plenas e instrumentos para ampliar nuestras capacidades de autogobierno"
+  - fuente: "bildu/nota-programa-2026-11-16"
+    cita: "propone completar las transferencias pendientes del Estatuto de Gernika y del Amejoramiento del Fuero navarro, además de asumir nuevas competencias en ámbitos como migración, Seguridad Social, protección social, desempleo, energía y relaciones laborales"
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "16 nov: añadimos el programa como fuente principal (página 24). Busca «asunción de nuevas competencias plenas»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-16"
