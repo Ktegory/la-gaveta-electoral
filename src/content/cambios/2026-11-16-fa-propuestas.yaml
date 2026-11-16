@@ -1,0 +1,9 @@
+fecha: "2026-11-16"
+partido: "fa"
+tipo: "propuestas"
+descripcion: "Añadimos cuatro medidas de la ficha «Reconocimiento de las familias elegidas», de la nueva sección de programa de su web (15 de noviembre): reconocer en la Ley de Familias a las personas que cada uno designe como referentes de cuidados, ampliar a ellas los permisos retribuidos, reconocer legalmente a las personas no binarias y crear un Observatorio Estatal contra la LGTBIQA+fobia."
+propuestas:
+  - "fa/familias-elegidas-ley-familias"
+  - "fa/permisos-cuidados-sin-parentesco"
+  - "fa/reconocer-personas-no-binarias"
+  - "fa/observatorio-lgtbiqafobia"

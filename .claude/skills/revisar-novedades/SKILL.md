@@ -32,8 +32,8 @@ Usa `curl -sL -A "Mozilla/5.0"` (WebFetch suele recibir 403 en estas webs).
 | PSOE | psoe | psoe.es (anti-bots; prueba curl y prensa) | @psoe |
 | PP | pp | pp.es/actualidad, `pp.es/wp-json/wp/v2/posts?per_page=10` | @partidopopular |
 | VOX | vox | voxespana.es/noticias (suele dar 403) | @vox_es |
-| Frente Amplio | fa | frenteamplio.info/noticias/ y /feed.xml, /sitemap.xml | @elfrenteamplio |
-| Podemos | pod | podemos.info/feed/, pazcasaytrabajo.es | @ahorapodemos |
+| Frente Amplio | fa | frenteamplio.info/noticias/ y /feed.xml, /sitemap.xml | @elfrenteamplio y la candidata @adacolau (pista: la web del partido solo enlaza a @elfrenteamplio; busca la medida en una fuente del partido o en prensa, salvo que la publicación sea una colaboración con @elfrenteamplio) |
+| Podemos | pod | podemos.info/feed/, pazcasaytrabajo.es | @ahorapodemos y @i_montero_ (la web de campaña pazcasaytrabajo.es enlaza a esta cuenta como su Instagram, así que cuenta como cuenta oficial de campaña) |
 | ERC | erc | esquerra.cat (403 a bots) | @esquerrarepublicana |
 | Junts | junts | junts.cat/feed/, junts.cat/actualitat/ | @juntspercat |
 | EAJ-PNV | pnv | eaj-pnv.eus | @eajpnv |
@@ -44,7 +44,7 @@ Programas ya publicados (vigila si cambian: compara `content-length` y `last-mod
 - ERC y PNV: URL en su `programa-29n-2026.yaml`.
 - VOX: la URL de `src/content/fuentes/vox/programa-29n-2026.yaml` (66 págs., 14.536.418 bytes, `last-modified` 12 nov 16:07 GMT). voxespana.es responde 403 a `curl -sI`: usa un GET de rango, `curl -s -A "Mozilla/5.0" -r 0-1023 -D - -o /dev/null <url>`, y lee `content-range` y `last-modified`. Busca también si sube otro PDF en `wp-content/uploads/2026/11/` (las rondas del 12 nov a las 20:04 y del 13 a las 8:19 no vieron este por el 403).
 
-Programas pendientes (PSOE, Frente Amplio, Podemos, Junts, EH Bildu): busca si se han publicado.
+Programas pendientes (Frente Amplio, Podemos, Junts, EH Bildu): busca si se han publicado. El Frente Amplio tiene desde el 15 nov una sección de programa en su web (frenteamplio.info/programa/todas/, 8 medidas, una ficha por medida en el sitemap) y anuncia el PDF «próximamente»: mira si hay fichas nuevas (compara el sitemap) y si ya enlaza el PDF.
 
 ## Paso 2. Instagram (navegador integrado de la app)
 

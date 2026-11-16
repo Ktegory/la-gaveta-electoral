@@ -30,7 +30,7 @@ const colores = Object.fromEntries(d.partidos.map((p) => [p.data.nombre, p.data.
     if (window.PagefindUI) {
       new PagefindUI({ element: '#buscador', showSubResults: true, showImages: false, resetStyles: false, autofocus: true });
       const q = new URLSearchParams(location.search).get('q');
-      if (q) setTimeout(() => { const i = document.querySelector('#buscador input'); if (i) { i.value = q; i.dispatchEvent(new Event('input')); } }, 0);
+      if (q) setTimeout(() => { const i = document.querySelector('#buscador input'); if (i) { i.value = q; i.dispatchEvent(new Event('input', { bubbles: true })); } }, 0);
     }
   </script>
 </Base>
