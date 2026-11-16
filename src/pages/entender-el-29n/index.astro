@@ -1,8 +1,8 @@
 ---
 // Portada que reúne lo que no son propuestas: guías y piezas útiles para el 29N.
 import Base from '../../layouts/Base.astro';
-import Icono from '../../components/Icono.astro';
-import { HUB, PIEZAS } from '../../lib/guias';
+import PiezasGuia from '../../components/PiezasGuia.astro';
+import { HUB } from '../../lib/guias';
 ---
 <Base titulo={HUB.nombre} seccion="guias" descripcion="El 29N más allá de las propuestas: cómo se reparten los escaños y qué pasó con lo que prometieron PP y PSOE cuando gobernaron.">
   <div class="chd pad gi-top">
@@ -10,49 +10,11 @@ import { HUB, PIEZAS } from '../../lib/guias';
     <p class="lead">Lo que conviene saber para votar el 29N y que no son propuestas de los partidos. Con la fuente oficial al lado, como todo lo demás.</p>
   </div>
   <div class="pad gi">
-    <ul class="gi-lista">
-      {PIEZAS.map((g) => (
-        <li><a href={g.href}><span class="gi-ico" aria-hidden="true"><Icono id={g.icono} /></span><b class="cond">{g.titulo}</b><span>{g.texto}</span><span class="arrow" aria-hidden="true">→</span></a></li>
-      ))}
-    </ul>
+    <PiezasGuia />
   </div>
 </Base>
-
-<script>
-  // Lado de la caja del icono = altura del título y el texto juntos.
-  for (const a of document.querySelectorAll<HTMLElement>('.gi-lista a')) {
-    const titulo = a.querySelector('b')!;
-    const texto = a.querySelector('b + span')!;
-    const medir = () => {
-      // Con tope: si la caja crece, el texto se estrecha y gana altura; así no entra en bucle.
-      const lado = Math.min(180, Math.round(texto.getBoundingClientRect().bottom - titulo.getBoundingClientRect().top));
-      if (Math.abs(lado - (parseFloat(a.style.getPropertyValue('--lado')) || 0)) > 1) a.style.setProperty('--lado', `${lado}px`);
-    };
-    const ro = new ResizeObserver(medir);
-    ro.observe(titulo);
-    ro.observe(texto);
-  }
-</script>
 
 <style>
   .gi-top { padding-bottom: var(--sec-s) }
   .gi { padding-bottom: var(--sec) }
-  .gi-lista { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px 32px; margin: 0; padding: 0; list-style: none }
-  @container site (min-width: 800px) { .gi-lista { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) } }
-  .gi-lista li { display: grid; min-width: 0; container: pieza / inline-size }
-  .gi-lista a { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 20px; padding: 22px 24px; border-radius: var(--r-in); background: var(--crema); color: var(--ink); text-decoration: none; transition: background-color .25s ease }
-  .gi-lista a:hover { background: #F6F0DC }
-  /* Tarjeta estrecha: icono encima, en un cuadrado fijo. */
-  .gi-ico { grid-column: 1 / -1; justify-self: start; display: grid; place-items: center; width: 88px; height: 88px; margin-bottom: 8px; border-radius: var(--r-in); background: #fff; font-size: 3.25rem }
-  .gi-ico :global(.i) { stroke-width: 1.1 }
-  .gi-lista b { grid-column: 1; font-size: clamp(1.75rem, 2.6cqi, 2.375rem); line-height: .95; text-transform: uppercase }
-  .gi-lista b + span { grid-column: 1; font-size: .9375rem; line-height: 1.45; color: var(--ink2) }
-  .gi-lista .arrow { grid-column: 2; grid-row: 2 / span 2; align-self: center; font-size: 1.5rem }
-  /* Tarjeta ancha: icono a la izquierda, en un cuadrado tan alto como el texto (el script pone --lado). */
-  @container pieza (min-width: 600px) {
-    .gi-lista a { grid-template-columns: auto minmax(0, 1fr) auto; grid-template-rows: auto 1fr }
-    .gi-ico { grid-column: 1; grid-row: 1 / span 2; align-self: center; justify-self: auto; width: var(--lado, 120px); height: var(--lado, 120px); margin: 0; font-size: calc(var(--lado, 120px) * .6) }
-    .gi-lista b, .gi-lista b + span { grid-column: 2 }
-    .gi-lista .arrow { grid-column: 3; grid-row: 1 / span 2 }
-  }
 </style>

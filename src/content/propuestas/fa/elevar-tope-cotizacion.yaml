@@ -12,5 +12,5 @@ destacada: false
 comprobacion:
   estado: encontrada
   nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 64 (página 58 del PDF). Busca «Continuaremos elevando progresivamente». Sustituye a fa/eliminar-tope-cotizacion: la nota del 24 oct hablaba de eliminar el tope; el programa, de elevarlo."
-revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+revisadaPor: "Khiustin Tornés"
 fechaRevision: "2026-11-16"

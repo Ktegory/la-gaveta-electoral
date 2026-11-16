@@ -1,0 +1,15 @@
+partido: "pod"
+tema: "vivienda"
+subtema: "fiscalidad-vivienda"
+titulo: "Gravar las viviendas vacías con el cuádruple de lo que pagan ahora para que salgan al alquiler"
+resumen: "No concreta sobre qué impuesto se aplicaría ni desde cuántas viviendas."
+fuentes:
+  - fuente: "pod/instagram-viviendas-vacias-2026-11-16"
+    cita: "Proponemos un impuestazo a las viviendas vacías del cuádruple de lo que se paga ahora para obligar a poner esas viviendas en alquiler."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 16 nov en el texto de la publicación de @i_montero_ (reel del 16 nov). No hay nota en podemos.info ni en pazcasaytrabajo.es. Cita del pie de la publicación, no del vídeo."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-16"

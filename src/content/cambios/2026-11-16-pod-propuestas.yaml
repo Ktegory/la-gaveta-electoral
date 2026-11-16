@@ -1,0 +1,6 @@
+fecha: "2026-11-16"
+partido: "pod"
+tipo: "propuestas"
+descripcion: "Añadimos el impuesto a las viviendas vacías, del cuádruple de lo que pagan ahora, que Irene Montero publicó el 16 de noviembre en Instagram."
+propuestas:
+  - "pod/impuesto-viviendas-vacias"

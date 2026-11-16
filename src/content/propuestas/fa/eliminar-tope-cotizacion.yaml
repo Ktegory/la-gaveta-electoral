@@ -13,5 +13,5 @@ sustituidaPor: "fa/elevar-tope-cotizacion"
 comprobacion:
   estado: encontrada
   nota: "16 nov: el programa del 29N no habla de eliminar el tope máximo de cotización, sino de seguir elevándolo de forma progresiva (página 64). La marcamos como sustituida por fa/elevar-tope-cotizacion. Quitada la firma para revisar de nuevo."
-revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+revisadaPor: "Khiustin Tornés"
 fechaRevision: "2026-11-16"

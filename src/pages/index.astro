@@ -6,6 +6,8 @@ import Preguntas from '../components/Preguntas.astro';
 import ListaCambios from '../components/ListaCambios.astro';
 import Icono from '../components/Icono.astro';
 import OrdenPartidos from '../components/OrdenPartidos.astro';
+import PiezasGuia from '../components/PiezasGuia.astro';
+import { HUB } from '../lib/guias';
 import SelectorFoco from '../components/SelectorFoco.astro';
 import { datos, ELECCIONES, fecha } from '../lib/datos';
 const d = await datos();
@@ -79,6 +81,11 @@ const dosCifras = (n: number) => String(n).padStart(2, '0');
       <span class="act">Actualizado {fmtAct.format(actualizado)}</span>
     </div>
     <MapaPropuestas />
+  </section>
+
+  <section class="band pad" aria-labelledby="h-entender">
+    <div class="sec-h"><h2 class="cond" id="h-entender">{HUB.nombre}</h2><p>Lo que conviene saber para votar y que no son propuestas: cómo se convierten los votos en escaños y qué pasó con lo que prometieron PP y PSOE cuando gobernaron. <a href={HUB.href}>Ver la sección</a></p></div>
+    <PiezasGuia />
   </section>
 
   <section class="bottom pad">

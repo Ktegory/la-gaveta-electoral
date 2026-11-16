@@ -11,5 +11,5 @@ sustituidaPor: "fa/tipo-minimo-sociedades-20"
 comprobacion:
   estado: encontrada
   nota: "16 nov: el programa del 29N fija un tipo mínimo efectivo del 20 %, no del 15 % (página 49). La marcamos como sustituida por fa/tipo-minimo-sociedades-20, que pasa a ser destacada. Quitada la firma para revisar de nuevo."
-revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+revisadaPor: "Khiustin Tornés"
 fechaRevision: "2026-11-16"

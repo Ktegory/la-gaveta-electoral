@@ -12,5 +12,5 @@ destacada: true
 comprobacion:
   estado: encontrada
   nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 49 (página 44 del PDF). Busca «tipo mínimo efectivo del 20 %». Sustituye a fa/tipo-minimo-sociedades (15 %, nota del 5 nov) y hereda su lugar entre las destacadas."
-revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+revisadaPor: "Khiustin Tornés"
 fechaRevision: "2026-11-16"

@@ -344,7 +344,7 @@ p .fuera { margin: 0; vertical-align: 1px }
 @container site (max-width: 800px) { .qs { grid-template-columns: 1fr } .q { grid-template-columns: 32px 1fr } }
 
 /* Autoría y cambios */
-.bottom { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6cqi, 140px); padding-block: var(--sec); background: var(--bg) }
+.bottom { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6cqi, 140px); padding-block: var(--sec); --bg: var(--crema); background: var(--bg) }
 .bottom h2, .bottom h3 { font-family: var(--cond); font-weight: 900; font-size: clamp(2rem, 3cqi, 3.25rem); text-transform: uppercase; margin: 0 0 16px; line-height: .92 }
 .bottom p { margin: 0 0 12px; max-width: 52ch }
 .chg { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink) }

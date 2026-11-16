@@ -12,5 +12,5 @@ destacada: false
 comprobacion:
   estado: encontrada
   nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 72 (página 65 del PDF), punto «Abono único estatal e integrado de transporte». Busca «abono único nominativo y mensual». La gratuidad en las islas, Ceuta y Melilla está en el punto siguiente («Gratuidad insular y enclaves extrapeninsulares»)."
-revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+revisadaPor: "Khiustin Tornés"
 fechaRevision: "2026-11-16"

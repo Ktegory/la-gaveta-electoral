@@ -12,5 +12,5 @@ destacada: false
 comprobacion:
   estado: encontrada
   nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 75 (página 68 del PDF), punto «Reducción de vuelos domésticos de corto radio». Busca «alternativa competitiva en tren de 2,5 horas». La tasa a viajeros frecuentes está en el punto siguiente («Fiscalidad verde al sector aéreo y transportes de lujo»)."
-revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+revisadaPor: "Khiustin Tornés"
 fechaRevision: "2026-11-16"
