@@ -1,0 +1,15 @@
+partido: "pp"
+tema: "instituciones"
+subtema: "sistema-electoral"
+titulo: "Reformar la ley electoral para que quienes dejaron Euskadi y Navarra por la violencia de ETA puedan votar allí"
+resumen: "Podrían votar, si lo piden, en los municipios en los que estaban empadronados. Feijóo se comprometió también a ayudar a quienes quieran volver."
+fuentes:
+  - fuente: "pp/nota-pamplona-voto-exiliados-2026-11-16"
+    cita: "se compromete a reformar la legislación electoral para que quienes tuvieron que abandonar el País Vasco y Navarra por la violencia terrorista “recuperen, si así lo quieren, su derecho a votar en los municipios en los que estaban empadronados”"
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 17 nov en la nota oficial del PP sobre el mitin de Pamplona (16 nov, 21:11). Estilo indirecto, con la parte final entrecomillada como palabras de Feijóo. Busca «reformar la legislación electoral»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-17"

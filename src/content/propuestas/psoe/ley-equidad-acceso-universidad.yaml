@@ -1,0 +1,16 @@
+partido: "psoe"
+tema: "educacion"
+subtema: "universidad"
+titulo: "Aprobar una Ley de Equidad en el Acceso a la Universidad Pública con financiación plurianual vinculante"
+resumen: "La ley fijaría compromisos de financiación plurianuales y vinculantes para las universidades públicas de todas las comunidades autónomas, con mecanismos de seguimiento, y una oferta mínima de plazas públicas en titulaciones estratégicas y de alta demanda."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "55"
+    cita: "Aprobar una nueva Ley de Equidad en el Acceso a la Universidad Pública que garantice una financiación suficiente, estable y de calidad para las universidades públicas en todas las comunidades autónomas, mediante compromisos plurianuales vinculantes y mecanismos de seguimiento de su cumplimiento, asegurando además una oferta mínima de plazas públicas en titulaciones estratégicas y de alta demanda."
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 17 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…, copia local descargada a mano el 15 nov), medida 181, página 55 (página impresa). Pista de la crónica de Público del 16 nov. Busca «Ley de Equidad en el Acceso»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-17"

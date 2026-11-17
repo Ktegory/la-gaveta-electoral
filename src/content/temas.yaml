@@ -86,6 +86,7 @@
     - { id: organismos, nombre: "Organismos independientes", pregunta: "¿Qué pasa con los organismos independientes?" }
     - { id: presupuestos, nombre: "Presupuestos", pregunta: "¿Qué harán con los presupuestos?" }
     - { id: constitucion, nombre: "Constitución", pregunta: "¿Cambiarían la Constitución?" }
+    - { id: sistema-electoral, nombre: "Sistema electoral", pregunta: "¿Cambiarían cómo se vota?" }
 - id: exterior
   nombre: "Exterior y defensa"
   pregunta: "¿OTAN, gasto en defensa, Unión Europea?"

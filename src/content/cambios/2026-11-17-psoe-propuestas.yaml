@@ -1,0 +1,7 @@
+fecha: "2026-11-17"
+partido: "psoe"
+tipo: "propuestas"
+descripcion: "Añadimos dos medidas universitarias del programa del PSOE que no habíamos recogido: una Ley de Equidad en el Acceso a la Universidad Pública, con financiación plurianual vinculante, y complementos de beca para la primera generación universitaria."
+propuestas:
+  - "psoe/ley-equidad-acceso-universidad"
+  - "psoe/becas-primera-generacion-universitaria"

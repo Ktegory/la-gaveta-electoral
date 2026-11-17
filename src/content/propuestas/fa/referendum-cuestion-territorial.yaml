@@ -1,0 +1,16 @@
+partido: "fa"
+tema: "territorial"
+subtema: "competencias"
+titulo: "Promover un modelo territorial federal y plurinacional que incluya el derecho a decidir en referéndum"
+resumen: "El programa lo plantea como objetivo: promover el debate para formar una mayoría que impulse ese cambio y «resolver definitivamente la cuestión territorial». Lo enmarca en el horizonte de un Estado «republicano federal y plurinacional»."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "167"
+    cita: "Promoveremos el debate para formar una mayoría social y política e impulsar el cambio de modelo territorial establecido en la Constitución, en un sentido federal y plurinacional incluyendo el derecho a decidir mediante referéndum para resolver definitivamente la cuestión territorial."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 17 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), apartado 18.1, página 140 del PDF. La página no lleva número impreso; es la anterior a la 168, así que se cita como 167. Pista de la crónica de Público del 16 nov. Busca «derecho a decidir mediante referéndum»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-17"

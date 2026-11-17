@@ -1,0 +1,15 @@
+partido: "psoe"
+tema: "educacion"
+subtema: "universidad"
+titulo: "Crear complementos de beca para la primera generación universitaria y para estudiantes con más dificultades económicas"
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "55"
+    cita: "Compensaremos las barreras económicas de partida creando complementos específicos para estudiantes que sean la primera generación en acceder a la universidad y para quienes afronten mayores dificultades económicas por su situación personal o familiar."
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 17 nov en el programa del PSOE (PDF oficial, sha256 e9c83413…), medida 177, dentro de la 176 («Crear un nuevo modelo de becas»), página 55 (página impresa). Busca «primera generación en acceder»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-17"
