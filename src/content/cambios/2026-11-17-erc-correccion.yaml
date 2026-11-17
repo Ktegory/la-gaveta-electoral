@@ -1,0 +1,6 @@
+fecha: "2026-11-17"
+partido: "erc"
+tipo: "correccion"
+descripcion: "ERC publicó el 17 de noviembre una versión corregida de su programa que renumera las medidas de forma correlativa. El traspaso de Rodalies pasa a ser la medida 192 (antes 222). El resto de citas no cambian."
+propuestas:
+  - "erc/rodalies"

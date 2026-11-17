@@ -1,6 +1,8 @@
 fecha: "2026-11-17"
 partido: "fa"
 tipo: "propuestas"
-descripcion: "Añadimos una medida del programa del Frente Amplio que no habíamos recogido: cambiar el modelo territorial de la Constitución hacia uno federal y plurinacional que incluya el derecho a decidir mediante referéndum."
+descripcion: "Añadimos una medida del programa del Frente Amplio que no habíamos recogido: cambiar el modelo territorial de la Constitución hacia uno federal y plurinacional que incluya el derecho a decidir mediante referéndum. También añadimos la propuesta que Ada Colau presentó el 17 de noviembre en Madrid: reformar el Estatuto de los Trabajadores para que todos los salarios se revisen conforme al IPC, una medida que ya figuraba en su programa. Y añadimos la bajada del IVA de los pañales, los servicios veterinarios y las peluquerías, que el Frente Amplio difundió ese día en Instagram y que figura en su programa."
 propuestas:
   - "fa/referendum-cuestion-territorial"
+  - "fa/revision-salarial-ipc-universal"
+  - "fa/iva-panales-veterinarios-peluquerias"

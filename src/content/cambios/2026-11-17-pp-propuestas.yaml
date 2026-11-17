@@ -1,6 +1,7 @@
 fecha: "2026-11-17"
 partido: "pp"
 tipo: "propuestas"
-descripcion: "Añadimos el compromiso que Alberto Núñez Feijóo anunció el 16 de noviembre en Pamplona: reformar la legislación electoral para que quienes dejaron Euskadi y Navarra por la violencia de ETA puedan votar en los municipios donde estaban empadronados. Va en el nuevo subtema «Sistema electoral»."
+descripcion: "Añadimos el compromiso que Alberto Núñez Feijóo anunció el 16 de noviembre en Pamplona: reformar la legislación electoral para que quienes dejaron Euskadi y Navarra por la violencia de ETA puedan votar en los municipios donde estaban empadronados. Va en el nuevo subtema «Sistema electoral». También añadimos dos medidas para la industria electrointensiva que Alberto Nadal presentó el 17 de noviembre en Narón: que no asuma el 80 % de los peajes eléctricos y que reciba al menos el 25 % de los derechos de emisión de CO₂."
 propuestas:
   - "pp/voto-exiliados-eta"
+  - "pp/industria-electrointensiva-peajes-co2"

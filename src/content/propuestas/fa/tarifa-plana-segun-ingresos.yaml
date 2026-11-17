@@ -2,17 +2,17 @@ partido: "fa"
 tema: "empleo"
 subtema: "autonomos"
 titulo: "Mantener la tarifa plana de autónomos mientras se ingrese menos del SMI, en lugar de limitarla a 2 años"
-resumen: "Mientras los ingresos reales sean inferiores al salario mínimo anual por causas objetivas, como las condiciones del mercado o el inicio de la actividad, se podría pagar una cotización fija bonificada sin perder derechos de protección. Hoy la tarifa plana de 88 € dura 2 años."
+resumen: "La tarifa plana de 88 € dependería de los ingresos y no del tiempo: se mantendría mientras los ingresos reales sean inferiores al salario mínimo anual, sin perder derechos de protección. Hoy dura 2 años."
 fuentes:
   - fuente: "fa/programa-29n-2026"
     pagina: "103"
-    cita: "Cuando los ingresos reales percibidos por la persona trabajadora autónoma sean inferiores al SMI anual por causas objetivas, tales como las condiciones del mercado o el inicio de actividad, se podrá acoger a una cotización fija bonificada sin pérdida de derechos de protección."
+    cita: "Vincularemos la tarifa plana de 88 euros a los ingresos y no al tiempo. Hoy se pierde a los dos años; la mantendremos mientras los ingresos reales de la persona trabajadora autónoma sean inferiores al SMI anual, sin pérdida de derechos de protección, para que nadie empiece a pagar más antes de que su negocio sea sólido."
   - fuente: "fa/instagram-autonomos-2026-11-15"
     cita: "Proponemos ajustarla a tus ingresos, no al tiempo: que no empieces a pagar más hasta que tu negocio sea sólido."
 fechaAnuncio: "2026-11-15"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "16 nov: añadimos el programa como fuente principal (página 103; página 92 del PDF). Busca «cotización fija bonificada». Quitada la firma para revisar de nuevo."
+  nota: "16 nov: añadimos el programa como fuente principal (página 103; página 92 del PDF). Busca «cotización fija bonificada». Quitada la firma para revisar de nuevo. 17 nov: la versión nueva del PDF (sha256 516c5c6c…) reescribe la medida como «Tarifa plana mientras se ingrese menos del SMI» y fija la cuantía en 88 euros. Cita actualizada; misma página. Busca «Tarifa plana mientras». Quitada la firma para revisar de nuevo."
 revisadaPor: "Khiustin Tornés"
 fechaRevision: "2026-11-17"

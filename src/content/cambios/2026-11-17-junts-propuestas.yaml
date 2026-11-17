@@ -1,7 +1,8 @@
 fecha: "2026-11-17"
 partido: "junts"
 tipo: "propuestas"
-descripcion: "Añadimos dos propuestas que Miriam Nogueras defendió el 16 de noviembre en un desayuno de Amics del País en Barcelona, según la crónica de Europa Press: eliminar el impuesto de Sucesiones y Donaciones y agilizar los expedientes de expulsión de migrantes en situación irregular."
+descripcion: "Añadimos dos propuestas que Miriam Nogueras defendió el 16 de noviembre en un desayuno de Amics del País en Barcelona, según la crónica de Europa Press: eliminar el impuesto de Sucesiones y Donaciones y agilizar los expedientes de expulsión de migrantes en situación irregular. También añadimos el compromiso «El català, cosa de tots», que Nogueras propuso el 17 de noviembre a los cabezas de lista en Cataluña para usar siempre el catalán en el Congreso."
 propuestas:
   - "junts/eliminar-sucesiones-donaciones"
   - "junts/agilizar-expedientes-expulsion"
+  - "junts/compromiso-catalan-congreso"

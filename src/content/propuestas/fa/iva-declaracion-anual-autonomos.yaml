@@ -6,13 +6,13 @@ resumen: "Quien facture menos de 85.000 € al año podría elegir una declaraci
 fuentes:
   - fuente: "fa/programa-29n-2026"
     pagina: "103"
-    cita: "Aquellos que facturen menos de 85.000 euros anuales quedarán exentos de liquidaciones periódicas y solo tendrán que presentar una declaración informativa anual."
+    cita: "Aquellos que facturen menos de 85.000 euros anuales podrán optar por quedar exentos de liquidaciones periódicas y presentar una única declaración informativa anual en lugar de las trimestrales."
   - fuente: "fa/instagram-autonomos-2026-11-15"
     cita: "Si facturas menos de 85.000 € al año, puedes elegir presentar una sola declaración informativa anual en lugar de la trimestral. Aprobaremos la transposición inmediata de la directiva europea del IVA franquiciado."
 fechaAnuncio: "2026-11-15"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "16 nov: añadimos el programa como fuente principal (página 103; página 92 del PDF). Busca «facturen menos de 85.000 euros». Quitada la firma para revisar de nuevo."
+  nota: "16 nov: añadimos el programa como fuente principal (página 103; página 92 del PDF). Busca «facturen menos de 85.000 euros». Quitada la firma para revisar de nuevo. 17 nov: la versión nueva del PDF (sha256 516c5c6c…) cambia el texto: la exención pasa a ser opcional («podrán optar») y sustituye a las declaraciones trimestrales. Cita actualizada; misma página. Quitada la firma para revisar de nuevo."
 revisadaPor: "Khiustin Tornés"
 fechaRevision: "2026-11-17"

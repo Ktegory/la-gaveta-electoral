@@ -5,13 +5,13 @@ titulo: "Reducir la jornada de forma progresiva hasta las 32 horas semanales sin
 resumen: "Como primer paso, jornada de 37,5 horas en 2026 y de 35 horas en el sector público, sin compensarla con horas extraordinarias. En los contratos a tiempo parcial subiría en proporción el salario por hora."
 fuentes:
   - fuente: "fa/programa-29n-2026"
-    pagina: "61"
+    pagina: "62"
     cita: "Reduciremos la jornada laboral limitando el tiempo de trabajo efectivo de forma progresiva hasta las 32 horas semanales. […] Implantación inmediata a 37,5 horas en 2026 y 35 horas en el sector público, prohibiendo la compensación mediante horas extraordinarias y exigiendo la subida proporcional del salario hora en contratos a tiempo parcial."
 fechaAnuncio: "2026-11-16"
 destacada: true
 orden: 3
 comprobacion:
   estado: encontrada
-  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 61 (página 55 del PDF), apartado «Hacia una jornada laboral máxima de 32 horas semanales sin reducción salarial». Busca «de forma progresiva hasta las 32 horas» e «Implantación inmediata a 37,5 horas»."
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 61 (página 55 del PDF), apartado «Hacia una jornada laboral máxima de 32 horas semanales sin reducción salarial». Busca «de forma progresiva hasta las 32 horas» e «Implantación inmediata a 37,5 horas». 17 nov: en la versión nueva del PDF (sha256 516c5c6c…) la cita pasa a la página 62 (56 del PDF). Quitada la firma para revisar de nuevo."
 revisadaPor: "Khiustin Tornés"
 fechaRevision: "2026-11-17"

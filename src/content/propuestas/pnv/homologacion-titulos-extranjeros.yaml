@@ -1,0 +1,15 @@
+partido: "pnv"
+tema: "inmigracion"
+subtema: "servicios"
+titulo: "Exigir al Gobierno que agilice la homologación de títulos extranjeros"
+resumen: "Forma parte de su plan de migración para la legislatura, junto a más recursos para la integración y más competencias para Euskadi en migración y extranjería."
+fuentes:
+  - fuente: "pnv/nota-migracion-urtaran-2026-11-17"
+    cita: "el plan de EAJ-PNV para los próximos cuatro años pasa por ir más allá y exigir en Madrid que se agilice la homologación de titulaciones extranjeras, más recursos adecuados para acompañar los procesos de integración y más competencias en migración y extranjería"
+fechaAnuncio: "2026-11-17"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 17 nov en la nota oficial de EAJ-PNV (Gorka Urtaran en Vitoria-Gasteiz). Está en el texto de la nota, no entre comillas. No aparece en la página web del programa. Busca «homologación de titulaciones extranjeras»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-17"

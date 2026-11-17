@@ -1,0 +1,6 @@
+fecha: "2026-11-17"
+partido: "pod"
+tipo: "propuestas"
+descripcion: "Añadimos la propuesta que Irene Montero publicó el 17 de noviembre en Instagram: que todos los salarios suban conforme al IPC."
+propuestas:
+  - "pod/salarios-ipc"

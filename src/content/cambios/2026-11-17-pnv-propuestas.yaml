@@ -1,0 +1,6 @@
+fecha: "2026-11-17"
+partido: "pnv"
+tipo: "propuestas"
+descripcion: "Añadimos una propuesta que Gorka Urtaran presentó el 17 de noviembre dentro del plan de migración de EAJ-PNV: exigir al Gobierno que agilice la homologación de títulos extranjeros."
+propuestas:
+  - "pnv/homologacion-titulos-extranjeros"

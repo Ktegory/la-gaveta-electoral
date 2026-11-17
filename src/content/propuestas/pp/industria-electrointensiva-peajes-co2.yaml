@@ -1,0 +1,15 @@
+partido: "pp"
+tema: "energia"
+subtema: "precio"
+titulo: "Evitar que la industria electrointensiva asuma el 80 % de los peajes eléctricos y darle el 25 % de los derechos de CO₂"
+resumen: "Alberto Nadal las presentó como dos de las tres «medidas urgentes» para la industria que más electricidad consume. La tercera, quitar el impuesto del 7 % a la generación eléctrica, ya la recogemos aparte. También pidió un plan de choque de inversiones en la red eléctrica."
+fuentes:
+  - fuente: "pp/nota-nadal-industria-2026-11-17"
+    cita: "garantizar que no tengan que asumir el 80 % de los peajes eléctricos y destinar al menos el 25 % de los derechos de emisión de CO₂ a apoyar a las industrias intensivas en consumo energético"
+fechaAnuncio: "2026-11-17"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 17 nov (ronda de las 20:04) en la nota oficial del PP sobre Alberto Nadal en Narón. Estilo indirecto. Busca «tres medidas urgentes». No he comprobado si está en el programa del PP (págs. 71-72, energía): no se ha descargado el PDF. La medida del 7 % ya está en «pp/recibo-luz-tarifa-social»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-17"

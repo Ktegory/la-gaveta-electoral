@@ -1,0 +1,15 @@
+partido: "junts"
+tema: "territorial"
+subtema: "lenguas-cooficiales"
+titulo: "Proponer a los cabezas de lista en Cataluña un compromiso para usar siempre el catalán en el Congreso"
+resumen: "Es un compromiso entre candidatos, «El català, cosa de tots», con cuatro puntos: hablar siempre en catalán en el Congreso, presentar en catalán las iniciativas escritas, defender que se siga hablando en la cámara y dar prioridad al catalán en las iniciativas sobre educación, con la inmersión lingüística, y sobre justicia."
+fuentes:
+  - fuente: "junts/nota-catala-cosa-de-tots-2026-11-17"
+    cita: "Parlar sempre en català en les intervencions al Congrés dels Diputats. Presentar en català les iniciatives escrites. Defensar que el català es continuï parlant al Congrés dels Diputats. Fixar la llengua catalana com a prioritat en les iniciatives sobre educació, garantint la immersió lingüística, i sobre justícia"
+fechaAnuncio: "2026-11-17"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 17 nov en la nota oficial de Junts. La cita reúne los cuatro puntos de la lista de la nota, en catalán. Busca «quatre compromisos concrets»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-17"

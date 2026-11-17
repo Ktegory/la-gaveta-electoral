@@ -1,0 +1,13 @@
+fecha: "2026-11-17"
+partido: "fa"
+tipo: "correccion"
+descripcion: "El Frente Amplio publicó el 17 de noviembre una versión corregida de su programa. Actualizamos las citas que cambian: la declaración anual del IVA para quien facture menos de 85.000 € pasa a ser opcional y sustituye a las trimestrales, y la tarifa plana de 88 € se mantendría mientras se ingrese menos del SMI. En otras cinco propuestas solo cambia la página citada. Añadimos el programa como fuente de las ayudas unificadas para pymes."
+propuestas:
+  - "fa/iva-declaracion-anual-autonomos"
+  - "fa/tarifa-plana-segun-ingresos"
+  - "fa/jornada-32-horas"
+  - "fa/jubilacion-65"
+  - "fa/jubilacion-60-oficios-penosos"
+  - "fa/nuclear-hidraulica-fuera-marginalista"
+  - "fa/revalorizacion-ipc-constitucion"
+  - "fa/ventanilla-unica-pymes"
