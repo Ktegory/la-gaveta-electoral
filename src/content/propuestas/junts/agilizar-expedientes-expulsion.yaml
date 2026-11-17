@@ -1,0 +1,15 @@
+partido: "junts"
+tema: "inmigracion"
+subtema: "fronteras"
+titulo: "Agilizar los expedientes de expulsión de migrantes en situación irregular"
+resumen: "Lo planteó Miriam Nogueras en un desayuno de Amics del País en Barcelona, junto a su prioridad de que Catalunya asuma las competencias en inmigración. La crónica no detalla cómo ni con qué plazos."
+fuentes:
+  - fuente: "junts/prensa-amics-del-pais-2026-11-16"
+    cita: "La candidata de Junts al Congreso, Miriam Nogueras, ha abogado este lunes por \"agilizar los expedientes de expulsión\" a migrantes en situación irregular"
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 17 nov (ronda de las 8:04) en el directo de Público, entrada de las 11:29 del 16 nov (busca «agilizar los expedientes de expulsión»). Solo esas cuatro palabras van entre comillas como frase de Nogueras; el resto es de la agencia. La nota oficial de Junts del acto no lo recoge."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-17"

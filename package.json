@@ -12,6 +12,7 @@
     "check": "astro check",
     "revisar": "node scripts/revisar.mjs",
     "netlify-build": "node scripts/jornada-reflexion.mjs && npm run build",
+    "cf-build": "node scripts/jornada-reflexion.mjs && npm run build && node scripts/cloudflare.mjs",
     "votacion": "node scripts/votacion.mjs"
   },
   "engines": {

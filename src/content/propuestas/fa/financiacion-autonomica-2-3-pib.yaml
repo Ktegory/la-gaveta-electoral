@@ -12,5 +12,5 @@ destacada: false
 comprobacion:
   estado: encontrada
   nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 117 (página 103 del PDF). Busca «al menos un 2,3 % del PIB adicional»."
-revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
-fechaRevision: "2026-11-16"
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-17"

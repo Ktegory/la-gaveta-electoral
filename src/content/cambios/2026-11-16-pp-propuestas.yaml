@@ -1,0 +1,9 @@
+fecha: "2026-11-16"
+partido: "pp"
+tipo: "propuestas"
+descripcion: "Añadimos cuatro compromisos que anunció hoy Alberto Núñez Feijóo en Vallfogona de Balaguer (Lleida), dentro de su propuesta de pacto nacional por la agricultura: un Pacto Nacional del Agua con 40.000 millones de euros, tener en cuenta la ruralidad en la financiación autonómica, eximir de impuestos a los jóvenes que compren su primera vivienda en el medio rural y sumarse en la UE a la moratoria regulatoria."
+propuestas:
+  - "pp/pacto-nacional-agua"
+  - "pp/financiacion-ruralidad"
+  - "pp/vivienda-rural-jovenes-sin-impuestos"
+  - "pp/moratoria-regulatoria-ue"

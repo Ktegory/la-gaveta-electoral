@@ -1,0 +1,15 @@
+partido: "junts"
+tema: "fiscalidad"
+subtema: "patrimonio"
+titulo: "Eliminar el impuesto de Sucesiones y Donaciones"
+resumen: "Lo defendió Miriam Nogueras en un desayuno de Amics del País en Barcelona, junto a bajar el IRPF. La crónica no dice si se refiere al impuesto estatal o al que gestiona la Generalitat, ni da plazos."
+fuentes:
+  - fuente: "junts/prensa-amics-del-pais-2026-11-16"
+    cita: "La candidata de Junts al Congreso, Miriam Nogueras, ha abogado este lunes por \"agilizar los expedientes de expulsión\" a migrantes en situación irregular, al tiempo que ha defendido bajar el IRPF y eliminar el impuesto de Sucesiones y Donaciones."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 17 nov (ronda de las 8:04) en el directo de Público, entrada de las 11:29 del 16 nov (busca «Sucesiones y Donaciones»). Es paráfrasis de la agencia, no una frase entrecomillada de Nogueras. La nota oficial de Junts del acto no lo recoge: conviene buscar una fuente del partido antes de firmar."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-17"

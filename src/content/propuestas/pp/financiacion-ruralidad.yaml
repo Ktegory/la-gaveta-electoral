@@ -1,0 +1,15 @@
+partido: "pp"
+tema: "territorial"
+subtema: "financiacion"
+titulo: "Tener en cuenta la ruralidad, la dispersión y el envejecimiento de la población en la financiación autonómica"
+resumen: "Lo anunció Alberto Núñez Feijóo en Lleida, junto con una fiscalidad diferenciada para el sector rural. La nota no concreta cómo se calcularía ni cuánto pesaría cada criterio."
+fuentes:
+  - fuente: "pp/nota-pacto-rural-lleida-2026-11-16"
+    cita: "la financiación autonómica tendrá en cuenta la ruralidad, la dispersión y el envejecimiento de la población, así como una fiscalidad diferenciada para el sector rural"
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov (ronda de las 20:04) en la nota oficial del PP (busca «tendrá en cuenta la ruralidad»). Es texto de la nota en estilo indirecto. Pendiente: comprobar si el programa del 10 nov dice algo sobre financiación autonómica para añadir la página."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-17"

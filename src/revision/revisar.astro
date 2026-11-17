@@ -4,6 +4,7 @@ import Base from '../layouts/Base.astro';
 import EtiquetaFuente from '../components/EtiquetaFuente.astro';
 import { datos, fuentesDePropuesta, varsPartido, fechaLarga } from '../lib/datos';
 import { REVISOR } from './integracion.mjs';
+import { firmasPrevias } from './historial.mjs';
 import { getCollection } from 'astro:content';
 
 const d = await datos();
@@ -23,6 +24,9 @@ const total = ps.length;
 // Una firma de Claude (cotejo delegado) es provisional: cuenta como pendiente hasta que firme REVISOR.
 const provisional = (p: (typeof ps)[number]) => !!p.data.revisadaPor?.startsWith('Claude');
 const hechas = ps.filter((p) => p.data.revisadaPor && !provisional(p)).length;
+// Las pendientes que ya firmaste alguna vez: cuándo y qué ha cambiado desde entonces (del historial de git).
+const previas = firmasPrevias(REVISOR, ps.filter((p) => !p.data.revisadaPor || provisional(p)).map((p) => p.filePath!));
+const fechaCorta = (f: string) => fechaLarga(new Date(`${f}T12:00:00`));
 const fmt = (f: Date) => fechaLarga(f);
 const esPdf = (url: string) => /\.pdf($|[?#])|\/pdf\//i.test(url);
 /** Para el fragmento de texto, los guiones, comas y & van codificados (son separadores). */
@@ -73,16 +77,29 @@ const COMP = {
       const s = t.data.subtemas.find((x) => x.id === p.data.subtema);
       const partido = nombre.get(p.data.partido.id)!;
       const firmada = !!p.data.revisadaPor && !provisional(p);
+      const previa = firmada ? undefined : previas.get(p.filePath!);
       return (
         <article class="rv" data-id={p.id} data-p={partido.id} data-firmada={firmada ? '' : undefined} data-comp={p.data.comprobacion?.estado} style={varsPartido(partido)}>
           <header>
             <b>{partido.data.nombre}</b>
             <span>{t.data.nombre} › {s?.nombre ?? p.data.subtema}</span>
             {p.data.destacada && <span>★ Destacada</span>}
+            {previa ? <span class="rv-marca">↺ Vuelve a revisión</span> : !firmada && <span class="rv-marca">Nueva</span>}
             {p.data.estado !== 'vigente' && <span>Sustituida por {p.data.sustituidaPor?.id} · no sale en la web</span>}
             <code>{p.id}</code>
           </header>
           <div class="rv-cuerpo">
+            {previa && (
+              <div class="rv-vuelve">
+                <b>Ya la firmaste el {fechaCorta(previa.fecha)}.</b>{' '}
+                {previa.cambios.length
+                  ? <>Desde entonces ha cambiado: {previa.cambios.map((c) => c.campo).join(', ')}.</>
+                  : <>No ha cambiado nada salvo la nota de comprobación.</>}
+                {previa.cambios.filter((c) => c.antes || c.detalle).map((c) => (
+                  <span class="rv-antes"><i>{c.campo[0].toUpperCase() + c.campo.slice(1)}</i>{c.antes ? <> antes: «{c.antes}»</> : <>: {c.detalle}</>}</span>
+                ))}
+              </div>
+            )}
             <h2>{p.data.titulo}</h2>
             {p.data.resumen && <p>{p.data.resumen}</p>}
             {p.data.citaLiteral && <blockquote>«{p.data.citaLiteral}»</blockquote>}
@@ -145,6 +162,10 @@ const COMP = {
   .rv header b { font-family: var(--cond); font-size: 1.375rem; font-weight: 800; text-transform: uppercase }
   .rv header code { margin-left: auto; font-family: var(--mono); font-size: .75rem; opacity: .85 }
   .rv-cuerpo { padding: 20px 20px 8px }
+  .rv-marca { padding: 1px 8px; border-radius: 999px; background: rgb(255 255 255 / .9); color: var(--ink); font-weight: 700; font-size: .75rem }
+  .rv-vuelve { display: grid; gap: 6px; margin: 0 0 14px; padding: 10px 14px; border-radius: 10px; background: var(--bg2); font-size: .9375rem; line-height: 1.45 }
+  .rv-antes { font-size: .875rem; color: var(--ink2) }
+  .rv-antes i { font-style: normal; font-weight: 600 }
   .rv h2 { margin: 0 0 10px; font-size: 1.375rem; line-height: 1.25 }
   .rv-cuerpo > p { margin: 0 0 10px; max-width: 70ch }
   .rv blockquote { margin: 0 0 10px; padding-left: 14px; border-left: 3px solid var(--hair); color: var(--ink2) }

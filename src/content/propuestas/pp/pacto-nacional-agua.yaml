@@ -1,0 +1,15 @@
+partido: "pp"
+tema: "energia"
+subtema: "agua"
+titulo: "Impulsar un Pacto Nacional del Agua con 40.000 millones de euros en infraestructuras hídricas y regadíos"
+resumen: "Lo anunció Alberto Núñez Feijóo en una explotación agrícola de Lleida, dentro de su propuesta de pacto nacional para el sector agrario. La nota no da plazos ni el reparto de la inversión."
+fuentes:
+  - fuente: "pp/nota-pacto-rural-lleida-2026-11-16"
+    cita: "por un Pacto Nacional del Agua con modernización de regadíos, con una inversión de 40.000 millones de euros en infraestructuras hídricas"
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov (ronda de las 20:04) en la nota oficial del PP (busca «Pacto Nacional del Agua»). Es texto de la nota en estilo indirecto, no una frase entrecomillada de Feijóo. Pendiente: comprobar si el programa del 10 nov recoge el pacto y la cifra para añadir la página."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-17"

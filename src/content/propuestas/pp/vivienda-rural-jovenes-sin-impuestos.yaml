@@ -1,0 +1,15 @@
+partido: "pp"
+tema: "vivienda"
+subtema: "fiscalidad-vivienda"
+titulo: "Eximir de impuestos a los jóvenes que compren su primera vivienda para vivir en el medio rural"
+resumen: "Alberto Núñez Feijóo lo puso como ejemplo de la fiscalidad diferenciada para el medio rural. La nota no dice qué impuestos ni hasta qué edad."
+fuentes:
+  - fuente: "pp/nota-pacto-rural-lleida-2026-11-16"
+    cita: "un joven que adquiera su primera vivienda para vivir en el rural no pagará impuestos, “un compromiso explícito para mantener la población en el rural”"
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov (ronda de las 20:04) en la nota oficial del PP (busca «primera vivienda para vivir en el rural»). La primera parte está en estilo indirecto. La nota lo presenta como un ejemplo («Pone el ejemplo de…»), sin concretar impuestos, edad ni límites. Relacionada con pp/avales-jovenes (IVA del 4 % e ITP reducido en la primera vivienda de menores de 40 años)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-17"

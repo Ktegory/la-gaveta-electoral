@@ -12,5 +12,5 @@ destacada: false
 comprobacion:
   estado: encontrada
   nota: "Cita cotejada el 16 nov en el programa de EH Bildu (PDF oficial, sha256 ceb655c9…), página 25. Busca «Fondo de Protección de la Cinematografía»."
-revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
-fechaRevision: "2026-11-16"
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-17"

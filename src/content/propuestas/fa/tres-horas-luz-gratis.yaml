@@ -13,5 +13,5 @@ orden: 6
 comprobacion:
   estado: encontrada
   nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 71 (página 64 del PDF), punto «Tres horas de luz gratis al día». Busca «la luz será gratis para todos los hogares»."
-revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
-fechaRevision: "2026-11-16"
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-17"

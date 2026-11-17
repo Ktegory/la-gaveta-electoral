@@ -4,6 +4,8 @@ import Base from '../layouts/Base.astro';
 import ListaCambios from '../components/ListaCambios.astro';
 import { datos, varsPartido } from '../lib/datos';
 const d = await datos();
+// El formulario usa Netlify Forms: en el plan B (Cloudflare Pages, ver docs/plan-b-cloudflare.md) no funcionaría.
+const conFormulario = !process.env.CF_PAGES;
 const nDest = Math.min(...d.partidos.map((p) => d.propuestas.filter((x) => x.data.partido.id === p.id && x.data.destacada).length));
 ---
 <Base titulo="Cómo funciona" seccion="metodo" descripcion="Método, fuentes, convenciones visuales y cómo avisar de un error en La Gaveta electoral.">
@@ -82,7 +84,8 @@ const nDest = Math.min(...d.partidos.map((p) => d.propuestas.filter((x) => x.dat
     <section class="blk" id="errores">
       <h2>¿Has visto un error?</h2>
       <p>Cuéntanos qué está mal y, si puedes, dónde lo has comprobado. Lo revisamos con la fuente original y, si hay que corregir, lo anotamos en el historial.</p>
-      <form class="form" name="errores" method="POST" action="/gracias/" data-netlify="true" netlify-honeypot="web">
+      {!conFormulario && <p><b>El formulario no está disponible en este momento.</b> Vuelve a intentarlo más tarde.</p>}
+      {conFormulario && <form class="form" name="errores" method="POST" action="/gracias/" data-netlify="true" netlify-honeypot="web">
         <input type="hidden" name="form-name" value="errores" />
         <p class="sr" aria-hidden="true"><label>No rellenes este campo: <input name="web" tabindex="-1" autocomplete="off" /></label></p>
         <div class="campo">
@@ -104,7 +107,7 @@ const nDest = Math.min(...d.partidos.map((p) => d.propuestas.filter((x) => x.dat
           <small id="f-correo-a">Opcional. Solo lo usamos para responderte.</small>
         </div>
         <button class="btn ink" type="submit">Enviar aviso <span class="arrow">→</span></button>
-      </form>
+      </form>}
     </section>
 
     <section class="blk" id="quien">

@@ -1,0 +1,15 @@
+partido: "pp"
+tema: "exterior"
+subtema: "ue"
+titulo: "Sumarse en la UE a la moratoria regulatoria y derogar las obligaciones que España añada a la legislación europea"
+resumen: "Alberto Núñez Feijóo lo anunció en Lleida, al hablar de las normas que afectan al sector agrario. Dice que lo planteará en el primer Consejo Europeo al que asista."
+fuentes:
+  - fuente: "pp/nota-pacto-rural-lleida-2026-11-16"
+    cita: "en el primer Consejo Europeo al que asista se sumará a la moratoria regulatoria que ya han pedido algunos países de la UE, y toda obligación que el Gobierno de España añada a la legislación europea “será derogada”"
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 16 nov (ronda de las 20:04) en la nota oficial del PP (busca «moratoria regulatoria»). Es texto de la nota en estilo indirecto, salvo «será derogada». La nota no aclara si la moratoria se refiere solo a la normativa agraria o a toda la normativa europea."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-17"

@@ -13,5 +13,5 @@ orden: 3
 comprobacion:
   estado: encontrada
   nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 61 (página 55 del PDF), apartado «Hacia una jornada laboral máxima de 32 horas semanales sin reducción salarial». Busca «de forma progresiva hasta las 32 horas» e «Implantación inmediata a 37,5 horas»."
-revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
-fechaRevision: "2026-11-16"
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-17"

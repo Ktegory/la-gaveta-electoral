@@ -1,0 +1,7 @@
+fecha: "2026-11-17"
+partido: "junts"
+tipo: "propuestas"
+descripcion: "Añadimos dos propuestas que Miriam Nogueras defendió el 16 de noviembre en un desayuno de Amics del País en Barcelona, según la crónica de Europa Press: eliminar el impuesto de Sucesiones y Donaciones y agilizar los expedientes de expulsión de migrantes en situación irregular."
+propuestas:
+  - "junts/eliminar-sucesiones-donaciones"
+  - "junts/agilizar-expedientes-expulsion"
