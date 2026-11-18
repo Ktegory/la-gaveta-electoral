@@ -1,0 +1,18 @@
+partido: "pnv"
+tema: "empleo"
+subtema: "autonomos"
+titulo: "Facilitar a los autónomos el acceso a la prestación por desempleo y equipararla a la de los asalariados"
+resumen: "La protección por cese de actividad se iría acercando a la prestación por desempleo, con requisitos más simples y acceso más fácil cuando el cierre sea involuntario. El programa añade que esa prestación se pueda compatibilizar durante un tiempo con un nuevo proyecto empresarial."
+fuentes:
+  - fuente: "pnv/programa-29n-2026"
+    pagina: "15"
+    cita: "Mejorar la protección de las personas autónomas cuando cesa su actividad, aproximándola progresivamente a la prestación por desempleo, simplificando los requisitos y facilitando su acceso cuando exista un cese involuntario."
+  - fuente: "pnv/nota-autonomos-basauri-2026-11-17"
+    cita: "EAJ-PNV propone “facilitar el acceso a la prestación de desempleo de las personas autónomas e ir equiparándolo al de quienes trabajan por cuenta ajena."
+fechaAnuncio: "2026-11-09"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cotejada el 18 nov en el PDF del programa (509.986 bytes, sin cambios desde el 10 nov), pág. 15, apartado 2.2, «Protección de las personas autónomas», medida 04; la 05 es la de compatibilizar la prestación por cese con un nuevo proyecto. Busca «cuando cesa su actividad». La nota oficial del acto de Basauri (17 nov) lo repite en el pasaje de Idoia Sagastizabal; la comilla de apertura no se cierra en la nota. Busca «prestación de desempleo de las personas autónomas»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

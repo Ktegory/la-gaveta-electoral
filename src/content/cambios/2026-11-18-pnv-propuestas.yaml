@@ -1,0 +1,6 @@
+fecha: "2026-11-18"
+partido: "pnv"
+tipo: "propuestas"
+descripcion: "Añadimos una propuesta del programa de EAJ-PNV (pág. 15) que el partido repitió el 17 de noviembre en Basauri: facilitar a los autónomos el acceso a la prestación por desempleo y equipararla a la de los asalariados."
+propuestas:
+  - "pnv/desempleo-autonomos"
