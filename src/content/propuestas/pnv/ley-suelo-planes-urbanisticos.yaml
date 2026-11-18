@@ -6,10 +6,12 @@ resumen: "Lo plantea para construir más vivienda, porque considera que la ofert
 fuentes:
   - fuente: "pnv/nota-decreto-vivienda-2026-11-12"
     cita: "la formación jeltzale mantiene que es necesario modificar la Ley del Suelo para que años de acuerdos para aprobar un Plan Urbanístico no supongan volver a la casilla de inicio por un defecto subsanable."
+  - fuente: "pnv/nota-vivienda-leioa-2026-11-18"
+    cita: "la formación jeltzale propone “modificar la Ley del Suelo para construir más y más rápido” y “favorecer que más viviendas se incorporen al mercado”."
 fechaAnuncio: "2026-11-12"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cita cotejada el 12 nov (ronda de las 20:04) en la nota de eaj-pnv.eus; busca «Ley del Suelo» en el cuarto párrafo. Es estilo indirecto de la nota sobre Maribel Vaquero, no cita entre comillas. No aparece en la versión web del programa (busqué «suelo» y «urbaníst»); el PDF no se ha revisado. Subtema elegido por coherencia con pp/millon-viviendas (nueva Ley del Suelo en vivienda-publica): confírmalo al firmar."
+  nota: "Cita cotejada el 12 nov (ronda de las 20:04) en la nota de eaj-pnv.eus; busca «Ley del Suelo» en el cuarto párrafo. Es estilo indirecto de la nota sobre Maribel Vaquero, no cita entre comillas. El 18 nov se añade la nota del acto de Leioa (Idoia Sagastizabal), que lo repite en el último párrafo sin mencionar el defecto subsanable; busca «construir más y más rápido». En el PDF del programa (pág. 7, medida 01 de «Aumentar la oferta de viviendas») solo aparece la formulación general «Agilizar los trámites urbanísticos», sin nombrar la Ley del Suelo. Subtema elegido por coherencia con pp/millon-viviendas (nueva Ley del Suelo en vivienda-publica)."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-12"
+fechaRevision: "2026-11-18"

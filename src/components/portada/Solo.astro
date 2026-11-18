@@ -1,0 +1,12 @@
+---
+// Envoltorio de lo que solo se ve en ciertas fases del 29N (ver lib/fases.ts).
+// Si la fase con la que se compila no está entre ellas, el contenido va dentro de un <template>:
+// el navegador no lo pinta y los buscadores no lo tratan como texto de la página.
+// El script de Base.astro lo saca del <template> cuando llega su fase.
+// El elemento de dentro lleva además {...solo('…')} para que el CSS lo oculte cuando la fase pase.
+import { FASE_COMPILADA } from '../../lib/fases';
+interface Props { fases: string }
+const { fases } = Astro.props;
+const ahora = fases.split(' ').includes(FASE_COMPILADA);
+---
+{ahora ? <slot /> : <template data-fase-tpl={fases}><slot /></template>}

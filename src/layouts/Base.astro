@@ -7,9 +7,13 @@ import Icono from '../components/Icono.astro';
 import Marquesina from '../components/Marquesina.astro';
 import Logo from '../components/Logo.astro';
 import { datos } from '../lib/datos';
+import { CALENDARIO, MOMENTO_PREVIA, faseAl, type Fase } from '../lib/fases';
 
-interface Props { titulo?: string; descripcion?: string; seccion?: 'mapa' | 'partidos' | 'comparar' | 'escala' | 'metodo' | 'buscar' | 'fuentes' | 'novedades' | 'guias'; estilo?: string; indexar?: boolean; noindex?: boolean }
-const { titulo, descripcion = 'Los programas de los partidos para las elecciones generales del 29N, ordenados por temas, comparables y con la fuente original al lado de cada propuesta.', seccion, estilo, indexar = true, noindex = false } = Astro.props;
+interface Props { titulo?: string; descripcion?: string; seccion?: 'mapa' | 'partidos' | 'comparar' | 'escala' | 'metodo' | 'buscar' | 'fuentes' | 'novedades' | 'guias'; estilo?: string; indexar?: boolean; noindex?: boolean; fase?: Fase }
+const { titulo, descripcion = 'Los programas de los partidos para las elecciones generales del 29N, ordenados por temas, comparables y con la fuente original al lado de cada propuesta.', seccion, estilo, indexar = true, noindex = false, fase } = Astro.props;
+// Fase de la web (ver lib/fases.ts). `fase` solo la fuerzan las vistas previas de /fases/ en local.
+const faseInicial = fase ?? faseAl(new Date());
+const desarrollo = import.meta.env.DEV;
 const nombre = 'La Gaveta electoral';
 const t = titulo ? `${titulo} · ${nombre}` : `${nombre} · Elecciones generales 29N`;
 const canonica = new URL(Astro.url.pathname, Astro.site);
@@ -42,10 +46,45 @@ const nNovedades = (await datos()).cambios.reduce((n, c) => n + Math.max(1, c.da
 
 ---
 <!doctype html>
-<html lang="es">
+<html lang="es" data-fase={faseInicial} data-fase-forzada={fase ? '' : undefined} data-ahora={fase ? MOMENTO_PREVIA[fase] : undefined}>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script is:inline define:vars={{ CAL: CALENDARIO, desarrollo }}>
+    // Fase según la hora de Madrid, antes de pintar (así no parpadea). La cuenta atrás la vuelve a pedir cada segundo.
+    // En local, ?hoy=AAAA-MM-DD o ?hoy=AAAA-MM-DDTHH:MM simula otro momento.
+    window.faseGaveta = () => {
+      const h = document.documentElement;
+      let ahora = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Madrid', dateStyle: 'short', timeStyle: 'short' }).format(new Date()).replace(' ', 'T');
+      const q = desarrollo ? new URLSearchParams(location.search).get('hoy') : null;
+      if (q) { ahora = q.length === 10 ? `${q}T12:00` : q; h.dataset.ahora ??= new Date(`${ahora}:00+01:00`).toISOString(); }
+      const [dia, hora] = ahora.split('T');
+      if (!h.hasAttribute('data-fase-forzada')) {
+        const antes = h.dataset.fase;
+        h.dataset.fase = dia < CAL.reflexion ? 'campana' : dia === CAL.reflexion ? 'reflexion'
+          : dia === CAL.votacion ? (hora < CAL.cierre ? 'votacion' : 'escrutinio') : 'despues';
+        h.toggleAttribute('data-veda', dia >= CAL.vedaDesde && dia <= CAL.reflexion);
+        if (antes !== h.dataset.fase && document.readyState !== 'loading') window.activarFases();
+      }
+      return h.dataset.fase;
+    };
+    // Lo de otras fases llega dentro de <template> (components/portada/Solo.astro): se saca cuando toca.
+    // En bucle, porque al sacar uno pueden aparecer otros dentro.
+    window.activarFases = () => {
+      const f = document.documentElement.dataset.fase;
+      for (let hay = true; hay;) {
+        hay = false;
+        for (const t of document.querySelectorAll('template[data-fase-tpl]:not([data-hecho])')) {
+          if (!t.dataset.faseTpl.split(' ').includes(f)) continue;
+          t.before(t.content.cloneNode(true));
+          t.dataset.hecho = '';
+          hay = true;
+        }
+      }
+    };
+    window.faseGaveta();
+    document.addEventListener('DOMContentLoaded', () => window.activarFases());
+  </script>
   <Fuentes />
   {Astro.url.pathname === '/' && <link rel="preload" as="image" href="/img/hero-mano.webp" type="image/webp" fetchpriority="high" />}
   <title>{t}</title>

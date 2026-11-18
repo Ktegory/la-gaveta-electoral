@@ -174,6 +174,8 @@ a:hover .arrow, button:hover .arrow { transform: translateX(4px) }
 .intro .l { display: grid; gap: clamp(16px, 1.8cqi, 28px) }
 .intro .eyebrow { margin: 0; font-size: .75rem; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; color: var(--ink2) }
 .intro h1 { font-size: clamp(3.25rem, 8cqi, 10.25rem); margin: 0; text-transform: uppercase; line-height: .86 }
+/* «Elecciones generales España 2026» (desde el 30 nov) es más ancho: un 15 % menos de cuerpo deja el mismo hueco con la columna derecha que en campaña. */
+.intro h1[data-fase-solo=despues] { font-size: clamp(3.25rem, 6.8cqi, 8.75rem) }
 .intro .r { display: flex; flex-direction: column; gap: clamp(18px, 2cqi, 32px) }
 .intro .lead { font-size: clamp(1.125rem, 1.4cqi, 1.4375rem); line-height: 1.4; margin: 0; max-width: 40ch; color: var(--ink2) }
 /* Titular: las palabras suben una tras otra, con calma. */
@@ -191,6 +193,7 @@ a:hover .arrow, button:hover .arrow { transform: translateX(4px) }
 .reloj b { font-size: clamp(3.5rem, 6.2cqi, 7.5rem); font-weight: 900 }
 .reloj small { font-size: clamp(1.25rem, 1.9cqi, 2.125rem); font-weight: 800 }
 .reloj[hidden] { display: none }
+.reloj-res { margin: 0; font-size: 1.0625rem; font-weight: 650 }
 .reloj-msg { margin: 0; font-family: var(--cond); font-weight: 900; font-size: clamp(3.5rem, 6.2cqi, 7.5rem); line-height: .9 }
 .progress { height: 10px; background: #fff; box-shadow: inset 0 0 0 1px rgb(0 0 0 / .14), 0 2px 6px rgb(60 45 0 / .10); position: relative; border-radius: 999px; overflow: hidden }
 .progress > i { position: absolute; inset: 0 auto 0 0; background: var(--ink); border-radius: 999px; animation: cargar 1.6s cubic-bezier(.3, .7, .2, 1) .35s backwards }
@@ -971,3 +974,13 @@ a.nov-p:hover { text-decoration: underline; text-underline-offset: 3px }
     content: ''; position: absolute; inset: min(0px, calc((100% - 44px) / 2));
   }
 }
+
+/* Fases alrededor del 29N (ver src/lib/fases.ts). Un elemento con data-fase-solo="a b" solo se ve en esas fases;
+   la fase la pone en <html> el script de Base.astro. Sin JS vale la de cuando se compiló. */
+html[data-fase=campana] [data-fase-solo]:not([data-fase-solo~=campana]),
+html[data-fase=reflexion] [data-fase-solo]:not([data-fase-solo~=reflexion]),
+html[data-fase=votacion] [data-fase-solo]:not([data-fase-solo~=votacion]),
+html[data-fase=escrutinio] [data-fase-solo]:not([data-fase-solo~=escrutinio]),
+html[data-fase=despues] [data-fase-solo]:not([data-fase-solo~=despues]) { display: none !important }
+/* Veda de encuestas (24-28 nov): lo marcado con data-sin-veda se oculta, data-solo-veda solo se ve entonces. */
+html[data-veda] [data-sin-veda], html:not([data-veda]) [data-solo-veda] { display: none !important }

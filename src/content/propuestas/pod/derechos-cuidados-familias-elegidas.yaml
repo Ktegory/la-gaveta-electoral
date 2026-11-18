@@ -1,0 +1,15 @@
+partido: "pod"
+tema: "igualdad"
+subtema: "cuidados"
+titulo: "Reconocer derechos de cuidados a las familias elegidas y a las relaciones no monógamas"
+resumen: "Podemos lo anuncia como una de sus medidas de campaña. Irene Montero lo llama «el derecho a la familia elegida». No ha detallado qué derechos serían ni en qué ley se recogerían."
+fuentes:
+  - fuente: "pod/instagram-familias-elegidas-2026-11-18"
+    cita: "Las familias elegidas y las relaciones no monógamas también tendrán derechos para cuidar y ser cuidadas."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita tomada el 18 nov (ronda de las 20:04) del texto de la publicación de @ahorapodemos (busca «familias elegidas»). Subtema «Cuidados», el mismo que la medida parecida del Frente Amplio («fa/familias-elegidas-ley-familias»). Podemos no tiene aún programa publicado."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

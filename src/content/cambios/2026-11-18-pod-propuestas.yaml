@@ -1,0 +1,6 @@
+fecha: "2026-11-18"
+partido: "pod"
+tipo: "propuestas"
+descripcion: "Añadimos la propuesta que Podemos publicó el 18 de noviembre en Instagram: reconocer derechos de cuidados a las familias elegidas y a las relaciones no monógamas."
+propuestas:
+  - "pod/derechos-cuidados-familias-elegidas"

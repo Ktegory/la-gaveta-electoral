@@ -1,0 +1,75 @@
+---
+import Solo from './Solo.astro';
+// Bloque práctico de la portada para el sábado 28 (reflexión), el domingo 29 (votación) y la noche del 29 (escrutinio).
+// Solo datos comprobables con su fuente: INE, LOREG y el RD de convocatoria. Nada de resultados propios.
+import { ENLACES, solo } from '../../lib/fases';
+import { PIEZAS } from '../../lib/guias';
+const escanos = PIEZAS[0];
+---
+<Solo fases="reflexion votacion escrutinio"><section class="jornada band pad" {...solo('reflexion votacion escrutinio')} aria-labelledby="h-jornada">
+  <div class="sec-h">
+    <h2 class="cond" id="h-jornada">
+      <Solo fases="reflexion"><span {...solo('reflexion')}>Mañana se vota</span></Solo>
+      <Solo fases="votacion"><span {...solo('votacion')}>Para votar hoy</span></Solo>
+      <Solo fases="escrutinio"><span {...solo('escrutinio')}>Los resultados</span></Solo>
+    </h2>
+    <p>
+      <Solo fases="reflexion"><span {...solo('reflexion')}>Hoy es jornada de reflexión: no hay campaña (<a href={ENLACES.loreg53} target="_blank" rel="noopener">LOREG, art. 53</a>) y aquí no publicamos novedades hasta el lunes 30. Lo que necesitas para votar mañana, de 9:00 a 20:00:</span></Solo>
+      <Solo fases="votacion"><span {...solo('votacion')}>Los colegios abren de 9:00 a 20:00 (<a href={ENLACES.loreg84} target="_blank" rel="noopener">LOREG, art. 84</a>); en Canarias, a esas horas de allí. Hoy no publicamos novedades. Lo que necesitas para votar:</span></Solo>
+      <Solo fases="escrutinio"><span {...solo('escrutinio')}>Los colegios han cerrado (en Canarias, a las 21:00 hora peninsular). Los resultados provisionales oficiales los publica el Ministerio del Interior. Aquí no damos cifras propias.</span></Solo>
+    </p>
+  </div>
+
+  <Solo fases="reflexion votacion"><ul class="jor-lista" {...solo('reflexion votacion')}>
+    <li>
+      <span class="jor-k">Dónde votas</span>
+      <b class="cond">Tu mesa y tu colegio</b>
+      <p>Búscalos en la consulta del INE con la provincia, el municipio y la inicial de tu primer apellido. No hace falta identificarse. Dudas: <a href={`tel:+34${ENLACES.telefonoCenso.replace(/ /g, '')}`}>{ENLACES.telefonoCenso}</a>.</p>
+      <a class="btn sm" href={ENLACES.mesa} target="_blank" rel="noopener">Consultar en el INE <span class="arrow">→</span></a>
+    </li>
+    <li>
+      <span class="jor-k">Qué llevar</span>
+      <b class="cond">Un documento con tu foto</b>
+      <p>DNI, pasaporte o permiso de conducir en el que aparezca tu fotografía. Con cualquiera de los tres basta.</p>
+      <a class="fuente" href={ENLACES.loreg85} target="_blank" rel="noopener">LOREG, art. 85</a>
+    </li>
+    <li>
+      <span class="jor-k">Cómo se vota</span>
+      <b class="cond">Dos papeletas</b>
+      <p><b>Congreso</b>, papeleta blanca: eliges una lista entera, sin tachar ni cambiar el orden. <b>Senado</b>, papeleta sepia: marcas hasta 3 personas, de cualquier partido (2 en Gran Canaria, Mallorca, Tenerife, Ceuta y Melilla; 1 en las demás islas).</p>
+      <a class="fuente" href={ENLACES.loreg166} target="_blank" rel="noopener">LOREG, art. 166</a>
+    </li>
+  </ul></Solo>
+
+  <Solo fases="escrutinio"><ul class="jor-lista" {...solo('escrutinio')}>
+    <li>
+      <span class="jor-k">Resultados</span>
+      <b class="cond">Escrutinio provisional</b>
+      <p>Interior los publica a partir de las actas de cada mesa (<a href={ENLACES.loreg98} target="_blank" rel="noopener">LOREG, art. 98.2</a>), según avanza el recuento. Los definitivos salen del escrutinio general de las juntas electorales provinciales, días después.</p>
+      <a class="btn sm ink" href={ENLACES.resultados} target="_blank" rel="noopener">Resultados oficiales <span class="arrow">→</span></a>
+    </li>
+    <li>
+      <span class="jor-k">Para entenderlos</span>
+      <b class="cond">{escanos.titulo}</b>
+      <p>{escanos.texto}</p>
+      <a class="btn sm" href={escanos.href}>Ver la explicación <span class="arrow">→</span></a>
+    </li>
+  </ul></Solo>
+</section></Solo>
+
+<style>
+  /* Banda oscura: entre la portada (crema) y el estado de los programas (blanco), y que se vea que hoy manda esto. */
+  .jornada { background: var(--ink); color: #fff }
+  .jornada .sec-h p { color: rgb(255 255 255 / .8) }
+  .jornada .sec-h a { color: #fff }
+  .jornada .jor-lista li { color: var(--ink) }
+  .jornada h2 span, .jornada .sec-h p span { display: inline }
+  .jor-lista { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; margin: 0; padding: 0; list-style: none }
+  @container site (min-width: 800px) { .jor-lista { grid-template-columns: repeat(auto-fit, minmax(0, 1fr)) } }
+  .jor-lista li { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 24px; border-radius: var(--r-in); background: #fff }
+  .jor-k { font-family: var(--mono); font-size: .7188rem; letter-spacing: .06em; text-transform: uppercase; color: var(--mute) }
+  .jor-lista b.cond { font-size: clamp(1.75rem, 2.4cqi, 2.375rem); line-height: .95; text-transform: uppercase }
+  .jor-lista p { margin: 0 0 14px; font-size: .9688rem; line-height: 1.5; color: var(--ink2); flex: 1 }
+  .jor-lista p b { color: var(--ink) }
+  .jor-lista .fuente { font-family: var(--sans); font-size: .875rem; font-weight: 650; color: var(--ink) }
+</style>

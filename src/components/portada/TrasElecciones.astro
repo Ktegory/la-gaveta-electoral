@@ -1,0 +1,26 @@
+---
+import Solo from './Solo.astro';
+// Lo que ocupa el sitio de la cuenta atrás desde el lunes 30: qué viene ahora, con fechas oficiales.
+// Sin resultados propios: enlace a los oficiales y a la explicación de la investidura.
+import { CORTES, ENLACES, solo } from '../../lib/fases';
+const fmt = new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Madrid' });
+const cortes = fmt.format(CORTES).replace('.', '').replace(',', ' ·');
+---
+<Solo fases="despues"><div class="tras" {...solo('despues')}>
+  <p class="reloj-msg">¡Hemos votado!</p>
+  <ol class="tras-hitos">
+    <li><span>29 nov</span><p>Elecciones generales</p></li>
+    <li><span>{cortes}</span><p>Sesiones constitutivas del Congreso y del Senado (<a href="https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-20742" target="_blank" rel="noopener">RD 806/2026, art. 5</a>)</p></li>
+    <li><span>Después</span><p>Consultas del Rey y debate de investidura (<a href={ENLACES.ce99} target="_blank" rel="noopener">Constitución, art. 99</a>). <a href="/entender-el-29n/reparto-de-escanos/#despues">Cómo funciona</a></p></li>
+  </ol>
+</div></Solo>
+
+<style>
+  .tras { display: grid; gap: 14px }
+  /* Fondo casi opaco: la mano de la portada pasa por detrás y el texto tiene que leerse. */
+  .tras-hitos { display: grid; gap: 0; margin: 0; padding: 4px 18px; list-style: none; border-radius: var(--r-in); background: rgb(255 255 255 / .9); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px) }
+  .tras-hitos li { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 16px; align-items: baseline; padding: 12px 0; border-bottom: 1px solid var(--hair) }
+  .tras-hitos li:last-child { border-bottom: 0 }
+  .tras-hitos span { font-family: var(--cond); font-weight: 900; font-size: 1.375rem; line-height: 1; text-transform: uppercase; color: var(--ink) }
+  .tras-hitos p { margin: 0; font-size: .9688rem; line-height: 1.45 }
+</style>

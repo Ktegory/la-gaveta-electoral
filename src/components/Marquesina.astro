@@ -20,7 +20,7 @@ let h = 0;
 for (const c of resumen) h = (h * 31 + c.charCodeAt(0)) | 0;
 const huella = (h >>> 0).toString(36);
 ---
-<div class="prov pad" role="region" aria-label="Aviso: información provisional" data-huella={huella}>
+<div class="prov pad" role="region" aria-label="Aviso: información provisional" data-huella={huella} data-fase-solo="campana">
   <span class="k">PROVISIONAL</span>
   <div class="mq">
     <p class="sr">{resumen}</p>

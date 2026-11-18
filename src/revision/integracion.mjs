@@ -17,6 +17,9 @@ export default function revisionLocal() {
       'astro:config:setup': ({ command, injectRoute, updateConfig }) => {
         if (command !== 'dev') return;
         injectRoute({ pattern: '/revisar', entrypoint: './src/revision/revisar.astro' });
+        // Vista previa de la portada en cada fase del 29N (lib/fases.ts).
+        injectRoute({ pattern: '/fases', entrypoint: './src/revision/fases.astro' });
+        injectRoute({ pattern: '/fases/[fase]', entrypoint: './src/revision/fase.astro' });
         updateConfig({
           vite: {
             plugins: [{ name: 'revision-local', configureServer(s) { s.middlewares.use('/__revisar', firmar); } }],

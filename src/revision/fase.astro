@@ -1,0 +1,10 @@
+---
+// Solo en local (npm run dev): la portada duplicada en cada fase del 29N, para revisarla antes de que llegue el día.
+import Portada from '../components/portada/Portada.astro';
+import { FASES, type Fase } from '../lib/fases';
+export function getStaticPaths() {
+  return FASES.map((fase) => ({ params: { fase } }));
+}
+const fase = Astro.params.fase as Fase;
+---
+<Portada fase={fase} />

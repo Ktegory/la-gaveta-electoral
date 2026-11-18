@@ -1,0 +1,20 @@
+---
+// Solo en local (npm run dev): índice de las vistas previas de cada fase.
+import Base from '../layouts/Base.astro';
+import { FASES, NOMBRE_FASE } from '../lib/fases';
+---
+<Base titulo="Fases del 29N (vista previa)" noindex indexar={false}>
+  <section class="pad" style="padding-block:var(--sec)">
+    <div class="sec-h"><h1 class="cond" style="font-size:clamp(2.75rem,6.5cqi,7.5rem);margin:0;text-transform:uppercase">Fases del 29N</h1><p>Vista previa local de la portada en cada fase. En la web publicada la fase la decide el navegador con la hora de Madrid, sin tener que publicar ese día.</p></div>
+    <ol class="fz">
+      {FASES.map((f) => <li><a href={`/fases/${f}/`}><b class="cond">{NOMBRE_FASE[f]}</b><span>/fases/{f}/</span></a></li>)}
+      <li><a href="/entender-el-29n/reparto-de-escanos/?hoy=2026-11-25#encuestas"><b class="cond">Veda de encuestas (24-28 nov)</b><span>Reparto de escaños, párrafo de las encuestas</span></a></li>
+    </ol>
+  </section>
+</Base>
+<style>
+  .fz { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none }
+  .fz a { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; padding: 20px 24px; border-radius: var(--r-in); background: var(--crema); color: var(--ink); text-decoration: none }
+  .fz b { font-size: clamp(1.5rem, 2.2cqi, 2.125rem); text-transform: uppercase }
+  .fz span { font-family: var(--mono); font-size: .75rem; color: var(--mute) }
+</style>

@@ -257,7 +257,9 @@ const PASOS = [
         <li><a href={CE} target="_blank" rel="noopener">Constitución Española</a>: artículos 68, 69 y 99.</li>
       </ul>
       <p>Las candidaturas del simulador son inventadas y no reflejan ningún resultado real ni previsto.</p>
-      <p id="encuestas">Si buscas estimaciones de voto, el CIS publica sus encuestas preelectorales en su <a href={CIS} target="_blank" rel="noopener">catálogo de estudios</a>. Del 24 al 28 de noviembre la ley no permite publicar sondeos (<a href={art.l69} target="_blank" rel="noopener">LOREG, art. 69.7</a>).</p>
+      <p id="encuestas" data-sin-veda>Si buscas estimaciones de voto, el CIS publica sus encuestas preelectorales en su <a href={CIS} target="_blank" rel="noopener">catálogo de estudios</a>. Del 24 al 28 de noviembre la ley no permite publicar sondeos (<a href={art.l69} target="_blank" rel="noopener">LOREG, art. 69.7</a>).</p>
+      {/* Durante la veda (24-28 nov) no enlazamos encuestas; lo decide el script de <head> de Base.astro. */}
+      <p data-solo-veda>Del 24 al 28 de noviembre la ley no permite publicar sondeos electorales (<a href={art.l69} target="_blank" rel="noopener">LOREG, art. 69.7</a>), así que estos días tampoco enlazamos ninguno.</p>
     </section>
   </div>
 </Base>
