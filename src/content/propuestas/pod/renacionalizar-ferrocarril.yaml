@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "fiscalidad"
+subtema: "transporte"
+titulo: "Volver a un único operador ferroviario público, reunir Renfe y Adif y revocar las licencias de Ouigo e Iryo"
+resumen: "Lo plantea como una renacionalización usando el artículo 128 de la Constitución. El patrimonio y la estructura de Ouigo e Iryo se nacionalizarían e integrarían en el operador público, de modo que todos los trenes de pasajeros serían de Renfe."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "105"
+    cita: "Haremos un replanteamiento completo del modelo de liberalización con el horizonte de volver a un modelo con un único operador público unificado, volviendo a reunir Renfe con Adif"
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 105 (busca «único operador público unificado»). La revocación de las licencias de Ouigo e Iryo sigue en la misma frase: busca «revocando las licencias de Ouigo»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

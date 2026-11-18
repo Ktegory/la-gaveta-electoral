@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "educacion"
+subtema: "contenidos"
+titulo: "Suprimir la enseñanza de la religión en todos los colegios"
+resumen: "La alta inspección educativa vigilaría que se cumpla, y el centro que no lo haga podría perder la licencia."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "83"
+    cita: "Suprimiremos la enseñanza de cualquier religión en cualquier colegio."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 83 (busca «enseñanza de cualquier religión»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

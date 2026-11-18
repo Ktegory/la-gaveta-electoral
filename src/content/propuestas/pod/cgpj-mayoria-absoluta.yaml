@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "instituciones"
+subtema: "justicia"
+titulo: "Exigir mayoría absoluta y el apoyo de la mitad de los grupos para elegir a los vocales judiciales del CGPJ"
+resumen: "El Congreso seguiría eligiendo a los doce vocales del turno judicial. Añade mecanismos de cese y sustitución de los miembros del CGPJ y del Tribunal Constitucional con el mandato agotado, y avales ciudadanos y comparecencias públicas para las candidaturas."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "129"
+    cita: "Asimismo, reformaremos la Ley Orgánica del Poder Judicial para que la elección de los doce vocales del turno judicial por el Congreso requiera mayoría absoluta y el respaldo de al menos la mitad de los grupos parlamentarios, garantizando el pluralismo y evitando los bloqueos."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 129 (busca «al menos la mitad de los grupos parlamentarios»)."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-18"

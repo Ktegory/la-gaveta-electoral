@@ -1,8 +1,12 @@
 partido: "pod"
 tema: "fiscalidad"
 subtema: "sociedades"
-titulo: "Impuesto del 50 % a los beneficios extraordinarios de las empresas del IBEX"
+titulo: "Crear un impuesto permanente sobre los beneficios extraordinarios de la gran banca que recaude al menos el 50 %"
+resumen: "Su documento político de 2025 lo planteaba para las empresas del IBEX; el programa lo concreta en la gran banca. A eléctricas y petroleras les reclamaría íntegros los beneficios que superen los anteriores a las crisis energéticas, y a la banca, la devolución del rescate."
 fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "17"
+    cita: "Estableceremos un impuesto permanente sobre los beneficios extraordinarios de la gran banca, de forma que al menos el 50 % de sus beneficios revierta en las arcas públicas."
   - fuente: "pod/documento-politico-2025"
     pagina: "30–39"
     cita: un impuesto a los beneficios extraordinarios de las empresas del IBEX que alcance el 50% de los mismos
@@ -11,6 +15,6 @@ destacada: true
 orden: 6
 comprobacion:
   estado: encontrada
-  nota: La frase empieza en la p. 36 («hay que implementar, en particular, un impuesto…»). Es un documento de abril de 2025, no un programa electoral de 2026. La comprobación sitúa el pasaje en la p. 37 del PDF (el archivo dice 30–39).
+  nota: "18 nov: añadimos el programa del 29N como fuente principal (página 17). El programa habla de la «gran banca», no de las empresas del IBEX: cambian título y resumen. Quitada la firma para revisar de nuevo. Nota anterior: La frase empieza en la p. 36 («hay que implementar, en particular, un impuesto…»). Es un documento de abril de 2025, no un programa electoral de 2026. La comprobación sitúa el pasaje en la p. 37 del PDF (el archivo dice 30–39)."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-11"
+fechaRevision: "2026-11-18"

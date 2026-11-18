@@ -2,10 +2,17 @@ partido: "pod"
 tema: "energia"
 subtema: "precio"
 titulo: "Intervenir el mercado eléctrico"
+resumen: "Pagar cada MWh según su coste de producción y acabar con el mercado marginalista, con una factura progresiva por tramos de consumo en la que el término fijo no supere el 25 % en las facturas más bajas."
 fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "19"
+    cita: "Reforma completa del mercado eléctrico para pagar el MWh según su coste de producción y acabar con los beneficios caídos del cielo."
   - fuente: "pod/documento-politico-2025"
     pagina: "30–39"
 fechaAnuncio: "2025-04-01"
 destacada: false
-revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-10"
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: añadimos el programa del 29N como fuente principal (página 19). Medida 39 del programa; la cita es su título. Antes solo citaba el documento político de 2025. Quitada la firma para revisar de nuevo."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-18"

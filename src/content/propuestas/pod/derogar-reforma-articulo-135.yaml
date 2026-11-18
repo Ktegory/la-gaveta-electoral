@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "instituciones"
+subtema: "constitucion"
+titulo: "Derogar la reforma del artículo 135 de la Constitución que da prioridad al pago de la deuda"
+resumen: "Para que el pago de la deuda no tenga preferencia sobre la inversión social ni limite la financiación de los servicios públicos."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "23"
+    cita: "Derogaremos la reforma constitucional que afectó al artículo 135 de la Constitución para evitar que el pago de la deuda externa sea preferente a la inversión social y las limitaciones en la financiación de los servicios públicos."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 23 (busca «artículo 135 de la Constitución»)."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-18"

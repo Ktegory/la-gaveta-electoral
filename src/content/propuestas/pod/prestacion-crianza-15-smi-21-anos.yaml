@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "igualdad"
+subtema: "cuidados"
+titulo: "Crear una prestación universal por crianza del 15 % del salario mínimo al mes por cada hijo hasta los 21 años"
+resumen: "Se cobraría por cada hija o hijo desde el nacimiento hasta que cumpla 21 años."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "60"
+    cita: "Establecer una prestación mensual por cada hija o hijo, desde el nacimiento hasta los 21 años, equivalente al 15 % del Salario Mínimo Interprofesional (SMI)."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 60 (busca «hasta los 21 años, equivalente»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

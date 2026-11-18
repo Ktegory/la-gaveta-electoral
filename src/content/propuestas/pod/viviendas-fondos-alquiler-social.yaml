@@ -1,9 +1,12 @@
 partido: "pod"
 tema: "vivienda"
 subtema: "grandes-tenedores"
-titulo: "Pasar a alquiler social las viviendas de los fondos de inversión"
-resumen: "Irene Montero lo planteó en un desayuno informativo de Europa Press. Según la crónica de la agencia, mediante la expropiación del uso de esas viviendas."
+titulo: "Expropiar el uso de las viviendas de fondos, bancos y grandes tenedores que tengan más de diez para el alquiler social"
+resumen: "Según el programa, unas 626.000 viviendas. Las vacías o de uso turístico pasarían al parque público de alquiler social; en las ya alquiladas habría rentas sociales o reguladas según la situación económica de cada familia."
 fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "8"
+    cita: "Impulsaremos la expropiación de uso por interés social de las viviendas que superen las diez en manos de grandes tenedores, fondos de inversión, entidades financieras y bancos, incluyendo las aproximadamente 626.000 viviendas concentradas en manos de grandes propietarios."
   - fuente: "pod/prensa-montero-desayuno-2026-11-06"
     cita: "A ello ha sumado la expropiación del uso de miles de viviendas acumuladas por fondos de inversión para destinarlas al alquiler social"
   - fuente: "pod/prensa-montero-pensiones-2026-11-06"
@@ -12,6 +15,6 @@ fechaAnuncio: "2026-11-06"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Antes citaba la web de campaña, que no lo dice. Las dos crónicas lo cuentan en estilo indirecto (no hay frase literal de Montero). Solo Europa Press habla de «expropiación del uso»; la otra crónica dice «incorporar al parque público»."
+  nota: "18 nov: añadimos el programa del 29N como fuente principal (página 8). Medida 4 del programa. Confirma la «expropiación de uso», que antes solo contaba la crónica de Europa Press, y la extiende de los fondos a bancos, entidades financieras y grandes tenedores con más de diez viviendas. Quitada la firma para revisar de nuevo. Nota anterior: Antes citaba la web de campaña, que no lo dice. Las dos crónicas lo cuentan en estilo indirecto (no hay frase literal de Montero). Solo Europa Press habla de «expropiación del uso»; la otra crónica dice «incorporar al parque público»."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-11"
+fechaRevision: "2026-11-18"

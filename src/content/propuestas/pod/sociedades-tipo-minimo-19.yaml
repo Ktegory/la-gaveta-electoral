@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "fiscalidad"
+subtema: "sociedades"
+titulo: "Subir del 15 % al 19 % el tipo mínimo de Sociedades y fijar a los oligopolios un 29 % mínimo y un 35 % nominal"
+resumen: "El tipo mínimo se calcularía sobre los beneficios reales y no sobre la base imponible. También reduciría del 95 % al 80 % la exención de dividendos y plusvalías de filiales, limitaría a tres años la compensación de bases negativas y al 20 % de la cuota los créditos fiscales."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "21"
+    cita: "Elevaremos el tipo efectivo mínimo general del 15 % al 19 %, calculándolo sobre los beneficios reales y no sobre la base imponible, y estableceremos para las empresas que operen en régimen de oligopolio un tipo efectivo mínimo del 29 % y un tipo nominal del 35 %."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 21 (busca «régimen de oligopolio»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

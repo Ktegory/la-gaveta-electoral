@@ -1,14 +1,18 @@
 partido: "pod"
 tema: "pensiones"
 subtema: "edad-jubilacion"
-titulo: "Bajar la edad de jubilación a 63 años"
-resumen: "Lo planteó Irene Montero en un desayuno informativo de Europa Press. La fuente no detalla si se refiere a la edad ordinaria ni cómo se financiaría."
+titulo: "Adelantar a los 63 años la edad ordinaria de jubilación"
+resumen: "Se financiaría a través de los Presupuestos Generales del Estado. Irene Montero lo había planteado el 6 nov en un desayuno informativo de Europa Press."
 fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "41"
+    cita: "Reformaremos el sistema de pensiones para adelantar la edad ordinaria de jubilación a los 63 años garantizando la sostenibilidad y suficiencia de las pensiones mediante su financiación a través de los Presupuestos Generales del Estado."
   - fuente: "pod/prensa-montero-pensiones-2026-11-06"
     cita: "ha planteado reducir la edad de jubilación a 63 años y aumentar las pensiones mínimas, incluyendo las no contributivas."
 fechaAnuncio: "2026-11-06"
 destacada: false
 comprobacion:
   estado: encontrada
+  nota: "18 nov: añadimos el programa del 29N como fuente principal (página 41). El programa aclara que es la edad ordinaria y cómo se financiaría. Quitada la firma para revisar de nuevo."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-11"
+fechaRevision: "2026-11-18"

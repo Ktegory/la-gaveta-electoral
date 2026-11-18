@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "vivienda"
+subtema: "alquiler"
+titulo: "Prohibir los pisos turísticos mientras dure la emergencia habitacional y retirar poco a poco las licencias existentes"
+resumen: "No habría licencias nuevas y los pisos turísticos ilegales se cederían gratis y de forma obligatoria a la Empresa Inmobiliaria Pública. En zonas de turismo masificado habría una moratoria indefinida de nuevas plazas hoteleras, con excepciones para el turismo rural, y un nuevo Cuerpo Público de Inspectores de Vivienda vigilaría el cumplimiento."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "9"
+    cita: "Pondremos fin al uso turístico de viviendas residenciales, mientras se mantenga la emergencia habitacional, mediante la eliminación progresiva de las autorizaciones existentes y la prohibición de nuevas licencias."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 9 (busca «Pondremos fin al uso turístico»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

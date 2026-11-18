@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "sanidad"
+subtema: "prestaciones"
+titulo: "Cubrir al 100 % en la sanidad pública la salud bucodental, oftalmológica y auditiva, la fisioterapia y la psicología"
+resumen: "El dentista público incluiría empastes, limpiezas, ortodoncias, endodoncias, prótesis y férulas. También haría el copago farmacéutico proporcional a la renta, con exención para las personas con menos recursos."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "91"
+    cita: "Aumentaremos hasta el 100% la cobertura de la cartera de servicios de salud bucodental, oftalmológica y auditiva, así como de fisioterapia y psicológica"
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 91 (busca «hasta el 100% la cobertura»). La frase sigue después de la cita."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "empleo"
+subtema: "autonomos"
+titulo: "Hacer que los autónomos coticen un porcentaje progresivo de su beneficio, con cuota cero si tienen pérdidas"
+resumen: "Sustituiría las cuantías fijas por tramos y subiría la cotización de los beneficios millonarios."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "23"
+    cita: "Estableceremos un sistema de cotización para los autónomos que consista en un porcentaje progresivo de su beneficio, huyendo de las cuantías fijas por tramos, llegando a la cotización 0 en caso de incurrir en pérdidas y elevando la cotización actual de los beneficios millonarios."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 23 (busca «porcentaje progresivo de su beneficio»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

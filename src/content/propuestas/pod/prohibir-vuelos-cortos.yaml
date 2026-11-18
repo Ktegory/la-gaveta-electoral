@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "fiscalidad"
+subtema: "transporte"
+titulo: "Prohibir los vuelos cortos cuando haya alternativa en tren de menos de tres horas"
+resumen: "También avanzaría hacia la prohibición de los jets privados de uso no esencial y, mientras tanto, les aplicaría un impuesto según sus emisiones y las características de cada vuelo."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "104"
+    cita: "Prohibición de vuelos cortos cuando haya una alternativa ferroviaria de menos de tres horas, como se ha hecho recientemente en Francia."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 104 (busca «Prohibición de vuelos cortos»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

@@ -1,11 +1,18 @@
 partido: "pod"
 tema: "empleo"
 subtema: "jornada"
-titulo: "Jornada laboral de 30 horas semanales"
+titulo: "Reducir la jornada laboral a 30 horas semanales sin reducir los salarios"
+resumen: "Durante la legislatura, empezando por 35 horas. Permitiría la semana de cuatro días según el trabajo y la voluntad de cada persona, y el teletrabajo dos días a la semana donde sea posible."
 fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "41"
+    cita: "Reduciremos la jornada laboral a 30 horas semanales durante la legislatura, comenzando con una bajada a 35 horas, con la posibilidad de reducir la semana laboral a cuatro días en función del trabajo concreto, de los tiempos de desplazamiento y de la voluntad del trabajador o trabajadora."
   - fuente: "pod/web-campana"
 fechaAnuncio: "2026-10-19"
 destacada: true
 orden: 2
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: añadimos el programa del 29N como fuente principal (página 41). Medida 113 del programa. Antes citaba la web de campaña, sin frase literal. Quitada la firma para revisar de nuevo."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-10"
+fechaRevision: "2026-11-18"

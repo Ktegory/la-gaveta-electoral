@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "vivienda"
+subtema: "okupacion"
+titulo: "Reconocer la dación en pago y limitar la deuda hipotecaria al valor de la vivienda"
+resumen: "La hipoteca y los suministros básicos no podrían superar juntos el 30 % de los ingresos del hogar, con quitas obligatorias de las cuotas si hace falta. Un Fondo de Responsabilidad Social pagado por los bancos, con el 0,15 % del crédito al año durante 30 años, compensaría los daños de la actividad financiera."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "12"
+    cita: "Limitaremos la responsabilidad de las personas deudoras al valor del bien hipotecado y reconoceremos el derecho a la dación en pago con cancelación total de la deuda."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, medida 23, página 12 (busca «dación en pago»). Va en «Okupación y desahucios» por decisión del 18 nov, porque evita ejecuciones hipotecarias: no hay subtema de hipotecas."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

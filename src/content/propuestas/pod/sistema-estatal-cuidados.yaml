@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "igualdad"
+subtema: "cuidados"
+titulo: "Crear un Sistema Estatal de Cuidados y Conciliación como cuarto pilar del Estado del bienestar"
+resumen: "Cubriría con recursos públicos las necesidades de cuidados combinando asistencia personal profesional en el domicilio, asistencia familiar (nunca más de una jornada completa por asistente) y plaza residencial. Se acompañaría de una Ley de Calidad con sueldos de al menos 1,5 veces el SMI."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "62"
+    cita: "Creación de un Sistema Estatal de Cuidados y Conciliación (SECC) que se constituya como el cuarto pilar del Estado del Bienestar."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 62 (busca «Sistema Estatal de Cuidados y Conciliación»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

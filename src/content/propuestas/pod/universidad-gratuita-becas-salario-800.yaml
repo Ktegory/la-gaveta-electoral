@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "educacion"
+subtema: "universidad"
+titulo: "Hacer gratuitas las tasas de grado, máster y doctorado en la universidad pública y crear becas-salario de hasta 800 €"
+resumen: "La gratuidad llegaría de forma progresiva durante la próxima legislatura, en todos los cursos y convocatorias. Las becas-salario serían mensuales y dependerían de la renta familiar."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "85"
+    cita: "Alcanzaremos progresivamente, durante la próxima legislatura, la gratuidad total de las tasas de grado, máster y doctorado en las universidades públicas, en todos los cursos y convocatorias, y estableceremos un sistema de becas-salario de hasta 800 euros mensuales"
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 85 (busca «becas-salario de hasta 800 euros»). La frase sigue después de la cita (becas según la renta familiar)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

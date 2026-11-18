@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "fiscalidad"
+subtema: "iva"
+titulo: "Subir al 21 % el IVA de los pisos turísticos mientras se completa su prohibición"
+resumen: "Se aplicaría a los servicios de alojamiento en pisos turísticos hasta que termine de aplicarse la prohibición del uso turístico de viviendas residenciales."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "22"
+    cita: "Mientras se completa la prohibición del uso turístico de viviendas residenciales, elevaremos al 21 % el IVA aplicable a los servicios de alojamiento en pisos turísticos."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 22 (busca «elevaremos al 21 % el IVA»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

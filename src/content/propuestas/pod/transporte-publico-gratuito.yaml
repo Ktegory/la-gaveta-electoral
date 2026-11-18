@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "fiscalidad"
+subtema: "transporte"
+titulo: "Hacer gratuito todo el transporte público, incluido el tren de media y larga distancia, y crear una tarjeta única"
+resumen: "Abarca el transporte de competencia estatal, autonómica y local, con una tarjeta válida en todos los sistemas y operadores. Se financiaría con la fiscalidad verde, los impuestos a los vuelos privados y los beneficios extraordinarios de las grandes energéticas."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "19"
+    cita: "Garantizaremos la gratuidad de todo el transporte público de viajeros, incluyendo los servicios urbanos e interurbanos de autobús, metro, tranvía, cercanías, media y larga distancia ferroviaria y demás medios de transporte público de competencia estatal, autonómica y local."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 19 (busca «gratuidad de todo el transporte público»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

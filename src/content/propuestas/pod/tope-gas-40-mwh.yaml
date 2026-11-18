@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "energia"
+subtema: "precio"
+titulo: "Recuperar el tope al gas con un precio de referencia de 40 €/MWh"
+resumen: "Se descontaría del precio mayorista el sobrecoste del gas usado en ciclos combinados, carbón y cogeneración. Además, las tarifas domésticas de luz y gas no podrían superar en más de un 5 % la media facturada en el periodo de referencia anterior."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "19"
+    cita: "Recuperaremos el mecanismo del tope al gas, fijando un precio de referencia de 40 €/MWh y descontando del precio mayorista el sobrecoste del gas utilizado en los ciclos combinados, el carbón y la cogeneración."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 19 (busca «precio de referencia de 40 €/MWh»)."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-18"

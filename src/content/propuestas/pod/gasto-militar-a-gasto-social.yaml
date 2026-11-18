@@ -1,14 +1,18 @@
 partido: "pod"
 tema: "exterior"
 subtema: "gasto-militar"
-titulo: "Dedicar a medidas sociales el aumento del gasto militar desde 2023"
-resumen: "Irene Montero cifra ese aumento en 24.000 millones de euros, según sus cálculos, y propone usarlo para nacionalizar Repsol, contratar personal sanitario y docente, expropiar el uso de viviendas de fondos y crear un supermercado público, entre otras medidas. Lo planteó en un desayuno informativo de Europa Press."
+titulo: "Revertir el aumento del gasto militar y dedicarlo a servicios públicos, vivienda y paz"
+resumen: "Después lo congelaría toda la legislatura, salvo para salarios, condiciones laborales y alojamiento de la tropa. El programa no da cifra; Irene Montero calculó en Europa Press que el gasto militar ha subido 24.000 millones desde 2023."
 fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "28"
+    cita: "Revertiremos en los Presupuestos Generales del Estado el mayor aumento del gasto militar de la historia de la democracia, destinando esos recursos a financiar los servicios públicos, el derecho a la vivienda y la paz."
   - fuente: "pod/prensa-montero-desayuno-2026-11-06"
     cita: "ha propuesto este viernes destinar los 24.000 millones de euros en los que, según sus cálculos, ha aumentado el gasto militar desde 2023 a nacionalizar Repsol, contratar 40.000 profesionales sanitarios y otros tantos docentes"
 fechaAnuncio: "2026-11-06"
 destacada: false
 comprobacion:
   estado: encontrada
-revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-11"
+  nota: "18 nov: añadimos el programa del 29N como fuente principal (página 28). La cifra de 24.000 millones y sus destinos solo constan en la crónica de Europa Press. Quitada la firma para revisar de nuevo."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-18"

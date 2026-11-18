@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "fiscalidad"
+subtema: "irpf"
+titulo: "Bajar al 9 % el tipo mínimo estatal del IRPF y subirlo desde 60.000 €, hasta el 28,5 % a partir de 500.000 €"
+resumen: "Escala estatal propuesta: 23 % entre 60.000 y 99.000 €, 24 % entre 100.000 y 199.999 €, 25,5 % hasta 299.999 €, 27 % hasta 499.999 € y 28,5 % desde 500.000 €. Quien cobre menos del SMI no tributaría ni tendría retención."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "21"
+    cita: "Reformaremos la escala estatal del IRPF sobre la base imponible general para reforzar la progresividad fiscal, reduciremos el tipo mínimo del 9,5 % actual al 9 %, y elevaremos los tipos a las bases imponibles de más de 60.000 euros anuales:"
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 21 (busca «tipo mínimo del 9,5 % actual»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

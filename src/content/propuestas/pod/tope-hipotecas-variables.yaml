@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "vivienda"
+subtema: "acceso-compra"
+titulo: "Limitar el interés de las hipotecas variables de las rentas bajas al euríbor más un 0,1 % mientras supere el 2 %"
+resumen: "Para la vivienda habitual de hogares con ingresos por debajo de tres veces el IPREM, umbral que sube un 0,3 por cada hijo o hija. Duraría dos años prorrogables, el coste lo asumirían los bancos y estos tendrían que facilitar el paso a tipo fijo sin barreras ni costes."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "13"
+    cita: "Estableceremos un tope al diferencial de las hipotecas a tipo variable sobre vivienda habitual de los hogares con ingresos inferiores a tres veces el IPREM, incrementado en un 0,3 por cada hijo o hija, de modo que, mientras el euríbor se mantenga por encima del 2 %, el interés aplicable no supere el euríbor más un 0,1 %."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, medida 24, página 13 (busca «tope al diferencial»). Va en «Acceso y compra» por decisión del 18 nov: no hay subtema de hipotecas."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

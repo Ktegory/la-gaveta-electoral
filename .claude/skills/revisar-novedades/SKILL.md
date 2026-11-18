@@ -45,10 +45,11 @@ Programas ya publicados (vigila si cambian: compara `content-length` y `last-mod
 - PP: la URL de `src/content/fuentes/pp/programa-29n-2026.yaml` (82 págs., 12.279.932 bytes; hay también una maquetación de 64 págs.). Vigila si desvela alguna de las 8 medidas en blanco: 83, 109, 132, 164, 167, 173, 200, 210.
 - ERC y PNV: URL en su `programa-29n-2026.yaml`.
 - VOX: la URL de `src/content/fuentes/vox/programa-29n-2026.yaml` (66 págs., 14.536.418 bytes, `last-modified` 12 nov 16:07 GMT). voxespana.es responde 403 a `curl -sI`: usa un GET de rango, `curl -s -A "Mozilla/5.0" -r 0-1023 -D - -o /dev/null <url>`, y lee `content-range` y `last-modified`. Busca también si sube otro PDF en `wp-content/uploads/2026/11/` (las rondas del 12 nov a las 20:04 y del 13 a las 8:19 no vieron este por el 403).
-- Frente Amplio: la URL de `src/content/fuentes/fa/programa-29n-2026.yaml` (1.139.608 bytes, `last-modified` 16 nov 11:16 GMT, etag `"6afae5fb-116398"`).
+- Frente Amplio: la URL de `src/content/fuentes/fa/programa-29n-2026.yaml` (versión corregida del 17 nov: 1.138.847 bytes). El 18 nov a las 16:31 GMT se volvió a subir idéntico (etag `"6afdd2fc-11609f"`, misma sha256): solo avisa si cambia el tamaño o el etag a partir de ese.
+- Podemos: la URL de `src/content/fuentes/pod/programa-29n-2026.yaml` (141 págs., 1.830.035 bytes, `last-modified` 18 nov 09:18 GMT). La web de campaña enlaza una copia idéntica en pazcasaytrabajo.es/programa-electoral/programa-electoral-paz-casa-y-trabajo.pdf (last-modified 18 nov 08:56 GMT).
 - EH Bildu: la URL de `src/content/fuentes/bildu/programa-29n-2026.yaml` (30 págs., 571.442 bytes). El servidor no da tamaño ni fecha: si hace falta comprobar cambios, pide permiso para descargarlo y compara la sha256.
 
-Programas pendientes (Podemos, Junts): busca si se han publicado.
+Programas pendientes (Junts): busca si se ha publicado.
 
 ## Paso 2. Instagram (navegador integrado de la app)
 

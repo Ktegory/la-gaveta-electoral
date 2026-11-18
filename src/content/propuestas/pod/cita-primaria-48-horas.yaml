@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "sanidad"
+subtema: "listas-espera"
+titulo: "Garantizar por ley cita en Atención Primaria en un máximo de 48 horas hábiles"
+resumen: "Lo recogería una Ley integral de Atención Primaria, que destinaría a ella al menos el 25 % del presupuesto sanitario y fijaría un máximo de 1.300 pacientes por médico de familia y 800 menores por pediatra."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "90"
+    cita: "garantizará una cita en un máximo de 48 horas hábiles y la continuidad asistencial con los mismos profesionales;"
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 90 (busca «máximo de 48 horas hábiles»). La cita empieza a mitad de frase: es una de las garantías de la Ley integral de Atención Primaria."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

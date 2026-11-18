@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "inmigracion"
+subtema: "regularizacion"
+titulo: "Derogar la Ley de Extranjería y aprobar una nueva ley integral que ponga fin a las devoluciones en caliente"
+resumen: "Sustituiría la Ley Orgánica 4/2000 por una ley centrada en los derechos humanos, con garantías en residencia, trabajo y acceso a servicios, y regularización de los menores extranjeros no acompañados."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "65"
+    cita: "Acabar con la Ley Orgánica 4/2000 y aprobar una nueva Ley Integral que sitúe los derechos humanos, la igualdad de trato y la inclusión en el centro de la política pública."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 65 (busca «Acabar con la Ley Orgánica 4/2000»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

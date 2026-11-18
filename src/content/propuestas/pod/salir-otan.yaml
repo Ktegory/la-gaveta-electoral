@@ -1,8 +1,12 @@
 partido: "pod"
 tema: "exterior"
 subtema: "otan"
-titulo: "Salir de la OTAN y no aumentar el gasto en armas"
+titulo: "Salir de la OTAN y cerrar las bases estadounidenses de Rota y Morón"
+resumen: "Mediante la denuncia del Tratado del Atlántico Norte. En otras medidas propone revertir el aumento del gasto militar y rechazar el objetivo del 5 % del PIB."
 fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "28"
+    cita: "Impulsaremos la salida de España de la OTAN mediante la denuncia del Tratado del Atlántico Norte y pondremos fin a la presencia militar estadounidense en nuestro territorio, incluida la Base Naval de Rota y la Base Aérea de Morón."
   - fuente: "pod/documento-politico-2025"
     pagina: "33"
     cita: Hay que abandonar la OTAN a la mayor brevedad y hay que desacatar la orden de Donald Trump de aumentar el gasto militar en Europa.
@@ -13,6 +17,6 @@ destacada: true
 orden: 5
 comprobacion:
   estado: encontrada
-  nota: "La web de campaña critica la OTAN y dice «Ni un euro más a armas», pero no dice «salir». Lo de salir está en el Documento Político de la V Asamblea (abril de 2025), p. 33; se añadió como fuente el 11 nov."
-revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-11"
+  nota: "18 nov: añadimos el programa del 29N como fuente principal (página 28). El programa concreta la vía y añade las bases; lo del gasto militar va en sus propias fichas. Quitada la firma para revisar de nuevo. Nota anterior: La web de campaña critica la OTAN y dice «Ni un euro más a armas», pero no dice «salir». Lo de salir está en el Documento Político de la V Asamblea (abril de 2025), p. 33; se añadió como fuente el 11 nov."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-18"

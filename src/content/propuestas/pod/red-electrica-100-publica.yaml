@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "energia"
+subtema: "precio"
+titulo: "Aumentar la participación pública en Red Eléctrica hasta el 100 % del capital"
+resumen: "Según el programa, lo que hoy reciben los inversores serviría para bajar la factura de la luz."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "98"
+    cita: "Aumentar la participación pública en Red Eléctrica hasta alcanzar el 100% del capital."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 98 (busca «participación pública en Red Eléctrica»)."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-18"

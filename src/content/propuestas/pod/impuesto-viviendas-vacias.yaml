@@ -1,15 +1,18 @@
 partido: "pod"
 tema: "vivienda"
 subtema: "fiscalidad-vivienda"
-titulo: "Gravar las viviendas vacías con el cuádruple de lo que pagan ahora para que salgan al alquiler"
-resumen: "No concreta sobre qué impuesto se aplicaría ni desde cuántas viviendas."
+titulo: "Cuadruplicar el tipo de IRPF de las viviendas vacías y crear un impuesto estatal sobre ellas"
+resumen: "Se cuadruplicaría el tipo de IRPF de las rentas imputadas de las viviendas que no son la del contribuyente. El impuesto estatal sería igual al recargo del IBI que pueden cobrar los ayuntamientos, y deducible donde ya se cobre. No dice desde cuántas viviendas se aplicaría."
 fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "22"
+    cita: "Modificaremos la tributación de las viviendas vacías cuadruplicando el tipo de IRPF aplicable a las rentas imputadas de viviendas que no constituyan vivienda del contribuyente."
   - fuente: "pod/instagram-viviendas-vacias-2026-11-16"
     cita: "Proponemos un impuestazo a las viviendas vacías del cuádruple de lo que se paga ahora para obligar a poner esas viviendas en alquiler."
 fechaAnuncio: "2026-11-16"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cotejada el 16 nov en el texto de la publicación de @i_montero_ (reel del 16 nov). No hay nota en podemos.info ni en pazcasaytrabajo.es. Cita del pie de la publicación, no del vídeo."
+  nota: "18 nov: añadimos el programa del 29N como fuente principal (página 22). El programa concreta el impuesto, que el resumen anterior daba por desconocido. Quitada la firma para revisar de nuevo. Nota anterior: Cotejada el 16 nov en el texto de la publicación de @i_montero_ (reel del 16 nov). No hay nota en podemos.info ni en pazcasaytrabajo.es. Cita del pie de la publicación, no del vídeo."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-16"
+fechaRevision: "2026-11-18"

@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "seguridad"
+subtema: "policia"
+titulo: "Obligar a los policías a llevar un número de identificación visible e implantar cámaras corporales"
+resumen: "Las cámaras corporales y las de los vehículos policiales se implantarían de forma progresiva, con prioridad para las intervenciones de mayor riesgo y el orden público. También revisaría los protocolos de identificación, detención y uso de la fuerza para eliminar los perfilamientos raciales."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "132"
+    cita: "Todos los agentes deberán llevar un número de identificación perfectamente visible desde cualquier ángulo."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 132 (busca «visible desde cualquier ángulo»). Las cámaras corporales están en la frase siguiente."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

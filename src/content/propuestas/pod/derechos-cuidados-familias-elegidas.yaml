@@ -2,14 +2,17 @@ partido: "pod"
 tema: "igualdad"
 subtema: "cuidados"
 titulo: "Reconocer derechos de cuidados a las familias elegidas y a las relaciones no monógamas"
-resumen: "Podemos lo anuncia como una de sus medidas de campaña. Irene Montero lo llama «el derecho a la familia elegida». No ha detallado qué derechos serían ni en qué ley se recogerían."
+resumen: "Crearía un marco legal de redes de cuidados que incluye a las amistades, las familias elegidas y las relaciones no monógamas: sus integrantes podrían ser referentes para permisos retribuidos por enfermedad, hospitalización, fallecimiento y cuidados, y para acompañar y criar a menores. Irene Montero lo llama «el derecho a la familia elegida»."
 fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "62"
+    cita: "Este marco incluirá a las amistades, las familias elegidas y las relaciones no monógamas, y permitirá reconocer a las personas integrantes de estas redes como referentes a efectos de permisos retribuidos por enfermedad, hospitalización, fallecimiento y cuidados"
   - fuente: "pod/instagram-familias-elegidas-2026-11-18"
     cita: "Las familias elegidas y las relaciones no monógamas también tendrán derechos para cuidar y ser cuidadas."
 fechaAnuncio: "2026-11-18"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cita tomada el 18 nov (ronda de las 20:04) del texto de la publicación de @ahorapodemos (busca «familias elegidas»). Subtema «Cuidados», el mismo que la medida parecida del Frente Amplio («fa/familias-elegidas-ley-familias»). Podemos no tiene aún programa publicado."
+  nota: "18 nov: añadimos el programa del 29N como fuente principal (página 62). El programa detalla los derechos, que el resumen anterior daba por no concretados. Quitada la firma para revisar de nuevo. Nota anterior: Cita tomada el 18 nov (ronda de las 20:04) del texto de la publicación de @ahorapodemos (busca «familias elegidas»). Subtema «Cuidados», el mismo que la medida parecida del Frente Amplio («fa/familias-elegidas-ley-familias»). Podemos no tiene aún programa publicado."
 revisadaPor: "Khiustin Tornés"
 fechaRevision: "2026-11-18"

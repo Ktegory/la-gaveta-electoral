@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "exterior"
+subtema: "ue"
+titulo: "Rechazar el acuerdo comercial entre la UE y Mercosur y revisar el CETA con Canadá"
+resumen: "Se opone a los acuerdos comerciales que antepongan los intereses de las multinacionales a los derechos sociales, laborales y medioambientales, entre ellos el TTIP y el TiSA."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "37"
+    cita: "Seguiremos rechazando el actual acuerdo comercial entre la Unión Europea y Mercosur, así como promoveremos la revisión de acuerdos como el CETA entre la UE y Canadá."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 37 (busca «Unión Europea y Mercosur»)."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-18"

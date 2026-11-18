@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "pensiones"
+subtema: "sostenibilidad"
+titulo: "Suprimir la base máxima de cotización y establecer cotizaciones progresivas"
+resumen: "La cotización tendría en cuenta el nivel de renta y el volumen de beneficios empresariales, para reforzar la financiación de las pensiones públicas."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "44"
+    cita: "Suprimiremos la base máxima de cotización y estableceremos un sistema de cotización progresiva que tenga en cuenta el nivel de renta y el volumen de beneficios empresariales, garantizando una mayor contribución de quienes más tienen para reforzar la financiación del sistema público de pensiones."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 44 (busca «Suprimiremos la base máxima de cotización»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

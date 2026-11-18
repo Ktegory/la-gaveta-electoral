@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "inmigracion"
+subtema: "servicios"
+titulo: "Garantizar la sanidad pública a las personas migrantes en situación irregular y a las solicitantes de asilo"
+resumen: "Eliminaría las barreras administrativas para recibir atención, a partir de la Ley 16/2003 de cohesión del Sistema Nacional de Salud y de la reforma de la ley de asilo."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "69"
+    cita: "Eliminaremos las barreras administrativas que impiden recibir atención y reforzaremos la coordinación entre los servicios sanitarios y sociales."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 69 (busca «barreras administrativas que impiden recibir atención»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

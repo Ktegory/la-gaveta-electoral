@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "vivienda"
+subtema: "vivienda-publica"
+titulo: "Crear una inmobiliaria pública que gestione alquileres con una renta máxima del 30 % de la renta media del municipio"
+resumen: "Haría de intermediaria entre propietarios e inquilinos y asumiría la gestión completa de los arrendamientos, incluidas las obligaciones y responsabilidades de los propietarios."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "10"
+    cita: "Crearemos una inmobiliaria pública que actúe como intermediaria entre propietarios e inquilinos y asuma la gestión integral de los arrendamientos, incluidas las obligaciones y responsabilidades que correspondan a los propietarios. A cambio, garantizará alquileres asequibles, con una renta máxima equivalente al 30 % de la renta media del municipio."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 10 (busca «Crearemos una inmobiliaria pública»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

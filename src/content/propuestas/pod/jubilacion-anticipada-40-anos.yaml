@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "pensiones"
+subtema: "edad-jubilacion"
+titulo: "Eliminar las penalizaciones por jubilación anticipada con 40 años o más cotizados, también de forma retroactiva"
+resumen: "Se revisarían los coeficientes reductores para largas carreras de cotización, incluidas las pensiones ya reconocidas, con memoria económica, calendario y participación de las plataformas de pensionistas."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "41"
+    cita: "Revisaremos los coeficientes reductores que afectan a las personas con largas carreras de cotización, eliminando retroactivamente las penalizaciones para los trabajadores y trabajadoras con 40 años o más de cotización."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 41 (busca «40 años o más de cotización»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

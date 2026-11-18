@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "exterior"
+subtema: "israel-palestina"
+titulo: "Definir el sionismo como una expresión de racismo en el ordenamiento jurídico español"
+resumen: "Propone definirlo así en la ley española y a nivel internacional, equiparándolo a otras discriminaciones como la islamofobia o el antisemitismo."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "34"
+    cita: "Promoveremos la definición del sionismo como una ideología supremacista y por tanto, una expresión de racismo tanto en el ordenamiento jurídico español como a nivel internacional."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 34 (busca «definición del sionismo»)."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-18"

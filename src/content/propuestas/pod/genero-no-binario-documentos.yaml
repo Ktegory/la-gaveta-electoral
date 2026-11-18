@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "igualdad"
+subtema: "lgtbi"
+titulo: "Incluir la opción de género no binario en todos los formularios y documentos oficiales de identidad"
+resumen: "Forma parte de un paquete de medidas LGTBIQA+ que incluye también un cupo laboral trans en el empleo público y residencias de mayores LGTBIQA+."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "52"
+    cita: "Introducción en todos los formularios y documentos oficiales de identidad la opción de género no binario."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 52 (busca «opción de género no binario»)."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-18"

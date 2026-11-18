@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "fiscalidad"
+subtema: "patrimonio"
+titulo: "Impulsar un impuesto mínimo global a los milmillonarios y una tasa Tobin europea"
+resumen: "Apoya la Tasa Mínima Global para Milmillonarios y un impuesto europeo sobre las transacciones financieras, complementario de las tasas estatales. También propone prohibir contratar con la Administración a empresas que operen a través de paraísos fiscales."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "36"
+    cita: "Impulsaremos las propuestas de la Tasa Mínima Global para Milmillonarios proponiendo un impuesto mínimo global. También impulsaremos un impuesto europeo sobre las transacciones financieras: se implantará una Tasa Tobin, complementaria de las tasas estatales."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 36 (busca «Tasa Mínima Global para Milmillonarios»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

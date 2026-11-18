@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "igualdad"
+subtema: "aborto"
+titulo: "Incluir el aborto como derecho fundamental en el artículo 15 de la Constitución y sacarlo del Código Penal"
+resumen: "Eliminaría del Código Penal todas las referencias al aborto consentido y lo incorporaría a la sección de derechos fundamentales de la Constitución, en el artículo 15."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "51"
+    cita: "Incorporar expresamente el derecho al aborto en la Constitución dentro del Título I Capítulo II Sección 1º como parte de los derechos fundamentales, concretamente en el Artículo 15 como ya lo reconoce la jurisprudencia del Tribunal Constitucional."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 51 (busca «derecho al aborto en la Constitución»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

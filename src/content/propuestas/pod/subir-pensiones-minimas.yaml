@@ -1,14 +1,18 @@
 partido: "pod"
 tema: "pensiones"
 subtema: "pensiones-minimas"
-titulo: "Subir las pensiones mínimas, también las no contributivas"
-resumen: "Lo planteó Irene Montero en un desayuno informativo de Europa Press, sin dar cifras según la fuente."
+titulo: "Igualar la pensión mínima contributiva al salario mínimo y la no contributiva al 80 % del SMI"
+resumen: "Irene Montero lo había planteado el 6 nov en Europa Press, sin dar cifras."
 fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "44"
+    cita: "Garantizaremos que la pensión mínima contributiva se equipare al SMI, y la pensión no contributiva al 80% del SMI."
   - fuente: "pod/prensa-montero-pensiones-2026-11-06"
     cita: "ha planteado reducir la edad de jubilación a 63 años y aumentar las pensiones mínimas, incluyendo las no contributivas."
 fechaAnuncio: "2026-11-06"
 destacada: false
 comprobacion:
   estado: encontrada
+  nota: "18 nov: añadimos el programa del 29N como fuente principal (página 44). El programa da las cifras que faltaban. Quitada la firma para revisar de nuevo."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-11"
+fechaRevision: "2026-11-18"

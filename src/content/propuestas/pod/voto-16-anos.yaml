@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "instituciones"
+subtema: "sistema-electoral"
+titulo: "Bajar la edad para votar a los 16 años"
+resumen: "Reconocería el derecho al sufragio a partir de los 16 años."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "129"
+    cita: "Reconoceremos el derecho al sufragio a partir de los 16 años para ampliar la participación democrática, garantizar que la juventud tenga voz en las decisiones que afectan a su futuro y fortalecer una democracia más inclusiva y participativa."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 129 (busca «sufragio a partir de los 16 años»)."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-18"

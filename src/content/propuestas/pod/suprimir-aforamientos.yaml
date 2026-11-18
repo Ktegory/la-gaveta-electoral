@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "instituciones"
+subtema: "constitucion"
+titulo: "Suprimir los aforamientos"
+resumen: "Lo presenta como forma de restar peso político a las salas de lo Penal del Tribunal Supremo, en especial a la Sala Segunda. No detalla a qué cargos afectaría."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "128"
+    cita: "Con la supresión de los aforamientos, las salas de lo Penal de nombramiento discrecional, en especial la Sala Segunda del Tribunal Supremo, tendrán menos peso político y un carácter más jurisdiccional, como tribunal de casación."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 128 (busca «supresión de los aforamientos»)."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-18"

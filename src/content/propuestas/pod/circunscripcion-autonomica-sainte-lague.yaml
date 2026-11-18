@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "instituciones"
+subtema: "sistema-electoral"
+titulo: "Elegir el Congreso por circunscripciones autonómicas, con el método Sainte-Laguë y sin barreras electorales"
+resumen: "La circunscripción pasaría de la provincia a la comunidad autónoma, el método Sainte-Laguë sustituiría a la fórmula D’Hondt y se eliminarían las barreras electorales de entrada, para que el reparto de escaños se acerque al porcentaje de votos."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "129"
+    cita: "Reformaremos el sistema electoral del Congreso de los Diputados mediante la adopción de la circunscripción autonómica."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 129 (busca «adopción de la circunscripción autonómica»). Sainte-Laguë y la supresión de barreras electorales están en la frase siguiente."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-18"

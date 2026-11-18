@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "inmigracion"
+subtema: "nacionalidad"
+titulo: "Aprobar la ley que reconoce la nacionalidad española a los saharauis nacidos bajo administración española"
+resumen: "La ley reconocería la nacionalidad a los saharauis nacidos en el Sáhara Occidental bajo administración española y facilitaría el acceso a ella a sus descendientes directos."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "36"
+    cita: "Retomaremos y aprobaremos la ley que reconoce la nacionalidad española a las personas saharauis nacidas en el Sáhara Occidental bajo administración española y facilita el acceso a ella a sus descendientes directos, reparando una deuda histórica de España con el pueblo saharaui."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 36 (busca «personas saharauis nacidas en el Sáhara»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "instituciones"
+subtema: "constitucion"
+titulo: "Eliminar la inviolabilidad del Rey y aplicar a la Casa Real las mismas obligaciones de transparencia"
+resumen: "Reformaría el artículo 56.3 de la Constitución y haría público el patrimonio y las actividades económicas de todos los miembros de la Casa Real. También impulsaría una comisión de investigación parlamentaria sobre los negocios de la monarquía."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "128"
+    cita: "Reformaremos el artículo 56.3 de la Constitución para eliminar la inviolabilidad del Rey y suprimir la referencia a que la justicia se administra en nombre del Rey, reconociendo que emana del pueblo."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 128 (busca «eliminar la inviolabilidad del Rey»)."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-18"

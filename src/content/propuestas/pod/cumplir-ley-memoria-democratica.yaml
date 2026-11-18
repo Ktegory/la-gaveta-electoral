@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "instituciones"
+subtema: "justicia"
+titulo: "Desarrollar de inmediato lo pendiente de la Ley de Memoria Democrática"
+resumen: "Incluye financiar la búsqueda y exhumación de víctimas, poner en marcha el Banco Estatal de ADN con pruebas genéticas gratuitas, anular las sentencias franquistas y retirar símbolos de exaltación franquista."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "137"
+    cita: "Desarrollaremos de forma inmediata todos los aspectos pendientes de aplicación de la Ley de Memoria Democrática e impulsaremos las reformas necesarias para garantizar su cumplimiento efectivo, reforzando las políticas de verdad, justicia, reparación y garantías de no repetición."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 137 (busca «aspectos pendientes de aplicación»)."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-18"

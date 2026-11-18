@@ -2,13 +2,17 @@ partido: "pod"
 tema: "energia"
 subtema: "clima"
 titulo: "Prohibir que las grandes empresas contaminantes reciban subvenciones o contraten con la Administración"
-resumen: "Lo anunció Irene Montero tras reunirse en Madrid con organizaciones ecologistas, junto con un impuesto a los beneficios de esas actividades."
+resumen: "Mientras mantengan esas actividades contaminantes. Lo anunció Irene Montero el 10 nov, tras reunirse con organizaciones ecologistas, y el programa lo recoge junto al impuesto a los beneficios de esas empresas."
 fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "19"
+    cita: "Además, prohibiremos que estas empresas reciban subvenciones públicas o puedan contratar con las administraciones mientras mantengan estas actividades contaminantes,"
   - fuente: "pod/prensa-montero-contaminantes-2026-11-10"
     cita: "con carácter progresivo en función de las ganancias que obtengan de esas actividades, además de prohibir que estas compañías reciban subvenciones o contraten con las administraciones públicas"
 fechaAnuncio: "2026-11-10"
 destacada: false
 comprobacion:
   estado: encontrada
-revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-11"
+  nota: "18 nov: añadimos el programa del 29N como fuente principal (página 19). La frase sigue en la página 20. Quitada la firma para revisar de nuevo."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-18"

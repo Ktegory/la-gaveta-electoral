@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "igualdad"
+subtema: "cuidados"
+titulo: "Ampliar a 26 semanas por progenitor el permiso por nacimiento, adopción y acogimiento"
+resumen: "Sería intransferible y remunerado. En las familias monomarentales la duración se duplicaría y la mitad podría cederse a familiares hasta el segundo grado."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "60"
+    cita: "Ampliaremos los permisos por nacimiento, adopción y acogimiento a 26 semanas por progenitor, con carácter intransferible y remunerado, y duplicaremos su duración en el caso de las familias monomarentales."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 60 (busca «26 semanas por progenitor»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

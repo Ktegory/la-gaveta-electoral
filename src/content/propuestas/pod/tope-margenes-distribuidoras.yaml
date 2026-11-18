@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "empleo"
+subtema: "cesta-compra"
+titulo: "Limitar los márgenes comerciales de las grandes cadenas de distribución en los productos de primera necesidad"
+resumen: "Con mecanismos de seguimiento y transparencia de costes y precios en toda la cadena alimentaria, para evitar subidas injustificadas y asegurar una remuneración adecuada a los productores."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "18"
+    cita: "Estableceremos límites a los márgenes comerciales de las grandes cadenas de distribución en los productos de primera necesidad, para evitar que estas grandes distribuidoras hinchen los precios en contextos de inflación."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 18 (busca «límites a los márgenes comerciales»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

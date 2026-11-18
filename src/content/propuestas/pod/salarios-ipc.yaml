@@ -1,15 +1,18 @@
 partido: "pod"
 tema: "empleo"
 subtema: "reforma-laboral"
-titulo: "Subir todos los salarios conforme al IPC"
-resumen: "Irene Montero lo plantea para que los sueldos suban lo mismo que el coste de la vida. No ha explicado cómo se aplicaría (por ley o en los convenios)."
+titulo: "Subir todos los salarios conforme al coste de la vida cuando el convenio no pacte mejoras"
+resumen: "Se aplicaría a todos los conceptos salariales cuando la negociación colectiva no pacte una subida mayor. Irene Montero lo había anunciado el 17 nov como subida conforme al IPC."
 fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "41"
+    cita: "Vincularemos la actualización de todos los conceptos salariales al incremento del coste de la vida cuando no exista un pacto en la negociación colectiva que establezca mejoras, para proteger el poder adquisitivo de las personas trabajadoras."
   - fuente: "pod/instagram-salarios-ipc-2026-11-17"
     cita: "Proponemos que los salarios suban lo que sube el coste de la vida. Todos los salarios tienen que subir conforme al IPC"
 fechaAnuncio: "2026-11-17"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cita tomada el 17 nov (ronda de las 20:04) del texto del reel de @i_montero_ (busca «conforme al IPC»). Subtema «Reforma laboral», el mismo que la medida parecida del Frente Amplio («fa/revision-salarial-ipc-universal»). Podemos no tiene aún programa publicado."
+  nota: "18 nov: añadimos el programa del 29N como fuente principal (página 41). El programa habla de «coste de la vida», no de IPC, y aclara que se aplica si no hay pacto mejor en el convenio. Quitada la firma para revisar de nuevo. Nota anterior: Cita tomada el 17 nov (ronda de las 20:04) del texto del reel de @i_montero_ (busca «conforme al IPC»). Subtema «Reforma laboral», el mismo que la medida parecida del Frente Amplio («fa/revision-salarial-ipc-universal»). Podemos no tiene aún programa publicado."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-17"
+fechaRevision: "2026-11-18"

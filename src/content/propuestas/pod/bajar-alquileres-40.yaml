@@ -2,11 +2,18 @@ partido: "pod"
 tema: "vivienda"
 subtema: "alquiler"
 titulo: "Bajar los alquileres un 40 % por ley"
+resumen: "Se aplicaría a los contratos vigentes, a sus renovaciones y prórrogas y a los nuevos, sin que el precio resultante quede por debajo del 60 % del precio medio de la zona. Si la vivienda nunca se ha alquilado, el precio inicial sería el 60 % del precio medio de la zona."
 fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "8"
+    cita: "Aprobaremos una reducción extraordinaria del 40 % de los precios del alquiler, aplicable a los contratos vigentes, sus renovaciones y prórrogas, así como a los nuevos contratos para acabar con los alquileres abusivos y garantizar el derecho a la vivienda."
   - fuente: "pod/documento-politico-2025"
     pagina: "30–39"
 fechaAnuncio: "2025-04-01"
 destacada: true
 orden: 4
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: añadimos el programa del 29N como fuente principal (página 8). Medida 1 del programa. Antes solo citaba el documento político de 2025; ahora tiene cita literal. Quitada la firma para revisar de nuevo."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-10"
+fechaRevision: "2026-11-18"

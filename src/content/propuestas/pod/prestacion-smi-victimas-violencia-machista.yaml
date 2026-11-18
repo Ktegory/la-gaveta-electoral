@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "igualdad"
+subtema: "violencia-machista"
+titulo: "Crear una prestación igual al salario mínimo durante 6 meses prorrogables para las víctimas de violencia machista"
+resumen: "Forma parte de un plan de reparación que incluye también alternativa habitacional inmediata. La cuantía aumentaría según el número de personas que cada mujer tenga a su cargo."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "53"
+    cita: "La prestación supondrá un salario mínimo equivalente al Salario Mínimo Interprofesional durante 6 meses prorrogables, que se incrementará según el número de personas que cada mujer tenga a su cargo."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 53 (busca «durante 6 meses prorrogables»)."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-18"

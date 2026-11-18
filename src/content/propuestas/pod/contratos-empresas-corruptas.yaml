@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "instituciones"
+subtema: "justicia"
+titulo: "Prohibir contratar con la Administración a las empresas implicadas en corrupción desde que haya indicios judiciales"
+resumen: "Sería una medida cautelar mientras persistan los indicios. También prevé dejar sin efecto, con las garantías legales necesarias, los contratos públicos vigentes con esas empresas."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "133"
+    cita: "Prohibiremos la contratación con las administraciones públicas de empresas privadas implicadas en casos de corrupción desde que existan indicios judiciales de su participación, mediante medidas cautelares mientras persistan dichos indicios."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 133 (busca «desde que existan indicios judiciales»)."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-18"

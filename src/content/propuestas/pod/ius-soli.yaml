@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "inmigracion"
+subtema: "nacionalidad"
+titulo: "Reconocer como españoles de origen a los nacidos en España si un progenitor llevaba un año en situación legal"
+resumen: "Modificaría el artículo 17.1 c) del Código Civil. Bastaría con que cualquiera de los progenitores hubiera estado legalmente en España durante un año antes del nacimiento."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "66"
+    cita: "Asimismo, serán españoles de origen los nacidos en España de padres extranjeros cuando, con anterioridad al nacimiento, cualquiera de los progenitores hubiera permanecido legalmente de estancia en España durante un año."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 66 (busca «hubiera permanecido legalmente de estancia»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "sanidad"
+subtema: "publica-privada"
+titulo: "Derogar la Ley 15/1997 y prohibir la externalización y privatización de centros y servicios sanitarios"
+resumen: "También derogaría los artículos 66, 67 y 90 de la Ley General de Sanidad. Los servicios privatizados volverían a lo público al vencer los contratos, sin prórroga, y el personal de nuevo ingreso de MUFACE, ISFAS y MUGEJU iría a la sanidad pública."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "88"
+    cita: "Para ello derogaremos la Ley 15/1997, los artículos 66, 67 y 90 de la Ley General de Sanidad, y todas las leyes privatizadoras que abrieron la puerta a la gestión privada de la sanidad, y blindaremos la titularidad y la gestión pública directa como modelo obligatorio del Sistema Nacional de Salud."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 88 (busca «derogaremos la Ley 15/1997»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

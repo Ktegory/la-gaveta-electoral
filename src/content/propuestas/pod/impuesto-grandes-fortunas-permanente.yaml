@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "fiscalidad"
+subtema: "patrimonio"
+titulo: "Hacer permanente el impuesto a las grandes fortunas y aplicarlo a todos los que hoy pagan Patrimonio"
+resumen: "Busca evitar que las comunidades autónomas eliminen el impuesto. Las acciones de empresas en manos de quienes las gestionan dejarían de estar exentas cuando el patrimonio supere los 100 millones de euros."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "17"
+    cita: "Para ello reformaremos el Impuesto Temporal de Solidaridad de las Grandes Fortunas para configurarlo como un impuesto estatal permanente con idénticas características que el Impuesto del Patrimonio."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 17 (busca «impuesto estatal permanente»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

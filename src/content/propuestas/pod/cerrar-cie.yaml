@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "inmigracion"
+subtema: "fronteras"
+titulo: "Cerrar todos los Centros de Internamiento de Extranjeros (CIE)"
+resumen: "La privación de libertad se sustituiría por alternativas comunitarias y procedimientos individualizados, con garantías de alojamiento, atención social y asistencia jurídica en la nueva ley."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "65"
+    cita: "Procederemos al cierre de todos los Centros de Internamiento de Extranjeros, sustituyendo la privación de libertad por alternativas comunitarias y procedimientos individualizados que respeten los derechos fundamentales."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 65 (busca «cierre de todos los Centros de Internamiento»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

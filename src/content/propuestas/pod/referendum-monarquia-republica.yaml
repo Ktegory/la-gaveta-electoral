@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "instituciones"
+subtema: "constitucion"
+titulo: "Impulsar una constitución republicana con un referéndum para elegir entre monarquía y república"
+resumen: "Dentro de un proceso constituyente. La reforma permitiría a la ciudadanía decidir de forma separada y directa entre monarquía y república."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "128"
+    cita: "Esta reforma constitucional permitirá, por primera vez, que la ciudadanía decida de forma separada y directa entre monarquía y república, la cuestión que se negó en la “transición”, recuperando el referéndum como instrumento democrático básico para que sea el soberano quien decida."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 128 (busca «decida de forma separada y directa»)."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-18"

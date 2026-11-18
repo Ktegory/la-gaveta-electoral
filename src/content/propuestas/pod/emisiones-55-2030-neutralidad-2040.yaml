@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "energia"
+subtema: "clima"
+titulo: "Reducir las emisiones al menos un 55 % en 2030 respecto a 1990 y adelantar la neutralidad climática a 2040"
+resumen: "Reformando la Ley de Cambio Climático y Transición Energética. Aspira a llegar a una reducción del 65 % en 2030."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "95"
+    cita: "emisiones de gases de efecto invernadero al menos un 55 % para 2030 respecto a 1990, con la ambición de alcanzar el 65 %, y adelantaremos a 2040 el horizonte de neutralidad climática."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 95 (busca «adelantaremos a 2040 el horizonte»). La frase empieza al final de la página 94."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-18"

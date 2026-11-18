@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "igualdad"
+subtema: "lgtbi"
+titulo: "Dar una prestación vitalicia a las personas LGTBI que sufrieron represión en el franquismo y la Transición"
+resumen: "La recogería una ley de memoria y reparación para las personas trans y LGTBI. Equivaldría a la pensión mínima de jubilación para mayores de 65 años sin cargas familiares, sería compatible con otros ingresos y subiría un 50 % para quienes sufrieron privación de libertad."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "136"
+    cita: "La ley establecerá una prestación económica vitalicia, equivalente a la pensión mínima de jubilación para mayores de 65 años sin cargas familiares"
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 136 (busca «prestación económica vitalicia»). El aumento del 50 % por privación de libertad está en la página 137."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-18"

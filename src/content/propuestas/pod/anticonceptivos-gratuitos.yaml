@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "sanidad"
+subtema: "prestaciones"
+titulo: "Hacer gratuitos todos los anticonceptivos, también los de urgencia, en centros públicos y farmacias"
+resumen: "Se financiarían métodos hoy excluidos como el parche o la píldora del día después. También ampliaría la reproducción asistida pública a lesbianas, bisexuales y personas trans con capacidad de gestar, con límites de edad y de ciclos más amplios."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "57"
+    cita: "Todos los anticonceptivos, también los de urgencia, serán gratuitos, en los centros públicos y en la farmacia, y se financiarán todos los métodos, también los que hoy se quedan fuera, como el parche, varias píldoras recientes o la píldora del día después."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 57 (busca «Todos los anticonceptivos, también los de urgencia»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

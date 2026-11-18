@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "energia"
+subtema: "renovables"
+titulo: "Llegar al 95 % de electricidad renovable en 2035 y reducir al 50 % la energía primaria fósil en 2030"
+resumen: "Revisando el Plan Nacional Integrado de Energía y Clima, con el horizonte de un sistema completamente descarbonizado en 2040. Mantendría por un tiempo las centrales de ciclo combinado de gas como respaldo."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "98"
+    cita: "Revisaremos el Plan Nacional Integrado de Energía y Clima para acelerar la transición energética, estableciendo como meta una reducción al 50 % de la energía primaria fósil en 2030 y alcanzar al menos un 95 % de generación eléctrica renovable en 2035"
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 98 (busca «95 % de generación eléctrica renovable»). La frase sigue después de la cita, con el horizonte de 2040."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-18"

@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "energia"
+subtema: "nuclear"
+titulo: "Cumplir el calendario de cierre de las centrales nucleares, empezando por Almaraz"
+resumen: "Con planes de transición justa para las comarcas afectadas. Cualquier almacén de residuos nucleares necesitaría una consulta popular en el lugar elegido, y en la UE impulsaría sacar la nuclear y el gas de la taxonomía verde."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "103"
+    cita: "Defenderemos el cumplimiento del calendario de cierre de las centrales nucleares, comenzando por Almaraz, de acuerdo con la planificación energética vigente y las condiciones de seguridad del sistema eléctrico."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 103 (busca «comenzando por Almaraz»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

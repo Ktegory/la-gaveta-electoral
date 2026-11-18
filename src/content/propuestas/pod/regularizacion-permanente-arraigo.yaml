@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "inmigracion"
+subtema: "regularizacion"
+titulo: "Crear un procedimiento permanente de regularización por arraigo que no dependa solo de tener contrato de trabajo"
+resumen: "Reconocería el arraigo social, familiar y comunitario, sin que el derecho a residir dependa solo de un contrato de trabajo. Permitiría probar la estancia con medios más amplios que el padrón, como abonos de transporte o registros sanitarios."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "67"
+    cita: "Establecimiento de un procedimiento permanente de regularización de las personas migrantes."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 67 (busca «procedimiento permanente de regularización»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

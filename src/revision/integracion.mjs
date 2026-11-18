@@ -22,12 +22,28 @@ export default function revisionLocal() {
         injectRoute({ pattern: '/fases/[fase]', entrypoint: './src/revision/fase.astro' });
         updateConfig({
           vite: {
-            plugins: [{ name: 'revision-local', configureServer(s) { s.middlewares.use('/__revisar', firmar); } }],
+            plugins: [{ name: 'revision-local', configureServer(s) { s.middlewares.use('/__revisar', firmar); sinRecargaTrasFirmar(s); } }],
           },
         });
       },
     },
   };
+}
+
+// Al escribir el YAML, Astro manda recargar la página entera, y el salto es incómodo.
+// /revisar/ ya pinta la firma por su cuenta, así que esa recarga se omite durante unos segundos
+// después de firmar. Si editas un archivo a mano, la recarga funciona como siempre.
+let ultimaFirma = 0;
+const ESPERA_MS = 4000;
+function sinRecargaTrasFirmar(server) {
+  const canales = new Set([server.ws, server.environments?.client?.hot].filter(Boolean));
+  for (const canal of canales) {
+    const enviar = canal.send.bind(canal);
+    canal.send = (...args) => {
+      if (args[0]?.type === 'full-reload' && Date.now() - ultimaFirma < ESPERA_MS) return;
+      return enviar(...args);
+    };
+  }
 }
 
 /** POST /__revisar  { id: "pp/millon-viviendas", firmar: true|false } */
@@ -68,6 +84,7 @@ async function firmar(req, res) {
     if (texto && !texto.endsWith('\n')) texto += '\n';
     texto += `revisadaPor: "${REVISOR}"\nfechaRevision: "${fecha}"\n`;
   }
+  ultimaFirma = Date.now();
   writeFileSync(ruta, texto);
   responder(200, firma ? { revisadaPor: REVISOR, fechaRevision: fecha } : {});
 }

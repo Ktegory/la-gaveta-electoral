@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "vivienda"
+subtema: "alquiler"
+titulo: "Hacer indefinidos por defecto todos los contratos de alquiler de vivienda habitual"
+resumen: "El programa lo plantea para que nadie tenga que dejar su casa solo porque venza el contrato."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "8"
+    cita: "Convertiremos todos los contratos de alquiler de vivienda habitual en contratos de duración indefinida por defecto, para garantizar la estabilidad residencial y evitar que nadie tenga que abandonar su hogar por el mero vencimiento del contrato."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 8 (busca «contratos de duración indefinida por defecto»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

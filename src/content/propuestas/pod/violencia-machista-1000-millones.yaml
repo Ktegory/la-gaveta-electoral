@@ -1,14 +1,18 @@
 partido: "pod"
 tema: "igualdad"
 subtema: "violencia-machista"
-titulo: "Elevar a 1.000 millones de euros el presupuesto contra las violencias machistas"
-resumen: "Lo planteó Irene Montero en un desayuno informativo de Europa Press, con cargo al aumento del gasto militar desde 2023."
+titulo: "Crear un fondo de 1.000 millones de euros contra las violencias machistas"
+resumen: "Un fondo de contingencia, mediante una reforma de la Ley General Presupuestaria, para garantizar una financiación estable y a largo plazo. En Europa Press, el 6 nov, Irene Montero lo vinculaba al aumento del gasto militar."
 fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "51"
+    cita: "Creación de un fondo de contingencia de mil millones de euros para las políticas contra todas las formas de violencia machista que garantice la financiación estable y a largo plazo de las mismas mediante la reforma de la Ley General Presupuestaria."
   - fuente: "pod/prensa-montero-desayuno-2026-11-06"
     cita: "También ha planteado elevar hasta los 1.000 millones de euros el presupuesto destinado a combatir las violencias machistas"
 fechaAnuncio: "2026-11-06"
 destacada: false
 comprobacion:
   estado: encontrada
-revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-11"
+  nota: "18 nov: añadimos el programa del 29N como fuente principal (página 51). El programa habla de un fondo de contingencia, no de elevar el presupuesto: cambia el título. Quitada la firma para revisar de nuevo."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-18"

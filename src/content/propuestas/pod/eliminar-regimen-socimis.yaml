@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "vivienda"
+subtema: "fiscalidad-vivienda"
+titulo: "Eliminar el régimen fiscal de las SOCIMI para que tributen en Sociedades como cualquier empresa"
+resumen: "Además pagarían el nuevo impuesto estatal a las viviendas de empresas, con los mismos tipos que Patrimonio y sin mínimo exento. El objetivo que declara es que pongan a la venta sus viviendas."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "22"
+    cita: "Las SOCIMIS pasarán a tributar por el impuesto de sociedades como cualquier entidad, además de tener que afrontar el nuevo Impuesto del Patrimonio Inmobiliario de las Personas Jurídicas, con el objetivo de que pongan a la venta su parque de viviendas."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 22 (busca «Las SOCIMIS pasarán a tributar»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

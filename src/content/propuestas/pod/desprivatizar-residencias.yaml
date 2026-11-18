@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "igualdad"
+subtema: "cuidados"
+titulo: "Desprivatizar el sistema de residencias hasta que su gestión sea 100 % pública y directa"
+resumen: "Prohibiría nuevos conciertos y externalizaciones con el sector privado, los contratos pasarían a control público al caducar y las residencias que incumplan grave y repetidamente la Ley de Calidad se desprivatizarían pagando el justiprecio."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "63"
+    cita: "Se llevará a cabo un proceso de desprivatización del sistema de residencias en España con el horizonte de que su gestión sea pública y directa al 100%."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 63 (busca «desprivatización del sistema de residencias»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

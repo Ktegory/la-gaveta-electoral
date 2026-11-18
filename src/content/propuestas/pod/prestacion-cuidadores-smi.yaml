@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "igualdad"
+subtema: "cuidados"
+titulo: "Pagar a quienes cuidan a familiares dependientes una prestación de hasta el 100 % del SMI según el grado"
+resumen: "Modificaría el artículo 18 de la Ley de Dependencia: 100 % del SMI para el grado III, 70 % para el grado II y 40 % para el grado I, actualizada con el SMI vigente."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "46"
+    cita: "Para ello, modificaremos el artículo 18 de la Ley 39/2006, estableciendo una prestación económica vinculada al grado de dependencia equivalente al 100 % del SMI para el grado III, al 70 % para el grado II y al 40 % para el grado I, con actualización conforme al SMI vigente."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 46 (busca «artículo 18 de la Ley 39/2006»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

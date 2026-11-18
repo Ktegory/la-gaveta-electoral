@@ -1,11 +1,18 @@
 partido: "pod"
 tema: "empleo"
 subtema: "smi"
-titulo: "Salario mínimo de 1.800 € al mes por ley"
+titulo: "Subir el salario mínimo a 1.800 € al mes en una legislatura"
+resumen: "Además fijaría por ley que nunca pueda ser inferior al 75 % del salario mediano."
 fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "41"
+    cita: "Aumentaremos el SMI hasta los 1.800 euros al mes en una legislatura para garantizar salarios dignos y acercar el poder adquisitivo de las personas trabajadoras al de los países de nuestro entorno. Estableceremos por ley que nunca pueda ser inferior al 75% del salario mediano."
   - fuente: "pod/web-campana"
 fechaAnuncio: "2026-10-19"
 destacada: true
 orden: 1
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: añadimos el programa del 29N como fuente principal (página 41). Lo que iría «por ley» es el suelo del 75 % del salario mediano, no la cifra de 1.800 €: cambia el título. Quitada la firma para revisar de nuevo."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-10"
+fechaRevision: "2026-11-18"

@@ -54,10 +54,6 @@ const COMP = {
   <div class="chd pad">
     <h1 class="cond">Revisión</h1>
     <p class="lead">Comprueba cada propuesta contra su fuente. Si está bien, fírmala: se guarda en su archivo como «{REVISOR}», con la fecha de hoy. Si algo falla, edita el archivo y fírmala después. Esta página solo existe en local.</p>
-    <div class="rv-prog">
-      <p><b data-hechas>{hechas}</b> de {total} revisadas · quedan <b data-quedan>{total - hechas}</b></p>
-      <div class="rv-barra" aria-hidden="true"><span data-barra style={`width:${(hechas / total) * 100}%`}></span></div>
-    </div>
     <div class="rv-filtros">
       <div class="rv-grupo" role="group" aria-label="Partido">
         <button type="button" data-partido="" aria-pressed="true">Todos</button>
@@ -69,6 +65,12 @@ const COMP = {
         <button type="button" data-ver="todas" aria-pressed="false">Todas</button>
       </div>
     </div>
+  </div>
+
+  <!-- Fija bajo la cabecera: al bajar por la lista siempre se ve cuántas quedan. -->
+  <div class="rv-prog pad" aria-live="polite">
+    <p>Quedan <b data-quedan>{total - hechas}</b><span data-quedan-filtro></span> · <span data-hechas>{hechas}</span> de {total} revisadas</p>
+    <div class="rv-barra" aria-hidden="true"><span data-barra style={`width:${(hechas / total) * 100}%`}></span></div>
   </div>
 
   <div class="pad rv-lista">
@@ -145,11 +147,13 @@ const COMP = {
 </Base>
 
 <style>
-  .rv-prog { max-width: 640px; margin-bottom: 28px }
-  .rv-prog p { margin: 0 0 10px; font-size: 1rem }
+  .rv-prog { position: sticky; top: var(--hdr-h); z-index: 5; padding-block: 14px; background: var(--bg); border-bottom: 1px solid var(--ink) }
+  .rv-prog p { margin: 0 0 8px; font-size: 1rem }
+  .rv-prog b { font-family: var(--cond); font-size: 1.5rem; font-weight: 900 }
+  .rv-prog .rv-barra { max-width: 640px }
   .rv-barra { height: 8px; border-radius: 999px; background: var(--bg3); overflow: hidden }
   .rv-barra span { display: block; height: 100%; background: var(--ink); transition: width .3s }
-  .rv-filtros { display: flex; flex-wrap: wrap; gap: 12px 24px; padding-bottom: 28px; border-bottom: 1px solid var(--ink) }
+  .rv-filtros { display: flex; flex-wrap: wrap; gap: 12px 24px; padding-bottom: 12px }
   .rv-grupo { display: flex; flex-wrap: wrap; gap: 6px }
   .rv-grupo button { height: var(--h-ctl); padding: 0 16px; border: 0; border-radius: 999px; background: var(--bg2); font: inherit; font-size: .875rem; font-weight: 600; cursor: pointer }
   .rv-grupo button:hover { background: var(--bg3) }
@@ -228,6 +232,10 @@ const COMP = {
     const hechas = tarjetas.filter((t) => 'firmada' in t.dataset).length;
     document.querySelector('[data-hechas]')!.textContent = String(hechas);
     document.querySelector('[data-quedan]')!.textContent = String(total - hechas);
+    // Con un partido elegido, también las que le quedan a ese partido.
+    const delPartido = tarjetas.filter((t) => t.dataset.p === partido && !('firmada' in t.dataset)).length;
+    const nombre = document.querySelector<HTMLElement>(`[data-partido="${partido}"]`)?.textContent;
+    document.querySelector('[data-quedan-filtro]')!.textContent = partido ? ` (${nombre}: ${delPartido})` : '';
     document.querySelector<HTMLElement>('[data-barra]')!.style.width = `${(hechas / total) * 100}%`;
   };
 
@@ -238,11 +246,13 @@ const COMP = {
         tarjetas.forEach((t) => delete t.dataset.reciente);
         alPulsar(b);
         filtrar();
+        contar();
       }),
     );
   elegir('data-partido', (b) => (partido = b.dataset.partido!));
   elegir('data-ver', (b) => (ver = b.dataset.ver!));
   filtrar();
+  contar();
   if (previo.y) document.documentElement.scrollTop = previo.y;
 
   for (const t of tarjetas) {

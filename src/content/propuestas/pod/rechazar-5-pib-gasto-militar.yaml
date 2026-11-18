@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "exterior"
+subtema: "gasto-militar"
+titulo: "Rechazar el objetivo de la OTAN de elevar el gasto militar al 5 % del PIB en 2035"
+resumen: "Rechaza el compromiso del Gobierno de llegar al 5 % del PIB en gasto militar en 2035 y propone priorizar la inversión en derechos sociales. En otra medida plantea revertir el aumento del gasto militar y congelarlo durante la legislatura, salvo para mejorar salarios, condiciones y alojamiento de la tropa."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "28"
+    cita: "Rechazaremos el compromiso adquirido por el Gobierno de Pedro Sánchez de elevar el gasto militar hasta el 5 % del PIB en 2035 y defenderemos una política exterior basada en la paz, la diplomacia y la cooperación internacional, priorizando la inversión en derechos sociales frente al rearme."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 28 (busca «hasta el 5 % del PIB en 2035»)."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-18"

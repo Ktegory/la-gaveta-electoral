@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "inmigracion"
+subtema: "regularizacion"
+titulo: "Crear un visado de búsqueda de empleo y no vincular la renovación de la residencia solo a tener contrato"
+resumen: "El visado permitiría la estancia temporal en España y volver al país de origen si no se encuentra trabajo, sin prohibición de nueva entrada. También plantea flexibilizar la reagrupación familiar y los procesos de arraigo."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "32"
+    cita: "Implantaremos una nueva política de visados con distinta tipología, como por ejemplo el de búsqueda de empleo, que permita la estancia temporal en España y el regreso al país de origen si no se ha logrado encontrar un trabajo, sin prohibición de nueva entrada."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 32 (busca «el de búsqueda de empleo»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-18"

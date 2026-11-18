@@ -1,0 +1,16 @@
+partido: "pod"
+tema: "instituciones"
+subtema: "constitucion"
+titulo: "Reformar el Senado como cámara territorial con la misma representación para todas las comunidades autónomas"
+resumen: "Lo llama reforma federal del Senado. Todas las comunidades autónomas tendrían la misma representación y los senadores se elegirían por un sistema proporcional en cada circunscripción."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "129"
+    cita: "Reformaremos el Senado para convertirlo en una verdadera cámara de representación territorial, garantizando la misma representación a todas las Comunidades Autónomas y estableciendo un sistema de elección proporcional en cada circunscripción, que refleje la pluralidad política de sus territorios."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "18 nov: tomada del programa del 29N, página 129 (busca «misma representación a todas las Comunidades»)."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-18"
