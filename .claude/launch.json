@@ -11,6 +11,10 @@
       "port": 4321
     },
     {
+      "name": "web-terminal",
+      "url": "http://localhost:4321"
+    },
+    {
       "name": "docs",
       "runtimeExecutable": "python3",
       "runtimeArgs": [

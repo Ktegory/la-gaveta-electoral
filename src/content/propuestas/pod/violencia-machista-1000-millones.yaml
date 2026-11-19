@@ -14,5 +14,5 @@ destacada: false
 comprobacion:
   estado: encontrada
   nota: "18 nov: añadimos el programa del 29N como fuente principal (página 51). El programa habla de un fondo de contingencia, no de elevar el presupuesto: cambia el título. Quitada la firma para revisar de nuevo."
-revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+revisadaPor: "Khiustin Tornés"
 fechaRevision: "2026-11-18"
