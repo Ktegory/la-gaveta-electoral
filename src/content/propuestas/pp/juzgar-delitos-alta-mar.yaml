@@ -1,0 +1,15 @@
+partido: "pp"
+tema: "inmigracion"
+subtema: "fronteras"
+titulo: "Permitir que la jurisdicción española juzgue los delitos cometidos en alta mar durante las travesías migratorias"
+resumen: "Alma Ezcurra lo planteó en Arrecife (Lanzarote) al hablar de la ruta atlántica. En la misma intervención pidió una ley migratoria adaptada al Pacto Europeo de Migración y Asilo, más apoyo de Frontex y trabajar con los países de origen."
+fuentes:
+  - fuente: "pp/nota-ezcurra-lanzarote-2026-11-19"
+    cita: "Plantea que la jurisdicción española pueda juzgar delitos cometidos en alta mar y denuncia las atrocidades que, según afirma, se producen durante las travesías"
+fechaAnuncio: "2026-11-19"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Cita cotejada el 19 nov (ronda de las 14:15) en la nota oficial del PP sobre Alma Ezcurra en Arrecife. Estilo indirecto de la propia nota. Busca «alta mar». Ronda manual del mismo día: buscado «alta mar» en el PDF del programa (misma sha256 cea8f2a0…) y no aparece; solo está en la nota. La nota no detalla qué delitos ni cómo se cambiaría la ley."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-19"

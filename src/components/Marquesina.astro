@@ -19,10 +19,41 @@ const resumen = `${general.replace(/<[^>]+>/g, '')}. ${d.partidos.map((p) => `${
 let h = 0;
 for (const c of resumen) h = (h * 31 + c.charCodeAt(0)) | 0;
 const huella = (h >>> 0).toString(36);
+
+// Aviso de debate: ese día (hora de Madrid) sustituye a lo provisional; al día siguiente vuelve solo.
+// Datos de la Academia de Televisión recogidos por vemosTV, Vozpópuli y El Diario de Madrid (19 nov).
+const DEBATE = {
+  dia: '2026-11-19',
+  etiqueta: 'DEBATE HOY',
+  items: [
+    '<b>Hoy, cara a cara Sánchez-Feijóo</b> a las 22:00 (21:00 en Canarias), hasta la medianoche aproximadamente',
+    'En abierto en <b>La 1</b>, La 2 y el Canal 24 Horas de TVE, y también en Antena 3, laSexta, Telecinco, Cuatro y La Séptima',
+    'Por internet en <b>RTVE Play</b> y RTVE.es; por radio en RNE, la Cadena SER y Onda Cero',
+    'Lo organiza la Academia de Televisión y lo modera María Casado',
+    '<b>5 bloques</b>: vivienda; economía y fiscalidad; política social y servicios públicos; corrupción y regeneración democrática; inmigración y política exterior',
+    'Próximos debates: <b>lunes 23</b>, a ocho portavoces en RTVE (22:00); <b>jueves 26</b>, a cuatro, de la Academia de Televisión',
+  ],
+};
+const resumenDebate = `${DEBATE.items.map((t) => t.replace(/<[^>]+>/g, '')).join('. ')}.`;
+let hd = 0;
+for (const c of resumenDebate) hd = (hd * 31 + c.charCodeAt(0)) | 0;
+const huellaDebate = (hd >>> 0).toString(36);
 ---
-<div class="prov pad" role="region" aria-label="Aviso: información provisional" data-huella={huella} data-fase-solo="campana">
-  <span class="k">PROVISIONAL</span>
-  <div class="mq">
+<div class="prov pad" role="region" aria-label="Aviso: información provisional" data-huella={huella} data-fase-solo="campana"
+  data-debate-dia={DEBATE.dia} data-debate-huella={huellaDebate}>
+  <span class="k" data-mq="normal">PROVISIONAL</span>
+  <span class="k k-debate" data-mq="debate" hidden>{DEBATE.etiqueta}</span>
+  <div class="mq" data-mq="debate" hidden>
+    <p class="sr">{resumenDebate}</p>
+    <div class="mq-track" aria-hidden="true">
+      {[0, 1].map(() => (
+        <div class="mq-set">
+          {DEBATE.items.map((t) => <span><span set:html={t} /></span>)}
+        </div>
+      ))}
+    </div>
+  </div>
+  <div class="mq" data-mq="normal">
     <p class="sr">{resumen}</p>
     <div class="mq-track" aria-hidden="true">
       {[0, 1].map(() => (
@@ -52,6 +83,18 @@ const huella = (h >>> 0).toString(36);
   // Se para al pasar el cursor por encima (CSS) y se puede cerrar con la ×.
   (function () {
     var prov = document.querySelector('.prov');
+    // Día de debate (hora de Madrid; en local, ?hoy= lo simula a través de data-ahora): cambia el contenido.
+    if (prov && prov.dataset.debateDia) {
+      var ah = document.documentElement.dataset.ahora;
+      var hoy = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Madrid' }).format(ah ? new Date(ah) : new Date());
+      if (hoy === prov.dataset.debateDia) {
+        prov.querySelectorAll('[data-mq]').forEach(function (e) { e.hidden = e.dataset.mq !== 'debate'; });
+        prov.dataset.huella = prov.dataset.debateHuella;
+        prov.setAttribute('aria-label', 'Aviso: debate electoral de hoy');
+        var bx = prov.querySelector('.mq-cerrar');
+        if (bx) bx.setAttribute('aria-label', 'Ocultar el aviso del debate');
+      }
+    }
     // Cerrada por la persona: no se muestra hasta que cambie su contenido.
     function leerL(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
     function guardarL(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
@@ -64,7 +107,7 @@ const huella = (h >>> 0).toString(36);
       prov.classList.add('cerrando');
       setTimeout(function () { prov.hidden = true; }, 300);
     });
-    var track = prov && prov.querySelector('.mq-track');
+    var track = prov && prov.querySelector('.mq:not([hidden]) .mq-track');
     if (!track) return;
     function leer(k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } }
     function guardar(k, v) { try { sessionStorage.setItem(k, v); } catch (e) {} }

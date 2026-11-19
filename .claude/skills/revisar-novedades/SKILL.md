@@ -76,7 +76,7 @@ out
 
 Usa WebSearch (`mode: "standard"`; `extended` solo si hace falta) con búsquedas por partido y fecha, p. ej. `"<partido>" propuesta 29N <día> noviembre 2026`. Prioriza EFE, Europa Press, elDiario.es, El País, El Mundo, RTVE, La Vanguardia, El Periódico, Público, NacióDigital, El Nacional, Naiz, Deia, El Correo. Abre la noticia y copia el pasaje: no te fíes del resumen del buscador.
 
-Fechas de campaña que conviene vigilar (actualiza esta lista cuando cambie): mítines de apertura 12-13 nov; VOX en Colón 13 nov; Frente Amplio en Sevilla y Bildu en Bilbao 14 nov; cara a cara PSOE-PP el jueves 19 nov a las 22:00 (Academia de Televisión; míralo en la ronda del 20 por la mañana) y debate a cuatro el 26 nov a las 22:00; Sánchez en Santiago el 20 nov; Podemos con Montero y Rufián en Madrid el viernes 20 nov (19:00, Parque Enrique Tierno Galván, según @ahorapodemos); Frente Amplio en Barcelona 21 nov; Junts en Castelldefels 22 nov; cierres 27 nov.
+Fechas de campaña que conviene vigilar (actualiza esta lista cuando cambie): mítines de apertura 12-13 nov; VOX en Colón 13 nov; Frente Amplio en Sevilla y Bildu en Bilbao 14 nov; cara a cara PSOE-PP el jueves 19 nov a las 22:00 (Academia de Televisión; míralo en la ronda del 20 por la mañana) debate a ocho portavoces en RTVE el lunes 23 nov a las 22:00 (PP, PSOE, Vox, FA, ERC, Junts, EH Bildu y PNV), y debate a cuatro de la Academia el 26 nov a las 22:00 (Feijóo, Sánchez, Abascal y Colau); Sánchez en Santiago el 20 nov; Podemos con Montero y Rufián en Madrid el viernes 20 nov (19:00, Parque Enrique Tierno Galván, según @ahorapodemos); Frente Amplio en Barcelona 21 nov; Junts en Castelldefels 22 nov; cierres 27 nov.
 
 ## Paso 4. Verificar y redactar
 

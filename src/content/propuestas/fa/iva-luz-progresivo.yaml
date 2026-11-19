@@ -1,16 +1,18 @@
 partido: "fa"
 tema: "fiscalidad"
 subtema: "iva"
-titulo: "Hacer progresivo el IVA de la luz según el consumo por persona, del 0 % al 21 %"
-resumen: "El 0 % se aplicaría a los consumos más bajos, a las personas en situación de vulnerabilidad y al autoconsumo. Los consumos eléctricos vitales también tendrían un tipo reducido en el Impuesto Especial sobre la Electricidad."
+titulo: "Hacer progresivo el IVA de la luz, el agua y el gas, con un 0 % en el consumo básico"
+resumen: "En la luz, el IVA dependería del consumo por persona, del 0 % al 21 %. El 0 % se aplicaría a los consumos más bajos, a las personas en situación de vulnerabilidad y al autoconsumo. Los consumos eléctricos vitales también tendrían un tipo reducido en el Impuesto Especial sobre la Electricidad. El programa solo detalla la luz; el agua y el gas los añadió el partido en Instagram el 19 de noviembre, sin concretar los tramos."
 fuentes:
   - fuente: "fa/programa-29n-2026"
     pagina: "52"
     cita: "El IVA de la electricidad dependerá del consumo por persona: empezará en el 0 % para los consumos más bajos y personas en situación de vulnerabilidad y el autoconsumo y subirá de forma progresiva en los tramos altos hasta el 21 %."
+  - fuente: "fa/instagram-iva-suministros-2026-11-19"
+    cita: "Bajadas de IVA: IVA progresivo en luz, agua y gas, con un 0% en el consumo básico."
 fechaAnuncio: "2026-11-16"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 52 (página 47 del PDF). Busca «El IVA de la electricidad dependerá del consumo»."
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 52 (página 47 del PDF). Busca «El IVA de la electricidad dependerá del consumo». 19 nov: recotejada en la versión corregida del 17 nov (sha256 516c5c6c…), misma página; ampliada al agua y el gas con la publicación de @elfrenteamplio del 19 nov (busca «luz, agua y gas»), que el programa no recoge. Título y resumen cambiados: vuelve a necesitar firma."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-16"
+fechaRevision: "2026-11-19"
