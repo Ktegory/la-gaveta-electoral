@@ -1,0 +1,18 @@
+partido: "pp"
+tema: "inmigracion"
+subtema: "fronteras"
+titulo: "Reformar la ley para devolver a sus familias a los menores que han entrado de forma irregular"
+resumen: "El programa prevé reformar la Ley de Extranjería y la legislación de protección de menores para priorizar la reunificación familiar y el retorno a sus países, resolver en 72 horas la determinación de la edad y castigar en el Código Penal el fraude de edad. En El Hierro, según la nota del PP, Feijóo habló de modificar la Ley Penal del Menor."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "23"
+    cita: "Reformaremos la Ley de Extranjería y la legislación de protección de menores para priorizar la reunificación familiar"
+  - fuente: "pp/nota-feijoo-el-hierro-2026-11-20"
+    cita: "Apunta que modificará la Ley Penal del Menor para devolver a sus familias a los menores que han entrado de manera irregular"
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Ronda automática del 20 nov a las 20:04, con la nota del PP del 20 nov (16:29; busca «Ley Penal del Menor»; es redacción del partido, no palabras textuales de Feijóo). Cotejada después en el programa (sha256 cea8f2a0…, copia local, sin cambios): medida 46, págs. 23-24, «Promoveremos el regreso de los menores con sus familias como objetivo prioritario»; busca «priorizar la reunificación familiar». El programa no menciona la Ley Penal del Menor, sino la Ley de Extranjería y la legislación de protección de menores; por eso el resumen recoge las dos formulaciones."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-20"

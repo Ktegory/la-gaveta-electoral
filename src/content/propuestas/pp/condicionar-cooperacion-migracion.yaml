@@ -1,0 +1,18 @@
+partido: "pp"
+tema: "inmigracion"
+subtema: "fronteras"
+titulo: "Condicionar visados y cooperación al desarrollo a que los países de origen colaboren contra la inmigración irregular"
+resumen: "El programa lo liga a las readmisiones: al país que no coopere se le condicionarán los visados, la cooperación al desarrollo y la posición de España en la política comercial europea. En El Hierro, Feijóo lo planteó como fondos de cooperación solo para los países que frenen la inmigración irregular."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "23"
+    cita: "Si un país no coopera en las readmisiones, condicionaremos a ello los visados, la cooperación al desarrollo y la posición de España en la política comercial europea."
+  - fuente: "pp/nota-feijoo-el-hierro-2026-11-20"
+    cita: "Los países que cooperen frenando la inmigración irregular tendrán fondos de cooperación. Los que no, no tendrán fondos."
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Ronda automática del 20 nov a las 20:04, con la nota del PP del 20 nov (16:29; busca «tendrán fondos de cooperación», frase entrecomillada de Feijóo). Cotejada después en el programa (sha256 cea8f2a0…, copia local, sin cambios): medida 45, pág. 23; busca «no coopera en las readmisiones». La medida 247 (pág. 76) añade que la cooperación al desarrollo «debe ser un instrumento de estabilización de los países que contribuya a disminuir la inmigración irregular»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-20"

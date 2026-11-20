@@ -2,14 +2,16 @@ partido: "pp"
 tema: "inmigracion"
 subtema: "fronteras"
 titulo: "Permitir que la jurisdicción española juzgue los delitos cometidos en alta mar durante las travesías migratorias"
-resumen: "Alma Ezcurra lo planteó en Arrecife (Lanzarote) al hablar de la ruta atlántica. En la misma intervención pidió una ley migratoria adaptada al Pacto Europeo de Migración y Asilo, más apoyo de Frontex y trabajar con los países de origen."
+resumen: "Alma Ezcurra lo planteó en Arrecife (Lanzarote) al hablar de la ruta atlántica. Al día siguiente, en El Hierro, Feijóo habló de cambiar el Código Penal con nuevos tipos delictivos para juzgar a las mafias que trafican con personas. Ezcurra pidió también una ley migratoria adaptada al Pacto Europeo de Migración y Asilo, más apoyo de Frontex y trabajar con los países de origen."
 fuentes:
   - fuente: "pp/nota-ezcurra-lanzarote-2026-11-19"
     cita: "Plantea que la jurisdicción española pueda juzgar delitos cometidos en alta mar y denuncia las atrocidades que, según afirma, se producen durante las travesías"
+  - fuente: "pp/nota-feijoo-el-hierro-2026-11-20"
+    cita: "dará toda la batalla en el ámbito internacional para que nuestro Código Penal señale nuevos tipos delictivos y juzgue a las mafias que trafican con seres humanos"
 fechaAnuncio: "2026-11-19"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cita cotejada el 19 nov (ronda de las 14:15) en la nota oficial del PP sobre Alma Ezcurra en Arrecife. Estilo indirecto de la propia nota. Busca «alta mar». Ronda manual del mismo día: buscado «alta mar» en el PDF del programa (misma sha256 cea8f2a0…) y no aparece; solo está en la nota. La nota no detalla qué delitos ni cómo se cambiaría la ley."
+  nota: "Cita cotejada el 19 nov (ronda de las 14:15) en la nota oficial del PP sobre Alma Ezcurra en Arrecife. Estilo indirecto de la propia nota. Busca «alta mar». Ronda manual del mismo día: buscado «alta mar» en el PDF del programa (misma sha256 cea8f2a0…) y no aparece; solo está en la nota. La nota no detalla qué delitos ni cómo se cambiaría la ley. 20 nov (ronda de las 20:04 y cotejo manual): añadida como segunda fuente la nota del PP sobre Feijóo en El Hierro (20 nov, 16:29); busca «toda la batalla». Es redacción del partido; en la misma nota Feijóo dice entre comillas «Vamos a intentar cambiar nuestro Código Penal y las mafias tienen que pagar». No habla de alta mar de forma expresa. Vuelve a firmarse."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-19"
+fechaRevision: "2026-11-20"

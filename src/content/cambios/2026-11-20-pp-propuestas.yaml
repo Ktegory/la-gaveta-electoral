@@ -1,0 +1,7 @@
+fecha: "2026-11-20"
+partido: "pp"
+tipo: "propuestas"
+descripcion: "Añadimos dos medidas del programa del PP que Feijóo destacó el 20 de noviembre en El Hierro: condicionar los visados y la cooperación al desarrollo a que los países de origen colaboren contra la inmigración irregular, y reformar la ley para devolver a sus familias a los menores que han entrado de forma irregular."
+propuestas:
+  - "pp/condicionar-cooperacion-migracion"
+  - "pp/devolver-menores-familias"

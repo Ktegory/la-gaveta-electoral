@@ -2,17 +2,19 @@ partido: "pp"
 tema: "inmigracion"
 subtema: "fronteras"
 titulo: "Reforzar la frontera sur con más agentes, presencia estable de Frontex y apoyo de las Fuerzas Armadas"
-resumen: "Medida 36 del programa. Refuerzo permanente de la Guardia Civil y la Policía Nacional en Canarias, Baleares, Ceuta, Melilla, el Estrecho y los principales aeropuertos; rechazo en frontera también para las entradas a nado en Ceuta y Melilla, y apoyo de las Fuerzas Armadas cuando lo exija la seguridad nacional."
+resumen: "Medida 36 del programa. Refuerzo permanente de la Guardia Civil y la Policía Nacional en Canarias, Baleares, Ceuta, Melilla, el Estrecho y los principales aeropuertos; rechazo en frontera también para las entradas a nado en Ceuta y Melilla, y apoyo de las Fuerzas Armadas cuando lo exija la seguridad nacional. En El Hierro, Feijóo concretó más patrulleras para la Guardia Civil, tecnología satelital y drones."
 fuentes:
   - fuente: "pp/programa-29n-2026"
     pagina: "21"
     cita: "tendrán un refuerzo permanente de la Guardia Civil y de la Policía Nacional, presencia estable de Frontex y cooperación con Europol"
   - fuente: "pp/nota-ezcurra-lanzarote-2026-11-19"
     cita: "defiende la propuesta de “fronteras seguras” de su partido y reforzar la presencia de las Fuerzas y Cuerpos de Seguridad del Estado"
+  - fuente: "pp/nota-feijoo-el-hierro-2026-11-20"
+    cita: "más patrulleras para el Servicio Marítimo de la Guardia Civil, mayor tecnología satelital, drones y mejores sistemas de información para anticipar movimientos migratorios"
 fechaAnuncio: "2026-11-10"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Ronda manual del 19 nov a las 14:15. Cotejada en el PDF del programa (descargado de nuevo, misma sha256 cea8f2a0…): busca «presencia estable de Frontex» en la página 21, medida 36; la frase de las Fuerzas Armadas cierra la medida. La segunda fuente es la nota del PP del 19 nov sobre Alma Ezcurra en Arrecife (busca «fronteras seguras»); es redacción del partido, no palabras textuales de Ezcurra. Lo de juzgar delitos en alta mar va aparte, en pp/juzgar-delitos-alta-mar."
+  nota: "Ronda manual del 19 nov a las 14:15. Cotejada en el PDF del programa (descargado de nuevo, misma sha256 cea8f2a0…): busca «presencia estable de Frontex» en la página 21, medida 36; la frase de las Fuerzas Armadas cierra la medida. La segunda fuente es la nota del PP del 19 nov sobre Alma Ezcurra en Arrecife (busca «fronteras seguras»); es redacción del partido, no palabras textuales de Ezcurra. Lo de juzgar delitos en alta mar va aparte, en pp/juzgar-delitos-alta-mar. 20 nov (ronda de las 20:04 y cotejo manual): añadida como tercera fuente la nota del PP sobre Feijóo en El Hierro (20 nov, 16:29), que concreta los medios; busca «patrulleras». Es redacción del partido. Vuelve a firmarse."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-19"
+fechaRevision: "2026-11-20"

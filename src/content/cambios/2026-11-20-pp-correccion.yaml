@@ -1,0 +1,7 @@
+fecha: "2026-11-20"
+partido: "pp"
+tipo: "correccion"
+descripcion: "Añadimos como fuente la nota del PP sobre Feijóo en El Hierro a dos propuestas ya publicadas: el refuerzo de la frontera sur, con más patrulleras, tecnología satelital y drones, y juzgar en España los delitos de las travesías migratorias, con nuevos tipos en el Código Penal contra las mafias."
+propuestas:
+  - "pp/reforzar-frontera-sur"
+  - "pp/juzgar-delitos-alta-mar"
