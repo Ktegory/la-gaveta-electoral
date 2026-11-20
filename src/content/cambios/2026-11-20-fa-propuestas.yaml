@@ -1,0 +1,6 @@
+fecha: "2026-11-20"
+partido: "fa"
+tipo: "propuestas"
+descripcion: "Añadimos del programa del Frente Amplio la financiación de una investigación para localizar los restos de Federico García Lorca y de las demás víctimas asesinadas en Granada en agosto de 1936, que el partido ha destacado hoy en campaña."
+propuestas:
+  - "fa/investigar-restos-lorca"

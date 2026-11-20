@@ -1,0 +1,16 @@
+partido: "fa"
+tema: "instituciones"
+subtema: "justicia"
+titulo: "Financiar la búsqueda de los restos de Federico García Lorca y de las demás víctimas asesinadas en Granada en 1936"
+resumen: "Un proyecto de investigación histórica, arqueológica y forense, con prospecciones en lugares todavía no investigados, para identificar a las víctimas. El programa lo incluye en la protección de los lugares de memoria democrática, junto a un Centro de Memoria en la antigua cárcel de Carabanchel."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "174"
+    cita: "Asimismo, impulsaremos y financiaremos un proyecto de investigación histórica, arqueológica y forense para contrastar las hipótesis sobre la localización de los restos de Federico García Lorca y las demás víctimas asesinadas en Granada en agosto de 1936, incluyendo prospecciones en lugares todavía no investigados, con fines de identificación, verdad histórica y reparación familiar."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "20 nov (ronda automática de las 14:00): cotejada en la versión corregida del programa del 17 nov (sha256 516c5c6c…), página impresa 174 (147 del PDF), apartado «Reconocimiento y protección de los lugares de memoria democrática y antifascista». Busca «restos de Federico García Lorca». Pista: publicación del 20 nov de Esther Gil de Reboleño (Frente Amplio Andaluz) que aparece en el perfil de @elfrenteamplio: «impulsaremos una investigación rigurosa para localizar los restos de Federico García Lorca»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-20"
