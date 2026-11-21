@@ -1,0 +1,18 @@
+partido: "fa"
+tema: "empleo"
+subtema: "jornada"
+titulo: "Implantar un registro horario digital al que la Inspección de Trabajo pueda acceder en remoto y en tiempo real"
+resumen: "El programa prevé un registro de jornada digital, fiable e interoperable que recoja la jornada real y sus interrupciones, con acceso remoto en tiempo real para la Inspección de Trabajo. Prohibiría usar datos biométricos y la geolocalización permanente para el control horario. En el acto de Barcelona, Ernest Urtasun lo presentó como una medida para que la gente deje de hacer horas extras gratis."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "58"
+    cita: "Implantaremos un registro horario digital, fiable e interoperable que recoja la jornada real y sus interrupciones, garantizando el acceso remoto en tiempo real para la Inspección de Trabajo sin desplazamientos previos."
+  - fuente: "fa/nota-acto-barcelona-2026-11-21"
+    cita: "Si el PSOE quiere copiarnos medidas del programa electoral, como el registro horario para que la gente deje de hacer horas extras gratis, le decimos que no hace falta que nos copie: basta con que las publique directamente en el BOE"
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Pista de la ronda automática del 21 nov a las 14:03 (nota del FA sobre el acto de Barcelona, 21 nov, 13:40; busca «registro horario»; frase entrecomillada de Urtasun). Cotejada el 21 nov a las 20:21 en el programa (sha256 516c5c6c…, copia local, sin cambios): pág. 58 impresa (52 del PDF), apartado «Tiempo de trabajo, registro de jornada digital y jornada continua»; busca «registro horario digital». La prohibición de datos biométricos y geolocalización es el punto siguiente, «Garantías de protección de datos en el registro de jornada»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-21"

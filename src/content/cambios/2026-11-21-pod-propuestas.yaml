@@ -1,0 +1,6 @@
+fecha: "2026-11-21"
+partido: "pod"
+tipo: "propuestas"
+descripcion: "Añadimos una medida del programa de Podemos que Irene Montero destacó el 21 de noviembre en Instagram: prohibir la infiltración de agentes policiales en movimientos sociales pacíficos (medida 423)."
+propuestas:
+  - "pod/prohibir-infiltraciones-policiales"

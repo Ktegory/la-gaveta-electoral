@@ -94,6 +94,8 @@ Archivos (copia el formato de los existentes en la misma carpeta):
 - Correcciones a algo ya publicado: edita el archivo, **quita** `revisadaPor` y `fechaRevision` para que vuelva a firmarse y explica el cambio en `comprobacion.nota`.
 - Historial: una entrada por partido y día en `src/content/cambios/AAAA-MM-DD-<partido>-<tipo>.yaml` (`tipo`: `propuestas`, `correccion`, `fuente-nueva`, `estado-programa`). Si ya existe la del día, amplía su `descripcion`. Añade siempre la lista `propuestas:` con los ids (`"<partido>/<slug>"`) de las propuestas nuevas o corregidas: así salen enlazadas en /novedades/ y en el RSS.
 
+Medidas del programa que el partido destaca en campaña (decidido el 21 nov): la web no recoge los programas enteros, y una medida del programa entra cuando el partido la destaca en campaña (mitin, nota, redes). No completes subtemas con medidas que nadie ha destacado. Si sospechas que la pista ya está en el programa, redáctala con la pista como fuente y anota en `comprobacion.nota` qué buscar en el PDF para cotejarla antes de firmar; en el cotejo, el programa pasa a fuente principal (página y cita), `fechaAnuncio` toma la fecha del programa y el historial dice «Añadimos una medida del programa de X que Y destacó el día Z».
+
 Neutralidad: mismo tono y mismo nivel de detalle para todos los partidos. Nada de valorar si una propuesta es buena, viable o contradictoria.
 
 ## Paso 5. Comprobar

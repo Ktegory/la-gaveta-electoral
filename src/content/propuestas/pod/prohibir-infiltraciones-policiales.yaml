@@ -1,0 +1,18 @@
+partido: "pod"
+tema: "seguridad"
+subtema: "policia"
+titulo: "Prohibir la infiltración de agentes policiales en movimientos sociales pacíficos"
+resumen: "El programa lo incluye en una medida para «acabar con las cloacas del Estado»: prohibir la infiltración policial en movimientos sociales pacíficos, crear un delito de utilización de las estructuras de seguridad del Estado para delinquir, con penas agravadas, y sancionar a los agentes implicados, incluso con la expulsión del cuerpo. Irene Montero lo planteó el 21 de noviembre junto a la derogación de la ley mordaza."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "132"
+    cita: "Acabaremos con la utilización partidista y delictiva de las estructuras de seguridad del Estado y prohibiremos la infiltración de agentes policiales en movimientos sociales pacíficos."
+  - fuente: "pod/instagram-infiltraciones-policiales-2026-11-21"
+    cita: "Toca limpiar la policía y la justicia, derogar la ley mordaza y prohibir las infiltraciones policiales."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Ronda automática del 21 nov a las 14:03, con el texto del reel de @i_montero_ (busca «infiltraciones policiales»). Cotejada después en el programa (sha256 086211fb…, copia local, sin cambios): medida 423, pág. 132, «Acabar con las cloacas del Estado y prohibir la infiltración policial en movimientos sociales»; busca «movimientos sociales pacíficos». La derogación de la ley mordaza ya está en «pod/derogar-ley-mordaza». @ahorapodemos publicó el mismo 21 nov una imagen de «Una medida al día» sobre este asunto, pero su texto no se pudo leer completo."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-21"

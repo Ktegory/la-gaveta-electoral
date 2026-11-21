@@ -1,0 +1,6 @@
+fecha: "2026-11-21"
+partido: "fa"
+tipo: "propuestas"
+descripcion: "Añadimos una medida del programa del Frente Amplio que Ernest Urtasun destacó el 21 de noviembre en el acto de Barcelona: un registro horario digital al que la Inspección de Trabajo pueda acceder en remoto y en tiempo real."
+propuestas:
+  - "fa/registro-horario-digital"
