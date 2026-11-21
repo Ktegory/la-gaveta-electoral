@@ -1,0 +1,7 @@
+fecha: "2026-11-21"
+partido: "pp"
+tipo: "propuestas"
+descripcion: "Añadimos dos compromisos que Feijóo destacó el 20 de noviembre en Santa Cruz de Tenerife: averiguar en un máximo de siete días la identidad de quien llega de forma irregular (medida 37 del programa) y blindar los descuentos al transporte de los residentes en Canarias."
+propuestas:
+  - "pp/identificar-migrantes-siete-dias"
+  - "pp/blindar-descuentos-transporte-canarias"

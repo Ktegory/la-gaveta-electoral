@@ -1,0 +1,18 @@
+partido: "pp"
+tema: "inmigracion"
+subtema: "fronteras"
+titulo: "Averiguar en un máximo de siete días la identidad de quien llega de forma irregular"
+resumen: "El programa prevé comprobar en un máximo de una semana la identidad de quienes sean interceptados al cruzar la frontera de forma irregular y si suponen un riesgo para la seguridad, y tramitar después con rapidez el asilo o la devolución que corresponda. Feijóo lo repitió en Santa Cruz de Tenerife junto con determinar la edad en 72 horas (ya en pp/devolver-menores-familias) y desplegar las Fuerzas Armadas cuando lo exija la seguridad nacional (ya en pp/reforzar-frontera-sur)."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "21"
+    cita: "En un máximo de una semana, comprobaremos la identidad de quienes sean interceptados al cruzar ilegalmente nuestras fronteras y si suponen un riesgo para la seguridad."
+  - fuente: "pp/nota-feijoo-tenerife-2026-11-20"
+    cita: "Hay que averiguar la identidad de quien llega en un máximo de siete días, y la verdadera edad en un máximo de 72 horas"
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Ronda automática del 21 nov a las 8:16, con la nota del PP del 20 nov (20:16) sobre el mitin de Santa Cruz de Tenerife: busca «siete días»; es frase entrecomillada de Feijóo. Cotejada después en el programa (sha256 cea8f2a0…, copia local, sin cambios): medida 37, pág. 21, «Quienes entren irregularmente por la frontera serán identificados en un máximo de siete días y las devoluciones se producirán sin demora»; busca «En un máximo de una semana»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-21"

@@ -1,0 +1,15 @@
+partido: "pp"
+tema: "fiscalidad"
+subtema: "transporte"
+titulo: "Blindar los descuentos al transporte de los residentes en Canarias"
+resumen: "Feijóo lo prometió en Santa Cruz de Tenerife, junto con más vivienda y obras hidráulicas para Canarias, en colaboración con el Gobierno canario. No ha detallado qué descuentos ni cómo se blindarían."
+fuentes:
+  - fuente: "pp/nota-feijoo-tenerife-2026-11-20"
+    cita: "necesita blindar los descuentos al transporte de los residentes, y los blindaremos"
+fechaAnuncio: "2026-11-20"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Ronda automática del 21 nov a las 8:16, con la nota del PP del 20 nov (20:16) sobre el mitin de Santa Cruz de Tenerife: busca «descuentos al transporte». Es frase entrecomillada de Feijóo. Cotejada después en el programa (sha256 cea8f2a0…, copia local, sin cambios): no aparece. La medida 106 (pág. 42) trata de la insularidad y la ultraperiferia y asegura conexiones marítimas y aéreas para Canarias, Baleares, Ceuta y Melilla, pero no menciona los descuentos de residentes; por eso la única fuente es la nota."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-21"
