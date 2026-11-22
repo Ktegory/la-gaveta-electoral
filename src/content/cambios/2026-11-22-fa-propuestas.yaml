@@ -1,0 +1,7 @@
+fecha: "2026-11-22"
+partido: "fa"
+tipo: "propuestas"
+descripcion: "Añadimos dos medidas del programa del Frente Amplio que sus candidatos destacaron el 22 de noviembre: destinar el 8 % del PIB a la sanidad pública (acto en Pamplona) y un máximo de 600 euros al mes para el alquiler de la vivienda pública (acto en Grado, Asturias)."
+propuestas:
+  - "fa/sanidad-8-pib"
+  - "fa/tope-alquiler-publico-600"

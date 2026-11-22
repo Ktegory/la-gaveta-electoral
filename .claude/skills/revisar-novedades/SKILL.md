@@ -15,6 +15,7 @@ Objetivo: encontrar lo que los partidos han publicado o anunciado desde la últi
 - **No** inicies sesión, sigas cuentas, des «me gusta» ni comentes en ninguna red. Solo lectura.
 - **No** crees temas ni subtemas nuevos en `src/content/temas.yaml`: si algo no encaja, proponlo en el informe.
   - Ya descartado (no lo vuelvas a proponer): medios de comunicación (concentración y propiedad cruzada de medios, ley de información veraz; Podemos medida 441 y FA págs. 141 y 173), descartado el 20 nov.
+  - Actos de Gobierno no son propuestas (decidido el 22 nov): lo que el Gobierno aprueba o anuncia que aprobará en el Consejo de Ministros (p. ej. la prórroga del impuesto a la banca de 2027, anunciada por Sánchez el 21 nov) no se redacta como propuesta del partido, aunque lo anuncie el candidato en campaña. Anótalo en el informe como pista descartada.
 - **No** uses agregadores como fuente: programaelectoral.org, programasenclaro.com, politicaelectoral.com, DatosClaros, tupapeleta, etc. Sirven como pista, nunca como fuente.
 - **28 y 29 de noviembre (reflexión y votación):** no se publica contenido nuevo (lo dice «Cómo funciona»). Esos días no redactes borradores: haz solo el informe, y apunta lo que haya para el lunes 30. Solo se corrigen errores.
 - **Del 24 al 28 de noviembre (veda de encuestas, LOREG art. 69.7):** no añadas ni enlaces sondeos ni estimaciones de voto, aunque los cite un partido.
