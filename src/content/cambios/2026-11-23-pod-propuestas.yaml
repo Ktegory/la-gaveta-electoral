@@ -1,0 +1,6 @@
+fecha: "2026-11-23"
+partido: "pod"
+tipo: "propuestas"
+descripcion: "Añadimos una medida del programa de Podemos que Irene Montero destacó el 22 de noviembre en Barcelona: derogar la «ley Beckham», el régimen especial del IRPF para quienes se trasladan a trabajar a España (medida 51)."
+propuestas:
+  - "pod/derogar-ley-beckham"

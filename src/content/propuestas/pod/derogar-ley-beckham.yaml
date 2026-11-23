@@ -1,0 +1,18 @@
+partido: "pod"
+tema: "fiscalidad"
+subtema: "irpf"
+titulo: "Derogar la «ley Beckham», el régimen especial del IRPF para quienes se trasladan a trabajar a España"
+resumen: "Según el programa, ese régimen permite a quienes se trasladan a trabajar a España tributar durante seis años mucho menos que los contribuyentes ordinarios. Irene Montero lo destacó el 22 de noviembre en el acto central de ERC en Barcelona, dirigiéndose a los trabajadores extranjeros desplazados («expats»)."
+fuentes:
+  - fuente: "pod/programa-29n-2026"
+    pagina: "21"
+    cita: "Derogaremos la «Ley Beckham» que permite a quienes se trasladan a trabajar a España tributar durante seis años mucho menos que los contribuyentes ordinarios."
+  - fuente: "pod/instagram-ley-beckham-2026-11-22"
+    cita: "Expats, you have to pay. Hay que derogar la Ley Beckham."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Ronda automática del 22 nov a las 20:04, con el texto del reel de @i_montero_ (cita completa de la publicación). Cotejada el 22 nov a las 21:25 en el programa (sha256 086211fb…, copia local, sin cambios): medida 51, «Derogar por completo la así llamada “Ley Beckham”», págs. 21 y 22 (la cita termina en la 22); busca «Ley Beckham». Europa Press (vídeo, 22 nov) lo resume como derogar «la conocida como 'Ley Beckam' y los privilegios fiscales para los extranjeros que trabajan en España»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-22"

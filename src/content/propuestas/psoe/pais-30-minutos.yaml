@@ -1,0 +1,18 @@
+partido: "psoe"
+tema: "territorial"
+subtema: "despoblacion"
+titulo: "Garantizar el acceso a servicios básicos y movilidad en todo el territorio, hacia el «país de los 30 minutos»"
+resumen: "El programa no fija el plazo por ley ni detalla qué servicios incluye. En Ahigal (Cáceres), la cabeza de lista por Cáceres lo explicó como que cualquier persona, viva donde viva, pueda acceder a los servicios básicos en un tiempo razonable."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "71"
+    cita: "Garantizar el acceso a servicios básicos y soluciones de movilidad en todo el territorio, avanzando hacia el “País de los 30 minutos” para reforzar la igualdad de oportunidades con independencia del lugar de residencia."
+  - fuente: "psoe/prensa-pais-30-minutos-2026-11-22"
+    cita: "Ese programa, ha añadido, recoge el concepto del \"país de los 30 minutos\", pensado \"para que cualquier persona, viva donde viva, pueda acceder a los servicios básicos en un tiempo razonable y para que vivir en un pueblo no suponga tener menos oportunidades\"."
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Pista de la ronda del 22 nov (20:04), con el teletipo de Europa Press Extremadura sobre Irene Pozas en Ahigal (busca «30 minutos»). Cotejada el 22 nov a las 21:30 en el programa (sha256 e9c83413…, copia de la persona responsable): medida 275, pág. 71 impresa (70 del PDF); busca «País de los 30 minutos». Primera propuesta del PSOE en el subtema «Despoblación y medio rural», creado el 22 nov."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-23"

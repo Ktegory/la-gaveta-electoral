@@ -114,6 +114,7 @@
     - { id: financiacion, nombre: "Financiación autonómica", pregunta: "¿Cómo se financiarán las comunidades?" }
     - { id: lenguas-cooficiales, nombre: "Lenguas cooficiales", pregunta: "¿Qué pasa con las lenguas cooficiales?" }
     - { id: competencias, nombre: "Competencias", pregunta: "¿Quién decide qué?" }
+    - { id: despoblacion, nombre: "Despoblación y medio rural", pregunta: "¿Qué harán contra la despoblación?" }
 - id: seguridad
   nombre: "Seguridad"
   pregunta: "¿Qué harán con la policía, los delitos y las penas?"

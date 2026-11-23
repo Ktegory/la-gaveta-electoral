@@ -1,0 +1,6 @@
+fecha: "2026-11-23"
+partido: "pp"
+tipo: "propuestas"
+descripcion: "Añadimos, en el nuevo apartado «Despoblación y medio rural», una medida del programa del PP que Feijóo destacó el 16 de noviembre en Lleida: aplicar el Mecanismo Rural de Garantía para que ninguna norma se apruebe sin evaluar su impacto en el medio rural (medida 196)."
+propuestas:
+  - "pp/mecanismo-rural-garantia"

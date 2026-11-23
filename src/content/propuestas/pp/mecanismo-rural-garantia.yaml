@@ -1,0 +1,18 @@
+partido: "pp"
+tema: "territorial"
+subtema: "despoblacion"
+titulo: "Aplicar el Mecanismo Rural de Garantía para que ninguna norma se apruebe sin evaluar su impacto en el medio rural"
+resumen: "Forma parte de la medida del programa «Vivir en el medio rural tendrá futuro», que también promete bajar los impuestos a quienes viven, invierten y producen en el medio rural. Feijóo lo repitió en Vallfogona de Balaguer (Lleida) al presentar un pacto nacional por la agricultura."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "64"
+    cita: "Haremos efectivo el Mecanismo Rural de Garantía para que ninguna norma se apruebe sin evaluar antes su impacto en el medio rural."
+  - fuente: "pp/nota-pacto-rural-lleida-2026-11-16"
+    cita: "Remarca que no se aprobará una sola ley sin valorar su impacto en la economía rural"
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Pista de las rondas del 13 nov (Gamarra en Navarrete) y del 16 nov (nota de Lleida), que no se redactó por falta de subtema. Cotejada el 22 nov a las 21:30 en el programa (sha256 cea8f2a0…, copia local, sin cambios): medida 196, pág. 64; busca «Mecanismo Rural de Garantía». La nota de Lleida, descargada de nuevo el 22 nov, lo dice en estilo indirecto; busca «impacto en la economía rural». El PSOE (medida 276) y el FA (pág. 109) también lo llevan en su programa, pero no lo han destacado en campaña."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-23"

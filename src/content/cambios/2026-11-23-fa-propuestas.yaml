@@ -1,0 +1,6 @@
+fecha: "2026-11-23"
+partido: "fa"
+tipo: "propuestas"
+descripcion: "Añadimos, en el nuevo apartado «Despoblación y medio rural», una medida del programa del Frente Amplio que el partido destacó el 22 de noviembre en un comunicado en Granada: garantizar por ley que los servicios públicos básicos estén a menos de 30 minutos de quien vive en el medio rural."
+propuestas:
+  - "fa/servicios-publicos-30-minutos"
