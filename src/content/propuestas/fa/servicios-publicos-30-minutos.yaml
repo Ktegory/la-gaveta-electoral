@@ -5,7 +5,7 @@ titulo: "Garantizar por ley que los servicios públicos básicos estén a menos 
 resumen: "El criterio de proximidad se fijaría por ley junto con las administraciones territoriales. Está en el capítulo del programa contra la despoblación, que también incluye la II Estrategia estatal frente al Reto Demográfico y un programa de vivienda rural. En Granada, el FA lo presentó con un plan de empleo con incentivos directos y fiscalidad diferenciada."
 fuentes:
   - fuente: "fa/programa-29n-2026"
-    pagina: "109"
+    pagina: "117"
     cita: "Garantizaremos que los servicios públicos básicos estén a menos de 30 minutos de todas las personas que viven en el medio rural, fijando por ley, junto a las administraciones territoriales, este criterio de proximidad."
   - fuente: "fa/prensa-despoblacion-granada-2026-11-22"
     cita: "garantizar \"por ley que los servicios públicos básicos estén a menos de 30 minutos de todas las personas que residen en zonas rurales, además de poner en marcha un plan de empleo e industrialización con incentivos directos y una fiscalidad diferenciada\""
@@ -13,6 +13,6 @@ fechaAnuncio: "2026-11-16"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Pista de la ronda del 22 nov (20:04), con el teletipo de Europa Press Andalucía sobre un comunicado del FA en Granada (busca «30 minutos»). Cotejada el 22 nov a las 21:30 en el programa corregido (sha256 516c5c6c…, copia local, sin cambios): pág. 109 impresa (97 del PDF), apartado 9.1 «Garantizar empleo y servicios públicos»; busca «a menos de 30 minutos». Primera propuesta del subtema «Despoblación y medio rural», creado el 22 nov."
+  nota: "Pista de la ronda del 22 nov (20:04), con el teletipo de Europa Press Andalucía sobre un comunicado del FA en Granada (busca «30 minutos»). Cotejada el 22 nov a las 21:30 en el programa corregido (sha256 516c5c6c…, copia local, sin cambios): pág. 109 impresa (97 del PDF), apartado 9.1 «Garantizar empleo y servicios públicos»; busca «a menos de 30 minutos». Primera propuesta del subtema «Despoblación y medio rural», creado el 22 nov. 23 nov: el FA publicó otra versión del PDF (sha256 d7e2c815…) que añade un apartado de deporte; la cita no cambia y pasa a la página 117."
 revisadaPor: "Khiustin Tornés"
 fechaRevision: "2026-11-23"

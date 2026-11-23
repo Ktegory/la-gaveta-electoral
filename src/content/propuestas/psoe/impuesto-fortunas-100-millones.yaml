@@ -1,0 +1,18 @@
+partido: "psoe"
+tema: "fiscalidad"
+subtema: "patrimonio"
+titulo: "Crear un impuesto a las fortunas de más de 100 millones de euros"
+resumen: "Sánchez lo anunció en un vídeo el 23 de noviembre. El PSOE calcula que recaudaría 2.000 millones, que irían a vivienda protegida, pensiones y una prestación por crianza. No ha dicho qué tipo se aplicaría; sí que no tendría exenciones ni bonificaciones. Su programa ya preveía una «tributación complementaria de los grandes patrimonios» para financiar la prestación por crianza, sin fijar un umbral."
+fuentes:
+  - fuente: "psoe/prensa-impuesto-ultrarricos-2026-11-23"
+    cita: "las fortunas superiores a 100 millones de euros tendrán que pagar por lo que les corresponde"
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "48"
+    cita: "La recaudación de la tributación complementaria de los grandes patrimonios y de la mayor progresividad de las rentas del capital contribuirá a financiar la prestación por crianza y la lucha contra la pobreza infantil."
+fechaAnuncio: "2026-11-23"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Ronda automática del 23 nov a las 14:04, con el teletipo de Europa Press de las 9:05 (busca «fortunas superiores a 100 millones»): la cita es del vídeo de Sánchez, entrecomillada por la agencia. La cifra de 2.000 millones y «sin exenciones ni bonificaciones» vienen del comunicado del PSOE que recoge el mismo teletipo (busca «cerrar las vías»); el destino del dinero, de la frase de Sánchez «vivienda protegida, blindar las pensiones y crear una prestación por crianza». Cotejada el 23 nov a las 14:55 en el programa del PSOE (PDF, sha256 e9c83413…): la medida 127 (pág. 48, busca «tributación complementaria») y la 192 (pág. 57) hablan de gravar los grandes patrimonios, pero sin umbral ni recaudación, así que el anuncio queda como fuente principal y el programa como segunda. No duplica «Impulsar un impuesto mínimo global sobre las grandes fortunas» (medida 457), que es de ámbito internacional."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-23"

@@ -1,0 +1,18 @@
+partido: "pp"
+tema: "instituciones"
+subtema: "justicia"
+titulo: "Exigir cinco años fuera de la política para ser magistrado del Tribunal Constitucional"
+resumen: "Está en el programa del PP, que añade un régimen estricto de incompatibilidades y que el Constitucional no sea una segunda instancia sobre el Tribunal Supremo. Feijóo lo destacó el 23 de noviembre en Antena 3: el plazo valdría para cualquier cargo político, sea local, provincial, autonómico o nacional."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "31"
+    cita: "Ningún candidato podrá haber ocupado cargos políticos durante los cinco años anteriores y estableceremos un régimen estricto de incompatibilidades."
+  - fuente: "pp/prensa-feijoo-antena3-2026-11-23"
+    cita: "en el Constitucional para ser magistrado se necesita como mínimo un tiempo de cinco años fuera de la política"
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Ronda automática del 23 nov a las 14:04, con el teletipo de Europa Press sobre la entrevista de Feijóo en «Espejo Público» (busca «cinco años fuera de la política»: frase entrecomillada; la agencia añade entre paréntesis «local, provincial, autonómica o nacional»). Cotejada el 23 nov a las 14:55 en el programa del PP (PDF, sha256 cea8f2a0…): medida 67, pág. 31, busca «cinco años anteriores»; lo de la segunda instancia es la medida 69, en la misma página. El programa pasa a fuente principal y la entrevista queda como segunda fuente."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-23"

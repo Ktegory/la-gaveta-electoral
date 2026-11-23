@@ -5,12 +5,12 @@ titulo: "Fijar un tipo mínimo efectivo del 20 % en Sociedades para las grandes 
 resumen: "Se aplicaría sobre el resultado contable ajustado, por encima del mínimo actual del 15 %, sin subir la carga fiscal de las pymes. El programa también propone suprimir el régimen de consolidación fiscal de los grandes grupos."
 fuentes:
   - fuente: "fa/programa-29n-2026"
-    pagina: "49"
+    pagina: "57"
     cita: "Impondremos un tipo mínimo efectivo del 20 % sobre el resultado contable ajustado para las grandes empresas y grupos corporativos, avanzando sobre el mínimo previo del 15 % mediante reglas homogéneas que eviten la manipulación de la base tributaria, sin elevar la carga fiscal de las pymes."
 fechaAnuncio: "2026-11-16"
 destacada: true
 comprobacion:
   estado: encontrada
-  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 49 (página 44 del PDF). Busca «tipo mínimo efectivo del 20 %». Sustituye a fa/tipo-minimo-sociedades (15 %, nota del 5 nov) y hereda su lugar entre las destacadas."
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 49 (página 44 del PDF). Busca «tipo mínimo efectivo del 20 %». Sustituye a fa/tipo-minimo-sociedades (15 %, nota del 5 nov) y hereda su lugar entre las destacadas. 23 nov: el FA publicó otra versión del PDF (sha256 d7e2c815…) que añade un apartado de deporte; la cita no cambia y pasa a la página 57."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-16"
+fechaRevision: "2026-11-23"

@@ -5,12 +5,12 @@ titulo: "Cumplir el calendario de cierre nuclear y cerrar Almaraz I y II en 2027
 resumen: "El cierre sería sin beneficios fiscales. Las empresas pagarían la gestión de los residuos y el desmantelamiento, y habría recursos para los trabajadores y la reactivación de las comarcas afectadas."
 fuentes:
   - fuente: "fa/programa-29n-2026"
-    pagina: "71"
+    pagina: "79"
     cita: "Cumpliremos el calendario de cierre de las centrales nucleares. Almaraz I y II cerrarán en los plazos previstos (2027-2028), sin beneficios fiscales, con la gestión de los residuos a cargo de las empresas y con recursos para la transición justa de sus trabajadores y la reactivación de las comarcas afectadas."
 fechaAnuncio: "2026-11-16"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 71 (página 64 del PDF). Busca «Almaraz I y II cerrarán en los plazos previstos»."
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 71 (página 64 del PDF). Busca «Almaraz I y II cerrarán en los plazos previstos». 23 nov: el FA publicó otra versión del PDF (sha256 d7e2c815…) que añade un apartado de deporte; la cita no cambia y pasa a la página 79."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-17"
+fechaRevision: "2026-11-23"

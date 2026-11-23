@@ -5,12 +5,12 @@ titulo: "Condonar deuda a las comunidades autónomas a cambio de no bajar impues
 resumen: "Las comunidades podrían dedicar el 20 % de la deuda condonada a ampliar su parque público de alquiler asequible. El resto de la deuda se reestructuraría con más plazo y menos interés, y en seis meses se calcularían los déficits de financiación acumulados desde el modelo de 2001 para compensarlos."
 fuentes:
   - fuente: "fa/programa-29n-2026"
-    pagina: "118"
+    pagina: "126"
     cita: "Condonación de deuda autonómica condicionada a la prohibición de efectuar dumping fiscal o bajadas de impuestos a rentas altas. Podrán destinar el 20 % de la deuda que se les condone a crear y ampliar su parque público de alquiler asequible."
 fechaAnuncio: "2026-11-16"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 118 (página 104 del PDF). Busca «condicionada a la prohibición de efectuar dumping fiscal»."
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 118 (página 104 del PDF). Busca «condicionada a la prohibición de efectuar dumping fiscal». 23 nov: el FA publicó otra versión del PDF (sha256 d7e2c815…) que añade un apartado de deporte; la cita no cambia y pasa a la página 126."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-17"
+fechaRevision: "2026-11-23"

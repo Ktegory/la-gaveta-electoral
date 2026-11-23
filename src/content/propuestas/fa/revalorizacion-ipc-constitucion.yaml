@@ -5,12 +5,12 @@ titulo: "Incluir en la Constitución la revalorización automática de las pensi
 resumen: "Se haría por el procedimiento ordinario de reforma (artículo 167), sin convocar elecciones. El derecho a la pensión pública pasaría a la sección de derechos y deberes de los ciudadanos, junto con la prohibición de privatizar su gestión."
 fuentes:
   - fuente: "fa/programa-29n-2026"
-    pagina: "63-64"
+    pagina: "71-72"
     cita: "Para ello, ubicaremos el derecho a la pensión pública y su revalorización automática con arreglo al IPC, que ninguna sea inferior al SMI y que no se privatice la gestión de las pensiones públicas en la Sección 2.ª del Capítulo II del Título I («De los derechos y deberes de los ciudadanos»), elevando significativamente su rango normativo y garantizando su aplicabilidad inmediata sin necesidad de convocar elecciones."
 fechaAnuncio: "2026-11-16"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 63 (página 57 del PDF), apartado «Blindaje constitucional del carácter público de las pensiones». Busca «revalorización automática con arreglo al IPC». 17 nov: en la versión nueva del PDF (sha256 516c5c6c…) la cita empieza en la página 63 y salta a la 64 tras «las pensiones pú-» (57-58 del PDF). Quitada la firma para revisar de nuevo."
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 63 (página 57 del PDF), apartado «Blindaje constitucional del carácter público de las pensiones». Busca «revalorización automática con arreglo al IPC». 17 nov: en la versión nueva del PDF (sha256 516c5c6c…) la cita empieza en la página 63 y salta a la 64 tras «las pensiones pú-» (57-58 del PDF). Quitada la firma para revisar de nuevo. 23 nov: el FA publicó otra versión del PDF (sha256 d7e2c815…) que añade un apartado de deporte; la cita no cambia y pasa a las páginas 71-72."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-17"
+fechaRevision: "2026-11-23"

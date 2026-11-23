@@ -7,12 +7,12 @@ fuentes:
   - fuente: "fa/instagram-autonomos-2026-11-15"
     cita: "Ventanilla única, digitalización y acompañamiento. Ayudas unificadas, con plazos de resolución breves, y un Kit Digital para la economía social basado en software libre."
   - fuente: "fa/programa-29n-2026"
-    pagina: "103"
+    pagina: "111"
     cita: "Unificaremos las ayudas a pymes y autónomos en una convocatoria única, con plazos máximos de resolución breves. Crearemos un Kit Digital para la economía social basado en software libre."
 fechaAnuncio: "2026-11-15"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cita transcrita el 15 nov de la imagen 5 de 6 del carrusel de @elfrenteamplio («Menos trámites, más apoyo a las pymes»). No está en el pie de la publicación. El Frente Amplio aún no ha publicado programa. 17 nov: la versión nueva del PDF del programa (sha256 516c5c6c…) incluye la medida en la página 103 (92 del PDF); añadida como segunda fuente. Busca «convocatoria única». Quitada la firma para revisar de nuevo."
+  nota: "Cita transcrita el 15 nov de la imagen 5 de 6 del carrusel de @elfrenteamplio («Menos trámites, más apoyo a las pymes»). No está en el pie de la publicación. El Frente Amplio aún no ha publicado programa. 17 nov: la versión nueva del PDF del programa (sha256 516c5c6c…) incluye la medida en la página 103 (92 del PDF); añadida como segunda fuente. Busca «convocatoria única». Quitada la firma para revisar de nuevo. 23 nov: el FA publicó otra versión del PDF (sha256 d7e2c815…) que añade un apartado de deporte; la cita no cambia y pasa a la página 111."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-17"
+fechaRevision: "2026-11-23"

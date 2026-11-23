@@ -5,12 +5,12 @@ titulo: "Crear un abono único mensual de transporte para todo el Estado, con Ce
 resumen: "Cercanías costaría 10 € para menores de 26 años y sería gratis para menores de 16. Habría descuentos del 60-70 % en Media Distancia, del 50 % en Larga Distancia para viajes recurrentes y del 75-80 % en autobús y metro, o una tarifa plana combinada de 50 € al mes. El transporte público sería gratis en Canarias, Illes Balears, Ceuta y Melilla."
 fuentes:
   - fuente: "fa/programa-29n-2026"
-    pagina: "72"
+    pagina: "80"
     cita: "Crearemos un abono único nominativo y mensual válido en todo el Estado, ciudades y modos de transporte. Incluye un esquema de precios de 20 €/mes para Cercanías (10 € para menores de 26 años y gratuito para menores de 16), descuentos del 60-70 % en Media Distancia (gratuito para menores de 15 años), 50 % en Larga Distancia para viajes recurrentes (al menos 3 viajes de ida y vuelta al mes) y 75-80 % de descuento en autobús y metro municipal/autonómico (o tarifa plana combinada de 50 €/mes)."
 fechaAnuncio: "2026-11-16"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 72 (página 65 del PDF), punto «Abono único estatal e integrado de transporte». Busca «abono único nominativo y mensual». La gratuidad en las islas, Ceuta y Melilla está en el punto siguiente («Gratuidad insular y enclaves extrapeninsulares»)."
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 72 (página 65 del PDF), punto «Abono único estatal e integrado de transporte». Busca «abono único nominativo y mensual». La gratuidad en las islas, Ceuta y Melilla está en el punto siguiente («Gratuidad insular y enclaves extrapeninsulares»). 23 nov: el FA publicó otra versión del PDF (sha256 d7e2c815…) que añade un apartado de deporte; la cita no cambia y pasa a la página 80."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-16"
+fechaRevision: "2026-11-23"

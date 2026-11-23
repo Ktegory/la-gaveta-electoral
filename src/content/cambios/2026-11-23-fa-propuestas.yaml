@@ -1,6 +1,8 @@
 fecha: "2026-11-23"
 partido: "fa"
 tipo: "propuestas"
-descripcion: "Añadimos, en el nuevo apartado «Despoblación y medio rural», una medida del programa del Frente Amplio que el partido destacó el 22 de noviembre en un comunicado en Granada: garantizar por ley que los servicios públicos básicos estén a menos de 30 minutos de quien vive en el medio rural."
+descripcion: "Añadimos, en el nuevo apartado «Despoblación y medio rural», una medida del programa del Frente Amplio que el partido destacó el 22 de noviembre en un comunicado en Granada: garantizar por ley que los servicios públicos básicos estén a menos de 30 minutos de quien vive en el medio rural. Añadimos también dos medidas del programa que el Frente Amplio destacó el 23 de noviembre: anular las cláusulas de los contratos de alquiler que prohíban tener animales de compañía (Instagram) y gravar al 30 % el aumento del beneficio de las empresas que facturen más de 50 millones si no suben los salarios (acto en Arrasate)."
 propuestas:
   - "fa/servicios-publicos-30-minutos"
+  - "fa/animales-compania-alquiler"
+  - "fa/gravamen-beneficios-no-compartidos"

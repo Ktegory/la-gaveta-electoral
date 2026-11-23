@@ -1,0 +1,6 @@
+fecha: "2026-11-23"
+partido: "erc"
+tipo: "propuestas"
+descripcion: "Añadimos la propuesta de ERC, que Oriol Junqueras presentó el 23 de noviembre en Barcelona, de permitir pagar a plazos los impuestos de la compra de una vivienda."
+propuestas:
+  - "erc/fraccionar-impuestos-compra-vivienda"

@@ -5,12 +5,12 @@ titulo: "Crear un procedimiento permanente de regularización de personas migran
 resumen: "Sería un procedimiento estable, permanente y reglado, dentro de una reforma integral de la Ley de Extranjería. Además, se resolverían todas las solicitudes de la regularización extraordinaria de 2026 para que nadie quede fuera por retrasos de la Administración."
 fuentes:
   - fuente: "fa/programa-29n-2026"
-    pagina: "149"
+    pagina: "157"
     cita: "Reformaremos de forma integral la Ley de Extranjería para instaurar un procedimiento estable, permanente y reglado de regularización administrativa."
 fechaAnuncio: "2026-11-16"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 149 (página 126 del PDF). Busca «procedimiento estable, permanente y reglado de regularización»."
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 149 (página 126 del PDF). Busca «procedimiento estable, permanente y reglado de regularización». 23 nov: el FA publicó otra versión del PDF (sha256 d7e2c815…) que añade un apartado de deporte; la cita no cambia y pasa a la página 157."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-17"
+fechaRevision: "2026-11-23"

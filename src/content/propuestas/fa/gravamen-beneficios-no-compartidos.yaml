@@ -1,0 +1,18 @@
+partido: "fa"
+tema: "fiscalidad"
+subtema: "sociedades"
+titulo: "Gravar al 30 % el aumento del beneficio de las empresas que facturen más de 50 millones si no suben los salarios"
+resumen: "Se aplicaría al beneficio de explotación que supere la media de los tres ejercicios anteriores cuando los salarios de la plantilla no suban lo que la inflación del año o, si es mayor, lo pactado en el acuerdo estatal de negociación colectiva (AENC). Las empresas que suban los salarios lo que marca esa referencia no pagarían nada. Los candidatos lo destacaron el 23 de noviembre en Arrasate (Gipuzkoa); Europa Press habla de empresas con más de 50 millones de beneficio, pero el programa dice de facturación."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "65-66"
+    cita: "Crearemos un gravamen estatal para las empresas con una cifra de facturación superior a 50 millones de euros cuyo beneficio crezca mientras los salarios de su plantilla se quedan atrás. […] El tipo será del 30 %; la empresa que suba los salarios lo que marca la referencia no pagará nada."
+  - fuente: "fa/prensa-empleo-arrasate-2026-11-23"
+    cita: "la imposición de un impuesto del 30% a las grandes empresas que tengan más de 50 millones de euros de beneficio y que apliquen congelaciones salariales"
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Pista de la ronda del 23 nov (20:04) con el teletipo de Europa Press Euskadi (busca «congelaciones salariales»; paráfrasis de la agencia). Cotejada el 23 nov a las 22:30 en el programa del Frente Amplio (versión del 23 nov, sha256 d7e2c815…): apartado «Gravamen sobre beneficios no compartidos», páginas 65-66 (58-59 del PDF; en la versión del 17 nov, 57-58). Busca «beneficios no compartidos» y «El tipo será del 30 %». El programa pasa a fuente principal y el teletipo queda como segunda fuente."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-23"

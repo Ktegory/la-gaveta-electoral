@@ -1,0 +1,15 @@
+partido: "erc"
+tema: "vivienda"
+subtema: "fiscalidad-vivienda"
+titulo: "Permitir pagar a plazos los impuestos de la compra de una vivienda"
+resumen: "Oriol Junqueras propuso cambiar la Ley General Tributaria para fraccionar el impuesto de transmisiones patrimoniales (ITP) en las viviendas de segunda mano. En las nuevas, el IVA se cubriría con préstamos de la Administración a interés cero."
+fuentes:
+  - fuente: "erc/prensa-fraccionar-impuestos-vivienda-2026-11-23"
+    cita: "ha propuesto modificar la ley general tributaria para fraccionar el pago de impuestos vinculados a la compra de vivienda, como el ITP en el caso de las viviendas de segunda mano y el IVA en las viviendas nuevas (aunque en el caso del IVA se haría mediante préstamos de la administración a interés cero)"
+fechaAnuncio: "2026-11-23"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Borrador de la ronda del 23 nov (20:04) con el texto que acompaña a un vídeo de Europa Press (busca «fraccionar el pago»). Es resumen de la agencia, no frase literal de Junqueras, y es la única fuente encontrada: ni nota de ERC ni otra crónica (dos búsquedas sin resultado). Antes de firmar conviene ver el vídeo para confirmar lo que dice y, si se puede, buscar en el programa «fraccionar», «ITP» o «préstecs» (capítulo de vivienda, hacia la pág. 19); si está, el programa pasa a fuente principal. Relacionada con «erc/iva-itp-vivienda»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-23"

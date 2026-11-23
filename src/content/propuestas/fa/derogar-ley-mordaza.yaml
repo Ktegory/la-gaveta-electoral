@@ -5,12 +5,12 @@ titulo: "Derogar por completo la Ley de Seguridad Ciudadana («ley mordaza»)"
 resumen: "Las multas se ajustarían a los ingresos y a la edad de las personas sancionadas, y las sanciones serían de tipo restaurativo o fruto de una conciliación. El programa también propone derogar los delitos contra los sentimientos religiosos, los delitos contra la Corona y el enaltecimiento del terrorismo."
 fuentes:
   - fuente: "fa/programa-29n-2026"
-    pagina: "169"
+    pagina: "177"
     cita: "Derogaremos por completo la Ley Mordaza."
 fechaAnuncio: "2026-11-16"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 169 (página 142 del PDF). Busca «Derogaremos por completo la Ley Mordaza»."
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 169 (página 142 del PDF). Busca «Derogaremos por completo la Ley Mordaza». 23 nov: el FA publicó otra versión del PDF (sha256 d7e2c815…) que añade un apartado de deporte; la cita no cambia y pasa a la página 177."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-17"
+fechaRevision: "2026-11-23"

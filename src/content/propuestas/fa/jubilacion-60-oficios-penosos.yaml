@@ -5,12 +5,12 @@ titulo: "Permitir la jubilación a los 60 años en oficios de especial penosidad
 resumen: "Cita como ejemplos la construcción, la limpieza, la ayuda a domicilio, las camareras de piso y la pesca, por su esfuerzo físico y su alto riesgo de accidentes."
 fuentes:
   - fuente: "fa/programa-29n-2026"
-    pagina: "64"
+    pagina: "72"
     cita: "Reduciremos la edad de jubilación en determinados oficios y profesiones por su especial penosidad. Construcción, limpieza, ayuda a domicilio, camareras de piso y la pesca deben poder acceder a los 60 años por su especial esfuerzo físico y el elevado riesgo de siniestralidad."
 fechaAnuncio: "2026-11-16"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), páginas 63-64 (páginas 57-58 del PDF; la frase salta de página tras «camareras de piso»). Busca «por su especial penosidad». 17 nov: en la versión nueva del PDF (sha256 516c5c6c…) la frase entera está en la página 64 (58 del PDF). Quitada la firma para revisar de nuevo."
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), páginas 63-64 (páginas 57-58 del PDF; la frase salta de página tras «camareras de piso»). Busca «por su especial penosidad». 17 nov: en la versión nueva del PDF (sha256 516c5c6c…) la frase entera está en la página 64 (58 del PDF). Quitada la firma para revisar de nuevo. 23 nov: el FA publicó otra versión del PDF (sha256 d7e2c815…) que añade un apartado de deporte; la cita no cambia y pasa a la página 72."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-17"
+fechaRevision: "2026-11-23"

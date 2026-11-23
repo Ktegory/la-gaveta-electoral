@@ -1,0 +1,18 @@
+partido: "fa"
+tema: "vivienda"
+subtema: "alquiler"
+titulo: "Anular las cláusulas de los contratos de alquiler que prohíban tener animales de compañía"
+resumen: "El programa lo limita a las cláusulas que lo prohíban de forma genérica en los contratos de vivienda habitual. El Frente Amplio lo destacó en Instagram el 23 de noviembre, junto con otras medidas sobre animales. No dice si afectaría a los contratos ya firmados."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "91"
+    cita: "Acabaremos con la discriminación de los animales en el alquiler, declarando nulas las cláusulas que prohíban de forma genérica tener animales de compañía en los contratos de arrendamiento de vivienda habitual."
+  - fuente: "fa/instagram-animales-alquiler-2026-11-23"
+    cita: "Ya no tendrás que elegir entre PISO o MASCOTA: vamos a anular las cláusulas que prohíban tener animales de compañía en los contratos de alquiler."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Pista de la ronda del 23 nov (20:04) con la publicación de @elfrenteamplio del 23 nov (busca «PISO o MASCOTA»). Cotejada el 23 nov a las 22:30 en el programa del Frente Amplio (versión del 23 nov, sha256 d7e2c815…): apartado de bienestar animal, página 91 (83 del PDF; en la versión del 17 nov, página 83). Busca «declarando nulas las cláusulas». El programa pasa a fuente principal y la publicación queda como segunda fuente. La misma publicación repite el IVA veterinario al 10 %, ya recogido en «fa/iva-panales-veterinarios-peluquerias»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-23"

@@ -1,6 +1,8 @@
 fecha: "2026-11-23"
 partido: "pp"
 tipo: "propuestas"
-descripcion: "Añadimos, en el nuevo apartado «Despoblación y medio rural», una medida del programa del PP que Feijóo destacó el 16 de noviembre en Lleida: aplicar el Mecanismo Rural de Garantía para que ninguna norma se apruebe sin evaluar su impacto en el medio rural (medida 196)."
+descripcion: "Añadimos, en el nuevo apartado «Despoblación y medio rural», una medida del programa del PP que Feijóo destacó el 16 de noviembre en Lleida: aplicar el Mecanismo Rural de Garantía para que ninguna norma se apruebe sin evaluar su impacto en el medio rural (medida 196). Añadimos también dos medidas del programa que Feijóo destacó el 23 de noviembre en una entrevista en Antena 3: derogar la ley de amnistía (medida 60) y exigir cinco años fuera de la política para ser magistrado del Tribunal Constitucional (medida 67)."
 propuestas:
   - "pp/mecanismo-rural-garantia"
+  - "pp/derogar-ley-amnistia"
+  - "pp/magistrados-tc-cinco-anos-sin-politica"

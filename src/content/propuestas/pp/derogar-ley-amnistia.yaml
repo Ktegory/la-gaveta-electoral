@@ -1,0 +1,18 @@
+partido: "pp"
+tema: "instituciones"
+subtema: "justicia"
+titulo: "Derogar la ley de amnistía"
+resumen: "Está en el programa del PP, que añade que prohibirá usar el derecho de gracia como contraprestación para formar o mantener un Gobierno. Feijóo lo reiteró el 23 de noviembre en una entrevista en Antena 3. No ha explicado qué alcance tendría la derogación."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "29"
+    cita: "Derogaremos la Ley de Amnistía y prohibiremos que el derecho de gracia se utilice como contraprestación política para formar o mantener un Gobierno."
+  - fuente: "pp/prensa-feijoo-antena3-2026-11-23"
+    cita: "¿Voy a derogar la ley de amnistía? Sí, porque es un compromiso político y los compromisos políticos se cumplen."
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Ronda automática del 23 nov a las 14:04, con el teletipo de Europa Press sobre la entrevista de Feijóo en «Espejo Público» (busca «Voy a derogar»: frase entrecomillada de Feijóo). Cotejada el 23 nov a las 14:55 en el programa del PP (PDF, sha256 cea8f2a0…): medida 60, pág. 29, busca «Derogaremos la Ley de Amnistía». El programa pasa a fuente principal y la entrevista queda como segunda fuente. Lo de que los efectos «se vayan a mantener» es de la pregunta, según el resumen de la agencia."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-23"

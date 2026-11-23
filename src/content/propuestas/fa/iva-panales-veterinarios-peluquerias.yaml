@@ -5,7 +5,7 @@ titulo: "Bajar el IVA de los pañales, los servicios veterinarios y las peluquer
 resumen: "El programa detalla los tipos: peluquerías y servicios veterinarios pasarían del tipo general al reducido, y los pañales, del reducido al superreducido. Los productos sin gluten tendrían IVA cero. En Instagram, el Frente Amplio lo resume como «tipo superreducido» para los tres."
 fuentes:
   - fuente: "fa/programa-29n-2026"
-    pagina: "52"
+    pagina: "60"
     cita: "Bajaremos el IVA de bienes y servicios básicos de consumo general. Las peluquerías y los servicios veterinarios pasarán del tipo general al reducido, los pañales del reducido al superreducido y los productos sin gluten tendrán IVA cero para compensar su mayor precio."
   - fuente: "fa/instagram-ipc-iva-2026-11-17"
     cita: "Bajada del IVA de lo básico: 0% en luz, agua y gas para consumos bajos, y tipo superreducido en pañales, veterinarios y peluquerías."
@@ -13,6 +13,6 @@ fechaAnuncio: "2026-11-16"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Borrador de la ronda del 17 nov (20:04) a partir del pie de la publicación de @elfrenteamplio (busca «tipo superreducido»). Cotejada después en el programa (PDF oficial, versión del 17 nov, sha256 516c5c6c…), apartado 3.4, página 52 (47 del PDF); el texto ya estaba en la versión del 16 nov. El programa distingue los tipos y no coincide del todo con la publicación de Instagram: el resumen lo explica. Busca «pasarán del tipo general al reducido». El IVA de la luz según consumo ya está en «fa/iva-luz-progresivo». Retitulada y renombrada (antes «iva-panales-veterinarios-peluquerias»); quitada la firma para revisar de nuevo."
+  nota: "Borrador de la ronda del 17 nov (20:04) a partir del pie de la publicación de @elfrenteamplio (busca «tipo superreducido»). Cotejada después en el programa (PDF oficial, versión del 17 nov, sha256 516c5c6c…), apartado 3.4, página 52 (47 del PDF); el texto ya estaba en la versión del 16 nov. El programa distingue los tipos y no coincide del todo con la publicación de Instagram: el resumen lo explica. Busca «pasarán del tipo general al reducido». El IVA de la luz según consumo ya está en «fa/iva-luz-progresivo». Retitulada y renombrada (antes «iva-panales-veterinarios-peluquerias»); quitada la firma para revisar de nuevo. 23 nov: el FA publicó otra versión del PDF (sha256 d7e2c815…) que añade un apartado de deporte; la cita no cambia y pasa a la página 60."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-17"
+fechaRevision: "2026-11-23"

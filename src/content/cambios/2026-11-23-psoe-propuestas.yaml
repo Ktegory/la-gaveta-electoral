@@ -1,6 +1,7 @@
 fecha: "2026-11-23"
 partido: "psoe"
 tipo: "propuestas"
-descripcion: "Añadimos, en el nuevo apartado «Despoblación y medio rural», una medida del programa del PSOE que Irene Pozas destacó el 22 de noviembre en Ahigal (Cáceres): avanzar hacia el «país de los 30 minutos» en el acceso a servicios básicos (medida 275)."
+descripcion: "Añadimos, en el nuevo apartado «Despoblación y medio rural», una medida del programa del PSOE que Irene Pozas destacó el 22 de noviembre en Ahigal (Cáceres): avanzar hacia el «país de los 30 minutos» en el acceso a servicios básicos (medida 275). Añadimos también el impuesto a las fortunas de más de 100 millones de euros que Pedro Sánchez anunció el 23 de noviembre."
 propuestas:
   - "psoe/pais-30-minutos"
+  - "psoe/impuesto-fortunas-100-millones"

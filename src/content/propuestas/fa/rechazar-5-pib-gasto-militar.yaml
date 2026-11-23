@@ -5,12 +5,12 @@ titulo: "Rechazar el objetivo de la OTAN del 5 % del PIB en gasto militar y redu
 resumen: "Los recursos se reorientarían hacia la seguridad humana, la protección civil, las emergencias climáticas, la sanidad y la educación, con control del Parlamento."
 fuentes:
   - fuente: "fa/programa-29n-2026"
-    pagina: "155"
+    pagina: "163"
     cita: "Rechazaremos de forma explícita el compromiso de destinar el 5 % del PIB a gasto militar en el marco de la OTAN, impulsando una reducción efectiva de las partidas militares, reorientando los recursos presupuestarios hacia la seguridad humana, la protección civil, emergencias climáticas, sanidad y educación."
 fechaAnuncio: "2026-11-16"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 155 (página 130 del PDF). Busca «compromiso de destinar el 5 % del PIB»."
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 155 (página 130 del PDF). Busca «compromiso de destinar el 5 % del PIB». 23 nov: el FA publicó otra versión del PDF (sha256 d7e2c815…) que añade un apartado de deporte; la cita no cambia y pasa a la página 163."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-17"
+fechaRevision: "2026-11-23"

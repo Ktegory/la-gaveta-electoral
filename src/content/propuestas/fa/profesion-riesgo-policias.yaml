@@ -5,12 +5,12 @@ titulo: "Reconocer como profesión de riesgo a la Guardia Civil y la Policía Na
 resumen: "Seguiría el modelo de las policías autonómicas, con coeficientes reductores según los años de servicio. El programa también pide cumplir del todo el acuerdo de equiparación salarial de 2018 y que estos cuerpos tengan la misma jornada que el resto de la Administración."
 fuentes:
   - fuente: "fa/programa-29n-2026"
-    pagina: "172"
+    pagina: "180"
     cita: "Reconocimiento legal para la Guardia Civil y la Policía Nacional del carácter de profesión de riesgo, con el mismo modelo que las policías autonómicas y la aplicación de coeficientes reductores relacionados con los años de servicio para acceder a la jubilación anticipada."
 fechaAnuncio: "2026-11-16"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 172 (página 145 del PDF). Busca «del carácter de profesión de riesgo»."
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 172 (página 145 del PDF). Busca «del carácter de profesión de riesgo». 23 nov: el FA publicó otra versión del PDF (sha256 d7e2c815…) que añade un apartado de deporte; la cita no cambia y pasa a la página 180."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-17"
+fechaRevision: "2026-11-23"

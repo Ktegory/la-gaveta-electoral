@@ -5,12 +5,12 @@ titulo: "Sacar la nuclear y la hidroeléctrica del sistema marginalista de fijac
 resumen: "Se cambiaría la ley para fijar un precio máximo de retribución a ambas tecnologías y acabar con los «beneficios caídos del cielo». Antes, una auditoría pública calcularía los costes reales de cada tecnología."
 fuentes:
   - fuente: "fa/programa-29n-2026"
-    pagina: "63"
+    pagina: "71"
     cita: "Modificación legislativa para excluir a las tecnologías nuclear e hidroeléctrica del sistema marginalista de fijación de precios, fijando un precio máximo retributivo para ambas y eliminando los beneficios caídos del cielo (windfall profits)."
 fechaAnuncio: "2026-11-16"
 destacada: false
 comprobacion:
   estado: encontrada
-  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 62 (página 56 del PDF). Busca «excluir a las tecnologías nuclear e hidroeléctrica». La auditoría de costes está en el punto anterior («Auditoría pública de costes de generación eléctrica»). 17 nov: en la versión nueva del PDF (sha256 516c5c6c…) la cita pasa a la página 63 (57 del PDF). Quitada la firma para revisar de nuevo."
+  nota: "Cita cotejada el 16 nov en el programa del Frente Amplio (PDF oficial, sha256 df6e4d96…), página 62 (página 56 del PDF). Busca «excluir a las tecnologías nuclear e hidroeléctrica». La auditoría de costes está en el punto anterior («Auditoría pública de costes de generación eléctrica»). 17 nov: en la versión nueva del PDF (sha256 516c5c6c…) la cita pasa a la página 63 (57 del PDF). Quitada la firma para revisar de nuevo. 23 nov: el FA publicó otra versión del PDF (sha256 d7e2c815…) que añade un apartado de deporte; la cita no cambia y pasa a la página 71."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-17"
+fechaRevision: "2026-11-23"
