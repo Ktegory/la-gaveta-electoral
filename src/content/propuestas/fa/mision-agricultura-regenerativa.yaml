@@ -1,0 +1,18 @@
+partido: "fa"
+tema: "energia"
+subtema: "clima"
+titulo: "Impulsar una misión nacional para que una cuarta parte de la superficie agraria se cultive con prácticas regenerativas"
+resumen: "Está en el programa del Frente Amplio: 6 millones de hectáreas con prácticas regenerativas en 2030, con técnicos comarcales, fincas demostrativas, un seguro que cubra los riesgos de la transición, compra pública y un sello público «Eco+». El partido la destacó en Instagram el 24 de noviembre como una misión «para las explotaciones pequeñas y medianas»; el programa no habla del tamaño de las explotaciones. No detalla el presupuesto."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "89"
+    cita: "Impulsaremos una misión nacional para que 6 millones de hectáreas, una cuarta parte de la superficie agraria, se cultiven con prácticas regenerativas en 2030."
+  - fuente: "fa/instagram-crisis-climatica-2026-11-24"
+    cita: "Una misión nacional de agricultura regenerativa para las explotaciones pequeñas y medianas."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Pista de la ronda del 24 nov (20:04) con la publicación de @elfrenteamplio del 24 nov (busca «agricultura regenerativa»; texto comprobado de nuevo a las 21:30). Cotejada el 24 nov a las 21:30 en el programa del Frente Amplio (PDF, sha256 d7e2c815…): capítulo «Continuar el impulso hacia una transición ecológica justa», pág. 89 impresa (81 del PDF), busca «Agricultura regenerativa:». El programa pasa a fuente principal y la publicación queda como segunda fuente. Va en «Clima» porque el programa la incluye en el capítulo de transición ecológica; la ronda había propuesto «Despoblación y medio rural»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-24"

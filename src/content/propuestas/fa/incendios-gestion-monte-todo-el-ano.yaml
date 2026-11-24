@@ -1,0 +1,18 @@
+partido: "fa"
+tema: "energia"
+subtema: "clima"
+titulo: "Crear un cuerpo civil climático con empleo público para prevenir los incendios en invierno y cuidar el territorio"
+resumen: "Está en el programa del Frente Amplio: un cuerpo público y estable, dentro del Plan de Empleo Garantizado, que se dedique a cuidar el territorio, prevenir incendios en invierno y apagarlos en verano, restaurar ríos y acuíferos, adaptarse a sequías e inundaciones y asesorar a quien quiera pasarse a la agricultura regenerativa. El partido lo destacó en Instagram el 24 de noviembre como «apagar los incendios en invierno». No detalla cuántas personas lo formarían ni con qué presupuesto."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "80"
+    cita: "Crearemos un cuerpo público y estable en el marco del Plan de Empleo Garantizado dedicado a cuidar el territorio y a la prevención de incendios en invierno y extinción en verano, restauración de ríos y acuíferos, adaptación a sequías e inundaciones y apoyo técnico a quienes quieran pasarse a la agricultura regenerativa."
+  - fuente: "fa/instagram-crisis-climatica-2026-11-24"
+    cita: "Apagar los incendios en invierno, gestionando el monte todo el año y generando empleo público."
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Pista de la ronda del 24 nov (20:04) con la publicación de @elfrenteamplio del 24 nov (busca «Apagar los incendios en invierno»; texto comprobado de nuevo a las 21:30). Cotejada el 24 nov a las 21:30 en el programa del Frente Amplio (PDF, sha256 d7e2c815…): apartado 5.1, «Creación de un cuerpo civil climático», pág. 80 impresa (72 del PDF), busca «cuerpo civil climático». El programa pasa a fuente principal y la publicación queda como segunda fuente. El programa recoge además una estrategia estatal de prevención de grandes incendios forestales (pág. 85) y un Plan de Empleo Forestal en zonas de grandes incendios (pág. 105), que no se añaden aquí."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-24"
