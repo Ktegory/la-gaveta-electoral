@@ -1,0 +1,18 @@
+partido: "pp"
+tema: "vivienda"
+subtema: "vivienda-publica"
+titulo: "Dejar a los ayuntamientos gastar sus remanentes de tesorería en vivienda si cumplen objetivos de construcción"
+resumen: "Está en el programa del PP: ligar la mejora de la financiación local y un uso más flexible del superávit y los remanentes de tesorería a que los ayuntamientos cumplan objetivos de suelo y de vivienda pública y asequible. Feijóo lo destacó el 23 de noviembre en una entrevista en Informativos Telecinco. No ha concretado esos objetivos ni cuánto podrían gastar."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "54"
+    cita: "Vincularemos las mejoras de financiación y la flexibilización del uso de los superávits y los remanentes de tesorería al cumplimiento de objetivos de suelo, construcción y puesta a disposición de vivienda pública y a precio asequible."
+  - fuente: "pp/prensa-feijoo-telecinco-2026-11-23"
+    cita: "Si usted quiere gastar remanentes en vivienda pública, en vivienda protegida, yo lo aceptaré y le dejaré"
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Pista del informe de la ronda del 24 nov a las 08:04 (entrevista de Feijóo en Informativos Telecinco). Cotejada el 24 nov a las 10:40 con el teletipo de Europa Press (busca «remanentes»: frase entrecomillada de Feijóo) y con el programa del PP (PDF, sha256 cea8f2a0…): medida 151, pág. 54, busca «remanentes de tesorería». El programa es la fuente principal y la entrevista, la segunda. Lo de la Conferencia de Presidentes, el suelo de la Sareb y la línea de crédito con la banca solo sale en el resumen de la agencia y no se recoge aquí."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-24"

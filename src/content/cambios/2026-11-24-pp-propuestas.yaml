@@ -1,0 +1,6 @@
+fecha: "2026-11-24"
+partido: "pp"
+tipo: "propuestas"
+descripcion: "Añadimos una medida del programa del PP que Feijóo destacó el 23 de noviembre en una entrevista en Informativos Telecinco: dejar que los ayuntamientos usen sus remanentes de tesorería en vivienda si cumplen objetivos de suelo y construcción (medida 151)."
+propuestas:
+  - "pp/remanentes-municipales-vivienda"
