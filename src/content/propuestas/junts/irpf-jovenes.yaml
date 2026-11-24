@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "fiscalidad"
+subtema: "irpf"
+titulo: "Eximir del IRPF estatal a los menores de 35 años su primer año de trabajo y reducirlo hasta el décimo"
+resumen: "Punto 4.2 del apartado de jóvenes, con un límite de renta: exención total el primer año de actividad laboral, reducción del 75 % el segundo y del 50 % el tercero, y reducción progresiva hasta el décimo. Añade una deducción del 15 % de los gastos en formación superior reglada, idiomas o certificaciones tecnológicas para jóvenes trabajadores."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "61"
+    cita: "Paquet fiscal per a menors de 35 anys en el tram estatal de l’IRPF, amb un límit de renda: exempció total el primer any d’activitat laboral, reducció del 75 % el segon i del 50 % el tercer, i reducció progressiva fins al desè any, per augmentar la renda disponible i frenar la fuga de talent. […] Deducció del 15 % de les despeses justificades en formació superior reglada, idiomes o certificacions tecnològiques per a joves treballadors."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «Els joves al centre», punto 4.2, pág. 61. Busca «Paquet fiscal per a menors»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-24"

@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "igualdad"
+subtema: "cuidados"
+titulo: "Equiparar las familias monoparentales a las numerosas en los beneficios estatales y reconocer el título catalán"
+resumen: "Punto 4.6 del apartado de bienestar. Incluye el IRPF, la Seguridad Social, los permisos, las bonificaciones y las tasas estatales, y pide reconocer en todo el Estado el título de familia monoparental que expide la Generalitat."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "46"
+    cita: "Equiparar les famílies monoparentals a les nombroses en els beneficis que depenen de l’Estat espanyol (IRPF, Seguretat Social, permisos, bonificacions i taxes estatals), reconeixent a tot l’Estat el títol de família monoparental que expedeix la Generalitat."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «El benestar de tots els catalans al centre», punto 4.6, pág. 46. Busca «Equiparar les famílies monoparentals»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-24"

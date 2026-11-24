@@ -128,7 +128,7 @@ a:hover .arrow, button:hover .arrow { transform: translateX(4px) }
 /* Marquesina de lo provisional */
 .prov { display: flex; gap: 14px; align-items: center; background: var(--ink); color: #fff; font-size: .9062rem; height: 48px }
 .prov .k { color: #fff; border: 1.5px dashed #fff; font-family: var(--mono); font-size: .7188rem; font-weight: 500; letter-spacing: .06em; padding: 3px 10px; flex: none; border-radius: 999px }
-.prov .k-debate { border-style: solid }
+.prov .k-debate, .prov .k-ok { border-style: solid }
 .prov [data-mq][hidden] { display: none }
 .mq { flex: 1; min-width: 0; overflow: hidden; position: relative; height: 100%; display: flex; align-items: center; -webkit-mask-image: linear-gradient(90deg, transparent, #000 40px, #000 calc(100% - 40px), transparent); mask-image: linear-gradient(90deg, transparent, #000 40px, #000 calc(100% - 40px), transparent) }
 .mq-track { display: flex; width: max-content; animation: mq 60s linear infinite }

@@ -1,0 +1,22 @@
+partido: "junts"
+tema: "territorial"
+subtema: "competencias"
+titulo: "Traspasar a la Generalitat la Seguridad Social y la gestión de las prestaciones por desempleo"
+resumen: "Figura en las listas de competencias que Junts reclama en bienestar y en economía. El punto 1.3 de bienestar lo formula como desplegar las competencias de gestión en protección social que sean jurídicamente viables, con sus recursos. La gestión del paro se integraría con el Servei d’Ocupació de Catalunya (SOC)."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "44"
+    cita: "Traspàs de les competències en Seguretat Social."
+  - fuente: "junts/programa-29n-2026"
+    pagina: "45"
+    cita: "Impulsar el desplegament de les competències estatutàries de gestió en protecció social que siguin jurídicament viables i acordar-ne els recursos associats."
+  - fuente: "junts/programa-29n-2026"
+    pagina: "68"
+    cita: "Prestacions d’atur: traspassar-ne la gestió a Catalunya i integrar-la amb les polítiques d’orientació, formació i ocupació del SOC."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «El benestar de tots els catalans al centre», lista «Competències a reclamar», n.º 2, pág. 44 (busca «Traspàs de les competències en Seguretat»), y punto 1.3, pág. 45 (busca «Impulsar el desplegament de les competències»). Además, apartado «L’economia, les empreses i el treball al centre», competencias a reclamar o mejorar, n.º 3, pág. 68. Busca «Prestacions d’atur: traspassar-ne la gestió». Reúne varias medidas del programa en una sola propuesta."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-24"

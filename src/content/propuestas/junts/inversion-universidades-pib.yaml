@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "educacion"
+subtema: "universidad"
+titulo: "Aumentar la inversión en universidades del 0,40 % al 0,6 % del PIB en cinco años"
+resumen: "Punto 2.4 del apartado de educación. Lo justifica con países de tamaño medio parecido al de Cataluña (Austria, Dinamarca, Suecia, Finlandia, Escocia, Irlanda), que según el programa dedican alrededor del 1 % del PIB. No precisa qué administración haría el gasto."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "54"
+    cita: "La inversió en universitats, que avui representa el 0,40 % del PIB, s’ha d’incrementar fins al 0,6 % del PIB en cinc anys"
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «L’escola i la universitat catalanes al centre», punto 2.4, pág. 54. Busca «La inversió en universitats, que»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-24"

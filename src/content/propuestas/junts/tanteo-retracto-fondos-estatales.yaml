@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "vivienda"
+subtema: "vivienda-publica"
+titulo: "Dar fondos estatales a la Generalitat y los ayuntamientos para ejercer los derechos de tanteo y retracto"
+resumen: "Punto 5.6 del apartado de vivienda. Se aplicaría a todas las modalidades que permite la ley."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "18"
+    cita: "Dotar de fons estatals la Generalitat i els ajuntaments perquè puguin exercir de manera efectiva els drets de tanteig i retracte en totes les modalitats que permet la llei."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «El dret a la propietat i a l’habitatge al centre», punto 5.6, pág. 18. Busca «Dotar de fons estatals la»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-24"

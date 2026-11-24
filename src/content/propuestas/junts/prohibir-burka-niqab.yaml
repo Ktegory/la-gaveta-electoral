@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "inmigracion"
+subtema: "regularizacion"
+titulo: "Prohibir en el espacio público las prendas que tapan el rostro, como el niqab y el burka"
+resumen: "Punto 4.2 del apartado de inmigración. Es la ley del velo integral que Junts presentó en febrero de 2026. Afecta a las prendas que cubren total o sustancialmente la cara e impiden identificar a la persona; el programa precisa que no afecta al hiyab."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "48"
+    cita: "Prohibir a l’espai públic les peces que cobreixen totalment o substancialment el rostre i impedeixen identificar la persona, com el niqab i el burca, tal com proposa la llei del vel integral que Junts va presentar el febrer de 2026. La prohibició no afecta el hijab."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «Les competències en immigració al centre», punto 4.2, pág. 48. Busca «Prohibir a l’espai públic les peces»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-24"

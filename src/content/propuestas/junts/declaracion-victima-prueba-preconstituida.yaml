@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "igualdad"
+subtema: "violencia-machista"
+titulo: "Permitir que la declaración de las víctimas de violencia machista se haga como prueba preconstituida para no repetirla"
+resumen: "Punto 2.1 del programa, para evitar la revictimización. La declaración se podría hacer como prueba preconstituida cuando la ley lo permita, con atención judicial especializada."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "33"
+    cita: "Millorar la legislació processal per evitar la revictimització de les dones que pateixen violències masclistes. La declaració de la víctima s’ha de poder fer com a prova preconstituïda quan la llei ho permeti, perquè no l’hagi de repetir una vegada i una altra, i amb atenció judicial especialitzada."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «La igualtat entre catalans i catalanes al centre», punto 2.1, pág. 33. Busca «Millorar la legislació processal per»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-24"

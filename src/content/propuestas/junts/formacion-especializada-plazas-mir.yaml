@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "sanidad"
+subtema: "personal"
+titulo: "Traspasar la formación sanitaria especializada y ampliar las plazas MIR, sobre todo en medicina familiar"
+resumen: "Punto 2.2 del apartado de salud. Reclama las competencias y los recursos de esa formación, y ampliar las plazas MIR según las necesidades asistenciales, con atención especial a Medicina Familiar y Comunitaria y a las especialidades deficitarias."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "51"
+    cita: "Reclamarem el traspàs de les competències i els recursos de la formació sanitària especialitzada i l’ampliació de les places MIR d’acord amb les necessitats assistencials, amb especial atenció a Medicina Familiar i Comunitària i a les especialitats deficitàries."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «La salut dels catalans al centre», punto 2.2, pág. 51. Busca «Reclamarem el traspàs de les competències»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-24"

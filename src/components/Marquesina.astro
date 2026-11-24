@@ -1,18 +1,23 @@
 ---
-// Marquesina de lo provisional. Se genera con los datos: un mensaje por partido (orden alfabético).
+// Marquesina de lo provisional (o, cuando todos han publicado, del estado de los programas). Se genera con los datos: un mensaje por partido (orden alfabético).
 import { datos, varsPartido, TITULAR_ESTADO, detalleEstado } from '../lib/datos';
 import IconoEstado from './IconoEstado.astro';
 const d = await datos();
 const sinPrograma = d.partidos.filter((p) => p.data.estadoPrograma !== 'publicado').length;
-const general =
-  sinPrograma === d.partidos.length
+// Cuando todos han publicado su programa ya no hay nada provisional: cambian la etiqueta y el mensaje.
+const todos = sinPrograma === 0;
+const general = todos
+  ? `<b>Los ${d.partidos.length} partidos</b> han publicado ya su programa completo para el 29N`
+  : sinPrograma === d.partidos.length
     ? 'Ningún partido ha publicado aún su <b>programa completo</b> para el 29N'
     : `<b>${sinPrograma} de ${d.partidos.length} partidos</b> aún no han publicado su programa completo para el 29N`;
 const items = [
   { p: null, t: general },
   ...d.partidos.map((p) => ({ p, t: detalleEstado(d, p) })),
-  { p: null, t: 'Lo marcado con línea discontinua es <b>provisional</b>' },
+  ...(todos ? [] : [{ p: null, t: 'Lo marcado con línea discontinua es <b>provisional</b>' }]),
 ];
+const etiqueta = todos ? 'PROGRAMAS' : 'PROVISIONAL';
+const aviso = todos ? 'estado de los programas' : 'información provisional';
 const resumen = `${general.replace(/<[^>]+>/g, '')}. ${d.partidos.map((p) => `${p.data.nombre}: ${TITULAR_ESTADO[p.data.estadoPrograma].toLowerCase()} (${detalleEstado(d, p)})`).join('. ')}.`;
 // Huella del contenido: si alguien cierra la marquesina, vuelve a salir cuando cambie lo que dice
 // (por ejemplo, cuando un partido publique su programa).
@@ -39,9 +44,9 @@ let hd = 0;
 for (const c of resumenDebate) hd = (hd * 31 + c.charCodeAt(0)) | 0;
 const huellaDebate = (hd >>> 0).toString(36);
 ---
-<div class="prov pad" role="region" aria-label="Aviso: información provisional" data-huella={huella} data-fase-solo="campana"
+<div class="prov pad" role="region" aria-label={`Aviso: ${aviso}`} data-huella={huella} data-fase-solo="campana"
   data-debate-dia={DEBATE.dia} data-debate-huella={huellaDebate}>
-  <span class="k" data-mq="normal">PROVISIONAL</span>
+  <span class:list={['k', { 'k-ok': todos }]} data-mq="normal">{etiqueta}</span>
   <span class="k k-debate" data-mq="debate" hidden>{DEBATE.etiqueta}</span>
   <div class="mq" data-mq="debate" hidden>
     <p class="sr">{resumenDebate}</p>
@@ -75,7 +80,7 @@ const huellaDebate = (hd >>> 0).toString(36);
       ))}
     </div>
   </div>
-  <button class="mq-cerrar" type="button" aria-label="Ocultar el aviso de información provisional" title="Ocultar">×</button>
+  <button class="mq-cerrar" type="button" aria-label={`Ocultar el aviso de ${aviso}`} title="Ocultar">×</button>
 </div>
 <script is:inline>
   // En línea, justo después de la marquesina, para que actúe antes de pintar:

@@ -3,6 +3,9 @@ tema: "vivienda"
 subtema: "fiscalidad-vivienda"
 titulo: "Deducción del 15 % en el IRPF por el alquiler o la hipoteca"
 fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "17"
+    cita: "Recuperar la deducció del 15% a l’IRPF pel lloguer de l’habitatge habitual. […] Recuperar la deducció del 15% a l’IRPF de les quotes de la hipoteca de l’habitatge habitual."
   - fuente: "junts/prensa-balance-legislatura"
     cita: Entre les propostes de la formació hi ha una deducció del 15% de l'IRPF pel lloguer i la hipoteca.
   - fuente: "junts/prensa-deduccion-vivienda"
@@ -12,5 +15,6 @@ destacada: true
 orden: 6
 comprobacion:
   estado: encontrada
+  nota: "El 24 nov se añadió como fuente principal el programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «El dret a la propietat i a l’habitatge al centre», puntos 3.1 y 3.2, pág. 17, busca «Recuperar la deducció del 15%». Lo repite en las págs. 60 y 69."
 revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-11"
+fechaRevision: "2026-11-24"

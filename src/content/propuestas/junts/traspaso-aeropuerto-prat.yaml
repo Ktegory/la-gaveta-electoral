@@ -1,0 +1,25 @@
+partido: "junts"
+tema: "territorial"
+subtema: "competencias"
+titulo: "Traspasar a la Generalitat el aeropuerto del Prat, la red de puertos y las carreteras del Estado en Cataluña"
+resumen: "Puntos 2.1 y 3.1 del apartado de infraestructuras. Los aeropuertos catalanes saldrían del modelo centralizado de AENA, con una gobernanza catalana para que el Prat funcione como gran conexión intercontinental. Cataluña gestionaría también la red de puertos y de ferrocarriles de mercancías, y recibiría toda la red de carreteras del Estado, autopistas y nacionales incluidas, con los recursos para mantenerla."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "72"
+    cita: "Traspassar a la Generalitat les competències i la titularitat de l’Aeroport del Prat i de la resta d’aeroports catalans, fora del model centralitzat d’AENA, amb una governança catalana que permeti al Prat operar com a hub intercontinental de primer ordre."
+  - fuente: "junts/programa-29n-2026"
+    pagina: "71"
+    cita: "Gestionar plenament la xarxa de ports i de ferrocarrils de mercaderies, perquè els ports de Barcelona, Tarragona i Palamós es connectin amb els corredors logístics europeus i el Corredor Mediterrani sense dependre dels terminis de l’Estat espanyol."
+  - fuente: "junts/programa-29n-2026"
+    pagina: "72"
+    cita: "Reclamar el traspàs integral de la xarxa de carreteres de titularitat estatal a Catalunya."
+  - fuente: "junts/programa-29n-2026"
+    pagina: "71"
+    cita: "Reclamar el traspàs integral de la xarxa de carreteres de titularitat estatal a Catalunya, incloses les autopistes i carreteres nacionals, amb la transferència dels recursos econòmics necessaris per garantir-ne la gestió, el manteniment, la modernització i la seguretat viària"
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «Les infraestructures, la mobilitat i el transport al centre», punto 2.1, pág. 72. Busca «Traspassar a la Generalitat les». Además, apartado «Les infraestructures, la mobilitat i el transport al centre», «Competències a reclamar», punto 3, pág. 71. Busca «Gestionar plenament la xarxa de». Además, apartado «Les infraestructures, la mobilitat i el transport al centre», punto 3.1, pág. 72; apartado «Les infraestructures, la mobilitat i el transport al centre», «Objectius», punto 5, pág. 71. Busca «Reclamar el traspàs integral de» y «Reclamar el traspàs integral de». Reúne varias medidas del programa en una sola propuesta."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-24"

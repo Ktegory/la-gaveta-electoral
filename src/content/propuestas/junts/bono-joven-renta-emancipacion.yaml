@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "vivienda"
+subtema: "alquiler"
+titulo: "Convertir el Bono Joven en una renta de emancipación con más presupuesto y criterios fijados por la Generalitat"
+resumen: "Punto 6.2 del apartado de vivienda. Se adaptaría a los precios medios de la vivienda en Cataluña, y la Generalitat podría fijar sus criterios e importes."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "18"
+    cita: "Transformar el Bo Jove en una veritable renda d’emancipació juvenil, amb més pressupost i adaptada a la mitjana de preus de l’habitatge de Catalunya, i que la Generalitat en pugui fixar els criteris i els imports d’acord amb la realitat del nostre país."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «El dret a la propietat i a l’habitatge al centre», punto 6.2, pág. 18. Busca «Transformar el Bo Jove en»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-24"

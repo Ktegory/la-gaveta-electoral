@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "vivienda"
+subtema: "alquiler"
+titulo: "Derogar los artículos de la Ley 12/2023 de vivienda sobre contención de precios y zonas tensionadas"
+resumen: "Punto 2.2 del apartado de jóvenes. Junts quiere derogar los artículos de la ley estatal de vivienda que, según el programa, invaden la competencia exclusiva de Cataluña, empezando por los de contención de precios y zonas tensionadas, que según el programa reducen la oferta de alquiler. Pide también blindar las competencias catalanas ante nuevas leyes estatales."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "60"
+    cita: "Derogar els articles de la Llei 12/2023 que envaeixen la competència exclusiva de Catalunya en habitatge, començant pels de contenció de preus i zones tensionades, que redueixen l’oferta de lloguer per als joves, i blindar les competències de Catalunya davant qualsevol nova ingerència estatal, per eliminar la inseguretat jurídica dels petits propietaris i fer créixer el parc de lloguer."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «Els joves al centre», punto 2.2, pág. 60. Busca «Derogar els articles de la»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-24"

@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "territorial"
+subtema: "competencias"
+titulo: "Derogar la LRSAL y sustituirla por una ley de régimen local pactada con la Generalitat y los municipios catalanes"
+resumen: "Punto 3.1 del programa. La nueva ley se acordaría con entidades como la ACM y la FMC; mientras no se apruebe, se mantendría el marco actual para evitar vacíos legales."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "84"
+    cita: "Derogar la LRSAL de manera pactada i substitutiva, amb una nova llei acordada amb la Generalitat de Catalunya i amb les entitats municipalistes catalanes"
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «El món local al centre», punto 3.1, pág. 84. Busca «Derogar la LRSAL de manera»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-24"

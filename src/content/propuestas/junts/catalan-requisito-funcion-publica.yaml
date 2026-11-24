@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "territorial"
+subtema: "lenguas-cooficiales"
+titulo: "Exigir por ley el catalán a todo el personal de la Administración del Estado en Cataluña"
+resumen: "Punto 2.2 del apartado de lengua. Se haría con una nueva Ley de la Función Pública e incluiría a la judicatura y a los cuerpos de seguridad del Estado; también garantizaría su formación en catalán, aranés y lengua de signos catalana según corresponda."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "20"
+    cita: "Promoure una nova Llei de la Funció Pública espanyola per requerir el coneixement del català de manera estricta per a tot el personal de l’administració de l’Estat a Catalunya (incloent-hi la judicatura i els cossos de seguretat estatals) i garantir-ne la seva capacitació lingüística en català, aranès i LSC segons s’escaigui."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «La llengua catalana al centre», punto 2.2, pág. 20. Busca «Promoure una nova Llei de»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-24"

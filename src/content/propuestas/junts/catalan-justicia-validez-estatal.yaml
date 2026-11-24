@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "territorial"
+subtema: "lenguas-cooficiales"
+titulo: "Reconocer la validez en toda España de las actuaciones judiciales en catalán"
+resumen: "Punto 5.1 del programa. Modificaría los artículos 231.4 de la LOPJ y 142.2 de la LEC, y el 231 de la LOPJ para que el personal judicial tenga que entender el catalán y los procesos puedan seguirse en catalán si lo pide una de las partes. También pide al Gobierno los medios técnicos previstos en la Ley orgánica 5/2024, del derecho de defensa."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "15"
+    cita: "Modificar els articles 231.4 de la LOPJ i 142.2 de la LEC per reconèixer la validesa de les actuacions en català a tot l’Estat sense al·legar indefensió. Reformar també l’article 231 de la LOPJ, d’acord amb la Carta europea de les llengües regionals o minoritàries i per donar compliment a l’article 102 de l’Estatut, perquè el personal judicial tingui l’obligació d’entendre el català i els procediments judicials es puguin desenvolupar en català quan ho sol·liciti una de les parts."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «Els nostres drets i llibertats nacionals i la justícia al centre», punto 5.1, pág. 15. Busca «Modificar els articles 231.4 de»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-24"

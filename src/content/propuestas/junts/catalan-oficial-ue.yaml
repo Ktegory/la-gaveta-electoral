@@ -4,6 +4,9 @@ subtema: "lenguas-cooficiales"
 titulo: "Lograr la oficialidad del catalán en la Unión Europea"
 resumen: "La incluye entre sus condiciones para negociar tras el 29N."
 fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "20"
+    cita: "Continuar pressionant diplomàticament fins a aconseguir efectivament l’oficialitat del català a la UE"
   - fuente: "junts/prensa-ser-condiciones"
     cita: Entre les demandes que Nogueras ha posat sobre la taula hi ha la delegació de competències en immigració; que s'aprovi l'oficialitat del català a la Unió Europea, i que Catalunya gestioni els seus impostos, ha dit en una entrevista a Ser Catalunya recollida per Europa Press.
   - fuente: "junts/prensa-balance-legislatura"
@@ -13,6 +16,6 @@ destacada: true
 orden: 4
 comprobacion:
   estado: encontrada
-  nota: La condición para negociar sale solo de la entrevista en la SER. El balance de El Nacional la menciona como «defensa de l'oficialitat», no como condición.
-revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-11"
+  nota: "La condición para negociar sale solo de la entrevista en la SER. El balance de El Nacional la menciona como «defensa de l'oficialitat», no como condición. El 24 nov se añadió como fuente principal el programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «La llengua catalana al centre», punto 4.1, pág. 20, busca «Continuar pressionant diplomàticament». Lo repite en la pág. 27, punto 2.1."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-24"

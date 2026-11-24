@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "exterior"
+subtema: "agenda-2030"
+titulo: "Exigir que el Estado llegue al 0,7 % de la renta nacional bruta en ayuda oficial al desarrollo en 2030"
+resumen: "Punto 5.4 del programa. Recuerda que el Estado se ha comprometido a ese objetivo y pide cumplirlo con incrementos presupuestarios verificables y con recursos para la cooperación descentralizada catalana. Las prioridades serían los derechos de las mujeres y de las minorías, la educación, la salud, el agua, la capacitación institucional y el desarrollo económico local."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "28"
+    cita: "L’Estat s’ha compromès a arribar al 0,7 % de la renda nacional bruta en ajuda oficial al desenvolupament el 2030. N’exigirem el compliment, amb increments pressupostaris verificables, i recursos per a la cooperació descentralitzada catalana."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «La política internacional de Catalunya al centre», punto 5.4, pág. 28. Busca «L’Estat s’ha compromès a arribar»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-24"

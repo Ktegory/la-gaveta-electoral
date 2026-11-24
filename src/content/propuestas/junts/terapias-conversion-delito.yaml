@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "igualdad"
+subtema: "lgtbi"
+titulo: "Recuperar y aprobar la ley que castiga como delito las terapias de conversión, con penas más altas"
+resumen: "Punto 2.1 del programa. Es la ley orgánica que el Congreso aprobó el 25 de junio de 2026 y que decayó en el Senado al disolverse las Cortes. Junts quiere añadirle las mejoras de la proposición de ley de la asociación No és Teràpia, que cofirmó: penas más altas y ayudas a las víctimas."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "36"
+    cita: "Recuperar i aprovar la llei orgànica que tipifica com a delicte les teràpies de conversió, aprovada pel Congrés el 25 de juny de 2026 i caducada al Senat amb la dissolució de les Corts. Hi incorporarem les millores de la proposició de llei de No és Teràpia que vam cosignar: penes més altes i ajuts a les víctimes."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «Els drets LGTBI+ al centre», punto 2.1, pág. 36. Busca «Recuperar i aprovar la llei orgànica»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-24"

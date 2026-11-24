@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "exterior"
+subtema: "israel-palestina"
+titulo: "Promover una paz entre israelíes y palestinos basada en dos estados y exigir la protección de los civiles"
+resumen: "Punto 3.3 del programa. Exigirá también el acceso humanitario seguro y sostenido, el respeto de las obligaciones internacionales y la investigación independiente de las vulneraciones, sea quien sea el responsable. Apoyará una gobernanza palestina legítima, responsable y desvinculada de Hamás, y el respeto a la soberanía del Líbano."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "28"
+    cita: "Promourem una pau entre israelians i palestins basada en dos estats, reconeixement mutu i garanties de seguretat. Exigirem la protecció dels civils, l’accés humanitari segur i sostingut, el respecte de les obligacions internacionals i la investigació independent de les vulneracions, sigui qui sigui el responsable. Donarem suport a una governança palestina legítima, responsable i desvinculada de Hamàs i al respecte de la sobirania del Líban."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «La política internacional de Catalunya al centre», punto 3.3, pág. 28. Busca «Promourem una pau entre israelians»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-24"

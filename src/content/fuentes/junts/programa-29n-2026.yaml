@@ -1,0 +1,9 @@
+partido: "junts"
+titulo: "Catalunya al centre. Programa electoral de Junts per Catalunya (eleccions generals del 29 de novembre de 2026)"
+tipo: "programa-29n"
+url: "https://www.tualcentre.cat/app/uploads/2026/11/PROGRAMA-ELECTORAL_JUNTS_29N.pdf"
+sha256: "cde2c5f3f30b66c72dd4f4bae3d22e9f6bc3e0ee4362da72f9e32e85129374b6"
+fechaPublicacion: "2026-11-18"
+fechaConsulta: "2026-11-24"
+paginas: 90
+notas: "En catalán. Publicado el 18 nov en tualcentre.cat, la web de campaña de Junts: su aviso legal dice que el titular es Junts per Catalunya, y el menú enlaza el PDF como «Programa electoral» (1.355.756 bytes, last-modified 18 nov 17:06 GMT). No está en junts.cat. ABC difundió una copia idéntica (misma sha256) el 23 nov. Una introducción y tres bloques, con 26 apartados: derechos y libertades; bienestar, y estructuras y modelo productivo. Termina con un anexo de iniciativas de la legislatura. Cada apartado acaba en «Punts de programa», con medidas numeradas por objetivo (1.1, 1.2…). La página impresa coincide con la del PDF. Sin copia en web.archive.org: no se ha podido crear desde aquí."

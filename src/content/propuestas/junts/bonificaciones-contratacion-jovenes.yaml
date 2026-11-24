@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "empleo"
+subtema: "reforma-laboral"
+titulo: "Ampliar a todos los menores de 35 años las bonificaciones de cuotas a la Seguridad Social por contrato indefinido"
+resumen: "Punto 4.1 del apartado de jóvenes. Son bonificaciones de las cuotas empresariales; se aplicarían también a los recién titulados, siempre que se garanticen condiciones salariales adecuadas al puesto."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "61"
+    cita: "Ampliar a tots els joves menors de 35 anys o recent titulats les bonificacions de les quotes empresarials a la Seguretat Social per contractació indefinida, sempre que es garanteixin condicions salarials adequades al lloc de treball."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «Els joves al centre», punto 4.1, pág. 61. Busca «Ampliar a tots els joves»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-24"

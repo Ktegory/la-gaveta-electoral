@@ -2,8 +2,11 @@ partido: "junts"
 tema: "territorial"
 subtema: "competencias"
 titulo: "Traspasar Rodalies íntegramente a Cataluña"
-resumen: "En el debate de RTVE del 8 de noviembre pidió que lo gestione Ferrocarrils de la Generalitat (FGC), según la prensa."
+resumen: "El programa pide el traspaso «immediat i incondicional» del 100 % de Rodalies y de Media Distancia, con vías, catenarias, estaciones y los presupuestos pendientes de ejecutar. En el debate de RTVE del 8 de noviembre pidió que lo gestione Ferrocarrils de la Generalitat (FGC), según la prensa."
 fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "72"
+    cita: "Reclamar el traspàs immediat i incondicional del 100% de Rodalies i Mitjana Distància, amb les vies, les catenàries, les estacions i els pressupostos pendents d’executar per modernitzar-la."
   - fuente: "junts/mesjunts-161-rodalies"
     pagina: "1"
     cita: Davant d’aquesta situació, ha defensat que Catalunya gestioni els seus propis recursos per garantir millors serveis públics, més inversió i manteniment, i el traspàs integral de Rodalies.
@@ -16,6 +19,6 @@ destacada: true
 orden: 2
 comprobacion:
   estado: encontrada
-  nota: La nota de junts.cat no contiene la frase «El traspàs sencer de Rodalies a Catalunya és imprescindible i innegociable» (si el resumen o el título la citan, viene de otro sitio). Lo de FGC sale solo de Nació Digital (debate de RTVE).
-revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-11"
+  nota: "La nota de junts.cat no contiene la frase «El traspàs sencer de Rodalies a Catalunya és imprescindible i innegociable» (si el resumen o el título la citan, viene de otro sitio). Lo de FGC sale solo de Nació Digital (debate de RTVE). El 24 nov se añadió como fuente principal el programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «Les infraestructures, la mobilitat i el transport al centre», punto 1.1, pág. 72, busca «traspàs immediat i incondicional»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-24"

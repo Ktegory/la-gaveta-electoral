@@ -1,0 +1,25 @@
+partido: "junts"
+tema: "territorial"
+subtema: "competencias"
+titulo: "Traspasar a la Generalitat la competencia y los fondos de las becas, incluidas las de comedor y transporte"
+resumen: "La Generalitat, que ya gestiona las becas, podría regular también los umbrales de renta y las cuantías, y recibiría los fondos estatales para implantar poco a poco un sistema de becas salario (punto 1.1 del apartado de jóvenes). También reclama la gestión íntegra de las becas de comedor y de transporte."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "54"
+    cita: "Completar el traspàs de les beques, de les quals la Generalitat ja té la gestió, però n’ha de poder regular els llindars i les quanties i que es traspassin els fons estatals per implantar progressivament un sistema de beques salari."
+  - fuente: "junts/programa-29n-2026"
+    pagina: "59"
+    cita: "Regulació i gestió dels fons estatals de beques i ajuts a l’estudi, incloent-hi els llindars de renda i les quanties."
+  - fuente: "junts/programa-29n-2026"
+    pagina: "60"
+    cita: "Exigir el traspàs total de la competència i els fons de les beques i ajuts a l’estudi, per tal de revisar el conjunt del sistema de beques i ajuts de l’educació superior, amb l’objectiu de potenciar l’accés dels estudiants que es troben en una situació de vulnerabilitat mitjançant la implementació progressiva d’un sistema de beques salari."
+  - fuente: "junts/programa-29n-2026"
+    pagina: "54"
+    cita: "Traspàs integral de la gestió de les beques de menjador i de transport."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «L’escola i la universitat catalanes al centre», competencias a reclamar o mejorar, n.º 4, pág. 54 (busca «Completar el traspàs de les»); apartado «Els joves al centre», competencias a reclamar, n.º 1, pág. 59 (busca «Regulació i gestió dels fons»); apartado «Els joves al centre», punto 1.1, pág. 60 (busca «Exigir el traspàs total de»). Además, apartado «L’escola i la universitat catalanes al centre», competencias a reclamar o mejorar, n.º 2, pág. 54. Busca «Traspàs integral de la gestió». Reúne varias medidas del programa en una sola propuesta."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-24"

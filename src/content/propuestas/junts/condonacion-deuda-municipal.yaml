@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "territorial"
+subtema: "financiacion"
+titulo: "Condonar parte de la deuda de los ayuntamientos, como se ha previsto para las comunidades autónomas"
+resumen: "Punto 2.5 del programa. Habla de seguir reclamando un mecanismo de condonación parcial para devolver capacidad de inversión a los ayuntamientos; no da cifras."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "83"
+    cita: "Continuar reclamant un mecanisme de condonació parcial del deute municipal, en coherència amb el que s’ha previst per a les comunitats autònomes, per retornar capacitat d’inversió als ajuntaments."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «El món local al centre», punto 2.5, pág. 83. Busca «Continuar reclamant un mecanisme de»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-24"

@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "sanidad"
+subtema: "publica-privada"
+titulo: "Avanzar hacia un gasto sanitario público del 8 % del PIB y dedicar el 25 % del presupuesto de salud a la primaria"
+resumen: "Punto 1.1 del apartado de salud, dentro de la petición de una financiación sanitaria suficiente y plurianual. Lo plantea como objetivo para acercarse a los estándares europeos."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "51"
+    cita: "Reclamarem un finançament sanitari suficient i […] pluriennal, amb l’objectiu d’avançar cap als estàndards europeus del 8 % del PIB en despesa sanitària pública i destinar el 25 % del pressupost de salut a l’atenció primària."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «La salut dels catalans al centre», punto 1.1, pág. 51. Busca «Reclamarem un finançament sanitari suficient». En el PDF el texto del punto está partido entre columnas; la cita une los dos trozos con «[…]»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-24"

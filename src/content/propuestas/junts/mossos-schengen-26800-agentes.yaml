@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "seguridad"
+subtema: "policia"
+titulo: "Delegar en los Mossos el control de acceso a Schengen en puertos y aeropuertos y llegar a 26.800 agentes en 2032"
+resumen: "Punto 5.1 del apartado de inmigración. Abarca la seguridad y el control de acceso al espacio Schengen en los puertos y aeropuertos de Cataluña."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "49"
+    cita: "Delegar als Mossos d’Esquadra la seguretat i el control d’accés a l’espai Schengen als ports i aeroports de Catalunya, i arribar fins a 26.800 agents el 2032."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «Les competències en immigració al centre», punto 5.1, pág. 49. Busca «Delegar als Mossos d’Esquadra la seguretat»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-24"

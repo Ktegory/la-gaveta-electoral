@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "territorial"
+subtema: "despoblacion"
+titulo: "Llevar la fibra óptica a todos los núcleos de más de 50 habitantes y el 5G a todo el medio rural"
+resumen: "Punto 3.1 del apartado del mundo rural. El objetivo es eliminar las zonas de sombra."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "86"
+    cita: "Completar la xarxa de fibra òptica a tots els nuclis de més de 50 habitants i desplegar cobertura 5G total al món rural, eliminant zones ombra."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «El món rural al centre», punto 3.1, pág. 86. Busca «Completar la xarxa de fibra»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-24"

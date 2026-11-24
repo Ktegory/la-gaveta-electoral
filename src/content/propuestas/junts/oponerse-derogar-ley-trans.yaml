@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "igualdad"
+subtema: "lgtbi"
+titulo: "Oponerse a derogar o recortar la ley trans y LGTBI (Ley 4/2023) y la Ley 15/2022 de igualdad de trato"
+resumen: "Punto 1.3 del programa, siempre respetando las competencias de Cataluña."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "36"
+    cita: "Oposar-nos a qualsevol derogació o retallada de la Llei 4/2023 (trans i LGTBI) i de la Llei 15/2022 d’igualtat de tracte i no-discriminació, sempre amb respecte a les competències de Catalunya."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «Els drets LGTBI+ al centre», punto 1.3, pág. 36. Busca «Oposar-nos a qualsevol derogació o retallada»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-24"

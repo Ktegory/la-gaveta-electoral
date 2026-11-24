@@ -1,0 +1,19 @@
+partido: "junts"
+tema: "pensiones"
+subtema: "revalorizacion"
+titulo: "Revalorizar cada año las pensiones según el IPC catalán y el mayor coste de la vida en Cataluña"
+resumen: "Punto 5.1 del apartado de personas mayores: asegurar por ley que los pensionistas mantengan el poder adquisitivo. En el apartado de economía (punto 5.3) lo resume como pensiones públicas según el coste de la vida de Cataluña."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "57"
+    cita: "Garantir el sistema públic de pensions i assegurar per llei el manteniment del poder adquisitiu de les persones pensionistes, revisant anualment les pensions segons l’IPC català i el superior cost de la vida a Catalunya."
+  - fuente: "junts/programa-29n-2026"
+    pagina: "70"
+    cita: "Garantir pensions públiques segons el cost de la vida de Catalunya."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «Les persones grans al centre», punto 5.1, pág. 57 (busca «Garantir el sistema públic de»); apartado «L’economia, les empreses i el treball al centre», punto 5.3, pág. 70 (busca «Garantir pensions públiques segons el»)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-24"

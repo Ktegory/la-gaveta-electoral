@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "empleo"
+subtema: "autonomos"
+titulo: "Establecer una cuota cero para los autónomos de hasta 35 años durante sus tres primeros años de actividad"
+resumen: "Punto 4.3 del apartado de jóvenes, con una reforma del régimen de autónomos (RETA). No perderían el derecho a las prestaciones y se reducirían los trámites de alta."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "61"
+    cita: "Reformar el RETA per establir una quota zero per a joves autònoms de fins a 35 anys durant els 3 primers anys d’activitat, sense perdre el dret a les prestacions i reduint els tràmits d’alta."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «Els joves al centre», punto 4.3, pág. 61. Busca «Reformar el RETA per establir»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-24"

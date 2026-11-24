@@ -39,7 +39,7 @@ Usa `curl -sL -A "Mozilla/5.0"` (WebFetch suele recibir 403 en estas webs).
 | Frente Amplio | fa | frenteamplio.info/noticias/ y /feed.xml, /sitemap.xml | @elfrenteamplio y la candidata @adacolau (pista: la web del partido solo enlaza a @elfrenteamplio; busca la medida en una fuente del partido o en prensa, salvo que la publicación sea una colaboración con @elfrenteamplio) |
 | Podemos | pod | podemos.info/feed/, pazcasaytrabajo.es | @ahorapodemos y @i_montero_ (la web de campaña pazcasaytrabajo.es enlaza a esta cuenta como su Instagram, así que cuenta como cuenta oficial de campaña) |
 | ERC | erc | esquerra.cat (403 a bots) | @esquerrarepublicana |
-| Junts | junts | junts.cat/feed/, junts.cat/actualitat/ | @juntspercat |
+| Junts | junts | junts.cat/feed/, junts.cat/actualitat/; web de campaña tualcentre.cat (/actualitat/, /catalunya-al-centre/) | @juntspercat |
 | EAJ-PNV | pnv | eaj-pnv.eus | @eajpnv |
 | EH Bildu | bildu | ehbildu.eus | @eh_bildu |
 
@@ -51,7 +51,7 @@ Programas ya publicados (vigila si cambian: compara `content-length` y `last-mod
 - Podemos: la URL de `src/content/fuentes/pod/programa-29n-2026.yaml` (141 págs., 1.830.035 bytes, `last-modified` 18 nov 09:18 GMT). La web de campaña enlaza una copia idéntica en pazcasaytrabajo.es/programa-electoral/programa-electoral-paz-casa-y-trabajo.pdf (last-modified 18 nov 08:56 GMT).
 - EH Bildu: la URL de `src/content/fuentes/bildu/programa-29n-2026.yaml` (30 págs., 571.442 bytes). El servidor no da tamaño ni fecha: si hace falta comprobar cambios, pide permiso para descargarlo y compara la sha256.
 
-Programas pendientes (Junts): busca si se ha publicado.
+- Junts: la URL de `src/content/fuentes/junts/programa-29n-2026.yaml`, en su web de campaña tualcentre.cat, no en junts.cat (90 págs., 1.355.756 bytes, `last-modified` 18 nov 17:06 GMT). Las rondas del 18 al 24 nov no lo vieron porque solo miraban junts.cat.
 
 ## Paso 2. Instagram (navegador integrado de la app)
 

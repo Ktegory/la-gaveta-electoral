@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "seguridad"
+subtema: "delitos"
+titulo: "Suprimir el delito de injurias y restringir los de enaltecimiento del terrorismo y de odio"
+resumen: "Punto 1.3 del programa. Propone adecuar el enaltecimiento del terrorismo a los estándares europeos y restringir sustancialmente su alcance, reformar los delitos de odio para que no criminalicen ideas, religiones o instituciones y suprimir el delito de injurias."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "13"
+    cita: "Derogar i reformar els delictes vinculats a l’expressió política, la protesta i la crítica institucional, perquè la llibertat d’expressió no es pot protegir de manera separada dels drets de reunió, manifestació i participació política: adequar als estàndards europeus el delicte d’enaltiment del terrorisme i restringir-ne substancialment l’abast, reformar els delictes d’odi perquè no criminalitzin idees, religions o institucions, i suprimir el delicte d’injúries."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «Els nostres drets i llibertats nacionals i la justícia al centre», punto 1.3, pág. 13. Busca «Derogar i reformar els delictes»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-24"

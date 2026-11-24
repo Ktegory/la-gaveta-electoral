@@ -1,0 +1,19 @@
+partido: "junts"
+tema: "igualdad"
+subtema: "cuidados"
+titulo: "Que el Estado pague el 50 % del gasto público en dependencia, con liquidación transparente y calendario de pago"
+resumen: "Punto 1.1 del apartado de discapacidad y 2.1 del de bienestar. Pide que los Presupuestos Generales del Estado lo consignen y lo transfieran, como fija el artículo 32 de la Ley 39/2006 de dependencia en la redacción de la Ley 4/2026: una aportación estatal igual al 50 % del gasto total certificado por cada comunidad el año anterior, sin contar lo que pagan los beneficiarios."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "39"
+    cita: "Exigir que els pressupostos generals de l’Estat espanyol consignin i transfereixin els recursos necessaris per complir les obligacions estatals en dependència i discapacitat, inclòs el finançament del 50 % de la despesa pública en dependència que correspon a l’Estat, amb liquidació transparent i calendari de pagament."
+  - fuente: "junts/programa-29n-2026"
+    pagina: "45"
+    cita: "Garantir en els pressupostos estatals el compliment de l’article 32 de la Llei 39/2006, en la redacció de la Llei 4/2026: aportació estatal equivalent al 50 % de la despesa total certificada per cada comunitat autònoma en l’exercici precedent, sense incloure-hi l’aportació de les persones beneficiàries."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «Els drets de les persones amb discapacitat al centre», punto 1.1, pág. 39 (busca «Exigir que els pressupostos generals»), y apartado «El benestar de tots els catalans al centre», punto 2.1, pág. 45 (busca «Garantir en els pressupostos estatals»). Es la misma medida en dos apartados."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-24"

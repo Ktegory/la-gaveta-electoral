@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "energia"
+subtema: "precio"
+titulo: "Bajar al 10 % el IVA de la luz y el gas natural"
+resumen: "Punto 2.9 del apartado de economía. Pide garantizar que la rebaja llegue a la factura de las familias y las pymes."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "69"
+    cita: "Reduir al 10% l’IVA de la llum i el gas natural, garantint que la rebaixa es traslladi a la factura de les famílies i les pimes."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «L’economia, les empreses i el treball al centre», punto 2.9, pág. 69. Busca «Reduir al 10% l’IVA de»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-24"

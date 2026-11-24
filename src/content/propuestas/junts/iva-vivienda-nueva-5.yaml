@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "vivienda"
+subtema: "fiscalidad-vivienda"
+titulo: "Bajar del 10 % al 5 % el IVA de la compra de vivienda nueva para residencia habitual"
+resumen: "Punto 3.4 del apartado de vivienda. Incluye la autopromoción, con límites de superficie, precio y renta y la obligación de vivir en ella; el 5 % se aplicaría también a la vivienda social."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "17"
+    cita: "Reduir del 10% al 5% l’IVA de la compra d’habitatge nou i de l’autopromoció destinats a residència habitual, amb límits de superfície, preu i renda i l’obligació de […] perquè no s’utilitzi com a inversió, i aplicar també el 5% a l’habitatge social."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «El dret a la propietat i a l’habitatge al centre», punto 3.4, pág. 17. Busca «Reduir del 10% al 5%»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-24"

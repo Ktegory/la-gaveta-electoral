@@ -1,0 +1,19 @@
+partido: "junts"
+tema: "territorial"
+subtema: "financiacion"
+titulo: "Reformar la financiación local con un modelo propio para Cataluña acordado de forma bilateral"
+resumen: "Punto 2.1 del programa. Implica reformar la Ley de Haciendas Locales; entre las competencias a reclamar figura que Cataluña diseñe el sistema de financiación de sus entes locales."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "83"
+    cita: "Reformar el sistema de finançament local i la Llei […] d’hisendes locals per garantir la suficiència financera i l’autonomia dels ens locals, amb un model propi per a Catalunya acordat bilateralment."
+  - fuente: "junts/programa-29n-2026"
+    pagina: "82"
+    cita: "Model propi de finançament local: capacitat de Catalunya per dissenyar el sistema de finançament dels seus ens locals, amb governança i negociació bilateral."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «El món local al centre», punto 2.1, pág. 83; apartado «El món local al centre», «Competències a reclamar», punto 1, pág. 82. Busca «Reformar el sistema de finançament» y «Model propi de finançament local»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-24"

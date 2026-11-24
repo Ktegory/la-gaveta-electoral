@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "exterior"
+subtema: "ue"
+titulo: "Promover un compromiso plurianual de apoyo humanitario, financiero y militar a Ucrania, con control parlamentario"
+resumen: "Punto 3.1 del programa. Incluye aplicar de forma efectiva las sanciones a Rusia y apoyar la adhesión de Ucrania a la UE según los criterios exigibles. Defiende una paz justa, la integridad territorial de Ucrania, incluida Crimea, y el rechazo a las anexiones por la fuerza, sin imponer a los ucranianos una rendición negociada por terceros."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "27"
+    cita: "Promourem un compromís pluriennal de suport humanitari, financer i militar a Ucraïna, amb control parlamentari; l’aplicació efectiva de les sancions a Rússia; i el suport a l’adhesió ucraïnesa a la UE segons els criteris exigibles. Defensarem una pau justa, la integritat territorial d’Ucraïna, inclosa Crimea, i el rebuig de les annexions per la força, sense imposar als ucraïnesos una rendició negociada per tercers."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «La política internacional de Catalunya al centre», punto 3.1, pág. 27. Busca «Promourem un compromís pluriennal de»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-24"

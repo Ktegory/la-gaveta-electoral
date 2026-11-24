@@ -1,0 +1,13 @@
+fecha: "2026-11-24"
+partido: "junts"
+tipo: "estado-programa"
+descripcion: "Junts publicó el 18 de noviembre su programa para el 29N, «Catalunya al centre» (90 páginas en catalán), en su web de campaña, tualcentre.cat. No lo vimos hasta el 24 de noviembre, y desde ese día pasa de «pendiente» a «publicado». Es la fuente principal de sus propuestas: hemos cotejado con él las 9 que ya teníamos y citamos la página. Ocho están en el programa. Precisa tres: el traspaso de Rodalies incluye el 100 % de Rodalies y de Media Distancia, con vías, catenarias y estaciones; la agilización de las expulsiones distingue siempre al adulto sin derecho a quedarse del solicitante de asilo, la víctima de trata o el menor; y sobre Sucesiones y Donaciones, el programa tampoco aclara si se refiere al impuesto estatal o al de la Generalitat. El compromiso de hablar en catalán en el Congreso no aparece en el programa: queda con su fuente anterior."
+propuestas:
+  - "junts/deduccion-irpf-vivienda"
+  - "junts/catalan-oficial-ue"
+  - "junts/competencias-inmigracion"
+  - "junts/agilizar-expedientes-expulsion"
+  - "junts/traspaso-rodalies"
+  - "junts/concierto-economico"
+  - "junts/eliminar-sucesiones-donaciones"
+  - "junts/iva-autonomos"

@@ -61,6 +61,7 @@ const COMP = {
       </div>
       <div class="rv-grupo" role="group" aria-label="Qué mostrar">
         <button type="button" data-ver="pendientes" aria-pressed="true">Pendientes</button>
+        <button type="button" data-ver="sin-revisar" aria-pressed="false">Sin revisar <span data-n-sin></span></button>
         <button type="button" data-ver="dudas" aria-pressed="false">Con dudas</button>
         <button type="button" data-ver="todas" aria-pressed="false">Todas</button>
       </div>
@@ -81,7 +82,7 @@ const COMP = {
       const firmada = !!p.data.revisadaPor && !provisional(p);
       const previa = firmada ? undefined : previas.get(p.filePath!);
       return (
-        <article class="rv" data-id={p.id} data-p={partido.id} data-firmada={firmada ? '' : undefined} data-comp={p.data.comprobacion?.estado} style={varsPartido(partido)}>
+        <article class="rv" data-id={p.id} data-p={partido.id} data-firmada={firmada ? '' : undefined} data-provisional={provisional(p) ? '' : undefined} data-comp={p.data.comprobacion?.estado} style={varsPartido(partido)}>
           <header>
             <b>{partido.data.nombre}</b>
             <span>{t.data.nombre} › {s?.nombre ?? p.data.subtema}</span>
@@ -222,7 +223,10 @@ const COMP = {
       // Las recién firmadas siguen a la vista hasta cambiar el filtro, para poder deshacer.
       const pendiente = !('firmada' in t.dataset) || 'reciente' in t.dataset;
       const duda = t.dataset.comp === 'parcial' || t.dataset.comp === 'no-encontrada';
-      const ok = (!partido || t.dataset.p === partido) && (ver === 'todas' || (ver === 'dudas' ? pendiente && duda : pendiente));
+      // «Sin revisar»: sin ninguna firma, ni siquiera la provisional de Claude.
+      const sinFirma = pendiente && !('provisional' in t.dataset);
+      const enVista = ver === 'todas' ? true : ver === 'dudas' ? pendiente && duda : ver === 'sin-revisar' ? sinFirma : pendiente;
+      const ok = (!partido || t.dataset.p === partido) && enVista;
       t.hidden = !ok;
       if (ok) visibles++;
     }
@@ -236,6 +240,8 @@ const COMP = {
     const delPartido = tarjetas.filter((t) => t.dataset.p === partido && !('firmada' in t.dataset)).length;
     const nombre = document.querySelector<HTMLElement>(`[data-partido="${partido}"]`)?.textContent;
     document.querySelector('[data-quedan-filtro]')!.textContent = partido ? ` (${nombre}: ${delPartido})` : '';
+    const sinFirma = tarjetas.filter((t) => (!partido || t.dataset.p === partido) && !('firmada' in t.dataset) && !('provisional' in t.dataset)).length;
+    document.querySelector('[data-n-sin]')!.textContent = `(${sinFirma})`;
     document.querySelector<HTMLElement>('[data-barra]')!.style.width = `${(hechas / total) * 100}%`;
   };
 
@@ -278,6 +284,7 @@ const COMP = {
           estado.textContent = `Revisada por ${res.revisadaPor} el ${fecha}`;
         } else {
           delete t.dataset.firmada;
+          delete t.dataset.provisional;
           estado.textContent = 'Sin revisar';
         }
         boton.textContent = firmar ? 'Quitar firma' : 'Firmar';

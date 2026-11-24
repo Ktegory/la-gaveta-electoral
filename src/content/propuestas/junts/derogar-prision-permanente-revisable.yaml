@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "seguridad"
+subtema: "delitos"
+titulo: "Derogar la prisión permanente revisable y los límites a la justicia universal"
+resumen: "Punto 6.5 del programa. Propone derogar a la vez la restricción estatal de la justicia universal."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "15"
+    cita: "Derogar la presó permanent revisable i la restricció estatal de la justícia universal."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «Els nostres drets i llibertats nacionals i la justícia al centre», punto 6.5, pág. 15. Busca «Derogar la presó permanent revisable»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-24"

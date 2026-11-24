@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "territorial"
+subtema: "lenguas-cooficiales"
+titulo: "Incluir la lengua y el origen territorial como motivos de discriminación y sancionar abusos por lengua o símbolos"
+resumen: "Punto 1.4 del programa. Incluye proteger frente a la discriminación laboral o en el acceso a prestaciones, sancionar abusos de los poderes públicos (retirada de banderas o símbolos lícitos, prohibición de cánticos en una lengua, identificaciones o registros por lengua, ideología o simbología) y llevar estas garantías al ámbito deportivo."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "13"
+    cita: "Combatre la catalanofòbia i la discriminació lingüística: incorporar la llengua i l’origen territorial com a motius de discriminació; protegir davant la discriminació laboral o en l’accés a prestacions públiques i privades; sancionar els abusos dels poders públics relacionats amb la retirada o prohibició de banderes o símbols lícits, la prohibició de càntics o expressions en una determinada llengua"
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «Els nostres drets i llibertats nacionals i la justícia al centre», punto 1.4, pág. 13. Busca «Combatre la catalanofòbia i la»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-24"

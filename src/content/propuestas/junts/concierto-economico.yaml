@@ -4,6 +4,9 @@ subtema: "financiacion"
 titulo: "Concierto económico para Cataluña como el del País Vasco: recaudar y gestionar todos sus impuestos"
 resumen: "Lo plantea como condición para negociar con el próximo Gobierno tras el 29N. El 13 de noviembre detalló cómo: sacar a Cataluña del régimen común de la LOFCA con una disposición adicional y una ley propia para que la Agència Tributària de Catalunya recaude, liquide e inspeccione todos los impuestos, incluidos el IRPF, el IVA y Sociedades. La Generalitat podría fijar los tipos, pagaría al Estado por los servicios que presta en Cataluña y decidiría su propio sistema de solidaridad."
 fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "68"
+    cita: "Desplegar el concert econòmic amb una llei específica fora del règim comú i dotar l’ATC dels recursos per assumir totes les funcions tributàries."
   - fuente: "junts/mesjunts-160-balance"
     pagina: "1"
     cita: "La candidata ha anunciat que el següent pas és que Catalunya tingui un concert econòmic com el que tenen els bascos: “Els diners dels catalans a Catalunya ja estaven a l’acord de Brussel·les”."
@@ -18,6 +21,6 @@ destacada: true
 orden: 1
 comprobacion:
   estado: encontrada
-  nota: "La nota de junts.cat del 7 nov dice además que Nogueras «ha situat aquesta reivindicació com una de les condicions imprescindibles per negociar amb Junts després de les eleccions del 29 de novembre». La SER habla solo de «que Catalunya gestioni els seus impostos», sin nombrar el concierto. Ampliada el 13 nov con la nota de junts.cat de ese día (busca «disposició addicional»); lo de los tipos, el pago por servicios y la solidaridad está en la frase siguiente (busca «capacitat normativa»)."
-revisadaPor: "Khiustin Tornés"
-fechaRevision: "2026-11-13"
+  nota: "La nota de junts.cat del 7 nov dice además que Nogueras «ha situat aquesta reivindicació com una de les condicions imprescindibles per negociar amb Junts després de les eleccions del 29 de novembre». La SER habla solo de «que Catalunya gestioni els seus impostos», sin nombrar el concierto. Ampliada el 13 nov con la nota de junts.cat de ese día (busca «disposició addicional»); lo de los tipos, el pago por servicios y la solidaridad está en la frase siguiente (busca «capacitat normativa»). El 24 nov se añadió como fuente principal el programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «L’economia, les empreses i el treball al centre», punto 1.1, pág. 68, busca «Desplegar el concert econòmic»."
+revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
+fechaRevision: "2026-11-24"

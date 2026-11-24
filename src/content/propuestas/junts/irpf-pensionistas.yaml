@@ -1,0 +1,16 @@
+partido: "junts"
+tema: "fiscalidad"
+subtema: "irpf"
+titulo: "Rebajar el IRPF de las pensiones contributivas y deducir gastos de residencias, centros de día o atención a domicilio"
+resumen: "Punto 5.6 del apartado de personas mayores: bases específicas más laxas para estas rentas, mínimos personales más altos y deducciones por atención a domicilio, centros de día, residencias, mutuas médicas u otros servicios."
+fuentes:
+  - fuente: "junts/programa-29n-2026"
+    pagina: "58"
+    cita: "Modificar l’IRPF per a les rendes que provenen d’ingressos per pensions contributives: creació de bases específiques més laxes, increment dels mínims personals, deduccions per costos de serveis d’atenció a domicili, centres de dia, residències, mútues mèdiques o altres serveis per evitar l’empobriment per la dependència."
+fechaAnuncio: "2026-11-18"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «Les persones grans al centre», punto 5.6, pág. 58. Busca «Modificar l’IRPF per a les»."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-24"
