@@ -781,8 +781,9 @@ p .fuera { margin: 0; vertical-align: 1px }
 @container site (max-width: 800px) {
   .why, .conv, .conv.c4 { grid-template-columns: 1fr }
   .ftable thead { display: none }
-  .ftable tr { display: grid; padding: 10px 0; border-bottom: 1px solid var(--hair) }
-  .ftable td { border: 0; padding: 2px 0 }
+  /* minmax(0, 1fr) y overflow-wrap: que una palabra o enlace largo no ensanche la fila más que la pantalla. */
+  .ftable tr { display: grid; grid-template-columns: minmax(0, 1fr); padding: 10px 0; border-bottom: 1px solid var(--hair) }
+  .ftable td { border: 0; padding: 2px 0; min-width: 0; overflow-wrap: anywhere }
 }
 
 /* Buscador (Pagefind) */
