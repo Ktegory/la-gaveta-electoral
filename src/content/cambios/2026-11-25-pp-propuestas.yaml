@@ -1,9 +1,12 @@
 fecha: "2026-11-25"
 partido: "pp"
 tipo: "propuestas"
-descripcion: "Añadimos dos medidas del programa del PP que Feijóo destacó el 24 de noviembre en Alicante: ampliar la prisión permanente revisable a los depredadores sexuales reincidentes y a quien oculte el cadáver de su víctima, y que la expulsión sea la regla para los extranjeros condenados por delitos sexuales, de sangre o multirreincidencia. Y una propuesta que Alberto Nadal anunció ese día en Zaragoza: derogar el decreto eléctrico de los centros de datos, con un plan de choque de inversión en la red que sí está en el programa. Y una medida del programa que el PP destacó en el 25N: pasar al Ministerio del Interior el sistema de pulseras antimaltrato, con la auditoría de sus fallos que Feijóo prometió ese día."
+descripcion: "Añadimos dos medidas del programa del PP que Feijóo destacó el 24 de noviembre en Alicante: ampliar la prisión permanente revisable a los depredadores sexuales reincidentes y a quien oculte el cadáver de su víctima, y que la expulsión sea la regla para los extranjeros condenados por delitos sexuales, de sangre o multirreincidencia. Y una propuesta que Alberto Nadal anunció ese día en Zaragoza: derogar el decreto eléctrico de los centros de datos, con un plan de choque de inversión en la red que sí está en el programa. Y una medida del programa que el PP destacó en el 25N: pasar al Ministerio del Interior el sistema de pulseras antimaltrato, con la auditoría de sus fallos que Feijóo prometió ese día. Por la tarde, dos medidas más del programa que el PP destacó el 25 de noviembre: una ley integral contra la trata (Cuca Gamarra) y eximir del IVA a los autónomos que facturan menos de 85.000 euros (Carmen Fúnez). Y la medida 210, que estaba en blanco en el programa y se conoció ese día: aprender a leer y escribir en papel y priorizar de 3 a 12 años el aprendizaje sin pantallas individuales."
 propuestas:
   - "pp/prision-permanente-reincidentes-sexuales"
   - "pp/expulsar-extranjeros-delitos-sexuales"
   - "pp/derogar-decreto-centros-datos-plan-redes"
   - "pp/pulseras-antimaltrato-interior"
+  - "pp/ley-integral-trata"
+  - "pp/iva-franquiciado-autonomos"
+  - "pp/pantallas-primeros-anos-escuela"

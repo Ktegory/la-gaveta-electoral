@@ -1,0 +1,18 @@
+partido: "pp"
+tema: "igualdad"
+subtema: "violencia-machista"
+titulo: "Aprobar una ley integral contra la trata de seres humanos"
+resumen: "Está en el programa del PP (medida 29): una ley integral contra la trata para proteger a las víctimas y perseguir a las redes, criterios comunes en toda España contra la mutilación genital femenina y los matrimonios forzados, y un protocolo en puertos, aeropuertos y fronteras para identificar los viajes de riesgo. Cuca Gamarra prometió la ley de trata el 25 de noviembre."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "19"
+    cita: "Aprobaremos una ley integral contra la trata de seres humanos para proteger a las víctimas y perseguir a las redes que se lucran con ellas."
+  - fuente: "pp/nota-gamarra-logrono-2026-11-25"
+    cita: "Promete la puesta en marcha una ley de trata"
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Borrador de la ronda automática del 25 nov a las 20:04. Medida del programa que el PP destacó en el 25N. Programa: medida 29, busca «LA TRATA, LA MUTILACIÓN GENITAL»; cotejada el 25 nov a las 21:15 con el PDF oficial (sha256 cea8f2a0…): pág. 19, cita literal. Nota del PP del 25 nov (16:03): busca «ley de trata»; es resumen de la nota, no frase entrecomillada de Gamarra; cotejada en pp.es a las 21:15."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-25"

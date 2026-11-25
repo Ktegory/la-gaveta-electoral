@@ -1,0 +1,18 @@
+partido: "fa"
+tema: "sanidad"
+subtema: "prestaciones"
+titulo: "Dar gratis preservativos a jóvenes en las farmacias y repartir gratis copas menstruales"
+resumen: "Está en el programa del Frente Amplio: dispensación gratuita de preservativos en farmacias comunitarias para jóvenes, para prevenir infecciones de transmisión sexual, y distribución gratuita de copas menstruales. El partido lo destacó en Instagram el 25 de noviembre. No concreta hasta qué edad."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "31"
+    cita: "Dispensación gratuita de preservativos en farmacias comunitarias para jóvenes (prevención de ITS) y distribución gratuita de copas menstruales para la salud reproductiva y sostenibilidad."
+  - fuente: "fa/instagram-feminismo-2026-11-25"
+    cita: "Preservativos gratis en farmacias para jóvenes, copas menstruales gratuitas"
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Borrador de la ronda automática del 25 nov a las 20:04. Medida del programa que el FA destacó en Instagram el 25 nov (busca «Preservativos gratis»). Programa: punto «Salud sexual y gratuidad de productos», busca «Dispensación gratuita de preservativos»; cotejada con la extracción de texto de la versión del 25 nov (sha256 f0534f92…) cotejada después con el PDF el 25 nov a las 21:15: pág. impresa 31 (la 27 del PDF), cita literal."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-25"
