@@ -20,5 +20,5 @@ orden: 3
 comprobacion:
   estado: encontrada
   nota: "En el «Més Junts» 161 (p. 3) la frase es de Cruset en Riudoms; el PDF la parte entre columnas, así que la cita es un fragmento (la frase completa empieza «També ha reclamat més seguretat…»). La delegación de competencias como condición para negociar sale de la SER. El 24 nov se añadió como fuente principal el programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «Les competències en immigració al centre», punto 1.1, pág. 48, busca «Aprovar la llei de delegació». Lo repite en las págs. 22 y 84."
-revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
-fechaRevision: "2026-11-24"
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-25"

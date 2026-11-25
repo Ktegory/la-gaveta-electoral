@@ -18,5 +18,5 @@ destacada: false
 comprobacion:
   estado: encontrada
   nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «El benestar de tots els catalans al centre», lista «Competències a reclamar», n.º 2, pág. 44 (busca «Traspàs de les competències en Seguretat»), y punto 1.3, pág. 45 (busca «Impulsar el desplegament de les competències»). Además, apartado «L’economia, les empreses i el treball al centre», competencias a reclamar o mejorar, n.º 3, pág. 68. Busca «Prestacions d’atur: traspassar-ne la gestió». Reúne varias medidas del programa en una sola propuesta."
-revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
-fechaRevision: "2026-11-24"
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-25"

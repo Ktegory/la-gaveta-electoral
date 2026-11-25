@@ -15,5 +15,5 @@ destacada: false
 comprobacion:
   estado: encontrada
   nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «El món local al centre», puntos 6.1 y 6.2, pág. 84. Busca «Garantir l’aplicació efectiva de la». También en el apartado de justicia (pág. 15, punto 6.1, busca «Garantir l’aplicació efectiva de la Llei orgànica 1/2026»), unido aquí para no duplicar."
-revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
-fechaRevision: "2026-11-24"
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-25"

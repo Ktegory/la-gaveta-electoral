@@ -1,0 +1,20 @@
+partido: "pp"
+tema: "igualdad"
+subtema: "violencia-machista"
+titulo: "Pasar al Ministerio del Interior el sistema de pulseras antimaltrato y auditar sus fallos"
+resumen: "Está en el programa del PP (medida 28): garantizar la fiabilidad de los dispositivos que vigilan las órdenes de alejamiento, que el sistema dependa del Ministerio del Interior con supervisión continua de las fuerzas de seguridad y conservar íntegros sus datos como prueba. El 25 de noviembre, Feijóo se comprometió a hacer una auditoría completa de los fallos de las pulseras y Borja Sémper propuso reforzar VioGén y vincularlo con Interior. No detalla quién haría la auditoría ni en qué plazo."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "19"
+    cita: "Garantizaremos la fiabilidad de los dispositivos que vigilan las órdenes de alejamiento. El sistema pasará a depender del Ministerio del Interior, con supervisión continua de las fuerzas de seguridad, y conservaremos íntegros sus datos para que sirvan como prueba."
+  - fuente: "pp/nota-feijoo-pulseras-2026-11-25"
+    cita: "comprometerse a acometer una auditoría completa del escándalo de las pulseras"
+  - fuente: "pp/nota-semper-rne-2026-11-25"
+    cita: "Propone “reforzar también el sistema Viogén y vincularlo con el Ministerio del Interior”"
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Borrador de la ronda automática del 25 nov a las 14:03. Medida del programa que el PP destacó en el 25N. Programa: medida 28, pág. 19, busca «LAS MUJERES NO QUEDARÁN DESPROTEGIDAS»; cotejada el 25 nov a las 15:25 con el PDF oficial (sha256 cea8f2a0…): la ronda la situó en la pág. 20 y está en la 19 (la página impresa coincide con la del PDF). Las citas de las dos notas, también cotejadas a esa hora en pp.es. Nota del PP del 25 nov (9:35): busca «auditoría completa»; es el resumen de la nota, no una frase entrecomillada, pero Feijóo lo escribe en primera persona en Instagram («llevar a cabo una auditoría completa sobre el escándalo de las pulseras»). Nota del PP sobre Sémper en RNE (25 nov, 10:56): busca «Viogén». La auditoría no está en el programa."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-25"
