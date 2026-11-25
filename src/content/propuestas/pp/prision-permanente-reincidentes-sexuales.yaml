@@ -1,0 +1,18 @@
+partido: "pp"
+tema: "seguridad"
+subtema: "delitos"
+titulo: "Ampliar la prisión permanente revisable a los reincidentes sexuales y a quien oculte el cadáver de su víctima"
+resumen: "Está en el programa del PP (medida 30): se aplicaría a los depredadores sexuales, pederastas y violadores reincidentes, y al asesino que oculte el cadáver o se niegue a revelar dónde está. Feijóo lo destacó el 24 de noviembre en un mitin en Alicante, la víspera del 25N. No detalla cuántas reincidencias darían lugar a esta pena."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "20"
+    cita: "AMPLIAREMOS LA PRISIÓN PERMANENTE REVISABLE A QUIEN HAGA DESAPARECER A SU VÍCTIMA Y A LOS DEPREDADORES SEXUALES. Se aplicará al asesino que oculte el cadáver o se niegue a revelar dónde está, y a los depredadores sexuales, pederastas y violadores reincidentes."
+  - fuente: "pp/nota-feijoo-alicante-2026-11-24"
+    cita: "ampliando la prisión permanente revisable para los depredadores sexuales reincidentes"
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Borrador de la ronda automática del 25 nov a las 8:04. Cotejada el 25 nov a las 9:55 con el programa del PP (PDF, sha256 cea8f2a0…): medida 30, pág. 20, busca «A QUIEN HAGA DESAPARECER». También con la nota del PP del 24 nov (21:01) sobre el mitin de Alicante: busca «prisión permanente revisable»; es el resumen de la nota, no una frase entrecomillada de Feijóo. El programa es la fuente principal y la nota, la segunda."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-25"

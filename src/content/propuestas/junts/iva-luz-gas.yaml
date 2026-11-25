@@ -12,5 +12,5 @@ destacada: false
 comprobacion:
   estado: encontrada
   nota: "Extraída el 24 nov del programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «L’economia, les empreses i el treball al centre», punto 2.9, pág. 69. Busca «Reduir al 10% l’IVA de»."
-revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
-fechaRevision: "2026-11-24"
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-25"

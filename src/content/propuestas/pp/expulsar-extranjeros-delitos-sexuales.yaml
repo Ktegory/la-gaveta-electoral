@@ -1,0 +1,18 @@
+partido: "pp"
+tema: "inmigracion"
+subtema: "fronteras"
+titulo: "Que la expulsión sea la regla para los extranjeros condenados por delitos sexuales, de sangre o multirreincidencia"
+resumen: "Está en el programa del PP (medida 44). Tener causas pendientes en varios juzgados no frenaría la expulsión; la prohibición de entrada sería permanente para quien suponga un riesgo para la seguridad, y se retiraría el permiso de residencia a quien tenga vínculos con el crimen organizado o la radicalización violenta. Feijóo lo destacó el 24 de noviembre en Alicante, referido a los delitos contra la libertad sexual."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "23"
+    cita: "QUIEN DELINQUE SERÁ EXPULSADO DE ESPAÑA. La expulsión será la regla para los extranjeros condenados por delitos sexuales, delitos de sangre y multirreincidencia. Tener causas pendientes en varios juzgados no servirá para frenar una expulsión."
+  - fuente: "pp/nota-feijoo-alicante-2026-11-24"
+    cita: "expulsando a los extranjeros que cometan delitos contra la libertad sexual"
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Borrador de la ronda automática del 25 nov a las 8:04. Cotejada el 25 nov a las 9:55 con el programa del PP (PDF, sha256 cea8f2a0…): medida 44, pág. 23, busca «QUIEN DELINQUE SERÁ EXPULSADO». El programa habla de condenados; la nota del 24 nov (21:01), de los extranjeros «que cometan» delitos contra la libertad sexual (busca «libertad sexual»; es el resumen de la nota, no una frase de Feijóo). El programa es la fuente principal y la nota, la segunda."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-25"

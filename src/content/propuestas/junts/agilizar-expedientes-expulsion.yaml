@@ -14,5 +14,5 @@ destacada: false
 comprobacion:
   estado: encontrada
   nota: "Cotejada el 17 nov (ronda de las 8:04) en el directo de Público, entrada de las 11:29 del 16 nov (busca «agilizar los expedientes de expulsión»). Solo esas cuatro palabras van entre comillas como frase de Nogueras; el resto es de la agencia. La nota oficial de Junts del acto no lo recoge. El 24 nov se añadió como fuente principal el programa de Junts (PDF de tualcentre.cat, sha256 cde2c5f3…): apartado «Les competències en immigració al centre», punto 5.2, pág. 49, busca «resolucions de retorn»."
-revisadaPor: "Claude (cotejo con el PDF del programa, por encargo de Khiustin Tornés)"
-fechaRevision: "2026-11-24"
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-25"
