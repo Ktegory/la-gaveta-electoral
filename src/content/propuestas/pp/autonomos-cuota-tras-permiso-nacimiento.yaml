@@ -1,0 +1,18 @@
+partido: "pp"
+tema: "empleo"
+subtema: "autonomos"
+titulo: "Bonificar al 100 % durante dos años la cuota de los autónomos que vuelvan a su actividad tras el permiso por nacimiento"
+resumen: "Está en el programa del PP (medida 161): los autónomos que retomen su actividad tras el permiso por nacimiento tendrían bonificada al 100 % su cuota durante dos años, y en el caso de las autónomas la exención cubriría también los periodos de lactancia que queden fuera de esa bonificación. La misma medida incluye incentivos a las empresas por los trabajadores con hijos pequeños y más ayudas para contratar a quien sustituya a madres o padres durante sus permisos. Alberto Núñez Feijóo lo destacó el 26 de noviembre en una reunión con ATA y CEAJE."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "56"
+    cita: "Los autónomos que vuelvan a su actividad tras el permiso tendrán bonificada al 100% su cuota durante dos años. En el caso de las autónomas, la exención cubrirá también los periodos de lactancia que queden fuera de esa bonificación."
+  - fuente: "pp/nota-feijoo-ata-ceaje-2026-11-26"
+    cita: "la bonificación al 100% de la la cuota durante los dos años posteriores al permiso de maternidad y paternidad"
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Borrador de la ronda automática del 26 nov a las 20:04. Medida del programa que Feijóo destacó el 26 nov en la reunión con ATA y CEAJE. Programa: medida 161, busca «tras el permiso tendrán bonificada»; cotejada el 26 nov a las 21:07 con el PDF oficial (sha256 cea8f2a0…): la ronda la situó en la pág. 57, pero está en la 56 (la página impresa coincide con la del PDF); cita literal. Nota del PP: busca «dos años posteriores al permiso»; es resumen de la nota en tercera persona (la duplicación «la la» está en el original), no frase literal de Feijóo; consultada en pp.es (API de WordPress) a las 20:15 y vuelta a cotejar a las 21:07. Feijóo ya la había anunciado en su plan de autónomos de noviembre de 2025 (prensa de entonces)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-26"

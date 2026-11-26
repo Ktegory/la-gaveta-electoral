@@ -1,7 +1,9 @@
 fecha: "2026-11-26"
 partido: "pp"
 tipo: "propuestas"
-descripcion: "Añadimos dos medidas del programa del PP: bonificar la cuota del autónomo con una enfermedad grave desde el primer día de baja y ampliar la prestación por cese de actividad, que Juan Bravo destacó el 25 de noviembre en Sevilla, y fijar por ley que quien cobre el salario mínimo no pague IRPF, que Jaime de Olano destacó el 26 de noviembre en el Congreso."
+descripcion: "Añadimos tres medidas del programa del PP: bonificar la cuota del autónomo con una enfermedad grave desde el primer día de baja y ampliar la prestación por cese de actividad, que Juan Bravo destacó el 25 de noviembre en Sevilla; fijar por ley que quien cobre el salario mínimo no pague IRPF, que Jaime de Olano destacó el 26 de noviembre en el Congreso, y bonificar al 100 % durante dos años la cuota de los autónomos que vuelvan a su actividad tras el permiso por nacimiento, que Alberto Núñez Feijóo destacó el 26 de noviembre en una reunión con ATA y CEAJE. En esa reunión destacó también que quienes inicien su actividad presenten una sola declaración al año, que está en la medida del programa sobre el IVA de los autónomos que facturan menos de 85.000 euros: la hemos añadido a esa propuesta."
 propuestas:
   - "pp/autonomos-segunda-oportunidad"
   - "pp/smi-exento-irpf-por-ley"
+  - "pp/autonomos-cuota-tras-permiso-nacimiento"
+  - "pp/iva-franquiciado-autonomos"
