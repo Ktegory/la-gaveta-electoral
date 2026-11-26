@@ -1,0 +1,6 @@
+fecha: "2026-11-26"
+partido: "fa"
+tipo: "propuestas"
+descripcion: "Añadimos una medida del programa del Frente Amplio que Pablo Bustinduy destacó el 26 de noviembre: abono de transporte público gratuito para quienes vivan en vivienda del parque público estatal."
+propuestas:
+  - "fa/transporte-gratis-vivienda-publica"

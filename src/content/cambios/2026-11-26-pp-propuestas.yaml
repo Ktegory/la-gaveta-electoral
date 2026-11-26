@@ -1,6 +1,7 @@
 fecha: "2026-11-26"
 partido: "pp"
 tipo: "propuestas"
-descripcion: "Añadimos una medida del programa del PP que Juan Bravo destacó el 25 de noviembre en Sevilla: bonificar la cuota del autónomo con una enfermedad grave desde el primer día de baja y ampliar la prestación por cese de actividad."
+descripcion: "Añadimos dos medidas del programa del PP: bonificar la cuota del autónomo con una enfermedad grave desde el primer día de baja y ampliar la prestación por cese de actividad, que Juan Bravo destacó el 25 de noviembre en Sevilla, y fijar por ley que quien cobre el salario mínimo no pague IRPF, que Jaime de Olano destacó el 26 de noviembre en el Congreso."
 propuestas:
   - "pp/autonomos-segunda-oportunidad"
+  - "pp/smi-exento-irpf-por-ley"

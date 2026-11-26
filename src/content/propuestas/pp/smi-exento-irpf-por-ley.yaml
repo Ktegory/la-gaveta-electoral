@@ -1,0 +1,18 @@
+partido: "pp"
+tema: "fiscalidad"
+subtema: "irpf"
+titulo: "Fijar por ley que quien cobre el salario mínimo no pague IRPF, con un umbral que suba con el SMI"
+resumen: "Está en el programa del PP (medida 177): quien cobre el salario mínimo no pagaría IRPF, y por ley el umbral de tributación subiría automáticamente cada vez que suba el SMI. La misma medida incluye elevar los mínimos personales y familiares y bajar el IRPF de las rentas medias y bajas. Jaime de Olano lo destacó el 26 de noviembre en la Diputación Permanente del Congreso."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "60"
+    cita: "Quien cobre el salario mínimo no pagará IRPF: por ley, el umbral subirá automáticamente cada vez que suba el SMI, para que ningún Gobierno pueda volver a cobrar impuestos a quien menos gana por el simple hecho de no tocar una cifra."
+  - fuente: "pp/nota-de-olano-diputacion-permanente-2026-11-26"
+    cita: "Critica que el Ejecutivo utilice de nuevo un decreto para eliminar el IRPF en la subida del Salario Mínimo y recuerda que el PP lo garantizará por ley"
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Borrador de la ronda automática del 26 nov a las 14:04. Medida del programa que Jaime de Olano destacó el 26 nov en la Diputación Permanente. Programa: medida 177, busca «Quien cobre el salario mínimo»; cotejada el 26 nov a las 14:28 con el PDF oficial (sha256 cea8f2a0…): pág. 60, cita literal. Nota del PP: busca «lo garantizará por ley»; es resumen de la nota en tercera persona, no frase literal de De Olano; cotejada en pp.es a las 14:28. La nota también dice que el PP actualizará los mínimos personales y familiares y deflactará los tramos (medidas 177 y 178; la 178 ya está publicada)."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-26"

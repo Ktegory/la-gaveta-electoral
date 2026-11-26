@@ -1,0 +1,18 @@
+partido: "fa"
+tema: "fiscalidad"
+subtema: "transporte"
+titulo: "Hacer gratuito el abono de transporte público para quienes vivan en vivienda del parque público estatal"
+resumen: "Está en el programa del Frente Amplio: las personas residentes en viviendas del parque público estatal tendrían gratis el abono de transporte público. Pablo Bustinduy lo destacó el 26 de noviembre junto al abono único estatal y el comedor escolar gratuito."
+fuentes:
+  - fuente: "fa/programa-29n-2026"
+    pagina: "20"
+    cita: "Implantaremos la gratuidad total en el abono de transporte público para todas las personas residentes en viviendas del parque público estatal."
+  - fuente: "fa/prensa-bustinduy-transporte-2026-11-26"
+    cita: "será gratuito para aquellos que vivan en viviendas protegidas"
+fechaAnuncio: "2026-11-16"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Borrador de la ronda automática del 26 nov a las 14:04. Medida del programa que Pablo Bustinduy destacó el 26 nov. Programa: apartado 1.6, «Movilidad y accesibilidad universal en el parque residencial público», busca «gratuidad total en el abono»; cotejada con la extracción de texto de la versión del 25 nov y después con el PDF el 26 nov a las 14:28 (sha256 f0534f92…, el mismo que sirve hoy frenteamplio.info): pág. impresa 20 (la 17 del archivo), cita literal. Europa Press: busca «viviendas protegidas»; es resumen de la agencia, no frase literal; cotejado a las 14:28. Ojo con el alcance: el programa dice «parque público estatal» y la agencia habla de «viviendas protegidas» (y de VPO en el titular); el título y el resumen siguen al programa."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-26"
