@@ -1,0 +1,18 @@
+partido: "pp"
+tema: "empleo"
+subtema: "autonomos"
+titulo: "Bonificar la cuota del autónomo con enfermedad grave desde el primer día y ampliar el cese de actividad"
+resumen: "Está en el programa del PP (medida 172): el autónomo con una enfermedad grave tendría bonificada la cuota desde el primer día de baja, se ampliarían los supuestos de la prestación por cese de actividad con menos burocracia y se ampliarían los umbrales de protección de la Ley de Segunda Oportunidad. Juan Bravo lo destacó el 25 de noviembre en Sevilla."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "59"
+    cita: "El autónomo con una enfermedad grave tendrá bonificada su cuota desde el primer día de baja. Ampliaremos los supuestos que dan derecho a la prestación por cese de actividad y eliminaremos la burocracia que hoy la deniega."
+  - fuente: "pp/prensa-bravo-autonomos-sevilla-2026-11-25"
+    cita: "una protección con un cese de actividad accesible y garantías para que una enfermedad grave, la maternidad o la paternidad no arruinen el negocio"
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Borrador de la ronda automática del 26 nov a las 8:04. Medida del programa que Juan Bravo destacó el 25 nov en Sevilla. Programa: medida 172, busca «SEGUNDA OPORTUNIDAD»; cotejada el 26 nov a las 10:35 con el PDF oficial (sha256 cea8f2a0…): pág. 59, cita literal. Europa Press: busca «cese de actividad accesible»; es resumen de la agencia, no frase literal de Bravo; cotejada a las 10:35. A esa hora pp.es no tenía la nota del PP que menciona la agencia. La maternidad y la paternidad que cita la agencia no aparecen en la medida 172."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-26"

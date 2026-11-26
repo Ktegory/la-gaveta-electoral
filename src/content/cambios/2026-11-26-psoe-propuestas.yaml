@@ -1,0 +1,6 @@
+fecha: "2026-11-26"
+partido: "psoe"
+tipo: "propuestas"
+descripcion: "Añadimos una medida del programa del PSOE que Pedro Sánchez destacó el 25 de noviembre: consolidar las bonificaciones fiscales a los propietarios que bajen el precio del alquiler."
+propuestas:
+  - "psoe/bonificaciones-propietarios-alquiler-asequible"

@@ -1,0 +1,18 @@
+partido: "psoe"
+tema: "vivienda"
+subtema: "alquiler"
+titulo: "Consolidar las bonificaciones fiscales a los propietarios que bajen el precio del alquiler"
+resumen: "Está en el programa del PSOE (medida 66): consolidar las bonificaciones fiscales para los propietarios que reduzcan el precio del alquiler, para aumentar la oferta de vivienda asequible. Pedro Sánchez lo destacó el 25 de noviembre: incentivos fiscales para que a los pequeños propietarios les salga rentable alquilar a un precio asequible."
+fuentes:
+  - fuente: "psoe/programa-29n-2026"
+    pagina: "32"
+    cita: "Consolidar las bonificaciones fiscales para las personas propietarias que reduzcan los precios del alquiler, incentivando la oferta de vivienda asequible."
+  - fuente: "psoe/prensa-sanchez-plex-alquiler-2026-11-25"
+    cita: "Lo interesante es hacer incentivos fiscales para que a los pequeños propietarios les salga rentable poner su vivienda en alquiler a un precio asequible"
+fechaAnuncio: "2026-11-15"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Borrador de la ronda automática del 26 nov a las 8:04. Medida del programa que Sánchez destacó el 25 nov en una charla con Plex. Programa: medida 66, busca «Consolidar las bonificaciones fiscales»; cotejada el 26 nov a las 10:35 con el PDF oficial (sha256 e9c83413…): pág. impresa 32 (la 31 del PDF), cita literal. Europa Press: busca «pequeños propietarios»; el entrecomillado es de Sánchez; cotejado a las 10:35. fechaAnuncio: la de la presentación del programa (15 nov), como las demás medidas del PSOE."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-26"
