@@ -1,0 +1,15 @@
+partido: "pp"
+tema: "instituciones"
+subtema: "justicia"
+titulo: "Financiar las primarias de los partidos solo con las cuentas del partido y someterlas al Tribunal de Cuentas"
+resumen: "Es una medida del programa del PP que estaba en blanco en el documento publicado y se conoció el 27 de noviembre. Propone reformar la Ley de Financiación de los Partidos Políticos para que los procesos internos de elección de los dirigentes se paguen solo a través de las cuentas del partido, con ingresos y gastos declarados y fiscalizados por el Tribunal de Cuentas. Según el PP, la ley actual regula las campañas electorales y las cuentas anuales de los partidos, pero no el dinero de las primarias."
+fuentes:
+  - fuente: "pp/prensa-financiacion-primarias-2026-11-27"
+    cita: "los procesos internos de elección de sus dirigentes se financien exclusivamente a través de las cuentas del partido, con ingresos y gastos declarados y sometidos al Tribunal de Cuentas"
+fechaAnuncio: "2026-11-27"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Borrador de la ronda automática del 27 nov a las 14:15. Cotejado ese día en Europa Press (busca «exclusivamente a través de las cuentas del partido»); la cita es texto del programa que reproduce la agencia. No está en el PDF publicado (copia local, sha256 cea8f2a0…: no aparece «primarias»), así que es una de las medidas en blanco. Probablemente es la 83, la única en blanco del apartado 2.4 «La política nunca será un negocio» (pág. 34, entre la 82 de malversación y la 84 de control del gasto), pero la agencia no da el número: no lo pongo hasta que lo confirme el PP. El PDF de pp.es no ha cambiado (last-modified 10 nov 11:19 GMT; la versión de 64 págs., 11 nov 09:54 GMT) y pp.es no tiene nota sobre ella a las 14:30. Subtema: va en Justicia, como las otras medidas del PP contra la corrupción (malversación, indultos); valorar si encaja mejor en Organismos independientes. Si el PP publica el texto, pasar el programa o la nota a fuente principal. Revisado de nuevo el 27 nov a las 14:40: cita literal en el teletipo; en el PDF, la pág. 34 tiene el hueco «Permanezca atento a la campaña» con el número 83, entre la 82 (malversación) y la 84 («Ningún euro público quedará fuera de control»). La única nota de pp.es de hoy que habla de primarias (Feijóo, 10:44) no menciona la medida."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-27"

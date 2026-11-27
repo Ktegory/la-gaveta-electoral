@@ -1,0 +1,18 @@
+partido: "pp"
+tema: "instituciones"
+subtema: "justicia"
+titulo: "Dar al fiscal general un mandato único de cinco años y hacer vinculante el informe del CGPJ sobre su idoneidad"
+resumen: "Está en el programa del PP (medida 70), que propone un nuevo Estatuto del Ministerio Fiscal: el fiscal general no cesaría con el Gobierno que lo propuso, el informe del Consejo General del Poder Judicial sobre su idoneidad sería preceptivo y vinculante, y su procesamiento supondría el cese inmediato. Alberto Núñez Feijóo lo destacó en el debate a cuatro del 26 de noviembre: «El fiscal general del Estado no va a ser un ministro»."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "31"
+    cita: "Aprobaremos un nuevo Estatuto del Ministerio Fiscal. El fiscal general tendrá un mandato único de cinco años y, como recomienda la Comisión Europea, no cesará con el Gobierno que lo propuso. El informe del Consejo General del Poder Judicial sobre su idoneidad será preceptivo y vinculante para su nombramiento. Su procesamiento conllevará el cese inmediato y automático."
+  - fuente: "pp/prensa-debate-a-cuatro-2026-11-26"
+    cita: "Los jueces van a elegir otra vez a los jueces. El fiscal general del Estado no va a ser un ministro."
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Borrador de la ronda automática del 27 nov a las 08:04. Medida del programa que Feijóo destacó en el debate a cuatro del 26 nov. Programa: medida 70, busca «mandato único de cinco años»; cotejada el 27 nov con la copia local del PDF oficial que bajó una sesión anterior (sha256 cea8f2a0…, igual que la del YAML de la fuente): está en la pág. 31 (número impreso arriba, coincide con la página del PDF); cita literal. Europa Press: entrada de las 23:32 del minuto a minuto, busca «no va a ser un ministro»; es frase entrecomillada de Feijóo. Ojo: la frase de Feijóo («no va a ser un ministro») no aparece tal cual en la medida 70, que no prohíbe expresamente nombrar a exministros; por eso el título sigue al programa. La primera frase de la cita (jueces eligen a jueces) ya está publicada en pp/jueces-eligen-jueces."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-27"

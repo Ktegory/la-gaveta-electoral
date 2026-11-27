@@ -1,0 +1,8 @@
+fecha: "2026-11-27"
+partido: "pp"
+tipo: "propuestas"
+descripcion: "Añadimos una medida del programa del PP que Alberto Núñez Feijóo destacó el 26 de noviembre en el debate a cuatro: un nuevo Estatuto del Ministerio Fiscal con un mandato único de cinco años para el fiscal general y un informe vinculante del Consejo General del Poder Judicial sobre su idoneidad. También añadimos la medida 82, que Feijóo citó en el mismo debate: restablecer las penas por malversación y reforzar la oficina que recupera los bienes procedentes de delitos. Y añadimos otra medida del programa que estaba en blanco y se conoció el 27 de noviembre: reformar la Ley de Financiación de los Partidos Políticos para que las primarias se paguen solo con las cuentas del partido y las fiscalice el Tribunal de Cuentas."
+propuestas:
+  - "pp/fiscal-general-mandato-unico"
+  - "pp/malversacion-penas-recuperar-activos"
+  - "pp/financiacion-primarias-tribunal-cuentas"

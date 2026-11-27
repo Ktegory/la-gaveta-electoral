@@ -1,0 +1,18 @@
+partido: "pp"
+tema: "instituciones"
+subtema: "justicia"
+titulo: "Restablecer las penas por malversación y reforzar la oficina que recupera los bienes procedentes de delitos"
+resumen: "Está en el programa del PP (medida 82): restablecer las penas por malversación, reforzar la Oficina de Recuperación y Gestión de Activos para localizar y administrar los bienes procedentes de delitos e incorporar a la legislación española el marco penal europeo contra la corrupción. Alberto Núñez Feijóo lo destacó en el debate a cuatro del 26 de noviembre: «Las penas de malversación no se van a volver a rebajar»."
+fuentes:
+  - fuente: "pp/programa-29n-2026"
+    pagina: "34"
+    cita: "LOS CORRUPTOS DEVOLVERÁN LO ROBADO. Restableceremos las penas por malversación. Reforzaremos la Oficina de Recuperación y Gestión de Activos para localizar y administrar los bienes procedentes de los delitos que se hayan cometido. Incorporaremos sin demora a la legislación española el marco penal europeo contra la corrupción para reforzar la persecución de estos delitos y el castigo a sus responsables."
+  - fuente: "pp/prensa-debate-a-cuatro-2026-11-26"
+    cita: "Las penas de malversación no se van a volver a rebajar. Yo no voy a indultar a ningún político condenado por corrupción. Los corruptos van a devolver lo robado."
+fechaAnuncio: "2026-11-10"
+destacada: false
+comprobacion:
+  estado: encontrada
+  nota: "Añadida el 27 nov a las 11:50, a petición de la persona responsable, tras la revisión de la ronda de las 08:04, que la había dejado como compromiso genérico. Programa: medida 82, busca «DEVOLVERÁN LO ROBADO»; cotejada con la copia local del PDF oficial (sha256 cea8f2a0…, igual que la del YAML de la fuente): está en la pág. 34 (número impreso arriba, coincide con la página del PDF); cita literal. Europa Press: entrada de las 23:32 del minuto a minuto del debate a cuatro, busca «penas de malversación»; frase entrecomillada de Feijóo, cotejada el 27 nov. El compromiso de no indultar a condenados por corrupción ya está publicado en su propia propuesta del PP, en el mismo subtema."
+revisadaPor: "Khiustin Tornés"
+fechaRevision: "2026-11-27"
